@@ -1,0 +1,23 @@
+/* KUIS KODING: terminal belajar yang tenang. Fosfor lembut, garis monospace, tanpa silau. */
+:root {
+  --font-d: "IBM Plex Sans", system-ui, sans-serif; --font-b: "IBM Plex Sans", system-ui, sans-serif; --font-m: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --radius: 10px; --radius-k: 6px;
+  --at-accent: #0e1512; --at-on-accent: #7fe3b2; --at-deep: #0a0f0d; --at-mono: "IBM Plex Mono", monospace; --at-sans: "IBM Plex Sans", sans-serif;
+}
+:root[data-theme="dark"] { --bg: #0d1311; --permukaan: #131b18; --permukaan-2: #1a2420; --garis: #26332e; --teks: #e0ece6; --redup: #8fa49a; --utama: #5fd5a0; --utama-gelap: #3fb985; --utama-t: #173027; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #0d1311; --permukaan: #131b18; --permukaan-2: #1a2420; --garis: #26332e; --teks: #e0ece6; --redup: #8fa49a; --utama: #5fd5a0; --utama-gelap: #3fb985; --utama-t: #173027; }
+}
+html { background: var(--bg); }
+body, body.at { color: var(--teks); font-family: var(--font-b); background-color: var(--bg); background-image: linear-gradient(var(--garis) 1px, transparent 1px); background-size: 100% 32px; background-attachment: fixed; background-position: 0 -1px; }
+h1, h2, h3 { letter-spacing: -.025em; font-weight: 600; }
+
+/* Prompt pembuka */
+.at-curtain__a, .at-curtain__b { border-radius: 0; inset: 0; }
+.kq-term { font: 500 clamp(1.05rem, 3.4vw, 2rem) var(--font-m); color: #7fe3b2; white-space: nowrap; text-align: left; }
+.kq-term span { display: inline-block; overflow: hidden; vertical-align: bottom; width: 0; animation: kq-type 1s steps(18) .15s forwards; }
+.kq-term i { display: inline-block; width: .6em; height: 1.1em; margin-left: 3px; vertical-align: -.16em; background: #7fe3b2; animation: kq-blink .7s steps(1) infinite; }
+.kq-term small { display: block; margin-top: 12px; font-size: .55em; color: #8fa49a; opacity: 0; animation: kq-show .1s 1.25s forwards; }
+@keyframes kq-type { to { width: 18ch; } }
+@keyframes kq-blink { 50% { opacity: 0; } }
+@keyframes kq-show { to { opacity: 1; } }

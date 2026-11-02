@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GANTI: judul & deskripsi untuk Google/LinkedIn -->
+<title>[Nama Kamu] — Segmentasi Pelanggan E-commerce</title>
+<meta name="description" content="Studi kasus: segmentasi pelanggan e-commerce dengan K-Means dan K-Medoids untuk strategi promo yang tepat sasaran.">
+<style>
+  /* Template portofolio 1 halaman — ganti semua teks di dalam [kurung siku] */
+  :root{--bg:#f6f7f3;--kartu:#fff;--teks:#25332d;--redup:#62716a;--utama:#4a8c7f;--utama-t:#e3f0ec;--garis:#e1e6df}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--teks);line-height:1.7}
+  .wadah{max-width:820px;margin:0 auto;padding:48px 20px 80px}
+  header{margin-bottom:36px}
+  .label{display:inline-block;background:var(--utama-t);color:var(--utama);font-weight:700;font-size:.8rem;border-radius:99px;padding:3px 12px;margin-bottom:12px}
+  h1{font-size:clamp(1.8rem,5vw,2.5rem);line-height:1.2;margin-bottom:12px}
+  .lead{font-size:1.1rem;color:var(--redup)}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .meta span{background:var(--kartu);border:1px solid var(--garis);border-radius:8px;padding:4px 10px;font-size:.85rem}
+  section{background:var(--kartu);border:1px solid var(--garis);border-radius:16px;padding:24px;margin-bottom:18px}
+  h2{font-size:1.2rem;margin-bottom:10px;color:var(--utama)}
+  p+p{margin-top:10px}
+  ul{padding-left:1.2em;margin-top:8px}
+  .angka{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
+  .angka div{background:var(--utama-t);border-radius:12px;padding:14px}
+  .angka b{display:block;font-size:1.6rem;color:var(--utama)}
+  .angka small{color:var(--redup)}
+  table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.92rem}
+  th,td{border-bottom:1px solid var(--garis);padding:8px;text-align:left}
+  th{background:var(--bg)}
+  .gambar{width:100%;border-radius:12px;border:1px solid var(--garis);margin-top:12px}
+  .embed{width:100%;aspect-ratio:16/10;border:1px solid var(--garis);border-radius:12px;margin-top:12px}
+  .tombol{display:inline-block;background:var(--utama);color:#fff;text-decoration:none;font-weight:700;border-radius:10px;padding:10px 18px;margin:12px 8px 0 0}
+  .tombol.garis{background:none;color:var(--utama);border:2px solid var(--utama)}
+  footer{text-align:center;color:var(--redup);font-size:.9rem;margin-top:30px}
+  footer a{color:var(--utama)}
+</style>
+</head>
+<body>
+<div class="wadah">
+
+  <header>
+    <span class="label">Studi Kasus · Data Analysis</span>
+    <h1>Segmentasi Pelanggan E-commerce untuk Strategi Promo yang Tepat Sasaran</h1>
+    <!-- 1–2 kalimat: MASALAH + APA YANG KAMU LAKUKAN, dalam bahasa non-teknis -->
+    <p class="lead">[Toko e-commerce kesulitan menentukan promo yang tepat untuk tiap jenis pelanggan. Saya mengelompokkan pelanggan berdasarkan perilaku belanja, lalu membandingkan dua algoritma clustering untuk menemukan segmentasi yang paling stabil.]</p>
+    <div class="meta">
+      <span>🧑‍💻 [Nama Kamu]</span><span>🛠️ Python · Google Colab · [Looker Studio]</span><span>📅 [Tahun]</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>1. Masalah bisnis</h2>
+    <p>[Jelaskan kenapa segmentasi penting bagi toko. Contoh: promo yang sama untuk semua pelanggan membuang anggaran, karena pelanggan setia dan pelanggan yang jarang membeli butuh pendekatan berbeda.]</p>
+  </section>
+
+  <section>
+    <h2>2. Data</h2>
+    <p>[Sumber data (sebut secara umum, misal "data penjualan sebuah toko di marketplace"), periode, dan jumlah baris.]</p>
+    <ul>
+      <li>[Jumlah transaksi / pelanggan]</li>
+      <li>[Fitur yang dipakai, misal Recency, Frequency, Monetary]</li>
+      <li>[Langkah pembersihan data: data kosong, duplikat, outlier]</li>
+    </ul>
+    <p><i>Data pribadi pembeli sudah dihapus/dianonimkan.</i></p>
+  </section>
+
+  <section>
+    <h2>3. Metode</h2>
+    <p>[Ringkas: normalisasi data → K-Means dan K-Medoids → cara memilih jumlah cluster (misal Elbow/Silhouette) → metrik evaluasi (misal Davies-Bouldin Index).]</p>
+    <table>
+      <tr><th>Algoritma</th><th>[Metrik 1]</th><th>[Metrik 2]</th><th>Catatan</th></tr>
+      <tr><td>K-Means</td><td>[angka]</td><td>[angka]</td><td>[catatan singkat]</td></tr>
+      <tr><td>K-Medoids</td><td>[angka]</td><td>[angka]</td><td>[catatan singkat]</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Hasil & insight</h2>
+    <div class="angka">
+      <div><b>[N]</b><small>segmen pelanggan</small></div>
+      <div><b>[X%]</b><small>[segmen terbesar]</small></div>
+      <div><b>[algoritma]</b><small>lebih cocok untuk data ini</small></div>
+    </div>
+    <!-- Ganti dengan screenshot grafikmu (taruh file di folder yang sama) -->
+    <!-- <img class="gambar" src="grafik-cluster.png" alt="Grafik hasil clustering"> -->
+    <ul>
+      <li><b>[Nama segmen 1, misal "Pelanggan setia"]:</b> [ciri-ciri dan ukurannya]</li>
+      <li><b>[Segmen 2]:</b> [ciri-ciri]</li>
+      <li><b>[Segmen 3]:</b> [ciri-ciri]</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Rekomendasi untuk bisnis</h2>
+    <ul>
+      <li>[Segmen 1 → misal program loyalitas]</li>
+      <li>[Segmen 2 → misal voucher pembelian kedua]</li>
+      <li>[Segmen 3 → misal kampanye win-back]</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Dashboard</h2>
+    <p>[1 kalimat: pertanyaan apa yang dijawab dashboard ini.]</p>
+    <!-- Looker Studio: File → Embed report → salin link embed ke src di bawah -->
+    <!-- <iframe class="embed" src="[LINK EMBED LOOKER STUDIO]" allowfullscreen></iframe> -->
+    <a class="tombol" href="[LINK DASHBOARD]">Buka dashboard</a>
+    <a class="tombol garis" href="[LINK GITHUB / NOTEBOOK]">Lihat kode di GitHub</a>
+  </section>
+
+  <footer>
+    <p>[Nama Kamu] · <a href="mailto:[email]">[email]</a> · <a href="[link LinkedIn]">LinkedIn</a> · <a href="[link GitHub]">GitHub</a></p>
+  </footer>
+</div>
+</body>
+</html>

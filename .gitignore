@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.vscode/
+.idea/
+.env
+.env.*
+!.env.example
+.next/
+out/
+__pycache__/
+*.pyc
+.netlify/
+.phpunit.cache/
+.phpunit.result.cache
