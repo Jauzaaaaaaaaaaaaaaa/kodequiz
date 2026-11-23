@@ -124,6 +124,26 @@ const SOAL_SQL = [
 
 const MATERI_SQL = [
 {k:"select",judul:"SELECT, WHERE, ORDER BY — Mengambil Data",materi:`
+<!--pemula--><h4>Untuk pemula: database, tabel, dan SQL itu apa?</h4>
+<p>Bayangkan sebuah toko yang mencatat semua penjualannya di beberapa lembar Excel: satu lembar untuk daftar pelanggan, satu untuk daftar produk, satu untuk catatan pesanan. Kumpulan lembar yang tersimpan rapi dan saling terhubung seperti itu disebut <b>database</b> (basis data). Setiap lembar disebut <b>tabel</b>.</p>
+<p><b>SQL</b> (dibaca "es-kyu-el" atau "sekuel", singkatan <i>Structured Query Language</i>) adalah bahasa untuk <b>bertanya</b> kepada database. Pertanyaan itu disebut <b>query</b>. Contoh pertanyaan: "tampilkan nama pelanggan dari Jakarta, urut dari yang terbaru". SQL dipakai hampir di semua perusahaan, jadi ini salah satu keterampilan paling dicari untuk data analyst.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya dalam bahasa sehari-hari</th></tr>
+<tr><td>tabel</td><td>satu lembar data, seperti satu sheet Excel</td></tr>
+<tr><td>baris (<i>row</i>/<i>record</i>)</td><td>satu data utuh, misalnya satu pelanggan</td></tr>
+<tr><td>kolom (<i>column</i>)</td><td>satu jenis keterangan, misalnya "kota"</td></tr>
+<tr><td><code>id</code></td><td>nomor unik setiap baris, seperti nomor KTP</td></tr>
+<tr><td>query</td><td>satu pertanyaan/perintah yang ditulis dengan SQL</td></tr>
+<tr><td><code>SELECT</code></td><td>"tampilkan kolom…"</td></tr>
+<tr><td><code>FROM</code></td><td>"dari tabel…"</td></tr>
+<tr><td><code>WHERE</code></td><td>"yang memenuhi syarat…" (menyaring baris)</td></tr>
+<tr><td><code>ORDER BY … ASC/DESC</code></td><td>"urutkan berdasarkan…", ASC = kecil ke besar, DESC = besar ke kecil</td></tr>
+<tr><td><code>LIMIT 5</code></td><td>"ambil 5 baris saja"</td></tr>
+<tr><td><code>*</code></td><td>"semua kolom"</td></tr>
+<tr><td><code>NULL</code></td><td>sel kosong, nilainya tidak diketahui</td></tr></table>
+<p>Cara membaca query: ubah ke kalimat Indonesia. <code>SELECT nama, kota FROM pelanggan WHERE kota = 'Jakarta' ORDER BY nama;</code> dibaca "<b>tampilkan</b> nama dan kota <b>dari</b> tabel pelanggan <b>yang</b> kotanya Jakarta, <b>urutkan</b> berdasarkan nama".</p>
+<p>Beberapa aturan kecil yang sering membuat pemula error:</p>
+<ul><li>Teks ditulis dengan <b>kutip tunggal</b>: <code>'Jakarta'</code>. Angka tanpa kutip: <code>500000</code>.</li><li><code>&lt;&gt;</code> artinya <b>tidak sama dengan</b>.</li><li><code>LIKE 'Ra%'</code> artinya "diawali Ra"; <code>%</code> mewakili huruf apa saja sebanyak apa pun.</li><li>Mengecek sel kosong harus dengan <code>IS NULL</code>, bukan <code>= NULL</code>.</li><li><code>--</code> adalah komentar, catatan yang diabaikan database.</li><li>Query diakhiri titik koma <code>;</code>.</li></ul>
+<p>Di bawah ini ada tiga tabel contoh. Lihat dulu isinya sebelum membaca query, karena semua contoh dan soal memakai tabel ini.</p><!--/pemula-->
 <p>Semua latihan SQL memakai database toko kecil dengan 3 tabel:</p>
 {{tb:pelanggan}}{{tb:produk}}{{tb:pesanan}}
 <p>Pola dasar yang dipakai setiap hari:</p>
@@ -143,6 +163,19 @@ LIMIT 5;                   -- batasi jumlah baris</code></pre>
 <div class="praktik">🧪 <b>Praktik langsung:</b> buka <b>Lab SQL</b> di beranda dan kerjakan tantangan 1–2. Kamu menulis query sungguhan dan hasilnya dicek otomatis.</div>`},
 
 {k:"groupby",judul:"Agregat, GROUP BY & HAVING — Meringkas Data",materi:`
+<!--pemula--><h4>Untuk pemula: meringkas data</h4>
+<p>Sejauh ini kamu menampilkan baris apa adanya. Sering kali atasan tidak butuh ribuan baris, tapi <b>ringkasan</b>: "berapa total penjualan?", "berapa pesanan tiap pelanggan?". Itulah gunanya bab ini.</p>
+<p>Bayangkan setumpuk struk belanja. <b>Fungsi agregat</b> menghitung seluruh tumpukan jadi satu angka (misalnya total uang). <b>GROUP BY</b> memilah struk dulu menjadi tumpukan-tumpukan kecil per pelanggan, lalu menghitung tiap tumpukan.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>agregat</td><td>meringkas banyak baris menjadi satu nilai</td></tr>
+<tr><td><code>COUNT(*)</code></td><td>hitung <b>jumlah baris</b></td></tr>
+<tr><td><code>SUM(kolom)</code></td><td><b>jumlahkan</b> isi kolom</td></tr>
+<tr><td><code>AVG(kolom)</code></td><td><b>rata-rata</b> (<i>average</i>)</td></tr>
+<tr><td><code>MIN</code> / <code>MAX</code></td><td>nilai <b>terkecil</b> / <b>terbesar</b></td></tr>
+<tr><td><code>AS nama</code></td><td>memberi <b>nama baru</b> (alias) pada kolom hasil</td></tr>
+<tr><td><code>GROUP BY kolom</code></td><td>kelompokkan baris yang isi kolomnya sama</td></tr>
+<tr><td><code>HAVING</code></td><td>saring <b>kelompok</b> setelah diringkas (WHERE menyaring <b>baris</b> sebelum diringkas)</td></tr></table>
+<p>Contoh beda WHERE dan HAVING: "pelanggan yang pesanannya minimal 2" tidak bisa memakai WHERE, karena jumlah pesanan baru diketahui <b>setelah</b> dikelompokkan. Maka dipakai <code>HAVING COUNT(*) &gt;= 2</code>.</p><!--/pemula-->
 <p>Fungsi agregat meringkas banyak baris menjadi satu angka: <code>COUNT(*)</code>, <code>SUM()</code>, <code>AVG()</code>, <code>MIN()</code>, <code>MAX()</code>.</p>
 <p><b>GROUP BY</b> = ringkasan <i>per kelompok</i>. Ini adalah <b>pivot table versi SQL</b>:</p>
 <pre><code>SELECT pelanggan_id,
@@ -163,6 +196,17 @@ GROUP BY pelanggan_id;</code></pre>
 <div class="praktik">🧪 <b>Lab SQL:</b> tantangan 3–4.</div>`},
 
 {k:"join",judul:"JOIN — Menggabungkan Tabel",materi:`
+<!--pemula--><h4>Untuk pemula: kenapa data dipisah ke beberapa tabel?</h4>
+<p>Tabel pesanan tidak menulis nama pelanggan berulang-ulang; ia hanya menyimpan <b>nomor</b> pelanggan (<code>pelanggan_id</code>). Nama lengkapnya ada di tabel pelanggan. Cara ini menghemat tempat dan mencegah salah ketik: kalau pelanggan pindah kota, cukup diubah di satu tempat.</p>
+<p>Akibatnya, untuk laporan yang enak dibaca, kamu harus <b>menyambungkan</b> tabel-tabel itu. Itulah <b>JOIN</b>. Bayangkan mencocokkan nomor antrean di struk pesanan dengan daftar nama pelanggan: nomor 2 adalah Budi, nomor 3 adalah Sari, dan seterusnya.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>JOIN</td><td>menyambung dua tabel ke samping berdasarkan kolom yang cocok</td></tr>
+<tr><td><code>ON a.x = b.y</code></td><td>aturan pencocokannya: kolom x di tabel a sama dengan kolom y di tabel b</td></tr>
+<tr><td>alias tabel (<code>pesanan o</code>)</td><td>nama pendek untuk tabel, supaya cukup menulis <code>o.qty</code></td></tr>
+<tr><td><code>INNER JOIN</code> / <code>JOIN</code></td><td>hanya baris yang <b>punya pasangan</b> di kedua tabel</td></tr>
+<tr><td><code>LEFT JOIN</code></td><td><b>semua</b> baris tabel kiri tetap tampil; yang tidak punya pasangan diisi NULL</td></tr>
+<tr><td>tabel kiri</td><td>tabel yang disebut setelah <code>FROM</code></td></tr></table>
+<p>Analogi LEFT JOIN: daftar hadir satu kelas (tabel kiri) dicocokkan dengan daftar pengumpul tugas. Semua nama siswa tetap muncul; yang belum mengumpulkan, kolom tugasnya kosong (NULL). Dari situ kamu bisa mencari siapa yang belum mengumpulkan dengan <code>WHERE … IS NULL</code>.</p><!--/pemula-->
 <p>Tabel pesanan hanya menyimpan <code>pelanggan_id</code> dan <code>produk_id</code>. Untuk laporan yang bisa dibaca manusia, gabungkan tabel dengan JOIN:</p>
 <pre><code>SELECT o.id, p.nama, pr.nama AS produk, o.qty
 FROM pesanan o
@@ -182,6 +226,16 @@ WHERE o.id IS NULL;      -- hasil: Lia</code></pre>
 <div class="praktik">🧪 <b>Lab SQL:</b> tantangan 5–7.</div>`},
 
 {k:"subquery",judul:"Subquery — Query di Dalam Query",materi:`
+<!--pemula--><h4>Untuk pemula: pertanyaan di dalam pertanyaan</h4>
+<p>Kadang sebuah pertanyaan butuh jawaban pertanyaan lain dulu. Contoh: "produk apa yang harganya <b>di atas rata-rata</b>?" Kamu harus tahu dulu <b>berapa rata-ratanya</b>, baru bisa menyaring.</p>
+<p><b>Subquery</b> adalah query kecil di dalam kurung yang dijalankan lebih dulu, lalu hasilnya dipakai query luar. Cara membacanya: <b>mulai dari dalam kurung</b>.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>subquery</td><td>query di dalam query, ditulis dalam kurung</td></tr>
+<tr><td>query luar</td><td>query utama yang memakai hasil subquery</td></tr>
+<tr><td><code>IN (…)</code></td><td>"termasuk salah satu dari daftar ini"</td></tr>
+<tr><td><code>NOT IN (…)</code></td><td>"tidak termasuk daftar ini"</td></tr>
+<tr><td>tabel turunan</td><td>subquery di bagian FROM, diperlakukan seperti tabel sementara dan wajib diberi nama (<code>AS t</code>)</td></tr>
+<tr><td>correlated subquery</td><td>subquery yang memakai kolom dari query luar, sehingga dihitung ulang untuk setiap baris</td></tr></table><!--/pemula-->
 <p>Subquery menjawab pertanyaan kecil dulu (di dalam kurung), lalu hasilnya dipakai query luar.</p>
 <p><b>1. Subquery satu nilai</b> — dibandingkan dengan <code>= &gt; &lt;</code>:</p>
 <pre><code>SELECT nama FROM produk

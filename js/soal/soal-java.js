@@ -137,100 +137,225 @@ const SOAL_JAVA = [
 
 const MATERI_JAVA = [
 {k:"dasar",judul:"Dasar Java: Struktur Program & Tipe Data",materi:`
-<p><b>Kenapa bukan prioritas untukmu?</b> Jalur utamamu (Data Analyst, BI, Odoo Consultant) memakai SQL, Python, dan JavaScript. Java tetap berguna: banyak lowongan backend di Indonesia memakainya, dan OOP-nya sangat rapi untuk dipelajari.</p>
+<h4>Java itu apa, dan perlukah kamu mempelajarinya?</h4>
+<p><b>Java</b> adalah bahasa pemrograman yang sangat populer untuk sistem besar: aplikasi bank, sistem perusahaan, dan aplikasi Android. Namanya mirip JavaScript, tapi keduanya bahasa yang <b>berbeda sama sekali</b>.</p>
+<p><b>Kenapa bukan prioritas untukmu?</b> Jalur utamamu (Data Analyst, BI, Odoo Consultant) memakai SQL, Python, dan JavaScript. Java tetap berguna: banyak lowongan backend di Indonesia memakainya, dan cara Java menyusun program (OOP) sangat rapi untuk dipelajari.</p>
+<h4>Program Java pertama</h4>
 <pre><code>public class Main {
-    public static void main(String[] args) {     // titik masuk program
-        int    umur  = 22;          // bilangan bulat
-        double harga = 150000.0;    // desimal
-        String nama  = "Rina";      // teks (class, S besar)
-        char   kode  = 'A';         // satu karakter
-        boolean aktif = true;
-        final double PAJAK = 0.11;  // konstanta
-        var total = harga * 3;      // tipe disimpulkan (Java 10+)
-
-        System.out.println("Halo " + nama);   // cetak + pindah baris
+    public static void main(String[] args) {
+        System.out.println("Halo, dunia!");
     }
 }</code></pre>
-<ul>
-<li>Java <b>bertipe statis</b>: tipe diperiksa sebelum program jalan → banyak bug tertangkap lebih awal.</li>
-<li>Setiap pernyataan diakhiri <code>;</code>, blok memakai <code>{ }</code>.</li>
-<li><code>7 / 2 = 3</code> (int ÷ int), <code>7 / 2.0 = 3.5</code>.</li>
-<li><code>"Total: " + 2 + 3 = "Total: 23"</code> — gunakan kurung <code>(2 + 3)</code>.</li>
-</ul>
-<div class="praktik">🧪 <b>Coba tanpa install:</b> cari "online Java compiler" di browser, tempel kodenya, lalu tekan Run. Jika JDK sudah ter-install: simpan sebagai <code>Main.java</code>, lalu jalankan <code>java Main.java</code>.</div>`},
+<p>Bagi pemula, kode ini terlihat menakutkan untuk sekadar mencetak satu kalimat. Tenang, bacanya begini:</p>
+<ol><li><code>public class Main { … }</code> = di Java, <b>semua kode harus berada di dalam class</b> (bungkusan). Nama class ini <code>Main</code>, dan nama filenya harus sama: <code>Main.java</code>.</li><li><code>public static void main(String[] args) { … }</code> = <b>pintu masuk program</b>. Saat program dijalankan, Java selalu mencari method bernama <code>main</code> dan mulai dari sana. Untuk sekarang, anggap baris ini "mantra wajib" yang dihafal saja; maknanya akan jelas di bab OOP.</li><li><code>System.out.println("Halo, dunia!");</code> = <b>cetak</b> teks lalu <b>pindah baris</b> (<code>ln</code> = <i>line</i>). Ada juga <code>System.out.print(…)</code> yang mencetak <b>tanpa</b> pindah baris, jadi cetakan berikutnya menempel di baris yang sama.</li><li>Setiap perintah diakhiri <b>titik koma</b> <code>;</code>, dan setiap blok dibungkus kurung kurawal <code>{ }</code>.</li></ol>
+<h4>Variabel harus disebut tipenya</h4>
+<p>Berbeda dengan Python, Java mewajibkan kamu <b>menyebut jenis data</b> saat membuat variabel. Java disebut <b>bertipe statis</b>: tipe diperiksa sebelum program jalan, sehingga banyak kesalahan ketahuan lebih awal.</p>
+<pre><code>int     umur  = 22;          // bilangan bulat
+double  harga = 150000.0;    // bilangan desimal
+String  nama  = "Rina";      // teks (S kapital!)
+char    kode  = 'A';         // SATU karakter, kutip tunggal
+boolean aktif = true;        // benar/salah
+final double PAJAK = 0.11;   // konstanta, tidak boleh diubah
+var total = harga * 3;       // Java menebak tipenya sendiri (Java 10+)</code></pre>
+<table class="mini-pivot"><tr><th>Tipe</th><th>Isi</th><th>Contoh</th></tr>
+<tr><td><code>int</code></td><td>bilangan bulat</td><td><code>22</code></td></tr>
+<tr><td><code>double</code></td><td>bilangan desimal</td><td><code>3.75</code></td></tr>
+<tr><td><code>String</code></td><td>teks, kutip <b>ganda</b></td><td><code>"Rina"</code></td></tr>
+<tr><td><code>char</code></td><td>satu huruf, kutip <b>tunggal</b></td><td><code>'A'</code></td></tr>
+<tr><td><code>boolean</code></td><td>benar/salah</td><td><code>true</code>, <code>false</code></td></tr></table>
+<ul><li><code>final</code> = variabel <b>tidak boleh diubah</b> lagi setelah diisi (konstanta).</li><li><code>var</code> = Java menyimpulkan tipenya dari isi. Tetap bertipe tetap, hanya tidak perlu ditulis.</li><li>Kalau tipe tidak cocok, misalnya <code>int umur = "dua puluh";</code>, program <b>gagal dikompilasi</b> (ditolak sebelum dijalankan).</li></ul>
+<h4>Dua jebakan hitungan</h4>
+<pre><code>System.out.println(7 / 2);      // 3    ← int dibagi int = int, sisa dibuang
+System.out.println(7 / 2.0);    // 3.5  ← salah satu desimal, hasil desimal
+System.out.println("Total: " + 2 + 3);    // Total: 23
+System.out.println("Total: " + (2 + 3));  // Total: 5</code></pre>
+<ul><li>Pembagian dua bilangan bulat menghasilkan bilangan bulat; bagian desimal <b>dibuang</b>.</li><li><code>+</code> dibaca dari kiri. Begitu bertemu teks, sisanya <b>disambung sebagai teks</b>: "Total: " + 2 = "Total: 2", lalu + 3 = "Total: 23". Pakai kurung supaya angkanya dijumlah dulu.</li></ul>
+<div class="praktik"><b>Coba tanpa install:</b> cari "online Java compiler" di browser, tempel kode di atas, lalu tekan Run. Jika JDK sudah terpasang: simpan sebagai <code>Main.java</code>, lalu jalankan <code>java Main.java</code> di terminal.</div>
+`},
 
 {k:"kontrol",judul:"Kontrol Alur: if, switch, for, while",materi:`
-<pre><code>if (nilai &gt;= 80) { … } else if (nilai &gt;= 70) { … } else { … }
-
-String jenis = switch (hari) {              // Java 14+
+<h4>Mengatur jalannya program</h4>
+<p>Seperti di bahasa lain, Java bisa <b>memilih</b> (percabangan) dan <b>mengulang</b> (perulangan). Tulisannya mirip JavaScript.</p>
+<h4>if, else if, else</h4>
+<pre><code>int nilai = 75;
+if (nilai &gt;= 80) {
+    System.out.println("A");
+} else if (nilai &gt;= 70) {
+    System.out.println("B");
+} else {
+    System.out.println("C");
+}
+// B</code></pre>
+<p>Syarat ditulis di dalam kurung <code>( )</code>, isinya di dalam kurung kurawal <code>{ }</code>. Java memeriksa dari atas dan berhenti di syarat pertama yang benar.</p>
+<h4>switch modern (Java 14+)</h4>
+<pre><code>String hari = "Sabtu";
+String jenis = switch (hari) {
     case "Sabtu", "Minggu" -&gt; "Libur";
     default -&gt; "Kerja";
 };
-
-String label = qty &gt;= 5 ? "Grosir" : "Ecer";   // ternary
-
-for (int i = 1; i &lt;= 5; i++) { … }
-while (saldo &lt; 150) { … }                       // break / continue</code></pre>
-<div class="catatan">⚠️ <b>Jebakan Java paling terkenal:</b> bandingkan teks dengan <code>a.equals(b)</code>, bukan <code>a == b</code>. <code>==</code> pada objek membandingkan alamatnya, bukan isinya.</div>`},
+// jenis = "Libur"</code></pre>
+<p><code>switch</code> mencocokkan satu nilai dengan beberapa kemungkinan. Bentuk modern memakai panah <code>-&gt;</code> dan bisa langsung menghasilkan nilai. <code>default</code> = kalau tidak ada yang cocok.</p>
+<h4>Ternary: if satu baris</h4>
+<pre><code>int qty = 5;
+String label = qty &gt;= 5 ? "Grosir" : "Ecer";   // "Grosir"</code></pre>
+<p>Bacanya: "apakah qty ≥ 5? <b>ya</b> → Grosir, <b>tidak</b> → Ecer".</p>
+<h4>for: mengulang dengan hitungan</h4>
+<pre><code>int total = 0;
+for (int i = 1; i &lt;= 5; i++) {
+    total += i;
+}
+// total = 1 + 2 + 3 + 4 + 5 = 15</code></pre>
+<p>Tiga bagian di dalam kurung: <b>mulai</b> (<code>int i = 1</code>), <b>ulangi selama</b> (<code>i &lt;= 5</code>), dan <b>setiap putaran</b> (<code>i++</code>, tambah 1).</p>
+<p>Loop di dalam loop: kalau loop luar berputar 3 kali dan loop dalam 2 kali, isi loop dalam dijalankan 3 × 2 = 6 kali.</p>
+<h4>while: mengulang selama syarat benar</h4>
+<pre><code>int saldo = 100, bulan = 0;
+while (true) {
+    saldo += 10;
+    bulan++;
+    if (saldo &gt;= 150) break;
+}
+// bulan = 5, saldo = 150</code></pre>
+<p><code>while (true)</code> mengulang tanpa henti, sampai bertemu <code>break</code> yang <b>menghentikan loop seketika</b>. <code>continue</code> melewati sisa putaran dan lanjut ke putaran berikutnya.</p>
+<h4>Jebakan paling terkenal di Java</h4>
+<pre><code>String a = new String("Andi");
+String b = "Andi";
+System.out.println(a == b);        // false
+System.out.println(a.equals(b));   // true</code></pre>
+<p>Untuk teks (dan objek lain), <code>==</code> membandingkan <b>alamat penyimpanannya</b>, bukan isinya. Ibarat dua buku yang judul dan isinya sama persis, tapi disimpan di dua rak berbeda: <code>==</code> bertanya "apakah ini buku yang sama persis (rak yang sama)?", sedangkan <code>.equals()</code> bertanya "apakah isinya sama?".</p>
+<div class="catatan">Selalu bandingkan teks dengan <code>a.equals(b)</code>, bukan <code>a == b</code>.</div>
+<div class="praktik"><b>Coba sendiri:</b> tulis program yang mencetak angka 1 sampai 20, tapi untuk kelipatan 3 cetak "Fizz" sebagai gantinya.</div>
+`},
 
 {k:"array",judul:"Array & String",materi:`
+<h4>Array: banyak nilai dalam satu variabel</h4>
+<p><b>Array</b> adalah deretan nilai <b>bertipe sama</b> dengan jumlah tetap, seperti loker bernomor di stasiun: jumlah lokernya sudah ditentukan sejak awal.</p>
 <pre><code>int[] angka = {3, 8, 2};
-angka[0];          // 3 (indeks mulai 0)
-angka.length;      // 3  ← properti, tanpa ()
-Arrays.sort(angka);
-Arrays.toString(angka);   // "[2, 3, 8]"
+angka[0];          // 3   (indeks mulai dari 0)
+angka[1];          // 8
+angka.length;      // 3   ← jumlah isi, TANPA kurung</code></pre>
+<ul><li><code>int[]</code> artinya "array berisi int".</li><li>Indeks (nomor urut) <b>dimulai dari 0</b>. Array berisi 3 nilai punya indeks 0, 1, 2.</li><li>Mengakses <code>angka[3]</code> membuat program error <code>ArrayIndexOutOfBoundsException</code>, artinya "nomor loker di luar jangkauan".</li></ul>
+<h4>Mengolah array</h4>
+<pre><code>int[] total = {14, 2, 6};
+int jumlah = 0;
+for (int t : total) {      // for-each: "untuk setiap t di total"
+    jumlah += t;
+}
+// jumlah = 22
 
-for (int a : angka) { … }  // for-each
+int[] a = {5, 1, 4};
+Arrays.sort(a);                          // urutkan: {1, 4, 5}
+System.out.println(Arrays.toString(a));  // [1, 4, 5]</code></pre>
+<ul><li><code>for (int t : total)</code> = <b>for-each</b>, mengambil setiap isi satu per satu tanpa perlu indeks.</li><li><code>Arrays.sort()</code> mengurutkan, <code>Arrays.toString()</code> mengubah array jadi teks yang bisa dicetak. Keduanya butuh <code>import java.util.Arrays;</code> di awal file.</li></ul>
+<h4>String: mengolah teks</h4>
+<pre><code>String kota = "Jakarta";
+kota.length();            // 7    ← method, PAKAI kurung
+kota.substring(0, 4);     // "Jaka"  (indeks 0 sampai sebelum 4)
+kota.charAt(0);           // 'J'   satu karakter
+kota.toUpperCase();       // "JAKARTA"
+String[] bagian = "Andi,Jakarta,Laptop".split(",");
+bagian[1];                // "Jakarta"</code></pre>
+<div class="catatan">Perhatikan bedanya: array memakai <code>.length</code> <b>tanpa</b> kurung (properti), String memakai <code>.length()</code> <b>dengan</b> kurung (method). Ini sering membuat pemula error.</div>
+<h4>String tidak bisa diubah (immutable)</h4>
+<pre><code>String s = "data";
+s.toUpperCase();
+System.out.println(s);   // data   ← tidak berubah!
 
-String kota = "Jakarta";
-kota.length();             // 7  ← method, pakai ()
-kota.substring(0, 4);      // "Jaka"
-kota.charAt(0);            // 'J'
-kota.toUpperCase();        // "JAKARTA" (string baru!)
-"a,b,c".split(",");        // ["a", "b", "c"]</code></pre>
-<p>String <b>immutable</b>: method seperti <code>toUpperCase()</code> menghasilkan string baru, jadi simpan hasilnya: <code>s = s.toUpperCase();</code>.</p>`},
+s = s.toUpperCase();
+System.out.println(s);   // DATA</code></pre>
+<p>Method seperti <code>toUpperCase()</code> <b>membuat teks baru</b>, tidak mengubah yang lama. Kalau hasilnya tidak disimpan, hasilnya hilang. Simpan dengan <code>s = s.toUpperCase();</code>.</p>
+<p>Untuk membandingkan isi teks, pakai <code>a.equals(b)</code> (lihat bab sebelumnya).</p>
+<div class="praktik"><b>Coba sendiri:</b> buat array nilai <code>{80, 65, 90, 72}</code>, hitung rata-ratanya dengan for-each, lalu cetak nilai tertinggi setelah diurutkan.</div>
+`},
 
 {k:"oop",judul:"OOP: Class, Object, Inheritance, Interface",materi:`
+<h4>OOP: menyusun program dari "benda"</h4>
+<p><b>OOP</b> (<i>Object-Oriented Programming</i>) adalah cara menyusun program dari benda-benda yang punya <b>data</b> dan <b>kemampuan</b>. Java dibangun sepenuhnya dengan cara ini.</p>
+<ul><li><b>Class</b> = <b>cetakan/rancangan</b>, misalnya rancangan "Produk".</li><li><b>Object</b> = <b>benda nyata</b> hasil cetakan, misalnya produk "Laptop seharga 8 juta".</li></ul>
+<p>Satu class bisa menghasilkan banyak object, seperti satu cetakan kue menghasilkan banyak kue.</p>
+<h4>Membuat class</h4>
 <pre><code>class Produk {
-    private String nama;          // encapsulation: field private
+    private String nama;
     private int harga;
 
-    Produk(String nama, int harga) {   // constructor
+    Produk(String nama, int harga) {
         this.nama = nama;
         this.harga = harga;
     }
-    int getHarga() { return harga; }   // getter
+
+    int getHarga() { return harga; }
     int totalHarga(int qty) { return harga * qty; }
 }
 
-class Karyawan { double gaji() { return 5_000_000; } }
-class Sales extends Karyawan {          // inheritance
-    @Override double gaji() { return super.gaji() + 1_000_000; }
+Produk p = new Produk("Mouse", 150000);
+p.totalHarga(2);     // 300000</code></pre>
+<ol><li><code>private String nama;</code> = <b>field</b>, data milik setiap object. <code>private</code> artinya hanya bisa diakses dari dalam class ini.</li><li><code>Produk(String nama, int harga) { … }</code> = <b>constructor</b>, kode yang dijalankan <b>saat object dibuat</b>. Namanya sama dengan nama class.</li><li><code>this.nama = nama;</code> = <code>this</code> artinya "object ini sendiri". Baris ini mengisi field <code>nama</code> milik object dengan parameter <code>nama</code>.</li><li><code>getHarga()</code> = <b>getter</b>, method untuk membaca data private dari luar dengan cara yang terkendali.</li><li><code>new Produk(…)</code> = <b>membuat object</b> baru dari class.</li></ol>
+<h4>Empat pilar OOP</h4>
+<table class="mini-pivot"><tr><th>Pilar</th><th>Artinya</th><th>Contoh</th></tr>
+<tr><td>Encapsulation (pembungkusan)</td><td><b>lindungi data</b>: field dibuat <code>private</code>, diakses lewat getter/setter</td><td>saldo rekening tidak bisa diubah sembarangan</td></tr>
+<tr><td>Inheritance (pewarisan)</td><td>class anak <b>mewarisi</b> isi class induk</td><td>Sales mewarisi Karyawan</td></tr>
+<tr><td>Polymorphism (banyak bentuk)</td><td>method yang sama berperilaku beda di class berbeda</td><td>gaji Sales beda cara hitungnya dengan gaji Karyawan biasa</td></tr>
+<tr><td>Abstraction (abstraksi)</td><td><b>sembunyikan detail</b>, tampilkan yang penting saja</td><td>kamu menekan tombol "kirim" tanpa perlu tahu isi jaringan</td></tr></table>
+<h4>Inheritance: extends</h4>
+<pre><code>class Karyawan {
+    double gaji() { return 5_000_000; }
 }
-
-interface BisaDiekspor { String keCsv(); }   // kontrak
-class Laporan implements BisaDiekspor { public String keCsv() { return "…"; } }</code></pre>
-<p><b>Empat pilar OOP:</b> encapsulation (lindungi data), inheritance (warisi), polymorphism (satu tipe banyak perilaku), abstraction (sembunyikan detail).</p>
-<div class="catatan">🔗 Konsep yang sama ada di Python (<code>class Sales(Karyawan)</code>) dan di Odoo (<code>_inherit</code>). Belajar OOP di Java membantu memahami keduanya.</div>`},
+class Sales extends Karyawan {
+    @Override
+    double gaji() { return super.gaji() + 1_000_000; }
+}
+// new Sales().gaji() = 6000000.0</code></pre>
+<ul><li><code>extends</code> = "<b>mewarisi</b>". Sales otomatis punya semua isi Karyawan.</li><li><code>@Override</code> = penanda bahwa method ini <b>menimpa</b> method induk dengan isi baru.</li><li><code>super.gaji()</code> = panggil versi <b>milik induk</b> (5 juta), lalu ditambah 1 juta.</li><li><code>5_000_000</code> = garis bawah hanya untuk memudahkan membaca angka, sama dengan 5000000.</li></ul>
+<h4>Interface: kontrak</h4>
+<pre><code>interface BisaDiekspor {
+    String keCsv();
+}
+class Laporan implements BisaDiekspor {
+    public String keCsv() { return "…"; }
+}</code></pre>
+<p><b>Interface</b> adalah <b>kontrak/janji</b>: "siapa pun yang memakai interface ini <b>wajib</b> punya method <code>keCsv()</code>". <code>implements</code> artinya "menandatangani kontrak itu".</p>
+<h4>static dan access modifier</h4>
+<ul><li><code>static</code> = milik <b>class</b>, bukan milik setiap object. Contoh: penghitung jumlah produk yang dibuat, yang nilainya sama untuk semua object.</li><li><b>Access modifier</b> mengatur siapa yang boleh mengakses, dari paling tertutup ke paling terbuka: <code>private</code> (hanya class itu) → <i>default</i>/tanpa tulisan (satu package) → <code>protected</code> (package + class turunan) → <code>public</code> (semua).</li></ul>
+<div class="catatan">Konsep yang sama ada di Python (<code>class Sales(Karyawan)</code>) dan di Odoo (<code>_inherit</code>). Belajar OOP di Java membantu memahami keduanya.</div>
+`},
 
 {k:"koleksi",judul:"Koleksi (ArrayList, HashMap), Exception & Stream",materi:`
+<h4>Koleksi: wadah yang lebih fleksibel dari array</h4>
+<p>Array punya kelemahan: <b>ukurannya tetap</b>. Begitu dibuat berisi 3, tidak bisa ditambah jadi 4. Java menyediakan <b>koleksi</b> yang lebih luwes.</p>
+<h4>ArrayList: daftar yang bisa memanjang</h4>
 <pre><code>import java.util.*;
 
 ArrayList&lt;String&gt; sales = new ArrayList&lt;&gt;();
-sales.add("Andi"); sales.remove("Andi"); sales.size(); sales.get(0);
-
-HashMap&lt;String, Integer&gt; stok = new HashMap&lt;&gt;();
-stok.put("Laptop", 5);                       // kunci unik → put menimpa
-stok.getOrDefault("Mouse", 0);
-
-try {
+sales.add("Andi");       // tambah
+sales.add("Bima");
+sales.get(0);            // "Andi"  ambil berdasarkan indeks
+sales.size();            // 2       jumlah isi
+sales.remove("Andi");    // hapus</code></pre>
+<ul><li><code>ArrayList</code> <b>bisa bertambah dan berkurang</b> isinya kapan saja. Inilah kelebihan utamanya dibanding array biasa.</li><li><code>&lt;String&gt;</code> di dalam kurung sudut disebut <b>generics</b>: menyebut jenis isi daftarnya.</li><li>Generics hanya menerima <b>class</b>, bukan tipe dasar. Jadi tulis <code>ArrayList&lt;Integer&gt;</code>, bukan <code>ArrayList&lt;int&gt;</code>. <code>Integer</code> adalah "pembungkus" (<i>wrapper class</i>) untuk <code>int</code>; begitu juga <code>Double</code> untuk <code>double</code>.</li></ul>
+<h4>HashMap: pasangan kunci dan nilai</h4>
+<pre><code>HashMap&lt;String, Integer&gt; stok = new HashMap&lt;&gt;();
+stok.put("Laptop", 5);
+stok.put("Laptop", 7);          // kunci sama → nilai lama DITIMPA
+stok.get("Laptop");             // 7
+stok.getOrDefault("Mouse", 0);  // 0, karena Mouse belum ada</code></pre>
+<p><b>HashMap</b> seperti buku telepon: cari berdasarkan <b>kunci</b> (nama), dapat <b>nilainya</b> (nomor). Kunci harus unik; <code>put</code> dengan kunci yang sudah ada akan <b>mengganti</b> nilainya. <code>getOrDefault</code> memberi nilai cadangan kalau kuncinya tidak ada. Pola ini sering dipakai untuk <b>menghitung kemunculan</b>, misalnya berapa kali setiap kota muncul.</p>
+<h4>Exception: menangani error</h4>
+<pre><code>try {
     int x = Integer.parseInt("12a");
+    System.out.println(x);
 } catch (NumberFormatException e) {
     System.out.println("Bukan angka");
 }
-
-int hasil = List.of(14, 2, 6, 7).stream()
-    .filter(t -&gt; t &gt;= 6).mapToInt(Integer::intValue).sum();   // 27</code></pre>
-<p>Generics memakai class pembungkus: <code>ArrayList&lt;Integer&gt;</code>, bukan <code>&lt;int&gt;</code>.</p>
-<div class="catatan">🧭 Java populer untuk backend (Spring Boot), perbankan, dan Android. Pelajari secukupnya agar bisa membaca kode dan lolos tes dasar; fokus utamamu tetap SQL, Python, dan JavaScript.</div>`}
+// Bukan angka</code></pre>
+<ul><li><code>Integer.parseInt("12")</code> mengubah teks menjadi angka. Kalau teksnya bukan angka, terjadi <b>exception</b> (error saat program berjalan) bernama <code>NumberFormatException</code>.</li><li><code>try</code> = <b>coba</b> jalankan. <code>catch</code> = kalau terjadi error jenis itu, <b>tangkap</b> dan jalankan kode penggantinya. Program tidak berhenti mendadak.</li></ul>
+<h4>Stream: mengolah daftar seperti rantai</h4>
+<pre><code>int hasil = List.of(14, 2, 6, 7).stream()
+    .filter(t -&gt; t &gt;= 6)
+    .mapToInt(Integer::intValue)
+    .sum();
+// 14 + 6 + 7 = 27</code></pre>
+<p>Bacanya seperti jalur produksi:</p>
+<ol><li><code>List.of(…)</code> = buat daftar.</li><li><code>.stream()</code> = alirkan isinya satu per satu.</li><li><code>.filter(t -&gt; t &gt;= 6)</code> = <b>saring</b>, hanya yang ≥ 6 (14, 6, 7). <code>t -&gt; …</code> adalah fungsi singkat (<i>lambda</i>).</li><li><code>.mapToInt(…).sum()</code> = ubah ke angka lalu <b>jumlahkan</b>: 27.</li></ol>
+<p>Ini mirip <code>filter</code> dan <code>reduce</code> di JavaScript atau Python.</p>
+<div class="catatan">Java populer untuk backend (Spring Boot), perbankan, dan Android. Pelajari secukupnya agar bisa membaca kode dan lolos tes dasar; fokus utamamu tetap SQL, Python, dan JavaScript.</div>
+`}
 ];

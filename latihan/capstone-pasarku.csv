@@ -1,0 +1,1265 @@
+id_transaksi,tanggal,jam,pengguna_id,kota,sumber,kategori,kanal,nilai,ongkir,status,voucher
+500006,2026-01-01,07:23,351,Balikpapan,afiliasi,Rumah Tangga,app,369000,0,selesai,0
+500010,2026-01-01,08:33,393,Bandung,referral,Elektronik,web,4696000,0,selesai,1
+500003,2026-01-01,09:13,352,Semarang,afiliasi,Kecantikan,app,174000,22000,selesai,0
+500004,2026-01-01,13:11,450,Manado,iklan,Fashion,app,78000,12000,selesai,0
+500007,2026-01-01,15:50,302,DKI Jakarta,iklan,Rumah Tangga,app,643000,0,selesai,0
+500009,2026-01-01,17:01,19,Jakarta,iklan,Rumah Tangga,web,641000,0,batal,0
+500005,2026-01-01,18:26,94,Surabaya,organik,Rumah Tangga,web,211000,18000,batal,0
+500001,2026-01-01,20:24,33,Jakarta,iklan,Fashion,app,143000,22000,selesai,1
+500008,2026-01-01,20:57,251,Bandung,organik,Rumah Tangga,app,451000,0,selesai,0
+500002,2026-01-01,21:12,72,Yogyakarta,referral,Makanan,web,204000,15000,batal,1
+500020,2026-01-02,08:40,142,Surabaya,referral,Makanan,app,188000,18000,selesai,0
+500017,2026-01-02,09:23,112,Medan,organik,Elektronik,app,3901000,22000,selesai,1
+500014,2026-01-02,10:30,219,Palembang,afiliasi,Fashion,web,464000,12000,selesai,0
+500012,2026-01-02,10:33,291,Jakarta,organik,Fashion,app,134000,22000,selesai,0
+500016,2026-01-02,11:42,366,Jakarta,organik,Fashion,app,75000,9000,retur,1
+500011,2026-01-02,12:14,193,Jakarta,organik,Makanan,app,163000,18000,selesai,0
+500021,2026-01-02,13:50,57,Manado,afiliasi,Makanan,web,30000,22000,selesai,0
+500018,2026-01-02,17:40,433,Bandung,organik,Rumah Tangga,web,69000,22000,selesai,1
+500015,2026-01-02,20:08,321,Denpasar,iklan,Kecantikan,app,157000,15000,selesai,0
+500019,2026-01-02,21:17,315,Medan,organik,Fashion,web,211000,0,batal,1
+500013,2026-01-02,21:41,253,Jakarta,organik,Elektronik,app,1852000,0,selesai,0
+500027,2026-01-03,07:15,156,Jakarta,iklan,Elektronik,web,1244000,0,batal,1
+500037,2026-01-03,10:23,39,Jakarta,referral,Elektronik,app,4869000,22000,selesai,0
+500026,2026-01-03,13:37,298,Semarang,referral,Kecantikan,app,144000,9000,selesai,0
+500029,2026-01-03,16:08,267,Jakarta,referral,Kecantikan,app,111000,18000,batal,0
+500028,2026-01-03,16:27,189,Surabaya,iklan,Fashion,web,234000,15000,selesai,0
+500033,2026-01-03,17:02,287,Makassar,organik,Hobi & Olahraga,app,903000,12000,selesai,0
+500030,2026-01-03,17:35,372,Semarang,organik,Makanan,app,56000,22000,selesai,1
+500032,2026-01-03,17:37,141,Yogyakarta,referral,Hobi & Olahraga,app,555000,0,selesai,0
+500034,2026-01-03,18:17,27,Semarang,iklan,Makanan,app,81000,22000,retur,0
+500035,2026-01-03,18:49,415,Yogyakarta,organik,Makanan,app,53000,12000,selesai,1
+500024,2026-01-03,19:09,42,Manado,organik,Kecantikan,app,160000,12000,selesai,0
+500036,2026-01-03,19:19,190,Jakarta,iklan,Makanan,web,50000,22000,selesai,1
+500031,2026-01-03,19:24,89,Jakarta,iklan,Elektronik,app,2986000,0,selesai,0
+500022,2026-01-03,19:44,397,Manado,organik,Hobi & Olahraga,app,157000,18000,selesai,0
+500023,2026-01-03,21:40,186,jakarta ,afiliasi,Fashion,app,82000,22000,selesai,1
+500025,2026-01-03,21:40,420,Surabaya,organik,Fashion,app,131000,18000,selesai,1
+501244,2026-01-04,03:18,9999,Jakarta,internal,Elektronik,web,0,0,selesai,0
+500045,2026-01-04,07:57,259,Medan,iklan,Fashion,app,108000,18000,batal,0
+500040,2026-01-04,07:58,142,Surabaya,referral,Kecantikan,app,121000,12000,selesai,0
+500044,2026-01-04,11:26,329,Jakarta,afiliasi,Fashion,app,365000,9000,selesai,0
+500041,2026-01-04,11:57,161,Medan,iklan,Fashion,web,186000,15000,selesai,1
+500043,2026-01-04,15:07,330,Yogyakarta,iklan,Rumah Tangga,web,195000,12000,selesai,1
+500042,2026-01-04,18:02,205,Medan,organik,Makanan,app,34000,15000,selesai,1
+500038,2026-01-04,18:19,281,Makassar,referral,Kecantikan,app,165000,12000,selesai,0
+500039,2026-01-04,20:47,181,Jakarta,referral,Kecantikan,app,89000,18000,selesai,1
+500046,2026-01-04,22:39,350,Surabaya,iklan,Elektronik,web,1706000,0,selesai,0
+501249,2026-01-05,03:13,9999,Jakarta,internal,Elektronik,web,0,0,selesai,0
+500050,2026-01-05,06:21,355,Palembang,iklan,Makanan,app,53000,12000,selesai,1
+500051,2026-01-05,12:45,118,Jakarta,iklan,Kecantikan,web,235000,18000,selesai,0
+500048,2026-01-05,17:05,307,Medan,iklan,Fashion,app,181000,22000,selesai,0
+500053,2026-01-05,19:05,392,Jakarta,referral,Kecantikan,web,158000,22000,batal,1
+500052,2026-01-05,20:02,46,Surabaya,iklan,Makanan,app,22000,15000,selesai,1
+500049,2026-01-05,22:07,1,Bandung,iklan,Fashion,web,221000,0,selesai,0
+500047,2026-01-05,22:15,192,Jakarta,organik,Rumah Tangga,web,199000,12000,selesai,0
+500056,2026-01-06,03:36,202,Jakarta,organik,Makanan,web,117000,22000,selesai,0
+500060,2026-01-06,05:55,358,Jakarta,organik,Hobi & Olahraga,app,394000,0,batal,1
+500059,2026-01-06,06:37,120,Yogyakarta,iklan,Hobi & Olahraga,web,928000,0,selesai,0
+500057,2026-01-06,13:00,384,Jakarta,organik,Rumah Tangga,app,57000,18000,selesai,1
+500062,2026-01-06,13:30,25,Surabaya,iklan,Fashion,app,179000,15000,selesai,1
+500058,2026-01-06,13:31,307,Medan,iklan,Makanan,web,46000,15000,selesai,1
+500054,2026-01-06,15:12,165,Medan,organik,Hobi & Olahraga,app,519000,0,selesai,1
+500055,2026-01-06,18:16,36,Surabaya,organik,Makanan,app,162000,22000,selesai,0
+500063,2026-01-06,19:21,354,Surabaya,iklan,Fashion,web,133000,22000,selesai,0
+500061,2026-01-06,21:29,406,Palembang,organik,Fashion,web,193000,22000,selesai,0
+500077,2026-01-07,06:15,249,Jakarta,iklan,Hobi & Olahraga,app,635000,0,selesai,0
+500067,2026-01-07,08:04,274,Jakarta,referral,Kecantikan,web,122000,15000,selesai,1
+500074,2026-01-07,09:39,393,Bandung,referral,Fashion,app,325000,0,selesai,0
+500065,2026-01-07,13:18,28,Manado,referral,Hobi & Olahraga,app,507000,12000,selesai,0
+500071,2026-01-07,18:04,262,Yogyakarta,iklan,Fashion,web,160000,15000,selesai,0
+500078,2026-01-07,18:16,314,Palembang,referral,Kecantikan,web,179000,22000,batal,1
+500072,2026-01-07,18:39,119,Medan,iklan,Makanan,app,49000,9000,selesai,0
+500069,2026-01-07,18:48,129,Semarang,referral,Fashion,web,202000,15000,selesai,0
+500073,2026-01-07,20:50,392,Jakarta,referral,Makanan,app,69000,18000,selesai,1
+500076,2026-01-07,21:21,395,Semarang,organik,Makanan,app,85000,18000,selesai,0
+500068,2026-01-07,21:45,105,Denpasar,referral,Fashion,web,244000,18000,selesai,0
+500066,2026-01-07,22:04,118,Jakarta,iklan,Hobi & Olahraga,app,1052000,15000,selesai,0
+500064,2026-01-07,22:48,404,,organik,Rumah Tangga,app,107000,9000,selesai,0
+500070,2026-01-07,22:55,14,Jakarta,referral,Kecantikan,web,71000,22000,selesai,0
+500075,2026-01-07,22:55,431,Jakarta,organik,Fashion,app,163000,22000,selesai,1
+500084,2026-01-08,08:47,240,Jakarta,organik,Hobi & Olahraga,app,282000,22000,selesai,1
+500081,2026-01-08,08:51,309,Manado,referral,Makanan,app,50000,22000,retur,0
+500079,2026-01-08,09:34,266,Jakarta,iklan,Hobi & Olahraga,web,950000,0,selesai,1
+500087,2026-01-08,11:52,164,Jakarta,referral,Kecantikan,web,60000,9000,selesai,0
+500086,2026-01-08,15:29,143,Bandung,iklan,Hobi & Olahraga,app,487000,0,selesai,0
+500083,2026-01-08,16:02,412,Bandung,organik,Fashion,app,279000,0,selesai,0
+500080,2026-01-08,16:24,149,Bandung,iklan,Hobi & Olahraga,app,465000,0,selesai,0
+500085,2026-01-08,19:47,283,Jakarta,iklan,Kecantikan,app,272000,22000,selesai,1
+500082,2026-01-08,21:16,382,Jakarta,organik,Fashion,app,301000,15000,selesai,0
+500095,2026-01-09,09:48,24,Jakarta,referral,Fashion,app,388000,0,selesai,0
+500091,2026-01-09,09:58,61,Bandung,iklan,Makanan,app,69000,12000,selesai,0
+500088,2026-01-09,11:44,427,Surabaya,iklan,Makanan,web,148000,9000,batal,0
+500094,2026-01-09,12:08,155,Jakarta,organik,Kecantikan,web,123000,18000,selesai,0
+500092,2026-01-09,12:52,23,Medan,iklan,Kecantikan,app,304000,12000,selesai,0
+500090,2026-01-09,16:28,180,Balikpapan,organik,Makanan,app,180000,22000,selesai,1
+500089,2026-01-09,18:55,162,Jakarta,organik,Fashion,app,136000,22000,selesai,1
+500093,2026-01-09,20:08,164,Jakarta,referral,Rumah Tangga,app,145000,9000,selesai,0
+500096,2026-01-09,20:26,346,Jakarta,organik,Fashion,web,168000,22000,selesai,0
+500097,2026-01-09,22:43,234,Bandung,iklan,Elektronik,app,1606000,0,selesai,0
+500098,2026-01-10,03:41,259,Medan,iklan,Rumah Tangga,app,333000,0,selesai,0
+500106,2026-01-10,08:59,249,Jakarta,iklan,Elektronik,app,2416000,9000,selesai,0
+500106,2026-01-10,08:59,249,Jakarta,iklan,Elektronik,app,2416000,9000,selesai,0
+500101,2026-01-10,09:05,186,Jakarta,afiliasi,Hobi & Olahraga,web,192000,15000,selesai,1
+500104,2026-01-10,09:20,88,Surabaya,organik,Elektronik,app,4293000,18000,selesai,1
+500099,2026-01-10,09:44,167,Jkt,organik,Rumah Tangga,app,140000,12000,selesai,0
+500103,2026-01-10,10:45,134,Palembang,iklan,Hobi & Olahraga,app,378000,15000,selesai,0
+500105,2026-01-10,11:02,57,Manado,afiliasi,Hobi & Olahraga,app,337000,0,selesai,1
+500100,2026-01-10,15:56,311,Medan,referral,Kecantikan,app,206000,0,selesai,1
+500102,2026-01-10,19:03,432,Jakarta,referral,Kecantikan,app,172000,9000,selesai,0
+500107,2026-01-10,22:13,151,Jakarta,organik,Rumah Tangga,web,417000,0,selesai,0
+500108,2026-01-10,23:20,183,Jakarta,organik,Fashion,web,209000,9000,selesai,1
+500113,2026-01-11,00:01,399,Bandung,iklan,Fashion,web,335000,0,selesai,0
+500111,2026-01-11,06:45,28,Manado,referral,Rumah Tangga,web,439000,9000,selesai,0
+500116,2026-01-11,09:49,165,Medan,organik,Makanan,web,29000,15000,selesai,0
+500109,2026-01-11,12:29,201,Jakarta,afiliasi,Makanan,app,93000,12000,selesai,1
+500112,2026-01-11,14:22,162,Jakarta,organik,Fashion,app,435000,0,selesai,0
+500117,2026-01-11,16:44,144,Jakarta,organik,Makanan,web,77000,9000,selesai,1
+500114,2026-01-11,17:26,92,Jakarta,afiliasi,Hobi & Olahraga,app,329000,0,selesai,1
+500118,2026-01-11,20:09,336,Medan,iklan,Kecantikan,web,90000,22000,selesai,1
+500110,2026-01-11,21:38,258,Makassar,referral,Makanan,app,133000,9000,selesai,1
+500115,2026-01-11,21:48,219,Palembang,afiliasi,Elektronik,app,2548000,0,selesai,1
+500122,2026-01-12,06:32,381,Jakarta,afiliasi,Fashion,app,391000,0,selesai,1
+500119,2026-01-12,12:27,141,Yogyakarta,referral,Kecantikan,web,81000,22000,batal,0
+500126,2026-01-12,13:46,191,Denpasar,iklan,Hobi & Olahraga,app,252000,12000,selesai,0
+500120,2026-01-12,14:56,150,Makassar,organik,Kecantikan,app,245000,0,selesai,0
+500121,2026-01-12,17:14,31,Surabaya,organik,Rumah Tangga,app,30000,12000,selesai,0
+500125,2026-01-12,19:02,342,Jakarta,organik,Elektronik,app,493000,12000,selesai,0
+500127,2026-01-12,19:15,447,Jakarta,afiliasi,Rumah Tangga,web,271000,0,selesai,1
+500128,2026-01-12,21:10,199,Bandung,organik,Rumah Tangga,app,364000,0,selesai,0
+500123,2026-01-12,22:13,61,Bandung,iklan,Rumah Tangga,app,360000,12000,selesai,0
+500124,2026-01-12,22:24,135,Semarang,referral,Fashion,app,356000,0,selesai,1
+500134,2026-01-13,06:53,308,Jakarta,afiliasi,Rumah Tangga,app,280000,0,selesai,0
+500138,2026-01-13,10:14,66,Yogyakarta,organik,Elektronik,web,2118000,0,selesai,1
+500135,2026-01-13,11:16,299,Surabaya,organik,Makanan,app,58000,12000,selesai,0
+500129,2026-01-13,17:45,450,Manado,iklan,Rumah Tangga,app,176000,18000,selesai,0
+500136,2026-01-13,18:59,388,Jakarta,iklan,Kecantikan,app,115000,9000,selesai,0
+500133,2026-01-13,19:09,145,Semarang,referral,Rumah Tangga,app,187000,15000,retur,1
+500130,2026-01-13,19:34,168,Semarang,organik,Rumah Tangga,web,482000,0,selesai,1
+500131,2026-01-13,22:05,384,Jakarta,organik,Fashion,app,235000,15000,selesai,0
+500137,2026-01-13,22:52,40,Surabaya,iklan,Rumah Tangga,web,330000,0,selesai,0
+500132,2026-01-13,23:41,156,Jakarta,iklan,Kecantikan,app,72000,9000,selesai,1
+500143,2026-01-14,09:39,182,Jakarta,iklan,Fashion,app,518000,12000,selesai,1
+500140,2026-01-14,11:13,355,Palembang,iklan,Rumah Tangga,app,265000,22000,retur,0
+500140,2026-01-14,11:13,355,Palembang,iklan,Rumah Tangga,app,265000,22000,retur,0
+500142,2026-01-14,12:05,80,Surabaya,organik,Makanan,app,70000,22000,selesai,0
+500139,2026-01-14,16:16,342,,organik,Rumah Tangga,app,93000,22000,selesai,0
+500141,2026-01-14,20:20,419,Denpasar,organik,Elektronik,app,2688000,0,selesai,0
+500149,2026-01-15,02:37,92,Jakarta,afiliasi,Kecantikan,web,129000,18000,selesai,0
+500150,2026-01-15,04:36,72,Yogyakarta,referral,Fashion,app,215000,0,selesai,0
+500146,2026-01-15,08:27,88,Surabaya,organik,Makanan,app,89000,12000,selesai,1
+500151,2026-01-15,09:31,76,Jakarta,iklan,Fashion,web,162000,9000,retur,1
+500144,2026-01-15,11:54,310,Jakarta,organik,Fashion,app,197000,15000,selesai,0
+500145,2026-01-15,12:38,148,Bandung,iklan,Rumah Tangga,app,268000,15000,selesai,0
+500153,2026-01-15,13:48,146,Medan,iklan,Rumah Tangga,app,62000,18000,selesai,1
+500155,2026-01-15,17:30,402,Bandung,organik,Elektronik,app,869000,0,selesai,0
+500147,2026-01-15,18:04,129,Semarang,referral,Kecantikan,web,180000,22000,selesai,1
+500152,2026-01-15,19:27,110,Balikpapan,referral,Fashion,app,192000,9000,selesai,0
+500156,2026-01-15,19:27,370,Medan,organik,Hobi & Olahraga,app,154000,18000,selesai,0
+500154,2026-01-15,19:39,195,Medan,iklan,Fashion,app,311000,0,selesai,0
+500148,2026-01-15,20:28,285,Jakarta,organik,Fashion,app,371000,15000,selesai,0
+500159,2026-01-16,00:24,374,surabaya,referral,Fashion,app,81000,12000,selesai,1
+500158,2026-01-16,05:10,237,Jakarta,afiliasi,Rumah Tangga,web,130000,15000,selesai,0
+500163,2026-01-16,05:55,347,Semarang,organik,Kecantikan,app,67000,9000,selesai,1
+500160,2026-01-16,07:35,150,Makassar,organik,Makanan,app,156000,9000,selesai,0
+500162,2026-01-16,08:16,98,Balikpapan,organik,Hobi & Olahraga,web,487000,0,retur,0
+500157,2026-01-16,19:12,142,Surabaya,referral,Rumah Tangga,web,439000,18000,selesai,1
+500165,2026-01-16,19:59,70,Semarang,afiliasi,Hobi & Olahraga,web,304000,9000,selesai,0
+500164,2026-01-16,21:47,7,Semarang,organik,Fashion,web,345000,9000,selesai,0
+500161,2026-01-16,23:29,268,Jakarta,organik,Makanan,web,54000,9000,selesai,0
+501242,2026-01-17,03:10,9999,Jakarta,internal,Elektronik,web,0,0,selesai,0
+500176,2026-01-17,07:39,183,Jakarta,organik,Kecantikan,web,259000,0,selesai,0
+500171,2026-01-17,08:34,430,Bandung,iklan,Rumah Tangga,web,268000,0,selesai,0
+500173,2026-01-17,11:39,85,Jakarta,iklan,Fashion,app,152000,18000,selesai,0
+500167,2026-01-17,11:57,167,Jkt,organik,Hobi & Olahraga,web,453000,0,selesai,1
+500177,2026-01-17,12:08,27,Semarang,iklan,Elektronik,web,485000,0,batal,0
+500168,2026-01-17,12:09,82,Jakarta,organik,Makanan,web,143000,15000,selesai,0
+500170,2026-01-17,13:11,135,Semarang,referral,Rumah Tangga,web,188000,12000,selesai,1
+500174,2026-01-17,14:42,34,Jakarta,afiliasi,Makanan,web,55000,22000,selesai,1
+500172,2026-01-17,14:57,166,Makassar,referral,Fashion,app,569000,0,selesai,1
+500175,2026-01-17,16:59,425,Surabaya,organik,Rumah Tangga,app,184000,22000,selesai,0
+500169,2026-01-17,17:42,386,Medan,organik,Fashion,app,287000,12000,batal,1
+500166,2026-01-17,21:30,329,Jakarta,afiliasi,Fashion,app,549000,0,batal,0
+500188,2026-01-18,02:58,409,Medan,organik,Fashion,app,239000,0,selesai,1
+500191,2026-01-18,09:02,245,Bandung,organik,Makanan,app,107000,18000,selesai,1
+500186,2026-01-18,10:17,418,jakarta ,organik,Fashion,app,84000,18000,selesai,0
+500178,2026-01-18,12:24,416,Surabaya,iklan,Makanan,app,104000,15000,selesai,1
+500180,2026-01-18,12:31,408,Surabaya,afiliasi,Hobi & Olahraga,app,240000,0,selesai,1
+500185,2026-01-18,14:22,268,Jakarta,organik,Fashion,app,538000,9000,selesai,0
+500181,2026-01-18,17:21,41,Surabaya,referral,Makanan,web,49000,18000,selesai,0
+500179,2026-01-18,17:43,52,Jakarta,iklan,Fashion,app,313000,22000,selesai,1
+500189,2026-01-18,19:10,51,Palembang,organik,Hobi & Olahraga,app,135000,12000,selesai,0
+500187,2026-01-18,19:18,443,Medan,organik,Fashion,web,291000,0,selesai,0
+500190,2026-01-18,20:12,241,Semarang,organik,Rumah Tangga,app,267000,9000,retur,0
+500183,2026-01-18,20:29,16,Bandung,organik,Rumah Tangga,app,136000,15000,selesai,1
+500182,2026-01-18,22:43,422,Medan,afiliasi,Fashion,web,123000,18000,selesai,1
+500184,2026-01-18,23:42,381,Jakarta,afiliasi,Rumah Tangga,app,324000,22000,selesai,0
+500195,2026-01-19,06:44,173,Surabaya,organik,Kecantikan,app,365000,0,retur,0
+500193,2026-01-19,07:46,223,jakarta ,iklan,Kecantikan,app,173000,9000,retur,0
+500192,2026-01-19,14:19,407,Manado,iklan,Makanan,app,76000,15000,selesai,0
+500194,2026-01-19,14:31,405,Semarang,iklan,Fashion,web,104000,22000,selesai,1
+500196,2026-01-19,17:38,122,Semarang,iklan,Kecantikan,app,247000,0,selesai,1
+500197,2026-01-19,19:15,395,Semarang,organik,Fashion,app,108000,18000,retur,1
+500198,2026-01-19,19:32,416,Surabaya,iklan,Rumah Tangga,app,230000,0,batal,1
+500199,2026-01-19,21:05,258,Makassar,referral,Rumah Tangga,app,384000,0,selesai,1
+500208,2026-01-20,08:35,72,Yogyakarta,referral,Makanan,app,108000,9000,selesai,1
+500209,2026-01-20,10:34,249,Jakarta,iklan,Fashion,web,123000,12000,selesai,0
+500206,2026-01-20,12:35,383,Palembang,organik,Hobi & Olahraga,app,424000,12000,batal,1
+500203,2026-01-20,14:15,400,Jakarta,afiliasi,Elektronik,app,2457000,0,selesai,1
+500200,2026-01-20,17:33,302,Jakarta,iklan,Rumah Tangga,app,392000,22000,selesai,0
+500210,2026-01-20,17:59,180,Balikpapan,organik,Rumah Tangga,web,218000,0,selesai,0
+500204,2026-01-20,18:57,101,Surabaya,organik,Hobi & Olahraga,app,248000,18000,batal,1
+500207,2026-01-20,18:57,51,Palembang,organik,Makanan,app,44000,22000,selesai,1
+500207,2026-01-20,18:57,51,Palembang,organik,Makanan,app,44000,22000,selesai,1
+500201,2026-01-20,19:09,109,Balikpapan,referral,Rumah Tangga,app,144000,9000,selesai,1
+500202,2026-01-20,19:19,324,Surabaya,referral,Kecantikan,app,109000,12000,selesai,0
+500205,2026-01-20,22:14,135,Semarang,referral,Hobi & Olahraga,web,552000,0,selesai,1
+500214,2026-01-21,03:42,313,Semarang,organik,Elektronik,app,3796000,0,selesai,1
+500215,2026-01-21,12:36,417,Jakarta,iklan,Makanan,web,185000,12000,selesai,0
+500212,2026-01-21,14:50,384,Jakarta,organik,Elektronik,web,558000,0,retur,1
+500216,2026-01-21,14:54,167,Jakarta,organik,Elektronik,app,863000,15000,selesai,0
+500213,2026-01-21,20:36,168,Semarang,organik,Rumah Tangga,app,549000,0,selesai,0
+500211,2026-01-21,21:23,429,Semarang,iklan,Rumah Tangga,app,478000,0,selesai,0
+500225,2026-01-22,05:23,305,Balikpapan,organik,Rumah Tangga,app,164000,18000,selesai,1
+500219,2026-01-22,07:14,65,Jakarta,organik,Kecantikan,app,101000,18000,selesai,0
+500217,2026-01-22,07:24,296,Semarang,iklan,Kecantikan,app,95000,12000,selesai,0
+500222,2026-01-22,09:01,115,Balikpapan,afiliasi,Rumah Tangga,web,193000,12000,selesai,1
+500220,2026-01-22,15:22,82,Jakarta,organik,Makanan,app,104000,15000,selesai,1
+500218,2026-01-22,16:48,135,Semarang,referral,Fashion,app,235000,18000,selesai,0
+500227,2026-01-22,17:32,402,Bandung,organik,Makanan,app,39000,18000,selesai,0
+500223,2026-01-22,19:36,285,Jakarta,organik,Hobi & Olahraga,app,382000,18000,batal,0
+500221,2026-01-22,21:09,121,Jakarta,organik,Kecantikan,app,156000,22000,retur,0
+500226,2026-01-22,21:18,293,Denpasar,organik,Fashion,web,322000,0,selesai,1
+500224,2026-01-22,22:22,29,Bandung,iklan,Fashion,web,194000,18000,selesai,1
+501243,2026-01-23,03:18,9999,Jakarta,internal,Elektronik,web,0,0,selesai,0
+500234,2026-01-23,09:59,329,Jakarta,afiliasi,Elektronik,web,1424000,22000,selesai,0
+500235,2026-01-23,12:38,352,Semarang,afiliasi,Kecantikan,app,205000,0,selesai,0
+500230,2026-01-23,12:40,130,Jakarta,organik,Hobi & Olahraga,app,183000,15000,selesai,1
+500232,2026-01-23,15:15,161,Medan,iklan,Makanan,app,77000,15000,selesai,0
+500228,2026-01-23,20:14,314,Palembang,referral,Makanan,web,100000,22000,batal,0
+500233,2026-01-23,21:36,330,Yogyakarta,iklan,Kecantikan,app,139000,15000,selesai,0
+500231,2026-01-23,23:21,353,Surabaya,afiliasi,Makanan,app,33000,22000,selesai,0
+500229,2026-01-23,23:22,143,Bandung,iklan,Kecantikan,web,177000,9000,selesai,1
+500247,2026-01-24,04:31,307,Medan,iklan,Rumah Tangga,app,329000,0,selesai,0
+500237,2026-01-24,05:37,307,Medan,iklan,Fashion,web,92000,9000,selesai,1
+500238,2026-01-24,08:40,154,Jakarta,iklan,Fashion,app,157000,15000,selesai,1
+500241,2026-01-24,09:24,213,Yogyakarta,organik,Rumah Tangga,app,271000,15000,selesai,0
+500244,2026-01-24,09:31,229,Makassar,iklan,Kecantikan,app,98000,9000,selesai,0
+500236,2026-01-24,09:46,146,Medan,iklan,Fashion,app,159000,22000,selesai,1
+500245,2026-01-24,11:34,344,BANDUNG,organik,Rumah Tangga,app,123000,9000,selesai,0
+500248,2026-01-24,12:00,321,Denpasar,iklan,Rumah Tangga,app,258000,0,selesai,0
+500243,2026-01-24,12:25,242,Jakarta,iklan,Rumah Tangga,app,288000,0,selesai,0
+500246,2026-01-24,12:51,283,Jakarta,iklan,Hobi & Olahraga,web,316000,0,selesai,1
+500242,2026-01-24,14:56,191,Denpasar,iklan,Elektronik,app,2528000,0,batal,0
+500240,2026-01-24,19:22,149,Bandung,iklan,Fashion,app,201000,22000,selesai,0
+500239,2026-01-24,20:29,224,Surabaya,organik,Fashion,web,220000,9000,batal,0
+500249,2026-01-25,03:39,309,Manado,referral,Elektronik,app,1357000,0,selesai,0
+500262,2026-01-25,05:45,326,Bandung,iklan,Fashion,app,207000,0,selesai,1
+500252,2026-01-25,08:39,307,Medan,iklan,Hobi & Olahraga,app,119000,12000,selesai,1
+500253,2026-01-25,09:09,112,Medan,organik,Hobi & Olahraga,app,356000,22000,selesai,0
+500251,2026-01-25,09:13,322,Bandung,iklan,Kecantikan,app,375000,0,selesai,1
+500259,2026-01-25,10:55,49,Semarang,afiliasi,Rumah Tangga,app,364000,15000,selesai,1
+500261,2026-01-25,11:37,182,Jakarta,iklan,Kecantikan,web,133000,22000,selesai,1
+500250,2026-01-25,11:56,173,Sby,organik,Elektronik,app,1776000,0,selesai,0
+500255,2026-01-25,13:24,361,Bandung,iklan,Fashion,app,321000,9000,selesai,1
+500260,2026-01-25,15:22,288,Jakarta,iklan,Hobi & Olahraga,app,677000,18000,batal,1
+500257,2026-01-25,20:05,392,Jakarta,referral,Elektronik,web,2282000,18000,batal,1
+500256,2026-01-25,20:15,279,Jakarta,iklan,Rumah Tangga,app,506000,12000,selesai,1
+500254,2026-01-25,22:26,258,Makassar,referral,Fashion,web,203000,9000,selesai,0
+500258,2026-01-25,23:52,187,Jakarta,iklan,Kecantikan,app,129000,12000,selesai,0
+501245,2026-01-26,03:17,9999,Jakarta,internal,Elektronik,web,0,0,selesai,0
+500264,2026-01-26,07:47,416,Surabaya,iklan,Kecantikan,app,116000,22000,selesai,0
+500265,2026-01-26,08:17,273,Denpasar,organik,Rumah Tangga,app,150000,12000,batal,0
+500266,2026-01-26,09:04,351,Balikpapan,afiliasi,Fashion,web,343000,0,selesai,1
+500263,2026-01-26,13:10,208,Makassar,organik,Elektronik,app,1743000,12000,selesai,1
+500272,2026-01-26,14:39,426,Bandung,iklan,Fashion,app,221000,9000,batal,1
+500270,2026-01-26,18:03,33,Jakarta,iklan,Makanan,app,70000,9000,selesai,0
+500267,2026-01-26,20:11,280,Yogyakarta,referral,Fashion,app,173000,12000,selesai,1
+500273,2026-01-26,22:21,107,Balikpapan,iklan,Rumah Tangga,app,98000,12000,batal,0
+500268,2026-01-26,22:44,65,Jakarta,organik,Rumah Tangga,web,120000,15000,batal,0
+500271,2026-01-26,22:50,105,Denpasar,referral,Makanan,web,45000,18000,selesai,1
+500269,2026-01-26,23:53,5,Jakarta,organik,Fashion,web,191000,9000,selesai,1
+500279,2026-01-27,02:49,420,Surabaya,organik,Makanan,app,76000,9000,selesai,1
+500276,2026-01-27,07:29,88,Surabaya,organik,Fashion,app,258000,15000,selesai,1
+500275,2026-01-27,07:49,81,Jakarta,referral,Makanan,web,141000,18000,selesai,0
+500288,2026-01-27,08:30,305,Balikpapan,organik,Kecantikan,app,217000,0,selesai,0
+500286,2026-01-27,09:14,235,Denpasar,afiliasi,Rumah Tangga,app,140000,15000,retur,0
+500278,2026-01-27,11:51,313,Semarang,organik,Rumah Tangga,app,236000,15000,retur,1
+500283,2026-01-27,12:47,387,Manado,organik,Hobi & Olahraga,app,386000,0,selesai,0
+500282,2026-01-27,13:27,200,Jakarta,referral,Rumah Tangga,app,432000,0,batal,1
+500284,2026-01-27,15:55,241,Semarang,organik,Rumah Tangga,app,380000,0,selesai,1
+500287,2026-01-27,18:09,138,Jakarta,iklan,Rumah Tangga,app,568000,9000,selesai,1
+500285,2026-01-27,18:27,110,Balikpapan,referral,Hobi & Olahraga,web,287000,12000,selesai,1
+500274,2026-01-27,19:03,134,Palembang,iklan,Fashion,web,86000,15000,retur,0
+500277,2026-01-27,19:25,56,Jakarta,organik,Makanan,web,91000,12000,selesai,0
+500281,2026-01-27,19:26,84,Bandung,referral,Makanan,app,57000,22000,selesai,0
+500280,2026-01-27,20:39,333,Bandung,organik,Rumah Tangga,web,113000,22000,selesai,0
+500290,2026-01-28,05:32,287,Makassar,organik,Kecantikan,app,250000,0,selesai,0
+500303,2026-01-28,07:17,159,Bandung,afiliasi,Makanan,web,69000,22000,selesai,0
+500289,2026-01-28,11:44,433,Bandung,organik,Kecantikan,app,102000,12000,retur,0
+500292,2026-01-28,12:00,424,Jakarta,organik,Kecantikan,app,179000,9000,selesai,0
+500298,2026-01-28,14:35,258,Makassar,referral,Kecantikan,app,213000,0,selesai,1
+500294,2026-01-28,14:42,271,Makassar,organik,Rumah Tangga,app,866000,0,selesai,0
+500296,2026-01-28,15:02,293,Denpasar,organik,Hobi & Olahraga,app,1085000,18000,selesai,0
+500301,2026-01-28,18:07,398,Medan,iklan,Fashion,web,223000,15000,selesai,0
+500297,2026-01-28,19:11,229,Makassar,iklan,Rumah Tangga,web,142000,12000,selesai,0
+500302,2026-01-28,19:44,392,Jakarta,referral,Makanan,app,63000,18000,selesai,0
+500293,2026-01-28,19:45,250,Jakarta,iklan,Elektronik,app,2229000,12000,selesai,0
+500299,2026-01-28,20:48,161,Medan,iklan,Fashion,web,266000,0,selesai,0
+500295,2026-01-28,21:08,426,Bandung,iklan,Hobi & Olahraga,app,749000,22000,selesai,1
+500306,2026-01-28,21:25,108,Jakarta,referral,Kecantikan,app,122000,12000,selesai,0
+500291,2026-01-28,21:50,328,Bandung,organik,Rumah Tangga,web,73000,9000,selesai,1
+500305,2026-01-28,22:39,305,Balikpapan,organik,Makanan,app,54000,15000,selesai,1
+500300,2026-01-28,23:10,423,Semarang,iklan,Elektronik,app,2084000,0,selesai,0
+500304,2026-01-28,23:18,432,Jakarta,referral,Makanan,app,95000,22000,retur,1
+500317,2026-01-29,01:41,398,Medan,iklan,Kecantikan,app,192000,15000,selesai,1
+500309,2026-01-29,06:53,309,Manado,referral,Rumah Tangga,app,229000,0,selesai,0
+500324,2026-01-29,07:20,394,Makassar,organik,Rumah Tangga,app,54000,9000,selesai,0
+500312,2026-01-29,07:51,428,Denpasar,iklan,Makanan,app,56000,18000,selesai,0
+500316,2026-01-29,08:15,14,Jakarta,referral,Makanan,app,60000,9000,selesai,1
+500322,2026-01-29,09:15,379,Semarang,iklan,Kecantikan,app,262000,18000,selesai,1
+500323,2026-01-29,11:19,424,Jakarta,organik,Fashion,app,206000,9000,selesai,1
+500313,2026-01-29,12:17,363,Palembang,iklan,Makanan,app,41000,18000,selesai,1
+500318,2026-01-29,12:50,99,Jakarta,organik,Makanan,app,50000,9000,selesai,1
+500314,2026-01-29,13:36,448,Jakarta,organik,Rumah Tangga,web,159000,12000,batal,0
+500307,2026-01-29,14:10,266,Jakarta,iklan,Hobi & Olahraga,app,909000,9000,selesai,0
+500321,2026-01-29,15:51,402,Bandung,organik,Fashion,web,133000,15000,selesai,0
+500315,2026-01-29,16:55,332,Jakarta,organik,Hobi & Olahraga,app,278000,9000,retur,0
+500319,2026-01-29,17:03,273,Denpasar,organik,Makanan,app,91000,18000,retur,0
+500308,2026-01-29,18:19,400,Jakarta,afiliasi,Fashion,app,406000,15000,retur,0
+500310,2026-01-29,18:57,420,Surabaya,organik,Fashion,app,254000,0,selesai,0
+500320,2026-01-29,22:24,430,Bandung,iklan,Elektronik,app,2015000,0,selesai,1
+500311,2026-01-29,23:57,233,Semarang,organik,Makanan,web,74000,15000,batal,0
+500337,2026-01-30,08:41,421,Manado,referral,Rumah Tangga,app,170000,9000,selesai,0
+500331,2026-01-30,09:18,154,Jakarta,iklan,Makanan,web,41000,22000,selesai,0
+500328,2026-01-30,09:26,101,Surabaya,organik,Kecantikan,web,159000,22000,selesai,0
+500326,2026-01-30,11:27,53,DKI Jakarta,afiliasi,Rumah Tangga,app,177000,12000,selesai,0
+500330,2026-01-30,13:49,87,Palembang,iklan,Kecantikan,app,79000,12000,selesai,0
+500335,2026-01-30,14:43,436,,iklan,Rumah Tangga,web,97000,9000,selesai,0
+500334,2026-01-30,15:52,65,Jakarta,organik,Hobi & Olahraga,app,269000,0,retur,0
+500332,2026-01-30,19:12,263,Surabaya,organik,Kecantikan,app,138000,22000,selesai,0
+500325,2026-01-30,20:20,441,Jakarta,organik,Kecantikan,web,149000,15000,selesai,0
+500329,2026-01-30,20:43,18,Surabaya,referral,Fashion,app,173000,22000,selesai,0
+500336,2026-01-30,20:50,332,Jakarta,organik,Rumah Tangga,app,407000,0,selesai,0
+500333,2026-01-30,21:33,303,Bandung,organik,Fashion,web,123000,12000,selesai,1
+500338,2026-01-30,21:35,355,Palembang,iklan,Hobi & Olahraga,app,254000,18000,selesai,1
+500327,2026-01-30,21:38,44,Yogyakarta,referral,Kecantikan,app,83000,22000,selesai,1
+500339,2026-01-31,07:29,244,Palembang,referral,Hobi & Olahraga,app,749000,0,selesai,1
+500348,2026-01-31,08:15,238,Jakarta,organik,Fashion,app,260000,18000,selesai,1
+500341,2026-01-31,09:02,94,Surabaya,organik,Hobi & Olahraga,web,322000,0,selesai,0
+500340,2026-01-31,09:11,299,Surabaya,organik,Elektronik,app,2495000,9000,selesai,0
+500345,2026-01-31,09:51,93,Makassar,organik,Elektronik,app,4056000,22000,selesai,0
+500350,2026-01-31,13:55,201,Jakarta,afiliasi,Makanan,app,68000,15000,selesai,0
+500346,2026-01-31,15:47,344,Bandung,organik,Makanan,app,126000,18000,selesai,1
+500349,2026-01-31,16:24,103,Jakarta,organik,Makanan,app,186000,18000,selesai,1
+500342,2026-01-31,17:07,201,Jakarta,afiliasi,Fashion,app,173000,15000,batal,0
+500347,2026-01-31,17:16,3,Jakarta,organik,Rumah Tangga,app,365000,0,selesai,1
+500344,2026-01-31,18:07,150,Makassar,organik,Fashion,app,210000,0,selesai,0
+500343,2026-01-31,20:10,179,Medan,iklan,Rumah Tangga,web,174000,22000,selesai,1
+500343,2026-01-31,20:10,179,Medan,iklan,Rumah Tangga,web,174000,22000,selesai,1
+500351,2026-01-31,20:21,46,Surabaya,iklan,Kecantikan,web,90000,22000,selesai,0
+500363,2026-02-01,06:32,178,Surabaya,referral,Kecantikan,app,235000,9000,selesai,1
+500370,2026-02-01,06:47,112,Medan,organik,Kecantikan,app,192000,22000,selesai,1
+500366,2026-02-01,08:28,88,Surabaya,organik,Hobi & Olahraga,app,693000,0,selesai,1
+500367,2026-02-01,11:03,442,Palembang,referral,Rumah Tangga,app,256000,18000,selesai,0
+500356,2026-02-01,15:21,433,Bandung,organik,Fashion,app,191000,15000,selesai,0
+500354,2026-02-01,15:51,7,Semarang,organik,Makanan,app,102000,22000,selesai,0
+500364,2026-02-01,17:14,18,Surabaya,referral,Elektronik,app,3279000,12000,selesai,1
+500353,2026-02-01,17:48,383,Palembang,organik,Rumah Tangga,web,432000,0,selesai,1
+500365,2026-02-01,17:55,207,Jakarta,iklan,Fashion,app,404000,0,selesai,1
+500368,2026-02-01,18:42,268,Jakarta,organik,Makanan,app,80000,18000,retur,0
+500369,2026-02-01,19:13,166,,referral,Kecantikan,app,135000,18000,selesai,1
+500360,2026-02-01,19:39,130,Jakarta,organik,Elektronik,app,1888000,22000,selesai,0
+500358,2026-02-01,19:43,402,Bdg,organik,Fashion,app,187000,12000,selesai,1
+500357,2026-02-01,19:45,145,Semarang,referral,Makanan,web,52000,18000,selesai,1
+500359,2026-02-01,19:50,217,Jakarta,organik,Fashion,web,198000,22000,selesai,0
+500352,2026-02-01,20:29,79,Yogyakarta,referral,Kecantikan,app,184000,22000,selesai,0
+500361,2026-02-01,22:16,82,Jakarta,organik,Kecantikan,app,212000,0,selesai,1
+500355,2026-02-01,22:22,8,Jakarta,organik,Makanan,app,62000,9000,selesai,0
+500362,2026-02-01,23:01,110,Balikpapan,referral,Rumah Tangga,web,50000,12000,selesai,0
+500371,2026-02-02,00:08,359,Surabaya,referral,Makanan,app,50000,22000,selesai,1
+500376,2026-02-02,07:43,50,Palembang,organik,Hobi & Olahraga,web,328000,0,selesai,0
+500378,2026-02-02,08:18,376,Bandung,organik,Elektronik,app,2904000,0,batal,1
+500384,2026-02-02,08:27,159,Bandung,afiliasi,Kecantikan,app,233000,0,selesai,0
+500383,2026-02-02,08:56,196,Bandung,afiliasi,Rumah Tangga,web,192000,15000,batal,1
+500379,2026-02-02,09:21,149,Bandung,iklan,Kecantikan,app,417000,0,batal,0
+500381,2026-02-02,12:13,129,Semarang,referral,Hobi & Olahraga,app,218000,18000,selesai,0
+500380,2026-02-02,13:04,216,Jakarta,organik,Rumah Tangga,app,292000,0,selesai,1
+500377,2026-02-02,13:28,409,Medan,organik,Makanan,app,105000,12000,selesai,0
+500373,2026-02-02,13:38,276,Medan,organik,Hobi & Olahraga,web,732000,9000,selesai,0
+500382,2026-02-02,15:54,55,Surabaya,referral,Rumah Tangga,app,158000,22000,retur,1
+500372,2026-02-02,17:47,405,Semarang,iklan,Hobi & Olahraga,web,320000,0,selesai,0
+500375,2026-02-02,17:59,311,Medan,referral,Kecantikan,app,107000,18000,selesai,1
+500374,2026-02-02,18:47,443,Medan,organik,Kecantikan,app,238000,0,selesai,0
+500385,2026-02-02,20:41,317,Palembang,organik,Makanan,web,104000,9000,batal,0
+500394,2026-02-03,09:03,173,Surabaya,organik,Hobi & Olahraga,app,741000,0,selesai,1
+500396,2026-02-03,12:58,184,Makassar,iklan,Hobi & Olahraga,web,287000,0,selesai,0
+500387,2026-02-03,13:08,96,Jakarta,iklan,Kecantikan,app,208000,0,selesai,1
+500398,2026-02-03,13:32,347,Semarang,organik,Makanan,app,30000,18000,retur,0
+500392,2026-02-03,14:52,210,Jakarta,iklan,Rumah Tangga,web,296000,22000,selesai,0
+500397,2026-02-03,15:54,197,Jakarta,iklan,Rumah Tangga,app,234000,18000,selesai,0
+500391,2026-02-03,17:28,161,Medan,iklan,Makanan,app,87000,22000,selesai,0
+500390,2026-02-03,18:30,56,Jakarta,organik,Hobi & Olahraga,app,765000,0,batal,0
+500395,2026-02-03,19:49,421,Manado,referral,Makanan,app,39000,18000,batal,0
+500386,2026-02-03,19:58,156,Jakarta,iklan,Rumah Tangga,app,249000,0,batal,0
+500393,2026-02-03,21:12,12,Semarang,iklan,Kecantikan,app,128000,18000,selesai,1
+500388,2026-02-03,21:13,138,Jakarta,iklan,Kecantikan,app,276000,22000,selesai,1
+500389,2026-02-03,22:12,392,Jakarta,referral,Fashion,web,472000,0,selesai,0
+500410,2026-02-04,05:40,321,Denpasar,iklan,Rumah Tangga,web,363000,0,selesai,0
+500405,2026-02-04,12:14,84,Bandung,referral,Makanan,app,88000,22000,batal,0
+500403,2026-02-04,12:18,31,Surabaya,organik,Elektronik,web,588000,22000,retur,1
+500402,2026-02-04,13:47,101,Surabaya,organik,Fashion,app,365000,0,selesai,1
+500411,2026-02-04,13:57,412,Bandung,organik,Rumah Tangga,app,207000,15000,selesai,1
+500399,2026-02-04,16:19,218,Surabaya,iklan,Fashion,web,196000,9000,retur,0
+500409,2026-02-04,18:06,317,Palembang,organik,Makanan,app,72000,9000,selesai,0
+500407,2026-02-04,18:08,259,Medan,iklan,Rumah Tangga,app,270000,0,selesai,0
+500406,2026-02-04,18:29,215,Balikpapan,referral,Makanan,app,111000,18000,selesai,0
+500401,2026-02-04,20:09,444,Jakarta,iklan,Fashion,web,245000,0,selesai,1
+500408,2026-02-04,21:22,423,Semarang,iklan,Makanan,app,131000,18000,selesai,0
+500400,2026-02-04,22:14,219,Palembang,afiliasi,Kecantikan,web,107000,12000,selesai,0
+500404,2026-02-04,22:56,238,Jakarta,organik,Kecantikan,web,115000,9000,batal,1
+500419,2026-02-05,09:15,229,Makassar,iklan,Fashion,app,276000,15000,selesai,0
+500418,2026-02-05,12:52,244,Palembang,referral,Elektronik,app,2218000,12000,selesai,0
+500412,2026-02-05,13:15,359,Surabaya,referral,Rumah Tangga,app,111000,15000,selesai,0
+500413,2026-02-05,13:49,88,,organik,Kecantikan,app,72000,12000,selesai,0
+500421,2026-02-05,17:09,37,Surabaya,referral,Elektronik,app,1475000,0,selesai,0
+500416,2026-02-05,18:47,98,Balikpapan,organik,Fashion,app,171000,15000,batal,1
+500415,2026-02-05,20:28,287,Makassar,organik,Kecantikan,app,97000,18000,selesai,1
+500420,2026-02-05,20:56,374,Surabaya,referral,Makanan,web,58000,12000,batal,0
+500414,2026-02-05,22:07,215,Balikpapan,referral,Rumah Tangga,app,326000,12000,selesai,0
+500417,2026-02-05,23:06,293,Denpasar,organik,Fashion,app,238000,0,selesai,1
+500432,2026-02-06,06:53,283,Jakarta,iklan,Fashion,web,432000,15000,batal,0
+500427,2026-02-06,09:25,191,Denpasar,iklan,Rumah Tangga,web,363000,0,selesai,0
+500423,2026-02-06,11:22,280,Yogyakarta,referral,Rumah Tangga,app,361000,0,selesai,0
+500430,2026-02-06,11:47,434,Medan,iklan,Elektronik,app,3954000,0,selesai,1
+500431,2026-02-06,12:56,376,Bandung,organik,Elektronik,app,2969000,15000,selesai,0
+500422,2026-02-06,12:57,189,Surabaya,iklan,Rumah Tangga,web,416000,0,selesai,1
+500426,2026-02-06,15:59,289,Denpasar,organik,Fashion,app,247000,0,selesai,0
+500433,2026-02-06,18:51,176,Jakarta,organik,Makanan,web,93000,9000,batal,0
+500428,2026-02-06,22:20,240,Jakarta,organik,Kecantikan,web,74000,15000,selesai,1
+500428,2026-02-06,22:20,240,Jakarta,organik,Kecantikan,web,74000,15000,selesai,1
+500424,2026-02-06,22:30,302,Jakarta,iklan,Makanan,web,172000,12000,selesai,1
+500429,2026-02-06,22:52,119,Medan,iklan,Kecantikan,app,94000,18000,retur,1
+500425,2026-02-06,22:54,241,Semarang,organik,Makanan,app,123000,9000,selesai,0
+500440,2026-02-07,00:43,6,Medan,referral,Hobi & Olahraga,web,276000,0,selesai,0
+500442,2026-02-07,04:04,445,Sby,iklan,Fashion,app,119000,15000,selesai,0
+500436,2026-02-07,04:08,6,Medan,referral,Elektronik,web,760000,0,selesai,0
+500439,2026-02-07,09:12,335,Palembang,afiliasi,Hobi & Olahraga,app,368000,0,selesai,0
+500437,2026-02-07,11:19,339,Manado,iklan,Fashion,web,157000,9000,selesai,1
+500438,2026-02-07,15:18,149,Bandung,iklan,Fashion,app,223000,0,selesai,1
+500434,2026-02-07,15:31,114,Bandung,organik,Fashion,app,160000,12000,selesai,0
+500446,2026-02-07,16:07,121,DKI Jakarta,organik,Fashion,app,225000,0,selesai,1
+500444,2026-02-07,18:16,171,Denpasar,referral,Elektronik,app,2135000,0,selesai,0
+500443,2026-02-07,19:59,401,Yogyakarta,referral,Fashion,app,339000,12000,selesai,0
+500435,2026-02-07,20:10,314,Palembang,referral,Kecantikan,app,118000,15000,selesai,1
+500441,2026-02-07,21:42,98,Balikpapan,organik,Rumah Tangga,app,341000,18000,selesai,1
+500445,2026-02-07,23:30,444,Jakarta,iklan,Rumah Tangga,web,115000,18000,selesai,0
+500450,2026-02-08,06:05,168,Semarang,organik,Kecantikan,web,119000,18000,selesai,0
+500455,2026-02-08,07:30,105,Denpasar,referral,Fashion,web,93000,15000,selesai,0
+500448,2026-02-08,07:50,28,Manado,referral,Hobi & Olahraga,app,101000,15000,selesai,0
+500449,2026-02-08,08:22,155,Jakarta,organik,Rumah Tangga,web,186000,22000,selesai,0
+500447,2026-02-08,09:42,4,Surabaya,organik,Elektronik,web,981000,15000,selesai,0
+500452,2026-02-08,11:14,29,Bandung,iklan,Fashion,app,340000,15000,selesai,1
+500456,2026-02-08,11:50,192,Jakarta,organik,Elektronik,web,1051000,12000,batal,0
+500457,2026-02-08,16:16,425,Surabaya,organik,Hobi & Olahraga,app,333000,0,selesai,1
+500453,2026-02-08,21:04,329,Jakarta,afiliasi,Fashion,app,239000,15000,selesai,0
+500458,2026-02-08,21:04,166,Makassar,referral,Fashion,app,363000,15000,selesai,1
+500454,2026-02-08,21:28,358,Jakarta,organik,Elektronik,app,1413000,0,selesai,0
+500451,2026-02-08,21:56,190,Jakarta,iklan,Makanan,app,66000,22000,selesai,1
+500470,2026-02-09,00:40,344,Bandung,organik,Kecantikan,app,201000,9000,batal,0
+500461,2026-02-09,08:45,448,Jakarta,organik,Fashion,app,141000,15000,retur,1
+500471,2026-02-09,10:33,207,DKI Jakarta,iklan,Hobi & Olahraga,app,231000,18000,selesai,1
+500469,2026-02-09,10:38,378,Surabaya,organik,Hobi & Olahraga,app,131000,18000,selesai,0
+500460,2026-02-09,11:14,14,Jakarta,referral,Elektronik,web,1054000,9000,selesai,1
+500467,2026-02-09,11:39,444,Jakarta,iklan,Hobi & Olahraga,app,321000,0,batal,1
+500465,2026-02-09,14:48,86,Jakarta,organik,Kecantikan,web,268000,15000,selesai,0
+500466,2026-02-09,15:04,103,Jakarta,organik,Makanan,app,102000,15000,selesai,0
+500468,2026-02-09,16:06,254,Bandung,iklan,Rumah Tangga,app,207000,22000,selesai,0
+500464,2026-02-09,16:33,311,Medan,referral,Fashion,app,268000,0,selesai,0
+500459,2026-02-09,20:04,230,jakarta ,iklan,Makanan,app,46000,18000,batal,0
+500462,2026-02-09,20:19,59,Semarang,iklan,Rumah Tangga,web,478000,0,batal,1
+500463,2026-02-09,20:47,181,Jakarta,referral,Hobi & Olahraga,app,318000,0,selesai,1
+500478,2026-02-10,08:10,257,Makassar,iklan,Fashion,web,140000,9000,batal,0
+500485,2026-02-10,10:37,162,DKI Jakarta,organik,Elektronik,app,1156000,0,selesai,1
+500479,2026-02-10,12:30,354,Surabaya,iklan,Rumah Tangga,app,351000,9000,selesai,0
+500472,2026-02-10,12:34,379,Semarang,iklan,Rumah Tangga,app,309000,15000,selesai,0
+500475,2026-02-10,13:04,275,Surabaya,iklan,Fashion,web,204000,9000,batal,1
+500477,2026-02-10,14:39,333,Bandung,organik,Hobi & Olahraga,app,274000,18000,selesai,0
+500474,2026-02-10,15:48,75,jakarta ,iklan,Fashion,app,187000,9000,selesai,0
+500482,2026-02-10,18:58,283,Jakarta,iklan,Kecantikan,app,151000,9000,selesai,1
+500484,2026-02-10,19:02,426,Bandung,iklan,Kecantikan,app,109000,18000,selesai,0
+500476,2026-02-10,19:57,60,Jakarta,organik,Rumah Tangga,app,256000,15000,selesai,0
+500481,2026-02-10,20:10,182,Jakarta,iklan,Rumah Tangga,app,401000,9000,selesai,1
+500480,2026-02-10,23:02,46,Surabaya,iklan,Hobi & Olahraga,web,140000,12000,selesai,0
+500483,2026-02-10,23:10,176,Jakarta,organik,Hobi & Olahraga,app,491000,22000,selesai,0
+500473,2026-02-10,23:11,42,Manado,organik,Fashion,web,207000,0,retur,0
+500490,2026-02-11,05:45,159,Bandung,afiliasi,Kecantikan,app,194000,18000,selesai,1
+500488,2026-02-11,07:44,22,Jakarta,iklan,Kecantikan,app,214000,0,selesai,0
+500492,2026-02-11,12:26,382,Jakarta,organik,Hobi & Olahraga,app,655000,0,selesai,0
+500486,2026-02-11,18:31,25,Surabaya,iklan,Makanan,app,64000,22000,selesai,1
+500489,2026-02-11,18:48,234,Bandung,iklan,Fashion,app,130000,22000,selesai,1
+500491,2026-02-11,19:23,143,Bdg,iklan,Makanan,app,66000,12000,selesai,1
+500493,2026-02-11,19:27,226,Semarang,iklan,Fashion,web,186000,9000,selesai,0
+500487,2026-02-11,19:38,260,Medan,organik,Kecantikan,web,115000,15000,retur,0
+500494,2026-02-11,23:01,98,Balikpapan,organik,Rumah Tangga,web,506000,18000,selesai,0
+500500,2026-02-12,08:27,352,Semarang,afiliasi,Hobi & Olahraga,app,447000,12000,selesai,0
+500497,2026-02-12,09:50,59,Semarang,iklan,Rumah Tangga,app,240000,0,selesai,0
+500495,2026-02-12,12:47,422,Medan,afiliasi,Hobi & Olahraga,app,243000,0,batal,0
+500501,2026-02-12,13:28,76,Jakarta,iklan,Hobi & Olahraga,app,737000,0,selesai,1
+500504,2026-02-12,13:52,272,Jakarta,organik,Kecantikan,web,191000,15000,selesai,0
+500505,2026-02-12,15:47,232,Balikpapan,referral,Kecantikan,app,188000,9000,selesai,1
+500507,2026-02-12,16:14,383,Palembang,organik,Fashion,app,315000,15000,selesai,1
+500499,2026-02-12,16:15,344,Bandung,organik,Makanan,app,85000,15000,selesai,1
+500503,2026-02-12,17:53,346,Jakarta,organik,Rumah Tangga,app,113000,12000,selesai,0
+500502,2026-02-12,20:17,17,Semarang,afiliasi,Rumah Tangga,web,621000,0,selesai,0
+500506,2026-02-12,20:55,5,Jakarta,organik,Fashion,app,416000,0,selesai,0
+500498,2026-02-12,21:00,110,Balikpapan,referral,Kecantikan,app,136000,22000,selesai,1
+500496,2026-02-12,21:35,355,Palembang,iklan,Elektronik,app,2298000,0,selesai,1
+500515,2026-02-13,10:52,183,Jakarta,organik,Kecantikan,app,158000,12000,selesai,0
+500511,2026-02-13,12:35,33,Jakarta,iklan,Makanan,app,38000,18000,selesai,0
+500513,2026-02-13,12:53,141,Yogyakarta,referral,Rumah Tangga,app,266000,15000,selesai,0
+500510,2026-02-13,14:16,283,Jakarta,iklan,Fashion,web,306000,0,selesai,1
+500517,2026-02-13,17:28,1,Bandung,iklan,Rumah Tangga,app,617000,9000,selesai,0
+500516,2026-02-13,18:05,156,Jakarta,iklan,Rumah Tangga,app,238000,18000,selesai,1
+500514,2026-02-13,18:33,230,Jakarta,iklan,Hobi & Olahraga,app,465000,15000,selesai,0
+500508,2026-02-13,19:38,380,Palembang,organik,Fashion,app,196000,22000,selesai,1
+500509,2026-02-13,21:38,55,Surabaya,referral,Makanan,app,78000,15000,selesai,0
+500512,2026-02-13,23:24,206,Jakarta,organik,Hobi & Olahraga,app,232000,0,selesai,1
+500519,2026-02-14,10:16,190,Jakarta,iklan,Rumah Tangga,app,267000,18000,selesai,1
+500528,2026-02-14,10:18,416,Surabaya,iklan,Elektronik,app,2489000,0,selesai,1
+500531,2026-02-14,11:02,28,Manado,referral,Kecantikan,web,140000,12000,selesai,0
+500520,2026-02-14,11:11,170,Denpasar,referral,Fashion,web,82000,22000,selesai,1
+500525,2026-02-14,11:37,35,Denpasar,iklan,Rumah Tangga,app,197000,18000,selesai,0
+500529,2026-02-14,12:04,221,Jakarta,referral,Fashion,app,250000,15000,selesai,0
+500518,2026-02-14,14:40,374,Surabaya,referral,Rumah Tangga,app,130000,18000,batal,0
+500522,2026-02-14,15:30,396,Denpasar,iklan,Fashion,web,128000,9000,selesai,0
+500530,2026-02-14,15:49,101,Sby,organik,Elektronik,web,2639000,0,selesai,0
+500524,2026-02-14,19:26,20,Balikpapan,organik,Fashion,web,113000,9000,batal,0
+500527,2026-02-14,20:32,296,Semarang,iklan,Makanan,app,26000,15000,retur,0
+500521,2026-02-14,21:19,251,Bandung,organik,Hobi & Olahraga,app,689000,0,retur,0
+500526,2026-02-14,21:49,444,Jakarta,iklan,Fashion,web,122000,22000,selesai,0
+500523,2026-02-14,22:38,327,Jakarta,organik,Rumah Tangga,app,330000,18000,batal,0
+500534,2026-02-15,05:27,44,Yogyakarta,referral,Hobi & Olahraga,app,413000,9000,selesai,1
+500541,2026-02-15,08:45,115,Balikpapan,afiliasi,Elektronik,web,1987000,0,batal,1
+500536,2026-02-15,08:53,98,Balikpapan,organik,Fashion,web,177000,22000,selesai,0
+500537,2026-02-15,12:05,412,Bandung,organik,Fashion,app,349000,0,selesai,0
+500538,2026-02-15,12:26,112,Medan,organik,Fashion,app,217000,0,retur,0
+500535,2026-02-15,12:44,349,Jakarta,referral,Fashion,app,232000,12000,batal,0
+500543,2026-02-15,13:13,51,Palembang,organik,Kecantikan,app,115000,9000,selesai,1
+500542,2026-02-15,14:36,313,Semarang,organik,Fashion,web,281000,18000,batal,0
+500533,2026-02-15,18:30,330,Yogyakarta,iklan,Kecantikan,web,183000,15000,selesai,0
+500539,2026-02-15,19:17,151,Jakarta,organik,Elektronik,app,4213000,15000,selesai,0
+500532,2026-02-15,19:37,261,Jakarta,afiliasi,Rumah Tangga,web,205000,0,selesai,0
+500544,2026-02-15,20:49,45,Bandung,iklan,Rumah Tangga,app,483000,0,selesai,1
+500540,2026-02-15,23:26,24,Jakarta,referral,Rumah Tangga,app,314000,22000,selesai,0
+500549,2026-02-16,09:52,363,Palembang,iklan,Hobi & Olahraga,app,311000,0,selesai,0
+500555,2026-02-16,10:39,264,Denpasar,iklan,Rumah Tangga,app,515000,0,selesai,1
+500553,2026-02-16,10:53,369,Jakarta,organik,Elektronik,web,2562000,0,selesai,0
+500552,2026-02-16,12:11,231,Bandung,organik,Kecantikan,app,193000,18000,selesai,1
+500550,2026-02-16,13:55,353,Surabaya,afiliasi,Fashion,app,113000,22000,selesai,1
+500547,2026-02-16,14:36,358,Jakarta,organik,Makanan,web,33000,9000,selesai,0
+500546,2026-02-16,16:09,298,Semarang,referral,Hobi & Olahraga,web,437000,0,selesai,0
+500545,2026-02-16,16:39,267,Jakarta,referral,Hobi & Olahraga,app,724000,9000,selesai,0
+500559,2026-02-16,16:58,361,Bandung,iklan,Makanan,web,176000,22000,selesai,1
+500551,2026-02-16,17:14,343,Yogyakarta,afiliasi,Fashion,app,148000,12000,selesai,0
+500558,2026-02-16,17:15,135,Semarang,referral,Elektronik,app,2175000,22000,selesai,0
+500558,2026-02-16,17:15,135,Semarang,referral,Elektronik,app,2175000,22000,selesai,0
+500548,2026-02-16,18:12,326,Bandung,iklan,Fashion,app,441000,0,selesai,0
+500554,2026-02-16,21:15,432,Jakarta,referral,Makanan,app,100000,9000,batal,1
+500557,2026-02-16,21:44,21,Jakarta,iklan,Makanan,app,49000,12000,selesai,0
+500556,2026-02-16,23:57,241,Semarang,organik,Fashion,app,243000,9000,selesai,0
+500564,2026-02-17,00:27,26,Jakarta,organik,Kecantikan,web,159000,12000,batal,0
+500562,2026-02-17,03:09,50,Palembang,organik,Kecantikan,web,69000,9000,selesai,0
+500566,2026-02-17,10:26,275,Surabaya,iklan,Fashion,app,418000,0,selesai,0
+500568,2026-02-17,11:46,9,Bandung,organik,Makanan,web,130000,18000,selesai,1
+500565,2026-02-17,12:36,87,Palembang,iklan,Kecantikan,app,154000,12000,selesai,0
+500561,2026-02-17,12:54,436,Jakarta,iklan,Makanan,app,49000,9000,selesai,0
+500563,2026-02-17,16:28,352,Semarang,afiliasi,Elektronik,app,407000,0,selesai,1
+500569,2026-02-17,17:06,32,Medan,iklan,Hobi & Olahraga,app,751000,0,selesai,0
+500567,2026-02-17,17:24,355,Palembang,iklan,Fashion,web,92000,18000,batal,0
+500560,2026-02-17,21:04,432,jakarta ,referral,Fashion,web,135000,22000,batal,0
+500570,2026-02-17,21:23,257,Makassar,iklan,Hobi & Olahraga,app,339000,0,selesai,0
+500578,2026-02-18,09:47,202,Jakarta,organik,Makanan,app,61000,9000,selesai,0
+500574,2026-02-18,09:54,156,Jakarta,iklan,Fashion,app,140000,9000,selesai,0
+500581,2026-02-18,11:54,215,Balikpapan,referral,Fashion,app,175000,22000,retur,0
+500575,2026-02-18,12:01,103,Jakarta,organik,Fashion,web,165000,18000,selesai,0
+500571,2026-02-18,12:55,253,Jakarta,organik,Fashion,app,290000,0,batal,0
+500579,2026-02-18,15:48,143,Bandung,iklan,Elektronik,app,3365000,0,selesai,1
+500580,2026-02-18,15:54,92,,afiliasi,Hobi & Olahraga,app,721000,0,selesai,1
+500577,2026-02-18,16:08,331,Medan,organik,Makanan,web,52000,18000,selesai,0
+500576,2026-02-18,17:18,390,Medan,iklan,Fashion,app,489000,0,selesai,0
+500573,2026-02-18,19:22,55,Surabaya,referral,Fashion,app,359000,0,selesai,0
+500582,2026-02-18,20:02,66,Yogyakarta,organik,Rumah Tangga,app,215000,0,retur,0
+500572,2026-02-18,21:37,450,Manado,iklan,Fashion,web,151000,12000,retur,0
+500593,2026-02-19,07:31,310,Jkt,organik,Fashion,app,235000,18000,selesai,1
+500589,2026-02-19,07:54,15,Surabaya,organik,Fashion,app,499000,12000,selesai,1
+500587,2026-02-19,10:16,297,Jakarta,organik,Rumah Tangga,app,541000,9000,selesai,0
+500586,2026-02-19,11:40,382,Jakarta,organik,Fashion,app,157000,18000,selesai,0
+500584,2026-02-19,11:41,155,Jakarta,organik,Hobi & Olahraga,web,229000,22000,selesai,1
+500583,2026-02-19,14:18,95,Medan,iklan,Fashion,app,163000,22000,retur,0
+500591,2026-02-19,14:59,254,Bandung,iklan,Rumah Tangga,app,105000,15000,selesai,0
+500592,2026-02-19,19:31,410,Yogyakarta,iklan,Elektronik,app,2276000,9000,selesai,1
+500588,2026-02-19,21:03,436,Jakarta,iklan,Makanan,app,62000,15000,selesai,1
+500590,2026-02-19,21:30,388,Jakarta,iklan,Rumah Tangga,web,151000,12000,selesai,0
+500585,2026-02-19,22:17,209,Jakarta,referral,Fashion,app,114000,12000,selesai,0
+500599,2026-02-20,05:14,376,Bandung,organik,Elektronik,app,1128000,22000,selesai,0
+500603,2026-02-20,07:11,112,Medan,organik,Hobi & Olahraga,web,359000,0,selesai,1
+500602,2026-02-20,08:44,313,Semarang,organik,Makanan,app,214000,18000,selesai,1
+500594,2026-02-20,10:04,179,Medan,iklan,Hobi & Olahraga,app,321000,0,selesai,1
+500598,2026-02-20,10:35,184,Makassar,iklan,Makanan,app,35000,9000,batal,0
+500600,2026-02-20,17:02,223,Jakarta,iklan,Elektronik,app,2233000,15000,selesai,1
+500604,2026-02-20,17:05,125,Jakarta,organik,Kecantikan,app,101000,22000,selesai,1
+500606,2026-02-20,18:22,327,Jakarta,organik,Fashion,app,222000,0,batal,1
+500596,2026-02-20,18:47,267,Jakarta,referral,Kecantikan,app,163000,22000,batal,0
+500595,2026-02-20,18:51,180,Balikpapan,organik,Fashion,web,355000,12000,retur,0
+500605,2026-02-20,18:54,435,Surabaya,referral,Hobi & Olahraga,web,957000,18000,selesai,1
+500601,2026-02-20,20:41,349,Jakarta,referral,Rumah Tangga,app,550000,0,selesai,0
+500597,2026-02-20,23:58,143,Bandung,iklan,Fashion,app,261000,0,selesai,1
+500612,2026-02-21,06:15,68,Semarang,organik,Fashion,app,315000,0,selesai,0
+500615,2026-02-21,08:38,246,Jakarta,afiliasi,Fashion,app,110000,15000,batal,0
+500618,2026-02-21,10:41,93,Makassar,organik,Fashion,app,189000,18000,selesai,0
+500610,2026-02-21,11:28,302,Jakarta,iklan,Fashion,web,438000,0,selesai,0
+500614,2026-02-21,13:26,78,Jakarta,referral,Fashion,web,317000,0,selesai,0
+500611,2026-02-21,15:46,412,Bandung,organik,Hobi & Olahraga,app,591000,0,selesai,0
+500617,2026-02-21,17:41,446,Bandung,organik,Kecantikan,web,114000,12000,selesai,1
+500616,2026-02-21,18:24,9,Bandung,organik,Fashion,app,305000,0,selesai,0
+500607,2026-02-21,18:39,401,Yogyakarta,referral,Fashion,web,320000,0,selesai,0
+500619,2026-02-21,19:34,187,Jakarta,iklan,Kecantikan,app,291000,0,retur,1
+500613,2026-02-21,21:55,122,,iklan,Elektronik,app,3210000,0,selesai,0
+500609,2026-02-21,22:42,361,Bandung,iklan,Rumah Tangga,app,216000,0,batal,0
+500608,2026-02-21,23:45,20,Balikpapan,organik,Hobi & Olahraga,app,416000,0,batal,1
+500623,2026-02-22,06:54,66,Yogyakarta,organik,Fashion,app,190000,18000,selesai,1
+500621,2026-02-22,08:19,117,Surabaya,iklan,Kecantikan,app,89000,12000,selesai,0
+500624,2026-02-22,09:09,203,Semarang,organik,Hobi & Olahraga,app,250000,15000,selesai,0
+500620,2026-02-22,10:12,390,Medan,iklan,Fashion,app,269000,12000,selesai,0
+500631,2026-02-22,10:22,204,Bandung,referral,Rumah Tangga,web,158000,12000,selesai,1
+500627,2026-02-22,11:06,183,Jakarta,organik,Rumah Tangga,app,297000,0,selesai,0
+500628,2026-02-22,14:46,314,Palembang,referral,Fashion,app,284000,0,selesai,0
+500632,2026-02-22,15:01,83,Jakarta,organik,Fashion,app,401000,0,selesai,0
+500622,2026-02-22,16:15,136,Surabaya,organik,Fashion,app,235000,0,selesai,0
+500629,2026-02-22,17:17,132,Surabaya,iklan,Fashion,app,149000,9000,selesai,1
+500625,2026-02-22,18:45,154,Jakarta,iklan,Rumah Tangga,app,165000,22000,selesai,0
+500630,2026-02-22,19:31,226,Semarang,iklan,Rumah Tangga,app,131000,18000,selesai,0
+500626,2026-02-22,21:43,190,Jakarta,iklan,Makanan,web,64000,18000,selesai,0
+500635,2026-02-23,00:06,237,Jakarta,afiliasi,Makanan,web,29000,18000,selesai,1
+500643,2026-02-23,07:16,120,Yogyakarta,iklan,Elektronik,app,5035000,0,selesai,0
+500638,2026-02-23,09:38,123,Jakarta,iklan,Kecantikan,app,85000,9000,retur,0
+500640,2026-02-23,11:35,37,Surabaya,referral,Makanan,web,36000,22000,batal,0
+500642,2026-02-23,12:48,11,Jakarta,iklan,Fashion,web,205000,0,selesai,0
+500634,2026-02-23,14:05,423,Semarang,iklan,Rumah Tangga,app,173000,15000,retur,1
+500633,2026-02-23,15:29,291,Jakarta,organik,Kecantikan,app,93000,12000,batal,0
+500639,2026-02-23,16:48,281,Makassar,referral,Rumah Tangga,app,131000,9000,selesai,0
+500636,2026-02-23,18:09,185,Medan,afiliasi,Rumah Tangga,app,296000,0,selesai,0
+500637,2026-02-23,21:02,16,Bandung,organik,Kecantikan,app,155000,22000,selesai,1
+500641,2026-02-23,21:10,311,Medan,referral,Kecantikan,web,54000,22000,selesai,0
+500655,2026-02-24,04:17,175,Medan,organik,Makanan,app,91000,15000,selesai,0
+500650,2026-02-24,06:47,395,Semarang,organik,Hobi & Olahraga,app,295000,0,batal,0
+500649,2026-02-24,07:27,264,Denpasar,iklan,Fashion,web,311000,0,selesai,0
+500646,2026-02-24,11:04,300,Denpasar,iklan,Hobi & Olahraga,app,273000,15000,retur,0
+500647,2026-02-24,11:07,226,Semarang,iklan,Kecantikan,app,72000,18000,retur,0
+500648,2026-02-24,15:47,308,Jakarta,afiliasi,Makanan,app,48000,12000,selesai,1
+500652,2026-02-24,17:18,417,Jakarta,iklan,Rumah Tangga,web,179000,22000,selesai,1
+500654,2026-02-24,18:46,196,Bandung,afiliasi,Kecantikan,app,189000,22000,batal,0
+500653,2026-02-24,20:44,400,,afiliasi,Fashion,web,449000,9000,batal,0
+500644,2026-02-24,20:50,148,Bandung,iklan,Fashion,web,263000,0,selesai,1
+500645,2026-02-24,20:57,446,Bandung,organik,Fashion,web,223000,0,selesai,1
+500651,2026-02-24,21:45,233,Semarang,organik,Makanan,web,181000,18000,selesai,0
+500667,2026-02-25,01:22,98,Balikpapan,organik,Makanan,app,103000,22000,selesai,0
+500658,2026-02-25,02:20,336,Medan,iklan,Elektronik,app,1514000,0,batal,0
+500659,2026-02-25,06:26,437,Jakarta,referral,Makanan,app,79000,22000,selesai,0
+500666,2026-02-25,09:45,160,Bandung,iklan,Rumah Tangga,app,117000,18000,selesai,0
+500669,2026-02-25,10:05,30,DI Yogyakarta,referral,Rumah Tangga,web,354000,15000,selesai,0
+500656,2026-02-25,11:13,21,Jakarta,iklan,Fashion,app,262000,0,batal,0
+500656,2026-02-25,11:13,21,Jakarta,iklan,Fashion,app,262000,0,batal,0
+500664,2026-02-25,12:21,226,Semarang,iklan,Rumah Tangga,web,278000,0,selesai,0
+500662,2026-02-25,16:01,330,DI Yogyakarta,iklan,Kecantikan,app,189000,22000,retur,0
+500661,2026-02-25,16:40,363,Palembang,iklan,Fashion,web,76000,9000,batal,0
+500665,2026-02-25,16:51,226,Semarang,iklan,Rumah Tangga,web,74000,9000,selesai,0
+500660,2026-02-25,17:06,187,Jakarta,iklan,Fashion,app,222000,0,selesai,1
+500671,2026-02-25,18:10,360,Makassar,referral,Rumah Tangga,app,200000,0,selesai,0
+500673,2026-02-25,20:19,150,Makassar,organik,Fashion,app,338000,0,selesai,1
+500668,2026-02-25,20:27,48,Manado,organik,Kecantikan,app,292000,22000,selesai,0
+500672,2026-02-25,20:48,245,Bandung,organik,Fashion,app,234000,0,selesai,0
+500670,2026-02-25,21:02,402,Bandung,organik,Rumah Tangga,app,300000,0,selesai,0
+500663,2026-02-25,21:31,341,Bdg,organik,Fashion,app,63000,12000,selesai,0
+500657,2026-02-25,23:39,34,Jakarta,afiliasi,Makanan,web,46000,9000,selesai,0
+500677,2026-02-26,00:22,98,Balikpapan,organik,Makanan,web,95000,18000,retur,0
+500686,2026-02-26,09:45,266,Jakarta,iklan,Kecantikan,app,164000,22000,selesai,0
+500676,2026-02-26,11:22,387,Manado,organik,Rumah Tangga,app,225000,9000,selesai,0
+500687,2026-02-26,14:00,214,Yogyakarta,organik,Hobi & Olahraga,app,238000,22000,selesai,0
+500679,2026-02-26,17:10,258,Makassar,referral,Elektronik,app,3872000,22000,selesai,0
+500675,2026-02-26,18:36,127,Jakarta,organik,Fashion,app,159000,9000,selesai,1
+500680,2026-02-26,18:37,276,Medan,organik,Kecantikan,app,239000,0,selesai,1
+500682,2026-02-26,18:51,352,Semarang,afiliasi,Makanan,app,96000,9000,selesai,0
+500684,2026-02-26,19:12,72,Yogyakarta,referral,Elektronik,web,2790000,0,selesai,1
+500688,2026-02-26,19:47,386,Medan,organik,Fashion,app,131000,15000,selesai,0
+500685,2026-02-26,20:28,180,Balikpapan,organik,Rumah Tangga,app,455000,0,selesai,0
+500674,2026-02-26,20:53,234,Bandung,iklan,Fashion,app,115000,22000,retur,1
+500683,2026-02-26,21:29,208,Makassar,organik,Fashion,web,364000,9000,selesai,1
+500681,2026-02-26,23:08,40,Surabaya,iklan,Fashion,app,261000,0,selesai,0
+500678,2026-02-26,23:53,326,Bdg,iklan,Elektronik,app,3277000,0,selesai,1
+500689,2026-02-27,01:26,374,Sby,referral,Makanan,app,39000,18000,selesai,0
+500695,2026-02-27,08:32,348,Bandung,organik,Hobi & Olahraga,app,118000,22000,selesai,1
+500698,2026-02-27,09:08,114,Bandung,organik,Elektronik,app,1217000,12000,batal,0
+500704,2026-02-27,09:10,80,Surabaya,organik,Fashion,app,203000,0,selesai,0
+500692,2026-02-27,09:18,362,Jakarta,referral,Makanan,web,51000,12000,retur,0
+500703,2026-02-27,09:35,407,Manado,iklan,Rumah Tangga,web,106000,18000,batal,0
+500693,2026-02-27,12:32,285,Jakarta,organik,Fashion,app,295000,9000,selesai,1
+500690,2026-02-27,12:51,198,Semarang,organik,Elektronik,app,1015000,22000,selesai,0
+500700,2026-02-27,15:00,41,Surabaya,referral,Makanan,app,70000,15000,batal,1
+500706,2026-02-27,16:29,146,Medan,iklan,Rumah Tangga,app,225000,0,selesai,0
+500696,2026-02-27,16:40,421,Manado,referral,Fashion,app,356000,12000,selesai,0
+500705,2026-02-27,17:27,440,Semarang,organik,Makanan,app,187000,15000,selesai,1
+500701,2026-02-27,18:53,143,Bandung,iklan,Fashion,app,353000,0,selesai,1
+500694,2026-02-27,19:15,401,Yogyakarta,referral,Kecantikan,app,215000,0,selesai,0
+500702,2026-02-27,20:20,192,Jakarta,organik,Rumah Tangga,app,210000,0,batal,0
+500697,2026-02-27,20:44,369,Jkt,organik,Rumah Tangga,app,120000,15000,selesai,1
+500691,2026-02-27,21:00,392,Jakarta,referral,Makanan,app,110000,18000,selesai,1
+500699,2026-02-27,22:51,88,Surabaya,organik,Kecantikan,app,181000,12000,selesai,0
+500724,2026-02-28,08:43,441,Jakarta,organik,Elektronik,web,1641000,12000,selesai,1
+500712,2026-02-28,11:11,347,Semarang,organik,Fashion,app,90000,22000,retur,0
+500721,2026-02-28,11:52,161,Medan,iklan,Fashion,web,289000,0,selesai,1
+500710,2026-02-28,12:00,441,Jakarta,organik,Hobi & Olahraga,web,364000,0,batal,0
+500717,2026-02-28,15:08,63,Semarang,organik,Makanan,app,51000,18000,selesai,0
+500722,2026-02-28,15:25,103,Jakarta,organik,Kecantikan,app,169000,22000,selesai,0
+500713,2026-02-28,15:54,74,Balikpapan,organik,Kecantikan,app,263000,15000,selesai,1
+500713,2026-02-28,15:54,74,Balikpapan,organik,Kecantikan,app,263000,15000,selesai,1
+500718,2026-02-28,16:25,59,Semarang,iklan,Rumah Tangga,web,429000,9000,selesai,0
+500714,2026-02-28,16:26,449,Jakarta,organik,Kecantikan,app,206000,18000,selesai,1
+500725,2026-02-28,17:21,308,Jakarta,afiliasi,Fashion,app,186000,9000,batal,0
+500715,2026-02-28,18:20,188,Bandung,iklan,Fashion,web,354000,0,selesai,0
+500720,2026-02-28,20:23,40,Surabaya,iklan,Fashion,web,174000,9000,selesai,0
+500716,2026-02-28,21:14,349,Jakarta,referral,Kecantikan,web,87000,18000,batal,0
+500707,2026-02-28,21:32,100,Palembang,iklan,Elektronik,app,3367000,9000,selesai,1
+500707,2026-02-28,21:32,100,Palembang,iklan,Elektronik,app,3367000,9000,selesai,1
+500719,2026-02-28,21:40,324,Surabaya,referral,Makanan,web,49000,18000,selesai,0
+500723,2026-02-28,21:51,229,Makassar,iklan,Fashion,app,188000,12000,retur,0
+500708,2026-02-28,22:34,410,DI Yogyakarta,iklan,Fashion,web,71000,12000,selesai,0
+500711,2026-02-28,22:50,264,Denpasar,iklan,Rumah Tangga,web,254000,0,selesai,0
+500709,2026-02-28,23:31,80,Surabaya,organik,Kecantikan,app,98000,12000,selesai,1
+500746,2026-03-01,01:25,209,Jakarta,referral,Fashion,web,96000,18000,selesai,0
+500729,2026-03-01,07:15,99,Jakarta,organik,Rumah Tangga,app,396000,18000,selesai,0
+500749,2026-03-01,07:53,342,Jakarta,organik,Fashion,web,244000,0,batal,0
+500744,2026-03-01,08:39,338,Jakarta,iklan,Fashion,app,129000,22000,selesai,1
+500728,2026-03-01,09:03,50,Palembang,organik,Rumah Tangga,app,314000,0,selesai,1
+500742,2026-03-01,09:54,315,,organik,Makanan,web,87000,18000,selesai,1
+500747,2026-03-01,10:39,191,Denpasar,iklan,Fashion,app,181000,18000,selesai,1
+500735,2026-03-01,11:00,193,Jakarta,organik,Kecantikan,app,74000,15000,selesai,1
+500736,2026-03-01,11:05,342,Jakarta,organik,Rumah Tangga,app,373000,9000,selesai,0
+500733,2026-03-01,14:41,318,Palembang,afiliasi,Rumah Tangga,app,303000,18000,selesai,0
+500737,2026-03-01,15:35,13,,organik,Kecantikan,app,235000,0,selesai,0
+500745,2026-03-01,17:01,197,Jakarta,iklan,Fashion,app,68000,9000,retur,0
+500739,2026-03-01,17:28,74,Balikpapan,organik,Kecantikan,web,271000,22000,batal,1
+500731,2026-03-01,17:41,22,Jakarta,iklan,Makanan,app,171000,12000,batal,1
+500741,2026-03-01,19:02,370,Medan,organik,Kecantikan,web,75000,15000,selesai,0
+500727,2026-03-01,19:06,403,Surabaya,organik,Rumah Tangga,web,361000,0,selesai,1
+500743,2026-03-01,19:14,235,Denpasar,afiliasi,Fashion,web,161000,22000,selesai,1
+500732,2026-03-01,19:20,291,Jakarta,organik,Elektronik,app,3521000,18000,selesai,0
+500740,2026-03-01,19:28,224,Surabaya,organik,Kecantikan,web,434000,0,selesai,1
+500730,2026-03-01,20:28,350,Surabaya,iklan,Fashion,app,378000,15000,selesai,0
+500734,2026-03-01,20:32,320,Palembang,afiliasi,Hobi & Olahraga,app,560000,0,batal,0
+500726,2026-03-01,20:41,349,Jakarta,referral,Makanan,web,102000,22000,selesai,1
+500748,2026-03-01,22:09,39,Jakarta,referral,Fashion,app,402000,9000,selesai,0
+500738,2026-03-01,22:12,429,Semarang,iklan,Makanan,app,137000,15000,selesai,1
+500767,2026-03-02,04:37,374,Surabaya,referral,Makanan,app,44000,15000,selesai,1
+500763,2026-03-02,05:14,221,Jkt,referral,Makanan,app,109000,18000,selesai,0
+500773,2026-03-02,07:03,192,Jakarta,organik,Fashion,app,103000,15000,selesai,0
+500772,2026-03-02,09:59,334,Jakarta,referral,Makanan,app,84000,15000,selesai,0
+500771,2026-03-02,10:44,141,Yogyakarta,referral,Kecantikan,app,86000,9000,selesai,0
+500764,2026-03-02,10:59,68,Semarang,organik,Fashion,app,310000,0,batal,1
+500759,2026-03-02,11:11,185,Medan,afiliasi,Fashion,app,115000,15000,selesai,1
+500752,2026-03-02,11:24,203,Semarang,organik,Makanan,app,75000,9000,selesai,1
+500761,2026-03-02,13:30,427,surabaya,iklan,Fashion,web,368000,18000,selesai,1
+500765,2026-03-02,14:56,424,Jakarta,organik,Hobi & Olahraga,app,836000,0,retur,0
+500754,2026-03-02,16:02,224,Surabaya,organik,Fashion,app,530000,12000,selesai,0
+500769,2026-03-02,17:43,73,Balikpapan,organik,Fashion,app,144000,9000,selesai,0
+500757,2026-03-02,18:10,9,Bandung,organik,Makanan,web,138000,15000,selesai,1
+500756,2026-03-02,18:26,257,Makassar,iklan,Makanan,web,60000,9000,selesai,0
+500760,2026-03-02,19:32,136,Surabaya,organik,Rumah Tangga,web,190000,18000,batal,1
+500751,2026-03-02,19:34,211,Medan,referral,Makanan,app,75000,18000,selesai,1
+500750,2026-03-02,19:49,387,Manado,organik,Rumah Tangga,app,308000,0,batal,0
+500755,2026-03-02,20:16,84,Bandung,referral,Fashion,app,76000,22000,selesai,0
+500766,2026-03-02,20:27,440,Semarang,organik,Fashion,app,401000,0,selesai,1
+500768,2026-03-02,20:31,388,Jakarta,iklan,Kecantikan,app,212000,18000,selesai,0
+500758,2026-03-02,21:29,3,Jakarta,organik,Rumah Tangga,app,250000,12000,selesai,0
+500770,2026-03-02,22:02,27,Semarang,iklan,Elektronik,app,3872000,0,selesai,0
+500753,2026-03-02,22:26,159,,afiliasi,Rumah Tangga,app,357000,0,batal,0
+500762,2026-03-02,22:56,362,Jakarta,referral,Kecantikan,app,326000,0,selesai,0
+500778,2026-03-03,09:22,231,Bandung,organik,Rumah Tangga,app,306000,0,selesai,0
+500775,2026-03-03,10:03,343,Yogyakarta,afiliasi,Makanan,app,90000,22000,selesai,1
+500785,2026-03-03,10:07,371,Jakarta,referral,Hobi & Olahraga,app,311000,15000,selesai,0
+500784,2026-03-03,11:47,227,Balikpapan,iklan,Rumah Tangga,app,128000,18000,selesai,0
+500776,2026-03-03,12:59,217,Jakarta,organik,Makanan,app,161000,15000,batal,0
+500783,2026-03-03,13:14,171,Denpasar,referral,Fashion,web,209000,0,selesai,0
+500779,2026-03-03,14:39,419,Denpasar,organik,Elektronik,web,1614000,9000,batal,1
+500780,2026-03-03,15:05,127,Jakarta,organik,Fashion,app,327000,0,selesai,1
+500780,2026-03-03,15:05,127,Jakarta,organik,Fashion,app,327000,0,selesai,1
+500787,2026-03-03,15:06,398,Medan,iklan,Kecantikan,app,90000,22000,selesai,1
+500786,2026-03-03,15:40,142,,referral,Kecantikan,app,132000,22000,batal,1
+500786,2026-03-03,15:40,142,,referral,Kecantikan,app,132000,22000,batal,1
+500774,2026-03-03,15:52,238,Jakarta,organik,Kecantikan,app,346000,22000,selesai,0
+500782,2026-03-03,16:47,381,Jakarta,afiliasi,Fashion,app,317000,9000,selesai,0
+500777,2026-03-03,17:03,277,Jakarta,referral,Makanan,app,52000,18000,batal,0
+500781,2026-03-03,20:41,297,jakarta ,organik,Fashion,app,296000,18000,selesai,0
+500789,2026-03-03,20:54,264,Denpasar,iklan,Kecantikan,app,173000,9000,selesai,0
+500788,2026-03-03,22:07,240,Jakarta,organik,Fashion,app,46000,12000,selesai,0
+500804,2026-03-04,01:45,7,Semarang,organik,Makanan,web,129000,18000,selesai,1
+500800,2026-03-04,07:52,214,Yogyakarta,organik,Rumah Tangga,app,135000,18000,selesai,1
+500794,2026-03-04,10:01,55,Surabaya,referral,Rumah Tangga,web,68000,9000,selesai,1
+500805,2026-03-04,11:39,127,Jakarta,organik,Fashion,app,368000,0,selesai,0
+500799,2026-03-04,12:53,354,Surabaya,iklan,Makanan,app,64000,12000,selesai,0
+500791,2026-03-04,12:55,153,Makassar,afiliasi,Rumah Tangga,web,67000,12000,selesai,1
+500793,2026-03-04,13:20,268,Jakarta,organik,Elektronik,app,2746000,12000,selesai,1
+500806,2026-03-04,13:24,420,Surabaya,organik,Makanan,web,110000,12000,batal,0
+500798,2026-03-04,14:55,146,Medan,iklan,Kecantikan,app,77000,12000,selesai,0
+500790,2026-03-04,15:38,433,Bandung,organik,Fashion,app,109000,9000,selesai,1
+500797,2026-03-04,15:51,341,Bandung,organik,Makanan,app,51000,15000,selesai,0
+500792,2026-03-04,16:51,23,Medan,iklan,Fashion,app,309000,0,selesai,0
+500801,2026-03-04,18:09,233,Semarang,organik,Kecantikan,web,139000,9000,selesai,0
+500796,2026-03-04,20:02,44,Yogyakarta,referral,Makanan,web,90000,9000,selesai,0
+500803,2026-03-04,21:29,198,Semarang,organik,Rumah Tangga,app,123000,18000,retur,0
+500802,2026-03-04,22:35,358,Jakarta,organik,Elektronik,app,2174000,0,selesai,0
+500795,2026-03-04,23:40,300,Denpasar,iklan,Fashion,app,232000,0,selesai,0
+500822,2026-03-05,01:30,19,Jakarta,iklan,Kecantikan,app,265000,0,selesai,0
+500808,2026-03-05,02:17,64,Semarang,afiliasi,Fashion,web,87000,12000,selesai,0
+501247,2026-03-05,03:18,9999,Jakarta,internal,Elektronik,web,0,0,selesai,0
+500814,2026-03-05,08:20,363,Palembang,iklan,Hobi & Olahraga,app,619000,0,selesai,0
+500813,2026-03-05,09:06,431,Jakarta,organik,Kecantikan,app,313000,0,selesai,1
+500815,2026-03-05,11:20,50,Palembang,organik,Fashion,app,307000,12000,batal,0
+500817,2026-03-05,11:20,438,Palembang,organik,Rumah Tangga,app,76000,9000,selesai,0
+500823,2026-03-05,12:53,349,Jakarta,referral,Fashion,web,245000,9000,selesai,0
+500809,2026-03-05,16:16,283,Jakarta,iklan,Fashion,app,153000,9000,selesai,0
+500809,2026-03-05,16:16,283,Jakarta,iklan,Fashion,app,153000,9000,selesai,0
+500819,2026-03-05,16:27,11,Jakarta,iklan,Makanan,app,135000,12000,selesai,0
+500820,2026-03-05,16:41,39,Jakarta,referral,Hobi & Olahraga,app,744000,0,selesai,0
+500807,2026-03-05,17:34,388,Jakarta,iklan,Fashion,web,501000,0,selesai,1
+500811,2026-03-05,19:16,70,Semarang,afiliasi,Kecantikan,app,130000,9000,selesai,0
+500816,2026-03-05,20:53,184,Makassar,iklan,Makanan,app,56000,18000,batal,1
+500821,2026-03-05,21:04,388,Jakarta,iklan,Fashion,web,513000,0,retur,0
+500810,2026-03-05,21:06,132,Surabaya,iklan,Rumah Tangga,app,172000,18000,selesai,1
+500818,2026-03-05,21:17,29,Bandung,iklan,Fashion,app,153000,22000,selesai,0
+500812,2026-03-05,23:00,319,Surabaya,organik,Kecantikan,app,209000,0,selesai,1
+500824,2026-03-06,07:51,217,Jakarta,organik,Kecantikan,app,320000,0,selesai,0
+500827,2026-03-06,08:22,295,Semarang,referral,Fashion,web,235000,18000,selesai,1
+500826,2026-03-06,09:11,142,Surabaya,referral,Fashion,app,238000,22000,selesai,1
+500837,2026-03-06,11:16,197,Jakarta,iklan,Kecantikan,web,185000,12000,selesai,0
+500843,2026-03-06,11:35,369,Jakarta,organik,Makanan,app,60000,18000,selesai,1
+500840,2026-03-06,13:17,193,Jakarta,organik,Fashion,web,204000,15000,selesai,0
+500833,2026-03-06,13:24,65,Jakarta,organik,Fashion,app,262000,0,selesai,0
+500825,2026-03-06,13:25,327,Jakarta,organik,Fashion,app,153000,22000,batal,0
+500842,2026-03-06,13:32,154,Jakarta,iklan,Fashion,web,130000,12000,selesai,0
+500835,2026-03-06,14:19,221,Jakarta,referral,Fashion,web,305000,0,selesai,0
+500832,2026-03-06,15:20,133,Jakarta,referral,Makanan,app,73000,12000,selesai,0
+500836,2026-03-06,16:54,393,Bandung,referral,Fashion,web,494000,15000,batal,0
+500841,2026-03-06,17:29,334,Jakarta,referral,Fashion,app,270000,0,selesai,0
+500844,2026-03-06,19:39,303,Bandung,organik,Fashion,app,167000,12000,selesai,0
+500834,2026-03-06,19:56,266,Jakarta,iklan,Hobi & Olahraga,app,585000,15000,selesai,0
+500839,2026-03-06,20:01,383,Palembang,organik,Elektronik,web,1583000,9000,selesai,1
+500830,2026-03-06,20:55,348,Bandung,organik,Kecantikan,app,100000,9000,selesai,0
+500828,2026-03-06,21:26,56,Jakarta,organik,Makanan,app,89000,22000,selesai,0
+500829,2026-03-06,21:43,337,jakarta ,organik,Kecantikan,app,345000,0,selesai,1
+500838,2026-03-06,23:04,64,Semarang,afiliasi,Fashion,app,360000,0,selesai,0
+500831,2026-03-06,23:34,201,Jakarta,afiliasi,Elektronik,app,979000,0,selesai,1
+500865,2026-03-07,03:58,182,Jakarta,iklan,Makanan,web,120000,22000,selesai,1
+500863,2026-03-07,06:04,89,jakarta ,iklan,Fashion,app,476000,0,selesai,0
+500861,2026-03-07,06:08,340,Surabaya,iklan,Kecantikan,app,72000,12000,selesai,0
+500850,2026-03-07,06:11,253,Jakarta,organik,Fashion,app,66000,9000,selesai,0
+500851,2026-03-07,08:42,104,Surabaya,organik,Rumah Tangga,web,549000,0,selesai,0
+500857,2026-03-07,09:45,301,Bandung,organik,Makanan,app,47000,18000,selesai,1
+500866,2026-03-07,10:31,260,Medan,organik,Hobi & Olahraga,app,288000,18000,selesai,0
+500859,2026-03-07,11:24,106,Yogyakarta,organik,Hobi & Olahraga,web,209000,15000,selesai,0
+500858,2026-03-07,11:44,424,Jakarta,organik,Hobi & Olahraga,app,962000,0,selesai,0
+500847,2026-03-07,12:38,367,Jakarta,afiliasi,Fashion,app,228000,0,selesai,1
+500856,2026-03-07,14:10,393,Bdg,referral,Makanan,app,204000,0,selesai,1
+500864,2026-03-07,14:10,218,Surabaya,iklan,Fashion,web,112000,15000,selesai,1
+500854,2026-03-07,15:05,307,Medan,iklan,Fashion,web,162000,12000,selesai,1
+500862,2026-03-07,17:00,88,Surabaya,organik,Makanan,app,78000,9000,batal,0
+500853,2026-03-07,17:53,173,Surabaya,organik,Fashion,web,203000,0,selesai,0
+500860,2026-03-07,18:04,80,Surabaya,organik,Rumah Tangga,app,215000,0,selesai,0
+500848,2026-03-07,18:13,209,Jakarta,referral,Makanan,web,35000,15000,selesai,0
+500852,2026-03-07,18:50,200,Jakarta,referral,Fashion,app,339000,15000,batal,1
+500846,2026-03-07,20:21,198,Semarang,organik,Elektronik,app,2003000,0,selesai,0
+500855,2026-03-07,21:21,208,Makassar,organik,Makanan,app,31000,12000,selesai,0
+500849,2026-03-07,21:47,149,Bandung,iklan,Kecantikan,app,237000,0,selesai,0
+500845,2026-03-07,23:08,238,Jakarta,organik,Kecantikan,app,149000,22000,selesai,0
+500886,2026-03-08,07:25,250,Jakarta,iklan,Fashion,app,417000,9000,selesai,1
+500872,2026-03-08,09:36,8,Jakarta,organik,Rumah Tangga,app,122000,15000,selesai,1
+500883,2026-03-08,10:23,302,Jakarta,iklan,Makanan,app,193000,9000,selesai,0
+500887,2026-03-08,12:08,4,Surabaya,organik,Kecantikan,app,176000,18000,selesai,0
+500878,2026-03-08,13:26,108,Jakarta,referral,Rumah Tangga,app,128000,18000,batal,0
+500875,2026-03-08,14:12,318,Palembang,afiliasi,Rumah Tangga,web,156000,9000,selesai,0
+500884,2026-03-08,14:16,361,,iklan,Hobi & Olahraga,app,375000,0,batal,0
+500876,2026-03-08,14:51,216,Jakarta,organik,Kecantikan,app,219000,0,selesai,1
+500868,2026-03-08,15:28,435,Surabaya,referral,Makanan,app,185000,18000,selesai,1
+500880,2026-03-08,15:43,150,Makassar,organik,Fashion,web,149000,12000,selesai,1
+500890,2026-03-08,16:46,60,Jakarta,organik,Makanan,app,100000,22000,selesai,0
+500890,2026-03-08,16:46,60,Jakarta,organik,Makanan,app,100000,22000,selesai,0
+500874,2026-03-08,17:46,60,Jakarta,organik,Rumah Tangga,web,597000,0,selesai,0
+500870,2026-03-08,17:51,35,Denpasar,iklan,Fashion,web,312000,0,batal,0
+500877,2026-03-08,17:55,79,Yogyakarta,referral,Makanan,app,135000,15000,selesai,0
+500871,2026-03-08,18:40,246,Jakarta,afiliasi,Kecantikan,app,281000,0,selesai,1
+500882,2026-03-08,19:07,290,Surabaya,iklan,Fashion,app,110000,15000,batal,1
+500885,2026-03-08,19:09,185,Medan,afiliasi,Fashion,app,418000,0,selesai,1
+500867,2026-03-08,19:23,86,Jakarta,organik,Makanan,app,122000,18000,selesai,0
+500881,2026-03-08,19:31,144,Jakarta,organik,Fashion,app,235000,0,selesai,0
+500869,2026-03-08,19:54,155,Jakarta,organik,Hobi & Olahraga,app,549000,9000,batal,0
+500888,2026-03-08,20:03,66,Jogja,organik,Hobi & Olahraga,app,389000,0,selesai,0
+500879,2026-03-08,20:17,298,Semarang,referral,Makanan,app,79000,18000,selesai,0
+500873,2026-03-08,20:58,218,Surabaya,iklan,Makanan,app,50000,18000,selesai,0
+500889,2026-03-08,21:24,13,Balikpapan,organik,Makanan,app,83000,15000,selesai,1
+500896,2026-03-09,07:32,32,Medan,iklan,Fashion,app,365000,0,batal,0
+500907,2026-03-09,08:44,367,DKI Jakarta,afiliasi,Rumah Tangga,web,199000,9000,batal,0
+500894,2026-03-09,09:15,369,Jakarta,organik,Fashion,app,162000,22000,selesai,1
+500909,2026-03-09,09:29,310,Jakarta,organik,Kecantikan,app,439000,9000,selesai,0
+500904,2026-03-09,10:03,347,Semarang,organik,Elektronik,web,834000,0,selesai,1
+500895,2026-03-09,10:39,357,Makassar,iklan,Elektronik,app,3981000,12000,selesai,0
+500891,2026-03-09,11:02,422,Medan,afiliasi,Makanan,web,107000,15000,selesai,0
+500902,2026-03-09,12:10,250,Jakarta,iklan,Fashion,app,249000,0,selesai,0
+500899,2026-03-09,14:40,38,Semarang,organik,Elektronik,web,1949000,0,selesai,0
+500893,2026-03-09,16:07,67,Jakarta,iklan,Hobi & Olahraga,web,220000,0,selesai,0
+500900,2026-03-09,16:46,332,Jakarta,organik,Fashion,app,293000,12000,selesai,0
+500898,2026-03-09,18:25,440,Semarang,organik,Hobi & Olahraga,web,626000,18000,batal,0
+500892,2026-03-09,20:09,305,Balikpapan,organik,Kecantikan,web,278000,0,selesai,0
+500905,2026-03-09,20:34,153,Makassar,afiliasi,Fashion,web,169000,12000,selesai,1
+500903,2026-03-09,21:50,142,Surabaya,referral,Kecantikan,app,91000,15000,selesai,1
+500908,2026-03-09,22:21,369,jakarta ,organik,Kecantikan,web,107000,22000,selesai,1
+500910,2026-03-09,22:24,196,Bandung,afiliasi,Makanan,app,34000,22000,selesai,0
+500901,2026-03-09,22:40,361,Bandung,iklan,Fashion,app,209000,0,selesai,0
+500906,2026-03-09,23:35,231,Bandung,organik,Makanan,app,88000,9000,selesai,0
+500897,2026-03-09,23:50,114,Bandung,organik,Fashion,app,72000,22000,selesai,0
+500918,2026-03-10,00:43,170,Denpasar,referral,Rumah Tangga,app,251000,0,selesai,0
+500915,2026-03-10,06:20,73,Balikpapan,organik,Fashion,app,576000,0,selesai,1
+500913,2026-03-10,06:39,317,Palembang,organik,Fashion,web,131000,12000,selesai,0
+500925,2026-03-10,08:54,85,Jakarta,iklan,Kecantikan,app,106000,22000,selesai,0
+500912,2026-03-10,11:51,236,Palembang,organik,Makanan,web,120000,15000,selesai,1
+500921,2026-03-10,15:31,224,Surabaya,organik,Fashion,app,294000,0,selesai,1
+500919,2026-03-10,15:35,14,Jakarta,referral,Kecantikan,app,219000,18000,selesai,0
+500917,2026-03-10,15:41,276,Medan,organik,Fashion,app,144000,22000,selesai,0
+500914,2026-03-10,16:55,246,Jakarta,afiliasi,Hobi & Olahraga,app,276000,22000,selesai,0
+500916,2026-03-10,18:13,449,Jakarta,organik,Makanan,web,174000,12000,selesai,1
+500926,2026-03-10,19:15,204,,referral,Makanan,web,140000,12000,selesai,0
+500920,2026-03-10,19:34,137,Jkt,organik,Kecantikan,web,212000,0,batal,0
+500924,2026-03-10,21:04,448,Jakarta,organik,Kecantikan,web,55000,22000,batal,1
+500922,2026-03-10,21:24,222,Makassar,referral,Kecantikan,web,158000,15000,selesai,0
+500923,2026-03-10,21:30,180,Balikpapan,organik,Fashion,app,486000,0,selesai,0
+500911,2026-03-10,23:33,328,Bandung,organik,Kecantikan,app,200000,0,selesai,0
+500928,2026-03-11,07:38,171,Denpasar,referral,Fashion,app,232000,0,selesai,1
+500934,2026-03-11,10:00,223,Jakarta,iklan,Makanan,app,82000,15000,selesai,0
+500939,2026-03-11,10:48,447,Jakarta,afiliasi,Rumah Tangga,app,159000,9000,selesai,1
+500942,2026-03-11,13:12,56,Jakarta,organik,Makanan,app,85000,15000,selesai,0
+500940,2026-03-11,13:37,185,Medan,afiliasi,Rumah Tangga,app,550000,0,selesai,1
+500930,2026-03-11,14:16,304,Makassar,organik,Rumah Tangga,app,668000,18000,retur,0
+500929,2026-03-11,16:06,343,Yogyakarta,afiliasi,Fashion,app,312000,0,selesai,1
+500943,2026-03-11,16:49,109,Balikpapan,referral,Kecantikan,app,152000,9000,selesai,1
+500936,2026-03-11,17:01,413,Makassar,afiliasi,Fashion,app,284000,0,selesai,0
+500932,2026-03-11,17:33,4,Surabaya,organik,Makanan,web,125000,15000,selesai,0
+500937,2026-03-11,17:38,238,Jakarta,organik,Fashion,web,301000,0,selesai,0
+500927,2026-03-11,19:09,269,Manado,organik,Makanan,app,69000,9000,selesai,1
+500933,2026-03-11,19:13,113,Jakarta,referral,Kecantikan,app,140000,9000,selesai,0
+500931,2026-03-11,19:56,398,Medan,iklan,Rumah Tangga,web,462000,0,selesai,1
+500935,2026-03-11,19:56,348,Bandung,organik,Kecantikan,web,211000,15000,selesai,0
+500938,2026-03-11,21:46,439,Makassar,iklan,Fashion,app,136000,15000,selesai,1
+500944,2026-03-11,22:52,22,Jakarta,iklan,Fashion,web,209000,0,selesai,1
+500941,2026-03-11,23:00,120,Yogyakarta,iklan,Fashion,app,396000,0,selesai,0
+500955,2026-03-12,01:14,150,Makassar,organik,Fashion,web,284000,0,selesai,0
+500949,2026-03-12,08:05,21,Jakarta,iklan,Hobi & Olahraga,web,256000,0,selesai,1
+500945,2026-03-12,08:32,59,Semarang,iklan,Fashion,app,335000,0,batal,0
+500958,2026-03-12,09:36,154,Jakarta,iklan,Fashion,app,143000,18000,selesai,1
+500952,2026-03-12,10:06,156,Jakarta,iklan,Makanan,app,64000,22000,selesai,0
+500946,2026-03-12,11:06,411,Jakarta,organik,Kecantikan,app,168000,22000,selesai,0
+500951,2026-03-12,11:33,103,Jakarta,organik,Makanan,app,124000,22000,selesai,1
+500950,2026-03-12,11:34,374,Surabaya,referral,Kecantikan,web,170000,9000,selesai,0
+500954,2026-03-12,11:41,24,Jakarta,referral,Fashion,app,347000,9000,selesai,0
+500961,2026-03-12,12:08,345,Jakarta,iklan,Fashion,web,399000,9000,selesai,0
+500947,2026-03-12,15:04,245,Bandung,organik,Hobi & Olahraga,web,792000,0,selesai,0
+500959,2026-03-12,15:17,72,Yogyakarta,referral,Makanan,app,215000,18000,selesai,1
+500948,2026-03-12,15:42,201,Jakarta,afiliasi,Makanan,web,120000,15000,selesai,0
+500960,2026-03-12,17:00,26,Jakarta,organik,Fashion,web,410000,18000,selesai,0
+500957,2026-03-12,19:48,84,Bandung,referral,Fashion,app,102000,9000,selesai,0
+500962,2026-03-12,20:31,312,Jakarta,iklan,Fashion,app,269000,15000,batal,1
+500956,2026-03-12,21:21,39,Jakarta,referral,Makanan,app,49000,12000,selesai,0
+500953,2026-03-12,21:34,303,Bandung,organik,Makanan,app,85000,15000,batal,0
+500968,2026-03-13,06:24,232,,referral,Kecantikan,web,213000,18000,selesai,1
+500971,2026-03-13,07:15,290,Surabaya,iklan,Fashion,app,81000,9000,selesai,0
+500973,2026-03-13,08:00,14,,referral,Fashion,web,178000,18000,selesai,1
+500980,2026-03-13,08:46,378,Surabaya,organik,Kecantikan,web,81000,22000,selesai,0
+500964,2026-03-13,09:01,339,Manado,iklan,Makanan,web,57000,15000,selesai,0
+500974,2026-03-13,09:19,52,Jakarta,iklan,Elektronik,app,4396000,0,selesai,1
+500982,2026-03-13,11:21,256,Surabaya,iklan,Fashion,app,113000,12000,batal,0
+500983,2026-03-13,12:39,345,Jakarta,iklan,Kecantikan,app,56000,22000,selesai,1
+500963,2026-03-13,12:48,105,Denpasar,referral,Fashion,app,119000,9000,selesai,0
+500965,2026-03-13,12:52,148,Bandung,iklan,Makanan,web,45000,12000,selesai,1
+500969,2026-03-13,14:05,164,Jakarta,referral,Elektronik,web,2009000,0,selesai,1
+500966,2026-03-13,15:15,47,Medan,organik,Rumah Tangga,web,174000,18000,selesai,0
+500984,2026-03-13,15:49,127,Jakarta,organik,Makanan,app,150000,12000,selesai,0
+500978,2026-03-13,16:46,115,Balikpapan,afiliasi,Fashion,app,243000,0,selesai,1
+500981,2026-03-13,16:59,266,Jakarta,iklan,Fashion,app,609000,15000,selesai,1
+500975,2026-03-13,18:15,102,Semarang,referral,Fashion,app,394000,18000,selesai,0
+500970,2026-03-13,19:23,39,Jakarta,referral,Rumah Tangga,app,254000,0,selesai,1
+500977,2026-03-13,19:23,60,Jakarta,organik,Fashion,web,335000,22000,batal,1
+500979,2026-03-13,19:27,92,Jakarta,afiliasi,Fashion,app,170000,15000,selesai,0
+500972,2026-03-13,19:28,222,Makassar,referral,Fashion,app,116000,18000,selesai,0
+500967,2026-03-13,20:13,412,Bandung,organik,Fashion,app,184000,15000,selesai,0
+500976,2026-03-13,22:20,168,Semarang,organik,Kecantikan,web,305000,18000,selesai,0
+501000,2026-03-14,03:48,55,Surabaya,referral,Kecantikan,web,63000,12000,batal,0
+500999,2026-03-14,07:12,419,Denpasar,organik,Makanan,app,201000,9000,selesai,0
+500996,2026-03-14,07:18,118,Jakarta,iklan,Rumah Tangga,web,208000,9000,selesai,1
+500994,2026-03-14,08:06,356,Jakarta,referral,Kecantikan,app,86000,18000,selesai,1
+501003,2026-03-14,08:09,330,,iklan,Kecantikan,app,178000,18000,batal,0
+500991,2026-03-14,10:07,309,Manado,referral,Hobi & Olahraga,app,371000,15000,selesai,0
+501002,2026-03-14,12:34,412,Bandung,organik,Elektronik,app,5973000,22000,selesai,0
+501006,2026-03-14,13:06,142,Surabaya,referral,Fashion,web,147000,9000,batal,0
+501008,2026-03-14,14:00,270,Medan,afiliasi,Kecantikan,app,58000,15000,selesai,1
+501001,2026-03-14,14:23,134,Palembang,iklan,Makanan,app,75000,18000,selesai,0
+500988,2026-03-14,14:29,171,Denpasar,referral,Hobi & Olahraga,web,291000,15000,selesai,1
+500987,2026-03-14,14:34,97,Jakarta,iklan,Hobi & Olahraga,app,473000,0,selesai,1
+501007,2026-03-14,14:59,123,Jakarta,iklan,Kecantikan,app,149000,15000,selesai,1
+500993,2026-03-14,16:20,99,Jakarta,organik,Fashion,web,149000,9000,selesai,1
+500986,2026-03-14,16:24,191,Denpasar,iklan,Rumah Tangga,app,155000,22000,selesai,0
+500992,2026-03-14,18:34,416,Surabaya,iklan,Fashion,app,174000,22000,selesai,1
+500989,2026-03-14,19:10,345,Jakarta,iklan,Kecantikan,web,240000,18000,selesai,1
+501004,2026-03-14,19:15,121,Jakarta,organik,Elektronik,app,1695000,0,selesai,0
+500995,2026-03-14,19:29,201,Jakarta,afiliasi,Hobi & Olahraga,app,511000,0,batal,0
+500997,2026-03-14,20:56,322,Bandung,iklan,Fashion,app,353000,22000,selesai,1
+500998,2026-03-14,21:40,118,Jakarta,iklan,Hobi & Olahraga,app,313000,0,selesai,0
+500990,2026-03-14,21:45,141,Yogyakarta,referral,Fashion,app,99000,12000,selesai,0
+501005,2026-03-14,22:54,263,Surabaya,organik,Makanan,web,46000,22000,selesai,0
+500985,2026-03-14,22:58,11,Jakarta,iklan,Makanan,app,65000,22000,selesai,0
+501016,2026-03-15,07:15,248,Jakarta,iklan,Kecantikan,app,87000,12000,selesai,1
+501015,2026-03-15,09:01,100,Palembang,iklan,Hobi & Olahraga,app,486000,0,selesai,0
+501009,2026-03-15,09:15,369,Jakarta,organik,Makanan,web,92000,12000,selesai,0
+501025,2026-03-15,11:15,277,Jakarta,referral,Fashion,app,177000,15000,selesai,0
+501013,2026-03-15,12:03,135,Semarang,referral,Makanan,app,39000,22000,selesai,1
+501012,2026-03-15,13:03,8,Jakarta,organik,Kecantikan,app,66000,15000,selesai,1
+501022,2026-03-15,13:25,194,Semarang,iklan,Rumah Tangga,app,184000,22000,selesai,0
+501029,2026-03-15,13:54,377,Jakarta,organik,Fashion,app,52000,18000,selesai,0
+501011,2026-03-15,14:03,137,Jakarta,organik,Hobi & Olahraga,app,305000,0,batal,1
+501021,2026-03-15,14:03,239,Manado,referral,Hobi & Olahraga,app,142000,22000,selesai,0
+501018,2026-03-15,14:18,312,Jakarta,iklan,Kecantikan,app,347000,0,selesai,0
+501019,2026-03-15,15:29,133,Jakarta,referral,Fashion,app,274000,0,retur,0
+501017,2026-03-15,18:29,260,Medan,organik,Makanan,app,88000,22000,selesai,0
+501023,2026-03-15,19:06,348,Bandung,organik,Fashion,app,97000,9000,selesai,0
+501014,2026-03-15,19:51,286,Yogyakarta,referral,Fashion,app,272000,0,selesai,0
+501028,2026-03-15,20:11,100,Palembang,iklan,Makanan,app,70000,22000,batal,0
+501027,2026-03-15,20:38,79,Yogyakarta,referral,Kecantikan,web,89000,12000,batal,1
+501010,2026-03-15,20:54,381,Jakarta,afiliasi,Elektronik,web,2280000,0,selesai,1
+501020,2026-03-15,22:06,233,Semarang,organik,Makanan,app,66000,9000,selesai,1
+501024,2026-03-15,23:20,312,Jakarta,iklan,Fashion,web,351000,12000,selesai,0
+501026,2026-03-15,23:33,347,Semarang,organik,Rumah Tangga,app,333000,0,selesai,0
+501043,2026-03-16,06:32,433,Bandung,organik,Kecantikan,app,84000,9000,selesai,0
+501039,2026-03-16,07:00,250,Jakarta,iklan,Makanan,app,139000,12000,selesai,0
+501038,2026-03-16,07:18,100,Palembang,iklan,Kecantikan,app,290000,15000,selesai,1
+501046,2026-03-16,07:59,145,Semarang,referral,Fashion,app,102000,12000,selesai,0
+501036,2026-03-16,08:11,218,Surabaya,iklan,Fashion,app,116000,9000,selesai,0
+501035,2026-03-16,08:26,444,jakarta ,iklan,Hobi & Olahraga,web,165000,18000,selesai,0
+501045,2026-03-16,10:36,103,Jakarta,organik,Makanan,web,79000,18000,selesai,1
+501042,2026-03-16,10:58,426,Bandung,iklan,Fashion,app,171000,18000,selesai,1
+501034,2026-03-16,11:28,183,Jakarta,organik,Kecantikan,web,61000,18000,selesai,0
+501037,2026-03-16,12:10,382,Jakarta,organik,Makanan,app,60000,12000,batal,1
+501032,2026-03-16,12:58,20,Balikpapan,organik,Makanan,app,49000,18000,selesai,1
+501047,2026-03-16,13:30,129,Semarang,referral,Makanan,app,104000,15000,batal,0
+501044,2026-03-16,13:36,311,Medan,referral,Rumah Tangga,app,77000,22000,selesai,1
+501030,2026-03-16,13:54,272,Jakarta,organik,Fashion,app,211000,0,batal,0
+501040,2026-03-16,17:26,67,Jakarta,iklan,Makanan,web,98000,12000,batal,1
+501048,2026-03-16,18:18,194,Semarang,iklan,Rumah Tangga,app,360000,0,selesai,0
+501033,2026-03-16,18:46,377,Jakarta,organik,Hobi & Olahraga,web,246000,18000,selesai,0
+501049,2026-03-16,19:33,150,Makassar,organik,Hobi & Olahraga,app,449000,22000,selesai,1
+501041,2026-03-16,21:45,189,Surabaya,iklan,Makanan,app,154000,15000,batal,0
+501031,2026-03-16,22:58,137,Jakarta,organik,Hobi & Olahraga,web,396000,15000,retur,0
+501062,2026-03-17,00:55,272,Jakarta,organik,Rumah Tangga,app,615000,15000,selesai,1
+501064,2026-03-17,04:16,344,Bdg,organik,Makanan,app,99000,18000,selesai,1
+501053,2026-03-17,07:00,297,Jakarta,organik,Fashion,web,272000,0,selesai,0
+501051,2026-03-17,08:48,411,DKI Jakarta,organik,Rumah Tangga,app,353000,0,selesai,0
+501052,2026-03-17,10:28,37,Surabaya,referral,Hobi & Olahraga,app,235000,12000,selesai,0
+501060,2026-03-17,12:36,360,Makassar,referral,Fashion,web,313000,0,selesai,1
+501055,2026-03-17,13:23,308,Jakarta,afiliasi,Kecantikan,app,25000,18000,selesai,1
+501068,2026-03-17,14:37,438,Palembang,organik,Elektronik,app,1270000,0,selesai,0
+501066,2026-03-17,15:05,346,Jakarta,organik,Fashion,app,255000,0,selesai,1
+501058,2026-03-17,15:33,102,Semarang,referral,Fashion,app,215000,0,selesai,1
+501061,2026-03-17,15:35,218,Surabaya,iklan,Hobi & Olahraga,web,331000,12000,selesai,0
+501059,2026-03-17,19:09,37,Surabaya,referral,Makanan,web,47000,18000,selesai,0
+501069,2026-03-17,19:14,124,Jakarta,organik,Fashion,web,251000,0,selesai,0
+501057,2026-03-17,19:22,133,Jakarta,referral,Fashion,app,289000,15000,selesai,1
+501054,2026-03-17,20:32,275,Surabaya,iklan,Fashion,web,489000,22000,retur,0
+501056,2026-03-17,22:05,361,Bandung,iklan,Elektronik,app,1770000,0,selesai,1
+501065,2026-03-17,22:52,379,Semarang,iklan,Kecantikan,app,204000,0,selesai,0
+501050,2026-03-17,23:10,78,Jakarta,referral,Fashion,app,250000,0,selesai,0
+501067,2026-03-17,23:48,54,,afiliasi,Hobi & Olahraga,app,174000,18000,selesai,1
+501063,2026-03-17,23:52,355,Palembang,iklan,Rumah Tangga,web,482000,0,selesai,0
+501075,2026-03-18,07:10,286,Yogyakarta,referral,Kecantikan,app,105000,9000,batal,0
+501076,2026-03-18,07:32,160,Bandung,iklan,Makanan,web,48000,12000,selesai,0
+501071,2026-03-18,10:04,434,Medan,iklan,Hobi & Olahraga,web,456000,15000,selesai,0
+501077,2026-03-18,11:14,95,Medan,iklan,Kecantikan,app,78000,9000,batal,0
+501070,2026-03-18,11:23,212,Surabaya,iklan,Fashion,app,72000,15000,selesai,0
+501073,2026-03-18,12:18,279,DKI Jakarta,iklan,Rumah Tangga,app,108000,9000,selesai,0
+501072,2026-03-18,12:19,247,Manado,organik,Makanan,app,45000,18000,selesai,0
+501081,2026-03-18,13:26,103,Jakarta,organik,Kecantikan,app,129000,18000,selesai,0
+501080,2026-03-18,17:58,351,Balikpapan,afiliasi,Kecantikan,app,69000,9000,selesai,1
+501074,2026-03-18,17:59,440,Semarang,organik,Kecantikan,web,171000,22000,selesai,1
+501079,2026-03-18,18:38,2,Semarang,iklan,Rumah Tangga,app,435000,15000,retur,1
+501078,2026-03-18,21:05,231,Bandung,organik,Rumah Tangga,web,792000,9000,selesai,0
+501084,2026-03-19,04:51,379,Semarang,iklan,Hobi & Olahraga,web,912000,9000,selesai,0
+501088,2026-03-19,07:24,161,Medan,iklan,Kecantikan,app,169000,18000,selesai,0
+501089,2026-03-19,10:16,147,Balikpapan,iklan,Makanan,app,92000,22000,retur,0
+501086,2026-03-19,11:24,267,Jakarta,referral,Kecantikan,app,124000,9000,selesai,0
+501082,2026-03-19,12:54,322,Bandung,iklan,Makanan,app,227000,0,selesai,0
+501091,2026-03-19,13:31,140,Jakarta,iklan,Makanan,app,72000,22000,selesai,0
+501083,2026-03-19,14:53,327,Jakarta,organik,Hobi & Olahraga,app,493000,0,selesai,0
+501085,2026-03-19,20:19,330,Yogyakarta,iklan,Hobi & Olahraga,web,477000,18000,batal,0
+501090,2026-03-19,21:20,433,Bandung,organik,Rumah Tangga,app,284000,22000,selesai,0
+501087,2026-03-19,21:21,55,Surabaya,referral,Fashion,app,363000,0,selesai,1
+501095,2026-03-20,00:48,78,Jakarta,referral,Makanan,app,113000,22000,selesai,0
+501097,2026-03-20,09:13,182,Jakarta,iklan,Fashion,app,130000,22000,batal,1
+501094,2026-03-20,14:23,8,Jakarta,organik,Makanan,web,25000,15000,selesai,0
+501096,2026-03-20,14:31,163,Semarang,referral,Fashion,app,378000,15000,selesai,0
+501092,2026-03-20,14:48,198,Semarang,organik,Rumah Tangga,app,243000,0,batal,1
+501098,2026-03-20,17:51,380,Palembang,organik,Fashion,app,275000,18000,selesai,1
+501100,2026-03-20,18:46,151,Jakarta,organik,Makanan,web,39000,9000,selesai,1
+501093,2026-03-20,20:25,315,Medan,organik,Kecantikan,app,179000,18000,selesai,0
+501099,2026-03-20,22:49,224,Surabaya,organik,Rumah Tangga,app,271000,0,selesai,0
+501110,2026-03-21,12:34,300,Denpasar,iklan,Rumah Tangga,app,389000,0,batal,0
+501102,2026-03-21,17:13,406,Palembang,organik,Makanan,app,107000,9000,selesai,0
+501105,2026-03-21,17:40,95,Medan,iklan,Fashion,app,245000,0,selesai,0
+501106,2026-03-21,18:55,167,Jakarta,organik,Makanan,app,38000,15000,selesai,0
+501106,2026-03-21,18:55,167,Jakarta,organik,Makanan,app,38000,15000,selesai,0
+501108,2026-03-21,19:02,253,Jakarta,organik,Fashion,app,127000,9000,batal,0
+501109,2026-03-21,19:09,168,Semarang,organik,Kecantikan,app,219000,0,retur,1
+501111,2026-03-21,21:00,384,Jakarta,organik,Hobi & Olahraga,web,285000,0,selesai,1
+501107,2026-03-21,21:28,51,Palembang,organik,Fashion,app,154000,22000,batal,1
+501101,2026-03-21,22:45,433,Bandung,organik,Fashion,app,154000,15000,selesai,0
+501104,2026-03-21,23:09,321,Denpasar,iklan,Kecantikan,app,362000,0,selesai,0
+501103,2026-03-21,23:18,395,Semarang,organik,Rumah Tangga,app,198000,22000,selesai,0
+501118,2026-03-22,02:00,209,Jakarta,referral,Hobi & Olahraga,web,639000,22000,selesai,0
+501120,2026-03-22,10:07,60,Jakarta,organik,Hobi & Olahraga,web,193000,22000,selesai,0
+501121,2026-03-22,10:18,413,Makassar,afiliasi,Kecantikan,app,146000,22000,batal,0
+501116,2026-03-22,10:25,233,Semarang,organik,Rumah Tangga,app,431000,0,selesai,0
+501112,2026-03-22,18:11,39,Jakarta,referral,Fashion,app,317000,22000,selesai,0
+501113,2026-03-22,18:18,317,Palembang,organik,Fashion,app,266000,12000,selesai,0
+501115,2026-03-22,19:34,17,Semarang,afiliasi,Fashion,app,404000,12000,batal,0
+501114,2026-03-22,19:50,271,Makassar,organik,Rumah Tangga,app,605000,18000,selesai,1
+501119,2026-03-22,20:46,265,Balikpapan,iklan,Rumah Tangga,app,215000,15000,selesai,0
+501117,2026-03-22,21:35,101,Surabaya,organik,Kecantikan,app,84000,12000,selesai,0
+501124,2026-03-23,08:34,130,Jakarta,organik,Rumah Tangga,app,339000,0,selesai,1
+501125,2026-03-23,11:53,230,Jakarta,iklan,Rumah Tangga,app,521000,0,selesai,1
+501123,2026-03-23,12:06,334,Jakarta,referral,Makanan,web,54000,15000,selesai,0
+501122,2026-03-23,22:38,373,Yogyakarta,organik,Rumah Tangga,web,111000,18000,selesai,0
+501128,2026-03-24,09:38,161,Medan,iklan,Rumah Tangga,app,213000,0,batal,0
+501127,2026-03-24,14:38,436,Jakarta,iklan,Makanan,app,89000,15000,selesai,0
+501126,2026-03-24,15:28,47,Medan,organik,Rumah Tangga,app,218000,0,selesai,0
+501129,2026-03-24,19:36,326,BANDUNG,iklan,Fashion,app,256000,18000,batal,0
+501130,2026-03-24,21:28,132,Surabaya,iklan,Hobi & Olahraga,web,660000,18000,selesai,1
+501132,2026-03-25,01:18,84,Bandung,referral,Hobi & Olahraga,app,181000,22000,selesai,1
+501133,2026-03-25,08:15,235,Denpasar,afiliasi,Elektronik,web,713000,0,batal,0
+501142,2026-03-25,08:17,316,Surabaya,organik,Hobi & Olahraga,app,424000,9000,selesai,0
+501141,2026-03-25,10:27,135,Semarang,referral,Rumah Tangga,app,256000,0,selesai,0
+501136,2026-03-25,11:01,78,Jakarta,referral,Hobi & Olahraga,web,175000,18000,selesai,0
+501143,2026-03-25,12:05,14,Jakarta,referral,Elektronik,app,1573000,0,selesai,0
+501138,2026-03-25,14:06,23,Medan,iklan,Makanan,app,79000,12000,selesai,0
+501140,2026-03-25,16:06,149,Bandung,iklan,Elektronik,web,6008000,0,selesai,0
+501137,2026-03-25,17:37,350,Surabaya,iklan,Fashion,app,236000,9000,selesai,0
+501134,2026-03-25,17:39,146,Medan,iklan,Rumah Tangga,app,77000,18000,selesai,1
+501144,2026-03-25,18:32,233,Semarang,organik,Kecantikan,app,239000,0,selesai,1
+501135,2026-03-25,19:18,278,Medan,referral,Fashion,app,324000,22000,selesai,1
+501139,2026-03-25,22:48,146,Medan,iklan,Rumah Tangga,app,230000,0,selesai,0
+501131,2026-03-25,23:38,422,Medan,afiliasi,Rumah Tangga,web,296000,15000,batal,0
+501148,2026-03-26,09:07,178,surabaya,referral,Elektronik,app,1240000,18000,selesai,0
+501154,2026-03-26,09:17,446,Bandung,organik,Makanan,app,105000,12000,selesai,1
+501151,2026-03-26,11:14,74,Balikpapan,organik,Kecantikan,app,102000,9000,selesai,0
+501157,2026-03-26,11:14,418,Jakarta,organik,Fashion,web,72000,22000,selesai,0
+501146,2026-03-26,14:41,198,Semarang,organik,Kecantikan,app,123000,18000,selesai,0
+501145,2026-03-26,15:59,294,Makassar,referral,Hobi & Olahraga,app,608000,0,selesai,0
+501149,2026-03-26,16:13,293,Denpasar,organik,Elektronik,app,3157000,0,selesai,0
+501155,2026-03-26,16:47,262,Yogyakarta,iklan,Makanan,app,49000,15000,selesai,0
+501150,2026-03-26,16:59,241,Semarang,organik,Rumah Tangga,web,330000,0,selesai,0
+501147,2026-03-26,17:57,300,Denpasar,iklan,Makanan,app,41000,18000,selesai,0
+501156,2026-03-26,18:57,388,Jakarta,iklan,Makanan,web,160000,15000,selesai,1
+501159,2026-03-26,19:25,390,Medan,iklan,Makanan,app,165000,12000,selesai,1
+501152,2026-03-26,20:40,443,Medan,organik,Hobi & Olahraga,app,506000,0,selesai,1
+501158,2026-03-26,20:55,273,Denpasar,organik,Rumah Tangga,app,480000,0,selesai,0
+501153,2026-03-26,22:51,363,Palembang,iklan,Hobi & Olahraga,app,314000,0,selesai,0
+501164,2026-03-27,02:24,81,Jakarta,referral,Makanan,app,110000,9000,selesai,1
+501160,2026-03-27,06:13,314,Palembang,referral,Fashion,app,108000,15000,selesai,0
+501163,2026-03-27,08:03,101,Surabaya,organik,Fashion,app,179000,9000,batal,0
+501172,2026-03-27,09:13,381,Jakarta,afiliasi,Kecantikan,app,164000,22000,batal,0
+501171,2026-03-27,10:16,395,Semarang,organik,Kecantikan,web,122000,18000,selesai,0
+501165,2026-03-27,12:25,157,Medan,organik,Hobi & Olahraga,web,216000,18000,selesai,0
+501166,2026-03-27,14:48,204,Bandung,referral,Makanan,app,141000,12000,selesai,1
+501170,2026-03-27,17:18,413,Makassar,afiliasi,Fashion,web,167000,12000,selesai,1
+501168,2026-03-27,17:36,432,Jakarta,referral,Rumah Tangga,web,382000,0,batal,0
+501173,2026-03-27,19:32,150,Makassar,organik,Makanan,app,64000,12000,selesai,0
+501162,2026-03-27,21:13,202,Jakarta,organik,Kecantikan,web,178000,15000,selesai,0
+501167,2026-03-27,22:50,211,Medan,referral,Hobi & Olahraga,app,584000,0,selesai,0
+501169,2026-03-27,23:13,69,Bandung,organik,Makanan,web,71000,15000,selesai,0
+501161,2026-03-27,23:55,395,Semarang,organik,Hobi & Olahraga,web,223000,0,selesai,0
+501191,2026-03-28,06:39,107,Balikpapan,iklan,Kecantikan,app,106000,12000,selesai,0
+501174,2026-03-28,09:20,439,Makassar,iklan,Makanan,app,54000,9000,selesai,1
+501184,2026-03-28,09:20,148,Bandung,iklan,Makanan,app,88000,18000,selesai,1
+501189,2026-03-28,11:43,3,Jakarta,organik,Rumah Tangga,web,468000,0,selesai,0
+501193,2026-03-28,12:02,108,Jakarta,referral,Elektronik,app,1170000,9000,selesai,0
+501190,2026-03-28,12:07,23,Medan,iklan,Elektronik,app,2758000,0,selesai,1
+501192,2026-03-28,14:00,395,Semarang,organik,Rumah Tangga,app,133000,18000,selesai,0
+501186,2026-03-28,14:01,409,Medan,organik,Hobi & Olahraga,app,607000,15000,retur,0
+501187,2026-03-28,14:30,432,Jakarta,referral,Rumah Tangga,app,603000,12000,selesai,1
+501188,2026-03-28,15:02,30,Yogyakarta,referral,Fashion,web,191000,18000,selesai,0
+501178,2026-03-28,16:33,277,Jakarta,referral,Fashion,app,252000,12000,selesai,1
+501178,2026-03-28,16:33,277,Jakarta,referral,Fashion,app,252000,12000,selesai,1
+501182,2026-03-28,17:02,362,Jakarta,referral,Makanan,app,148000,12000,selesai,0
+501176,2026-03-28,19:03,417,Jakarta,iklan,Makanan,app,112000,22000,batal,1
+501180,2026-03-28,19:23,33,Jakarta,iklan,Hobi & Olahraga,app,509000,0,selesai,0
+501177,2026-03-28,19:49,52,Jkt,iklan,Fashion,app,371000,0,selesai,0
+501175,2026-03-28,20:22,417,Jakarta,iklan,Makanan,web,82000,18000,selesai,1
+501183,2026-03-28,21:07,202,Jakarta,organik,Kecantikan,app,148000,22000,selesai,0
+501179,2026-03-28,21:26,346,Jakarta,organik,Kecantikan,app,84000,15000,selesai,0
+501185,2026-03-28,21:54,365,Jakarta,afiliasi,Fashion,web,220000,0,selesai,0
+501181,2026-03-28,22:26,301,Bandung,organik,Fashion,app,142000,9000,selesai,1
+501248,2026-03-29,03:11,9999,Jakarta,internal,Elektronik,web,0,0,selesai,0
+501200,2026-03-29,11:04,371,Jakarta,referral,Makanan,app,97000,12000,selesai,1
+501202,2026-03-29,13:14,238,Jakarta,organik,Makanan,web,120000,9000,selesai,0
+501209,2026-03-29,13:48,265,Balikpapan,iklan,Fashion,web,232000,15000,selesai,1
+501206,2026-03-29,13:56,101,Surabaya,organik,Makanan,web,32000,18000,selesai,1
+501207,2026-03-29,14:14,201,Jakarta,afiliasi,Hobi & Olahraga,app,420000,12000,selesai,1
+501199,2026-03-29,14:19,35,Denpasar,iklan,Fashion,app,137000,9000,selesai,0
+501195,2026-03-29,15:11,218,surabaya,iklan,Kecantikan,app,113000,22000,selesai,1
+501203,2026-03-29,15:21,284,Palembang,organik,Kecantikan,web,100000,9000,selesai,0
+501194,2026-03-29,16:09,88,Surabaya,organik,Makanan,app,120000,9000,selesai,1
+501204,2026-03-29,16:37,177,Jakarta,referral,Kecantikan,web,154000,12000,selesai,0
+501196,2026-03-29,17:20,173,Surabaya,organik,Makanan,app,99000,9000,selesai,1
+501212,2026-03-29,18:42,145,Semarang,referral,Makanan,app,106000,18000,selesai,0
+501210,2026-03-29,19:01,312,Jakarta,iklan,Rumah Tangga,web,288000,0,selesai,1
+501197,2026-03-29,19:50,293,Denpasar,organik,Hobi & Olahraga,app,664000,9000,selesai,0
+501211,2026-03-29,20:46,446,Bandung,organik,Fashion,web,185000,15000,retur,1
+501205,2026-03-29,20:58,384,Jakarta,organik,Elektronik,app,1501000,0,selesai,0
+501208,2026-03-29,21:06,126,Semarang,organik,Rumah Tangga,web,387000,15000,batal,0
+501198,2026-03-29,21:40,412,Bandung,organik,Fashion,app,475000,0,selesai,0
+501201,2026-03-29,21:49,104,Surabaya,organik,Kecantikan,web,112000,15000,selesai,1
+501246,2026-03-30,03:12,9999,Jakarta,internal,Elektronik,web,0,0,selesai,0
+501225,2026-03-30,08:01,299,Surabaya,organik,Elektronik,web,2755000,0,selesai,1
+501223,2026-03-30,08:14,217,Jakarta,organik,Rumah Tangga,app,422000,0,selesai,1
+501220,2026-03-30,11:30,115,Balikpapan,afiliasi,Kecantikan,app,242000,0,selesai,0
+501221,2026-03-30,11:57,16,Bandung,organik,Makanan,app,83000,15000,selesai,0
+501222,2026-03-30,13:06,319,Surabaya,organik,Rumah Tangga,app,491000,0,selesai,1
+501214,2026-03-30,13:44,402,Bandung,organik,Fashion,web,157000,22000,selesai,0
+501216,2026-03-30,17:53,178,Surabaya,referral,Elektronik,app,2189000,18000,selesai,1
+501213,2026-03-30,18:02,193,Jakarta,organik,Makanan,app,82000,12000,selesai,0
+501215,2026-03-30,18:34,342,Jakarta,organik,Hobi & Olahraga,web,331000,0,selesai,0
+501218,2026-03-30,19:17,255,Surabaya,organik,Fashion,app,261000,0,retur,0
+501217,2026-03-30,19:26,300,Denpasar,iklan,Fashion,app,142000,12000,selesai,0
+501226,2026-03-30,19:30,143,Bandung,iklan,Rumah Tangga,web,312000,0,selesai,0
+501224,2026-03-30,20:21,53,Jakarta,afiliasi,Kecantikan,app,127000,9000,selesai,0
+501219,2026-03-30,20:53,112,Medan,organik,Fashion,app,115000,22000,selesai,0
+501240,2026-03-31,00:20,308,jakarta ,afiliasi,Fashion,app,161000,12000,selesai,1
+501235,2026-03-31,04:32,244,Palembang,referral,Elektronik,app,4697000,0,selesai,0
+501228,2026-03-31,07:00,232,Balikpapan,referral,Rumah Tangga,app,396000,0,selesai,0
+501237,2026-03-31,07:37,304,Makassar,organik,Rumah Tangga,app,177000,15000,batal,0
+501231,2026-03-31,08:37,60,Jakarta,organik,Hobi & Olahraga,app,617000,12000,batal,0
+501229,2026-03-31,09:21,395,Semarang,organik,Makanan,app,29000,12000,selesai,0
+501233,2026-03-31,10:51,238,Jakarta,organik,Rumah Tangga,app,543000,15000,selesai,1
+501238,2026-03-31,11:23,329,Jakarta,afiliasi,Fashion,web,519000,0,selesai,0
+501236,2026-03-31,11:56,306,Jakarta,iklan,Makanan,app,43000,22000,selesai,0
+501239,2026-03-31,12:57,162,Jakarta,organik,Fashion,web,372000,15000,selesai,1
+501227,2026-03-31,14:52,134,Palembang,iklan,Elektronik,app,379000,0,selesai,1
+501230,2026-03-31,15:20,57,Manado,afiliasi,Rumah Tangga,app,167000,18000,selesai,0
+501234,2026-03-31,16:30,141,Yogyakarta,referral,Kecantikan,web,38000,22000,selesai,0
+501232,2026-03-31,20:13,248,Jakarta,iklan,Fashion,app,124000,12000,selesai,1
+501241,2026-03-31,21:01,281,Makassar,referral,Rumah Tangga,web,167000,15000,selesai,0

@@ -276,6 +276,13 @@ const LENCANA = [
   { id: "proyek",   ikon: "🚀", nama: "Builder",          ket: "Proyek SalesKu selesai 16 langkah",   cek: () => dataProyek().lulus.length >= PROYEK.langkah.length },
   { id: "pembaca",  ikon: "📚", nama: "Pembaca Setia",    ket: "Membaca 100 halaman buku PDF",        cek: () => halPdfDibaca() >= 100 },
   { id: "buku",     ikon: "📖", nama: "Kutu Buku",        ket: "Menandai 10 bab selesai dibaca di Book", cek: () => Object.keys((DATA.buku && DATA.buku.dibaca) || {}).length >= 10 },
+  { id: "analis",   ikon: "📊", nama: "Analis Siap Kerja", ket: "Semua modul Jalur Data Analyst dikuasai (≥ 70%)", cek: () => topikTuntas("da") },
+  { id: "ilmuwan",  ikon: "🔬", nama: "Ilmuwan Data",     ket: "Semua modul Jalur Data Scientist dikuasai (≥ 70%)", cek: () => topikTuntas("ds") },
+  { id: "penjaga",  ikon: "🛡️", nama: "Penjaga Siber",    ket: "Semua modul Jalur Cyber Security dikuasai (≥ 70%)", cek: () => topikTuntas("cyber") },
+  { id: "pset",     ikon: "Σ",  nama: "Problem Solver",   ket: "Lulus 3 Problem Set (gaya MIT)",      cek: () => Object.values(DATA.pset || {}).filter(v => v >= 70).length >= 3 },
+  { id: "tutorial", ikon: "✍️", nama: "Murid Oxford",     ket: "Menyelesaikan 3 tutorial",            cek: () => Object.values(DATA.tutorial || {}).filter(t => t.selesai).length >= 3 },
+  { id: "kasus",    ikon: "💼", nama: "Pengambil Keputusan", ket: "Memutuskan 5 studi kasus (gaya Harvard)", cek: () => Object.values(DATA.kasus || {}).filter(k => k.pilih != null).length >= 5 },
+  { id: "kalibrasi",ikon: "🎯", nama: "Tahu Diri",        ket: "30 jawaban 'Yakin' dengan ketepatan ≥ 85%", cek: () => { const k = (DATA.kalibrasi || {}).yakin; return !!k && k.b + k.s >= 30 && k.b / (k.b + k.s) >= 0.85; } },
   { id: "malam",    ikon: "🦉", nama: "Burung Hantu",     ket: "Menyelesaikan kuis setelah jam 21.00", cek: (s, k) => !!(k && new Date().getHours() >= 21) },
 ];
 function topikTuntas(t) { return MATERI[t].every(b => DATA.bab[t + "-" + b.k] && DATA.bab[t + "-" + b.k].persen >= 70); }

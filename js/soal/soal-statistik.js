@@ -155,6 +155,16 @@ const SOAL_STAT = [
 
 const MATERI_STAT = [
 {k:"deskriptif",judul:"Statistik Deskriptif — Membaca Data dengan Jujur",materi:`
+<!--pemula--><h4>Untuk pemula: statistik deskriptif itu apa?</h4>
+<p>Kalau kamu punya ribuan angka, tidak ada yang sanggup membacanya satu per satu. <b>Statistik deskriptif</b> meringkas banyak angka menjadi beberapa angka saja yang menggambarkan "seperti apa" datanya. Seperti saat orang bertanya "kelasmu nilainya bagaimana?", kamu cukup menjawab "rata-ratanya 78, paling rendah 60, paling tinggi 95".</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th><th>Contoh dengan data 2, 3, 3, 4, 8</th></tr>
+<tr><td>mean (rata-rata)</td><td>semua angka dijumlah lalu dibagi banyaknya</td><td>(2+3+3+4+8) ÷ 5 = 4</td></tr>
+<tr><td>median (nilai tengah)</td><td>angka yang berada <b>di tengah</b> setelah diurutkan</td><td>3</td></tr>
+<tr><td>modus</td><td>angka yang <b>paling sering</b> muncul</td><td>3</td></tr>
+<tr><td>range (jangkauan)</td><td>terbesar − terkecil</td><td>8 − 2 = 6</td></tr>
+<tr><td>outlier (pencilan)</td><td>angka yang jauh berbeda dari yang lain</td><td>8</td></tr>
+<tr><td>standar deviasi</td><td>rata-rata seberapa jauh angka-angka menyebar dari rata-ratanya</td><td>kecil = seragam, besar = naik-turun</td></tr></table>
+<p>Perhatikan contoh di atas: satu angka 8 menarik <b>mean</b> naik menjadi 4, padahal kebanyakan datanya sekitar 3. <b>Median</b> tidak terpengaruh. Inilah alasan berita tentang gaji atau harga rumah biasanya memakai median: segelintir orang bergaji sangat tinggi bisa membuat rata-rata terlihat jauh lebih besar dari kenyataan kebanyakan orang.</p><!--/pemula-->
 <p>Statistik deskriptif meringkas data dengan beberapa angka. Kuncinya: memilih ringkasan yang <b>jujur</b>.</p>
 <p>Contoh: pesanan harian seminggu — <code>12, 15, 14, 13, 16, 15, 85</code> (hari ke-7 ada flash sale).</p>
 <table class="mini-pivot"><tr><th>Ukuran</th><th>Cara hitung</th><th>Hasil</th></tr>
@@ -173,6 +183,20 @@ const MATERI_STAT = [
 <div class="catatan">🛠️ Di Excel: <code>AVERAGE</code>, <code>MEDIAN</code>, <code>MODE.SNGL</code>, <code>STDEV.S</code>, <code>QUARTILE.INC</code>, <code>PERCENTILE.INC</code>. Outlier jangan langsung dihapus — selidiki dulu, bisa jadi itu insight terpenting.</div>`},
 
 {k:"metrik",judul:"Metrik Bisnis yang Wajib Dikuasai Analis",materi:`
+<!--pemula--><h4>Untuk pemula: metrik bisnis dalam bahasa sehari-hari</h4>
+<p><b>Metrik</b> adalah angka yang dipakai perusahaan untuk menilai kesehatan bisnisnya, seperti tekanan darah dan suhu tubuh untuk kesehatan manusia. Bayangkan sebuah toko online:</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya dalam bahasa sehari-hari</th></tr>
+<tr><td>pengunjung (<i>visitor/sesi</i>)</td><td>orang yang membuka toko</td></tr>
+<tr><td>conversion rate (tingkat konversi)</td><td>dari 100 pengunjung, berapa yang akhirnya membeli</td></tr>
+<tr><td>AOV (<i>Average Order Value</i>)</td><td>rata-rata uang yang dibelanjakan per pesanan</td></tr>
+<tr><td>growth (pertumbuhan)</td><td>naik/turun berapa persen dibanding periode sebelumnya</td></tr>
+<tr><td>MoM / YoY</td><td><i>month over month</i> (dibanding bulan lalu) / <i>year over year</i> (dibanding bulan yang sama tahun lalu)</td></tr>
+<tr><td>HPP (harga pokok penjualan)</td><td>modal untuk barang yang terjual</td></tr>
+<tr><td>gross margin</td><td>sisa pendapatan setelah dikurangi HPP, dalam persen</td></tr>
+<tr><td>retention / churn</td><td>pelanggan yang <b>bertahan</b> / yang <b>pergi</b></td></tr>
+<tr><td>CAC (<i>Customer Acquisition Cost</i>)</td><td>biaya iklan/promosi untuk mendapat satu pelanggan baru</td></tr>
+<tr><td>pohon driver</td><td>memecah angka besar menjadi angka-angka penyusunnya untuk mencari penyebab perubahan</td></tr></table>
+<p><b>Cara menghitung pertumbuhan:</b> (angka baru − angka lama) ÷ angka lama. Contoh: penjualan naik dari 100 ke 130 → (130 − 100) ÷ 100 = <b>30%</b>.</p><!--/pemula-->
 {{tb:bulanan}}
 <table class="mini-pivot"><tr><th>Metrik</th><th>Rumus</th><th>Contoh (Jan)</th></tr>
 <tr><td>Conversion rate</td><td>pesanan ÷ pengunjung</td><td>400 ÷ 20.000 = 2%</td></tr>
@@ -188,6 +212,17 @@ Juni vs Mei:   +6,7%   ×     −11,1%      × +10%   ≈ +4,3%</code></pre>
 <div class="catatan">⚠️ <b>Persen vs poin persentase:</b> konversi 2% → 1,6% = turun <b>0,4 poin persentase</b> = turun <b>20% relatif</b>. Sebutkan dengan jelas yang mana. Untuk bisnis musiman (Ramadan/Lebaran), bandingkan <b>YoY</b>, bukan MoM.</div>`},
 
 {k:"kritis",judul:"Berpikir Kritis: Korelasi, Bias & A/B Test",materi:`
+<!--pemula--><h4>Untuk pemula: kenapa analis harus suka meragukan?</h4>
+<p>Angka bisa "berbohong" tanpa ada yang berniat bohong. Contoh terkenal: di bulan-bulan saat penjualan es krim naik, kasus orang tenggelam juga naik. Apakah es krim menyebabkan tenggelam? Tentu tidak. Keduanya naik karena <b>cuaca panas</b>: orang lebih banyak membeli es krim <b>dan</b> lebih banyak berenang.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya dalam bahasa sehari-hari</th></tr>
+<tr><td>korelasi</td><td>dua hal naik-turun bersamaan</td></tr>
+<tr><td>kausalitas</td><td>satu hal <b>menyebabkan</b> hal lain</td></tr>
+<tr><td>confounder (faktor pengganggu)</td><td>penyebab tersembunyi yang menggerakkan keduanya, seperti cuaca panas</td></tr>
+<tr><td>bias</td><td>kesalahan sistematis yang membuat kesimpulan melenceng</td></tr>
+<tr><td>bias sampel</td><td>data hanya dari sebagian orang yang tidak mewakili semuanya, misalnya hanya yang mau mengisi survei</td></tr>
+<tr><td>survivorship bias</td><td>hanya melihat yang "selamat"; misalnya meniru kebiasaan pengusaha sukses tanpa melihat ribuan yang gagal dengan kebiasaan sama</td></tr>
+<tr><td>A/B test</td><td>membagi pengunjung <b>secara acak</b> ke versi A dan B, lalu membandingkan hasilnya; cara paling meyakinkan untuk membuktikan sebab-akibat</td></tr>
+<tr><td>paradoks Simpson</td><td>sesuatu terlihat lebih baik di setiap kelompok, tapi lebih buruk saat semua kelompok digabung, karena jumlah anggota tiap kelompok berbeda</td></tr></table><!--/pemula-->
 <p>Analis yang baik bukan hanya pandai menghitung, tapi juga pandai <b>meragukan kesimpulan yang terlalu cepat</b>.</p>
 <ul>
 <li><b>Korelasi ≠ kausalitas.</b> Es krim & kasus tenggelam naik bersamaan karena cuaca panas (<i>confounder</i>).</li>
@@ -206,6 +241,17 @@ Juni vs Mei:   +6,7%   ×     −11,1%      × +10%   ≈ +4,3%</code></pre>
 <div class="catatan">❗ p-value <b>bukan</b> "peluang B lebih baik", dan bukan ukuran besarnya efek. Selalu laporkan juga besarnya selisih (misal +0,3 poin persentase) dan apakah itu bermakna untuk bisnis.</div>`},
 
 {k:"segmentasi",judul:"Segmentasi & Clustering — Kuasai Skripsimu",materi:`
+<!--pemula--><h4>Untuk pemula: segmentasi dan clustering</h4>
+<p><b>Segmentasi</b> artinya mengelompokkan pelanggan yang mirip, supaya perlakuannya bisa disesuaikan: pelanggan setia diberi hadiah, pelanggan yang lama tidak belanja diberi voucher "kami rindu kamu". <b>Clustering</b> adalah cara komputer melakukan pengelompokan itu secara otomatis berdasarkan kemiripan angka, tanpa kita tentukan dulu kelompoknya.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>RFM</td><td>tiga ciri pelanggan: <b>R</b>ecency (berapa hari sejak belanja terakhir), <b>F</b>requency (seberapa sering belanja), <b>M</b>onetary (berapa banyak uang yang dibelanjakan)</td></tr>
+<tr><td>fitur</td><td>kolom yang dipakai komputer untuk menilai kemiripan</td></tr>
+<tr><td>normalisasi</td><td>menyamakan skala angka; tanpa ini, kolom uang (jutaan) akan "mengalahkan" kolom frekuensi (puluhan)</td></tr>
+<tr><td>cluster</td><td>satu kelompok hasil pengelompokan</td></tr>
+<tr><td>K-Means</td><td>membagi data menjadi <b>k</b> kelompok dengan titik pusat berupa rata-rata</td></tr>
+<tr><td>K-Medoids</td><td>mirip, tetapi titik pusatnya adalah <b>data asli</b> yang paling di tengah, sehingga lebih tahan terhadap pencilan</td></tr>
+<tr><td>elbow / silhouette</td><td>dua cara menentukan berapa jumlah kelompok yang paling pas</td></tr></table>
+<p>Bayangkan membagi siswa satu sekolah ke beberapa kelompok belajar berdasarkan nilai dan minat. Komputer mencari pembagian yang membuat anggota satu kelompok semirip mungkin, dan kelompok yang berbeda sebeda mungkin.</p><!--/pemula-->
 <p>Bab ini menyiapkanmu menjelaskan skripsi <b>K-Means vs K-Medoids</b> dengan percaya diri, baik ke interviewer teknis maupun non-teknis.</p>
 <p><b>1. Fitur RFM</b> — Recency (hari sejak belanja terakhir; <i>kecil = baik</i>), Frequency, Monetary.</p>
 <p><b>2. Normalisasi</b> — clustering memakai jarak, jadi skala harus disamakan:</p>

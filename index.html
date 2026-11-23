@@ -4,20 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Belajar Excel, SQL, BI, statistik, ERP/Odoo, persiapan karier, dan coding lewat 970+ soal berpembahasan. Bisa offline dan dibaca seperti buku di HP.">
-<meta name="theme-color" content="#4a8c7f">
+<meta name="description" content="Jalur belajar Data Analyst, Data Scientist, dan Cyber Security (hacker etis) dengan problem set ala MIT, tutorial ala Oxford, dan studi kasus ala Harvard dari dunia kerja Indonesia dan global. 2.000+ soal berpembahasan, Lab SQL, bisa offline.">
+<meta name="theme-color" content="#F4F1DE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1B2A" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="ikon/ikon-192.png">
-<title>KodeQuiz — Coding, Data & Karier</title>
+<title>KodeQuiz — Jalur Data Analyst, Data Scientist & Cyber Security</title>
 <link rel="icon" href="ikon/ikon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="atelier/atelier.css">
 <link rel="stylesheet" href="atelier/theme.css">
+<link rel="stylesheet" href="jalur/jalur.css">
+<link rel="stylesheet" href="atelier/belajar.css">
+<link rel="stylesheet" href="atelier/holst.css">
 <script src="atelier/theme.js"></script>
 <script src="atelier/atelier.js"></script>
+<script defer src="atelier/nyaman.js"></script>
+<script defer src="atelier/musik.js"></script>
 </head>
 <body>
 
@@ -25,8 +31,16 @@
   <div class="topbar-kiri">
     <button class="nav-btn tersembunyi" id="btn-nav-kembali" title="Kembali (Esc)">←<span class="nav-label"> Kembali</span></button>
     <button class="nav-btn tersembunyi" id="btn-nav-beranda" title="Ke beranda">🏠<span class="nav-label"> Beranda</span></button>
-    <button class="logo" id="logo" title="Beranda">🌿 Kode<span>Quiz</span></button>
+    <button class="logo" id="logo" title="Beranda"><i class="logo-tanda" aria-hidden="true"></i>Kode<span>Quiz</span></button>
   </div>
+  <nav class="nav-utama" aria-label="Navigasi utama">
+    <button data-tab="beranda">Beranda</button>
+    <button data-tab="da"><span class="nav-panjang">Data </span>Analyst</button>
+    <button data-tab="ds"><span class="nav-panjang">Data </span>Scientist</button>
+    <button data-tab="cyber">Cyber<span class="nav-panjang"> Security</span></button>
+    <button data-tab="latihan">Latihan</button>
+    <button data-tab="kemajuan">Kemajuan</button>
+  </nav>
   <div class="topbar-stat">
     <div class="pil pil-xp" id="pil-xp" title="Level & total XP"><span class="pil-lv">Lv <b id="stat-level">1</b></span><span class="pil-xp-angka">⭐ <b id="stat-xp">0</b></span></div>
     <div class="pil" title="Hari berturut-turut belajar">🔥 <b id="stat-streak">0</b></div>
@@ -41,73 +55,131 @@
 <section id="layar-beranda" class="layar">
   <div class="hero">
     <p class="eyebrow" id="sapaan">Halo</p>
-    <h1>Belajar pelan, <em>tapi setiap hari.</em></h1>
-    <p class="hero-sub">Fokus sekarang: <b>Excel, SQL, BI & Odoo</b> untuk lowongan data/bisnis, <b>proyek nyata</b> untuk portofolio, dan <b>persiapan karier</b>. Total <b id="stat-total">0</b> soal, masing-masing dengan penjelasan <i>kenapa</i>.</p>
-    <div class="level-kartu" id="level-kartu"></div>
+    <h1>Belajar data &amp; keamanan siber seperti di kampus terbaik, <em>sedikit setiap hari.</em></h1>
+    <div class="hero-baris">
+      <p class="hero-sub">Tiga jalur karier, <b>Data Analyst</b>, <b>Data Scientist</b>, dan <b>Cyber Security</b>, disusun dengan cara belajar MIT (problem set), Oxford (tutorial), dan Harvard (studi kasus), memakai situasi kerja nyata di Indonesia dan luar negeri. Total <b id="stat-total">0</b> soal berpembahasan.</p>
+      <div class="level-kartu" id="level-kartu"></div>
+    </div>
+    <div class="statistik" id="hero-chip" aria-label="Isi KodeQuiz"></div>
+  </div>
 
+  <section class="blok" aria-labelledby="sesi-judul">
+    <div class="sesi-kepala">
+      <h2 class="sec-judul" id="sesi-judul">Sesi hari ini</h2>
+      <p class="sec-sub">Sekitar 30–45 menit. Urutannya mengikuti riset belajar: ingat kembali dulu, pelajari yang baru, lalu terapkan pada kasus.</p>
+    </div>
+    <div class="sesi-grid">
+      <div class="sesi-item">
+        <span class="sesi-no">1</span>
+        <div class="sesi-teks"><b>Ingat kembali</b><small id="sesi-ulang-ket">Soal yang jatuh tempo dan titik buta muncul lebih dulu.</small></div>
+        <button class="btn btn-hijau" id="btn-ulang">Ulangan Pintar<span id="badge-ulang" class="badge tersembunyi"></span></button>
+      </div>
+      <div class="sesi-item" id="sesi-2"></div>
+      <div class="sesi-item" id="sesi-3"></div>
+    </div>
+  </section>
+
+  <section class="blok blok-goresan" aria-labelledby="jalur-judul">
+    <svg class="goresan" viewBox="0 0 420 520" aria-hidden="true"><path d="M-40 40 C 150 40, 320 150, 330 290 C 338 420, 230 500, 120 470" fill="none" stroke="currentColor" stroke-width="26" stroke-linecap="round"/></svg>
+    <h2 class="sec-judul" id="jalur-judul">Jalur karier</h2>
+    <p class="sec-sub">Masing-masing punya peta belajar dari dasar sampai mahir, problem set, tutorial, studi kasus, dan capstone untuk portofolio.</p>
+    <div class="jalur-kartu-grid" id="jalur-kartu"></div>
+  </section>
+
+  <section class="pernyataan" aria-label="Tentang KodeQuiz">
+    <h2>Belajar seperti di kampus terbaik.<br>Berlatih seperti di tempat kerja.</h2>
+    <p>Setiap jalur memadukan problem set MIT, tutorial Oxford, dan studi kasus Harvard dengan data dan situasi kerja dari Indonesia dan luar negeri.</p>
+    <p class="pernyataan-aksen">Gratis, bisa dipakai offline, progres tersimpan di perangkatmu.</p>
+    <button class="btn btn-terang" id="btn-ke-metode">Lihat cara belajarnya</button>
+  </section>
+
+  <section class="blok" aria-labelledby="metode-judul">
+    <h2 class="sec-judul" id="metode-judul">Cara belajar di KodeQuiz</h2>
+    <p class="sec-sub">Diadaptasi dari cara mengajar MIT, Oxford, dan Harvard serta temuan riset kognitif. Semuanya fitur yang kamu pakai langsung, bukan sekadar teori.</p>
+    <div class="metode-grid" id="metode-grid"></div>
+  </section>
+
+  <div class="cara">
+    <h2 class="sec-judul">Nyaman dipakai lama</h2>
+    <div class="cara-grid">
+      <div class="cara-item"><span class="cara-em">🏳️</span><b>Boleh menyerah</b><p>Lebih baik melihat jawaban dan penjelasannya daripada menebak. Soal itu akan kembali lewat Ulangan Pintar.</p></div>
+      <div class="cara-item"><span class="cara-em">📱</span><b>Belajar di mana saja</b><p>Mode Book dan 8 buku PDF untuk dibaca di HP, plus pindah progres laptop ↔ HP lewat ⚙️ Pengaturan.</p></div>
+      <div class="cara-item"><span class="cara-em">👀</span><b>Nyaman di mata</b><p>Latar lembut, kontras cukup tanpa silau, huruf bisa diperbesar (Aa), mode gelap otomatis, dan pengingat istirahat mata tiap 20 menit.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LATIHAN BEBAS ============ -->
+<section id="layar-latihan" class="layar tersembunyi">
+  <p class="eyebrow">Latihan bebas</p>
+  <h2 class="set-h">Semua topik, alat praktik, dan kuis acak</h2>
+  <p class="set-sub">Untuk memperkuat dasar di luar jalur: Excel, SQL, BI, statistik, ERP, karier, dan bahasa pemrograman.</p>
+  <div class="kuis-acak">
     <div class="lingkup-wrap">
-      <span class="lingkup-label">Kuis random dari:</span>
+      <span class="lingkup-label">Kuis acak dari:</span>
+      <button class="lingkup" data-lingkup="jalur">Jalur DA & DS</button>
       <button class="lingkup" data-lingkup="data">Data & Bisnis</button>
       <button class="lingkup" data-lingkup="karier">Karier</button>
       <button class="lingkup" data-lingkup="coding">Coding prioritas</button>
       <button class="lingkup" data-lingkup="opsional">Coding bukan prioritas</button>
       <button class="lingkup" data-lingkup="semua">Semua</button>
     </div>
-    <div class="hero-aksi">
-      <button class="btn btn-utama btn-besar" id="btn-random">🎲 Kuis Random — 10 Soal <small class="btn-ket" id="random-sisa"></small></button>
-      <button class="btn btn-hijau btn-besar" id="btn-ulang">🧠 Ulangan Pintar <small class="btn-ket">soal yang pernah salah kembali lagi</small><span id="badge-ulang" class="badge tersembunyi"></span></button>
-    </div>
+    <button class="btn btn-utama btn-besar" id="btn-random">🎲 Kuis Acak — 10 Soal <small class="btn-ket" id="random-sisa"></small></button>
   </div>
 
   <div class="fitur-grid">
-    <button class="fitur fitur-utama fitur-buku" id="fitur-buku">
-      <span class="fitur-label">BARU · Book</span>
-      <b class="fitur-judul">📖 Belajar tanpa laptop</b>
-      <p><b>6 buku PDF</b> bisa dibaca langsung di sini — nyaman di HP, ingat halaman terakhir, dan bisa offline. Ada juga versi per bab yang soalnya bisa diketuk.</p>
-      <div class="mini-bar"><div id="fitur-buku-prog"></div></div>
-      <small id="fitur-buku-ket"></small>
-    </button>
-    <button class="fitur fitur-utama" id="fitur-proyek">
-      <span class="fitur-label">Belajar dari Awal</span>
-      <b class="fitur-judul">🚀 Bangun dashboard penjualan sendiri</b>
-      <p>Proyek <b>SalesKu</b>: dari file kosong sampai dashboard salesperson yang bisa dipublikasikan. Setiap langkah dicek otomatis, dan kamu bisa melihat target tampilannya.</p>
-      <div class="mini-bar"><div id="fitur-proyek-prog"></div></div>
-      <small id="fitur-proyek-ket"></small>
-    </button>
-    <button class="fitur" id="fitur-lab">
+    <button class="fitur fitur-utama" id="fitur-lab">
+      <span class="fitur-label">Gaya tes interview</span>
       <b class="fitur-judul">🧪 Lab SQL</b>
-      <p>Tulis query sungguhan. Hasilnya dicek otomatis — jalan offline.</p>
+      <p>Tantangan bercerita dari situasi kerja: skema, hasil yang diharapkan, 3 petunjuk bertahap, lalu <b>Jalankan</b> dan <b>Kumpulkan</b>. Jalan offline.</p>
       <div class="mini-bar"><div id="fitur-lab-prog"></div></div>
       <small id="fitur-lab-ket"></small>
     </button>
+    <button class="fitur fitur-utama fitur-buku" id="fitur-buku">
+      <span class="fitur-label">Book</span>
+      <b class="fitur-judul">📖 Belajar tanpa laptop</b>
+      <p><b>8 buku PDF</b> (termasuk Jalur Data Analyst & Data Scientist) dan versi per bab yang soalnya bisa diketuk, termasuk modul jalur DA & DS.</p>
+      <div class="mini-bar"><div id="fitur-buku-prog"></div></div>
+      <small id="fitur-buku-ket"></small>
+    </button>
+    <button class="fitur" id="fitur-proyek">
+      <b class="fitur-judul">🚀 Proyek SalesKu</b>
+      <p>Bangun dashboard penjualan dari file kosong; setiap langkah dicek otomatis.</p>
+      <div class="mini-bar"><div id="fitur-proyek-prog"></div></div>
+      <small id="fitur-proyek-ket"></small>
+    </button>
     <button class="fitur" id="fitur-rencana">
-      <b class="fitur-judul">🗓️ Rencana Belajar</b>
-      <p>4 minggu inti (Excel, SQL, proyek, portofolio, CV, melamar) + 2 minggu lanjutan (BI, Odoo, window function, interview).</p>
+      <b class="fitur-judul">🗓️ Rencana 6 Minggu</b>
+      <p>Excel, SQL, proyek, portofolio, CV, sampai melamar.</p>
       <div class="mini-bar"><div id="fitur-rencana-prog"></div></div>
       <small id="fitur-rencana-ket"></small>
     </button>
   </div>
 
   <div id="grup-topik"></div>
+</section>
 
+<!-- ============ KEMAJUAN ============ -->
+<section id="layar-kemajuan" class="layar tersembunyi">
+  <p class="eyebrow">Kemajuan</p>
+  <h2 class="set-h">Rapor belajarmu</h2>
+  <p class="set-sub">Semua dihitung dari aktivitasmu di perangkat ini. Pindahkan ke perangkat lain lewat ⚙️ Pengaturan.</p>
+  <div id="kemajuan-isi"></div>
   <section class="lencana-wrap">
     <h2 class="sec-judul">🏅 Lencana <span class="chip-kecil" id="lencana-hitung"></span></h2>
     <p class="sec-sub">Kumpulkan dengan belajar konsisten. Setiap lencana baru dirayakan 🎉</p>
     <div class="lencana-grid" id="lencana-grid"></div>
   </section>
-
-  <div class="cara">
-    <h2 class="sec-judul">Kenapa cara ini bekerja</h2>
-    <div class="cara-grid">
-      <div class="cara-item"><span class="cara-em">📖</span><b>Materi → langsung soal</b><p>Membaca lalu langsung mengingat kembali (active recall) membuat ilmu lebih melekat daripada membaca ulang.</p></div>
-      <div class="cara-item"><span class="cara-em">🏳️</span><b>Boleh menyerah</b><p>Lebih baik melihat jawaban + penjelasannya daripada menebak. Soal itu akan kembali lagi lewat Ulangan Pintar.</p></div>
-      <div class="cara-item"><span class="cara-em">🧠</span><b>Spaced repetition</b><p>Soal yang salah kembali hari ini; yang benar kembali 1 → 3 → 7 hari kemudian.</p></div>
-      <div class="cara-item"><span class="cara-em">🎉</span><b>Rayakan kemajuan kecil</b><p>Combo, bintang, level, dan lencana memberi rasa "menang" setiap hari — kebiasaan kecil yang konsisten mengalahkan belajar maraton.</p></div>
-      <div class="cara-item"><span class="cara-em">📱</span><b>Belajar di mana saja</b><p>Mode Book dan 6 PDF untuk dibaca di HP, plus pindah progres laptop ↔ HP lewat ⚙️ Pengaturan. Sepuluh menit di perjalanan pun berarti.</p></div>
-      <div class="cara-item"><span class="cara-em">🌿</span><b>Tampilan yang tenang</b><p>Hijau sage, biru lembut, dan latar krem yang tidak silau. Saturasi rendah = lebih sedikit gangguan visual saat fokus. Ada mode gelap untuk malam hari.</p></div>
-    </div>
-  </div>
 </section>
+
+<!-- ============ JALUR KARIER (Data Analyst / Data Scientist) ============ -->
+<section id="layar-jalur" class="layar tersembunyi"><div id="jalur-isi"></div></section>
+
+<!-- ============ STUDI KASUS (metode kasus Harvard) ============ -->
+<section id="layar-kasus" class="layar tersembunyi"><div id="kasus-isi"></div></section>
+
+<!-- ============ TUTORIAL (sistem tutorial Oxford) ============ -->
+<section id="layar-tutorial" class="layar tersembunyi"><div id="tutorial-isi"></div></section>
 
 <!-- ============ TOPIK (daftar bab) ============ -->
 <section id="layar-topik" class="layar tersembunyi">
@@ -140,11 +212,21 @@
 </section>
 
 <!-- ============ KUIS ============ -->
+<!-- Materi bab muncul sebelum soal dari bab yang belum dibaca (dan lewat tombol 📖 Materi) -->
+<dialog id="dlg-materi" class="dlg-materi" aria-labelledby="dlg-materi-judul">
+  <p class="eyebrow" id="dlg-materi-eyebrow"></p>
+  <h2 class="materi-judul" id="dlg-materi-judul"></h2>
+  <p class="dlg-materi-ket" id="dlg-materi-ket"></p>
+  <article class="materi-kotak" id="dlg-materi-isi"></article>
+  <div class="materi-aksi"><button class="btn btn-utama btn-besar" id="btn-dlg-paham">Saya paham, kerjakan soal →</button></div>
+</dialog>
+
 <section id="layar-kuis" class="layar tersembunyi">
   <div class="kuis-head">
     <span><span class="chip" id="kuis-topik">Excel</span> <span class="kuis-lv" id="kuis-level">Dasar</span> <span class="combo" id="combo" aria-live="polite"></span></span>
     <span class="kuis-kanan">
       <span id="kuis-progres" class="kuis-prog">1 / 10</span>
+      <button class="btn-keluar" id="btn-kuis-materi" title="Baca materi bab soal ini">📖 Materi</button>
       <button class="btn-keluar" id="btn-keluar" title="Keluar dari kuis">✕ Keluar</button>
     </span>
   </div>
@@ -154,10 +236,16 @@
     <h2 class="pertanyaan" id="kuis-pertanyaan"></h2>
     <pre class="kode-soal tersembunyi" id="kuis-kode"></pre>
     <div id="kuis-jawaban"></div>
+    <div id="kuis-yakin" class="kuis-yakin tersembunyi" role="group" aria-label="Kunci jawaban dengan tingkat keyakinan">
+      <span class="yakin-tanya">Kunci jawabanmu. Seberapa yakin?</span>
+      <button class="btn-yakin" data-y="yakin">Yakin <kbd>Y</kbd></button>
+      <button class="btn-yakin" data-y="ragu">Ragu <kbd>R</kbd></button>
+      <button class="btn-yakin" data-y="tebak">Menebak <kbd>T</kbd></button>
+    </div>
     <div class="kuis-bantuan" id="kuis-bantuan">
       <button class="btn-bantuan" id="btn-petunjuk" title="Pintasan: H">💡 Petunjuk</button>
       <button class="btn-bantuan" id="btn-menyerah">🏳️ Menyerah, lihat jawaban</button>
-      <span class="pintasan">Pintasan: 1–4 pilih · H petunjuk · Enter lanjut</span>
+      <span class="pintasan">Pintasan: 1–4 pilih · Y/R/T kunci · H petunjuk · Enter lanjut</span>
     </div>
     <div id="kuis-feedback" class="feedback tersembunyi"></div>
     <button class="btn btn-utama tersembunyi" id="btn-lanjut">Lanjut →</button>
@@ -304,30 +392,50 @@
   <iframe id="frame-tes" class="frame-tes" title="Pengecekan otomatis" aria-hidden="true" tabindex="-1"></iframe>
 </section>
 
-<!-- ============ LAB SQL ============ -->
+<!-- ============ LAB SQL (format tes interview bercerita) ============ -->
 <section id="layar-sqllab" class="layar tersembunyi">
-  <p class="eyebrow">🧪 Lab SQL · <span id="lab-mesin">memuat mesin SQLite…</span></p>
-  <h2 class="set-h">Tulis query sungguhan</h2>
-  <p class="set-sub"><span id="lab-progres"></span>. Hasil query-mu dibandingkan otomatis dengan jawaban. Database di-reset setiap query dijalankan, jadi jangan takut salah.</p>
+  <div class="lab-kepala">
+    <div>
+      <p class="eyebrow">🧪 Lab SQL · <span id="lab-mesin">memuat mesin SQLite…</span></p>
+      <h2 class="set-h">Tantangan SQL dunia kerja</h2>
+    </div>
+    <div class="lab-prog"><span id="lab-progres"></span><div class="mini-bar"><div id="lab-prog-isi"></div></div></div>
+  </div>
+  <div class="lab-filter" id="lab-filter" role="group" aria-label="Saring tantangan"></div>
   <div class="lab-nav" id="lab-nav"></div>
   <div class="lab-grid">
-    <div>
-      <div class="materi-kotak">
-        <h3 class="lab-judul" id="lab-judul"></h3>
-        <p id="lab-soal"></p>
+    <div class="lab-kiri">
+      <div class="lab-tab" role="tablist">
+        <button class="lab-tab-btn aktif" role="tab" data-panel="tantangan">Tantangan</button>
+        <button class="lab-tab-btn" role="tab" data-panel="solusi">Solusi</button>
+        <button class="lab-tab-btn" role="tab" data-panel="riwayat">Riwayat <span id="lab-riwayat-n" class="chip-kecil"></span></button>
       </div>
-      <details class="lab-tabel-wrap" open><summary>Lihat isi tabel</summary><div id="lab-tabel"></div></details>
+      <div class="lab-panel materi-kotak" id="lab-panel-tantangan">
+        <div class="lab-atas">
+          <span class="lab-posisi" id="lab-posisi"></span>
+          <span><button class="btn-mini" id="btn-lab-prev" aria-label="Tantangan sebelumnya">‹</button> <button class="btn-mini" id="btn-lab-next" aria-label="Tantangan berikutnya">›</button></span>
+        </div>
+        <h3 class="lab-judul" id="lab-judul"></h3>
+        <div class="lab-label" id="lab-label"></div>
+        <div class="lab-cerita" id="lab-cerita"></div>
+        <h4 class="lab-sub">Tugas</h4>
+        <p id="lab-soal"></p>
+        <details class="lab-lipat"><summary>Skema database <span class="chip-kecil" id="lab-skema-n"></span></summary><div id="lab-tabel"></div></details>
+        <details class="lab-lipat"><summary>Hasil yang diharapkan</summary><div id="lab-harap"></div></details>
+        <details class="lab-lipat" id="lab-bantuan"><summary>Bantuan · <span id="lab-bantuan-n"></span></summary><div id="lab-petunjuk-isi"></div></details>
+      </div>
+      <div class="lab-panel materi-kotak tersembunyi" id="lab-panel-solusi"></div>
+      <div class="lab-panel materi-kotak tersembunyi" id="lab-panel-riwayat"></div>
     </div>
-    <div>
+    <div class="lab-kanan">
       <div class="editor">
-        <div class="editor-tab"><span class="tab-file aktif">query.sql</span></div>
-        <textarea id="lab-query" class="lab-query" spellcheck="false" autocapitalize="off" placeholder="SELECT …"></textarea>
+        <div class="editor-tab"><span class="tab-file aktif">query.sql</span><span class="editor-info"><button class="btn-mini" id="btn-lab-reset" title="Kosongkan editor">↺ Reset</button> <span id="lab-karakter">0 karakter</span></span></div>
+        <textarea id="lab-query" class="lab-query" spellcheck="false" autocapitalize="off" placeholder="SELECT …" aria-label="Editor SQL"></textarea>
       </div>
       <div class="aksi-langkah">
-        <button class="btn btn-utama" id="btn-lab-jalankan">▶ Jalankan</button>
-        <button class="btn-bantuan" id="btn-lab-petunjuk">💡 Petunjuk</button>
-        <button class="btn-bantuan" id="btn-lab-jawaban">🏳️ Lihat jawaban</button>
-        <span class="pintasan">Ctrl+Enter = jalankan</span>
+        <button class="btn btn-garis" id="btn-lab-jalankan">▶ Jalankan</button>
+        <button class="btn btn-utama" id="btn-lab-kumpul">✓ Kumpulkan jawaban</button>
+        <span class="pintasan">Ctrl+Enter jalankan · Ctrl+Shift+Enter kumpulkan</span>
       </div>
       <div id="lab-status" class="lab-status tersembunyi"></div>
       <div id="lab-hasil" class="lab-hasil"></div>
@@ -348,7 +456,7 @@
 <section id="layar-buku" class="layar tersembunyi">
   <p class="eyebrow">📖 Book</p>
   <h2 class="set-h">Belajar tanpa laptop</h2>
-  <p class="set-sub">Baca <b>6 buku PDF</b> langsung di sini — nyaman di HP, bisa zoom, mode malam, dan ingat halaman terakhirmu. Mau dinilai? Buka versi <b>interaktif</b> per bab: soalnya bisa diketuk dan dapat XP.</p>
+  <p class="set-sub">Baca <b>8 buku PDF</b> langsung di sini — nyaman di HP, bisa zoom, mode malam, dan ingat halaman terakhirmu. Mau dinilai? Buka versi <b>interaktif</b> per bab: soalnya bisa diketuk dan dapat XP.</p>
   <div id="buku-lanjut" class="buku-lanjut-wrap"></div>
 
   <div class="rak-kepala">
@@ -420,7 +528,16 @@
 
 </main>
 
-<footer class="kaki">KodeQuiz · progres tersimpan otomatis di browser ini · Esc = kembali · selamat belajar 🌿</footer>
+<nav class="nav-bawah" aria-label="Navigasi utama">
+  <button data-tab="beranda"><i aria-hidden="true">⌂</i>Beranda</button>
+  <button data-tab="da"><i aria-hidden="true">DA</i>Analyst</button>
+  <button data-tab="ds"><i aria-hidden="true">DS</i>Scientist</button>
+  <button data-tab="cyber"><i aria-hidden="true">SEC</i>Cyber</button>
+  <button data-tab="latihan"><i aria-hidden="true">✎</i>Latihan</button>
+  <button data-tab="kemajuan"><i aria-hidden="true">↗</i>Kemajuan</button>
+</nav>
+
+<footer class="kaki">KodeQuiz · progres tersimpan otomatis di browser ini · Esc = kembali · selamat belajar</footer>
 
 <!-- Isi buku untuk dicetak / disimpan sebagai PDF (hanya tampil saat mencetak) -->
 <div id="cetak" class="cetak"></div>
@@ -441,6 +558,8 @@
 <!-- Data -->
 <script src="js/data/dataset.js"></script>
 <script src="js/data/buku-info.js"></script>
+<script src="js/data/jalur.js"></script>
+<script src="js/data/kasus.js"></script>
 <!-- Bank soal: Data & Bisnis -->
 <script src="js/soal/soal-excel.js"></script>
 <script src="js/soal/soal-excel-2.js"></script>
@@ -455,13 +574,29 @@
 <!-- Bank soal: Coding -->
 <script src="js/soal/soal-python.js"></script>
 <script src="js/soal/soal-python-2.js"></script>
+<script src="js/soal/soal-python-3.js"></script>
 <script src="js/soal/soal-js.js"></script>
 <script src="js/soal/soal-js-2.js"></script>
+<script src="js/soal/soal-js-3.js"></script>
+<script src="js/soal/soal-git.js"></script>
 <script src="js/soal/soal-html.js"></script>
 <script src="js/soal/soal-css.js"></script>
 <script src="js/soal/soal-web-2.js"></script>
+<script src="js/soal/soal-web-3.js"></script>
 <script src="js/soal/soal-java.js"></script>
+<script src="js/soal/soal-java-2.js"></script>
 <script src="js/soal/soal-php.js"></script>
+<script src="js/soal/soal-php-2.js"></script>
+<script src="js/soal/soal-latihan-ekstra.js"></script>
+<!-- Bank soal: Jalur karier data -->
+<script src="js/soal/soal-da.js"></script>
+<script src="js/soal/soal-ds.js"></script>
+<script src="js/soal/soal-cyber.js"></script>
+<script src="js/soal/soal-cyber-2.js"></script>
+<script src="js/soal/soal-cyber-3.js"></script>
+<script src="js/soal/soal-siber.js"></script>
+<script src="js/data/kunci-gambar.js"></script>
+<script src="js/soal/soal-kasus-sql.js"></script>
 <!-- Fitur -->
 <script src="js/fitur/proyek-blok.js"></script>
 <script src="js/fitur/proyek-data.js"></script>
@@ -472,5 +607,7 @@
 <script src="js/fitur/pdf-baca.js"></script>
 <!-- Inti aplikasi -->
 <script src="js/app.js"></script>
+<!-- Jalur karier, studi kasus, tutorial, kemajuan (di luar js/ karena memakai DOM) -->
+<script src="jalur/jalur.js"></script>
 </body>
 </html>

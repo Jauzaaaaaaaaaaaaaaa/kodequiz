@@ -39,6 +39,18 @@ SOAL_HTML.push(
 
 MATERI_HTML.push(
 {k:"a11y",judul:"Aksesibilitas & SEO Dasar",materi:`
+<!--pemula--><h4>Untuk pemula: apa itu aksesibilitas?</h4>
+<p><b>Aksesibilitas</b> (sering disingkat <i>a11y</i>, karena ada 11 huruf di antara a dan y pada kata <i>accessibility</i>) artinya halaman bisa dipakai <b>semua orang</b>: tunanetra yang memakai pembaca layar, orang yang tangannya tidak bisa memakai mouse sehingga hanya memakai keyboard, atau orang tua yang butuh tulisan kontras.</p>
+<p><b>SEO</b> (<i>Search Engine Optimization</i>) artinya usaha agar halaman mudah ditemukan dan dipahami Google. Kabar baiknya: hal-hal yang membuat halaman aksesibel hampir sama dengan yang membuat Google paham.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya dalam bahasa sehari-hari</th></tr>
+<tr><td>pembaca layar (<i>screen reader</i>)</td><td>aplikasi yang membacakan isi layar dengan suara, misalnya TalkBack di Android</td></tr>
+<tr><td><code>lang="id"</code></td><td>memberi tahu bahasa halaman, agar pembaca layar memakai logat bahasa Indonesia</td></tr>
+<tr><td><code>meta charset="UTF-8"</code></td><td>pengaturan huruf supaya karakter seperti é, ™, atau emoji tampil benar</td></tr>
+<tr><td><code>meta name="description"</code></td><td>kalimat ringkasan yang tampil di bawah judul pada hasil pencarian Google</td></tr>
+<tr><td><code>aria-label</code></td><td>label tak terlihat untuk pembaca layar, dipakai pada tombol yang hanya berisi ikon</td></tr>
+<tr><td>fokus</td><td>penanda elemen mana yang aktif saat kamu menekan tombol Tab</td></tr>
+<tr><td>kontras</td><td>beda terang-gelap antara tulisan dan latarnya</td></tr></table>
+<p>Di bawah ini contoh halaman lengkap yang sudah menerapkan semuanya.</p><!--/pemula-->
 <p>Halaman yang <b>aksesibel</b> bisa dipakai semua orang — termasuk pengguna keyboard dan screen reader. Bonusnya: struktur yang sama juga disukai mesin pencari (SEO).</p>
 <pre><code>&lt;html lang="id"&gt;
 &lt;head&gt;
@@ -101,6 +113,19 @@ SOAL_CSS.push(
 
 MATERI_CSS.push(
 {k:"lanjut",judul:"Spesifisitas, Variabel & Responsif Modern",materi:`
+<!--pemula--><h4>Untuk pemula: kenapa bab ini penting?</h4>
+<p>Bab ini merangkum hal yang paling sering membingungkan saat situs mulai besar: aturan CSS yang "tidak mau jalan" karena kalah oleh aturan lain, warna yang harus diganti di puluhan tempat, dan tampilan yang rusak di HP.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya dalam bahasa sehari-hari</th></tr>
+<tr><td>spesifisitas</td><td>"kekuatan" sebuah selector; yang lebih kuat menang saat dua aturan bertabrakan</td></tr>
+<tr><td>inline style</td><td>gaya yang ditulis langsung di tag HTML, misalnya <code>&lt;p style="color:red"&gt;</code>; paling kuat</td></tr>
+<tr><td>custom property / variabel CSS</td><td>wadah bernama untuk menyimpan nilai, misalnya warna utama, ditulis <code>--nama</code></td></tr>
+<tr><td><code>prefers-color-scheme: dark</code></td><td>kondisi saat pengguna menyalakan mode gelap di HP/laptopnya</td></tr>
+<tr><td>mobile-first</td><td>menulis gaya untuk HP dulu, lalu menambah aturan <code>min-width</code> untuk layar yang lebih lebar</td></tr>
+<tr><td><code>clamp(min, ideal, maks)</code></td><td>ukuran yang menyesuaikan layar tetapi tidak pernah lebih kecil dari min atau lebih besar dari maks</td></tr>
+<tr><td><code>auto-fill</code> + <code>minmax()</code></td><td>grid yang menghitung sendiri berapa kolom muat</td></tr>
+<tr><td><code>:focus-visible</code></td><td>garis fokus yang hanya muncul saat orang memakai keyboard (tombol Tab)</td></tr>
+<tr><td><code>prefers-reduced-motion</code></td><td>kondisi saat pengguna meminta animasi dikurangi (misalnya karena mudah pusing)</td></tr></table>
+<p>Contoh hitungan satuan: kalau huruf dasar halaman 16px, maka <code>1.5rem</code> = 1,5 × 16 = <b>24px</b>.</p><!--/pemula-->
 <p><b>1. Siapa yang menang saat aturan bertabrakan?</b></p>
 <pre><code>inline style  &gt;  #id  &gt;  .class / [atribut] / :hover  &gt;  tag
 kekuatan sama → yang ditulis PALING AKHIR menang

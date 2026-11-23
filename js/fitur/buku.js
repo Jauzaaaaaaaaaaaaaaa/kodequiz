@@ -12,8 +12,10 @@ const BUKU_SET = [
   { id: "2", judul: "Dashboard, BI & Statistik",           topik: ["bi", "stat"],                   file: "buku/KodeQuiz-Buku-2-BI-Statistik.pdf" },
   { id: "3", judul: "ERP & Odoo",                          topik: ["erp"],                          file: "buku/KodeQuiz-Buku-3-ERP-Odoo.pdf" },
   { id: "4", judul: "Persiapan Karier",                    topik: ["karier"],                       file: "buku/KodeQuiz-Buku-4-Karier.pdf" },
-  { id: "5", judul: "Coding Prioritas: Python & JavaScript", topik: ["python", "js"],               file: "buku/KodeQuiz-Buku-5-Python-JavaScript.pdf" },
+  { id: "5", judul: "Coding Prioritas: Python, JavaScript & Git", topik: ["python", "js", "git"], file: "buku/KodeQuiz-Buku-5-Python-JavaScript.pdf" },
   { id: "6", judul: "Coding Opsional: HTML, CSS, Java & PHP", topik: ["html", "css", "java", "php"], file: "buku/KodeQuiz-Buku-6-HTML-CSS-Java-PHP.pdf" },
+  { id: "7", judul: "Jalur Data Analyst",                  topik: ["da"],                           file: "buku/KodeQuiz-Buku-7-Data-Analyst.pdf" },
+  { id: "8", judul: "Jalur Data Scientist",                topik: ["ds"],                           file: "buku/KodeQuiz-Buku-8-Data-Scientist.pdf" },
 ];
 
 function dataBuku() {
@@ -110,7 +112,7 @@ function kartuSoalBuku(s, n) {
 function renderBukuBab(t, i) {
   const b = dataBuku();
   const bab = MATERI[t][i], info = TOPIK_INFO[t];
-  const soal = soalBab(t, bab.k);
+  const soal = soalBab(t, bab.k).map(acakOpsi);
   BACA = { t, i, soal };
   b.terakhir = { t, i }; simpan();
 
@@ -239,9 +241,31 @@ function kunciCetak(s) {
 function lampiranLab() {
   return `<section class="c-bab" id="c-lab"><p class="c-label">SQL · Lampiran</p><h2>Tantangan Lab SQL</h2>
     <p>Tulis query-nya di kertas atau di Lab SQL aplikasi, lalu cocokkan dengan jawaban di bawah. Tabel yang dipakai:</p>
-    ${["pelanggan", "produk", "pesanan"].map(renderDataset).join("")}
+    ${Object.keys(DATASET).filter(n => DATASET[n].jenis === "tabel").map(renderDataset).join("")}
     <ol class="c-soal">${TANTANGAN_SQL.map(T => `<li class="c-q"><p class="c-tanya"><b>${esc(T.judul)}.</b> ${T.soal}</p></li>`).join("")}</ol>
     <div class="c-kunci"><h3>Jawaban Lab SQL</h3><ol>${TANTANGAN_SQL.map(T => `<li><pre><code>${esc(T.jawab)}</code></pre><p>${esc(T.jelas)}</p></li>`).join("")}</ol></div></section>`;
+}
+// Lampiran buku jalur: studi kasus gaya HBS. Pembahasan diletakkan setelah ruang keputusan supaya pembaca memutuskan dulu.
+function lampiranKasus(j, daftar) {
+  const huruf = (u, x) => HURUF[u.indexOf(x)];
+  return `<section class="c-topik" id="c-kasus-${j}"><p class="c-label">Lampiran</p><h1>Studi Kasus Dunia Kerja</h1>
+    <p>Baca situasi dan exhibit, jawab pertanyaan persiapan, lalu tulis keputusan dan alasanmu di kertas <b>sebelum</b> membuka pembahasan. Di aplikasi, setiap kasus juga punya latihan cold call 90 detik.</p></section>` +
+    daftar.map((K, n) => {
+      const uk = urutKasus(K);
+      const up = K.persiapan.map((q, i) => permStabil(q.o.length, K.id + "-p" + i));
+      return `<section class="c-bab" id="c-kasus-${K.id}"><p class="c-label">Studi kasus ${n + 1} · ${esc(K.industri)} · ${esc(K.wilayah)}</p><h2>${esc(K.judul)}</h2>
+      <p><b>Peranmu:</b> ${esc(K.peran)}</p><div class="c-materi">${K.cerita}${K.exhibit}</div>
+      <h3 class="c-uji">Persiapan</h3><ol class="c-soal">${K.persiapan.map((q, i) => `<li class="c-q"><p class="c-tanya">${esc(q.q)}</p><ol class="c-opsi" type="A">${up[i].map(x => `<li>${esc(q.o[x])}</li>`).join("")}</ol></li>`).join("")}</ol>
+      <h3 class="c-uji">Keputusanmu</h3><p class="c-tanya">${esc(K.keputusan.tanya)}</p>
+      <ol class="c-opsi" type="A">${uk.map(x => `<li>${esc(K.keputusan.opsi[x].teks)}</li>`).join("")}</ol>
+      <p class="c-isian">Pilihanku: ___ · Alasanku (data pendukung dan risiko yang kuterima): ______________________________</p>
+      <div class="c-kunci"><h3>Pembahasan · ${esc(K.judul)}</h3>
+        <ol>${K.persiapan.map((q, i) => `<li><b>${huruf(up[i], q.a)}.</b> ${esc(q.e)}</li>`).join("")}</ol>
+        <h3>Diskusi tiap opsi</h3>
+        <ul>${uk.map(x => { const o = K.keputusan.opsi[x]; return `<li><b>${huruf(uk, x)}.</b> ${o.kuat ? "<b>(Argumen terkuat menurut catatan pengajar)</b> " : ""}${esc(o.diskusi)}</li>`; }).join("")}</ul>
+        <h3>Catatan pengajar</h3>${K.catatan}<ul>${K.pelajaran.map(p => `<li>${esc(p)}</li>`).join("")}</ul>
+        <p class="c-kecil">${K.sumber ? "Sumber: " + esc(K.sumber) : "Perusahaan dan angka dalam kasus ini fiktif; situasinya diambil dari pola pekerjaan nyata."}</p></div></section>`;
+    }).join("");
 }
 function rakitBuku(topikList, judul) {
   const tgl = new Date().toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
@@ -250,16 +274,17 @@ function rakitBuku(topikList, judul) {
   const toc = [], isi = [];
   topikList.forEach((t, ti) => {
     const info = TOPIK_INFO[t];
-    toc.push(`<li><a href="#c-${t}">${esc(info.nama)}</a><ol>${MATERI[t].map(b => `<li><a href="#c-${t}-${b.k}">${esc(b.judul)}</a></li>`).join("")}${t === "sql" ? `<li><a href="#c-lab">Lampiran: Tantangan Lab SQL</a></li>` : ""}</ol></li>`);
+    const kasus = info.grup === "jalur" && typeof KASUS !== "undefined" ? KASUS.filter(k => k.jalur === t) : [];
+    toc.push(`<li><a href="#c-${t}">${esc(info.nama)}</a><ol>${MATERI[t].map(b => `<li><a href="#c-${t}-${b.k}">${esc(b.judul)}</a></li>`).join("")}${t === "sql" ? `<li><a href="#c-lab">Lampiran: Tantangan Lab SQL</a></li>` : ""}${kasus.map(k => `<li><a href="#c-kasus-${k.id}">Studi kasus: ${esc(k.judul)}</a></li>`).join("")}</ol></li>`);
     isi.push(`<section class="c-topik" id="c-${t}"><p class="c-label">Bagian ${ti + 1}</p><h1>${esc(info.nama)}</h1>
       ${info.prioritas !== undefined ? `<p class="c-prio">${info.prioritas ? "★ Prioritas #" + info.prioritas : "Bukan prioritas (opsional)"} — ${esc(info.alasan || "")}</p>` : ""}
       ${info.ket ? `<p>${esc(info.ket)}</p>` : ""}<p class="c-kecil">${MATERI[t].length} bab · ${BANK[t].length} soal</p></section>`);
     MATERI[t].forEach((b, i) => {
-      const soal = soalBab(t, b.k);
+      const soal = soalBab(t, b.k).map(acakOpsiStabil);   // kunci tidak selalu A, tetapi sama setiap kali dicetak
       const id = `${t}-${b.k}`;
       isi.push(`<section class="c-bab" id="c-${id}"><p class="c-label">${esc(info.nama)} · Bab ${i + 1}</p><h2>${esc(b.judul)}</h2>
         <p class="c-lompat">Lompat ke: <a href="#u-${id}">🧠 Uji Diri</a> · <a href="#k-${id}">🔑 Kunci & Pembahasan</a></p>
-        <div class="c-materi">${isiMateri(b.materi)}</div>
+        <div class="c-materi">${isiMateri(b.materi).replace(/<details class="bt-bahas">/g, '<details class="bt-bahas" open>')}</div>
         <h3 class="c-uji" id="u-${id}">🧠 Uji Diri — ${soal.length} soal</h3>
         ${(() => { const tb = [...new Set(soal.flatMap(q => q.tb ? [].concat(q.tb) : []))];
           return tb.length ? `<div class="c-data"><p class="c-label">Data yang dipakai soal-soal bab ini</p>${tb.map(renderDataset).join("")}</div>` : ""; })()}
@@ -269,6 +294,7 @@ function rakitBuku(topikList, judul) {
           <ol>${soal.map(kunciCetak).join("")}</ol></div></section>`);
     });
     if (t === "sql") isi.push(lampiranLab());
+    if (kasus.length) isi.push(lampiranKasus(t, kasus));
   });
   return `<section class="c-sampul"><p class="c-logo">🌿 KodeQuiz Book</p><h1>${esc(judul)}</h1>
       <p class="c-sub">${jmlBab} bab · ${jmlSoal} soal dengan pembahasan</p>

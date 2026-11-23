@@ -198,6 +198,17 @@ const SOAL_EXCEL = [
 
 const MATERI_EXCEL = [
 {k:"dasar",judul:"Dasar Rumus & Referensi ($)",materi:`
+<!--pemula--><h4>Untuk pemula: cara Excel bekerja</h4>
+<p>Excel adalah kertas kotak-kotak raksasa. Setiap kotak disebut <b>sel</b>, dan alamatnya adalah gabungan <b>huruf kolom</b> dan <b>nomor baris</b>: <code>F2</code> artinya kolom F, baris 2. Bedanya dengan kertas biasa: sel bisa berisi <b>rumus</b> yang menghitung sendiri, dan hasilnya otomatis berubah saat datanya berubah.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>sel</td><td>satu kotak, misalnya <code>B3</code></td></tr>
+<tr><td>range</td><td>sekumpulan sel berurutan; <code>F2:F11</code> = dari F2 sampai F11 (titik dua dibaca "sampai")</td></tr>
+<tr><td>rumus</td><td>perhitungan yang selalu diawali tanda <code>=</code></td></tr>
+<tr><td>fungsi</td><td>rumus siap pakai bernama, seperti <code>SUM</code> (jumlah) atau <code>AVERAGE</code> (rata-rata)</td></tr>
+<tr><td>argumen</td><td>isi di dalam kurung fungsi, dipisah koma (di Excel berbahasa Indonesia sering memakai titik koma <code>;</code>)</td></tr>
+<tr><td>fill handle</td><td>kotak kecil di pojok kanan bawah sel; ditarik ke bawah untuk menyalin rumus</td></tr></table>
+<p><b>Kenapa tanda <code>$</code> penting?</b> Saat rumus disalin ke bawah, Excel otomatis menggeser alamatnya: <code>F2</code> jadi <code>F3</code>, <code>F4</code>, dan seterusnya. Itu disebut <b>referensi relatif</b>, dan biasanya memang itu yang kita mau. Tapi kadang ada sel yang harus tetap, misalnya sel berisi tarif pajak di <code>J1</code>. Tanda <code>$</code> "memaku" alamatnya: <code>$J$1</code> tidak ikut bergeser (<b>referensi absolut</b>). Tekan <b>F4</b> setelah mengetik alamat sel untuk memasang <code>$</code> secara cepat.</p>
+<p>Di bawah ini ada tabel penjualan yang dipakai di semua bab Excel. Perhatikan huruf kolom dan nomor barisnya.</p><!--/pemula-->
 <p>Semua latihan Excel di sini memakai <b>data penjualan yang sama</b>. Perhatikan huruf kolom (A–F) dan nomor baris — kamu akan sering memakainya.</p>
 {{tb:penjualan}}
 <p><b>Rumus</b> selalu diawali <code>=</code>. Lima fungsi pertama yang wajib hafal:</p>
@@ -216,6 +227,16 @@ const MATERI_EXCEL = [
 <div class="praktik">🧪 <b>Praktik di Excel:</b> buka <a href="latihan/latihan-excel-penjualan.xlsx" download>latihan-excel-penjualan.xlsx</a> → sheet <i>Bab1-Dasar</i>. Kerjakan tugasnya, lalu kembali ke sini untuk kuis.</div>`},
 
 {k:"sumifs",judul:"SUMIFS & COUNTIFS — Menjumlah dan Menghitung dengan Syarat",materi:`
+<!--pemula--><h4>Untuk pemula: menjumlah dengan syarat</h4>
+<p><code>SUM</code> menjumlah semua angka. Tapi pertanyaan di kantor hampir selalu punya syarat: "berapa penjualan <b>Andi</b>?", "berapa penjualan Andi <b>di Jakarta</b>?". <b>SUMIFS</b> artinya "SUM IF S": jumlahkan <b>jika</b> syarat-syaratnya terpenuhi (huruf S = bisa banyak syarat).</p>
+<p>Cara membaca rumusnya seperti kalimat: <code>=SUMIFS(F2:F11, A2:A11, "Andi")</code> = "jumlahkan kolom <b>F</b> (total), <b>untuk baris yang</b> kolom <b>A</b>-nya (nama sales) berisi <b>Andi</b>". Bayangkan kamu menyisir tumpukan nota satu per satu, menyisihkan nota milik Andi, lalu menjumlahkannya.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>range yang dijumlah</td><td>kolom angka yang mau ditotal; di SUMIFS ditulis <b>paling depan</b></td></tr>
+<tr><td>range syarat</td><td>kolom yang diperiksa, misalnya kolom nama sales</td></tr>
+<tr><td>syarat (<i>criteria</i>)</td><td>isi yang dicari, misalnya <code>"Andi"</code> atau <code>"&gt;=5000000"</code></td></tr>
+<tr><td>COUNTIFS</td><td>sama, tapi <b>menghitung jumlah baris</b> yang cocok, bukan menjumlah angka</td></tr>
+<tr><td><code>"&lt;&gt;Jakarta"</code></td><td>"tidak sama dengan Jakarta"</td></tr></table>
+<p>Syarat yang berisi tanda pembanding (<code>&gt;=</code>, <code>&lt;</code>, <code>&lt;&gt;</code>) harus ditulis di dalam tanda kutip.</p><!--/pemula-->
 <p>Pertanyaan atasan yang paling sering: <i>"Berapa penjualan Andi di Jakarta?"</i> Jawabannya: <b>SUMIFS</b>.</p>
 <pre><code>=SUMIFS(range_yang_dijumlah, range_syarat1, syarat1, range_syarat2, syarat2, …)
 
@@ -236,6 +257,17 @@ const MATERI_EXCEL = [
 <div class="praktik">🧪 <b>Praktik:</b> sheet <i>Bab2-SUMIFS</i> di <a href="latihan/latihan-excel-penjualan.xlsx" download>file latihan</a>. Buat tabel ringkasan total per sales memakai SUMIFS yang mengacu ke sel nama (bukan diketik manual).</div>`},
 
 {k:"xlookup",judul:"XLOOKUP (dan VLOOKUP) — Mengambil Data dari Tabel Lain",materi:`
+<!--pemula--><h4>Untuk pemula: mencari data dari tabel lain</h4>
+<p>Bayangkan kamu punya daftar transaksi yang hanya berisi <b>nama produk</b>, sementara <b>harganya</b> ada di tabel lain (daftar harga). Daripada menyalin harga satu per satu, kamu menyuruh Excel: "cari nama produk ini di daftar harga, lalu ambilkan harganya". Itulah <b>lookup</b> (mencari). Mirip mencari nama teman di kontak HP untuk mendapatkan nomornya.</p>
+<p><code>=XLOOKUP("Monitor", A2:A5, C2:C5)</code> dibaca: "cari <b>Monitor</b> di kolom A, lalu ambil isi kolom C <b>di baris yang sama</b>".</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>yang dicari (<i>lookup value</i>)</td><td>kata kunci yang dicari, misalnya nama produk</td></tr>
+<tr><td>kolom pencarian</td><td>tempat mencari kata kunci itu</td></tr>
+<tr><td>kolom hasil</td><td>kolom yang isinya mau diambil</td></tr>
+<tr><td><code>[jika_tidak_ketemu]</code></td><td>tulisan pengganti kalau tidak ditemukan; kurung siku artinya boleh tidak diisi</td></tr>
+<tr><td><code>Produk!A2:A5</code></td><td>range di sheet lain bernama "Produk" (tanda seru memisahkan nama sheet)</td></tr>
+<tr><td>VLOOKUP</td><td>versi lama: mencari di kolom <b>paling kiri</b>, lalu mengambil kolom ke-sekian di kanannya</td></tr>
+<tr><td><code>FALSE</code> di VLOOKUP</td><td>"harus cocok persis"; lupa menulisnya bisa menghasilkan jawaban salah tanpa peringatan</td></tr></table><!--/pemula-->
 <p>Di kantor, data jarang ada di satu tempat. Harga ada di <b>master produk</b>, transaksi di sheet lain. XLOOKUP menyatukannya.</p>
 {{tb:produkSheet}}
 <pre><code>=XLOOKUP(yang_dicari, kolom_pencarian, kolom_hasil, [jika_tidak_ketemu])
@@ -256,6 +288,16 @@ const MATERI_EXCEL = [
 <div class="praktik">🧪 <b>Praktik:</b> sheet <i>Bab3-XLOOKUP</i> — isi kolom Kategori dan Harga di sheet Penjualan dengan mengambil dari sheet Produk.</div>`},
 
 {k:"if",judul:"IF Bertingkat, IFS, AND, OR",materi:`
+<!--pemula--><h4>Untuk pemula: membuat Excel mengambil keputusan</h4>
+<p><code>IF</code> artinya "jika". Rumus ini seperti guru yang memeriksa nilai: "<b>jika</b> nilainya ≥ 75, tulis Lulus; <b>kalau tidak</b>, tulis Remedial". Ada tiga bagian di dalam kurungnya, dipisah koma:</p>
+<ol><li><b>syarat</b>: pertanyaan yang jawabannya benar atau salah, misalnya <code>F2&gt;=5000000</code>.</li><li><b>jika benar</b>: hasil kalau syaratnya benar.</li><li><b>jika salah</b>: hasil kalau syaratnya salah.</li></ol>
+<p><code>=IF(F2&gt;=5000000, "Target", "Belum")</code> dibaca "jika total di F2 minimal 5 juta, tulis Target; kalau tidak, tulis Belum".</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>IF bertingkat</td><td>IF di dalam IF, untuk lebih dari dua kemungkinan</td></tr>
+<tr><td>IFS</td><td>cara lebih rapi menulis banyak syarat berurutan; <code>TRUE</code> di akhir berarti "selain itu"</td></tr>
+<tr><td>AND</td><td>benar hanya jika <b>semua</b> syarat benar</td></tr>
+<tr><td>OR</td><td>benar jika <b>salah satu</b> syarat benar</td></tr>
+<tr><td><code>&gt;=</code> / <code>&lt;=</code> / <code>&lt;&gt;</code></td><td>lebih dari atau sama / kurang dari atau sama / tidak sama dengan</td></tr></table><!--/pemula-->
 <p>IF membuat keputusan otomatis: <code>=IF(syarat, jika_benar, jika_salah)</code></p>
 <pre><code>=IF(F2>=5000000, "Target", "Belum")</code></pre>
 <p><b>IF bertingkat</b> untuk lebih dari 2 kategori. Aturan emas: <b>urutkan dari batas terbesar</b>, karena Excel berhenti di syarat pertama yang benar.</p>
@@ -272,6 +314,16 @@ const MATERI_EXCEL = [
 <div class="praktik">🧪 <b>Praktik:</b> sheet <i>Bab4-IF</i> — beri label Tinggi/Sedang/Rendah dan kolom Bonus.</div>`},
 
 {k:"pivot",judul:"Pivot Table — Meringkas Ribuan Baris dalam Detik",materi:`
+<!--pemula--><h4>Untuk pemula: Pivot Table itu apa?</h4>
+<p>Bayangkan setumpuk 1.000 nota penjualan dan atasan bertanya "berapa total penjualan tiap sales?". Cara manual: pilah nota per nama, lalu jumlahkan setiap tumpukan. <b>Pivot Table</b> melakukan pemilahan dan penjumlahan itu otomatis, cukup dengan menyeret nama kolom ke kotak yang tersedia. Tidak perlu menulis rumus sama sekali.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>Rows (baris)</td><td>kolom yang isinya jadi <b>daftar ke bawah</b>, misalnya nama sales</td></tr>
+<tr><td>Columns (kolom)</td><td>kolom yang isinya jadi <b>judul ke samping</b>, misalnya wilayah</td></tr>
+<tr><td>Values (nilai)</td><td>angka yang dihitung, misalnya <b>Sum of Total</b> (jumlah dari kolom Total)</td></tr>
+<tr><td>Filters</td><td>penyaring seluruh laporan, misalnya hanya produk Laptop</td></tr>
+<tr><td>Grand Total</td><td>total keseluruhan</td></tr>
+<tr><td>Refresh</td><td>memperbarui pivot setelah data sumbernya berubah (pivot tidak berubah sendiri)</td></tr>
+<tr><td>Table (Ctrl+T)</td><td>mengubah data menjadi "tabel resmi" Excel, sehingga baris baru otomatis ikut terbaca</td></tr></table><!--/pemula-->
 <p>Pivot table = ringkasan otomatis. Yang di SUMIFS butuh puluhan rumus, di pivot cukup drag-and-drop.</p>
 <p><b>Langkah membuat:</b></p>
 <ol>
@@ -298,6 +350,15 @@ const MATERI_EXCEL = [
 <div class="praktik">🧪 <b>Praktik:</b> sheet <i>Bab5-Pivot</i> — buat 3 pivot: total per sales, total per wilayah, dan tabel silang Sales × Wilayah.</div>`},
 
 {k:"cf",judul:"Conditional Formatting — Membuat Data Bicara",materi:`
+<!--pemula--><h4>Untuk pemula: mewarnai sel secara otomatis</h4>
+<p>Mata manusia lebih cepat menangkap warna daripada angka. <b>Conditional formatting</b> (format bersyarat) mewarnai sel secara otomatis <b>berdasarkan isinya</b>, misalnya penjualan di atas target jadi hijau, yang di bawah target jadi merah. Kalau angkanya berubah, warnanya ikut berubah sendiri. Isinya tidak berubah; hanya tampilannya.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>rule (aturan)</td><td>syarat + warna, misalnya "lebih dari 5 juta → hijau"</td></tr>
+<tr><td>Highlight Cells Rules</td><td>aturan siap pakai: lebih dari, kurang dari, mengandung teks, duplikat</td></tr>
+<tr><td>Data Bars</td><td>batang kecil di dalam sel, panjangnya sesuai nilai</td></tr>
+<tr><td>Color Scales</td><td>gradasi warna dari kecil ke besar</td></tr>
+<tr><td>Use a formula</td><td>aturan buatan sendiri memakai rumus yang hasilnya benar/salah</td></tr>
+<tr><td><code>$F2</code></td><td>kolom dikunci, baris bebas; dipakai supaya satu baris penuh ikut diwarnai berdasarkan kolom F</td></tr></table><!--/pemula-->
 <p>Conditional formatting (CF) mewarnai sel otomatis sesuai nilainya. Nilainya tidak berubah, hanya tampilannya.</p>
 <p><b>Home → Conditional Formatting</b>, lalu pilih:</p>
 <ul>

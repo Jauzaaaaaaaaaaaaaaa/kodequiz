@@ -130,82 +130,200 @@ const SOAL_PHP = [
 
 const MATERI_PHP = [
 {k:"dasar",judul:"Dasar PHP: Variabel, Teks & Cara Kerjanya",materi:`
-<p><b>Kenapa bukan prioritas untukmu?</b> PHP sangat populer di lowongan web developer Indonesia (Laravel, WordPress), tapi jalur utamamu adalah Data/BI/Odoo. Pelajari secukupnya sebagai rencana cadangan dan agar bisa membaca kode web.</p>
-<p>PHP berjalan di <b>server</b>: browser hanya menerima HTML hasilnya.</p>
+<h4>PHP itu apa?</h4>
+<p><b>PHP</b> adalah bahasa pemrograman untuk membuat situs web yang <b>dinamis</b>, artinya isinya bisa berubah sesuai data: halaman profil yang menampilkan namamu, daftar produk dari database, atau halaman login. WordPress (dipakai jutaan situs) dan framework Laravel ditulis dengan PHP.</p>
+<p><b>Kenapa bukan prioritas untukmu?</b> PHP sangat populer di lowongan web developer Indonesia, tapi jalur utamamu adalah Data/BI/Odoo. Pelajari secukupnya sebagai rencana cadangan dan agar bisa membaca kode web.</p>
+<h4>PHP berjalan di server, bukan di browser</h4>
+<p>Ini perbedaan paling penting dengan JavaScript:</p>
+<ol><li>Pengunjung membuka <code>profil.php</code>.</li><li><b>Server</b> (komputer tempat situs disimpan) menjalankan kode PHP-nya: mengambil data dari database, menyusun halaman.</li><li>Server mengirim <b>HTML hasil jadinya</b> ke browser.</li><li>Browser hanya menerima HTML. Kode PHP-nya <b>tidak pernah terlihat</b> oleh pengunjung.</li></ol>
+<p>Bayangkan restoran: PHP adalah koki di dapur (server). Tamu (browser) hanya menerima masakan jadi (HTML), tidak melihat resep dan proses memasaknya.</p>
+<h4>Bentuk kode PHP</h4>
 <pre><code>&lt;?php
-$nama  = "Rina";             // variabel selalu diawali $
+$nama  = "Rina";
 $total = 150000;
-echo "Halo $nama";           // kutip ganda → variabel diganti nilainya
-echo 'Halo $nama';           // kutip tunggal → apa adanya
-echo "Total: " . $total;     // titik = sambung teks
-echo "10" + 5;               // 15 (+ khusus angka)
-var_dump("5" === 5);         // bool(false) → pakai ===</code></pre>
-<div class="praktik">🧪 <b>Coba:</b> jika PHP ter-install, simpan sebagai <code>coba.php</code> lalu jalankan <code>php coba.php</code> di terminal. Atau gunakan XAMPP/Laragon untuk menjalankan PHP di browser.</div>`},
+echo "Halo $nama";</code></pre>
+<ul><li><code>&lt;?php</code> = penanda <b>awal kode PHP</b>.</li><li>Semua variabel <b>diawali tanda dolar</b> <code>$</code>: <code>$nama</code>, <code>$total</code>.</li><li><code>echo</code> = <b>tampilkan</b> ke halaman.</li><li>Setiap perintah diakhiri <b>titik koma</b> <code>;</code>.</li><li><code>//</code> adalah komentar.</li></ul>
+<h4>Kutip ganda vs kutip tunggal</h4>
+<pre><code>$nama = "Rina";
+echo "Halo $nama";    // Halo Rina   ← variabel diganti nilainya
+echo 'Halo $nama';    // Halo $nama  ← ditampilkan apa adanya</code></pre>
+<p>Di dalam <b>kutip ganda</b>, PHP mengganti nama variabel dengan isinya. Di dalam <b>kutip tunggal</b>, semua ditampilkan persis seperti ditulis. <code>"\\n"</code> di dalam kutip ganda berarti pindah baris.</p>
+<h4>Menyambung teks: titik</h4>
+<pre><code>$depan = "Data";
+$belakang = "Analis";
+echo $depan . " " . $belakang;   // Data Analis</code></pre>
+<p>PHP memakai <b>titik</b> <code>.</code> untuk menyambung teks (JavaScript memakai <code>+</code>). Tanda <code>+</code> di PHP <b>khusus untuk angka</b>, jadi <code>"10" + 5</code> hasilnya <code>15</code>: teks "10" diubah ke angka dulu.</p>
+<h4>== vs ===</h4>
+<pre><code>var_dump("5" == 5);    // bool(true)   ← tipe diabaikan
+var_dump("5" === 5);   // bool(false)  ← tipe harus sama juga</code></pre>
+<p><code>var_dump()</code> menampilkan <b>tipe dan isi</b> sebuah nilai, berguna untuk memeriksa. Seperti di JavaScript, <code>===</code> lebih aman karena memeriksa nilai <b>dan</b> tipe.</p>
+<div class="praktik"><b>Coba:</b> jika PHP terpasang, simpan sebagai <code>coba.php</code> lalu jalankan <code>php coba.php</code> di terminal. Atau gunakan XAMPP/Laragon untuk menjalankan PHP di browser.</div>
+`},
 
 {k:"kontrol",judul:"Kontrol Alur & Array",materi:`
-<pre><code>$kota  = ["Jakarta", "Bandung"];               // array berindeks
-$harga = ["Laptop" =&gt; 7000000, "Mouse" =&gt; 150000];   // asosiatif
-$kota[] = "Surabaya";                          // tambah di akhir
-count($kota);                                  // 3
-
-foreach ($harga as $produk =&gt; $h) {
-    echo "$produk: $h\\n";
+<h4>Array di PHP: dua macam</h4>
+<p><b>Array</b> adalah wadah berisi banyak nilai. PHP punya dua gaya:</p>
+<pre><code>$kota = ["Jakarta", "Bandung", "Surabaya"];          // berindeks
+$harga = ["Laptop" =&gt; 7000000, "Mouse" =&gt; 150000];   // asosiatif</code></pre>
+<table class="mini-pivot"><tr><th>Jenis</th><th>Cara mengambil</th><th>Mirip dengan</th></tr>
+<tr><td><b>berindeks</b></td><td>nomor urut mulai 0: <code>$kota[1]</code> → "Bandung"</td><td>list di Python</td></tr>
+<tr><td><b>asosiatif</b></td><td>nama kunci: <code>$harga["Mouse"]</code> → 150000</td><td>dict di Python, objek di JS</td></tr></table>
+<p>Tanda <code>=&gt;</code> dibaca "<b>berisi</b>": "Laptop berisi 7000000".</p>
+<pre><code>$data = [];
+$data[] = "Andi";      // [] kosong = tambah di akhir
+$data[] = "Bima";
+echo count($data);     // 2  (jumlah isi)</code></pre>
+<h4>foreach: mengulang setiap isi array</h4>
+<pre><code>$stok = ["Laptop" =&gt; 5, "Mouse" =&gt; 20];
+foreach ($stok as $produk =&gt; $jumlah) {
+    echo "$produk: $jumlah\\n";
 }
-
-if ($nilai &gt;= 80) { … } elseif ($nilai &gt;= 70) { … } else { … }
-
-echo match (true) {                            // PHP 8
+// Laptop: 5
+// Mouse: 20</code></pre>
+<p>Bacanya: "<b>untuk setiap</b> isi <code>$stok</code>, <b>sebagai</b> <code>$produk</code> (kuncinya) <b>berisi</b> <code>$jumlah</code> (nilainya)". <code>foreach</code> adalah loop khusus untuk array, dan paling sering dipakai di PHP, misalnya untuk menampilkan setiap baris hasil database.</p>
+<h4>for: mengulang dengan hitungan</h4>
+<pre><code>$total = 0;
+for ($i = 1; $i &lt;= 4; $i++) {
+    $total += $i;
+}
+echo $total;   // 1 + 2 + 3 + 4 = 10</code></pre>
+<h4>if, elseif, else</h4>
+<pre><code>if ($nilai &gt;= 80) {
+    echo "A";
+} elseif ($nilai &gt;= 70) {
+    echo "B";
+} else {
+    echo "C";
+}</code></pre>
+<p>Perhatikan: di PHP ditulis <code>elseif</code> (disambung).</p>
+<h4>match (PHP 8): pilihan yang ringkas</h4>
+<pre><code>$nilai = 85;
+echo match (true) {
     $nilai &gt;= 90 =&gt; "A",
     $nilai &gt;= 80 =&gt; "B",
     default      =&gt; "C",
-};</code></pre>`},
+};
+// B</code></pre>
+<p><code>match</code> memeriksa dari atas dan mengembalikan hasil <b>pertama yang cocok</b>. <code>match (true)</code> artinya "cari baris yang syaratnya bernilai benar". 85 tidak ≥ 90, tapi ≥ 80, jadi hasilnya B.</p>
+<div class="praktik"><b>Coba sendiri:</b> buat array asosiatif berisi 3 menu dan harganya, lalu tampilkan semuanya dengan <code>foreach</code> dalam format "Menu: Rp harga".</div>
+`},
 
 {k:"fungsi",judul:"Fungsi & Fungsi Array Bawaan",materi:`
-<pre><code>function luas($p, $l = 1) { return $p * $l; }
+<h4>Fungsi: membungkus kode agar bisa dipakai ulang</h4>
+<pre><code>function luas($p, $l = 1) {
+    return $p * $l;
+}
+echo luas(4, 5);   // 20
+echo luas(4);      // 4   ($l memakai nilai bawaan 1)</code></pre>
+<ul><li><code>function</code> = membuat fungsi. <code>$p</code> dan <code>$l</code> adalah <b>parameter</b> (bahan masukan).</li><li><code>$l = 1</code> = <b>nilai bawaan</b>, dipakai kalau argumen kedua tidak dikirim.</li><li><code>return</code> = <b>kembalikan hasil</b> ke pemanggil.</li></ul>
+<h4>Fungsi bawaan: alat siap pakai</h4>
+<p>PHP punya ratusan fungsi bawaan. Yang paling sering dipakai:</p>
+<table class="mini-pivot"><tr><th>Fungsi</th><th>Gunanya</th><th>Contoh → hasil</th></tr>
+<tr><td><code>array_sum($a)</code></td><td>jumlah semua isi</td><td><code>array_sum([14, 2, 6])</code> → 22</td></tr>
+<tr><td><code>max($a)</code> / <code>min($a)</code></td><td>terbesar / terkecil</td><td><code>max([14, 2, 6])</code> → 14</td></tr>
+<tr><td><code>count($a)</code></td><td>banyaknya isi</td><td><code>count([1, 2])</code> → 2</td></tr>
+<tr><td><code>strlen($s)</code></td><td>panjang teks</td><td><code>strlen("Keyboard")</code> → 8</td></tr>
+<tr><td><code>strtoupper($s)</code></td><td>huruf besar</td><td><code>"jakarta"</code> → <code>"JAKARTA"</code></td></tr>
+<tr><td><code>ucfirst($s)</code></td><td>huruf pertama kapital</td><td><code>"rina"</code> → <code>"Rina"</code></td></tr>
+<tr><td><code>implode(", ", $a)</code></td><td>gabung array jadi teks</td><td><code>["a","b"]</code> → <code>"a, b"</code></td></tr>
+<tr><td><code>explode(",", $s)</code></td><td>pecah teks jadi array</td><td><code>"a,b,c"</code> → <code>["a","b","c"]</code></td></tr>
+<tr><td><code>number_format(1234567, 0, ",", ".")</code></td><td>format angka Indonesia</td><td><code>"1.234.567"</code></td></tr></table>
+<p>Untuk <code>number_format</code>, urutan isinya: angka, jumlah desimal, pemisah desimal, pemisah ribuan.</p>
+<h4>Menyaring dan mengubah array</h4>
+<pre><code>$total = [14, 1.5, 6, 0.75, 7];
+$besar = array_filter($total, fn($t) =&gt; $t &gt;= 6);   // [14, 6, 7]
 
-array_sum([14, 2, 6]);                         // 22
-array_filter($data, fn($t) =&gt; $t &gt;= 6);        // WHERE
-array_map(fn($n) =&gt; ucfirst($n), $nama);       // ubah tiap elemen
-implode(", ", $arr);  explode(",", "a,b,c");   // gabung / pecah teks
-arsort($nilai);  array_key_first($nilai);      // urut turun, ambil teratas
-number_format(1234567, 0, ",", ".");           // "1.234.567"
-$_GET["q"] ?? "";                              // nilai default tanpa warning</code></pre>
-<div class="catatan">🔗 Padanan: <code>array_filter</code> ≈ filter (JS) ≈ list comprehension (Python) ≈ WHERE (SQL). Satu konsep, banyak bahasa.</div>`},
+$nama = ["rina", "tono"];
+$rapi = array_map(fn($n) =&gt; ucfirst($n), $nama);   // ["Rina", "Tono"]</code></pre>
+<ul><li><code>fn($t) =&gt; …</code> = <b>fungsi singkat</b> (<i>arrow function</i>). Artinya "untuk setiap <code>$t</code>, hitung ini".</li><li><code>array_filter</code> = <b>saring</b>, simpan yang syaratnya benar. Seperti <code>WHERE</code> di SQL.</li><li><code>array_map</code> = <b>ubah setiap isi</b>, hasilnya array baru.</li></ul>
+<div class="catatan">Satu konsep, banyak bahasa: <code>array_filter</code> (PHP) ≈ <code>filter</code> (JavaScript) ≈ list comprehension (Python) ≈ <code>WHERE</code> (SQL).</div>
+<h4>Mengurutkan dan mengambil yang teratas</h4>
+<pre><code>$nilai = ["Andi" =&gt; 18, "Bima" =&gt; 5, "Citra" =&gt; 13];
+arsort($nilai);                   // urut nilai dari besar ke kecil, kunci tetap ikut
+echo array_key_first($nilai);     // Andi</code></pre>
+<p><code>arsort</code> = urutkan array asosiatif <b>turun</b> berdasarkan nilainya. <code>array_key_first</code> = ambil <b>kunci pertama</b>.</p>
+<h4>?? : nilai cadangan tanpa peringatan</h4>
+<pre><code>$input = [];
+echo $input["q"] ?? "kosong";   // kosong</code></pre>
+<p>Mengambil kunci yang tidak ada biasanya memunculkan peringatan. <code>??</code> artinya "pakai nilai ini kalau ada; kalau tidak ada atau null, pakai cadangannya".</p>
+`},
 
 {k:"web",judul:"PHP untuk Web: Form, Session & Keamanan",materi:`
+<h4>Bagaimana form di HTML sampai ke PHP?</h4>
+<p>Kamu sudah belajar membuat form di bab HTML. Sekarang lihat sisi penerimanya:</p>
 <pre><code>&lt;form method="post" action="simpan.php"&gt;
-  &lt;input name="nama"&gt;      &lt;!-- name wajib agar terbaca di $_POST --&gt;
+  &lt;input name="nama"&gt;
   &lt;button&gt;Simpan&lt;/button&gt;
-&lt;/form&gt;
-
+&lt;/form&gt;</code></pre>
+<pre><code>&lt;?php
 // simpan.php
 session_start();
 $nama = trim($_POST["nama"] ?? "");
-if ($nama === "") { … tampilkan error … }
+if ($nama === "") {
+    echo "Nama wajib diisi";
+    exit;
+}
 // … simpan ke database dengan prepared statement …
-header("Location: daftar.php");   // Post/Redirect/Get
+header("Location: daftar.php");
 exit;</code></pre>
-<p><b>Tiga aturan keamanan wajib:</b></p>
-<ol>
-<li><b>Escape output</b>: <code>htmlspecialchars($teks)</code> → mencegah XSS.</li>
-<li><b>Prepared statement</b> untuk SQL → mencegah SQL injection.</li>
-<li><b>password_hash / password_verify</b> → jangan simpan password apa adanya (dan jangan pakai md5).</li>
-</ol>`},
+<p>Alurnya:</p>
+<ol><li>Pengunjung mengisi form dan menekan Simpan.</li><li>Browser mengirim data ke <code>simpan.php</code> dengan cara POST.</li><li>PHP membaca isian lewat <code>$_POST["nama"]</code>. Kunci <code>"nama"</code> berasal dari atribut <b><code>name</code></b> pada <code>&lt;input&gt;</code>. Tanpa <code>name</code>, isiannya <b>tidak terkirim</b>, ini penyebab paling umum data "hilang".</li><li><code>trim()</code> membuang spasi di tepi; lalu data <b>diperiksa</b> (validasi).</li><li>Setelah disimpan, <code>header("Location: …")</code> <b>mengalihkan</b> pengunjung ke halaman lain. Pola ini disebut <b>Post/Redirect/Get</b>: mencegah data tersimpan dua kali kalau pengunjung menekan tombol refresh.</li></ol>
+<h4>$_GET dan $_POST</h4>
+<table class="mini-pivot"><tr><th></th><th><code>$_GET</code></th><th><code>$_POST</code></th></tr>
+<tr><td>Data dikirim lewat</td><td>alamat (URL): <code>cari.php?kota=Bandung</code></td><td>badan kiriman, tidak terlihat di URL</td></tr>
+<tr><td>Cocok untuk</td><td>pencarian, filter, link yang bisa dibagikan</td><td>login, simpan data, data pribadi</td></tr></table>
+<h4>Session: mengingat pengunjung</h4>
+<p>Setiap kali pindah halaman, server sebenarnya "lupa" siapa kamu. <b>Session</b> adalah catatan di server yang mengingat pengunjung, misalnya "orang ini sudah login sebagai Rina". <code>session_start()</code> mengaktifkannya, lalu data disimpan di <code>$_SESSION["user"]</code>.</p>
+<h4>Tiga aturan keamanan wajib</h4>
+<p>Situs yang menerima ketikan pengunjung bisa diserang. Tiga serangan paling umum dan penangkalnya:</p>
+<p><b>1. XSS (<i>Cross-Site Scripting</i>)</b>: orang jahat mengetik kode JavaScript di kolom komentar, lalu kode itu berjalan di browser pengunjung lain.</p>
+<pre><code>$komentar = "&lt;script&gt;alert(1)&lt;/script&gt;";
+echo htmlspecialchars($komentar);
+// &amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;  ← tampil sebagai teks, tidak dijalankan</code></pre>
+<p><code>htmlspecialchars()</code> mengubah <code>&lt;</code> dan <code>&gt;</code> menjadi teks biasa. <b>Selalu</b> pakai saat menampilkan ketikan pengunjung.</p>
+<p><b>2. SQL injection</b>: menempelkan ketikan pengunjung langsung ke perintah SQL.</p>
+<pre><code>$sql = "SELECT * FROM pelanggan WHERE kota = '" . $_GET["kota"] . "'";   // BAHAYA</code></pre>
+<p>Kalau seseorang mengetik <code>' OR '1'='1</code>, perintah SQL-nya berubah dan seluruh data bisa bocor. Penangkalnya: <b>prepared statement</b> (dibahas di bab berikutnya), yang memisahkan perintah SQL dari data.</p>
+<p><b>3. Password tersimpan apa adanya</b>: kalau database bocor, semua password terbaca.</p>
+<pre><code>$hash = password_hash($password, PASSWORD_DEFAULT);   // saat daftar
+password_verify($password, $hash);                     // saat login</code></pre>
+<p><code>password_hash</code> mengubah password menjadi kode acak yang tidak bisa dibalik. Jangan memakai <code>md5</code>, karena sudah terlalu mudah dipecahkan.</p>
+`},
 
 {k:"oopdb",judul:"OOP, Database (PDO) & Laravel",materi:`
+<h4>OOP di PHP</h4>
+<p>Konsep class dan object sama seperti di Python dan Java: <b>class</b> adalah cetakan, <b>object</b> adalah benda hasil cetakannya.</p>
 <pre><code>class Produk {
-    public function __construct(public string $nama, public int $harga) {}
-    public function total(int $qty): int { return $this-&gt;harga * $qty; }
-}
-$p = new Produk("Mouse", 150000);
-echo $p-&gt;total(3);            // 450000  (-&gt; untuk anggota object)
+    public function __construct(
+        public string $nama,
+        public int $harga
+    ) {}
 
-$stmt = $pdo-&gt;prepare("SELECT * FROM pelanggan WHERE kota = ?");
+    public function total(int $qty): int {
+        return $this-&gt;harga * $qty;
+    }
+}
+
+$p = new Produk("Mouse", 150000);
+echo $p-&gt;total(3);   // 450000
+echo $p-&gt;nama;       // Mouse</code></pre>
+<ul><li><code>__construct</code> = <b>constructor</b>, dijalankan saat object dibuat dengan <code>new</code>. Di PHP 8, menulis <code>public string $nama</code> di dalam kurung constructor langsung membuat property sekaligus mengisinya.</li><li><code>$this</code> = "<b>object ini sendiri</b>", dipakai di dalam method.</li><li><code>-&gt;</code> (tanda panah) = cara mengakses property atau method milik object. Sama seperti titik <code>.</code> di Python/Java.</li><li><code>: int</code> = penanda bahwa method ini mengembalikan bilangan bulat.</li></ul>
+<h4>Mengambil data dari database dengan aman: PDO</h4>
+<p><b>PDO</b> (<i>PHP Data Objects</i>) adalah cara standar PHP berbicara dengan database.</p>
+<pre><code>$stmt = $pdo-&gt;prepare("SELECT * FROM pelanggan WHERE kota = ?");
 $stmt-&gt;execute([$kota]);
 $rows = $stmt-&gt;fetchAll();</code></pre>
-<p><b>Laravel</b> = framework PHP paling populer, memakai pola <b>MVC</b>:</p>
-<pre><code>Model      → Pelanggan::where('kota', 'Bandung')-&gt;get()   (Eloquent ORM)
-View       → resources/views/pelanggan.blade.php           (Blade)
-Controller → menerima request, memanggil model, mengirim ke view</code></pre>
-<div class="catatan">🧭 Konsep MVC dan ORM juga ada di Odoo (model Python, view XML, ORM <code>search</code>). Yang kamu pelajari di sini tidak sia-sia walaupun PHP bukan prioritas.</div>`}
+<ol><li><code>prepare(…)</code> = siapkan perintah SQL dengan <b>tanda tanya <code>?</code> sebagai tempat kosong</b>.</li><li><code>execute([$kota])</code> = kirim datanya <b>terpisah</b> dari perintah. Database memperlakukan isi <code>$kota</code> murni sebagai data, bukan bagian perintah. Inilah yang membuat <b>prepared statement</b> aman dari SQL injection.</li><li><code>fetchAll()</code> = ambil semua baris hasilnya.</li></ol>
+<h4>Laravel dan pola MVC</h4>
+<p><b>Laravel</b> adalah <i>framework</i> (kerangka kerja siap pakai) PHP paling populer. Ia memakai pola <b>MVC</b>, yang membagi kode menjadi tiga bagian dengan tugas berbeda:</p>
+<table class="mini-pivot"><tr><th>Bagian</th><th>Tugas</th><th>Analogi restoran</th></tr>
+<tr><td><b>Model</b></td><td>mengurus <b>data</b> dan database</td><td>gudang bahan</td></tr>
+<tr><td><b>View</b></td><td>mengurus <b>tampilan</b> (HTML)</td><td>piring saji</td></tr>
+<tr><td><b>Controller</b></td><td>menerima permintaan, memanggil model, mengirim hasil ke view</td><td>pelayan</td></tr></table>
+<pre><code>Pelanggan::where('kota', 'Bandung')-&gt;get()
+// setara SQL: SELECT * FROM pelanggan WHERE kota = 'Bandung'</code></pre>
+<p>Itu contoh <b>Eloquent</b>, <i>ORM</i> Laravel: kamu menulis PHP, Laravel menerjemahkannya ke SQL.</p>
+<p><b>Composer</b> adalah pengelola paket PHP: alat untuk memasang pustaka buatan orang lain (seperti <code>pip</code> di Python atau <code>npm</code> di JavaScript).</p>
+<div class="catatan">Di dunia kerja Indonesia, PHP paling banyak dipakai untuk web developer (Laravel) dan situs WordPress. Konsep MVC dan ORM juga ada di Odoo (model Python, view XML, ORM <code>search</code>), jadi yang kamu pelajari di sini tidak sia-sia.</div>
+`}
 ];

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><title>Render 3D KodeQuiz</title>
+<!-- Adegan 3D untuk gambar diam (hero & kartu jalur). Dirender sekali oleh alat/render-3d.js lewat Chrome headless,
+     jadi situs tidak memuat WebGL sama sekali. three.js 0.147 diambil dari node_modules studio Petlings di disk. -->
+<style>html,body{margin:0;overflow:hidden;background:transparent}canvas{display:block}</style>
+<script type="importmap">{"imports":{
+  "three":"https://unpkg.com/three@0.147.0/build/three.module.js",
+  "three/addons/":"https://unpkg.com/three@0.147.0/examples/jsm/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from "three";
+THREE.ColorManagement.legacyMode = false;   // warna hex dibaca sebagai sRGB (r147 masih default lama → warna pucat)
+import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
+
+const q = new URLSearchParams(location.search);
+const W = +q.get("w") || 1600, H = +q.get("h") || 900, ADEGAN = q.get("adegan") || "hero";
+// varian warna untuk efek "klik ganti warna": posisi objek sama persis, hanya warna aksennya berganti
+const AKSEN = [0x1a2ffb, 0xff5a24, 0x12b886, 0x8b3dff][+q.get("warna") || 0];
+// benih tetap → hasil sama setiap kali dirender ulang
+let s = { hero: 11, da: 23, ds: 37 }[ADEGAN] || 5;
+const acak = () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646; };
+const pilih = (arr, bobot) => { let r = acak() * bobot.reduce((a, b) => a + b, 0); for (let i = 0; i < arr.length; i++) { r -= bobot[i]; if (r <= 0) return arr[i]; } return arr[arr.length - 1]; };
+
+const PALET = {
+  hero: { latar: 0x15171d, warna: [AKSEN, 0xeef0f7, 0x0d0e12], bobot: [4, 3.2, 2.8], n: 40, lebar: 7.2, tinggi: 3.8 },
+  da:   { latar: 0xdde0fa, warna: [0x1a2ffb, 0xf4f5fa, 0x0d0e12], bobot: [5.5, 3.2, 1.3], n: 26, lebar: 5.0, tinggi: 3.3 },
+  ds:   { latar: 0x15171d, warna: [0xeef0f7, 0x0d0e12, 0x1a2ffb], bobot: [4, 3, 2.2], n: 26, lebar: 5.0, tinggi: 3.3 },
+}[ADEGAN];
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1);
+renderer.setSize(W, H);
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.toneMapping = THREE.LinearToneMapping;   // ACES menggeser biru ke ungu
+renderer.toneMappingExposure = 0.92;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(PALET.latar);
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+const kunci = new THREE.DirectionalLight(0xffffff, 1.6); kunci.position.set(4, 6, 8); scene.add(kunci);
+const isi = new THREE.DirectionalLight(0x9fb0ff, 0.6); isi.position.set(-6, -2, 4); scene.add(isi);
+
+const camera = new THREE.PerspectiveCamera(32, W / H, 0.1, 100);
+camera.position.set(0, 0, 12.5);
+
+// SATU bentuk saja, diulang banyak: ikon diagram batang, tiga batang naik di atas satu alas.
+const ALAS = new RoundedBoxGeometry(1.86, 0.34, 0.64, 5, 0.13);
+const TINGGI = [0.72, 1.24, 1.8];
+const BATANG = TINGGI.map(t => new RoundedBoxGeometry(0.52, t, 0.52, 5, 0.17));
+function grafik(mat) {
+  const g = new THREE.Group();
+  const alas = new THREE.Mesh(ALAS, mat); alas.position.y = -0.92; g.add(alas);
+  TINGGI.forEach((t, i) => { const m = new THREE.Mesh(BATANG[i], mat); m.position.set((i - 1) * 0.64, -0.75 + t / 2, 0); g.add(m); });
+  return g;
+}
+const material = warna => {
+  const doff = acak() < 0.28;   // sebagian doff, sebagian mengilap (seperti plastik)
+  return new THREE.MeshPhysicalMaterial({ color: warna, roughness: doff ? 0.6 : 0.22, metalness: 0, clearcoat: doff ? 0 : 0.8, clearcoatRoughness: 0.1, envMapIntensity: doff ? 0.45 : 0.75 });
+};
+
+const posisi = [];
+for (let i = 0, coba = 0; i < PALET.n && coba < 4000; coba++) {
+  const p = new THREE.Vector3((acak() * 2 - 1) * PALET.lebar, (acak() * 2 - 1) * PALET.tinggi, (acak() * 2 - 1) * 2.2 - 0.6);
+  if (posisi.some(o => o.distanceTo(p) < 2.05)) continue;
+  posisi.push(p); i++;
+  const obj = grafik(material(pilih(PALET.warna, PALET.bobot)));
+  obj.position.copy(p);
+  // putaran terkendali: kebanyakan masih menghadap kamera, jadi bentuk diagramnya terbaca
+  obj.rotation.set((acak() - 0.5) * 1.8, (acak() - 0.5) * 2.2, acak() * Math.PI * 2);
+  obj.scale.setScalar(1.05 + acak() * 0.5);
+  scene.add(obj);
+}
+// gerakan "kamera" sedikit miring supaya kedalaman terasa
+camera.lookAt(0.4, -0.2, 0);
+renderer.render(scene, camera);
+document.title = "SIAP";
+</script>
+</body></html>

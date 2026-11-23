@@ -15,7 +15,7 @@
   --editor-bg:#fbfcf9; --editor-nomor:#a7b4ad;
   --c-excel:#3f8f5f; --c-sql:#5b7fb0; --c-karier:#b07d4f;
   --c-py:#4f7fae; --c-html:#c8724f; --c-css:#5a78c0; --c-js:#b08a25;
-  --c-bi:#7d6db0; --c-stat:#3f8fa0; --c-erp:#a8607a; --c-java:#a0673a; --c-php:#6e78b4;
+  --c-bi:#7d6db0; --c-stat:#3f8fa0; --c-erp:#a8607a; --c-java:#a0673a; --c-php:#6e78b4; --c-git:#c0563b;
   --emas:#d9a441; --emas-t:#fbf1dc; --topbar-h:56px;
   --radius:16px; --radius-k:12px;
   --bayang:0 1px 2px rgba(44,58,52,.04),0 4px 14px rgba(44,58,52,.05);
@@ -158,7 +158,7 @@ li{margin:3px 0}
 .kartu-t:hover{transform:translateY(-4px);box-shadow:var(--bayang2);border-color:var(--aksen)}
 .t-excel{--aksen:var(--c-excel)} .t-sql{--aksen:var(--c-sql)} .t-karier{--aksen:var(--c-karier)}
 .t-py{--aksen:var(--c-py)} .t-html{--aksen:var(--c-html)} .t-css{--aksen:var(--c-css)} .t-js{--aksen:var(--c-js)}
-.t-bi{--aksen:var(--c-bi)} .t-stat{--aksen:var(--c-stat)} .t-erp{--aksen:var(--c-erp)} .t-java{--aksen:var(--c-java)} .t-php{--aksen:var(--c-php)}
+.t-bi{--aksen:var(--c-bi)} .t-stat{--aksen:var(--c-stat)} .t-erp{--aksen:var(--c-erp)} .t-java{--aksen:var(--c-java)} .t-php{--aksen:var(--c-php)} .t-git{--aksen:var(--c-git)}
 .kartu-atas{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .kartu-ikon{font-family:var(--font-m);font-weight:700;font-size:.88rem;background:color-mix(in srgb,var(--aksen,var(--utama)) 14%,var(--permukaan));
   color:var(--aksen,var(--utama));border-radius:12px;width:42px;height:42px;display:grid;place-items:center;flex-shrink:0}

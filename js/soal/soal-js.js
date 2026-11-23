@@ -111,47 +111,328 @@ const SOAL_JS = [
 ];
 
 const MATERI_JS = [
-{k:"dasar",judul:"Dasar: Variabel, Tipe & Console",materi:`<p>JavaScript menghidupkan halaman web. Variabel modern:</p><pre><code>let umur = 22;        // bisa diubah
-const NAMA = "Ryan";  // tetap
-console.log(umur);    // cek output di DevTools (F12)</code></pre><p>Tipe utama: string, number, boolean (<code>true/false</code>), <code>undefined</code> (belum diisi), <code>null</code> (sengaja kosong). Cek tipe dengan <code>typeof</code>. Konversi: <code>Number("7")</code>, <code>String(7)</code>. Hindari <code>var</code> — scope-nya bocor.</p>`},
-{k:"operator",judul:"Operator & Perbandingan",materi:`<p>Aritmetika standar <code>+ - * / %</code>, tapi hati-hati: <code>5 + "5" = "55"</code> (string!), sedangkan <code>"5" - 2 = 3</code>.</p><pre><code>5 ==  "5"   // true  (loose, konversi dulu)
-5 === "5"   // false (strict: nilai + tipe)</code></pre><p><b>Selalu pakai ===</b>. Logika: <code>&amp;&amp; || !</code>. Singkat: <code>x++</code>, <code>x += 3</code>. Ternary: <code>status = n &gt;= 75 ? "Lulus" : "Gagal"</code>. Modern: <code>a ?? "default"</code> — fallback khusus null/undefined.</p>`},
-{k:"kondisiloop",judul:"Kondisi & Perulangan",materi:`<pre><code>if (nilai >= 80) { ... }
-else if (nilai >= 70) { ... }
-else { ... }
+{k:"dasar",judul:"Dasar: Variabel, Tipe & Console",materi:`
+<h4>JavaScript itu apa?</h4>
+<p>Kalau HTML adalah kerangka rumah dan CSS adalah catnya, <b>JavaScript</b> (disingkat <b>JS</b>) adalah <b>listriknya</b>: yang membuat lampu menyala saat saklar ditekan. JS membuat halaman bisa <b>bereaksi</b>, misalnya menu terbuka saat diklik, keranjang belanja bertambah, atau skor kuis dihitung. Semua tombol di KodeQuiz ini digerakkan oleh JavaScript.</p>
+<p>Berbeda dengan HTML, JavaScript adalah <b>bahasa pemrograman</b> sungguhan: bisa menghitung, menyimpan data, dan mengambil keputusan.</p>
+<div class="catatan">Nama JavaScript mirip Java, tapi keduanya bahasa yang <b>berbeda sama sekali</b>, seperti "mobil" dan "mobil-mobilan".</div>
+<h4>Tempat mencoba: console</h4>
+<p>Tekan <b>F12</b> di Chrome, lalu buka tab <b>Console</b>. Di situ kamu bisa mengetik kode JS dan langsung melihat hasilnya. Perintah untuk menampilkan sesuatu ke console:</p>
+<pre><code>console.log("Halo!");
+console.log(2 + 3);</code></pre>
+<p><code>console.log</code> artinya "tulis ke catatan (log) di console". Ini alat utama programmer untuk mengintip isi program. Ada juga <code>alert("Halo!")</code> yang memunculkan <b>kotak peringatan</b> di browser.</p>
+<h4>Variabel = kotak berlabel untuk menyimpan data</h4>
+<p>Bayangkan kotak kardus yang kamu beri label "umur" dan isi angka 22. Nanti kalau butuh, cukup sebut labelnya.</p>
+<pre><code>let umur = 22;
+const NAMA = "Ryan";
+umur = 23;      // boleh, karena let
+// NAMA = "Budi";  ← error, karena const tidak boleh diganti</code></pre>
+<ul><li><code>let</code> = membuat variabel yang <b>isinya boleh diganti</b> nanti.</li><li><code>const</code> (<i>constant</i>, tetap) = variabel yang <b>isinya tidak boleh diganti</b> setelah diisi. Cocok untuk nilai tetap, misalnya <code>const PI = 3.14;</code>.</li><li><code>=</code> di sini artinya <b>"isi dengan"</b>, bukan "sama dengan" seperti di matematika.</li><li><code>;</code> titik koma menandai akhir perintah.</li><li><code>//</code> adalah <b>komentar satu baris</b>, catatan yang diabaikan komputer.</li></ul>
+<p>Ada juga cara lama, <code>var</code>. Hindari, karena <code>var</code> "bocor" keluar dari blok <code>{ }</code> tempat ia dibuat sehingga mudah menimbulkan bug. <code>let</code> dan <code>const</code> hanya berlaku di dalam blok tempat ia dibuat (<i>block scope</i>), jadi lebih aman.</p>
+<h4>Jenis-jenis data (tipe data)</h4>
+<table class="mini-pivot"><tr><th>Tipe</th><th>Contoh</th><th>Penjelasan</th></tr>
+<tr><td>string</td><td><code>"halo"</code>, <code>'Rina'</code></td><td><b>teks</b>, selalu diapit tanda kutip</td></tr>
+<tr><td>number</td><td><code>22</code>, <code>3.14</code></td><td><b>angka</b>, tanpa kutip</td></tr>
+<tr><td>boolean</td><td><code>true</code>, <code>false</code></td><td>hanya <b>benar</b> atau <b>salah</b> (huruf kecil semua)</td></tr>
+<tr><td>undefined</td><td><code>let x;</code></td><td>variabel sudah dibuat tapi <b>belum diisi</b></td></tr>
+<tr><td>null</td><td><code>let pacar = null;</code></td><td><b>sengaja dikosongkan</b> oleh programmer</td></tr></table>
+<p>Beda <code>undefined</code> dan <code>null</code>: <code>undefined</code> seperti kotak yang belum pernah diisi; <code>null</code> seperti kotak yang sengaja kamu kosongkan dan beri tulisan "kosong".</p>
+<pre><code>let umur;
+console.log(umur);   // undefined</code></pre>
+<h4>Memeriksa dan mengubah tipe</h4>
+<pre><code>typeof "halo"     // "string"
+typeof 7          // "number"
+typeof null       // "object"  ← keanehan lama JS, hafalkan saja
+Number("7")       // 7   (teks jadi angka)
+String(7)         // "7" (angka jadi teks)
+Number("abc")     // NaN</code></pre>
+<ul><li><code>typeof</code> = "tipe apa ini?".</li><li><code>NaN</code> singkatan dari <i>Not a Number</i> (bukan angka), hasil saat kamu memaksa teks seperti "abc" menjadi angka.</li><li><code>"7"</code> (pakai kutip) dan <code>7</code> itu <b>berbeda</b>. Yang pertama teks, yang kedua angka. Data dari kolom isian form selalu berupa teks, jadi sering perlu diubah dengan <code>Number()</code>.</li></ul>
+<div class="praktik"><b>Coba sendiri:</b> buka console (F12), ketik <code>let nama = "isi namamu";</code> lalu <code>console.log("Halo " + nama);</code>. Coba juga <code>typeof 5</code> dan <code>typeof "5"</code>.</div>
+`},
+{k:"operator",judul:"Operator & Perbandingan",materi:`
+<h4>Operator = tanda untuk menghitung dan membandingkan</h4>
+<p>Operator adalah simbol yang melakukan sesuatu pada nilai, seperti <code>+</code> dan <code>-</code> di kalkulator.</p>
+<h4>Aritmetika</h4>
+<table class="mini-pivot"><tr><th>Operator</th><th>Arti</th><th>Contoh</th><th>Hasil</th></tr>
+<tr><td><code>+</code></td><td>tambah</td><td><code>7 + 3</code></td><td>10</td></tr>
+<tr><td><code>-</code></td><td>kurang</td><td><code>7 - 3</code></td><td>4</td></tr>
+<tr><td><code>*</code></td><td>kali</td><td><code>7 * 3</code></td><td>21</td></tr>
+<tr><td><code>/</code></td><td>bagi</td><td><code>7 / 2</code></td><td>3.5</td></tr>
+<tr><td><code>%</code></td><td><b>sisa bagi</b> (modulo)</td><td><code>10 % 4</code></td><td>2</td></tr></table>
+<p><code>%</code> sering dipakai untuk mengecek genap/ganjil: <code>angka % 2 === 0</code> berarti genap. Contoh <code>10 % 4</code>: 10 dibagi 4 = 2, sisa <b>2</b>.</p>
+<p>Cara singkat:</p>
+<pre><code>let x = 5;
+x++;       // x jadi 6 (tambah 1)
+x += 3;    // sama dengan x = x + 3, jadi 9</code></pre>
+<h4>Jebakan: tanda + juga untuk menggabung teks</h4>
+<pre><code>5 + 5      // 10
+5 + "5"    // "55"  ← bukan 10!
+"5" - 2    // 3</code></pre>
+<p>Kalau salah satu sisi <code>+</code> berupa <b>teks</b>, JavaScript menganggapnya <b>menggabung tulisan</b>, bukan menjumlah. Jadi <code>5 + "5"</code> = <code>"55"</code>. Tapi <code>-</code> tidak punya arti untuk teks, jadi JS mengubah <code>"5"</code> menjadi angka dulu: <code>"5" - 2</code> = <code>3</code>.</p>
+<h4>Membandingkan: == lawan ===</h4>
+<pre><code>5 ==  "5"   // true   (dua sama dengan: tipe diabaikan)
+5 === "5"   // false  (tiga sama dengan: nilai DAN tipe harus sama)</code></pre>
+<ul><li><code>==</code> mengubah tipe dulu baru membandingkan, sehingga teks "5" dianggap sama dengan angka 5. Ini sering menimbulkan bug.</li><li><code>===</code> (<b>strict</b>/ketat) memeriksa <b>nilai dan tipe</b>. <b>Selalu pakai <code>===</code></b>. Lawannya <code>!==</code> (tidak sama).</li><li>Pembanding lain: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code> (lebih dari atau sama dengan), <code>&lt;=</code>.</li></ul>
+<h4>Keanehan desimal</h4>
+<pre><code>0.1 + 0.2 === 0.3   // false!</code></pre>
+<p>Komputer menyimpan desimal dalam bentuk biner, sehingga <code>0.1 + 0.2</code> sebenarnya <code>0.30000000000000004</code>. Ini bukan bug JS saja, hampir semua bahasa pemrograman begitu. Untuk uang, biasanya dihitung dalam satuan rupiah utuh (bilangan bulat).</p>
+<h4>Logika: dan, atau, bukan</h4>
+<table class="mini-pivot"><tr><th>Operator</th><th>Arti</th><th>Contoh</th><th>Hasil</th></tr>
+<tr><td><code>&amp;&amp;</code></td><td><b>dan</b>: benar jika keduanya benar</td><td><code>true &amp;&amp; false</code></td><td>false</td></tr>
+<tr><td><code>||</code></td><td><b>atau</b>: benar jika salah satu benar</td><td><code>true || false</code></td><td>true</td></tr>
+<tr><td><code>!</code></td><td><b>bukan</b>: membalik</td><td><code>!true</code></td><td>false</td></tr></table>
+<h4>Ternary: if singkat dalam satu baris</h4>
+<pre><code>let status = nilai &gt;= 75 ? "Lulus" : "Gagal";</code></pre>
+<p>Bacanya: "apakah nilai ≥ 75? <b>Kalau ya</b> (<code>?</code>) isinya "Lulus", <b>kalau tidak</b> (<code>:</code>) isinya "Gagal"".</p>
+<h4>?? : nilai cadangan</h4>
+<pre><code>let nama = input ?? "Tamu";</code></pre>
+<p><code>??</code> artinya "pakai <code>input</code>, kecuali kalau isinya <code>null</code> atau <code>undefined</code>; dalam hal itu pakai "Tamu"". Berguna untuk nilai bawaan (<i>default</i>).</p>
+<div class="praktik"><b>Coba sendiri:</b> di console, tebak dulu lalu jalankan: <code>5 + "5"</code>, <code>"5" - 2</code>, <code>10 % 3</code>, <code>5 === "5"</code>, <code>null ?? "kosong"</code>.</div>
+`},
+{k:"kondisiloop",judul:"Kondisi & Perulangan",materi:`
+<h4>Program yang bisa memilih dan mengulang</h4>
+<p>Dua kemampuan inilah yang membuat komputer berguna:</p>
+<ol><li><b>Kondisi</b>: memilih jalan, seperti "kalau hujan, bawa payung".</li><li><b>Perulangan (loop)</b>: mengulang pekerjaan, seperti "cuci 10 piring satu per satu".</li></ol>
+<h4>if, else if, else</h4>
+<pre><code>let nilai = 78;
+if (nilai &gt;= 80) {
+  console.log("A");
+} else if (nilai &gt;= 70) {
+  console.log("B");
+} else {
+  console.log("C");
+}</code></pre>
+<ul><li><code>if (syarat) { … }</code> = "<b>jika</b> syarat benar, jalankan isi kurung kurawal".</li><li><code>else if</code> = "<b>kalau tidak, jika</b> …", cabang berikutnya. Boleh lebih dari satu.</li><li><code>else</code> = "<b>selain itu</b>", dijalankan kalau semua syarat di atas salah.</li><li>Komputer memeriksa dari atas dan <b>berhenti di syarat pertama yang benar</b>. Nilai 78 tidak ≥ 80, tapi ≥ 70, jadi tercetak "B".</li></ul>
+<h4>switch: banyak pilihan dari satu nilai</h4>
+<pre><code>switch (hari) {
+  case "Sabtu":
+    console.log("Libur");
+    break;
+  case "Senin":
+    console.log("Kerja");
+    break;
+  default:
+    console.log("Hari biasa");
+}</code></pre>
+<p><code>switch</code> cocok kalau kamu membandingkan <b>satu nilai</b> dengan banyak kemungkinan. <code>default</code> = kalau tidak ada yang cocok. <b>Jangan lupa <code>break</code></b>: tanpa itu, JS akan terus menjalankan <code>case</code> di bawahnya juga (disebut <i>fall-through</i>).</p>
+<h4>Nilai "falsy": dianggap salah</h4>
+<p>Di dalam <code>if</code>, nilai-nilai berikut dianggap <b>salah</b>: <code>0</code>, <code>""</code> (teks kosong), <code>null</code>, <code>undefined</code>, <code>NaN</code>, dan <code>false</code>. Sisanya dianggap benar (<i>truthy</i>), termasuk teks <code>"0"</code> dan array kosong <code>[]</code>.</p>
+<h4>for: mengulang dengan hitungan</h4>
+<pre><code>for (let i = 0; i &lt; 3; i++) {
+  console.log(i);
+}
+// 0, 1, 2</code></pre>
+<p>Ada tiga bagian di dalam kurung, dipisah titik koma:</p>
+<ol><li><code>let i = 0</code> = <b>mulai</b> dari 0 (<code>i</code> seperti penghitung).</li><li><code>i &lt; 3</code> = <b>ulangi selama</b> i kurang dari 3.</li><li><code>i++</code> = setiap selesai satu putaran, <b>tambah</b> i dengan 1.</li></ol>
+<p>Jadi isinya dijalankan untuk i = 0, 1, 2, yaitu <b>3 kali</b>.</p>
+<p>Contoh menjumlah 1 sampai 3:</p>
+<pre><code>let s = 0;
+for (let i = 1; i &lt;= 3; i++) { s += i; }
+// s = 1 + 2 + 3 = 6</code></pre>
+<h4>for…of dan for…in</h4>
+<pre><code>const buah = ["apel", "jeruk"];
+for (const b of buah) { console.log(b); }        // apel, jeruk
 
-for (let i = 0; i < 3; i++) { ... }  // 0 1 2
-for (const buah of daftar) { ... }   // tiap NILAI
-while (kondisi) { ... }</code></pre><p><code>break</code> berhenti; <code>continue</code> lompat. <code>switch…case</code> untuk banyak cabang — jangan lupa <code>break</code> tiap case! Falsy: <code>0, "", null, undefined, NaN, false</code> (catatan: <code>"0"</code> dan <code>[]</code> justru truthy).</p>`},
-{k:"fungsi",judul:"Fungsi & Arrow Function",materi:`<pre><code>function luas(p, l = 1) {   // default param
+const orang = { nama: "Rina", umur: 20 };
+for (const kunci in orang) { console.log(kunci); } // nama, umur</code></pre>
+<ul><li><code>for…of</code> mengambil <b>setiap nilai</b> dari array satu per satu.</li><li><code>for…in</code> mengambil <b>setiap nama kunci</b> dari sebuah objek.</li></ul>
+<h4>while dan do…while</h4>
+<pre><code>while (saldo &gt; 0) { … }      // cek dulu, baru jalan
+do { … } while (lagi);       // jalan dulu SEKALI, baru cek</code></pre>
+<p><code>while</code> mengulang <b>selama</b> syarat benar. <code>do…while</code> menjalankan isinya <b>minimal sekali</b> sebelum memeriksa syarat.</p>
+<h4>Mengendalikan loop</h4>
+<ul><li><code>break</code> = <b>hentikan</b> loop sekarang juga.</li><li><code>continue</code> = <b>lewati</b> putaran ini, lanjut ke putaran berikutnya.</li></ul>
+<div class="catatan">Hati-hati dengan loop yang syaratnya tidak pernah salah, misalnya lupa <code>i++</code>. Loop itu berjalan selamanya (<i>infinite loop</i>) dan tab browser bisa macet.</div>
+<div class="praktik"><b>Coba sendiri:</b> tulis loop yang mencetak angka 1 sampai 10, tapi lewati angka 5 dengan <code>continue</code>.</div>
+`},
+{k:"fungsi",judul:"Fungsi & Arrow Function",materi:`
+<h4>Fungsi = resep yang bisa dipakai berulang</h4>
+<p>Bayangkan kamu sering membuat teh: rebus air, masukkan teh, tambah gula. Daripada menjelaskan langkahnya setiap kali, kamu beri nama resep itu "buatTeh". Lain kali cukup bilang "buatTeh". <b>Fungsi</b> adalah kumpulan perintah yang diberi nama dan bisa dipanggil kapan saja.</p>
+<pre><code>function sapa(nama) {
+  return "Halo, " + nama + "!";
+}
+
+sapa("Rina");   // "Halo, Rina!"
+sapa("Budi");   // "Halo, Budi!"</code></pre>
+<ul><li><code>function</code> = kata kunci untuk <b>membuat</b> fungsi.</li><li><code>sapa</code> = <b>nama</b> fungsinya.</li><li><code>nama</code> di dalam kurung = <b>parameter</b>, "bahan" yang diterima fungsi. Nilai yang kamu kirim saat memanggil (<code>"Rina"</code>) disebut <b>argumen</b>.</li><li><code>return</code> = <b>mengembalikan hasil</b> ke pemanggil, sekaligus menghentikan fungsi. Fungsi <b>tanpa <code>return</code></b> menghasilkan <code>undefined</code>.</li><li><code>sapa("Rina")</code> = <b>memanggil</b> (menjalankan) fungsinya.</li></ul>
+<h4>Nilai bawaan parameter</h4>
+<pre><code>function luas(p, l = 1) {
   return p * l;
 }
-const kali2 = (x) => x * 2; // arrow: auto-return</code></pre><p>Tanpa return → <code>undefined</code>. Variabel dalam fungsi = lokal. Konsep penting: <b>callback</b> (fungsi dikirim ke fungsi lain, mis. <code>map(fn)</code>) dan <b>closure</b> (fungsi mengingat scope tempat ia lahir). <code>...rest</code> menampung argumen bebas sebagai array.</p>`},
-{k:"array",judul:"Array & Method Andalannya",materi:`<p>Method array adalah senjata sehari-hari programmer JS:</p><pre><code>const n = [1, 2, 3, 4];
-n.push(5); n.pop();
-n.map(x => x * 2)        // [2,4,6,8]  transformasi
-n.filter(x => x > 2)     // [3,4]      saring
-n.find(x => x > 2)       // 3          satu pertama
-n.reduce((a,b) => a+b,0) // 10         rangkum
-n.includes(3)            // true</code></pre><p>Awas: <code>sort()</code> default membanding string — untuk angka: <code>sort((a,b) =&gt; a-b)</code>. <code>slice</code> menyalin, <code>splice</code> mengubah array asli.</p>`},
-{k:"strobj",judul:"String, Objek & Destructuring",materi:`<p>Template literal — cara modern merangkai teks:</p><pre><code>console.log(\`Halo \${nama}, skor \${skor}\`);</code></pre><p>Method string: <code>toUpperCase() trim() split(",") replace() includes()</code>. Objek — struktur data terpenting JS:</p><pre><code>const mhs = { nama: "Ryan", nim: "220103091" };
-mhs.nama;               // akses
-const { nama } = mhs;   // destructuring
-Object.keys(mhs);       // ["nama","nim"]
-const salinan = { ...mhs, kota: "Solo" };  // spread</code></pre>`},
-{k:"dom",judul:"DOM: Menghidupkan Halaman",materi:`<p>DOM = representasi HTML yang bisa dimanipulasi JS:</p><pre><code>const btn = document.querySelector("#tombol");
-btn.addEventListener("click", () => {
-  const el = document.querySelector(".hasil");
-  el.textContent = "Diklik!";
-  el.classList.toggle("aktif");
-});
-const isi = document.querySelector("input").value;</code></pre><p><code>textContent</code> = teks polos (aman); <code>innerHTML</code> merender tag (hati-hati input pengguna). Event penting: <code>click, input, submit, keydown</code>. <code>e.preventDefault()</code> mencegah form me-reload halaman — inilah dasar aplikasi interaktif.</p>`},
-{k:"async",judul:"Asinkron: Promise, Fetch & Storage",materi:`<p>JS tidak menunggu operasi lambat — ia memakai <b>Promise</b>:</p><pre><code>async function ambilData() {
-  try {
-    const res = await fetch("https://api.example.com/data");
-    const data = await res.json();
-  } catch (e) { console.error(e); }
+luas(5);      // 5, karena l memakai nilai bawaan 1
+luas(5, 3);   // 15</code></pre>
+<p><code>l = 1</code> adalah <b>nilai default</b>: dipakai kalau argumen untuk <code>l</code> tidak dikirim.</p>
+<h4>Cara lain menulis fungsi</h4>
+<pre><code>const tambah = function (a, b) { return a + b; };   // function expression
+const tambah2 = (a, b) =&gt; a + b;                    // arrow function</code></pre>
+<ul><li><b>Function expression</b> = fungsi yang disimpan ke dalam variabel.</li><li><b>Arrow function</b> (fungsi panah) memakai tanda <code>=&gt;</code>. Lebih ringkas. Kalau isinya cuma satu ekspresi, hasilnya <b>otomatis di-return</b> tanpa menulis <code>return</code>.</li></ul>
+<h4>Variabel lokal</h4>
+<p>Variabel yang dibuat <b>di dalam</b> fungsi hanya hidup di dalam fungsi itu (<b>lokal</b>). Di luar fungsi, variabel itu tidak dikenal. Ini mencegah nama variabel saling bertabrakan.</p>
+<h4>Tiga konsep yang sering ditanyakan</h4>
+<p><b>1. Callback</b>: fungsi yang dikirim sebagai argumen ke fungsi lain, untuk dipanggil nanti.</p>
+<pre><code>[1, 2, 3].map(x =&gt; x * 2);   // x =&gt; x * 2 adalah callback
+tombol.addEventListener("click", () =&gt; alert("Diklik"));</code></pre>
+<p><b>2. Closure</b>: fungsi yang <b>mengingat variabel di tempat ia dibuat</b>, bahkan setelah fungsi pembuatnya selesai.</p>
+<pre><code>function buatPenghitung() {
+  let n = 0;
+  return () =&gt; ++n;
 }
-setTimeout(fn, 2000);   // sekali, 2 dtk
-setInterval(fn, 1000);  // berulang</code></pre><p>Menyimpan data di browser: <code>localStorage.setItem("skor", JSON.stringify(obj))</code> lalu <code>JSON.parse(localStorage.getItem("skor"))</code> — semua tersimpan sebagai string. Persis teknik yang dipakai KodeQuiz menyimpan progresmu!</p>`},
+const hitung = buatPenghitung();
+hitung();  // 1
+hitung();  // 2  ← n masih diingat</code></pre>
+<p><b>3. Rest parameter</b> <code>...</code>: menampung <b>berapa pun argumen</b> menjadi sebuah array.</p>
+<pre><code>function jumlah(...angka) { return angka.length; }
+jumlah(4, 5, 6);   // angka = [4, 5, 6], hasilnya 3</code></pre>
+<p>Ada juga <b>IIFE</b> (<i>Immediately Invoked Function Expression</i>), fungsi yang <b>langsung dijalankan</b> saat dibuat: <code>(() =&gt; { … })();</code>. Dulu sering dipakai untuk mengurung variabel.</p>
+<div class="praktik"><b>Coba sendiri:</b> buat fungsi <code>diskon(harga, persen = 10)</code> yang mengembalikan harga setelah diskon. Panggil <code>diskon(50000)</code> dan <code>diskon(50000, 25)</code>.</div>
+`},
+{k:"array",judul:"Array & Method Andalannya",materi:`
+<h4>Array = daftar berisi banyak nilai</h4>
+<p>Daripada membuat variabel <code>buah1</code>, <code>buah2</code>, <code>buah3</code>, simpan semuanya dalam satu <b>array</b> (larik/daftar), seperti satu rak berisi banyak laci bernomor.</p>
+<pre><code>const buah = ["apel", "jeruk", "mangga"];
+buah[0]        // "apel"
+buah[2]        // "mangga"
+buah.length    // 3</code></pre>
+<ul><li>Array ditulis dengan kurung siku <code>[ ]</code>, isinya dipisah koma.</li><li>Setiap isi punya nomor urut yang disebut <b>indeks</b>, dan <b>dimulai dari 0</b>, bukan 1. Jadi <code>buah[0]</code> adalah isi pertama.</li><li><code>.length</code> = <b>jumlah isi</b> array.</li></ul>
+<h4>Menambah dan membuang</h4>
+<table class="mini-pivot"><tr><th>Method</th><th>Fungsi</th><th>Contoh</th></tr>
+<tr><td><code>push(x)</code></td><td>tambah di <b>akhir</b></td><td><code>buah.push("salak")</code></td></tr>
+<tr><td><code>pop()</code></td><td>buang isi <b>terakhir</b></td><td><code>buah.pop()</code></td></tr>
+<tr><td><code>unshift(x)</code></td><td>tambah di <b>awal</b></td><td><code>buah.unshift("anggur")</code></td></tr>
+<tr><td><code>shift()</code></td><td>buang isi <b>pertama</b></td><td><code>buah.shift()</code></td></tr></table>
+<p><i>Method</i> adalah fungsi yang "menempel" pada sebuah nilai, dipanggil dengan titik: <code>buah.push(...)</code>.</p>
+<h4>Lima method andalan</h4>
+<p>Kelima method ini memakai <b>callback</b>, fungsi kecil yang dijalankan untuk setiap isi array.</p>
+<pre><code>const n = [1, 2, 3, 4];
+n.map(x =&gt; x * 2)          // [2, 4, 6, 8]
+n.filter(x =&gt; x &gt; 2)       // [3, 4]
+n.find(x =&gt; x &gt; 2)         // 3
+n.reduce((a, b) =&gt; a + b, 0)  // 10
+n.includes(3)              // true</code></pre>
+<ul><li><code>map</code> = <b>ubah setiap isi</b>, hasilnya array baru dengan <b>panjang sama</b>. Seperti mengalikan semua harga dengan 2.</li><li><code>filter</code> = <b>saring</b>, hasilnya array baru berisi yang <b>lolos syarat</b> saja.</li><li><code>find</code> = cari <b>satu isi pertama</b> yang cocok (bukan array).</li><li><code>reduce</code> = <b>rangkum</b> semua isi jadi <b>satu nilai</b>. <code>(a, b) =&gt; a + b</code> artinya "tambahkan isi berikutnya (b) ke total sementara (a)", dimulai dari 0. Hasil: 0+1+2+3+4 = 10.</li><li><code>includes</code> = apakah nilai ini ada? Hasilnya <code>true</code>/<code>false</code>.</li><li><code>every</code> = apakah <b>semua</b> isi lolos syarat? <code>some</code> = apakah <b>ada satu saja</b> yang lolos?</li><li><code>forEach</code> = jalankan sesuatu untuk setiap isi, tapi <b>tidak menghasilkan array baru</b> (berbeda dengan <code>map</code>).</li><li><code>join(", ")</code> = <b>gabungkan</b> isi array menjadi satu teks, dipisah tanda yang kamu pilih: <code>"apel, jeruk, mangga"</code>.</li></ul>
+<h4>slice lawan splice (mirip namanya, beda sifatnya)</h4>
+<pre><code>const a = [10, 20, 30, 40];
+a.slice(1, 3)    // [20, 30]  → MENYALIN, array asli tetap
+a.splice(1, 2)   // membuang 2 isi mulai indeks 1 → array asli BERUBAH jadi [10, 40]</code></pre>
+<p><code>slice(1, 3)</code> mengambil dari indeks 1 sampai <b>sebelum</b> indeks 3.</p>
+<h4>Jebakan sort</h4>
+<pre><code>[10, 9, 1, 100].sort()                 // [1, 10, 100, 9]  ← aneh!
+[10, 9, 1, 100].sort((a, b) =&gt; a - b)  // [1, 9, 10, 100] ✓</code></pre>
+<p>Tanpa aturan, <code>sort()</code> mengurutkan isinya <b>sebagai teks</b>, huruf demi huruf, seperti kamus: "10" diawali "1", jadi lebih dulu dari "9". Untuk angka, beri pembanding <code>(a, b) =&gt; a - b</code>.</p>
+<div class="praktik"><b>Coba sendiri:</b> buat array harga <code>[15000, 8000, 22000]</code>. Pakai <code>filter</code> untuk mengambil yang di atas 10000, lalu <code>reduce</code> untuk menjumlahkan semuanya.</div>
+`},
+{k:"strobj",judul:"String, Objek & Destructuring",materi:`
+<h4>String: mengolah teks</h4>
+<p><b>String</b> adalah teks. Ada tiga cara menulisnya: kutip ganda <code>"halo"</code>, kutip tunggal <code>'halo'</code>, dan <b>backtick</b> (tanda petik miring). Yang terakhir disebut <b>template literal</b>, dan paling praktis untuk menyisipkan variabel:</p>
+<pre><code>const nama = "Rina", skor = 90;
+console.log(\`Halo \${nama}, skormu \${skor}\`);
+// Halo Rina, skormu 90</code></pre>
+<p><code>\${ … }</code> di dalam backtick artinya "sisipkan nilai ini di sini". Tombol backtick ada di kiri atas keyboard, di bawah Esc.</p>
+<h4>Method string yang sering dipakai</h4>
+<table class="mini-pivot"><tr><th>Kode</th><th>Hasil</th><th>Gunanya</th></tr>
+<tr><td><code>"halo".length</code></td><td>4</td><td>jumlah huruf</td></tr>
+<tr><td><code>"HALO".toLowerCase()</code></td><td><code>"halo"</code></td><td>jadi huruf kecil</td></tr>
+<tr><td><code>"halo".toUpperCase()</code></td><td><code>"HALO"</code></td><td>jadi huruf besar</td></tr>
+<tr><td><code>"  hai  ".trim()</code></td><td><code>"hai"</code></td><td>buang spasi di awal dan akhir</td></tr>
+<tr><td><code>"a,b,c".split(",")</code></td><td><code>["a", "b", "c"]</code></td><td>pecah teks jadi array</td></tr>
+<tr><td><code>"belajar".includes("ajar")</code></td><td><code>true</code></td><td>apakah mengandung kata itu?</td></tr>
+<tr><td><code>"kopi".replace("k", "t")</code></td><td><code>"topi"</code></td><td>ganti bagian teks</td></tr></table>
+<h4>Objek: data yang punya label</h4>
+<p>Array cocok untuk daftar. Tapi bagaimana menyimpan data seorang mahasiswa yang punya nama, NIM, dan kota? Pakai <b>objek</b>:</p>
+<pre><code>const mhs = {
+  nama: "Ryan",
+  nim: "220103091",
+  kota: "Solo"
+};
+mhs.nama          // "Ryan"
+mhs["kota"]       // "Solo"
+mhs.umur = 21;    // menambah data baru</code></pre>
+<ul><li>Objek ditulis dengan kurung kurawal <code>{ }</code>.</li><li>Isinya pasangan <b>kunci: nilai</b> (disebut <i>properti</i>), dipisah koma. Seperti formulir: "Nama: Ryan".</li><li>Ambil nilainya dengan titik (<code>mhs.nama</code>) atau kurung siku (<code>mhs["nama"]</code>).</li><li><code>Object.keys(mhs)</code> menghasilkan array semua kuncinya: <code>["nama", "nim", "kota"]</code>.</li></ul>
+<h4>Destructuring: membongkar isi objek</h4>
+<pre><code>const { nama, kota } = mhs;
+// sama dengan: const nama = mhs.nama; const kota = mhs.kota;</code></pre>
+<p><i>Destructuring</i> artinya "membongkar". Kamu mengambil beberapa properti sekaligus ke dalam variabel yang namanya sama.</p>
+<h4>Spread: menyalin dengan titik tiga</h4>
+<pre><code>const salinan = { ...mhs, kota: "Bandung" };
+const gabung = [...arr1, ...arr2];</code></pre>
+<p><code>...</code> (<i>spread</i>, menyebarkan) menuang semua isi objek/array ke wadah baru. Contoh pertama menyalin <code>mhs</code> lalu mengganti kotanya; objek asli tidak berubah. Contoh kedua menggabungkan dua array.</p>
+<div class="praktik"><b>Coba sendiri:</b> buat objek tentang dirimu (nama, kota, hobi), lalu tampilkan kalimat "Aku … dari …" memakai template literal dan <code>\${ }</code>.</div>
+`},
+{k:"dom",judul:"DOM: Menghidupkan Halaman",materi:`
+<h4>DOM: jembatan antara JavaScript dan halaman</h4>
+<p>Saat browser membaca HTML, ia membuat "peta" halaman dalam ingatannya, berbentuk pohon: <code>html</code> bercabang ke <code>head</code> dan <code>body</code>, <code>body</code> bercabang ke <code>h1</code>, <code>p</code>, dan seterusnya. Peta ini disebut <b>DOM</b> (<i>Document Object Model</i>). JavaScript tidak mengubah file HTML-mu; ia mengubah <b>DOM</b>, dan browser langsung menggambar ulang layar.</p>
+<p>Objek <code>document</code> mewakili seluruh halaman. Dari sinilah semua dimulai.</p>
+<h4>Langkah 1: temukan elemennya</h4>
+<pre><code>document.getElementById("judul")        // elemen dengan id="judul"
+document.querySelector("#judul")        // sama, pakai gaya selector CSS
+document.querySelector(".kartu")        // elemen PERTAMA dengan class="kartu"
+document.querySelectorAll(".kartu")     // SEMUA elemen class="kartu"</code></pre>
+<p><code>querySelector</code> memakai selector CSS yang sudah kamu kenal: <code>#</code> untuk id, <code>.</code> untuk class.</p>
+<h4>Langkah 2: ubah elemennya</h4>
+<pre><code>const el = document.querySelector("#pesan");
+el.textContent = "Berhasil disimpan!";   // ganti teks
+el.classList.add("aktif");               // tambah class
+el.classList.remove("aktif");            // buang class
+el.classList.toggle("gelap");            // tambah kalau belum ada, buang kalau sudah ada</code></pre>
+<ul><li><code>textContent</code> = isi <b>teks polos</b>. Kalau kamu menulis <code>&lt;b&gt;</code> di dalamnya, yang tampil tetap tulisan "&lt;b&gt;", bukan huruf tebal. Ini <b>aman</b>.</li><li><code>innerHTML</code> = isi berupa <b>HTML</b>, tag-nya ikut dijalankan. Berbahaya kalau isinya berasal dari ketikan pengunjung, karena orang jahat bisa menyisipkan kode.</li><li><code>classList</code> = daftar class elemen. Mengganti class adalah cara paling rapi mengubah tampilan, karena gayanya tetap ditulis di CSS.</li></ul>
+<h4>Langkah 3: dengarkan kejadian (event)</h4>
+<p><b>Event</b> adalah kejadian yang dilakukan pengunjung: klik, mengetik, mengirim form. JavaScript bisa "mendengarkan" event lalu bereaksi.</p>
+<pre><code>const tombol = document.querySelector("#tombol");
+tombol.addEventListener("click", () =&gt; {
+  alert("Tombol diklik!");
+});</code></pre>
+<p>Bacanya: "pada tombol, <b>pasang pendengar</b> (<i>add event listener</i>) untuk kejadian <code>click</code>; kalau terjadi, jalankan fungsi ini".</p>
+<table class="mini-pivot"><tr><th>Event</th><th>Terjadi saat</th></tr>
+<tr><td><code>click</code></td><td>elemen diklik</td></tr>
+<tr><td><code>input</code></td><td>isi kolom <b>berubah saat mengetik</b> (setiap huruf)</td></tr>
+<tr><td><code>submit</code></td><td>form dikirim</td></tr>
+<tr><td><code>keydown</code></td><td>tombol keyboard ditekan</td></tr></table>
+<h4>Membaca isian dan membuat elemen baru</h4>
+<pre><code>const isi = document.querySelector("input").value;   // teks yang diketik
+
+const li = document.createElement("li");   // buat elemen baru
+li.textContent = isi;
+document.querySelector("ul").append(li);   // tempel ke halaman</code></pre>
+<h4>Mencegah form memuat ulang halaman</h4>
+<p>Secara bawaan, mengirim form membuat halaman <b>dimuat ulang</b>, sehingga semua yang sudah terjadi hilang. Untuk mengolah form dengan JS, cegah perilaku bawaan itu:</p>
+<pre><code>form.addEventListener("submit", (e) =&gt; {
+  e.preventDefault();   // "jangan lakukan perilaku bawaan"
+  // olah datanya di sini
+});</code></pre>
+<p><code>e</code> adalah objek <b>event</b> berisi keterangan kejadiannya.</p>
+<div class="praktik"><b>Coba sendiri:</b> buat satu <code>&lt;input&gt;</code>, satu <code>&lt;button&gt;</code>, dan satu <code>&lt;ul&gt;</code>. Saat tombol diklik, ambil teks di input dan tambahkan sebagai <code>&lt;li&gt;</code> baru. Selamat, kamu baru membuat aplikasi daftar tugas mini!</div>
+`},
+{k:"async",judul:"Asinkron: Promise, Fetch & Storage",materi:`
+<h4>Kenapa butuh "asinkron"?</h4>
+<p>Beberapa pekerjaan butuh waktu: mengambil data dari internet, menunggu 2 detik, membaca file. Kalau JavaScript <b>menunggu diam</b> sampai selesai, seluruh halaman akan membeku: tombol tidak bisa diklik, gulir macet.</p>
+<p>Jadi JavaScript bekerja <b>asinkron</b> (tidak serentak): ia memesan pekerjaan lambat, lalu <b>lanjut mengerjakan hal lain</b>, dan kembali saat hasilnya siap. Seperti memesan di restoran cepat saji: kamu diberi <b>nomor antrean</b>, duduk dulu, lalu dipanggil saat makanan siap.</p>
+<h4>Promise = nomor antrean</h4>
+<p><b>Promise</b> (janji) adalah objek yang mewakili <b>hasil yang akan datang</b>. Statusnya bisa: masih menunggu (<i>pending</i>), berhasil (<i>fulfilled</i>), atau gagal (<i>rejected</i>).</p>
+<h4>async dan await: menunggu dengan sopan</h4>
+<pre><code>async function ambilData() {
+  try {
+    const res = await fetch("https://api.example.com/produk");
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error("Gagal:", err);
+  }
+}</code></pre>
+<p>Baris demi baris:</p>
+<ol><li><code>async function</code> = menandai fungsi ini <b>asinkron</b>. Kata <code>await</code> <b>hanya boleh dipakai di dalam fungsi <code>async</code></b>.</li><li><code>fetch(alamat)</code> = <b>mengambil data dari internet</b>. Hasilnya bukan langsung data, tapi <b>Promise</b>.</li><li><code>await</code> = "<b>tunggu</b> sampai promise ini selesai, lalu ambil hasilnya". Hanya fungsi ini yang menunggu; halaman tetap lancar.</li><li><code>res.json()</code> = ubah jawaban server menjadi data JavaScript (juga perlu <code>await</code>).</li><li><code>try { … } catch (err) { … }</code> = "<b>coba</b> jalankan; kalau ada yang <b>gagal</b> (internet putus, alamat salah), tangkap errornya di sini" supaya program tidak berhenti.</li></ol>
+<h4>Penunda waktu</h4>
+<pre><code>setTimeout(() =&gt; alert("2 detik berlalu"), 2000);   // sekali, setelah 2000 ms
+setInterval(() =&gt; console.log("tik"), 1000);       // berulang setiap 1 detik</code></pre>
+<p>Waktu ditulis dalam <b>milidetik</b>: 1000 ms = 1 detik.</p>
+<h4>Menyimpan data di browser: localStorage dan JSON</h4>
+<p><code>localStorage</code> adalah "laci" di browser yang isinya tetap ada walau browser ditutup. KodeQuiz memakai cara ini untuk menyimpan progresmu. Satu aturannya: <b>localStorage hanya bisa menyimpan teks (string)</b>. Kalau kamu menyimpan angka 90, ia tersimpan sebagai teks <code>"90"</code>.</p>
+<p>Untuk menyimpan objek, ubah dulu menjadi teks dengan <b>JSON</b> (<i>JavaScript Object Notation</i>, format teks untuk data):</p>
+<pre><code>const progres = { skor: 90, bab: 3 };
+localStorage.setItem("progres", JSON.stringify(progres));   // objek → teks
+
+const balik = JSON.parse(localStorage.getItem("progres"));  // teks → objek
+balik.skor   // 90</code></pre>
+<ul><li><code>JSON.stringify(obj)</code> = objek <b>menjadi teks</b> JSON.</li><li><code>JSON.parse(teks)</code> = teks JSON <b>menjadi objek</b> lagi.</li></ul>
+<div class="praktik"><b>Coba sendiri:</b> di console, jalankan <code>localStorage.setItem("coba", JSON.stringify({a: 1}))</code>, tutup tab, buka lagi, lalu jalankan <code>JSON.parse(localStorage.getItem("coba"))</code>. Datanya masih ada.</div>
+`},
 ];

@@ -164,6 +164,18 @@ SOAL_PYTHON.push(
 
 MATERI_PYTHON.push(
 {k:"pandas",judul:"pandas — Excel Versi Kode untuk Analis Data",materi:`
+<!--pemula--><h4>Untuk pemula: apa itu pandas dan DataFrame?</h4>
+<p><b>pandas</b> adalah paket Python untuk mengolah <b>tabel data</b>, seperti Excel tapi dikendalikan dengan kode. Kelebihannya: bisa mengolah jutaan baris, dan langkah-langkahnya tercatat sehingga bisa diulang otomatis besok dengan data baru.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya dalam bahasa sehari-hari</th></tr>
+<tr><td>DataFrame (<code>df</code>)</td><td>satu <b>tabel</b> utuh (baris dan kolom), seperti satu sheet Excel</td></tr>
+<tr><td>Series</td><td>satu <b>kolom</b> dari tabel, misalnya <code>df["Total"]</code></td></tr>
+<tr><td>CSV</td><td>file tabel berupa teks, kolomnya dipisah koma; bisa dibuka di Excel</td></tr>
+<tr><td><code>pd.read_csv()</code></td><td>membuka file CSV menjadi DataFrame</td></tr>
+<tr><td><code>head()</code></td><td>mengintip 5 baris teratas</td></tr>
+<tr><td><code>shape</code></td><td>ukuran tabel: (jumlah baris, jumlah kolom)</td></tr>
+<tr><td>NaN / data kosong</td><td>sel yang tidak berisi nilai, seperti sel kosong di Excel</td></tr>
+<tr><td><code>groupby</code></td><td>mengelompokkan baris yang nilainya sama lalu meringkasnya, seperti Pivot Table</td></tr></table>
+<p>Kalau kamu belum pernah memakai Excel atau SQL, cukup pegang ini: setiap baris di tabel bawah menunjukkan <b>satu pekerjaan yang sama</b>, ditulis dengan tiga cara (Excel, SQL, dan pandas).</p><!--/pemula-->
 <p><b>pandas</b> adalah library Python nomor satu untuk analisis data. Kalau kamu sudah paham Excel dan SQL, pandas tinggal belajar "cara menulisnya".</p>
 <pre><code>import pandas as pd
 df = pd.read_csv("penjualan.csv")   # atau pd.read_excel("file.xlsx")
@@ -185,6 +197,17 @@ df.isna().sum()    # jumlah data kosong per kolom</code></pre>
 <div class="praktik">🧪 <b>Praktik:</b> buka Google Colab, upload <code>latihan/penjualan.csv</code> dari proyek ini, lalu ulangi semua contoh di tabel. Kodenya bisa langsung dipakai untuk notebook portofolio skripsimu.</div>`},
 
 {k:"odoo",judul:"Python untuk Odoo — Model, Field & ORM",materi:`
+<!--pemula--><h4>Untuk pemula: Odoo dan ORM dalam bahasa sederhana</h4>
+<p><b>Odoo</b> adalah aplikasi ERP (sistem pengelola seluruh urusan perusahaan: penjualan, stok, keuangan) yang dibangun dengan Python. Bab ini menunjukkan bagaimana Python dipakai di dalamnya. Pastikan kamu sudah membaca bab OOP (class, objek, inheritance), karena Odoo memakai konsep itu di mana-mana.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya dalam bahasa sehari-hari</th></tr>
+<tr><td>model</td><td>sebuah class Python yang mewakili satu <b>tabel</b> di database, misalnya tabel pelanggan</td></tr>
+<tr><td>field</td><td>satu <b>kolom</b> di tabel itu, misalnya nama atau nomor telepon</td></tr>
+<tr><td>record</td><td>satu <b>baris</b> data, misalnya satu pelanggan</td></tr>
+<tr><td>recordset</td><td>kumpulan record (bisa nol, satu, atau banyak)</td></tr>
+<tr><td>ORM (<i>Object-Relational Mapping</i>)</td><td>"penerjemah" yang membuat kamu cukup menulis Python, lalu Odoo mengubahnya menjadi perintah SQL ke database</td></tr>
+<tr><td><code>_inherit</code></td><td>menambah atau mengubah model yang sudah ada tanpa mengedit kode aslinya (pewarisan)</td></tr>
+<tr><td><code>@api.depends</code></td><td>penanda bahwa sebuah nilai dihitung ulang otomatis kalau kolom tertentu berubah</td></tr>
+<tr><td>domain</td><td>syarat penyaring data, ditulis seperti <code>[("state", "=", "sale")]</code></td></tr></table><!--/pemula-->
 <p>Odoo dibangun dengan Python. Memahami dasarnya membuatmu kuat di dua jalur: <b>Technical</b> (menulis modul) dan <b>Functional</b> (mengerti apa yang mungkin dan berapa sulitnya).</p>
 <pre><code>from odoo import models, fields, api
 
@@ -221,6 +244,10 @@ orders.mapped('amount_total')                   # ambil satu field dari semua re
 <div class="catatan">🔧 Kustomisasi yang benar memakai <b>inheritance</b> (<code>_inherit = 'sale.order'</code>), bukan mengedit kode inti. Model penting: <code>res.partner</code>, <code>sale.order</code>, <code>purchase.order</code>, <code>stock.picking</code>, <code>account.move</code>, <code>product.template</code>.</div>`},
 
 {k:"latihan",judul:"Latihan Membaca Kode (Gaya Tes Coding)",materi:`
+<!--pemula--><h4>Untuk pemula: cara membaca kode seperti komputer</h4>
+<p>Soal "apa output kode ini?" melatih kemampuan <b>menelusuri kode</b> (<i>tracing</i>). Langkahnya:</p>
+<ol><li>Baca dari baris paling atas, satu per satu. Jangan melompat.</li><li>Siapkan "tabel variabel" di kertas: tulis nama setiap variabel dan nilainya, lalu coret dan perbarui setiap kali berubah.</li><li>Untuk loop, tulis nilai variabel di <b>setiap putaran</b>.</li><li>Perhatikan detail kecil: indeks mulai dari 0, <code>range</code> tidak menyertakan angka akhir, <code>//</code> membuang sisa, dan <code>b = a</code> pada list tidak membuat salinan.</li></ol>
+<p>Kalau masih bingung, tempel kodenya di situs <b>Python Tutor</b> (pythontutor.com). Situs itu menampilkan isi setiap variabel langkah demi langkah dalam bentuk gambar.</p><!--/pemula-->
 <p>Tes coding untuk fresh graduate sering berbentuk "apa output kode ini?" atau soal logika kecil. Kemampuan ini dilatih dengan <b>menelusuri kode baris demi baris</b>, bukan menghafal.</p>
 <p><b>Teknik trace table</b> — tulis nilai variabel setiap langkah:</p>
 <pre><code>total = 0

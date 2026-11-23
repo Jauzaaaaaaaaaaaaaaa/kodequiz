@@ -1,0 +1,1161 @@
+waktu_utc,sumber,host,pengguna,ip,negara,kejadian,status,detail
+2026-03-16 00:17:42,web,WEB-01,-,114.107.91.59,ID,GET /lacak?resi=NL407546,200,normal
+2026-03-16 00:28:24,web,WEB-01,-,110.143.10.247,ID,GET /lacak?resi=NL109130,200,normal
+2026-03-16 00:35:53,web,WEB-01,-,182.198.215.21,ID,GET /lacak?resi=NL911855,200,normal
+2026-03-16 00:38:30,web,WEB-01,-,36.7.34.123,ID,GET /tarif,200,normal
+2026-03-16 00:51:02,web,WEB-01,-,36.231.187.133,ID,GET /login,200,normal
+2026-03-16 01:00:00,ad,DC-01,fikri,10.20.2.52,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-16 01:14:00,ad,DC-01,rudi,10.20.1.96,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-16 01:14:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,chrome.exe
+2026-03-16 01:15:00,ad,DC-01,ayu,10.20.3.110,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-16 01:18:00,ad,DC-01,tono,10.20.2.51,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-16 01:22:30,web,WEB-01,-,36.41.255.156,ID,GET /,200,normal
+2026-03-16 01:24:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,pengumuman HR
+2026-03-16 01:26:00,ad,DC-01,maya,10.20.2.81,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-16 01:33:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,excel.exe
+2026-03-16 01:35:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,outlook.exe
+2026-03-16 01:36:00,ad,DC-01,andi,10.20.3.212,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-16 01:36:00,ad,DC-01,lina,10.20.1.72,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-16 01:37:00,ad,DC-01,bagas,10.20.3.98,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-16 01:38:47,web,WEB-01,-,110.57.226.133,ID,GET /,200,normal
+2026-03-16 01:40:00,ad,DC-01,sinta,10.20.1.11,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-16 01:44:00,ad,DC-01,wulan,10.20.3.99,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-16 01:47:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,jadwal armada
+2026-03-16 01:48:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-16 01:50:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,winword.exe
+2026-03-16 01:51:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-16 01:51:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,teams.exe
+2026-03-16 01:56:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-16 02:01:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,teams.exe
+2026-03-16 02:02:04,web,WEB-01,-,110.66.70.198,ID,GET /,200,normal
+2026-03-16 02:03:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,teams.exe
+2026-03-16 02:03:23,web,WEB-01,-,110.117.159.130,ID,GET /tarif,200,normal
+2026-03-16 02:05:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,chrome.exe
+2026-03-16 02:05:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,winword.exe
+2026-03-16 02:07:38,web,WEB-01,-,110.92.112.179,ID,GET /kontak,200,normal
+2026-03-16 02:07:48,web,WEB-01,-,114.154.227.68,ID,GET /,200,normal
+2026-03-16 02:11:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,outlook.exe
+2026-03-16 02:12:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,teams.exe
+2026-03-16 02:12:00,email,MAIL-GW,tono,-,-,email diterima,lolos,jadwal armada
+2026-03-16 02:12:00,email,MAIL-GW,maya,-,-,email diterima,lolos,dari tagihan@nusantara-logistik.example | lampiran Invoice_Maret.zip
+2026-03-16 02:13:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,outlook.exe
+2026-03-16 02:13:00,email,MAIL-GW,lina,-,-,email diterima,lolos,laporan pengiriman
+2026-03-16 02:15:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,teams.exe
+2026-03-16 02:17:00,email,MAIL-GW,andi,-,-,email diterima,lolos,laporan pengiriman
+2026-03-16 02:17:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,explorer.exe
+2026-03-16 02:19:00,email,MAIL-GW,lina,-,-,email diterima,lolos,rapat mingguan
+2026-03-16 02:22:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,chrome.exe
+2026-03-16 02:28:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,excel.exe
+2026-03-16 02:29:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 02:29:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-16 02:29:34,web,WEB-01,-,114.157.176.252,ID,GET /tarif,200,normal
+2026-03-16 02:35:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,excel.exe
+2026-03-16 02:37:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,jadwal armada
+2026-03-16 02:37:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,teams.exe
+2026-03-16 02:40:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,Invoice_Maret.exe (dari folder Downloads)
+2026-03-16 02:40:20,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,peringatan,powershell.exe -enc JABjAD0A... (induk: Invoice_Maret.exe)
+2026-03-16 02:41:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,koneksi keluar,info,203.0.113.200:443 (pertama kali terlihat)
+2026-03-16 02:42:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-16 02:43:10,web,WEB-01,-,112.227.18.25,ID,GET /lacak?resi=NL932407,200,normal
+2026-03-16 02:50:12,web,WEB-01,-,114.224.71.5,ID,GET /,200,normal
+2026-03-16 02:51:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,excel.exe
+2026-03-16 02:55:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,winword.exe
+2026-03-16 02:55:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,akses memori lsass.exe,peringatan,pembacaan memori proses kredensial
+2026-03-16 02:58:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-16 02:58:58,web,WEB-01,-,114.149.107.39,ID,GET /,200,normal
+2026-03-16 02:59:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 03:00:48,web,WEB-01,-,182.228.74.185,ID,GET /lacak?resi=NL442443,200,normal
+2026-03-16 03:01:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,chrome.exe
+2026-03-16 03:02:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,outlook.exe
+2026-03-16 03:05:00,email,MAIL-GW,tono,-,-,email diterima,lolos,pengumuman HR
+2026-03-16 03:05:00,ad,DC-01,svc_backup,10.20.2.81,ID,4625 login gagal,gagal,logon type 3 (jaringan) dari LAP-FIN-07
+2026-03-16 03:05:20,ad,DC-01,svc_backup,10.20.2.81,ID,4625 login gagal,gagal,logon type 3 (jaringan) dari LAP-FIN-07
+2026-03-16 03:05:40,ad,DC-01,svc_backup,10.20.2.81,ID,4625 login gagal,gagal,logon type 3 (jaringan) dari LAP-FIN-07
+2026-03-16 03:06:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-16 03:06:00,ad,DC-01,svc_backup,10.20.2.81,ID,4625 login gagal,gagal,logon type 3 (jaringan) dari LAP-FIN-07
+2026-03-16 03:06:20,ad,DC-01,svc_backup,10.20.2.81,ID,4625 login gagal,gagal,logon type 3 (jaringan) dari LAP-FIN-07
+2026-03-16 03:06:40,ad,DC-01,svc_backup,10.20.2.81,ID,4625 login gagal,gagal,logon type 3 (jaringan) dari LAP-FIN-07
+2026-03-16 03:07:00,ad,DC-01,svc_backup,10.20.2.81,ID,4625 login gagal,gagal,logon type 3 (jaringan) dari LAP-FIN-07
+2026-03-16 03:07:20,ad,DC-01,svc_backup,10.20.2.81,ID,4625 login gagal,gagal,logon type 3 (jaringan) dari LAP-FIN-07
+2026-03-16 03:07:40,ad,DC-01,svc_backup,10.20.2.81,ID,4625 login gagal,gagal,logon type 3 (jaringan) dari LAP-FIN-07
+2026-03-16 03:08:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,explorer.exe
+2026-03-16 03:08:30,ad,DC-01,svc_backup,10.20.2.81,ID,4624 login berhasil,berhasil,logon type 3 dari LAP-FIN-07
+2026-03-16 03:12:54,web,WEB-01,-,114.120.0.47,ID,GET /tarif,200,normal
+2026-03-16 03:13:56,web,WEB-01,-,110.91.132.251,ID,GET /login,200,normal
+2026-03-16 03:14:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,laporan pengiriman
+2026-03-16 03:16:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-16 03:21:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,rapat mingguan
+2026-03-16 03:23:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,chrome.exe
+2026-03-16 03:27:27,web,WEB-01,-,114.29.137.226,ID,GET /kontak,200,normal
+2026-03-16 03:30:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 03:30:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,jadwal armada
+2026-03-16 03:30:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-16 03:34:34,web,WEB-01,-,112.41.134.41,ID,GET /login,200,normal
+2026-03-16 03:35:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,winword.exe
+2026-03-16 03:37:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,teams.exe
+2026-03-16 03:37:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,pengumuman HR
+2026-03-16 03:37:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 03:38:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,explorer.exe
+2026-03-16 03:39:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-16 03:41:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-16 03:46:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,laporan pengiriman
+2026-03-16 03:49:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,chrome.exe
+2026-03-16 03:50:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,chrome.exe
+2026-03-16 03:51:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,explorer.exe
+2026-03-16 03:52:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,explorer.exe
+2026-03-16 03:52:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,winword.exe
+2026-03-16 03:52:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-16 03:55:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,excel.exe
+2026-03-16 03:56:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,excel.exe
+2026-03-16 03:59:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,teams.exe
+2026-03-16 04:03:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,chrome.exe
+2026-03-16 04:05:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,rapat mingguan
+2026-03-16 04:07:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,excel.exe
+2026-03-16 04:16:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-16 04:17:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-16 04:19:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 04:25:13,web,WEB-01,-,182.169.204.150,ID,GET /lacak?resi=NL475217,200,normal
+2026-03-16 04:30:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-16 04:32:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 04:35:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 04:37:40,web,WEB-01,-,114.6.149.116,ID,GET /lacak?resi=NL237975,200,normal
+2026-03-16 04:40:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,laporan pengiriman
+2026-03-16 04:41:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-16 04:43:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 04:44:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-16 04:46:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,explorer.exe
+2026-03-16 04:46:00,email,MAIL-GW,lina,-,-,email diterima,lolos,pengumuman HR
+2026-03-16 04:48:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-16 04:48:41,web,WEB-01,-,110.77.198.65,ID,GET /kontak,200,normal
+2026-03-16 04:52:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,laporan pengiriman
+2026-03-16 04:53:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-16 04:55:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,outlook.exe
+2026-03-16 04:55:02,web,WEB-01,-,112.161.56.254,ID,GET /karier,200,normal
+2026-03-16 04:56:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-16 05:00:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-16 05:04:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,explorer.exe
+2026-03-16 05:04:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-16 05:06:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,excel.exe
+2026-03-16 05:08:00,email,MAIL-GW,andi,-,-,email diterima,lolos,rapat mingguan
+2026-03-16 05:11:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,winword.exe
+2026-03-16 05:13:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-16 05:14:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,chrome.exe
+2026-03-16 05:15:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,excel.exe
+2026-03-16 05:15:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,outlook.exe
+2026-03-16 05:16:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,chrome.exe
+2026-03-16 05:16:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,outlook.exe
+2026-03-16 05:17:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 05:19:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,pengumuman HR
+2026-03-16 05:21:00,email,MAIL-GW,andi,-,-,email diterima,lolos,rapat mingguan
+2026-03-16 05:23:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,pengumuman HR
+2026-03-16 05:27:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,winword.exe
+2026-03-16 05:27:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 05:30:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 05:30:44,web,WEB-01,-,36.113.25.14,ID,GET /karier,200,normal
+2026-03-16 05:30:50,web,WEB-01,-,110.52.35.102,ID,GET /tarif,200,normal
+2026-03-16 05:39:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 05:40:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,teams.exe
+2026-03-16 05:41:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,outlook.exe
+2026-03-16 05:41:06,web,WEB-01,-,182.59.2.37,ID,GET /lacak?resi=NL590850,200,normal
+2026-03-16 05:43:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,winword.exe
+2026-03-16 05:43:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,pengumuman HR
+2026-03-16 05:44:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,teams.exe
+2026-03-16 05:45:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,excel.exe
+2026-03-16 05:48:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,winword.exe
+2026-03-16 05:51:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-16 05:53:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,winword.exe
+2026-03-16 05:54:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,outlook.exe
+2026-03-16 05:55:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,excel.exe
+2026-03-16 05:57:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,winword.exe
+2026-03-16 06:00:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,explorer.exe
+2026-03-16 06:02:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,explorer.exe
+2026-03-16 06:05:54,web,WEB-01,-,110.119.130.145,ID,GET /karier,200,normal
+2026-03-16 06:06:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-16 06:08:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,teams.exe
+2026-03-16 06:11:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-16 06:11:57,web,WEB-01,-,114.183.28.198,ID,GET /tarif,200,normal
+2026-03-16 06:12:00,web,WEB-01,-,182.83.58.221,ID,GET /login,200,normal
+2026-03-16 06:16:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,outlook.exe
+2026-03-16 06:17:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 06:18:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,rapat mingguan
+2026-03-16 06:19:23,web,WEB-01,-,114.172.136.127,ID,GET /lacak?resi=NL197958,200,normal
+2026-03-16 06:20:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,teams.exe
+2026-03-16 06:20:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 06:20:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,teams.exe
+2026-03-16 06:20:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,winword.exe
+2026-03-16 06:21:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,excel.exe
+2026-03-16 06:22:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,outlook.exe
+2026-03-16 06:24:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,explorer.exe
+2026-03-16 06:25:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,jadwal armada
+2026-03-16 06:27:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-16 06:29:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-16 06:31:23,web,WEB-01,-,112.106.35.152,ID,GET /karier,200,normal
+2026-03-16 06:38:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,winword.exe
+2026-03-16 06:38:53,web,WEB-01,-,198.51.100.229,US,GET /.git/config,404,pemindai otomatis
+2026-03-16 06:40:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,excel.exe
+2026-03-16 06:40:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 06:42:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,chrome.exe
+2026-03-16 06:44:51,web,WEB-01,-,114.204.216.224,ID,GET /karier,200,normal
+2026-03-16 06:48:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,chrome.exe
+2026-03-16 06:49:00,email,MAIL-GW,maya,-,-,email diterima,lolos,rapat mingguan
+2026-03-16 06:49:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,winword.exe
+2026-03-16 06:50:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,chrome.exe
+2026-03-16 06:50:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,excel.exe
+2026-03-16 06:54:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,winword.exe
+2026-03-16 06:56:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,excel.exe
+2026-03-16 06:58:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,winword.exe
+2026-03-16 07:04:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,outlook.exe
+2026-03-16 07:05:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,pengumuman HR
+2026-03-16 07:05:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,winword.exe
+2026-03-16 07:06:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,chrome.exe
+2026-03-16 07:09:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,excel.exe
+2026-03-16 07:11:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,teams.exe
+2026-03-16 07:11:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,winword.exe
+2026-03-16 07:13:14,web,WEB-01,-,36.62.29.191,ID,GET /login,200,normal
+2026-03-16 07:14:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,explorer.exe
+2026-03-16 07:14:35,web,WEB-01,-,114.217.51.169,ID,GET /tarif,200,normal
+2026-03-16 07:19:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,excel.exe
+2026-03-16 07:20:30,web,WEB-01,-,110.174.71.218,ID,GET /karier,200,normal
+2026-03-16 07:21:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,chrome.exe
+2026-03-16 07:24:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,teams.exe
+2026-03-16 07:30:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,winword.exe
+2026-03-16 07:32:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,chrome.exe
+2026-03-16 07:33:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,chrome.exe
+2026-03-16 07:34:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-16 07:37:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,explorer.exe
+2026-03-16 07:41:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 07:41:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,chrome.exe
+2026-03-16 07:43:53,web,WEB-01,-,114.27.69.228,ID,GET /kontak,200,normal
+2026-03-16 07:45:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 07:46:28,web,WEB-01,-,36.159.11.248,ID,GET /lacak?resi=NL678509,200,normal
+2026-03-16 07:47:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,outlook.exe
+2026-03-16 07:50:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,excel.exe
+2026-03-16 07:51:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 07:55:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,jadwal armada
+2026-03-16 07:57:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 07:59:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 08:01:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,excel.exe
+2026-03-16 08:04:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,teams.exe
+2026-03-16 08:04:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 08:04:54,web,WEB-01,-,114.51.154.35,ID,GET /,200,normal
+2026-03-16 08:05:53,web,WEB-01,-,182.116.83.140,ID,GET /lacak?resi=NL391063,200,normal
+2026-03-16 08:06:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,outlook.exe
+2026-03-16 08:09:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,winword.exe
+2026-03-16 08:10:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,excel.exe
+2026-03-16 08:12:00,email,MAIL-GW,maya,-,-,email diterima,lolos,rapat mingguan
+2026-03-16 08:14:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,winword.exe
+2026-03-16 08:18:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,excel.exe
+2026-03-16 08:19:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,explorer.exe
+2026-03-16 08:25:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 08:25:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,outlook.exe
+2026-03-16 08:26:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,jadwal armada
+2026-03-16 08:31:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,outlook.exe
+2026-03-16 08:32:54,web,WEB-01,-,198.51.100.113,US,GET /.git/config,404,pemindai otomatis
+2026-03-16 08:33:54,web,WEB-01,-,198.51.100.13,US,GET /wp-login.php,404,pemindai otomatis
+2026-03-16 08:34:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,winword.exe
+2026-03-16 08:37:25,web,WEB-01,-,112.185.98.233,ID,GET /tarif,200,normal
+2026-03-16 08:38:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,laporan pengiriman
+2026-03-16 08:39:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-16 08:43:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-16 08:45:21,web,WEB-01,-,36.195.20.3,ID,GET /kontak,200,normal
+2026-03-16 08:46:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,chrome.exe
+2026-03-16 08:49:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,jadwal armada
+2026-03-16 08:52:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,chrome.exe
+2026-03-16 08:52:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,outlook.exe
+2026-03-16 08:52:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,winword.exe
+2026-03-16 08:53:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-16 08:57:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,jadwal armada
+2026-03-16 08:57:16,web,WEB-01,-,36.218.163.154,ID,GET /lacak?resi=NL272036,200,normal
+2026-03-16 08:58:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-16 08:59:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,winword.exe
+2026-03-16 09:00:53,web,WEB-01,-,110.214.146.12,ID,GET /,200,normal
+2026-03-16 09:04:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,jadwal armada
+2026-03-16 09:05:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,outlook.exe
+2026-03-16 09:07:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,winword.exe
+2026-03-16 09:07:45,web,WEB-01,-,182.181.183.104,ID,GET /karier,200,normal
+2026-03-16 09:07:57,web,WEB-01,-,114.41.207.26,ID,GET /,200,normal
+2026-03-16 09:11:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 09:12:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 09:12:00,email,MAIL-GW,tono,-,-,email diterima,lolos,laporan pengiriman
+2026-03-16 09:13:00,email,MAIL-GW,lina,-,-,email diterima,lolos,jadwal armada
+2026-03-16 09:13:15,web,WEB-01,-,114.62.188.107,ID,GET /kontak,200,normal
+2026-03-16 09:17:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-16 09:20:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,jadwal armada
+2026-03-16 09:21:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,teams.exe
+2026-03-16 09:23:00,email,MAIL-GW,maya,-,-,email diterima,lolos,jadwal armada
+2026-03-16 09:26:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 09:27:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,explorer.exe
+2026-03-16 09:29:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,winword.exe
+2026-03-16 09:31:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,outlook.exe
+2026-03-16 09:32:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,outlook.exe
+2026-03-16 09:32:36,web,WEB-01,-,112.215.68.34,ID,GET /kontak,200,normal
+2026-03-16 09:34:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,teams.exe
+2026-03-16 09:36:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,explorer.exe
+2026-03-16 09:36:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,excel.exe
+2026-03-16 09:42:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,chrome.exe
+2026-03-16 09:43:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-16 09:43:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-16 09:44:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,teams.exe
+2026-03-16 09:45:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,explorer.exe
+2026-03-16 09:46:13,web,WEB-01,-,112.52.65.128,ID,GET /kontak,200,normal
+2026-03-16 09:50:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 09:53:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,explorer.exe
+2026-03-16 09:53:38,web,WEB-01,-,110.236.90.251,ID,GET /tarif,200,normal
+2026-03-16 09:57:04,web,WEB-01,-,114.131.20.110,ID,GET /,200,normal
+2026-03-16 09:59:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,explorer.exe
+2026-03-16 10:02:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,explorer.exe
+2026-03-16 10:04:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,chrome.exe
+2026-03-16 10:05:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,explorer.exe
+2026-03-16 10:06:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 10:06:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,jadwal armada
+2026-03-16 10:14:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,chrome.exe
+2026-03-16 10:24:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-16 10:27:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,teams.exe
+2026-03-16 10:31:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,jadwal armada
+2026-03-16 10:32:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,explorer.exe
+2026-03-16 10:33:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,laporan pengiriman
+2026-03-16 10:33:48,web,WEB-01,-,110.46.62.230,ID,GET /karier,200,normal
+2026-03-16 10:36:29,web,WEB-01,-,112.177.170.174,ID,GET /tarif,200,normal
+2026-03-16 10:58:04,web,WEB-01,-,114.135.156.218,ID,GET /,200,normal
+2026-03-16 10:59:05,web,WEB-01,-,114.0.209.57,ID,GET /,200,normal
+2026-03-16 11:00:26,web,WEB-01,-,112.217.137.219,ID,GET /karier,200,normal
+2026-03-16 11:08:12,web,WEB-01,-,182.34.189.135,ID,GET /,200,normal
+2026-03-16 11:15:00,vpn,VPN-GW,ayu,114.122.114.201,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-16 11:15:57,web,WEB-01,-,198.51.100.142,US,GET /.env,404,pemindai otomatis
+2026-03-16 11:22:00,vpn,VPN-GW,sinta,114.124.3.67,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-16 11:30:06,web,WEB-01,-,114.87.92.254,ID,GET /kontak,200,normal
+2026-03-16 11:43:36,web,WEB-01,-,182.115.150.55,ID,GET /,200,normal
+2026-03-16 11:44:19,web,WEB-01,-,110.49.45.212,ID,GET /login,200,normal
+2026-03-16 11:53:48,web,WEB-01,-,112.71.105.245,ID,GET /kontak,200,normal
+2026-03-16 12:08:23,web,WEB-01,-,110.45.48.203,ID,GET /login,200,normal
+2026-03-16 12:24:09,web,WEB-01,-,110.89.80.163,ID,GET /tarif,200,normal
+2026-03-16 12:36:43,web,WEB-01,-,114.169.78.252,ID,GET /,200,normal
+2026-03-16 12:44:00,vpn,VPN-GW,fikri,114.124.251.180,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-16 12:52:00,web,WEB-01,-,182.154.90.68,ID,GET /tarif,200,normal
+2026-03-16 13:11:22,web,WEB-01,-,112.100.253.208,ID,GET /kontak,200,normal
+2026-03-16 13:22:39,web,WEB-01,-,114.90.7.62,ID,GET /,200,normal
+2026-03-16 13:31:15,web,WEB-01,-,36.33.55.236,ID,GET /karier,200,normal
+2026-03-16 13:42:08,web,WEB-01,-,110.66.254.62,ID,GET /karier,200,normal
+2026-03-16 13:50:19,web,WEB-01,-,182.64.195.81,ID,GET /kontak,200,normal
+2026-03-16 13:52:01,web,WEB-01,-,110.156.182.237,ID,GET /tarif,200,normal
+2026-03-16 13:55:53,web,WEB-01,-,110.107.129.23,ID,GET /login,200,normal
+2026-03-16 13:59:00,vpn,VPN-GW,maya,114.121.135.2,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-16 14:40:00,vpn,VPN-GW,wulan,114.125.231.2,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-16 14:42:17,web,WEB-01,-,36.220.60.179,ID,GET /kontak,200,normal
+2026-03-16 14:57:20,web,WEB-01,-,36.219.156.156,ID,GET /karier,200,normal
+2026-03-16 15:12:02,web,WEB-01,-,110.55.68.12,ID,GET /lacak?resi=NL508190,200,normal
+2026-03-16 15:27:08,web,WEB-01,-,112.116.3.135,ID,GET /login,200,normal
+2026-03-16 15:57:40,web,WEB-01,-,36.235.66.37,ID,GET /kontak,200,normal
+2026-03-16 16:21:54,web,WEB-01,-,110.157.248.113,ID,GET /,200,normal
+2026-03-16 16:24:10,web,WEB-01,-,110.40.137.146,ID,GET /login,200,normal
+2026-03-16 16:25:35,web,WEB-01,-,114.26.129.124,ID,GET /,200,normal
+2026-03-16 16:30:00,vpn,VPN-GW,maya,203.0.113.200,NL,login VPN,berhasil,"di luar jam kerja, tanpa MFA; IP internal diberikan 10.20.9.9"
+2026-03-16 16:44:45,web,WEB-01,-,182.226.252.135,ID,GET /,200,normal
+2026-03-16 17:00:41,web,WEB-01,-,112.253.136.241,ID,GET /tarif,200,normal
+2026-03-16 17:36:57,web,WEB-01,-,114.170.203.2,ID,GET /kontak,200,normal
+2026-03-16 17:41:17,web,WEB-01,-,112.68.3.159,ID,GET /,200,normal
+2026-03-16 17:41:56,web,WEB-01,-,114.214.138.3,ID,GET /,200,normal
+2026-03-16 17:52:23,web,WEB-01,-,36.66.27.165,ID,GET /login,200,normal
+2026-03-16 17:58:23,web,WEB-01,-,112.118.9.8,ID,GET /,200,normal
+2026-03-16 18:00:51,web,WEB-01,-,182.205.185.24,ID,GET /karier,200,normal
+2026-03-16 18:04:02,web,WEB-01,-,110.13.124.134,ID,GET /kontak,200,normal
+2026-03-16 18:17:51,web,WEB-01,-,198.51.100.9,US,GET /.git/config,404,pemindai otomatis
+2026-03-16 18:21:00,web,WEB-01,-,182.221.50.147,ID,GET /login,200,normal
+2026-03-16 18:54:56,web,WEB-01,-,114.8.64.169,ID,GET /tarif,200,normal
+2026-03-16 19:15:02,web,WEB-01,-,112.131.0.198,ID,GET /kontak,200,normal
+2026-03-16 19:18:19,web,WEB-01,-,110.15.128.247,ID,GET /,200,normal
+2026-03-16 19:21:56,web,WEB-01,-,110.123.78.11,ID,GET /karier,200,normal
+2026-03-16 19:23:34,web,WEB-01,-,114.218.229.117,ID,GET /login,200,normal
+2026-03-16 19:33:54,web,WEB-01,-,114.244.227.56,ID,GET /login,200,normal
+2026-03-16 20:12:47,web,WEB-01,-,110.1.10.21,ID,GET /karier,200,normal
+2026-03-16 20:29:32,web,WEB-01,-,198.51.100.233,US,GET /phpmyadmin,404,pemindai otomatis
+2026-03-16 20:38:43,web,WEB-01,-,112.246.86.205,ID,GET /,200,normal
+2026-03-16 20:58:05,web,WEB-01,-,182.75.124.127,ID,GET /login,200,normal
+2026-03-16 21:15:05,web,WEB-01,-,182.109.79.145,ID,GET /lacak?resi=NL212629,200,normal
+2026-03-16 21:30:46,web,WEB-01,-,110.121.162.136,ID,GET /karier,200,normal
+2026-03-16 21:39:37,web,WEB-01,-,114.168.211.22,ID,GET /tarif,200,normal
+2026-03-16 21:41:37,web,WEB-01,-,110.187.190.15,ID,GET /tarif,200,normal
+2026-03-16 21:57:02,web,WEB-01,-,112.159.202.236,ID,GET /,200,normal
+2026-03-16 22:05:22,web,WEB-01,-,114.237.95.13,ID,GET /login,200,normal
+2026-03-16 22:07:12,web,WEB-01,-,114.218.99.22,ID,GET /kontak,200,normal
+2026-03-16 22:11:27,web,WEB-01,-,198.51.100.253,US,GET /phpmyadmin,404,pemindai otomatis
+2026-03-16 22:17:15,web,WEB-01,-,182.199.219.10,ID,GET /,200,normal
+2026-03-16 22:18:18,web,WEB-01,-,182.170.120.110,ID,GET /login,200,normal
+2026-03-16 22:28:00,web,WEB-01,-,112.239.66.250,ID,GET /karier,200,normal
+2026-03-16 22:44:56,web,WEB-01,-,114.78.53.25,ID,GET /karier,200,normal
+2026-03-16 22:51:08,web,WEB-01,-,36.147.5.84,ID,GET /lacak?resi=NL603945,200,normal
+2026-03-16 22:52:52,web,WEB-01,-,110.182.224.103,ID,GET /karier,200,normal
+2026-03-16 22:55:14,web,WEB-01,-,112.20.132.112,ID,GET /tarif,200,normal
+2026-03-16 22:57:03,web,WEB-01,-,182.198.149.61,ID,GET /tarif,200,normal
+2026-03-16 23:14:25,web,WEB-01,-,182.217.136.204,ID,GET /login,200,normal
+2026-03-16 23:18:36,web,WEB-01,-,182.240.71.75,ID,GET /kontak,200,normal
+2026-03-16 23:50:23,web,WEB-01,-,114.122.215.14,ID,GET /kontak,200,normal
+2026-03-17 00:10:00,ad,DC-01,svc_backup,10.20.9.9,ID,4720 akun dibuat,berhasil,akun baru: helpdesk2
+2026-03-17 00:12:00,ad,DC-01,svc_backup,10.20.9.9,ID,4728 anggota grup ditambah,berhasil,helpdesk2 → Domain Admins
+2026-03-17 00:30:00,edr,FS-01,helpdesk2,10.20.9.9,ID,proses dijalankan,peringatan,rclone.exe copy D:\Arsip remote:nl-backup
+2026-03-17 00:31:00,edr,FS-01,helpdesk2,10.20.9.9,ID,koneksi keluar,info,"203.0.113.200:443 terkirim 4,2 GB"
+2026-03-17 00:40:37,web,WEB-01,-,114.237.190.254,ID,GET /,200,normal
+2026-03-17 01:04:57,web,WEB-01,-,36.63.134.139,ID,GET /lacak?resi=NL466407,200,normal
+2026-03-17 01:10:30,ad,DC-01,sinta,10.20.1.11,ID,4625 login gagal,gagal,salah ketik password
+2026-03-17 01:11:00,ad,DC-01,sinta,10.20.1.11,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-17 01:11:00,ad,DC-01,tono,10.20.2.51,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-17 01:12:00,ad,DC-01,ayu,10.20.3.110,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-17 01:16:00,ad,DC-01,bagas,10.20.3.98,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-17 01:21:00,ad,DC-01,andi,10.20.3.212,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-17 01:24:00,ad,DC-01,wulan,10.20.3.99,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-17 01:24:49,web,WEB-01,-,110.134.193.238,ID,GET /login,200,normal
+2026-03-17 01:28:00,email,MAIL-GW,tono,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-17 01:32:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,excel.exe
+2026-03-17 01:32:22,web,WEB-01,-,36.217.87.214,ID,GET /lacak?resi=NL538106,200,normal
+2026-03-17 01:33:00,ad,DC-01,maya,10.20.2.81,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-17 01:34:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,chrome.exe
+2026-03-17 01:35:00,ad,DC-01,fikri,10.20.2.52,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-17 01:38:00,ad,DC-01,rudi,10.20.1.96,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-17 01:38:00,ad,DC-01,lina,10.20.1.72,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-17 01:39:59,web,WEB-01,-,112.149.247.16,ID,GET /lacak?resi=NL917598,200,normal
+2026-03-17 01:46:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,winword.exe
+2026-03-17 01:51:16,web,WEB-01,-,112.109.220.10,ID,GET /tarif,200,normal
+2026-03-17 01:53:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 01:58:00,edr,FS-01,helpdesk2,10.20.9.9,ID,proses dijalankan,peringatan,vssadmin.exe delete shadows /all /quiet
+2026-03-17 01:59:30,web,WEB-01,-,182.211.18.200,ID,GET /login,200,normal
+2026-03-17 02:01:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,explorer.exe
+2026-03-17 02:01:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,explorer.exe
+2026-03-17 02:01:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,1593 file berganti ekstensi .locked
+2026-03-17 02:01:31,web,WEB-01,-,114.90.211.210,ID,GET /tarif,200,normal
+2026-03-17 02:02:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-17 02:02:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,1569 file berganti ekstensi .locked
+2026-03-17 02:03:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,1702 file berganti ekstensi .locked
+2026-03-17 02:04:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,2225 file berganti ekstensi .locked
+2026-03-17 02:05:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,954 file berganti ekstensi .locked
+2026-03-17 02:06:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,2222 file berganti ekstensi .locked
+2026-03-17 02:06:15,web,WEB-01,-,36.131.65.13,ID,GET /login,200,normal
+2026-03-17 02:07:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,2161 file berganti ekstensi .locked
+2026-03-17 02:08:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,1785 file berganti ekstensi .locked
+2026-03-17 02:09:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,outlook.exe
+2026-03-17 02:09:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,2103 file berganti ekstensi .locked
+2026-03-17 02:10:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,excel.exe
+2026-03-17 02:10:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,2069 file berganti ekstensi .locked
+2026-03-17 02:11:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,chrome.exe
+2026-03-17 02:11:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,1973 file berganti ekstensi .locked
+2026-03-17 02:12:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file diubah massal,kritis,1211 file berganti ekstensi .locked
+2026-03-17 02:14:00,edr,FS-01,helpdesk2,10.20.9.9,ID,file dibuat,kritis,BACA_INI_UNTUK_DEKRIPSI.txt
+2026-03-17 02:16:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,laporan pengiriman
+2026-03-17 02:16:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,teams.exe
+2026-03-17 02:26:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-17 02:26:28,web,WEB-01,-,182.2.55.103,ID,GET /kontak,200,normal
+2026-03-17 02:30:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-17 02:31:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,excel.exe
+2026-03-17 02:32:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,outlook.exe
+2026-03-17 02:38:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,explorer.exe
+2026-03-17 02:38:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 02:39:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-17 02:39:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,explorer.exe
+2026-03-17 02:39:00,email,MAIL-GW,lina,-,-,email diterima,lolos,laporan pengiriman
+2026-03-17 02:39:43,web,WEB-01,-,36.233.167.47,ID,GET /lacak?resi=NL305496,200,normal
+2026-03-17 02:40:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,excel.exe
+2026-03-17 02:42:00,email,MAIL-GW,tono,-,-,email diterima,lolos,pengumuman HR
+2026-03-17 02:42:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 02:42:28,web,WEB-01,-,110.51.179.165,ID,GET /tarif,200,normal
+2026-03-17 02:47:00,email,MAIL-GW,maya,-,-,email diterima,lolos,pengumuman HR
+2026-03-17 02:52:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,pengumuman HR
+2026-03-17 02:53:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,explorer.exe
+2026-03-17 02:54:00,email,MAIL-GW,andi,-,-,email diterima,lolos,jadwal armada
+2026-03-17 02:54:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,jadwal armada
+2026-03-17 02:54:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,explorer.exe
+2026-03-17 02:55:16,web,WEB-01,-,36.35.148.124,ID,GET /lacak?resi=NL710305,200,normal
+2026-03-17 02:56:29,web,WEB-01,-,114.94.234.38,ID,GET /karier,200,normal
+2026-03-17 02:59:04,web,WEB-01,-,112.181.251.200,ID,GET /,200,normal
+2026-03-17 03:03:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,outlook.exe
+2026-03-17 03:04:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 03:05:35,web,WEB-01,-,114.1.210.85,ID,GET /,200,normal
+2026-03-17 03:06:00,email,MAIL-GW,andi,-,-,email diterima,lolos,pengumuman HR
+2026-03-17 03:06:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,excel.exe
+2026-03-17 03:10:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 03:14:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,outlook.exe
+2026-03-17 03:16:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,winword.exe
+2026-03-17 03:17:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,teams.exe
+2026-03-17 03:21:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 03:22:52,web,WEB-01,-,110.152.253.239,ID,GET /,200,normal
+2026-03-17 03:23:14,web,WEB-01,-,182.94.47.78,ID,GET /tarif,200,normal
+2026-03-17 03:24:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,explorer.exe
+2026-03-17 03:25:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,jadwal armada
+2026-03-17 03:26:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,chrome.exe
+2026-03-17 03:26:25,web,WEB-01,-,36.117.233.157,ID,GET /tarif,200,normal
+2026-03-17 03:30:00,email,MAIL-GW,maya,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 03:32:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 03:33:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,excel.exe
+2026-03-17 03:35:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-17 03:35:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,teams.exe
+2026-03-17 03:41:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,chrome.exe
+2026-03-17 03:41:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,teams.exe
+2026-03-17 03:46:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,chrome.exe
+2026-03-17 03:47:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,outlook.exe
+2026-03-17 03:52:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,teams.exe
+2026-03-17 03:55:00,email,MAIL-GW,tono,-,-,email diterima,lolos,laporan pengiriman
+2026-03-17 03:55:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,pengumuman HR
+2026-03-17 04:02:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,teams.exe
+2026-03-17 04:11:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 04:14:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,outlook.exe
+2026-03-17 04:14:03,web,WEB-01,-,110.230.14.208,ID,GET /tarif,200,normal
+2026-03-17 04:17:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,excel.exe
+2026-03-17 04:18:44,web,WEB-01,-,112.223.159.213,ID,GET /tarif,200,normal
+2026-03-17 04:20:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,explorer.exe
+2026-03-17 04:25:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,chrome.exe
+2026-03-17 04:26:38,web,WEB-01,-,36.63.189.109,ID,GET /kontak,200,normal
+2026-03-17 04:27:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 04:30:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,excel.exe
+2026-03-17 04:31:14,web,WEB-01,-,182.47.161.247,ID,GET /lacak?resi=NL927390,200,normal
+2026-03-17 04:35:11,web,WEB-01,-,198.51.100.38,US,GET /.git/config,404,pemindai otomatis
+2026-03-17 04:36:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,pengumuman HR
+2026-03-17 04:37:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,outlook.exe
+2026-03-17 04:37:20,web,WEB-01,-,182.32.21.78,ID,GET /kontak,200,normal
+2026-03-17 04:38:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 04:39:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,winword.exe
+2026-03-17 04:40:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,jadwal armada
+2026-03-17 04:41:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,jadwal armada
+2026-03-17 04:41:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 04:44:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,winword.exe
+2026-03-17 04:46:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,laporan pengiriman
+2026-03-17 04:47:00,email,MAIL-GW,andi,-,-,email diterima,lolos,jadwal armada
+2026-03-17 04:47:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,teams.exe
+2026-03-17 04:52:39,web,WEB-01,-,112.54.209.194,ID,GET /login,200,normal
+2026-03-17 04:54:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,excel.exe
+2026-03-17 04:55:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-17 04:57:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,outlook.exe
+2026-03-17 05:00:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,excel.exe
+2026-03-17 05:00:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-17 05:01:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,explorer.exe
+2026-03-17 05:04:50,web,WEB-01,-,182.243.15.159,ID,GET /lacak?resi=NL760311,200,normal
+2026-03-17 05:05:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,excel.exe
+2026-03-17 05:06:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,outlook.exe
+2026-03-17 05:09:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,pengumuman HR
+2026-03-17 05:11:34,web,WEB-01,-,198.51.100.40,US,GET /.git/config,404,pemindai otomatis
+2026-03-17 05:13:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,teams.exe
+2026-03-17 05:13:33,web,WEB-01,-,36.93.87.22,ID,GET /kontak,200,normal
+2026-03-17 05:14:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-17 05:15:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-17 05:17:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,teams.exe
+2026-03-17 05:20:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 05:23:00,email,MAIL-GW,andi,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-17 05:23:46,web,WEB-01,-,112.109.182.183,ID,GET /login,200,normal
+2026-03-17 05:24:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,outlook.exe
+2026-03-17 05:24:30,web,WEB-01,-,114.206.3.227,ID,GET /,200,normal
+2026-03-17 05:25:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,chrome.exe
+2026-03-17 05:25:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-17 05:30:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 05:31:31,web,WEB-01,-,198.51.100.78,US,GET /.env,404,pemindai otomatis
+2026-03-17 05:33:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-17 05:33:07,web,WEB-01,-,112.44.68.52,ID,GET /karier,200,normal
+2026-03-17 05:34:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,explorer.exe
+2026-03-17 05:34:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 05:41:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 05:44:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-17 05:44:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 05:49:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 05:53:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,outlook.exe
+2026-03-17 05:56:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,jadwal armada
+2026-03-17 05:57:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,chrome.exe
+2026-03-17 05:57:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-17 06:02:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 06:05:25,web,WEB-01,-,36.22.188.26,ID,GET /karier,200,normal
+2026-03-17 06:06:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,outlook.exe
+2026-03-17 06:08:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,excel.exe
+2026-03-17 06:10:48,web,WEB-01,-,112.132.50.167,ID,GET /kontak,200,normal
+2026-03-17 06:11:22,web,WEB-01,-,182.29.122.104,ID,GET /tarif,200,normal
+2026-03-17 06:22:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,jadwal armada
+2026-03-17 06:22:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,outlook.exe
+2026-03-17 06:23:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,excel.exe
+2026-03-17 06:24:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,outlook.exe
+2026-03-17 06:25:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-17 06:26:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-17 06:29:25,web,WEB-01,-,110.198.204.25,ID,GET /kontak,200,normal
+2026-03-17 06:33:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,winword.exe
+2026-03-17 06:33:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,chrome.exe
+2026-03-17 06:34:26,web,WEB-01,-,110.3.135.59,ID,GET /,200,normal
+2026-03-17 06:36:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,outlook.exe
+2026-03-17 06:36:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-17 06:36:36,web,WEB-01,-,36.204.223.26,ID,GET /kontak,200,normal
+2026-03-17 06:42:18,web,WEB-01,-,182.33.240.13,ID,GET /login,200,normal
+2026-03-17 06:44:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 06:45:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,chrome.exe
+2026-03-17 06:46:21,web,WEB-01,-,110.83.161.246,ID,GET /kontak,200,normal
+2026-03-17 06:49:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,chrome.exe
+2026-03-17 06:55:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,outlook.exe
+2026-03-17 06:55:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,teams.exe
+2026-03-17 06:57:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-17 06:58:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 06:58:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,excel.exe
+2026-03-17 07:02:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-17 07:02:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,excel.exe
+2026-03-17 07:02:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,chrome.exe
+2026-03-17 07:07:40,web,WEB-01,-,112.136.229.207,ID,GET /lacak?resi=NL855372,200,normal
+2026-03-17 07:15:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,chrome.exe
+2026-03-17 07:15:40,web,WEB-01,-,182.254.110.46,ID,GET /karier,200,normal
+2026-03-17 07:17:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,explorer.exe
+2026-03-17 07:17:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,explorer.exe
+2026-03-17 07:19:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,teams.exe
+2026-03-17 07:19:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,explorer.exe
+2026-03-17 07:20:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-17 07:23:57,web,WEB-01,-,182.243.245.109,ID,GET /lacak?resi=NL888356,200,normal
+2026-03-17 07:24:28,web,WEB-01,-,112.105.35.223,ID,GET /lacak?resi=NL951123,200,normal
+2026-03-17 07:29:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,explorer.exe
+2026-03-17 07:30:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,outlook.exe
+2026-03-17 07:30:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,winword.exe
+2026-03-17 07:31:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-17 07:31:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,teams.exe
+2026-03-17 07:31:45,web,WEB-01,-,114.72.137.100,ID,GET /kontak,200,normal
+2026-03-17 07:34:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,winword.exe
+2026-03-17 07:34:15,web,WEB-01,-,112.58.101.111,ID,GET /karier,200,normal
+2026-03-17 07:36:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-17 07:38:00,email,MAIL-GW,lina,-,-,email diterima,lolos,jadwal armada
+2026-03-17 07:39:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 07:39:00,email,MAIL-GW,tono,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 07:39:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-17 07:40:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,outlook.exe
+2026-03-17 07:40:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,excel.exe
+2026-03-17 07:42:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,teams.exe
+2026-03-17 07:44:57,web,WEB-01,-,110.58.175.100,ID,GET /lacak?resi=NL764916,200,normal
+2026-03-17 07:47:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,outlook.exe
+2026-03-17 07:49:00,email,MAIL-GW,maya,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 07:49:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-17 07:58:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,excel.exe
+2026-03-17 07:58:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,winword.exe
+2026-03-17 08:00:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-17 08:00:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 08:02:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,excel.exe
+2026-03-17 08:05:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,winword.exe
+2026-03-17 08:05:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-17 08:07:00,email,MAIL-GW,lina,-,-,email diterima,lolos,laporan pengiriman
+2026-03-17 08:08:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,jadwal armada
+2026-03-17 08:08:11,web,WEB-01,-,110.135.204.237,ID,GET /lacak?resi=NL792244,200,normal
+2026-03-17 08:12:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,excel.exe
+2026-03-17 08:13:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,winword.exe
+2026-03-17 08:13:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-17 08:15:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,winword.exe
+2026-03-17 08:23:46,web,WEB-01,-,110.27.151.249,ID,GET /tarif,200,normal
+2026-03-17 08:24:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-17 08:25:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,jadwal armada
+2026-03-17 08:25:52,web,WEB-01,-,112.196.158.210,ID,GET /,200,normal
+2026-03-17 08:26:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,jadwal armada
+2026-03-17 08:30:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 08:31:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,excel.exe
+2026-03-17 08:32:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 08:38:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,winword.exe
+2026-03-17 08:38:57,web,WEB-01,-,182.33.236.85,ID,GET /,200,normal
+2026-03-17 08:42:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,teams.exe
+2026-03-17 08:42:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,explorer.exe
+2026-03-17 08:43:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,outlook.exe
+2026-03-17 08:44:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,outlook.exe
+2026-03-17 08:44:32,web,WEB-01,-,182.56.140.68,ID,GET /tarif,200,normal
+2026-03-17 08:50:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,winword.exe
+2026-03-17 08:50:55,web,WEB-01,-,112.120.102.113,ID,GET /kontak,200,normal
+2026-03-17 08:51:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,chrome.exe
+2026-03-17 08:52:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-17 08:52:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,excel.exe
+2026-03-17 08:53:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-17 08:55:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,winword.exe
+2026-03-17 08:56:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-17 08:58:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,outlook.exe
+2026-03-17 08:58:53,web,WEB-01,-,182.180.150.229,ID,GET /karier,200,normal
+2026-03-17 08:59:06,web,WEB-01,-,182.82.226.29,ID,GET /,200,normal
+2026-03-17 09:01:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,teams.exe
+2026-03-17 09:01:39,web,WEB-01,-,112.158.19.188,ID,GET /,200,normal
+2026-03-17 09:03:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,winword.exe
+2026-03-17 09:03:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,pengumuman HR
+2026-03-17 09:06:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,chrome.exe
+2026-03-17 09:12:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,outlook.exe
+2026-03-17 09:13:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,winword.exe
+2026-03-17 09:15:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,chrome.exe
+2026-03-17 09:16:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,winword.exe
+2026-03-17 09:18:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,outlook.exe
+2026-03-17 09:18:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-17 09:18:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-17 09:19:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-17 09:19:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,outlook.exe
+2026-03-17 09:20:00,email,MAIL-GW,maya,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 09:23:00,email,MAIL-GW,andi,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 09:23:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,winword.exe
+2026-03-17 09:23:47,web,WEB-01,-,182.172.173.187,ID,GET /kontak,200,normal
+2026-03-17 09:24:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,explorer.exe
+2026-03-17 09:28:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,chrome.exe
+2026-03-17 09:30:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,excel.exe
+2026-03-17 09:30:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,winword.exe
+2026-03-17 09:32:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,teams.exe
+2026-03-17 09:38:44,web,WEB-01,-,36.74.64.249,ID,GET /,200,normal
+2026-03-17 09:39:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,pengumuman HR
+2026-03-17 09:41:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,excel.exe
+2026-03-17 09:43:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-17 09:48:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 09:48:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,excel.exe
+2026-03-17 09:48:16,web,WEB-01,-,36.234.147.216,ID,GET /kontak,200,normal
+2026-03-17 09:50:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,excel.exe
+2026-03-17 09:51:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-17 09:52:00,email,MAIL-GW,tono,-,-,email diterima,lolos,pengumuman HR
+2026-03-17 09:55:30,web,WEB-01,-,198.51.100.220,US,GET /phpmyadmin,404,pemindai otomatis
+2026-03-17 09:59:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,teams.exe
+2026-03-17 09:59:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 10:00:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-17 10:02:10,web,WEB-01,-,182.231.179.10,ID,GET /tarif,200,normal
+2026-03-17 10:04:17,web,WEB-01,-,198.51.100.243,US,GET /wp-login.php,404,pemindai otomatis
+2026-03-17 10:07:20,web,WEB-01,-,114.128.94.240,ID,GET /lacak?resi=NL369280,200,normal
+2026-03-17 10:08:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-17 10:09:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,outlook.exe
+2026-03-17 10:11:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,acrord32.exe
+2026-03-17 10:12:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-17 10:13:17,web,WEB-01,-,36.111.211.35,ID,GET /login,200,normal
+2026-03-17 10:16:42,web,WEB-01,-,112.87.142.159,ID,GET /login,200,normal
+2026-03-17 10:20:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,chrome.exe
+2026-03-17 10:23:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-17 10:27:41,web,WEB-01,-,110.146.137.109,ID,GET /tarif,200,normal
+2026-03-17 10:28:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,outlook.exe
+2026-03-17 10:30:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,explorer.exe
+2026-03-17 10:37:35,web,WEB-01,-,112.101.241.115,ID,GET /,200,normal
+2026-03-17 10:38:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,rapat mingguan
+2026-03-17 10:38:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,explorer.exe
+2026-03-17 10:51:04,web,WEB-01,-,182.50.125.111,ID,GET /lacak?resi=NL728611,200,normal
+2026-03-17 10:54:44,web,WEB-01,-,112.86.46.103,ID,GET /kontak,200,normal
+2026-03-17 11:15:30,web,WEB-01,-,112.228.183.39,ID,GET /lacak?resi=NL359341,200,normal
+2026-03-17 11:25:47,web,WEB-01,-,198.51.100.176,US,GET /.git/config,404,pemindai otomatis
+2026-03-17 11:26:49,web,WEB-01,-,110.105.36.16,ID,GET /tarif,200,normal
+2026-03-17 11:30:11,web,WEB-01,-,182.66.24.155,ID,GET /login,200,normal
+2026-03-17 11:55:08,web,WEB-01,-,110.116.99.197,ID,GET /lacak?resi=NL313436,200,normal
+2026-03-17 12:05:52,web,WEB-01,-,110.82.217.141,ID,GET /lacak?resi=NL308260,200,normal
+2026-03-17 12:12:51,web,WEB-01,-,182.66.222.172,ID,GET /login,200,normal
+2026-03-17 12:21:18,web,WEB-01,-,36.117.32.84,ID,GET /kontak,200,normal
+2026-03-17 12:30:46,web,WEB-01,-,182.229.155.11,ID,GET /karier,200,normal
+2026-03-17 12:53:00,vpn,VPN-GW,maya,114.123.90.33,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-17 13:10:17,web,WEB-01,-,112.162.70.99,ID,GET /lacak?resi=NL191319,200,normal
+2026-03-17 13:15:12,web,WEB-01,-,182.250.255.229,ID,GET /karier,200,normal
+2026-03-17 13:18:45,web,WEB-01,-,36.193.236.72,ID,GET /login,200,normal
+2026-03-17 13:38:11,web,WEB-01,-,36.156.60.192,ID,GET /lacak?resi=NL383911,200,normal
+2026-03-17 14:08:04,web,WEB-01,-,182.217.106.169,ID,GET /kontak,200,normal
+2026-03-17 14:13:00,vpn,VPN-GW,tono,114.124.139.168,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-17 14:16:00,vpn,VPN-GW,rudi,114.124.71.188,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-17 14:19:22,web,WEB-01,-,110.215.9.144,ID,GET /karier,200,normal
+2026-03-17 14:28:47,web,WEB-01,-,110.177.223.126,ID,GET /tarif,200,normal
+2026-03-17 14:30:48,web,WEB-01,-,110.36.109.84,ID,GET /tarif,200,normal
+2026-03-17 14:31:18,web,WEB-01,-,36.208.222.172,ID,GET /login,200,normal
+2026-03-17 14:33:00,vpn,VPN-GW,bagas,114.124.52.2,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-17 14:41:24,web,WEB-01,-,182.43.249.223,ID,GET /tarif,200,normal
+2026-03-17 14:45:00,vpn,VPN-GW,sinta,114.124.175.175,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-17 14:46:31,web,WEB-01,-,112.160.238.82,ID,GET /karier,200,normal
+2026-03-17 14:47:28,web,WEB-01,-,112.151.1.97,ID,GET /,200,normal
+2026-03-17 14:52:50,web,WEB-01,-,112.122.193.81,ID,GET /login,200,normal
+2026-03-17 15:21:51,web,WEB-01,-,112.35.61.71,ID,GET /lacak?resi=NL266756,200,normal
+2026-03-17 15:36:28,web,WEB-01,-,182.214.49.208,ID,GET /lacak?resi=NL242338,200,normal
+2026-03-17 15:40:31,web,WEB-01,-,182.137.20.244,ID,GET /login,200,normal
+2026-03-17 16:01:56,web,WEB-01,-,110.247.28.112,ID,GET /login,200,normal
+2026-03-17 16:53:22,web,WEB-01,-,110.73.94.55,ID,GET /kontak,200,normal
+2026-03-17 16:57:44,web,WEB-01,-,36.193.190.13,ID,GET /login,200,normal
+2026-03-17 17:04:40,web,WEB-01,-,182.49.158.99,ID,GET /,200,normal
+2026-03-17 17:20:22,web,WEB-01,-,114.109.204.182,ID,GET /tarif,200,normal
+2026-03-17 17:25:22,web,WEB-01,-,36.107.100.243,ID,GET /login,200,normal
+2026-03-17 17:27:57,web,WEB-01,-,114.255.57.84,ID,GET /lacak?resi=NL781060,200,normal
+2026-03-17 17:49:45,web,WEB-01,-,110.59.82.82,ID,GET /,200,normal
+2026-03-17 18:27:48,web,WEB-01,-,36.111.39.113,ID,GET /,200,normal
+2026-03-17 18:43:25,web,WEB-01,-,112.58.58.191,ID,GET /karier,200,normal
+2026-03-17 19:07:59,web,WEB-01,-,182.237.124.154,ID,GET /kontak,200,normal
+2026-03-17 19:14:15,web,WEB-01,-,110.22.116.79,ID,GET /login,200,normal
+2026-03-17 19:24:46,web,WEB-01,-,36.124.67.125,ID,GET /login,200,normal
+2026-03-17 20:01:58,web,WEB-01,-,110.60.173.232,ID,GET /lacak?resi=NL907192,200,normal
+2026-03-17 20:20:23,web,WEB-01,-,114.251.182.202,ID,GET /login,200,normal
+2026-03-17 20:51:09,web,WEB-01,-,36.78.227.69,ID,GET /lacak?resi=NL147064,200,normal
+2026-03-17 20:59:40,web,WEB-01,-,110.100.166.132,ID,GET /login,200,normal
+2026-03-17 21:08:32,web,WEB-01,-,110.66.219.24,ID,GET /kontak,200,normal
+2026-03-17 21:25:59,web,WEB-01,-,110.87.11.3,ID,GET /tarif,200,normal
+2026-03-17 21:26:53,web,WEB-01,-,182.214.199.72,ID,GET /lacak?resi=NL702187,200,normal
+2026-03-17 21:38:03,web,WEB-01,-,182.137.116.208,ID,GET /tarif,200,normal
+2026-03-17 21:40:29,web,WEB-01,-,182.120.172.17,ID,GET /tarif,200,normal
+2026-03-17 22:01:19,web,WEB-01,-,110.46.98.165,ID,GET /login,200,normal
+2026-03-17 22:03:52,web,WEB-01,-,198.51.100.25,US,GET /.git/config,404,pemindai otomatis
+2026-03-17 22:24:13,web,WEB-01,-,112.199.216.253,ID,GET /kontak,200,normal
+2026-03-17 22:24:21,web,WEB-01,-,182.206.153.12,ID,GET /lacak?resi=NL762880,200,normal
+2026-03-17 22:47:22,web,WEB-01,-,112.42.236.82,ID,GET /tarif,200,normal
+2026-03-17 22:56:16,web,WEB-01,-,36.89.122.113,ID,GET /login,200,normal
+2026-03-17 23:04:56,web,WEB-01,-,112.216.147.216,ID,GET /kontak,200,normal
+2026-03-17 23:24:49,web,WEB-01,-,112.141.9.47,ID,GET /lacak?resi=NL991817,200,normal
+2026-03-17 23:25:05,web,WEB-01,-,198.51.100.147,US,GET /wp-login.php,404,pemindai otomatis
+2026-03-17 23:25:33,web,WEB-01,-,182.177.241.137,ID,GET /lacak?resi=NL989790,200,normal
+2026-03-17 23:29:15,web,WEB-01,-,36.208.110.128,ID,GET /,200,normal
+2026-03-17 23:42:54,web,WEB-01,-,110.109.63.177,ID,GET /login,200,normal
+2026-03-17 23:46:26,web,WEB-01,-,182.89.127.114,ID,GET /karier,200,normal
+2026-03-17 23:50:35,web,WEB-01,-,112.210.176.61,ID,GET /login,200,normal
+2026-03-17 23:57:25,web,WEB-01,-,110.169.202.234,ID,GET /,200,normal
+2026-03-18 00:11:34,web,WEB-01,-,182.19.171.46,ID,GET /tarif,200,normal
+2026-03-18 00:18:05,web,WEB-01,-,110.17.14.33,ID,GET /,200,normal
+2026-03-18 00:56:16,web,WEB-01,-,114.86.46.65,ID,GET /tarif,200,normal
+2026-03-18 01:10:00,ad,DC-01,bagas,10.20.3.98,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-18 01:19:00,ad,DC-01,tono,10.20.2.51,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-18 01:21:30,ad,DC-01,rudi,10.20.1.96,ID,4625 login gagal,gagal,salah ketik password
+2026-03-18 01:22:00,ad,DC-01,rudi,10.20.1.96,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-18 01:22:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 01:22:30,ad,DC-01,andi,10.20.3.212,ID,4625 login gagal,gagal,salah ketik password
+2026-03-18 01:23:00,ad,DC-01,andi,10.20.3.212,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-18 01:24:00,ad,DC-01,maya,10.20.2.81,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-18 01:28:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 01:29:58,web,WEB-01,-,36.54.35.175,ID,GET /lacak?resi=NL116135,200,normal
+2026-03-18 01:31:49,web,WEB-01,-,112.68.105.181,ID,GET /lacak?resi=NL821519,200,normal
+2026-03-18 01:32:00,email,MAIL-GW,maya,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 01:33:00,email,MAIL-GW,andi,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 01:33:00,web,WEB-01,-,182.198.27.232,ID,GET /kontak,200,normal
+2026-03-18 01:35:00,ad,DC-01,wulan,10.20.3.99,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-18 01:36:00,ad,DC-01,fikri,10.20.2.52,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-18 01:41:00,ad,DC-01,lina,10.20.1.72,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-18 01:45:00,ad,DC-01,ayu,10.20.3.110,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-18 01:48:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,excel.exe
+2026-03-18 01:49:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,winword.exe
+2026-03-18 01:49:00,ad,DC-01,sinta,10.20.1.11,ID,4624 login berhasil,berhasil,logon type 2 (interaktif)
+2026-03-18 01:49:41,web,WEB-01,-,182.43.191.80,ID,GET /tarif,200,normal
+2026-03-18 01:50:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-18 01:50:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 01:51:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,teams.exe
+2026-03-18 01:54:21,web,WEB-01,-,112.66.137.15,ID,GET /login,200,normal
+2026-03-18 01:58:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,outlook.exe
+2026-03-18 01:59:00,email,MAIL-GW,lina,-,-,email diterima,lolos,pengumuman HR
+2026-03-18 02:02:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,winword.exe
+2026-03-18 02:02:00,web,WEB-01,-,114.109.77.3,ID,GET /tarif,200,normal
+2026-03-18 02:03:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,excel.exe
+2026-03-18 02:03:00,email,MAIL-GW,maya,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 02:03:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-18 02:04:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,winword.exe
+2026-03-18 02:06:02,web,WEB-01,-,114.67.26.83,ID,GET /tarif,200,normal
+2026-03-18 02:07:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 02:09:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,excel.exe
+2026-03-18 02:09:17,web,WEB-01,-,112.122.47.90,ID,GET /kontak,200,normal
+2026-03-18 02:12:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-18 02:16:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,excel.exe
+2026-03-18 02:18:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 02:21:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 02:23:29,web,WEB-01,-,182.74.117.129,ID,GET /tarif,200,normal
+2026-03-18 02:24:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,pengumuman HR
+2026-03-18 02:26:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 02:26:59,web,WEB-01,-,182.88.102.84,ID,GET /karier,200,normal
+2026-03-18 02:27:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,excel.exe
+2026-03-18 02:30:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 02:36:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 02:41:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-18 02:42:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 02:46:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,teams.exe
+2026-03-18 02:46:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,excel.exe
+2026-03-18 02:46:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 02:49:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 02:50:49,web,WEB-01,-,110.112.137.2,ID,GET /lacak?resi=NL667332,200,normal
+2026-03-18 02:57:30,web,WEB-01,-,182.249.14.202,ID,GET /lacak?resi=NL806318,200,normal
+2026-03-18 02:58:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,outlook.exe
+2026-03-18 02:58:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 02:58:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 03:00:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,outlook.exe
+2026-03-18 03:01:10,web,WEB-01,-,110.178.219.168,ID,GET /kontak,200,normal
+2026-03-18 03:03:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-18 03:06:24,web,WEB-01,-,112.166.150.102,ID,GET /karier,200,normal
+2026-03-18 03:11:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-18 03:12:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,teams.exe
+2026-03-18 03:15:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 03:15:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,winword.exe
+2026-03-18 03:19:00,email,MAIL-GW,tono,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 03:19:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,chrome.exe
+2026-03-18 03:24:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,excel.exe
+2026-03-18 03:24:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 03:36:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 03:37:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-18 03:41:48,web,WEB-01,-,112.192.41.200,ID,GET /kontak,200,normal
+2026-03-18 03:42:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-18 03:42:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 03:42:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,teams.exe
+2026-03-18 03:46:21,web,WEB-01,-,110.81.75.245,ID,GET /karier,200,normal
+2026-03-18 03:47:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,winword.exe
+2026-03-18 03:49:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,outlook.exe
+2026-03-18 03:53:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-18 03:56:04,web,WEB-01,-,114.68.26.26,ID,GET /karier,200,normal
+2026-03-18 03:58:05,web,WEB-01,-,36.96.24.190,ID,GET /kontak,200,normal
+2026-03-18 03:59:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,winword.exe
+2026-03-18 04:00:00,email,MAIL-GW,lina,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 04:01:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 04:04:39,web,WEB-01,-,110.223.102.28,ID,GET /tarif,200,normal
+2026-03-18 04:06:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,jadwal armada
+2026-03-18 04:07:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,outlook.exe
+2026-03-18 04:08:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,winword.exe
+2026-03-18 04:09:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-18 04:10:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,winword.exe
+2026-03-18 04:12:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,teams.exe
+2026-03-18 04:16:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-18 04:18:36,web,WEB-01,-,112.176.116.62,ID,GET /kontak,200,normal
+2026-03-18 04:20:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,chrome.exe
+2026-03-18 04:21:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,explorer.exe
+2026-03-18 04:24:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,chrome.exe
+2026-03-18 04:26:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-18 04:27:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-18 04:28:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-18 04:29:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,winword.exe
+2026-03-18 04:31:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,excel.exe
+2026-03-18 04:36:52,web,WEB-01,-,110.114.214.140,ID,GET /karier,200,normal
+2026-03-18 04:38:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,chrome.exe
+2026-03-18 04:38:19,web,WEB-01,-,114.32.11.36,ID,GET /,200,normal
+2026-03-18 04:42:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,teams.exe
+2026-03-18 04:43:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 04:44:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,explorer.exe
+2026-03-18 04:48:12,web,WEB-01,-,182.5.139.24,ID,GET /login,200,normal
+2026-03-18 04:48:58,web,WEB-01,-,182.130.66.87,ID,GET /login,200,normal
+2026-03-18 04:51:00,email,MAIL-GW,tono,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 04:53:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,explorer.exe
+2026-03-18 04:53:06,web,WEB-01,-,114.167.89.69,ID,GET /karier,200,normal
+2026-03-18 04:54:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,explorer.exe
+2026-03-18 04:54:02,web,WEB-01,-,182.35.163.68,ID,GET /,200,normal
+2026-03-18 04:56:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 04:56:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 04:56:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 04:57:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 04:59:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,outlook.exe
+2026-03-18 05:00:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 05:05:19,web,WEB-01,-,182.231.200.124,ID,GET /lacak?resi=NL207712,200,normal
+2026-03-18 05:06:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,excel.exe
+2026-03-18 05:07:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,chrome.exe
+2026-03-18 05:07:16,web,WEB-01,-,198.51.100.120,US,GET /wp-login.php,404,pemindai otomatis
+2026-03-18 05:08:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 05:11:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,outlook.exe
+2026-03-18 05:12:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 05:13:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,chrome.exe
+2026-03-18 05:18:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,winword.exe
+2026-03-18 05:21:48,web,WEB-01,-,112.125.137.104,ID,GET /karier,200,normal
+2026-03-18 05:22:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,winword.exe
+2026-03-18 05:22:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,explorer.exe
+2026-03-18 05:23:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,winword.exe
+2026-03-18 05:25:27,web,WEB-01,-,182.166.118.85,ID,GET /,200,normal
+2026-03-18 05:27:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,outlook.exe
+2026-03-18 05:27:34,web,WEB-01,-,110.154.254.174,ID,GET /tarif,200,normal
+2026-03-18 05:29:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,outlook.exe
+2026-03-18 05:29:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,winword.exe
+2026-03-18 05:31:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,excel.exe
+2026-03-18 05:31:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 05:32:40,web,WEB-01,-,112.200.214.172,ID,GET /login,200,normal
+2026-03-18 05:33:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,chrome.exe
+2026-03-18 05:37:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 05:42:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,winword.exe
+2026-03-18 05:44:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,excel.exe
+2026-03-18 05:45:00,web,WEB-01,-,110.24.219.72,ID,GET /tarif,200,normal
+2026-03-18 05:50:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 05:51:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,pengumuman HR
+2026-03-18 05:53:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,winword.exe
+2026-03-18 05:58:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,chrome.exe
+2026-03-18 05:58:23,web,WEB-01,-,110.191.94.150,ID,GET /lacak?resi=NL374436,200,normal
+2026-03-18 06:01:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,jadwal armada
+2026-03-18 06:01:44,web,WEB-01,-,36.147.235.155,ID,GET /tarif,200,normal
+2026-03-18 06:03:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,teams.exe
+2026-03-18 06:05:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 06:09:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,chrome.exe
+2026-03-18 06:09:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 06:10:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 06:10:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,chrome.exe
+2026-03-18 06:13:16,web,WEB-01,-,110.61.176.191,ID,GET /lacak?resi=NL202582,200,normal
+2026-03-18 06:23:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,explorer.exe
+2026-03-18 06:25:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 06:27:00,email,MAIL-GW,lina,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 06:29:33,web,WEB-01,-,182.206.25.29,ID,GET /lacak?resi=NL358141,200,normal
+2026-03-18 06:32:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-18 06:33:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,teams.exe
+2026-03-18 06:37:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 06:39:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,outlook.exe
+2026-03-18 06:45:00,email,MAIL-GW,andi,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 06:45:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-18 06:46:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,winword.exe
+2026-03-18 06:49:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 06:49:07,web,WEB-01,-,114.153.235.22,ID,GET /login,200,normal
+2026-03-18 06:50:57,web,WEB-01,-,112.254.93.246,ID,GET /karier,200,normal
+2026-03-18 06:56:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 06:58:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,chrome.exe
+2026-03-18 06:59:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,winword.exe
+2026-03-18 07:00:00,email,MAIL-GW,andi,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 07:03:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,explorer.exe
+2026-03-18 07:04:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-18 07:04:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 07:06:27,web,WEB-01,-,114.132.53.83,ID,GET /,200,normal
+2026-03-18 07:08:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,excel.exe
+2026-03-18 07:09:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 07:10:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-18 07:10:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-18 07:11:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,explorer.exe
+2026-03-18 07:11:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 07:14:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,chrome.exe
+2026-03-18 07:14:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,explorer.exe
+2026-03-18 07:17:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,chrome.exe
+2026-03-18 07:18:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,chrome.exe
+2026-03-18 07:22:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,jadwal armada
+2026-03-18 07:23:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,explorer.exe
+2026-03-18 07:23:22,web,WEB-01,-,110.252.186.226,ID,GET /,200,normal
+2026-03-18 07:26:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,explorer.exe
+2026-03-18 07:26:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,winword.exe
+2026-03-18 07:28:00,email,MAIL-GW,maya,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 07:29:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 07:30:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 07:30:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,explorer.exe
+2026-03-18 07:30:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,excel.exe
+2026-03-18 07:31:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,excel.exe
+2026-03-18 07:31:47,web,WEB-01,-,182.67.32.146,ID,GET /kontak,200,normal
+2026-03-18 07:33:00,email,MAIL-GW,tono,-,-,email diterima,lolos,pengumuman HR
+2026-03-18 07:35:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,explorer.exe
+2026-03-18 07:36:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,excel.exe
+2026-03-18 07:38:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,excel.exe
+2026-03-18 07:41:40,web,WEB-01,-,182.179.12.161,ID,GET /lacak?resi=NL687469,200,normal
+2026-03-18 07:43:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,excel.exe
+2026-03-18 07:46:09,web,WEB-01,-,182.174.107.118,ID,GET /tarif,200,normal
+2026-03-18 07:51:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,explorer.exe
+2026-03-18 08:04:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 08:07:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,explorer.exe
+2026-03-18 08:07:00,email,MAIL-GW,lina,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 08:10:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,outlook.exe
+2026-03-18 08:10:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,teams.exe
+2026-03-18 08:11:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 08:16:59,web,WEB-01,-,182.177.171.215,ID,GET /,200,normal
+2026-03-18 08:19:00,email,MAIL-GW,ayu,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 08:23:00,email,MAIL-GW,bagas,-,-,email diterima,lolos,jadwal armada
+2026-03-18 08:24:00,email,MAIL-GW,tono,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 08:24:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 08:27:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,excel.exe
+2026-03-18 08:27:24,web,WEB-01,-,114.151.154.4,ID,GET /login,200,normal
+2026-03-18 08:29:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,teams.exe
+2026-03-18 08:31:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,explorer.exe
+2026-03-18 08:32:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,winword.exe
+2026-03-18 08:33:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,teams.exe
+2026-03-18 08:33:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-18 08:33:00,email,MAIL-GW,lina,-,-,email diterima,lolos,jadwal armada
+2026-03-18 08:35:00,email,MAIL-GW,maya,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 08:35:01,web,WEB-01,-,36.201.116.135,ID,GET /lacak?resi=NL839247,200,normal
+2026-03-18 08:35:32,web,WEB-01,-,110.172.162.123,ID,GET /kontak,200,normal
+2026-03-18 08:40:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,excel.exe
+2026-03-18 08:42:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,explorer.exe
+2026-03-18 08:44:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,outlook.exe
+2026-03-18 08:44:00,email,MAIL-GW,wulan,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 08:44:31,web,WEB-01,-,182.236.76.147,ID,GET /kontak,200,normal
+2026-03-18 08:44:42,web,WEB-01,-,112.229.101.203,ID,GET /lacak?resi=NL119276,200,normal
+2026-03-18 08:49:00,email,MAIL-GW,rudi,-,-,email diterima,lolos,jadwal armada
+2026-03-18 08:50:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,teams.exe
+2026-03-18 08:50:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,excel.exe
+2026-03-18 08:50:55,web,WEB-01,-,182.251.122.136,ID,GET /lacak?resi=NL545175,200,normal
+2026-03-18 08:51:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,winword.exe
+2026-03-18 08:51:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,winword.exe
+2026-03-18 08:53:54,web,WEB-01,-,36.212.231.206,ID,GET /lacak?resi=NL774600,200,normal
+2026-03-18 08:54:00,email,MAIL-GW,lina,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 08:55:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,explorer.exe
+2026-03-18 08:55:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,winword.exe
+2026-03-18 08:55:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,chrome.exe
+2026-03-18 09:00:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,winword.exe
+2026-03-18 09:01:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,outlook.exe
+2026-03-18 09:01:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-18 09:08:00,edr,LAP-FIN-07,maya,10.20.2.81,ID,proses dijalankan,info,excel.exe
+2026-03-18 09:10:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,outlook.exe
+2026-03-18 09:10:55,web,WEB-01,-,114.126.210.156,ID,GET /tarif,200,normal
+2026-03-18 09:12:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,teams.exe
+2026-03-18 09:13:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,excel.exe
+2026-03-18 09:14:00,edr,LAP-OPS-05,tono,10.20.2.51,ID,proses dijalankan,info,excel.exe
+2026-03-18 09:15:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 09:21:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,explorer.exe
+2026-03-18 09:24:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 09:31:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 09:39:00,email,MAIL-GW,andi,-,-,email diterima,lolos,laporan pengiriman
+2026-03-18 09:41:35,web,WEB-01,-,36.70.247.140,ID,GET /kontak,200,normal
+2026-03-18 09:46:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,excel.exe
+2026-03-18 09:48:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,teams.exe
+2026-03-18 09:52:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,teams.exe
+2026-03-18 09:54:52,web,WEB-01,-,36.142.252.11,ID,GET /lacak?resi=NL147194,200,normal
+2026-03-18 09:56:00,edr,LAP-OPS-14,bagas,10.20.3.98,ID,proses dijalankan,info,explorer.exe
+2026-03-18 10:02:00,email,MAIL-GW,andi,-,-,email diterima,lolos,invoice vendor resmi
+2026-03-18 10:02:57,web,WEB-01,-,110.209.131.95,ID,GET /karier,200,normal
+2026-03-18 10:03:00,edr,LAP-IT-01,wulan,10.20.3.99,ID,proses dijalankan,info,excel.exe
+2026-03-18 10:06:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,explorer.exe
+2026-03-18 10:10:00,edr,LAP-FIN-03,andi,10.20.3.212,ID,proses dijalankan,info,explorer.exe
+2026-03-18 10:10:00,email,MAIL-GW,sinta,-,-,email diterima,lolos,jadwal armada
+2026-03-18 10:10:00,email,MAIL-GW,fikri,-,-,email diterima,lolos,rapat mingguan
+2026-03-18 10:13:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,chrome.exe
+2026-03-18 10:14:00,edr,LAP-OPS-11,rudi,10.20.1.96,ID,proses dijalankan,info,outlook.exe
+2026-03-18 10:14:00,edr,LAP-MKT-09,ayu,10.20.3.110,ID,proses dijalankan,info,explorer.exe
+2026-03-18 10:15:00,edr,LAP-FIN-12,lina,10.20.1.72,ID,proses dijalankan,info,excel.exe
+2026-03-18 10:19:58,web,WEB-01,-,110.146.73.34,ID,GET /tarif,200,normal
+2026-03-18 10:20:00,edr,LAP-IT-04,fikri,10.20.2.52,ID,proses dijalankan,info,acrord32.exe
+2026-03-18 10:20:32,web,WEB-01,-,182.218.108.70,ID,GET /karier,200,normal
+2026-03-18 10:30:13,web,WEB-01,-,198.51.100.187,US,GET /.git/config,404,pemindai otomatis
+2026-03-18 10:30:34,web,WEB-01,-,114.99.66.207,ID,GET /karier,200,normal
+2026-03-18 10:32:00,edr,LAP-HR-02,sinta,10.20.1.11,ID,proses dijalankan,info,excel.exe
+2026-03-18 10:33:28,web,WEB-01,-,182.175.102.136,ID,GET /tarif,200,normal
+2026-03-18 10:33:58,web,WEB-01,-,182.83.190.38,ID,GET /tarif,200,normal
+2026-03-18 10:42:19,web,WEB-01,-,182.117.79.76,ID,GET /login,200,normal
+2026-03-18 10:44:39,web,WEB-01,-,182.238.129.203,ID,GET /login,200,normal
+2026-03-18 10:50:01,web,WEB-01,-,110.195.225.139,ID,GET /login,200,normal
+2026-03-18 11:11:40,web,WEB-01,-,182.160.13.142,ID,GET /tarif,200,normal
+2026-03-18 11:15:19,web,WEB-01,-,110.9.207.221,ID,GET /login,200,normal
+2026-03-18 11:15:32,web,WEB-01,-,112.25.149.158,ID,GET /tarif,200,normal
+2026-03-18 11:17:41,web,WEB-01,-,36.1.181.27,ID,GET /karier,200,normal
+2026-03-18 11:23:13,web,WEB-01,-,36.158.88.236,ID,GET /,200,normal
+2026-03-18 11:36:34,web,WEB-01,-,114.195.55.113,ID,GET /login,200,normal
+2026-03-18 11:38:38,web,WEB-01,-,182.25.59.127,ID,GET /login,200,normal
+2026-03-18 11:39:08,web,WEB-01,-,36.165.155.32,ID,GET /kontak,200,normal
+2026-03-18 11:39:52,web,WEB-01,-,198.51.100.100,US,GET /wp-login.php,404,pemindai otomatis
+2026-03-18 11:46:29,web,WEB-01,-,114.255.126.84,ID,GET /kontak,200,normal
+2026-03-18 11:47:11,web,WEB-01,-,36.107.20.27,ID,GET /kontak,200,normal
+2026-03-18 11:58:06,web,WEB-01,-,112.18.44.127,ID,GET /,200,normal
+2026-03-18 12:11:31,web,WEB-01,-,112.131.195.252,ID,GET /login,200,normal
+2026-03-18 12:22:56,web,WEB-01,-,114.33.111.94,ID,GET /login,200,normal
+2026-03-18 12:32:52,web,WEB-01,-,114.22.8.247,ID,GET /karier,200,normal
+2026-03-18 12:40:34,web,WEB-01,-,110.37.4.170,ID,GET /tarif,200,normal
+2026-03-18 12:43:08,web,WEB-01,-,114.155.41.141,ID,GET /,200,normal
+2026-03-18 12:52:52,web,WEB-01,-,182.130.95.160,ID,GET /kontak,200,normal
+2026-03-18 12:53:08,web,WEB-01,-,114.182.43.196,ID,GET /login,200,normal
+2026-03-18 12:59:00,vpn,VPN-GW,wulan,114.123.65.236,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-18 13:00:47,web,WEB-01,-,182.89.88.161,ID,GET /,200,normal
+2026-03-18 13:00:48,web,WEB-01,-,110.129.46.124,ID,GET /karier,200,normal
+2026-03-18 13:21:27,web,WEB-01,-,36.54.123.102,ID,GET /login,200,normal
+2026-03-18 13:38:00,vpn,VPN-GW,lina,114.120.175.113,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-18 14:06:59,web,WEB-01,-,110.42.186.203,ID,GET /login,200,normal
+2026-03-18 14:12:39,web,WEB-01,-,198.51.100.222,US,GET /.git/config,404,pemindai otomatis
+2026-03-18 14:15:25,web,WEB-01,-,110.33.169.79,ID,GET /karier,200,normal
+2026-03-18 14:17:00,vpn,VPN-GW,ayu,114.123.37.170,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-18 14:27:35,web,WEB-01,-,110.57.133.111,ID,GET /lacak?resi=NL842070,200,normal
+2026-03-18 14:34:00,vpn,VPN-GW,rudi,114.121.124.115,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-18 14:42:00,vpn,VPN-GW,tono,114.124.37.172,ID,login VPN,berhasil,bekerja dari rumah
+2026-03-18 14:44:42,web,WEB-01,-,110.35.164.26,ID,GET /,200,normal
+2026-03-18 14:50:42,web,WEB-01,-,36.33.214.86,ID,GET /karier,200,normal
+2026-03-18 14:57:13,web,WEB-01,-,36.30.140.165,ID,GET /lacak?resi=NL230783,200,normal
+2026-03-18 14:58:21,web,WEB-01,-,112.181.234.180,ID,GET /,200,normal
+2026-03-18 15:00:38,web,WEB-01,-,110.95.160.143,ID,GET /tarif,200,normal
+2026-03-18 15:03:15,web,WEB-01,-,112.134.146.5,ID,GET /,200,normal
+2026-03-18 15:15:48,web,WEB-01,-,182.5.184.212,ID,GET /lacak?resi=NL489029,200,normal
+2026-03-18 16:00:59,web,WEB-01,-,114.23.79.213,ID,GET /,200,normal
+2026-03-18 16:43:50,web,WEB-01,-,182.146.78.197,ID,GET /login,200,normal
+2026-03-18 17:12:33,web,WEB-01,-,114.11.66.198,ID,GET /lacak?resi=NL755796,200,normal
+2026-03-18 17:17:33,web,WEB-01,-,112.189.18.54,ID,GET /lacak?resi=NL539318,200,normal
+2026-03-18 17:37:45,web,WEB-01,-,112.80.226.254,ID,GET /kontak,200,normal
+2026-03-18 17:39:26,web,WEB-01,-,198.51.100.206,US,GET /phpmyadmin,404,pemindai otomatis
+2026-03-18 17:41:32,web,WEB-01,-,110.237.150.239,ID,GET /karier,200,normal
+2026-03-18 17:47:47,web,WEB-01,-,114.230.109.208,ID,GET /tarif,200,normal
+2026-03-18 17:50:53,web,WEB-01,-,112.237.56.244,ID,GET /karier,200,normal
+2026-03-18 18:07:44,web,WEB-01,-,182.135.221.75,ID,GET /lacak?resi=NL601437,200,normal
+2026-03-18 18:15:34,web,WEB-01,-,112.167.195.36,ID,GET /login,200,normal
+2026-03-18 18:31:20,web,WEB-01,-,110.41.99.182,ID,GET /kontak,200,normal
+2026-03-18 18:37:03,web,WEB-01,-,36.105.113.85,ID,GET /tarif,200,normal
+2026-03-18 18:37:34,web,WEB-01,-,36.16.51.228,ID,GET /login,200,normal
+2026-03-18 18:52:39,web,WEB-01,-,112.240.113.40,ID,GET /login,200,normal
+2026-03-18 18:57:48,web,WEB-01,-,182.211.57.217,ID,GET /karier,200,normal
+2026-03-18 18:59:36,web,WEB-01,-,182.4.46.108,ID,GET /kontak,200,normal
+2026-03-18 19:07:17,web,WEB-01,-,112.31.121.98,ID,GET /lacak?resi=NL728804,200,normal
+2026-03-18 19:13:24,web,WEB-01,-,112.246.222.67,ID,GET /karier,200,normal
+2026-03-18 19:38:04,web,WEB-01,-,114.25.66.161,ID,GET /karier,200,normal
+2026-03-18 20:02:13,web,WEB-01,-,110.186.127.163,ID,GET /,200,normal
+2026-03-18 20:05:29,web,WEB-01,-,182.186.167.208,ID,GET /kontak,200,normal
+2026-03-18 20:08:29,web,WEB-01,-,112.131.211.141,ID,GET /login,200,normal
+2026-03-18 20:10:12,web,WEB-01,-,198.51.100.68,US,GET /.git/config,404,pemindai otomatis
+2026-03-18 20:21:06,web,WEB-01,-,110.64.0.9,ID,GET /,200,normal
+2026-03-18 20:31:10,web,WEB-01,-,114.124.214.238,ID,GET /karier,200,normal
+2026-03-18 20:57:53,web,WEB-01,-,110.47.90.54,ID,GET /tarif,200,normal
+2026-03-18 20:59:11,web,WEB-01,-,112.236.253.191,ID,GET /tarif,200,normal
+2026-03-18 21:32:38,web,WEB-01,-,110.94.55.108,ID,GET /kontak,200,normal
+2026-03-18 21:53:33,web,WEB-01,-,36.150.80.245,ID,GET /karier,200,normal
+2026-03-18 22:19:46,web,WEB-01,-,182.188.3.6,ID,GET /login,200,normal
+2026-03-18 22:21:00,web,WEB-01,-,182.86.20.174,ID,GET /login,200,normal
+2026-03-18 22:30:37,web,WEB-01,-,110.58.182.200,ID,GET /login,200,normal
+2026-03-18 22:41:54,web,WEB-01,-,110.237.246.134,ID,GET /login,200,normal
+2026-03-18 23:21:26,web,WEB-01,-,112.116.32.150,ID,GET /login,200,normal
+2026-03-18 23:23:59,web,WEB-01,-,110.189.82.216,ID,GET /kontak,200,normal
+2026-03-18 23:28:24,web,WEB-01,-,114.245.150.112,ID,GET /,200,normal
+2026-03-18 23:31:05,web,WEB-01,-,110.234.72.241,ID,GET /,200,normal
+2026-03-18 23:58:27,web,WEB-01,-,110.174.24.254,ID,GET /kontak,200,normal
+2026-03-18 23:58:32,web,WEB-01,-,112.129.119.3,ID,GET /login,200,normal
+2026-03-18 23:59:20,web,WEB-01,-,36.66.137.159,ID,GET /lacak?resi=NL460528,200,normal

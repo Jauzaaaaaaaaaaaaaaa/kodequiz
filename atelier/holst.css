@@ -1,0 +1,100 @@
+/* KODEQUIZ — palet "Holst" (20 November 2026, pilihan pengguna):
+   #0D1B2A navy pekat · #1B263B navy · #415A77 biru batu · #778D7A sage · #D4C4A8 pasir · #F4F1DE krem.
+   Lapisan terakhir: hanya mengganti warna. Huruf (Instrument Sans) dan tata letak tetap dari theme.css + belajar.css.
+   Terang = latar krem dengan tinta navy (kontras teks ±13:1); gelap = latar navy dengan teks krem (±13:1).
+   Untuk kembali ke tema Studio cukup hapus <link> ke file ini di index.html. */
+
+:root {
+  --bg: #F4F1DE; --bg-atas: #E8DFC8; --permukaan: #FBF9F0; --permukaan-2: #E9E4CF; --garis: #D9CFB8;
+  --teks: #1B263B; --redup: #4A5A70; --tinta: #0D1B2A; --tinta-teks: #F4F1DE;
+  --utama: #415A77; --utama-gelap: #1B263B; --utama-t: #DDE3EA;
+  --biru: #415A77; --biru-t: #DDE3EA;
+  --hijau: #4F6B55; --hijau-t: #DFE7DA; --hijau-teks: #3A5240;
+  --merah: #A4473A; --merah-t: #F3DED6; --merah-teks: #7E3226;
+  --kuning: #8A6A2F; --kuning-t: #EFE5CD; --kuning-teks: #66501F;
+  --emas: #8A6A2F; --emas-t: #EFE5CD;
+  --kode-bg: #0D1B2A; --kode-teks: #E6E0CA; --kode-redup: #8796AB;
+  --editor-bg: #FBF9F0; --editor-nomor: #9AA3AF;
+  --media-bg: #0D1B2A;
+  --c-sql: #415A77;
+  --bayang: 0 1px 2px rgba(13, 27, 42, .05), 0 12px 30px -22px rgba(13, 27, 42, .30);
+  --bayang2: 0 24px 48px -28px rgba(13, 27, 42, .45);
+  --btn-teks: #F4F1DE;
+  --at-accent: #415A77; --at-on-accent: #F4F1DE; --at-accent-text: #1B263B;
+  --at-deep: #0D1B2A; --at-on-deep: #E6E0CA;
+  --c-da: #415A77; --c-da-t: #DDE3EA; --c-ds: #1B263B; --c-ds-t: #E3E0D2;
+  --holst: linear-gradient(90deg, #0D1B2A 0 16.66%, #1B263B 0 33.33%, #415A77 0 50%, #778D7A 0 66.66%, #D4C4A8 0 83.33%, #F4F1DE 0);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #0D1B2A; --bg-atas: #1B263B; --permukaan: #1B263B; --permukaan-2: #22314B; --garis: #2F405D;
+  --teks: #E6E0CA; --redup: #A9B4C2; --tinta: #F4F1DE; --tinta-teks: #0D1B2A;
+  --utama: #D4C4A8; --utama-gelap: #E9DCC3; --utama-t: #2A3A54;
+  --biru: #9DB2CC; --biru-t: #1F2E46;
+  --hijau: #A7BDA9; --hijau-t: #203329; --hijau-teks: #C4D5C5;
+  --merah: #E59A8C; --merah-t: #3A2426; --merah-teks: #F2BFB4;
+  --kuning: #E0C68F; --kuning-t: #33301F; --kuning-teks: #EEDDB3;
+  --emas: #E0C68F; --emas-t: #33301F;
+  --kode-bg: #08121D; --kode-teks: #E6E0CA; --kode-redup: #7F8EA3;
+  --editor-bg: #132033; --editor-nomor: #5F6F86;
+  --media-bg: #08121D;
+  --c-sql: #9DB2CC;
+  --bayang: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 28px -16px rgba(0, 0, 0, .6);
+  --bayang2: 0 22px 44px -22px rgba(0, 0, 0, .75);
+  --btn-teks: #0D1B2A;
+  --at-accent: #D4C4A8; --at-on-accent: #0D1B2A; --at-accent-text: #E9DCC3;
+  --at-deep: #08121D; --at-on-deep: #E6E0CA;
+  --c-da: #9DB2CC; --c-da-t: #1F2E46; --c-ds: #E6E0CA; --c-ds-t: #2A3346;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1B2A; --bg-atas: #1B263B; --permukaan: #1B263B; --permukaan-2: #22314B; --garis: #2F405D;
+    --teks: #E6E0CA; --redup: #A9B4C2; --tinta: #F4F1DE; --tinta-teks: #0D1B2A;
+    --utama: #D4C4A8; --utama-gelap: #E9DCC3; --utama-t: #2A3A54;
+    --biru: #9DB2CC; --biru-t: #1F2E46;
+    --hijau: #A7BDA9; --hijau-t: #203329; --hijau-teks: #C4D5C5;
+    --merah: #E59A8C; --merah-t: #3A2426; --merah-teks: #F2BFB4;
+    --kuning: #E0C68F; --kuning-t: #33301F; --kuning-teks: #EEDDB3;
+    --emas: #E0C68F; --emas-t: #33301F;
+    --kode-bg: #08121D; --kode-teks: #E6E0CA; --kode-redup: #7F8EA3;
+    --editor-bg: #132033; --editor-nomor: #5F6F86;
+    --media-bg: #08121D;
+    --c-sql: #9DB2CC;
+    --bayang: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 28px -16px rgba(0, 0, 0, .6);
+    --bayang2: 0 22px 44px -22px rgba(0, 0, 0, .75);
+    --btn-teks: #0D1B2A;
+    --at-accent: #D4C4A8; --at-on-accent: #0D1B2A; --at-accent-text: #E9DCC3;
+    --at-deep: #08121D; --at-on-deep: #E6E0CA;
+    --c-da: #9DB2CC; --c-da-t: #1F2E46; --c-ds: #E6E0CA; --c-ds-t: #2A3346;
+    color-scheme: dark;
+  }
+}
+
+/* Latar: pasir di atas memudar ke krem (terang) atau navy ke navy pekat (gelap), seperti gradasi palet. */
+body, body.at { background: linear-gradient(180deg, var(--bg-atas) 0, var(--bg) 560px) var(--bg); }
+.topbar { background: color-mix(in srgb, var(--bg-atas) 96%, transparent); }
+
+/* Warna yang ditulis langsung di theme.css / jalur.css (tema Studio) */
+::selection { background: var(--utama); color: var(--btn-teks); }
+.nav-utama button[data-tab].aktif { color: var(--tinta-teks); }   /* tab aktif berlatar tinta: teks krem/navy, bukan warna jalur */
+.btn-utama:hover:not(:disabled), .btn-hijau, .jh-aksi .btn-utama:hover:not(:disabled), .kq-musik-nyala:hover { color: var(--btn-teks); }
+.kq-istirahat .btn-utama { background: #F4F1DE; color: #1B263B; }
+.hero-chip span { background: rgba(244, 241, 222, .92); color: #1B263B; }
+.jk-media .jk-utama { background: var(--permukaan); color: var(--teks); }
+.jk-persen { background: #1B263B; color: #F4F1DE; }
+.grid-topik .prio-ya { background: #D4C4A8; color: #0D1B2A; }
+.grup-jalur .kartu-t::after { background: #778D7A; color: #0D1B2A; }
+.at-curtain__b { background: #0D1B2A; }
+.at-curtain__a { background: #415A77; }
+.at-curtain__cap { color: #E6E0CA; }
+.kq-piksel i.on { background: #E6E0CA; }
+
+/* Blok pernyataan beranda: gradasi biru batu → navy, dengan strip enam warna palet */
+.pernyataan { position: relative; overflow: hidden; background: linear-gradient(165deg, #415A77 0%, #1B263B 55%, #0D1B2A 100%); color: #F4F1DE; }
+.pernyataan::before { content: ""; display: block; width: min(240px, 60%); height: 14px; margin: 0 auto 26px; border-radius: 999px;
+  background: var(--holst); box-shadow: inset 0 0 0 1px rgba(244, 241, 222, .25); }
+.pernyataan p { color: #E6E0CA; }
+.pernyataan .pernyataan-aksen { color: #D4C4A8; }
+.btn-terang { background: #F4F1DE; color: #0D1B2A; }
+.btn-terang:hover:not(:disabled) { background: rgba(244, 241, 222, .12); color: #F4F1DE; box-shadow: inset 0 0 0 1px #F4F1DE; }

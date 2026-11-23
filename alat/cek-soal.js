@@ -12,8 +12,9 @@ const ctx = { console, module: undefined };
 vm.createContext(ctx);
 let src = scripts.map(s => fs.readFileSync(path.join(ROOT, s), "utf8")).join("\n;\n");
 // ekspor konstanta ke context
+src += "\n;this.__J = {JALUR: typeof JALUR !== 'undefined' ? JALUR : null, KASUS: typeof KASUS !== 'undefined' ? KASUS : null, METODE: typeof METODE !== 'undefined' ? METODE : null};";
 src += "\n;this.__ = {DATASET, datasetSQL, TANTANGAN_SQL, BANK:{" +
-  Object.entries({excel:"EXCEL",sql:"SQL",karier:"KARIER",python:"PYTHON",html:"HTML",css:"CSS",js:"JS",bi:"BI",stat:"STAT",erp:"ERP",java:"JAVA",php:"PHP"})
+  Object.entries({excel:"EXCEL",sql:"SQL",karier:"KARIER",python:"PYTHON",html:"HTML",css:"CSS",js:"JS",git:"GIT",bi:"BI",stat:"STAT",erp:"ERP",java:"JAVA",php:"PHP",da:"DA",ds:"DS",cyber:"CYBER",siber:"SIBER"})
     .map(([k, v]) => `${k}: typeof SOAL_${v}!=="undefined"?[SOAL_${v},MATERI_${v}]:null`).join(",") + "}};";
 vm.runInContext(src, ctx, { filename: "soal.js" });
 const { DATASET, datasetSQL, TANTANGAN_SQL, BANK } = ctx.__;
@@ -92,6 +93,47 @@ const lewat = {};
     });
     console.log(`${t}: ${soal.length} soal, ${materi.length} bab`);
   }
+  // Jalur karier & studi kasus: semua rujukan (modul, bab, tantangan SQL, kasus) harus ada
+  const { JALUR, KASUS } = ctx.__J;
+  if (JALUR) {
+    const idLab = new Set(TANTANGAN_SQL.filter(T => T.id).map(T => T.id));
+    if (idLab.size !== TANTANGAN_SQL.filter(T => T.id).length) salah("TANTANGAN_SQL: id kembar");
+    const adaBab = (t, k) => BANK[t] && BANK[t][1].some(m => m.k === k);
+    const idKasus = new Set((KASUS || []).map(k => k.id));
+    Object.values(JALUR).forEach(J => {
+      const dipakai = new Set();
+      J.tahap.forEach((T, t) => {
+        const id = `jalur ${J.id} tahap ${t + 1}`;
+        T.modul.forEach(k => { if (!adaBab(J.topik, k)) salah(`${id}: modul ${k} tidak ada`); if (dipakai.has(k)) salah(`${id}: modul ${k} dobel`); dipakai.add(k); });
+        T.perkuat.forEach(([tp, k]) => { if (!adaBab(tp, k)) salah(`${id}: perkuat ${tp}/${k} tidak ada`); });
+        T.sql.forEach(s => { if (!idLab.has(s)) salah(`${id}: tantangan SQL ${s} tidak ada`); });
+        T.kasus.forEach(s => { if (!idKasus.has(s)) salah(`${id}: kasus ${s} tidak ada`); });
+        const tu = T.tutorial;
+        if (!tu || !tu.tugas || !tu.model || !(tu.pertanyaan || []).length || !(tu.rubrik || []).length) salah(`${id}: tutorial tidak lengkap`);
+      });
+      BANK[J.topik][1].forEach(m => { if (!dipakai.has(m.k)) salah(`jalur ${J.id}: modul ${m.k} tidak ada di peta`); });
+      if (!fs.existsSync(path.join(ROOT, J.capstone.data))) salah(`jalur ${J.id}: dataset capstone ${J.capstone.data} tidak ada`);
+      console.log(`jalur ${J.id}: ${J.tahap.length} tahap, ${dipakai.size} modul`);
+    });
+    (KASUS || []).forEach(K => {
+      const id = `kasus ${K.id}`;
+      ["judul", "peran", "cerita", "exhibit", "catatan"].forEach(f => { if (!K[f]) salah(`${id}: ${f} kosong`); });
+      if (!JALUR[K.jalur]) salah(`${id}: jalur ${K.jalur}`);
+      K.persiapan.forEach((q, i) => { if (!(q.a >= 0 && q.a < q.o.length) || !q.e) salah(`${id}: persiapan ${i + 1}`); });
+      const kuat = K.keputusan.opsi.filter(o => o.kuat).length;
+      if (kuat !== 1) salah(`${id}: harus ada tepat 1 opsi kuat (ada ${kuat})`);
+      K.keputusan.opsi.forEach((o, i) => { if (!o.teks || !o.diskusi) salah(`${id}: opsi ${i + 1} tidak lengkap`); });
+      if (!(K.coldcall || []).length) salah(`${id}: cold call kosong`);
+      K.modul.forEach(([t, k]) => { if (!adaBab(t, k)) salah(`${id}: modul ${t}/${k} tidak ada`); });
+    });
+    console.log(`kasus: ${(KASUS || []).length}`);
+  }
+  // Contoh bertahap: setiap kotak punya data-id unik dan isian berkunci
+  const idBt = new Set();
+  Object.entries(BANK).forEach(([t, pair]) => pair && pair[1].forEach(m => {
+    (m.materi.match(/<div class="bertahap" data-id="[^"]+"/g) || []).forEach(x => { const id = x.match(/data-id="([^"]+)"/)[1]; if (idBt.has(id)) salah(`bertahap ${id} dobel`); idBt.add(id); });
+    (m.materi.match(/<input class="bt-isian"[^>]*>/g) || []).forEach(x => { if (!/data-jawab="[^"]+"/.test(x)) salah(`${t}/${m.k}: isian bertahap tanpa kunci`); });
+  }));
   // Lab SQL
   TANTANGAN_SQL.forEach((T, i) => {
     try { const r = q(T.jawab); console.log(`  lab ${i + 1} ${T.judul}: ${JSON.stringify(r)}`); } catch (e) { salah(`lab ${i + 1}: ${e.message}`); }

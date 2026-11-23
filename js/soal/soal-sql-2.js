@@ -156,6 +156,18 @@ SOAL_SQL.push(
 
 MATERI_SQL.push(
 {k:"case",judul:"CASE WHEN — Logika IF di dalam SQL",materi:`
+<!--pemula--><h4>Untuk pemula: CASE WHEN = IF di Excel</h4>
+<p>Kalau kamu pernah memakai rumus <code>IF</code> di Excel ("jika nilai ≥ 80 maka A"), CASE WHEN adalah versi SQL-nya. Strukturnya dibaca seperti kalimat:</p>
+<p><code>CASE WHEN syarat1 THEN hasil1 WHEN syarat2 THEN hasil2 ELSE hasil_lain END</code></p>
+<p>= "<b>dalam hal</b> syarat1 benar, <b>maka</b> hasil1; <b>dalam hal</b> syarat2 benar, <b>maka</b> hasil2; <b>selain itu</b> hasil_lain; <b>selesai</b>".</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td><code>CASE … END</code></td><td>pembuka dan penutup logika pilihan</td></tr>
+<tr><td><code>WHEN</code></td><td>"jika/dalam hal"</td></tr>
+<tr><td><code>THEN</code></td><td>"maka hasilnya"</td></tr>
+<tr><td><code>ELSE</code></td><td>"selain itu"; kalau tidak ditulis, hasilnya NULL</td></tr>
+<tr><td>label/segmen</td><td>kategori buatan, misalnya Mahal/Sedang/Murah</td></tr>
+<tr><td>conditional aggregation</td><td>menjumlah hanya baris yang memenuhi syarat, dengan <code>SUM(CASE WHEN … THEN … ELSE 0 END)</code></td></tr></table>
+<p>Sama seperti IF bertingkat, syarat diperiksa <b>dari atas</b> dan berhenti di yang pertama benar. Karena itu syarat yang paling ketat (misalnya harga ≥ 2 juta) ditulis paling atas.</p><!--/pemula-->
 <p><b>CASE WHEN</b> adalah IF bertingkat versi SQL. Syarat diperiksa dari atas, yang <b>pertama benar</b> dipakai.</p>
 <pre><code>SELECT nama, harga,
   CASE WHEN harga &gt;= 2000000 THEN 'Mahal'
@@ -180,6 +192,16 @@ GROUP BY p.nama;</code></pre></li>
 <div class="praktik">🧪 <b>Lab SQL:</b> tantangan 11 dan 18.</div>`},
 
 {k:"nullfungsi",judul:"NULL & Fungsi Bawaan (Teks, Angka, Tanggal)",materi:`
+<!--pemula--><h4>Untuk pemula: NULL dan fungsi bawaan</h4>
+<p><b>NULL</b> artinya "tidak diketahui", seperti kolom nomor HP yang tidak diisi di formulir. NULL <b>bukan</b> angka 0 dan <b>bukan</b> teks kosong. Karena tidak diketahui, apa pun yang dihitung dengan NULL hasilnya juga tidak diketahui: <code>NULL + 5</code> tetap NULL.</p>
+<p><b>Fungsi bawaan</b> adalah alat siap pakai untuk mengolah teks, angka, dan tanggal, mirip rumus Excel seperti UPPER, LEN, atau ROUND.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td><code>IS NULL</code> / <code>IS NOT NULL</code></td><td>satu-satunya cara benar mengecek kosong/tidak kosong</td></tr>
+<tr><td><code>COALESCE(x, 0)</code></td><td>"pakai x; kalau x kosong, pakai 0"</td></tr>
+<tr><td><code>COUNT(*)</code> vs <code>COUNT(kolom)</code></td><td>yang pertama menghitung semua baris; yang kedua melewati baris yang kolomnya NULL</td></tr>
+<tr><td><code>DISTINCT</code></td><td>hanya nilai unik (buang duplikat)</td></tr>
+<tr><td><code>SUBSTR(teks, mulai, panjang)</code></td><td>mengambil sebagian teks</td></tr>
+<tr><td><code>||</code></td><td>menyambung teks, seperti <code>&amp;</code> di Excel</td></tr></table><!--/pemula-->
 <p><b>NULL</b> = nilainya tidak diketahui. Bukan 0, bukan teks kosong. Tiga aturan yang wajib diingat:</p>
 <ul>
 <li>Cek dengan <code>IS NULL</code> / <code>IS NOT NULL</code> — <code>= NULL</code> tidak pernah benar.</li>
@@ -207,6 +229,14 @@ GROUP BY p.nama;</code></pre>
 <div class="praktik">🧪 <b>Lab SQL:</b> tantangan 12–13.</div>`},
 
 {k:"cte",judul:"CTE (WITH) & UNION — Query Bertahap yang Rapi",materi:`
+<!--pemula--><h4>Untuk pemula: memecah query panjang jadi langkah-langkah</h4>
+<p>Query untuk pertanyaan sungguhan bisa sangat panjang. <b>CTE</b> (<i>Common Table Expression</i>) membuatnya rapi dengan cara memecah pekerjaan jadi beberapa <b>langkah bernama</b>, seperti resep: "Langkah 1: hitung total belanja tiap pelanggan. Langkah 2: hitung rata-ratanya. Langkah 3: ambil yang di atas rata-rata."</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td><code>WITH nama AS ( … )</code></td><td>membuat satu langkah bernama (tabel sementara)</td></tr>
+<tr><td>koma antar-CTE</td><td>memisahkan langkah berikutnya</td></tr>
+<tr><td><code>UNION</code></td><td><b>menumpuk</b> hasil dua query ke bawah dan membuang baris kembar</td></tr>
+<tr><td><code>UNION ALL</code></td><td>menumpuk ke bawah tanpa membuang yang kembar (lebih cepat)</td></tr></table>
+<p>Bedanya dengan JOIN: JOIN menyambung tabel <b>ke samping</b> (menambah kolom), UNION menumpuk <b>ke bawah</b> (menambah baris), misalnya menggabungkan penjualan tahun 2025 dan 2026 yang kolomnya sama.</p><!--/pemula-->
 <p>Query nyata sering butuh beberapa langkah. <b>CTE</b> membuat langkah-langkah itu bernama dan terbaca dari atas ke bawah — seperti kolom bantu di Excel.</p>
 <pre><code>WITH belanja AS (                         -- langkah 1: total per pelanggan
   SELECT p.nama, SUM(o.qty * pr.harga) AS total
@@ -234,6 +264,17 @@ SELECT nama, 'produk' FROM produk;</code></pre>
 <div class="praktik">🧪 <b>Lab SQL:</b> tantangan 14.</div>`},
 
 {k:"window",judul:"Window Function — Peringkat, Total Berjalan & Pertumbuhan",materi:`
+<!--pemula--><h4>Untuk pemula: window function dalam bahasa sederhana</h4>
+<p>GROUP BY meringkas banyak baris menjadi satu baris per kelompok, sehingga detailnya hilang. <b>Window function</b> menghitung hal yang mirip (peringkat, total, rata-rata) tetapi <b>setiap baris tetap ada</b>, dan hasil hitungannya ditempel sebagai kolom baru.</p>
+<p>Bayangkan daftar nilai ujian satu sekolah. Kamu ingin tetap melihat setiap siswa, tapi di sampingnya ada kolom "peringkat di kelasnya". Itulah window function: "jendela" (<i>window</i>) adalah sekelompok baris yang dilihat saat menghitung setiap baris.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td><code>OVER ( … )</code></td><td>penanda window function; isinya menjelaskan "jendela" yang dilihat</td></tr>
+<tr><td><code>PARTITION BY kolom</code></td><td>bagi jendela per kelompok, misalnya per kelas atau per kategori</td></tr>
+<tr><td><code>ORDER BY</code> di dalam OVER</td><td>urutan di dalam jendela, misalnya dari nilai tertinggi</td></tr>
+<tr><td><code>ROW_NUMBER / RANK / DENSE_RANK</code></td><td>tiga cara memberi nomor peringkat (lihat bedanya di bawah)</td></tr>
+<tr><td>total berjalan</td><td>jumlah yang terus bertambah dari baris pertama sampai baris itu, seperti saldo tabungan</td></tr>
+<tr><td><code>LAG(x)</code></td><td>ambil nilai x dari <b>baris sebelumnya</b>, berguna untuk membandingkan dengan bulan lalu</td></tr>
+<tr><td>rata-rata bergerak</td><td>rata-rata beberapa hari terakhir, misalnya 7 hari, yang bergeser setiap hari</td></tr></table><!--/pemula-->
 <p>Window function menghitung per kelompok <b>tanpa</b> menggabungkan baris. Ini topik yang membedakan analis pemula dan analis siap kerja, dan sering muncul di tes teknis.</p>
 <pre><code>fungsi() OVER (PARTITION BY kelompok ORDER BY urutan)</code></pre>
 <table class="mini-pivot"><tr><th>Kebutuhan bisnis</th><th>Window function</th></tr>

@@ -1,0 +1,102 @@
+/* KODEQUIZ — lapisan "Fokus belajar" (20 November 2026), dimuat setelah theme.css dan jalur.css.
+   Huruf tetap Instrument Sans tipis berukuran besar (pilihan pengguna). Prinsipnya: satu langkah berikutnya selalu
+   terlihat tanpa menggulir, hierarki judul jelas, kuis berfokus (kolom sempit, navigasi disembunyikan), dan
+   tetap ringan: tanpa JS tambahan, tanpa blur, animasi hanya transform/opacity. */
+
+/* ---------- hierarki: H1 besar, judul bagian sedang ---------- */
+.sec-judul { font-size: clamp(1.7rem, 3.2vw, 2.7rem); letter-spacing: -.035em; margin-bottom: 10px; }
+.blok { margin: clamp(34px, 5.5vw, 68px) 0; }
+.goresan { display: none; }   /* lingkaran dekoratif terpotong di tepi layar */
+
+/* ---------- beranda: hero ringkas, langkah belajar langsung terlihat ---------- */
+.hero { margin: 6px 0 0; }
+.hero h1 { font-size: clamp(2.5rem, 6.4vw, 5.6rem); margin: 14px 0 22px; }
+.hero h1 em { padding-left: clamp(0px, 9vw, 130px); }
+.hero-baris { align-items: center; margin-bottom: 0; }
+.level-kartu { margin: 0; max-width: none; padding: 16px 20px; }
+
+.sesi-kepala { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 6px 20px; margin-bottom: 16px; }
+.sesi-kepala .sec-judul { margin: 0; }
+.sesi-kepala .sec-sub { margin: 0; font-size: .9rem; }
+.sesi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.sesi-item { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 22px; border-radius: var(--radius); box-shadow: none; }
+.sesi-teks { flex: 1; }
+.sesi-no { display: block; width: auto; height: auto; border-radius: 0; background: none; color: var(--redup); font: 500 .74rem/1 var(--font-d); letter-spacing: .06em; text-transform: uppercase; }
+.sesi-no::before { content: "Langkah "; }
+.sesi-teks b { font: 500 1.28rem/1.25 var(--font-x); letter-spacing: -.02em; margin-bottom: 6px; }
+.sesi-teks small { font-size: .9rem; }
+.sesi-item .btn { min-height: 46px; }
+#btn-ulang { background: var(--tinta); color: var(--tinta-teks); }
+#btn-ulang:hover:not(:disabled) { background: var(--utama); color: var(--btn-teks); }
+/* langkah utama (pelajari yang baru): kartu terbalik warna */
+#sesi-2 { background: var(--tinta); color: var(--tinta-teks); border-color: var(--tinta); }
+#sesi-2 .sesi-no, #sesi-2 .sesi-teks small { color: color-mix(in srgb, var(--tinta-teks) 74%, transparent); }
+#sesi-2 .btn-utama { background: var(--utama); color: var(--btn-teks); }
+#sesi-2 .btn-utama:hover:not(:disabled) { background: var(--tinta-teks); color: var(--tinta); }
+
+/* deretan angka isi aplikasi (diisi jalur.js lewat #hero-chip); tanpa gambar */
+.statistik { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.statistik span { border: 1px solid var(--garis); border-radius: 999px; padding: 8px 14px; font: 500 .74rem/1 var(--font-d); letter-spacing: .05em; text-transform: uppercase; color: var(--teks); }
+
+/* ---------- kartu jalur: huruf raksasa (DA / DS) sebagai ganti gambar 3D ---------- */
+.jk-media { display: grid; place-items: center; aspect-ratio: 2 / 1; background: var(--permukaan-2); transition: background-color .4s; }
+.jalur-kartu:hover .jk-media { background: var(--utama-t); }
+.jk-huruf { font: 400 clamp(4.5rem, 11vw, 8.5rem)/1 var(--font-x); letter-spacing: -.06em; color: var(--teks); }
+.jk-persen { background: var(--tinta); color: var(--tinta-teks); }
+.jk-media .jk-utama { background: var(--permukaan); color: var(--teks); }
+
+/* ---------- cara belajar: tiga kolom rapi (6 kartu = 2 baris penuh) ---------- */
+.metode-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.metode-item { padding: 22px; border-radius: var(--radius); }
+.metode-item b { font: 500 1.2rem/1.25 var(--font-x); letter-spacing: -.02em; }
+.metode-item p { font-size: .92rem; line-height: 1.65; }
+
+/* ---------- kuis fokus: kolom sempit, tanpa navigasi, tipografi besar ---------- */
+body:has(#layar-kuis:not(.tersembunyi)) .nav-utama,
+body:has(#layar-kuis:not(.tersembunyi)) .nav-bawah,
+body:has(#layar-kuis:not(.tersembunyi)) .kaki { display: none; }
+#layar-kuis { max-width: 780px; margin-inline: auto; padding-top: 6px; }
+.kuis-head { margin: 0 0 12px; flex-wrap: wrap; gap: 8px 12px; }
+.kuis-head > span:first-child { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.kuis-kanan { display: flex; align-items: center; gap: 10px; }
+.kuis-prog, .btn-keluar { white-space: nowrap; }
+.kuis-prog { color: var(--teks); font: 500 .95rem var(--font-d); }
+.bar { height: 6px; margin-bottom: 20px; }
+.bar-isi { background: var(--utama); }
+.kartu-soal { padding: clamp(22px, 4vw, 40px); border-radius: 28px; box-shadow: none; }
+.pertanyaan { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 500; line-height: 1.3; letter-spacing: -.025em; margin-bottom: 22px; }
+.opsi { min-height: 60px; padding: 14px 18px; gap: 16px; border-radius: 18px; font-size: 1.02rem; line-height: 1.45; }
+.opsi:hover:not(:disabled) { transform: none; border-color: var(--utama); background: var(--utama-t); }
+.opsi-huruf { width: 34px; height: 34px; border-radius: 50%; }
+.feedback { padding: 20px 22px; }
+#btn-lanjut { min-height: 52px; padding: 0 30px; margin-top: 18px; }
+@media (hover: none) { .pintasan { display: none; } }
+@media (max-width: 720px) {
+  .kartu-soal { padding: 20px 14px; border-radius: 24px; }
+  .opsi { padding: 12px 14px; gap: 12px; min-height: 56px; }
+  #btn-lanjut { position: sticky; bottom: 14px; z-index: 5; width: 100%; box-shadow: 0 12px 30px -12px rgba(0, 0, 0, .45); }
+}
+
+/* ---------- layar sempit ---------- */
+@media (max-width: 900px) {
+  .sesi-grid, .metode-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #sesi-2 { grid-column: 1 / -1; order: -1; }   /* langkah utama di atas */
+}
+@media (max-width: 620px) {
+  .sesi-grid, .metode-grid { grid-template-columns: 1fr; }
+}
+
+/* Subjudul di materi: beri napas antarbagian (materi pemula kini panjang) */
+.materi-kotak h4 { margin: 1.6em 0 .45em; }
+.materi-kotak > h4:first-child, .materi-kotak > :first-child h4:first-child { margin-top: 0; }
+
+/* Jendela materi sebelum soal (dialog bawaan, tanpa blur agar ringan) */
+.dlg-materi { margin: auto; width: min(860px, calc(100% - 24px)); max-height: 90dvh; overflow: auto; padding: 22px 22px 18px;
+  border: 1px solid var(--garis); border-radius: 18px; background: var(--bg); color: var(--teks); }
+.dlg-materi::backdrop { background: rgb(10 12 18 / .55); }
+.dlg-materi .materi-judul { margin: 2px 0 6px; }
+.dlg-materi-ket { margin: 0 0 14px; color: var(--redup); font-size: .92rem; }
+.dlg-materi .materi-aksi { position: sticky; bottom: -18px; padding: 12px 0 4px; background: var(--bg); justify-content: center; }
+@media (max-width: 600px) { .dlg-materi { padding: 16px 14px 12px; max-height: 94dvh; } }
+.materi-kotak h4.pelengkap { margin-top: 2em; padding-top: 1em; border-top: 1px solid var(--garis);
+  font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--redup); }

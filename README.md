@@ -1,31 +1,43 @@
 # KodeQuiz
 
-PWA belajar data dan ERP: 974 soal, buku PDF, dan Lab SQL.
+PWA belajar data & keamanan siber: jalur Data Analyst, Data Scientist & Cyber Security, 2.542 soal, 43 tantangan Lab SQL, 16 studi kasus, buku PDF.
 
 **Demo:** https://portofolio-jauza-fawaid.netlify.app/KUIS-KODING/
 
 ![Tampilan KodeQuiz](docs/tampilan.jpg)
 
-Website belajar mandiri untuk lulusan Teknik Informatika yang sedang menyiapkan diri untuk lowongan **Data Analyst, BI Analyst, dan ERP/Odoo Consultant**, plus fondasi coding.
+Website belajar mandiri untuk lulusan Teknik Informatika yang sedang menyiapkan diri untuk lowongan **Data Analyst dan Data Scientist** (juga BI Analyst dan ERP/Odoo Consultant), plus fondasi coding.
 
-**974 soal**, masing-masing dengan penjelasan *kenapa* jawabannya benar. Semuanya berjalan di browser: **tanpa server, tanpa instalasi**, dan **bisa offline**. Progres tersimpan otomatis.
+**2.542 soal**, masing-masing dengan penjelasan *kenapa* jawabannya benar. Semuanya berjalan di browser: **tanpa server, tanpa instalasi**, dan **bisa offline**. Progres tersimpan otomatis.
 
 ## Fitur
 
 | Fitur | Isi |
 |---|---|
+| 🎓 **Jalur Data Analyst** (`#data-analyst`) | 6 tahap, 12 modul (pertanyaan bisnis, metrik, kualitas data, SQL analitik, kohort, membandingkan dengan adil, A/B test, visualisasi, memo, RFM, musiman, dunia kerja), 5 studi kasus, capstone dengan dataset 1.264 transaksi |
+| 🔬 **Jalur Data Scientist** (`#data-scientist`) | 5 tahap, 14 modul (CRISP-DM, Bayes, inferensi, pandas, fitur & kebocoran, regresi, klasifikasi, validasi, metrik & ambang, clustering, kausal, MLOps, etika & UU PDP, wawancara), 5 studi kasus, capstone model churn 3.000 pelanggan |
+| 🛡️ **Jalur Cyber Security** (`#cyber-security`) | Hacker etis, 7 tahap, 20 modul (etika & hukum, model ancaman, jaringan, Linux, akun & MFA, rekayasa sosial, kriptografi, PKI/TLS, model keamanan web, injeksi, kontrol akses, keamanan sistem, jaringan & Wi-Fi, metodologi pentest, malware, SOC & SIEM, respons insiden & forensik, cloud & DevSecOps, privasi & GRC, karier), 215 soal dengan pembahasan bertingkat (poin penting, cara menjawab, *Ingat*), 6 studi kasus (termasuk Equifax 2017 dan Uber 2016), 7 tantangan Lab SQL analisis log SOC, capstone investigasi insiden 1.160 baris log, dan lembar kunci jawaban PNG HD. Urutan materi dari silabus publik MIT 6.5660 & 6.1600, Harvard CS50 Cybersecurity, Oxford Computer Security & MSc Software and Systems Security |
+| 01 **Lab Hitung Siber** | 688 soal hitung yang dibuat program (`alat/buat-soal-siber.py`): biner & heksa, subnetting, port, kode HTTP, encoding (Base64, URL, ROT13), mengenali hash, chmod, sandi Caesar & XOR, entropi password, zona waktu & Unix timestamp di log. Kunci dihitung manual lalu dicocokkan dengan pustaka Python |
+| Σ **Problem Set (MIT)** | Penutup tiap tahap: 10 soal campuran tahap ini + tahap sebelumnya, lulus ≥ 70% |
+| ✎ **Tutorial (Oxford)** | Tulis jawaban → jawab pertanyaan tutor satu per satu → bandingkan dengan jawaban model → nilai diri dengan rubrik |
+| ◆ **Studi kasus (Harvard)** | Situasi kerja Indonesia (perusahaan fiktif, konteks nyata) dan global (Walmart, Zillow, Amazon): exhibit, persiapan, cold call 90 detik, kunci keputusan + alasan, baru diskusi dan catatan pengajar terbuka |
+| ◎ **Kunci keyakinan (Mazur)** | Setiap jawaban dikunci dengan Yakin / Ragu / Menebak; yakin-tapi-salah menjadi *titik buta* yang diulang lebih dulu; kalibrasi tampil di Kemajuan. Urutan opsi diacak setiap kali tampil |
+| ⇣ **Contoh bertahap** | Di modul jalur: contoh lengkap → lengkapi langkah → mandiri, diperiksa langsung |
+| 📈 **Kemajuan** (`#kemajuan`) | Peta aktivitas 16 minggu, progres per tahap, kalibrasi keyakinan, penguasaan per topik, bab terlemah, keputusan kasus, lencana |
 | 📊 **Data & Bisnis** | Excel (10 bab), SQL (8 bab), Dashboard & BI (4), Statistik & Metrik (4), ERP & Odoo (5) |
 | 💼 **Persiapan Karier** | Portofolio dari skripsi, CV berbasis dampak, kata kunci lowongan, wawancara (STAR), LinkedIn & strategi melamar |
-| 💻 **Bahasa pemrograman** | **Prioritas:** SQL → Python → JavaScript. **Bukan prioritas (opsional):** HTML, CSS, Java, PHP. Setiap bahasa diberi label dan alasannya |
-| 📖 **Book** | **Rak 6 buku PDF yang dibaca langsung di website** (pembaca PDF bawaan: daftar isi per bab, lompat ke Uji Diri/Kunci, link di PDF bisa diketuk, zoom, mode malam, ingat halaman terakhir, bisa offline). Ada juga versi **interaktif per bab** (soal bisa diketuk & dinilai) dan cetak/simpan PDF sendiri (HP, A5, A4) |
+| 💻 **Bahasa pemrograman** | **Prioritas:** SQL → Python (21 bab) → JavaScript (17 bab), ditambah Git & GitHub (4 bab). **Bukan prioritas (opsional):** HTML (9 bab), CSS (12 bab), Java (7 bab), PHP (7 bab). Setiap bahasa diberi label dan alasannya |
+| 📖 **Book** | **Rak 8 buku PDF yang dibaca langsung di website** (pembaca PDF bawaan: daftar isi per bab, lompat ke Uji Diri/Kunci, link di PDF bisa diketuk, zoom, mode malam, ingat halaman terakhir, bisa offline). Ada juga versi **interaktif per bab** (soal bisa diketuk & dinilai) dan cetak/simpan PDF sendiri (HP, A5, A4) |
 | 🎉 **Perayaan** | Combo jawaban beruntun, layar skor dengan medali, bintang, cincin skor, konfeti & kembang api, transisi tirai, naik level, dan 16 lencana. Suara lembut (bisa dimatikan) |
-| 🧪 **Lab SQL** | 18 tantangan query sungguhan (JOIN, CASE, CTE, window function) yang dicek otomatis dengan SQLite di browser |
+| 🧪 **Lab SQL** | 36 tantangan (18 dasar + 18 kasus kerja DA/DS) dalam format tes interview: cerita, skema, hasil yang diharapkan, 3 petunjuk bertahap, **Jalankan** (percobaan) vs **Kumpulkan** (dinilai), tab Solusi dan Riwayat. Dicek otomatis dengan SQLite di browser |
 | 🚀 **Belajar dari Awal** | Proyek **SalesKu** (dashboard penjualan) dalam 16 langkah dengan editor, pratinjau, dan pengecekan otomatis |
 | 🗓️ **Rencana Belajar** | 4 minggu inti + 2 minggu lanjutan. Sebagian besar tercentang otomatis |
 | 💡 **Petunjuk & 🏳️ Menyerah** | Di setiap soal. Untuk soal Data/Karier/coding baru juga ada *kenapa pilihan lain salah* |
 | 🧠 **Ulangan Pintar** | Spaced repetition: soal yang salah kembali lebih sering (termasuk jawaban dari Book) |
 | 📱 **PWA & pindah progres** | Bisa di-install ke layar utama HP dan dipakai offline. Progres bisa dipindah laptop ↔ HP lewat ⚙️ Pengaturan |
-| 🌙 **Tema tenang** | Palet sage & biru lembut, mode gelap, dan transisi halus antarlayar |
+| 🎨 **Palet "Holst"** | Sejak 20 November 2026 warna memakai palet pilihan pengguna (`atelier/holst.css`, dimuat terakhir): krem `#F4F1DE` dan pasir `#D4C4A8` di mode terang, navy `#0D1B2A`/`#1B263B` di mode gelap, aksen biru batu `#415A77` dan sage `#778D7A`. Hapus satu baris `<link>` di `index.html` untuk kembali ke tema Studio |
+| 👀 **Tema "Studio"** | Tata letak & huruf. Terinspirasi lusion.co dan pangrampangram.com: latar lavender pucat, tinta gelap, biru listrik, huruf besar Instrument Sans, tombol pil, objek 3D (ikon diagram batang) yang dirender sendiri sebagai gambar diam (klik untuk ganti warna), kartu topik bergaya spesimen huruf. Tetap nyaman: kontras teks ±12:1, mode gelap otomatis, tombol **Aa**, pengingat istirahat mata, tanpa WebGL dan tanpa blur latar |
+| ♪ **Musik lo-fi** | Lagu belajar orisinal bergaya lo-fi/city pop yang disintesis langsung di browser (Web Audio, tanpa berkas audio). Tombol ♪ di atas, volume di ⚙️ Pengaturan |
 
 ### Jumlah soal
 
@@ -37,6 +49,8 @@ Website belajar mandiri untuk lulusan Teknik Informatika yang sedang menyiapkan 
 | Statistik & Metrik | 47 | CSS | 111 |
 | ERP & Odoo | 58 | Java | 40 |
 | Persiapan Karier | 43 | PHP | 38 |
+| Jalur Data Analyst | 70 | Jalur Data Scientist | 78 |
+| Jalur Cyber Security | 215 | Lab Hitung Siber | 688 |
 
 ★ = bahasa prioritas. Semua output kode di soal Python, JavaScript, Java, PHP, dan SQL sudah dijalankan sungguhan untuk memastikan kuncinya benar (`node alat/cek-soal.js`).
 
@@ -66,7 +80,7 @@ python3 -m http.server 8000      # Windows: python -m http.server 8000
 **Di HP:**
 
 1. Buka link Netlify-mu, lalu pilih menu browser **Tambahkan ke Layar Utama** (Install app).
-2. Buka **📖 Book → Simpan semua untuk offline** supaya 6 buku PDF tetap bisa dibaca tanpa internet. Aplikasi, Book interaktif, dan Lab SQL otomatis bisa offline setelah dibuka sekali.
+2. Buka **📖 Book → Simpan semua untuk offline** supaya 8 buku PDF tetap bisa dibaca tanpa internet. Aplikasi, Book interaktif, dan Lab SQL otomatis bisa offline setelah dibuka sekali.
 3. Pindahkan progres dari laptop: ⚙️ Pengaturan → *Unduh file progres* atau *Salin kode progres* → buka di HP → *Muat dari file* / *Tempel kode*.
 
 > Pembaca PDF di dalam website butuh alamat web (Netlify, GitHub Pages, atau `python -m http.server`). Jika `index.html` dibuka langsung dengan klik dua kali, Book tetap menyediakan tombol untuk membuka file PDF-nya.
@@ -82,22 +96,27 @@ kodequiz/
 │   ├── app.js                  # inti: navigasi, kuis, skor, beranda, level, pengaturan
 │   ├── data/dataset.js         # dataset penjualan, transaksi, data kotor, dll.
 │   ├── data/buku-info.js       # jumlah halaman & ukuran tiap PDF (dibuat oleh alat/buat-pdf.py)
+│   ├── data/jalur.js           # peta jalur DA/DS: tahap, tutorial, capstone, metode belajar
+│   ├── data/kasus.js           # 10 studi kasus (metode kasus HBS)
 │   ├── soal/                   # bank soal + materi
 │   │   ├── soal-excel.js  soal-excel-2.js  soal-sql.js  soal-sql-2.js
 │   │   ├── soal-bi.js  soal-statistik.js  soal-erp.js
 │   │   ├── soal-karier.js  soal-karier-2.js
 │   │   ├── soal-python.js  soal-python-2.js  soal-js.js  soal-js-2.js
-│   │   └── soal-html.js  soal-css.js  soal-web-2.js  soal-java.js  soal-php.js
+│   │   ├── soal-html.js  soal-css.js  soal-web-2.js  soal-java.js  soal-php.js
+│   │   └── soal-da.js  soal-ds.js  soal-kasus-sql.js   # jalur DA/DS + tantangan Lab kasus kerja
 │   └── fitur/
 │       ├── rayakan.js          # konfeti, suara, tirai, level, lencana
 │       ├── buku.js             # Book: daftar isi, mode baca interaktif, cetak/PDF
 │       ├── pdf-baca.js         # Book: rak & pembaca buku PDF di dalam website
 │       ├── proyek-data.js  proyek-blok.js  proyek.js   # Belajar dari Awal
 │       └── sql-lab.js          # Lab SQL
-├── buku/                       # 6 PDF siap baca (ukuran layar HP)
+├── jalur/                      # halaman jalur, kasus, tutorial, kemajuan, navigasi (pakai DOM, sengaja di luar js/)
+├── buku/                       # 8 PDF siap baca (ukuran layar HP), termasuk Jalur DA & DS
 ├── latihan/
 │   ├── latihan-excel-penjualan.xlsx   # tugas praktik Bab 1–10 + kolom cek ✓/✗
-│   └── penjualan.csv
+│   ├── penjualan.csv
+│   └── capstone-pasarku.csv  capstone-telkonesia.csv   # dataset capstone (alat/buat-data-capstone.py)
 ├── templates/portofolio/index.html    # template studi kasus 1 halaman
 ├── ikon/                       # ikon aplikasi
 ├── alat/                       # skrip perawatan (lihat di bawah)
@@ -120,6 +139,8 @@ Tambahkan soal di **akhir** array di `js/soal/` (ID soal = topik + urutan, jadi 
 
 - Isian: `{k:"dasar", t:"is", lv:1, q:"…", a:["max"], e:"…"}` — tidak peka huruf besar/kecil & spasi, `;` = `,`.
 - `k` harus sama dengan salah satu bab di `MATERI_*`. `tb` menampilkan tabel dari `dataset.js`.
+- Urutan opsi diacak saat tampil, jadi kunci boleh di posisi mana pun; jangan menulis opsi yang merujuk huruf ("A dan B").
+- `cek-soal.js` juga memeriksa rujukan di `js/data/jalur.js` dan `js/data/kasus.js` (modul, tantangan SQL, kasus, dataset capstone).
 - Soal "output kode" bisa diberi `vr:"py"` / `"js"` / `"java"` / `"php"` / `"sql"` agar diverifikasi otomatis.
 
 ## Alat perawatan (`alat/`)
@@ -127,9 +148,14 @@ Tambahkan soal di **akhir** array di `js/soal/` (ID soal = topik + urutan, jadi 
 | Perintah | Fungsi |
 |---|---|
 | `node alat/cek-soal.js` | Cek struktur semua soal dan jalankan kode di soal bertanda `vr` |
-| `python alat/buat-pdf.py` | Membuat ulang 6 PDF Book + `js/data/buku-info.js` (butuh `pip install playwright pypdf` + `playwright install chromium`). Jalankan setelah menambah soal/materi |
+| `alat/render-3d.html` | Adegan 3D untuk gambar diam. Gambarnya sudah tidak dipakai (dihapus 2026-11-20). Alat ini dibiarkan untuk dipakai lagi nanti. Render: Chrome headless + SwiftShader, `?adegan=hero|da|ds&w=&h=&warna=0..3`, lalu ubah ke WebP |
+| `node alat/buat-pdf.js` | Membuat ulang 8 PDF Book + `js/data/buku-info.js` memakai Google Chrome yang sudah terpasang (tanpa paket tambahan; jumlah halaman lewat `pypdf` bila ada). Jalankan setelah menambah soal/materi |
+| `python alat/buat-pdf.py` | Cara lama yang sama hasilnya (butuh `pip install playwright pypdf` + `playwright install chromium`) |
 | `python alat/buat-sw.py` | Memperbarui daftar file offline di `sw.js` setelah menambah file |
 | `python alat/buat-latihan-excel.py` | Membuat ulang file latihan Excel (butuh `pip install openpyxl`) |
+| `python alat/buat-data-capstone.py` | Membuat ulang dataset capstone jalur DA, DS, dan Cyber (seed tetap) |
+| `python alat/buat-soal-siber.py` | Membuat ulang `js/soal/soal-siber.js` (Lab Hitung Siber); berhenti jika hitungan manual berbeda dari pustaka Python |
+| `node alat/buat-kunci-gambar.js` | Membuat ulang 60 lembar kunci jawaban Jalur Cyber (PNG 2160 px, folder `kunci/cyber/`, ±21 MB) memakai Chrome terpasang; dikompres dengan Pillow bila ada |
 
 ## Catatan
 

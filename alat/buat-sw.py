@@ -3,12 +3,12 @@
 import os, json, sys, datetime
 ROOT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 aset = ["./", "index.html", "manifest.webmanifest"]
-for d in ["css", "js", "vendor", "ikon", "atelier"]:
+for d in ["css", "js", "vendor", "ikon", "atelier", "jalur"]:
     for dp, _, fs in os.walk(os.path.join(ROOT, d)):
         for f in sorted(fs):
-            if f.endswith((".css", ".js", ".png", ".svg")):
+            if f.endswith((".css", ".js", ".png", ".svg", ".webp")) and not f.endswith("-2000.webp"):   # gambar besar tidak ikut dicache offline
                 aset.append(os.path.relpath(os.path.join(dp, f), ROOT).replace(os.sep, "/"))
-versi = "kodequiz-v4-" + datetime.datetime.now().strftime("%Y%m%d%H%M")
+versi = "kodequiz-v6-" + datetime.datetime.now().strftime("%Y%m%d%H%M")
 sw = f'''/* Service worker KodeQuiz — membuat aplikasi bisa dibuka OFFLINE setelah
    dikunjungi sekali lewat http(s) (Netlify / GitHub Pages).
    Dibuat otomatis; ganti VERSI setiap rilis agar cache diperbarui. */
@@ -57,5 +57,5 @@ self.addEventListener("fetch", e => {{
   }}));
 }});
 '''
-open(os.path.join(ROOT, "sw.js"), "w").write(sw)
+open(os.path.join(ROOT, "sw.js"), "w", encoding="utf-8").write(sw)
 print(len(aset), "aset", versi)

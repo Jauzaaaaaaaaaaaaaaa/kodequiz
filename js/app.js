@@ -1,5 +1,7 @@
 /* ============================================================
-   KodeQuiz v4 — Coding · Data · Karier
+   KodeQuiz v5 — Jalur Data Analyst & Data Scientist · Coding · Karier
+   • v5: halaman jalur DA/DS (problem set MIT, tutorial Oxford, kasus Harvard),
+     kunci jawaban dengan keyakinan (Mazur), latihan & kemajuan terpisah (jalur/jalur.js)
    • Navigasi: tombol Kembali & Beranda + tombol back browser/HP
    • Setiap soal: 💡 Petunjuk dan 🏳️ Menyerah → jawaban + penjelasan
    • Data & Bisnis: Excel, SQL, Dashboard & BI, Statistik, ERP & Odoo
@@ -12,17 +14,25 @@
 const BANK = {
   excel: SOAL_EXCEL, sql: SOAL_SQL, bi: SOAL_BI, stat: SOAL_STAT, erp: SOAL_ERP,
   karier: SOAL_KARIER,
-  python: SOAL_PYTHON, js: SOAL_JS,
+  python: SOAL_PYTHON, js: SOAL_JS, git: SOAL_GIT,
   html: SOAL_HTML, css: SOAL_CSS, java: SOAL_JAVA, php: SOAL_PHP,
+  da: SOAL_DA, ds: SOAL_DS, cyber: SOAL_CYBER,
+  siber: SOAL_SIBER,
 };
 const MATERI = {
   excel: MATERI_EXCEL, sql: MATERI_SQL, bi: MATERI_BI, stat: MATERI_STAT, erp: MATERI_ERP,
   karier: MATERI_KARIER,
-  python: MATERI_PYTHON, js: MATERI_JS,
+  python: MATERI_PYTHON, js: MATERI_JS, git: MATERI_GIT,
   html: MATERI_HTML, css: MATERI_CSS, java: MATERI_JAVA, php: MATERI_PHP,
+  da: MATERI_DA, ds: MATERI_DS, cyber: MATERI_CYBER,
+  siber: MATERI_SIBER,
 };
 // prioritas: angka = urutan prioritas belajar coding, 0 = bukan prioritas (opsional)
 const TOPIK_INFO = {
+  da:     { nama: "Jalur Data Analyst", ikon: "DA", kelas: "t-da", grup: "jalur", ket: "Pertanyaan bisnis, metrik, SQL analitik, statistik keputusan, storytelling" },
+  ds:     { nama: "Jalur Data Scientist", ikon: "DS", kelas: "t-ds", grup: "jalur", ket: "Probabilitas, pandas, machine learning, validasi, kausal, MLOps & etika" },
+  cyber:  { nama: "Jalur Cyber Security", ikon: "SEC", kelas: "t-cyber", grup: "jalur", ket: "Hacker etis: jaringan, kriptografi, web (OWASP), pentest, SOC, respons insiden, cloud & UU PDP" },
+  siber:  { nama: "Lab Hitung Siber", ikon: "01", kelas: "t-siber", grup: "siber", ket: "Subnetting, biner & heksa, port, kode HTTP, encoding, hash, chmod, sandi klasik, entropi password, waktu di log" },
   excel:  { nama: "Excel",            ikon: "XL",  kelas: "t-excel",  grup: "data",   ket: "SUMIFS, XLOOKUP, pivot, teks & tanggal, INDEX-MATCH, FILTER" },
   sql:    { nama: "SQL",              ikon: "DB",  kelas: "t-sql",    grup: "data",   ket: "JOIN, GROUP BY, subquery, CASE, CTE, window function",
             prioritas: 1, alasan: "Dipakai di hampir semua lowongan data, dan Odoo menyimpan datanya di PostgreSQL." },
@@ -30,23 +40,27 @@ const TOPIK_INFO = {
   stat:   { nama: "Statistik & Metrik", ikon: "%", kelas: "t-stat",   grup: "data",   ket: "Mean/median, metrik bisnis, A/B test, clustering skripsimu" },
   erp:    { nama: "ERP & Odoo",       ikon: "ERP", kelas: "t-erp",    grup: "data",   ket: "Sales, Inventory, akuntansi dasar, metodologi implementasi" },
   karier: { nama: "Persiapan Karier", ikon: "CV",  kelas: "t-karier", grup: "karier", ket: "Portofolio, CV, lowongan, wawancara, LinkedIn" },
-  python: { nama: "Python",           ikon: "Py",  kelas: "t-py",     grup: "coding", ket: "Dasar sampai OOP, pandas, Python untuk Odoo, latihan tes coding",
+  python: { nama: "Python",           ikon: "Py",  kelas: "t-py",     grup: "coding", ket: "Dasar sampai OOP lanjut, comprehension, generator, pustaka standar, testing, pandas, Odoo, proyek mini",
             prioritas: 2, alasan: "Analisis data (pandas) dan Odoo dibangun dengan Python." },
-  js:     { nama: "JavaScript",       ikon: "JS",  kelas: "t-js",     grup: "coding", ket: "Dasar, DOM, async, ES6+ modern, jebakan interview",
+  js:     { nama: "JavaScript",       ikon: "JS",  kelas: "t-js",     grup: "coding", ket: "Dasar, DOM & event, closure, class, error, Map/Set/regex, module & npm, async, TypeScript & React",
             prioritas: 3, alasan: "Dashboard web, frontend Odoo (OWL), dan proyek SalesKu." },
-  html:   { nama: "HTML",             ikon: "<>",  kelas: "t-html",   grup: "opsional", ket: "Struktur, form, semantik, aksesibilitas & SEO",
+  git:    { nama: "Git & GitHub",     ikon: "Git", kelas: "t-git",    grup: "coding", ket: "Commit, branch & merge, konflik, GitHub & Pull Request, membatalkan perubahan",
+            prioritas: 4, alasan: "Dipakai setiap tim developer dan data; profil GitHub juga etalase portofoliomu." },
+  html:   { nama: "HTML",             ikon: "<>",  kelas: "t-html",   grup: "opsional", ket: "Struktur, form, tabel, isi head & SEO, elemen interaktif, aksesibilitas",
             prioritas: 0, alasan: "Cukup sampai bisa menyelesaikan proyek SalesKu dan halaman portofolio." },
-  css:    { nama: "CSS",              ikon: "{}",  kelas: "t-css",    grup: "opsional", ket: "Box model, Flexbox, Grid, variabel, responsif",
+  css:    { nama: "CSS",              ikon: "{}",  kelas: "t-css",    grup: "opsional", ket: "Selector lanjut, box model, satuan & warna, Flexbox, Grid, animasi, responsif, BEM & framework",
             prioritas: 0, alasan: "Secukupnya untuk merapikan proyek dan portofolio." },
-  java:   { nama: "Java",             ikon: "Jv",  kelas: "t-java",   grup: "opsional", ket: "Tipe data, kontrol, array & String, OOP, koleksi",
+  java:   { nama: "Java",             ikon: "Jv",  kelas: "t-java",   grup: "opsional", ket: "Tipe data, kontrol, array & String, method, OOP, koleksi, enum, record, exception",
             prioritas: 0, alasan: "Banyak di lowongan backend & Android, tapi bukan jalur utamamu." },
-  php:    { nama: "PHP",              ikon: "php", kelas: "t-php",    grup: "opsional", ket: "Dasar, array, form & keamanan web, OOP, Laravel",
+  php:    { nama: "PHP",              ikon: "php", kelas: "t-php",    grup: "opsional", ket: "Dasar, array, string & tanggal, form & keamanan web, OOP, JSON API, PHP 8, Laravel",
             prioritas: 0, alasan: "Banyak di lowongan web (Laravel/WordPress). Rencana cadangan." },
 };
 const GRUP = {
+  jalur:    { nama: "Jalur Karier", label: "UTAMA", ket: "Modul Jalur Data Analyst, Data Scientist, dan Cyber Security. Buka halaman jalurnya untuk peta belajar, problem set, tutorial, dan studi kasus." },
+  siber:    { nama: "Latihan Teknis Cyber Security", label: "DIBUAT PROGRAM", ket: "Ratusan soal hitung untuk tes kerja dan CTF. Kuncinya dihitung dua kali: langkah manual dan pustaka Python (alat/buat-soal-siber.py)." },
   data:     { nama: "Data & Bisnis", ket: "Fokus utama: skill yang paling sering diminta lowongan Data Analyst, BI, dan ERP/Odoo Consultant." },
   karier:   { nama: "Persiapan Karier", ket: "Ubah skripsi jadi portofolio, tulis CV yang menjual dampak, latih wawancara, dan melamar dengan terukur." },
-  coding:   { nama: "Bahasa Pemrograman Prioritas", label: "★ FOKUS UTAMA", ket: "Urutan belajar: SQL (di grup Data & Bisnis) → Python → JavaScript. Tiga bahasa ini paling berguna untuk jalur Data, BI, dan Odoo." },
+  coding:   { nama: "Bahasa Pemrograman Prioritas", label: "★ FOKUS UTAMA", ket: "Urutan belajar: SQL (di grup Data & Bisnis) → Python → JavaScript, ditambah Git. Skill ini paling berguna untuk jalur Data, BI, dan Odoo." },
   opsional: { nama: "Bahasa Pemrograman Bukan Prioritas", label: "OPSIONAL", ket: "Pelajari setelah yang prioritas, untuk proyek & portofolio, atau sebagai rencana cadangan jalur web/backend developer." },
 };
 function chipPrioritas(info) {
@@ -71,6 +85,10 @@ DATA.xp = DATA.xp || 0;
 DATA.rencana = DATA.rencana || {};
 DATA.pref = DATA.pref || { tema: "auto", lingkup: "data" };
 DATA.lencana = DATA.lencana || {};
+DATA.harian = DATA.harian || {};      // aktivitas per tanggal (YYYY-MM-DD) untuk peta aktivitas
+DATA.kalibrasi = DATA.kalibrasi || {}; // jumlah jawaban per tingkat keyakinan: {yakin:{b,s}, ragu:{b,s}, tebak:{b,s}}
+DATA.pset = DATA.pset || {};           // skor terbaik Problem Set per tahap jalur
+DATA.materi = DATA.materi || {};       // bab yang materinya sudah dibaca: { "js-scope": waktu }
 if (!DATA.statistik) {   // pengguna lama: hitung jawaban benar dari riwayat kartu
   const benar = Object.values(DATA.kartu).reduce((n, k) => n + (k.b || 0), 0);
   DATA.statistik = { benar, comboMax: 0 };
@@ -80,6 +98,24 @@ const idSoal = (t, i) => t + "-" + i;
 const el = id => document.getElementById(id);
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 function acak(arr) { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+// Urutan opsi diacak setiap kali soal tampil: sebagian besar bank soal berkunci A, jadi tanpa ini pola
+// jawabannya bisa ditebak. Alasan per pilihan (w) ikut diacak; ID soal tetap.
+function acakOpsi(s) {
+  if (s.t !== "mc") return s;
+  const urut = acak(s.o.map((_, i) => i));
+  return { ...s, o: urut.map(i => s.o[i]), a: urut.indexOf(s.a), w: s.w && urut.map(i => s.w[i]) };
+}
+// Permutasi stabil 0..n-1 dari sebuah benih (hash FNV-1a + pengaduk): untuk buku cetak/PDF dan opsi kasus,
+// supaya urutannya tidak berpola tetapi sama setiap kali dibuat ulang.
+function permStabil(n, benih) {
+  const h = s => { let x = 2166136261; for (const c of s) { x ^= c.charCodeAt(0); x = Math.imul(x, 16777619); } x ^= x >>> 13; x = Math.imul(x, 0x5bd1e995); return (x ^ (x >>> 15)) >>> 0; };
+  return [...Array(n).keys()].sort((a, b) => h(a + ":" + benih) - h(b + ":" + benih));
+}
+function acakOpsiStabil(s) {
+  if (s.t !== "mc") return s;
+  const urut = permStabil(s.o.length, s.id);
+  return { ...s, o: urut.map(i => s.o[i]), a: urut.indexOf(s.a), w: s.w && urut.map(i => s.w[i]) };
+}
 
 /* ---------- Normalisasi jawaban isian ----------
    Tidak peka huruf besar/kecil & spasi, ; dianggap , (Excel Indonesia),
@@ -96,12 +132,17 @@ function norm(s) {
 
 /* ---------- Spaced repetition ---------- */
 function ambilKartu(id) { if (!DATA.kartu[id]) DATA.kartu[id] = { ef: 2.3, iv: 0, due: 0, b: 0, s: 0 }; return DATA.kartu[id]; }
-function nilaiKartu(id, benar) {
+// yakin: "yakin" | "ragu" | "tebak" | undefined. Benar tapi menebak belum dianggap dikuasai;
+// salah padahal yakin = titik buta (miskonsepsi), ditandai k.tb dan diulang lebih dulu.
+function nilaiKartu(id, benar, yakin) {
   const k = ambilKartu(id), HARI = 86400000;
-  if (benar) { k.b++; k.iv = k.iv === 0 ? 1 : k.iv === 1 ? 3 : Math.round(k.iv * k.ef); k.ef = Math.min(2.8, k.ef + 0.08); }
-  else { k.s++; k.iv = 0; k.ef = Math.max(1.3, k.ef - 0.2); }
+  if (benar && yakin === "tebak") { k.b++; k.iv = Math.min(k.iv || 1, 1); }
+  else if (benar) { k.b++; k.iv = k.iv === 0 ? 1 : k.iv === 1 ? 3 : Math.round(k.iv * k.ef); k.ef = Math.min(2.8, k.ef + 0.08); if (yakin === "yakin") delete k.tb; }
+  else { k.s++; k.iv = 0; k.ef = Math.max(1.3, k.ef - 0.2); if (yakin === "yakin") k.tb = 1; }
   k.due = Date.now() + k.iv * HARI;
 }
+const tglISO = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+function catatAktivitas(n = 1) { const t = tglISO(); DATA.harian[t] = (DATA.harian[t] || 0) + n; }
 function catatStreak() {
   const hariIni = new Date().toDateString();
   if (DATA.streak.terakhir === hariIni) return;
@@ -139,8 +180,8 @@ function kumpulPintar(jumlah) {
   const now = Date.now();
   const prio = s => {
     const k = DATA.kartu[s.id];
-    if (!k) return ({ data: 60, karier: 55, coding: 52, opsional: 40 }[TOPIK_INFO[s.topik].grup] || 50) + Math.random() * 10;
-    return (k.due <= now ? 100 : 0) + k.s * 20 - k.b * 5 + Math.random() * 5;
+    if (!k) return ({ jalur: 62, data: 60, karier: 55, coding: 52, opsional: 40 }[TOPIK_INFO[s.topik].grup] || 50) + Math.random() * 10;
+    return (k.due <= now ? 100 : 0) + (k.tb ? 40 : 0) + k.s * 20 - k.b * 5 + Math.random() * 5;
   };
   return acak(semuaSoal().sort((a, b) => prio(b) - prio(a)).slice(0, jumlah * 2)).slice(0, jumlah);
 }
@@ -163,7 +204,9 @@ function renderDataset(nama) {
     <tbody>${d.baris.map(b => `<tr>${b.map(v => `<td class="${typeof v === "number" ? "num" : ""}">${esc(v)}</td>`).join("")}</tr>`).join("")}</tbody>
     </table></div></div>`;
 }
-const isiMateri = html => html.replace(/\{\{tb:(\w+)\}\}/g, (_, n) => renderDataset(n));
+// {{tb:nama}} = tabel dataset; kotak contoh bertahap (.bertahap) diberi tombol Periksa (logikanya di jalur/jalur.js)
+const isiMateri = html => html.replace(/\{\{tb:(\w+)\}\}/g, (_, n) => renderDataset(n))
+  .replace(/<details class="bt-bahas">/g, '<p class="bt-aksi"><button type="button" class="btn btn-garis btn-kecil bt-cek">Periksa jawabanku</button> <span class="bt-hasil" aria-live="polite"></span></p><details class="bt-bahas">');
 
 /* ============ Modal & toast ============ */
 function tanya(o) {
@@ -230,6 +273,11 @@ const ROUTE = {
   buku:    { layar: "layar-buku",    render: () => renderBuku() },
   bukubab: { layar: "layar-bukubab", render: a => renderBukuBab(a.t, a.i) },
   pdf:     { layar: "layar-pdf",     render: a => bukaPdf(a.b, a.hal) },
+  latihan: { layar: "layar-latihan", render: () => renderLatihan() },
+  kemajuan:{ layar: "layar-kemajuan",render: () => renderKemajuan() },
+  jalur:   { layar: "layar-jalur",   render: a => renderJalur(a.j) },
+  kasus:   { layar: "layar-kasus",   render: a => renderKasus(a.id) },
+  tutorial:{ layar: "layar-tutorial",render: a => renderTutorial(a.j, a.tahap) },
 };
 /* Transisi antarlayar: View Transitions API (Chrome/Edge/Safari baru) dengan
    efek fade + blur halus; browser lain memakai animasi CSS biasa. */
@@ -267,6 +315,7 @@ function terapkanRoute(rt, arah) {
   el("btn-nav-kembali").classList.toggle("tersembunyi", diBeranda);
   el("btn-nav-beranda").classList.toggle("tersembunyi", diBeranda);
   renderStat();
+  if (typeof setelahRoute === "function") setelahRoute(rt);   // jalur/jalur.js: tab aktif & alamat (#data-analyst, …)
 }
 function go(r, a = {}, opt = {}) {
   if (opt.replace && NAV.length) NAV[NAV.length - 1] = { r, a };
@@ -305,6 +354,7 @@ window.addEventListener("popstate", async () => {
 let SESI = null;
 function mulaiSesi(soal, konteks) {
   if (!soal.length) return toast("Belum ada soal di sini.");
+  soal = soal.map(acakOpsi);
   SESI = { soal, konteks, idx: 0, benar: 0, salah: 0, menyerah: 0, jawaban: [], mulai: Date.now(), terjawab: false, petunjuk: false,
            xpAwal: DATA.xp, combo: 0, comboMax: 0 };
   catatStreak();
@@ -316,11 +366,13 @@ function mulaiSesi(soal, konteks) {
 }
 function renderSoal() {
   const s = SESI.soal[SESI.idx];
-  SESI.terjawab = false; SESI.petunjuk = false;
+  SESI.terjawab = false; SESI.petunjuk = false; SESI.yakin = null;
+  PILIHAN = null; tampilYakin(false);
+  setTimeout(() => { if (!sudahBaca(s.topik, s.k)) bukaMateriSoal(s, true); }, 0);   // materi bab dulu, baru soal
   const info = TOPIK_INFO[s.topik];
   el("kuis-topik").textContent = info.nama;
   el("kuis-topik").className = "chip " + info.kelas;
-  el("kuis-level").textContent = LV_NAMA[s.lv];
+  el("kuis-level").textContent = `${LV_NAMA[s.lv]} · ${s.lv * 10} poin`;   // poin = XP jika benar tanpa petunjuk
   el("kuis-progres").textContent = (SESI.idx + 1) + " / " + SESI.soal.length;
   el("bar-isi").style.width = (SESI.idx / SESI.soal.length * 100) + "%";
 
@@ -347,7 +399,7 @@ function renderSoal() {
       b.style.animationDelay = (i * 50) + "ms";
       b.dataset.i = i;
       b.innerHTML = `<span class="opsi-huruf">${HURUF[i]}</span><span class="opsi-teks">${esc(opsi)}</span>`;
-      b.onclick = () => jawabMC(i);
+      b.onclick = () => pilihMC(i);
       wadah.appendChild(b);
     });
   } else {
@@ -356,10 +408,41 @@ function renderSoal() {
       <button class="btn btn-utama" id="isian-kirim">Jawab</button></div>`;
     const input = el("isian-input");
     setTimeout(() => input.focus(), 80);
-    const kirim = () => jawabIsian(input.value);
+    const kirim = () => PILIHAN ? kunciYakin("yakin") : kirimIsian(input.value);
     el("isian-kirim").onclick = kirim;
     input.onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); e.stopPropagation(); kirim(); } };
   }
+}
+/* ---------- Kunci jawaban + tingkat keyakinan (Peer Instruction, Eric Mazur, Harvard) ----------
+   Pilih jawaban dulu, lalu kunci dengan Yakin / Ragu / Menebak. Data ini dipakai untuk
+   kalibrasi di halaman Kemajuan dan untuk menandai titik buta (yakin tetapi salah). */
+let PILIHAN = null;
+const pakaiYakin = () => DATA.pref.yakin !== false;
+function tampilYakin(tampil) {
+  const k = el("kuis-yakin");
+  k.classList.toggle("tersembunyi", !tampil);
+  if (tampil) { k.classList.remove("muncul"); void k.offsetWidth; k.classList.add("muncul"); k.scrollIntoView({ block: "nearest", behavior: "smooth" }); }
+}
+function pilihMC(i) {
+  if (SESI.terjawab) return;
+  if (!pakaiYakin()) return jawabMC(i);
+  PILIHAN = { mc: i };
+  document.querySelectorAll(".opsi").forEach(b => b.classList.toggle("dipilih", +b.dataset.i === i));
+  tampilYakin(true);
+}
+function kirimIsian(teks) {
+  if (SESI.terjawab || !teks.trim()) return;
+  if (!pakaiYakin()) return jawabIsian(teks);
+  PILIHAN = { is: teks };
+  el("isian-input").classList.add("dipilih");
+  tampilYakin(true);
+}
+function kunciYakin(y) {
+  if (!PILIHAN || SESI.terjawab) return;
+  const p = PILIHAN;
+  PILIHAN = null; SESI.yakin = y; tampilYakin(false);
+  if (p.mc !== undefined) jawabMC(p.mc);
+  else jawabIsian(el("isian-input").value || p.is);
 }
 function beriPetunjuk() {
   if (SESI.terjawab || SESI.petunjuk) return;
@@ -371,7 +454,8 @@ function beriPetunjuk() {
   if (s.t === "mc") {                                   // coret satu opsi yang salah
     const salah = acak(s.o.map((_, i) => i).filter(i => i !== s.a && !document.querySelector(`.opsi[data-i="${i}"]`).disabled))[0];
     const b = document.querySelector(`.opsi[data-i="${salah}"]`);
-    if (b) { b.classList.add("dicoret"); b.disabled = true; }
+    if (b) { b.classList.add("dicoret"); b.classList.remove("dipilih"); b.disabled = true; }
+    if (PILIHAN && PILIHAN.mc === salah) { PILIHAN = null; tampilYakin(false); }
     teks = (teks ? teks + " " : "") + `Satu pilihan yang pasti salah sudah dicoret (${HURUF[salah]}).`;
   } else if (!teks) {
     const j = s.a[0];
@@ -383,9 +467,10 @@ function beriPetunjuk() {
 function menyerah() {
   if (SESI.terjawab) return;
   const s = SESI.soal[SESI.idx];
-  SESI.terjawab = true;
+  SESI.terjawab = true; SESI.yakin = null;
+  PILIHAN = null; tampilYakin(false);
   if (s.t === "mc") {
-    document.querySelectorAll(".opsi").forEach((b, i) => { b.disabled = true; if (i === s.a) b.classList.add("benar"); });
+    document.querySelectorAll(".opsi").forEach((b, i) => { b.disabled = true; b.classList.remove("dipilih"); if (i === s.a) b.classList.add("benar"); });
   } else {
     el("isian-input").disabled = true; el("isian-kirim").disabled = true;
     el("isian-input").value = s.a[0];
@@ -399,7 +484,7 @@ function jawabMC(pilih) {
   const s = SESI.soal[SESI.idx];
   const benar = pilih === s.a;
   document.querySelectorAll(".opsi").forEach((b, i) => {
-    b.disabled = true;
+    b.disabled = true; b.classList.remove("dipilih");
     if (i === s.a) b.classList.add("benar");
     else if (i === pilih) b.classList.add("salah");
   });
@@ -413,14 +498,29 @@ function jawabIsian(teks) {
   const benar = s.a.some(x => norm(x) === norm(teks));
   el("isian-input").disabled = true;
   el("isian-kirim").disabled = true;
+  el("isian-input").classList.remove("dipilih");
   el("isian-input").classList.add(benar ? "benar" : "salah");
   selesaiJawab(benar ? "benar" : "salah", teks);
 }
 function teksJawabanBenar(s) { return s.t === "mc" ? `${HURUF[s.a]}. ${s.o[s.a]}` : s.a[0]; }
+// Pembahasan bertingkat (Jalur Cyber & Lab Hitung Siber): baris "• …" = poin penting, "1. …" = cara menjawab,
+// "Ingat: …" = pegangan singkat. Pembahasan satu baris (soal lama) tetap tampil seperti biasa.
+function isiPenjelasan(e) {
+  const b = String(e).split("\n");
+  if (b.length < 2) return `<p class="jb-kenapa"><b>Kenapa?</b> ${esc(e)}</p>`;
+  const poin = b.filter(x => x.startsWith("• ")).map(x => `<li>${esc(x.slice(2))}</li>`).join("");
+  const langkah = b.filter(x => /^\d+\. /.test(x)).map(x => `<li>${esc(x.replace(/^\d+\. /, ""))}</li>`).join("");
+  const ingat = b.find(x => x.startsWith("Ingat: "));
+  const inti = b.filter(x => !x.startsWith("• ") && !/^\d+\. /.test(x) && !x.startsWith("Ingat: ")).map(esc).join("<br>");
+  return `<p class="jb-kenapa"><b>Kenapa?</b> ${inti}</p>` +
+    (poin ? `<div class="jb-blok"><b>Poin penting</b><ul class="jb-poin">${poin}</ul></div>` : "") +
+    (langkah ? `<div class="jb-blok"><b>Cara menjawab</b><ol class="jb-langkah">${langkah}</ol></div>` : "") +
+    (ingat ? `<p class="jb-ingat"><b>Ingat:</b> ${esc(ingat.slice(7))}</p>` : "");
+}
 function panelPenjelasan(s, status, pilihan) {
   let h = "";
   if (status !== "benar") h += `<p class="jb-benar"><span>Jawaban benar</span><code>${esc(teksJawabanBenar(s))}</code></p>`;
-  h += `<p class="jb-kenapa"><b>Kenapa?</b> ${esc(s.e)}</p>`;
+  h += isiPenjelasan(s.e);
   if (s.t === "mc" && s.w) {
     const urut = s.o.map((_, i) => i).filter(i => i !== s.a);
     if (typeof pilihan === "number" && pilihan !== s.a) urut.sort((a, b) => (b === pilihan) - (a === pilihan));
@@ -434,8 +534,11 @@ function selesaiJawab(status, jawabanUser) {
   const s = SESI.soal[SESI.idx];
   const benar = status === "benar";
   if (benar) SESI.benar++; else if (status === "menyerah") SESI.menyerah++; else SESI.salah++;
-  SESI.jawaban.push({ soal: s, status, jawabanUser });
-  nilaiKartu(s.id, benar);
+  const yakin = status === "menyerah" ? null : SESI.yakin;
+  SESI.jawaban.push({ soal: s, status, jawabanUser, yakin });
+  nilaiKartu(s.id, benar, yakin || undefined);
+  if (yakin) { const kb = DATA.kalibrasi[yakin] = DATA.kalibrasi[yakin] || { b: 0, s: 0 }; benar ? kb.b++ : kb.s++; }
+  catatAktivitas();
   // combo: jawaban benar beruntun (tanpa petunjuk) memberi bonus kecil
   if (benar && !SESI.petunjuk) SESI.combo++; else if (!benar) SESI.combo = 0;
   SESI.comboMax = Math.max(SESI.comboMax, SESI.combo);
@@ -458,7 +561,9 @@ function selesaiJawab(status, jawabanUser) {
   const judul = benar ? `✓ Benar! <span class="xp-dapat">+${xp} XP${bonus ? ` · 🔥 combo +${bonus}` : ""}</span>` :
     status === "menyerah" ? "🏳️ Tidak apa-apa — ini jawabannya, pahami pelan-pelan." : "✗ Kurang tepat.";
   fb.className = "feedback muncul " + (benar ? "fb-benar" : status === "menyerah" ? "fb-menyerah" : "fb-salah");
-  fb.innerHTML = `<strong class="fb-judul">${judul}</strong>${panelPenjelasan(s, status, jawabanUser)}`;
+  const catatYakin = !benar && yakin === "yakin" ? `<p class="yakin-catat yc-buta">🎯 <b>Titik buta:</b> kamu yakin, tetapi jawabannya salah. Ini miskonsepsi yang paling berharga untuk diperbaiki; soal ini akan muncul lebih dulu di Ulangan Pintar.</p>`
+    : benar && yakin === "tebak" ? `<p class="yakin-catat">Benar, tetapi kamu menebak. Soal ini tetap diulang besok supaya benar-benar dikuasai.</p>` : "";
+  fb.innerHTML = `<strong class="fb-judul">${judul}</strong>${catatYakin}${panelPenjelasan(s, status, jawabanUser)}`;
   const btn = el("btn-lanjut");
   btn.classList.remove("tersembunyi");
   btn.textContent = SESI.idx + 1 < SESI.soal.length ? "Lanjut →" : "Lihat Hasil";
@@ -503,6 +608,12 @@ async function selesaiSesi() {
     if (persen >= 70 && !(lama && lama.persen >= 70)) babBaru = MATERI[SESI.konteks.topik].find(b => b.k === SESI.konteks.k);
     if (!lama || persen > lama.persen) DATA.bab[kunci] = { persen, t: Date.now() };
   }
+  let psetBaru = null;
+  if (SESI.konteks && SESI.konteks.tipe === "pset") {
+    const kunci = SESI.konteks.jalur + "-" + SESI.konteks.tahap, lama = DATA.pset[kunci] || 0;
+    if (persen > lama) DATA.pset[kunci] = persen;
+    if (persen >= 70 && lama < 70) psetBaru = SESI.konteks;
+  }
   simpan();
   const lencanaBaru = cekLencana({ persen, total });
   const T = TINGKAT_SKOR.find(x => persen >= x.min);
@@ -531,6 +642,7 @@ async function selesaiSesi() {
   const ekstra = [];
   if (lvAkhir.lv > lvAwal.lv) ekstra.push(`<div class="hasil-banner banner-level">⬆️ Naik ke <b>Level ${lvAkhir.lv}</b> — ${esc(lvAkhir.nama)}!</div>`);
   if (babBaru) ekstra.push(`<div class="hasil-banner banner-bab">🎓 Bab dikuasai: <b>${esc(babBaru.judul)}</b></div>`);
+  if (psetBaru) ekstra.push(`<div class="hasil-banner banner-bab">Σ Problem Set Tahap ${psetBaru.tahap + 1} lulus (≥ 70%)</div>`);
   if (lencanaBaru.length) ekstra.push(`<div class="hasil-banner banner-lencana">Lencana baru: ${lencanaBaru.map(l => `<span title="${esc(l.ket)}">${l.ikon} ${esc(l.nama)}</span>`).join("")}</div>`);
   el("hasil-ekstra").innerHTML = ekstra.join("");
   el("hasil-pesan").textContent = T.pesan;
@@ -552,7 +664,7 @@ async function selesaiSesi() {
       d.innerHTML = `<p class="review-q">${esc(s.q)}</p>${s.kode ? `<pre class="kode-soal kecil-kode"><code>${esc(s.kode)}</code></pre>` : ""}
         <p><span class="tag-salah">Jawabanmu: ${esc(ju || "-")}</span><span class="tag-benar">Benar: ${esc(teksJawabanBenar(s))}</span></p>
         ${alasan ? `<p class="review-e"><b>Kenapa pilihanmu salah:</b> ${esc(alasan)}</p>` : ""}
-        <p class="review-e"><b>Penjelasan:</b> ${esc(s.e)}</p>`;
+        ${String(s.e).includes("\n") ? `<div class="review-e">${isiPenjelasan(s.e)}</div>` : `<p class="review-e"><b>Penjelasan:</b> ${esc(s.e)}</p>`}`;
       wadah.appendChild(d);
     });
   }
@@ -590,6 +702,12 @@ function persenTopik(t) {
   const selesai = bab.filter(b => DATA.bab[t + "-" + b.k] && DATA.bab[t + "-" + b.k].persen >= 70).length;
   return { selesai, total: bab.length, persen: Math.round(selesai / bab.length * 100) };
 }
+function hitungJatuhTempo() {
+  const now = Date.now();
+  let due = 0, buta = 0;
+  Object.values(DATA.kartu).forEach(k => { if (k.due <= now && (k.b + k.s) > 0) due++; if (k.tb) buta++; });
+  return { due, buta };
+}
 function renderBeranda() {
   const jam = new Date().getHours();
   el("sapaan").textContent = jam < 11 ? "Selamat pagi 🌤️" : jam < 15 ? "Selamat siang ☀️" : jam < 19 ? "Selamat sore 🌇" : "Selamat malam 🌙";
@@ -601,22 +719,25 @@ function renderBeranda() {
     <div class="level-isi"><b>${esc(L.nama)}</b><small>${DATA.xp.toLocaleString("id-ID")} XP · ${L.sisa} XP lagi ke Level ${L.lv + 1}</small>
       <div class="mini-bar level-bar"><div style="width:${L.persen}%"></div></div></div>
     <div class="level-mini"><span>🔥 ${DATA.streak.hari} hari</span><span>🏅 ${Object.keys(DATA.lencana).length}/${LENCANA.length}</span></div>`;
+  el("stat-total").textContent = semuaSoal().length.toLocaleString("id-ID");
 
-  // lingkup kuis random
+  const { due, buta } = hitungJatuhTempo();
+  const badge = el("badge-ulang");
+  badge.textContent = due; badge.classList.toggle("tersembunyi", due === 0);
+  el("sesi-ulang-ket").textContent = due ? `${due} soal jatuh tempo${buta ? `, ${buta} di antaranya titik buta` : ""}. Mulai dari sini.`
+    : "Belum ada yang jatuh tempo. Ulangan Pintar tetap mencampur soal dari banyak topik.";
+  if (typeof renderBerandaJalur === "function") renderBerandaJalur();
+}
+
+/* ============ Latihan bebas: kuis acak, alat, semua topik ============ */
+function renderLatihan() {
   const lingkup = DATA.pref.lingkup || "data";
   document.querySelectorAll(".lingkup").forEach(b => b.classList.toggle("aktif", b.dataset.lingkup === lingkup));
   const pool = semuaSoal(lingkup);
   const sisa = pool.filter(s => !DATA.randomUsed.includes(s.id)).length;
   el("random-sisa").textContent = `${sisa} soal baru tersisa`;
-  el("stat-total").textContent = semuaSoal().length.toLocaleString("id-ID");
 
-  const now = Date.now();
-  let due = 0;
-  Object.values(DATA.kartu).forEach(k => { if (k.due <= now && (k.b + k.s) > 0) due++; });
-  const badge = el("badge-ulang");
-  badge.textContent = due; badge.classList.toggle("tersembunyi", due === 0);
-
-  // fitur unggulan
+  // alat belajar
   const p = dataProyek();
   el("fitur-proyek-prog").style.width = (p.lulus.length / PROYEK.langkah.length * 100) + "%";
   el("fitur-proyek-ket").textContent = p.lulus.length ? `${p.lulus.length}/${PROYEK.langkah.length} langkah selesai` : `${PROYEK.langkah.length} langkah · HTML, CSS, JavaScript`;
@@ -628,7 +749,7 @@ function renderBeranda() {
   el("fitur-rencana-prog").style.width = (r.selesai / r.total * 100) + "%";
   const bk = dataBuku(), totalBab = URUTAN_BAB().length, dibaca = Object.keys(bk.dibaca).length;
   const halPdf = halPdfDibaca();
-  el("fitur-buku-ket").textContent = `6 buku PDF${halPdf ? ` · ${halPdf} hal dibaca` : ""} · ${dibaca}/${totalBab} bab interaktif`;
+  el("fitur-buku-ket").textContent = `${BUKU_SET.length} buku PDF${halPdf ? ` · ${halPdf} hal dibaca` : ""} · ${dibaca}/${totalBab} bab interaktif`;
   el("fitur-buku-prog").style.width = (dibaca / totalBab * 100) + "%";
 
   // kartu topik per grup
@@ -656,7 +777,8 @@ function renderBeranda() {
           ${info.alasan ? `<p class="kartu-alasan">${info.prioritas ? "Kenapa prioritas: " : "Catatan: "}${esc(info.alasan)}</p>` : ""}
           <div class="mini-bar"><div style="width:${pr.persen}%"></div></div>
           <div class="kartu-ket">${pr.selesai}/${pr.total} bab dikuasai</div>`;
-        d.onclick = () => go("topik", { t });
+        // topik jalur dibuka lewat halaman jalurnya (peta belajar), topik lain lewat daftar bab
+        d.onclick = () => g === "jalur" ? go("jalur", { j: t }) : go("topik", { t });
         grid.appendChild(d);
       });
     // SQL ada di grup Data, tapi juga bahasa prioritas → tampilkan pintasannya di grup Coding
@@ -671,8 +793,9 @@ function renderBeranda() {
     }
     wadah.appendChild(sec);
   });
+}
 
-  // lencana
+function renderLencana() {
   el("lencana-grid").innerHTML = LENCANA.map(l => {
     const ok = !!DATA.lencana[l.id];
     return `<div class="lencana ${ok ? "dapat" : "kunci"}" title="${esc(l.ket)}"><span class="lencana-ikon">${ok ? l.ikon : "🔒"}</span>
@@ -721,6 +844,26 @@ function renderMateri(t, i) {
   el("btn-mulai-bab").textContent = `Saya paham, lanjut ke soal (${jml}) →`;
   el("btn-materi-prev").disabled = i === 0;
   el("btn-materi-next").disabled = i === MATERI[t].length - 1;
+  if (typeof jalurSetelahMateri === "function") jalurSetelahMateri(t, i);   // kotak "jelaskan dengan kata-katamu" untuk modul jalur
+}
+
+// Setiap soal harus didahului materinya: bab dianggap sudah dibaca kalau pernah ditandai paham,
+// pernah dikerjakan (pengguna lama), atau dibaca di Book.
+const sudahBaca = (t, k) => !!(DATA.materi[t + "-" + k] || DATA.bab[t + "-" + k] || (DATA.buku && DATA.buku.dibaca && DATA.buku.dibaca[t + "-" + k]));
+function tandaiBaca(t, k) { DATA.materi[t + "-" + k] = Date.now(); simpan(); }
+function bukaMateriSoal(s, wajib) {
+  const i = MATERI[s.topik].findIndex(b => b.k === s.k);
+  if (i < 0) return;
+  const bab = MATERI[s.topik][i], d = el("dlg-materi");
+  el("dlg-materi-eyebrow").textContent = `${TOPIK_INFO[s.topik].nama} · Bab ${i + 1}`;
+  el("dlg-materi-judul").textContent = bab.judul;
+  el("dlg-materi-ket").textContent = wajib
+    ? "Soal berikutnya berasal dari bab ini dan materinya belum kamu baca. Baca dulu supaya tidak bingung, lalu kerjakan soalnya."
+    : "Materi untuk soal ini. Tutup untuk kembali ke soal.";
+  el("dlg-materi-isi").innerHTML = isiMateri(bab.materi);
+  el("btn-dlg-paham").onclick = () => { tandaiBaca(s.topik, s.k); d.close(); };
+  if (!d.open) d.showModal();
+  d.scrollTop = 0;
 }
 
 /* ============ Rencana 30 hari ============ */
@@ -838,6 +981,10 @@ function bukaPengaturan() {
         <label class="saklar"><input type="checkbox" id="atur-suara" ${DATA.pref.suara !== false ? "checked" : ""}><span></span></label></div>
       <div class="atur-baris"><span><b>Efek perayaan</b><small>Konfeti, transisi antarlayar, dan animasi skor</small></span>
         <label class="saklar"><input type="checkbox" id="atur-efek" ${DATA.pref.efek !== false ? "checked" : ""}><span></span></label></div>
+      ${window.KQMusik ? `<div class="atur-baris"><span><b>Volume musik lo-fi</b><small>Lagu belajar orisinal; nyalakan lewat tombol ♪ di atas</small></span>
+        <input type="range" id="atur-musik" min="0" max="1" step="0.05" value="${window.KQMusik.vol()}" aria-label="Volume musik"></div>` : ""}
+      <div class="atur-baris"><span><b>Kunci jawaban dengan keyakinan</b><small>Setelah memilih, tandai Yakin / Ragu / Menebak. Dipakai untuk kalibrasi dan titik buta.</small></span>
+        <label class="saklar"><input type="checkbox" id="atur-yakin" ${DATA.pref.yakin !== false ? "checked" : ""}><span></span></label></div>
       <h4>Pindahkan progres (laptop ↔ HP)</h4>
       <p class="kecil">Progres tersimpan di browser masing-masing perangkat. Unduh atau salin dari satu perangkat, lalu muat di perangkat lain.</p>
       <div class="unduh-baris">
@@ -857,6 +1004,8 @@ function bukaPengaturan() {
   });
   el("atur-suara").onchange = e => { DATA.pref.suara = e.target.checked; simpan(); if (e.target.checked) RAYA.nada("benar"); };
   el("atur-efek").onchange = e => { DATA.pref.efek = e.target.checked; simpan(); if (e.target.checked) RAYA.konfeti(1, e.target); };
+  el("atur-yakin").onchange = e => { DATA.pref.yakin = e.target.checked; simpan(); };
+  if (el("atur-musik")) el("atur-musik").oninput = e => window.KQMusik.aturVol(e.target.value);
   el("atur-ekspor").onclick = () => {
     const blob = new Blob([JSON.stringify(DATA)], { type: "application/json" });
     const a = document.createElement("a");
@@ -894,15 +1043,19 @@ function bukaPengaturan() {
 document.addEventListener("keydown", e => {
   const tag = (e.target.tagName || "").toLowerCase();
   const mengetik = tag === "input" || tag === "textarea" || tag === "select";
-  if (!el("modal").classList.contains("tersembunyi")) return;
+  if (!el("modal").classList.contains("tersembunyi") || el("dlg-materi").open) return;
   if (e.key === "Escape" && !mengetik) { e.preventDefault(); kembali(); return; }
   const atas = NAV[NAV.length - 1];
   if (!atas || atas.r !== "kuis" || !SESI || mengetik) return;
   const s = SESI.soal[SESI.idx];
+  if (!SESI.terjawab && PILIHAN) {
+    const y = { y: "yakin", r: "ragu", t: "tebak", enter: "yakin" }[e.key.toLowerCase()];
+    if (y) { e.preventDefault(); kunciYakin(y); return; }
+  }
   if (!SESI.terjawab && s.t === "mc") {
     const k = e.key.toLowerCase();
     const i = "1234".indexOf(k) >= 0 ? +k - 1 : "abcd".indexOf(k);
-    if (i >= 0 && i < s.o.length) { const b = document.querySelector(`.opsi[data-i="${i}"]`); if (b && !b.disabled) { e.preventDefault(); jawabMC(i); } return; }
+    if (i >= 0 && i < s.o.length) { const b = document.querySelector(`.opsi[data-i="${i}"]`); if (b && !b.disabled) { e.preventDefault(); pilihMC(i); } return; }
   }
   if (!SESI.terjawab && e.key.toLowerCase() === "h") { e.preventDefault(); beriPetunjuk(); }
   if (SESI.terjawab && e.key === "Enter") { e.preventDefault(); lanjut(); }
@@ -923,9 +1076,11 @@ document.addEventListener("DOMContentLoaded", () => {
   el("btn-keluar").onclick = () => kembali();
   el("btn-random").onclick = () => mulaiSesi(kumpulRandom(10, DATA.pref.lingkup || "data"), { tipe: "random" });
   el("btn-ulang").onclick = () => mulaiSesi(kumpulPintar(15), { tipe: "pintar" });
-  document.querySelectorAll(".lingkup").forEach(b => b.onclick = () => { DATA.pref.lingkup = b.dataset.lingkup; simpan(); renderBeranda(); });
+  document.querySelectorAll(".lingkup").forEach(b => b.onclick = () => { DATA.pref.lingkup = b.dataset.lingkup; simpan(); renderLatihan(); });
+  document.querySelectorAll(".btn-yakin").forEach(b => b.onclick = () => kunciYakin(b.dataset.y));
   el("btn-latihan-topik").onclick = () => mulaiSesi(acak(soalTopik(TOPIK_AKTIF)).slice(0, 20), { tipe: "latihan", topik: TOPIK_AKTIF });
-  el("btn-mulai-bab").onclick = () => { const { t, i } = BAB_AKTIF; mulaiSesi(acak(soalBab(t, MATERI[t][i].k)), { tipe: "bab", topik: t, k: MATERI[t][i].k }); };
+  el("btn-kuis-materi").onclick = () => SESI && bukaMateriSoal(SESI.soal[SESI.idx], false);
+  el("btn-mulai-bab").onclick = () => { const { t, i } = BAB_AKTIF; tandaiBaca(t, MATERI[t][i].k); mulaiSesi(acak(soalBab(t, MATERI[t][i].k)), { tipe: "bab", topik: t, k: MATERI[t][i].k }); };
   el("btn-materi-prev").onclick = () => go("materi", { t: BAB_AKTIF.t, i: BAB_AKTIF.i - 1 }, { replace: true });
   el("btn-materi-next").onclick = () => go("materi", { t: BAB_AKTIF.t, i: BAB_AKTIF.i + 1 }, { replace: true });
   el("btn-ulangi-salah").onclick = () => {
@@ -950,10 +1105,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   NAV = [{ r: "beranda", a: {} }];
   terapkanRoute(NAV[0], "maju");
-  history.replaceState({ kq: 0 }, "");
+  history.replaceState({ kq: 0 }, "", location.pathname + location.search + location.hash);
+  if (typeof ruteAwal === "function") ruteAwal();   // buka langsung #data-analyst, #data-scientist, #latihan, #kemajuan
   setTimeout(() => umumkanLencana(cekLencana()), 1200);   // misal lencana streak
 
   // PWA: bisa di-install & dipakai offline saat dibuka lewat http(s) (Netlify/GitHub Pages)
   if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol))
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+    navigator.serviceWorker.register("sw.js").then(() => {
+      // Versi baru aktif (sw.js memakai skipWaiting + clients.claim): langsung pakai bila aman, tanpa harus memuat ulang berkali-kali
+      const adaSebelumnya = !!navigator.serviceWorker.controller;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (!adaSebelumnya) return;                                   // kunjungan pertama, bukan pembaruan
+        const aman = NAV.length === 1 && !SESI;                       // di beranda, tidak sedang kuis
+        if (aman && !sessionStorage.getItem("kq-diperbarui")) { sessionStorage.setItem("kq-diperbarui", "1"); location.reload(); }
+        else toast("Versi baru KodeQuiz sudah siap. Muat ulang halaman untuk memakainya.");
+      });
+    }).catch(() => {});
 });

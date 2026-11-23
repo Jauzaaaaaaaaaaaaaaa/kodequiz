@@ -99,6 +99,17 @@ SOAL_JS.push(
 
 MATERI_JS.push(
 {k:"modern",judul:"JavaScript Modern (ES6+) yang Dipakai Setiap Hari",materi:`
+<!--pemula--><h4>Untuk pemula: bab ini berisi "singkatan" JavaScript</h4>
+<p>Semua yang ada di bab ini sebenarnya bisa ditulis dengan cara panjang yang sudah kamu pelajari. Programmer memakai bentuk singkat ini karena lebih ringkas, dan kamu akan menemuinya di hampir semua kode modern (React, Vue, Node.js). Kalau ada yang belum paham, kembali ke bab Fungsi, Array, dan String &amp; Objek.</p>
+<table class="mini-pivot"><tr><th>Simbol / istilah</th><th>Artinya dalam bahasa sehari-hari</th></tr>
+<tr><td><code>...</code> (spread)</td><td>"tuang semua isinya di sini", untuk menyalin atau menggabung array/objek</td></tr>
+<tr><td><code>...</code> (rest) di parameter</td><td>"kumpulkan semua sisa argumen jadi satu array"</td></tr>
+<tr><td>destructuring <code>{ a, b } = obj</code></td><td>membongkar isi objek ke variabel bernama sama</td></tr>
+<tr><td><code>?.</code> (optional chaining)</td><td>"ambil kalau ada; kalau tidak ada, hasilnya <code>undefined</code> saja, jangan error"</td></tr>
+<tr><td><code>??</code></td><td>"pakai nilai cadangan hanya kalau kosong (<code>null</code>/<code>undefined</code>)"; berbeda dengan <code>||</code> yang juga mengganti <code>0</code> dan <code>""</code></td></tr>
+<tr><td><code>acc</code> pada <code>reduce</code></td><td>singkatan <i>accumulator</i>, "total sementara" yang terus diperbarui</td></tr>
+<tr><td><code>toLocaleString("id-ID")</code></td><td>menulis angka dengan format Indonesia: 1.234.567</td></tr></table>
+<p>Contoh beda <code>??</code> dan <code>||</code>: <code>0 ?? 10</code> hasilnya <code>0</code> (karena 0 bukan "kosong"), sedangkan <code>0 || 10</code> hasilnya <code>10</code> (karena 0 dianggap salah).</p><!--/pemula-->
 <p>Kode JavaScript di perusahaan (React, Vue, Odoo OWL, Node.js) penuh dengan sintaks modern ini:</p>
 <pre><code>// spread & rest
 const b = [...a, 3];                    // salin + tambah
@@ -131,6 +142,14 @@ const per = trx.reduce((acc, [s, t]) =&gt; {
 <div class="catatan">⚠️ <code>sort()</code> tanpa pembanding mengurutkan sebagai teks: <code>[10, 9, 1, 100] → [1, 10, 100, 9]</code>.</div>`},
 
 {k:"kasus",judul:"Latihan Membaca Kode & Jebakan JavaScript",materi:`
+<!--pemula--><h4>Untuk pemula: cara mengerjakan soal "apa output kode ini?"</h4>
+<p>Soal jenis ini menguji apakah kamu bisa <b>membaca kode seperti komputer</b>. Caranya:</p>
+<ol><li>Baca <b>baris demi baris dari atas</b>, jangan menebak dari kesan sekilas.</li><li>Tulis di kertas <b>isi setiap variabel</b> setelah tiap baris berubah.</li><li>Perhatikan <b>tipe data</b>: angka atau teks? Banyak jebakan muncul saat teks dan angka bercampur.</li><li>Untuk kode dengan <code>setTimeout</code> atau <code>Promise</code>, ingat bahwa bagian itu <b>dijalankan belakangan</b>, setelah semua kode biasa selesai.</li></ol>
+<table class="mini-pivot"><tr><th>Istilah di tabel bawah</th><th>Artinya</th></tr>
+<tr><td>referensi</td><td>"alamat" tempat objek/array disimpan. Dua array dengan isi sama tetap dianggap beda karena alamatnya beda, seperti dua rumah kembar di alamat berbeda</td></tr>
+<tr><td>hoisting</td><td>JS "mengangkat" deklarasi <code>var</code> ke atas, sehingga variabel sudah ada (berisi <code>undefined</code>) sebelum baris pengisiannya</td></tr>
+<tr><td>event loop</td><td>"antrean kerja" JS: kode biasa dulu, lalu Promise, lalu <code>setTimeout</code></td></tr>
+<tr><td>microtask / macrotask</td><td>dua jenis antrean; microtask (Promise) selalu didahulukan dari macrotask (setTimeout, klik)</td></tr></table><!--/pemula-->
 <p>Pertanyaan "apa output kode ini?" adalah favorit interview frontend. Kebanyakan berasal dari sedikit jebakan yang sama:</p>
 <table class="mini-pivot"><tr><th>Kode</th><th>Hasil</th><th>Kenapa</th></tr>
 <tr><td><code>"5" == 5</code></td><td>true</td><td>== mengonversi tipe → pakai ===</td></tr>

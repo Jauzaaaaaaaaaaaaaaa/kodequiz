@@ -189,6 +189,16 @@ SOAL_EXCEL.push(
 
 MATERI_EXCEL.push(
 {k:"teks",judul:"Teks & Membersihkan Data",materi:`
+<!--pemula--><h4>Untuk pemula: kenapa data perlu dibersihkan?</h4>
+<p>Bagi Excel, "Jakarta", "jakarta", dan "Jakarta " (ada spasi di belakang) adalah <b>tiga tulisan berbeda</b>. Akibatnya SUMIFS atau Pivot Table bisa menghitung satu kota menjadi tiga baris terpisah, dan laporannya salah tanpa ada peringatan. Membersihkan data artinya menyeragamkan tulisan sebelum dihitung. Pekerjaan ini sering memakan sebagian besar waktu seorang analis.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>spasi berlebih</td><td>spasi di awal, di akhir, atau dobel di tengah; tidak terlihat tapi membuat data tidak cocok</td></tr>
+<tr><td><code>TRIM</code></td><td>buang spasi berlebih</td></tr>
+<tr><td><code>PROPER</code> / <code>UPPER</code> / <code>LOWER</code></td><td>Huruf Kapital Tiap Kata / HURUF BESAR / huruf kecil</td></tr>
+<tr><td><code>LEN</code></td><td>hitung jumlah karakter (berguna untuk menemukan spasi tersembunyi)</td></tr>
+<tr><td><code>LEFT</code> / <code>RIGHT</code> / <code>MID</code></td><td>ambil beberapa karakter dari kiri / kanan / tengah</td></tr>
+<tr><td>duplikat</td><td>baris yang tercatat dua kali</td></tr>
+<tr><td>kolom bantu</td><td>kolom baru berisi rumus pembersih; data asli tidak diubah</td></tr></table><!--/pemula-->
 <p>Di dunia kerja, data hampir tidak pernah datang dalam keadaan rapi. Data hasil export sistem, form Google, atau ketikan banyak orang biasanya berantakan. Analis yang bisa <b>membersihkan data dengan cepat</b> sangat dihargai.</p>
 {{tb:kotor}}
 <p>Masalah di data ini: spasi berlebih (A2, A4, B3), huruf besar-kecil tidak konsisten, format telepon berbeda, dan baris 7 adalah <b>duplikat</b> baris 3.</p>
@@ -213,6 +223,18 @@ MATERI_EXCEL.push(
 <div class="praktik">🧪 <b>Praktik di Excel:</b> file latihan → sheet <i>Bab7-Teks</i>.</div>`},
 
 {k:"tanggal",judul:"Tanggal & Waktu — Analisis per Periode",materi:`
+<!--pemula--><h4>Untuk pemula: tanggal di Excel sebenarnya angka</h4>
+<p>Di balik layar, Excel menyimpan tanggal sebagai <b>nomor urut hari</b>. Hari ke-1 adalah 1 Januari 1900, lalu terus bertambah satu setiap hari. Yang kamu lihat sebagai "03/01/2026" hanyalah tampilan dari sebuah angka.</p>
+<p>Karena tanggal adalah angka, tanggal bisa dihitung: <b>tanggal bayar − tanggal faktur = jumlah hari terlambat</b>, dan <b>tanggal + 30 = tanggal jatuh tempo</b>.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td><code>DAY</code> / <code>MONTH</code> / <code>YEAR</code></td><td>ambil tanggal / bulan / tahun dari sebuah tanggal</td></tr>
+<tr><td>jatuh tempo</td><td>batas akhir pembayaran</td></tr>
+<tr><td><code>EOMONTH</code></td><td><i>end of month</i>, tanggal terakhir suatu bulan</td></tr>
+<tr><td><code>TODAY()</code></td><td>tanggal hari ini, selalu ikut berubah setiap hari</td></tr>
+<tr><td><code>NETWORKDAYS</code></td><td>jumlah hari kerja (Senin–Jumat) di antara dua tanggal</td></tr>
+<tr><td><code>COUNTBLANK</code></td><td>hitung sel yang kosong</td></tr>
+<tr><td>periode</td><td>rentang waktu laporan, misalnya per bulan</td></tr></table>
+<div class="catatan">Kalau tanggal tampil sebagai angka aneh (misalnya 46023), isinya benar; hanya formatnya yang perlu diubah menjadi Date.</div><!--/pemula-->
 <p>Laporan bisnis hampir selalu bertanya: <i>bulan ini berapa? telat berapa hari? jatuh tempo kapan?</i> Kuncinya satu: <b>Excel menyimpan tanggal sebagai angka hari</b> (1 Januari 2026 = 46023). Karena itu tanggal bisa dikurangkan, ditambah, dan dibandingkan.</p>
 {{tb:transaksi}}
 <pre><code>=DAY(B2) / =MONTH(B2) / =YEAR(B2)   → 3 / 1 / 2026
@@ -231,6 +253,16 @@ MATERI_EXCEL.push(
 <div class="praktik">🧪 <b>Praktik di Excel:</b> file latihan → sheet <i>Bab8-Tanggal</i>.</div>`},
 
 {k:"lookup2",judul:"INDEX-MATCH & Dynamic Array (FILTER, UNIQUE, SORT)",materi:`
+<!--pemula--><h4>Untuk pemula: dua cara lain mencari data</h4>
+<p>Bab ini menambah dua alat:</p>
+<p><b>1. INDEX + MATCH</b>, pasangan yang bekerja seperti ini: <b>MATCH</b> menjawab "barang ini ada di urutan ke berapa?", lalu <b>INDEX</b> menjawab "apa isi urutan ke sekian itu?". Seperti mencari nama di daftar absen (ketemu di nomor 3), lalu melihat nilai di nomor 3 pada daftar nilai.</p>
+<p><b>2. Dynamic array</b>: satu rumus yang hasilnya <b>tumpah</b> (<i>spill</i>) ke banyak sel sekaligus. Contoh: <code>FILTER</code> mengambil semua baris yang memenuhi syarat, <code>UNIQUE</code> membuat daftar tanpa kembar, <code>SORT</code> mengurutkan. Fitur ini ada di Excel 365 dan Google Sheets.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>posisi</td><td>urutan ke berapa, bukan isinya</td></tr>
+<tr><td><code>0</code> di MATCH</td><td>"cari yang persis sama"</td></tr>
+<tr><td>dua arah</td><td>mencari baris <b>dan</b> kolom sekaligus, misalnya nilai Citra di bulan Feb</td></tr>
+<tr><td>tarif bertingkat</td><td>aturan seperti "di atas 5 juta komisi 3%", dicari dengan batas bawah terdekat</td></tr>
+<tr><td>spill</td><td>hasil rumus yang melebar ke sel-sel di bawah/sampingnya; sel tujuan harus kosong</td></tr></table><!--/pemula-->
 <p>Bab ini melengkapi XLOOKUP dengan dua hal: <b>INDEX-MATCH</b> (wajib untuk Excel versi lama dan tes kerja) dan <b>dynamic array</b> (Excel 365/Google Sheets) yang membuat laporan otomatis.</p>
 {{tb:produkSheet}}
 <p><b>MATCH</b> mencari POSISI, <b>INDEX</b> mengambil ISI pada posisi itu:</p>
@@ -252,6 +284,14 @@ MATERI_EXCEL.push(
 <div class="praktik">🧪 <b>Praktik di Excel:</b> file latihan → sheet <i>Bab9-Lookup</i>.</div>`},
 
 {k:"error",judul:"Error, IFERROR & Data yang Rapi",materi:`
+<!--pemula--><h4>Untuk pemula: error adalah petunjuk, bukan kegagalan</h4>
+<p>Tulisan seperti <code>#N/A</code> atau <code>#DIV/0!</code> sering membuat pemula panik. Sebenarnya itu <b>pesan</b> dari Excel yang memberi tahu jenis masalahnya, seperti lampu indikator di dasbor motor. Tanda pagar <code>#</code> di awal adalah penanda error, dan kata sesudahnya menjelaskan masalahnya.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td><code>IFERROR(rumus, pengganti)</code></td><td>"kalau rumusnya error apa pun, tampilkan pengganti ini"</td></tr>
+<tr><td><code>IFNA(rumus, pengganti)</code></td><td>sama, tapi <b>hanya</b> untuk error <code>#N/A</code> (tidak ditemukan); error lain tetap terlihat</td></tr>
+<tr><td>menyembunyikan error</td><td>berbahaya kalau dilakukan sembarangan, karena kesalahan sungguhan ikut tertutup</td></tr>
+<tr><td>validasi data</td><td>membatasi isian sel (misalnya hanya angka atau pilihan dari daftar) supaya error tidak terjadi dari awal</td></tr></table>
+<div class="catatan">Biasakan membaca dulu error-nya, cari penyebabnya, baru putuskan apakah perlu disembunyikan.</div><!--/pemula-->
 <p>Error di Excel bukan musuh — ia <b>alarm</b> yang memberi tahu apa yang salah. Kenali tujuh yang paling sering:</p>
 <table class="mini-pivot"><tr><th>Error</th><th>Artinya</th><th>Biasanya karena</th></tr>
 <tr><td><code>#DIV/0!</code></td><td>bagi dengan nol</td><td>pembagi kosong/0</td></tr>

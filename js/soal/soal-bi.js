@@ -154,6 +154,17 @@ const SOAL_BI = [
 
 const MATERI_BI = [
 {k:"bidasar",judul:"Dashboard, KPI, Dimensi & Metrik",materi:`
+<!--pemula--><h4>Untuk pemula: BI dan dashboard itu apa?</h4>
+<p><b>BI</b> (<i>Business Intelligence</i>) adalah kegiatan mengubah data perusahaan menjadi laporan dan grafik yang membantu orang mengambil keputusan. Hasil yang paling dikenal adalah <b>dashboard</b>: satu halaman berisi angka-angka penting dan grafik, seperti dasbor mobil yang menampilkan kecepatan, bensin, dan suhu mesin. Sopir tidak perlu membuka kap mesin untuk tahu kondisi mobilnya.</p>
+<p>Alat BI yang populer: <b>Power BI</b> (Microsoft), <b>Looker Studio</b> (Google, gratis), dan <b>Tableau</b>.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>dimensi</td><td>kolom untuk <b>mengelompokkan</b>: wilayah, produk, tanggal ("per apa?")</td></tr>
+<tr><td>metrik / measure</td><td>angka yang <b>dihitung</b>: total penjualan, jumlah pesanan ("berapa?")</td></tr>
+<tr><td>KPI (<i>Key Performance Indicator</i>)</td><td>3–5 metrik paling penting, selalu dengan pembanding (target atau periode lalu)</td></tr>
+<tr><td>filter</td><td>penyaring, misalnya hanya menampilkan Jakarta</td></tr>
+<tr><td>granularitas</td><td>tingkat kerincian data: "1 baris = 1 apa?" (per transaksi, per hari, atau per bulan)</td></tr>
+<tr><td>scorecard</td><td>kotak berisi satu angka besar, misalnya "Penjualan bulan ini: Rp120 jt"</td></tr></table>
+<p>Contoh membedakan dimensi dan metrik: dalam kalimat "total penjualan <b>per wilayah</b>", <i>total penjualan</i> adalah metrik dan <i>wilayah</i> adalah dimensi.</p><!--/pemula-->
 <p>Dashboard adalah <b>alat untuk mengambil keputusan</b>, bukan galeri grafik. Urutannya selalu:</p>
 <pre><code>Pertanyaan bisnis → Metrik → Grafik → Desain</code></pre>
 <p><b>Dua jenis kolom</b> yang harus kamu kenali di tool BI mana pun:</p>
@@ -172,6 +183,17 @@ const MATERI_BI = [
 <div class="catatan">💡 <b>Hubungannya dengan magangmu:</b> dashboard salesperson di Odoo adalah contoh nyata "audiens menentukan isi". Di interview, ceritakan: siapa penggunanya, pertanyaan apa yang dijawab, dan keputusan apa yang jadi lebih mudah.</div>`},
 
 {k:"visual",judul:"Memilih Grafik yang Tepat (dan Jujur)",materi:`
+<!--pemula--><h4>Untuk pemula: grafik yang tepat untuk pertanyaan yang tepat</h4>
+<p>Setiap jenis grafik punya kegunaan sendiri, seperti alat dapur: pisau untuk memotong, sendok untuk mengaduk. Memakai grafik yang salah membuat pembaca bingung, atau lebih buruk lagi, tersesat.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>line chart (grafik garis)</td><td>menunjukkan <b>perubahan dari waktu ke waktu</b></td></tr>
+<tr><td>bar chart (grafik batang)</td><td><b>membandingkan</b> besar-kecil antar-kategori</td></tr>
+<tr><td>pie / donut (grafik lingkaran)</td><td><b>porsi dari keseluruhan</b>; hanya cocok untuk sedikit kategori</td></tr>
+<tr><td>scatter plot (diagram pencar)</td><td>melihat apakah <b>dua angka berhubungan</b></td></tr>
+<tr><td>sumbu (<i>axis</i>)</td><td>garis patokan angka di tepi grafik</td></tr>
+<tr><td>warna aksen</td><td>satu warna mencolok untuk menyorot hal terpenting, sisanya warna netral</td></tr>
+<tr><td>grafik menyesatkan</td><td>grafik yang membuat perbedaan terlihat lebih besar/kecil dari kenyataan, misalnya sumbu batang yang tidak dimulai dari 0</td></tr></table>
+<p>Contoh sumbu terpotong: penjualan 98 dan 100 terlihat seperti beda tiga kali lipat kalau sumbu batangnya dimulai dari 97 (tinggi batangnya 1 lawan 3). Padahal bedanya hanya 2%.</p><!--/pemula-->
 <table class="mini-pivot"><tr><th>Pertanyaan</th><th>Grafik</th></tr>
 <tr><td>Bagaimana trennya dari waktu ke waktu?</td><td><b>Line chart</b></td></tr>
 <tr><td>Mana yang lebih besar/kecil?</td><td><b>Bar chart</b> (urutkan!)</td></tr>
@@ -192,6 +214,16 @@ const MATERI_BI = [
 <div class="catatan">🧪 <b>Latihan:</b> buka data bulanan di Google Sheets → buat line chart pendapatan dan bar chart konversi per bulan. Tulis judul berupa insight untuk keduanya.</div>`},
 
 {k:"model",judul:"Model Data, Star Schema & Power Query",materi:`
+<!--pemula--><h4>Untuk pemula: menyiapkan data sebelum membuat grafik</h4>
+<p>Sebelum membuat dashboard, data harus disusun rapi, seperti menata bahan masakan sebelum mulai memasak. Di alat BI, data biasanya dipisah ke beberapa tabel yang saling terhubung, membentuk <b>model data</b>.</p>
+<p>Susunan yang paling umum disebut <b>star schema</b> (skema bintang), karena gambarnya seperti bintang: satu tabel transaksi di tengah, dikelilingi tabel-tabel keterangan.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>fact table (tabel fakta)</td><td>tabel <b>kejadian/transaksi</b> berisi angka, misalnya setiap pesanan dengan tanggal, jumlah, dan nilainya; biasanya sangat panjang</td></tr>
+<tr><td>dimension table (tabel dimensi)</td><td>tabel <b>keterangan</b>: daftar pelanggan, daftar produk, kalender; dipakai untuk filter dan pengelompokan</td></tr>
+<tr><td>relasi</td><td>sambungan antar-tabel lewat kolom yang sama, misalnya <code>produk_id</code></td></tr>
+<tr><td>one-to-many (1 ke banyak)</td><td>satu produk bisa muncul di banyak pesanan</td></tr>
+<tr><td>Power Query</td><td>alat di Power BI dan Excel untuk membersihkan dan membentuk data sebelum dianalisis</td></tr>
+<tr><td>tabel kalender</td><td>tabel berisi semua tanggal beserta bulan, kuartal, dan tahunnya, untuk analisis per periode</td></tr></table><!--/pemula-->
 <p>Sebelum membuat grafik, data harus dibentuk dengan benar. Di Power BI ini dikerjakan di <b>Power Query</b> (juga ada di Excel: Data → Get Data).</p>
 <p><b>Star schema</b> — susunan standar model BI:</p>
 <pre><code>        [ pelanggan ]
@@ -216,6 +248,17 @@ const MATERI_BI = [
 <div class="catatan">⚠️ <b>Bug BI nomor satu:</b> menggabungkan tabel dengan granularitas berbeda (target per bulan × transaksi per hari) → angka target terhitung berkali-kali. Samakan dulu tingkat detailnya.</div>`},
 
 {k:"dax",judul:"Kalkulasi: DAX (Power BI) & Calculated Field (Looker Studio)",materi:`
+<!--pemula--><h4>Untuk pemula: rumus di alat BI</h4>
+<p>Seperti Excel punya rumus, Power BI punya bahasa rumus bernama <b>DAX</b> (<i>Data Analysis Expressions</i>), dan Looker Studio punya <b>calculated field</b> (kolom hitungan). Bentuknya mirip rumus Excel: nama fungsi lalu isi di dalam kurung.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>measure</td><td>rumus yang dihitung <b>saat ditampilkan</b> dan otomatis mengikuti filter; misalnya total penjualan yang berubah saat kamu memilih wilayah lain</td></tr>
+<tr><td>calculated column</td><td>rumus yang dihitung <b>per baris</b> dan disimpan sebagai kolom baru</td></tr>
+<tr><td><code>Penjualan[Total]</code></td><td>kolom Total di tabel Penjualan</td></tr>
+<tr><td><code>[Total Penjualan]</code></td><td>memanggil measure yang sudah dibuat sebelumnya</td></tr>
+<tr><td><code>DIVIDE(a, b)</code></td><td>pembagian yang aman: kalau b nol, tidak error</td></tr>
+<tr><td><code>CALCULATE</code></td><td>menghitung ulang sebuah measure dengan filter tambahan, mirip SUMIFS di Excel</td></tr>
+<tr><td>YTD (<i>year to date</i>)</td><td>total sejak awal tahun sampai tanggal sekarang</td></tr></table>
+<p>Contoh perbedaan measure dan calculated column: "rata-rata nilai pesanan" harus measure, karena nilainya harus dihitung ulang setiap kali filter berubah. "Harga × jumlah di setiap baris" boleh calculated column, karena hasilnya tetap per baris.</p><!--/pemula-->
 <p><b>Measure</b> dihitung saat ditampilkan dan mengikuti filter. <b>Calculated column</b> dihitung per baris dan disimpan.</p>
 <pre><code>Total Penjualan   = SUM(Penjualan[Total])
 Jumlah Transaksi  = COUNTROWS(Penjualan)

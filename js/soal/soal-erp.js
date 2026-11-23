@@ -191,6 +191,17 @@ const SOAL_ERP = [
 
 const MATERI_ERP = [
 {k:"erp",judul:"Konsep ERP & Mengenal Odoo",materi:`
+<!--pemula--><h4>Untuk pemula: ERP itu apa?</h4>
+<p>Bayangkan toko yang mencatat penjualan di buku tulis, stok gudang di Excel, dan keuangan di aplikasi lain. Saat ada pesanan, bagian penjualan harus menelepon gudang untuk menanyakan stok, lalu gudang mengirim foto nota ke bagian keuangan. Catatannya sering tidak cocok, dan banyak waktu habis untuk mencocokkan.</p>
+<p><b>ERP</b> (<i>Enterprise Resource Planning</i>) adalah <b>satu sistem</b> yang dipakai bersama oleh semua bagian perusahaan, dengan <b>satu database</b> (gudang data) yang sama. Begitu bagian penjualan mengonfirmasi pesanan, gudang langsung melihat barang yang harus dikirim, dan keuangan langsung melihat tagihan yang harus dibuat.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>modul</td><td>"aplikasi" di dalam ERP untuk satu bagian: Sales, Inventory, Accounting, dan lainnya</td></tr>
+<tr><td>Sales Order</td><td>pesanan penjualan yang sudah disetujui pelanggan</td></tr>
+<tr><td>Delivery Order</td><td>surat perintah mengirim barang dari gudang</td></tr>
+<tr><td>invoice</td><td>tagihan ke pelanggan</td></tr>
+<tr><td>piutang</td><td>uang yang masih harus dibayar pelanggan kepada kita</td></tr>
+<tr><td>open-source</td><td>kode programnya terbuka dan boleh dipelajari/dikembangkan</td></tr>
+<tr><td>konsultan ERP</td><td>orang yang menyesuaikan ERP dengan cara kerja perusahaan klien dan melatih penggunanya</td></tr></table><!--/pemula-->
 <p><b>ERP</b> menyatukan proses bisnis dalam <b>satu database</b>. Tanpa ERP: sales, gudang, dan keuangan punya file sendiri yang sering tidak cocok. Dengan ERP: satu transaksi langsung terlihat oleh semua bagian.</p>
 <pre><code>Sales Order dikonfirmasi
    ├─▶ Inventory : Delivery Order dibuat otomatis
@@ -210,6 +221,17 @@ const MATERI_ERP = [
 <div class="praktik">🧪 <b>Praktik:</b> buat database trial gratis di odoo.com atau install Odoo Community di laptop. Install Sales + Inventory + Invoicing, lalu jalankan satu alur penjualan lengkap.</div>`},
 
 {k:"sales",judul:"CRM & Penjualan (Lead-to-Cash)",materi:`
+<!--pemula--><h4>Untuk pemula: perjalanan dari calon pembeli sampai uang masuk</h4>
+<p>Bab ini mengikuti satu perjalanan penjualan dari awal sampai akhir, yang disebut <b>Lead-to-Cash</b> (dari calon pembeli sampai uang diterima):</p>
+<ol><li><b>Lead</b>: ada orang yang tertarik, misalnya mengisi formulir di situs.</li><li><b>Opportunity</b>: peluang penjualan yang sedang diusahakan tim sales.</li><li><b>Quotation</b>: penawaran harga yang dikirim ke calon pembeli.</li><li><b>Sales Order</b>: penawaran disetujui, menjadi pesanan resmi.</li><li><b>Delivery</b>: barang dikirim.</li><li><b>Invoice</b>: tagihan dibuat.</li><li><b>Payment</b>: pelanggan membayar.</li></ol>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>CRM (<i>Customer Relationship Management</i>)</td><td>modul untuk mencatat dan mengelola calon pembeli</td></tr>
+<tr><td>Won / Lost</td><td>peluang berhasil menjadi penjualan / gagal</td></tr>
+<tr><td>Pricelist</td><td>daftar harga khusus, misalnya harga grosir atau harga promo</td></tr>
+<tr><td>Invoicing Policy</td><td>aturan menagih: sesuai jumlah yang <b>dipesan</b> atau yang sudah <b>dikirim</b></td></tr>
+<tr><td>down payment</td><td>uang muka</td></tr>
+<tr><td>Access Rights</td><td>pengaturan siapa boleh melihat dan mengubah data apa</td></tr>
+<tr><td>Lost Reasons</td><td>alasan kenapa penjualan gagal, dicatat untuk dianalisis</td></tr></table><!--/pemula-->
 <pre><code>CRM:   Lead → Opportunity → (New → Qualified → Proposition → Won / Lost)
 Sales: Quotation → Sales Order → Delivery → Invoice → Payment</code></pre>
 <p><b>Konfigurasi penting yang sering ditanyakan klien:</b></p>
@@ -224,6 +246,18 @@ Sales: Quotation → Sales Order → Delivery → Invoice → Payment</code></pr
 <div class="catatan">💼 <b>Hubungkan dengan magangmu:</b> dashboard salesperson bergantung pada data yang bersih — field Salesperson, Sales Team, dan tanggal konfirmasi harus selalu terisi. Di interview, ceritakan bagaimana kamu memastikan datanya benar, bukan hanya grafiknya.</div>`},
 
 {k:"stok",judul:"Pembelian & Inventory (Procure-to-Pay)",materi:`
+<!--pemula--><h4>Untuk pemula: dari membeli barang sampai membayar pemasok</h4>
+<p>Kalau bab sebelumnya tentang <b>menjual</b>, bab ini tentang <b>membeli dan menyimpan</b> barang, yang disebut <b>Procure-to-Pay</b> (dari pengadaan sampai pembayaran):</p>
+<ol><li><b>RFQ</b> (<i>Request for Quotation</i>): meminta penawaran harga ke pemasok.</li><li><b>Purchase Order (PO)</b>: pesanan pembelian resmi ke pemasok.</li><li><b>Receipt</b>: barang diterima di gudang.</li><li><b>Vendor Bill</b>: tagihan dari pemasok dicatat.</li><li><b>Payment</b>: kita membayar pemasok.</li></ol>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>vendor / pemasok</td><td>pihak yang menjual barang kepada kita</td></tr>
+<tr><td>On hand</td><td>stok yang <b>benar-benar ada</b> di gudang sekarang</td></tr>
+<tr><td>Forecasted</td><td>perkiraan stok = yang ada + yang akan masuk − yang akan keluar</td></tr>
+<tr><td>stock opname</td><td>menghitung stok fisik di gudang untuk dicocokkan dengan catatan sistem</td></tr>
+<tr><td>reordering rule (Min/Max)</td><td>aturan pesan ulang otomatis: kalau stok turun di bawah Min, pesan sampai mencapai Max</td></tr>
+<tr><td>MTS / MTO</td><td><i>Make to Stock</i> (stok disiapkan dulu) / <i>Make to Order</i> (dibeli atau dibuat setelah ada pesanan)</td></tr>
+<tr><td>lot / serial</td><td>penanda per kelompok produksi (misalnya obat dengan tanggal kedaluwarsa) / per unit (misalnya laptop bergaransi)</td></tr></table>
+<p>Contoh reordering rule: Min 10, Max 50, stok tinggal 5. Karena 5 di bawah 10, sistem memesan 50 − 5 = <b>45</b> unit.</p><!--/pemula-->
 <pre><code>Purchase: RFQ → Purchase Order → Receipt → Vendor Bill → Payment
 Stok:     On hand (fisik) | Forecasted = on hand + masuk − keluar</code></pre>
 <table class="mini-pivot"><tr><th>Konsep</th><th>Arti singkat</th></tr>
@@ -240,6 +274,19 @@ Standard → memakai harga standar yang ditetapkan</code></pre>
 <div class="catatan">⚠️ Selisih stok sistem vs fisik adalah keluhan klien nomor satu. Penyebab umum: barang keluar-masuk tanpa dicatat, salah satuan (pcs vs box), dan penerimaan parsial yang tidak divalidasi.</div>`},
 
 {k:"akuntansi",judul:"Akuntansi Dasar untuk Konsultan ERP",materi:`
+<!--pemula--><h4>Untuk pemula: akuntansi dasar tanpa pusing</h4>
+<p>Akuntansi adalah cara perusahaan <b>mencatat setiap pergerakan uang</b> dengan aturan yang sama di seluruh dunia. Kamu tidak harus menjadi akuntan, tapi perlu paham dasarnya karena setiap transaksi di ERP otomatis membuat catatan akuntansi.</p>
+<p><b>Persamaan dasar:</b> <b>Aset = Liabilitas + Ekuitas</b>. Semua yang dimiliki perusahaan (aset) berasal dari utang (liabilitas) atau dari modal pemilik (ekuitas). Contoh: kamu membeli motor seharga 20 juta, 15 juta dari tabunganmu dan 5 juta pinjaman. Aset 20 juta = utang 5 juta + modal sendiri 15 juta.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>aset</td><td>yang dimiliki: uang di bank, piutang, stok barang, gedung</td></tr>
+<tr><td>liabilitas</td><td>kewajiban/utang: utang ke pemasok, pajak yang harus disetor</td></tr>
+<tr><td>ekuitas</td><td>modal milik pemilik usaha</td></tr>
+<tr><td>pendapatan / beban</td><td>uang yang dihasilkan / biaya yang dikeluarkan</td></tr>
+<tr><td>jurnal</td><td>catatan satu transaksi</td></tr>
+<tr><td>debit / kredit</td><td>sisi kiri / sisi kanan sebuah jurnal; setiap transaksi selalu dicatat di dua sisi dengan jumlah sama</td></tr>
+<tr><td>PPN Keluaran</td><td>pajak yang kita pungut dari pelanggan dan nanti disetor ke negara</td></tr>
+<tr><td>rekonsiliasi bank</td><td>mencocokkan mutasi rekening bank dengan catatan di sistem</td></tr></table>
+<p>Debit dan kredit <b>bukan</b> berarti "uang masuk" dan "uang keluar". Keduanya hanya nama kolom kiri dan kanan. Hafalkan pola di tabel bawah, dan seiring waktu polanya akan terasa wajar.</p><!--/pemula-->
 <p>Kamu tidak harus menjadi akuntan, tapi harus bisa <b>membaca jurnal yang dibuat sistem</b> dan berbicara dengan tim finance klien.</p>
 <pre><code>Aset = Liabilitas + Ekuitas
 Debit menambah: aset, beban      | Kredit menambah: liabilitas, ekuitas, pendapatan</code></pre>
@@ -259,6 +306,18 @@ Debit menambah: aset, beban      | Kredit menambah: liabilitas, ekuitas, pendapa
 <div class="catatan">ℹ️ Tarif dan aturan pajak bisa berubah. Contoh PPN di sini hanya ilustrasi; saat implementasi, selalu konfirmasi aturan terbaru dengan tim pajak klien.</div>`},
 
 {k:"implementasi",judul:"Metodologi Implementasi ERP",materi:`
+<!--pemula--><h4>Untuk pemula: bagaimana ERP dipasang di sebuah perusahaan?</h4>
+<p>Memasang ERP di perusahaan bukan sekadar menginstal aplikasi. Prosesnya mirip <b>merenovasi rumah yang masih ditinggali</b>: harus memahami kebiasaan penghuninya, merancang ulang, memindahkan barang, mengajari cara memakai ruangan baru, lalu mendampingi di minggu-minggu pertama. Proses ini disebut <b>implementasi</b>, dan biasanya dipimpin seorang konsultan.</p>
+<table class="mini-pivot"><tr><th>Istilah</th><th>Artinya</th></tr>
+<tr><td>as-is / to-be</td><td>cara kerja perusahaan <b>sekarang</b> / cara kerja yang <b>diinginkan</b> setelah memakai ERP</td></tr>
+<tr><td>fit-gap</td><td>memilah kebutuhan yang sudah dipenuhi fitur standar (<b>fit</b>) dan yang belum (<b>gap</b>)</td></tr>
+<tr><td>kustomisasi</td><td>menulis program tambahan khusus untuk klien; mahal dan sulit dirawat, jadi pilihan terakhir</td></tr>
+<tr><td>migrasi data</td><td>memindahkan data lama (daftar pelanggan, produk, saldo awal) ke sistem baru</td></tr>
+<tr><td>key user</td><td>karyawan klien yang paling paham prosesnya dan menjadi penghubung dengan konsultan</td></tr>
+<tr><td>UAT (<i>User Acceptance Test</i>)</td><td>pengujian oleh pengguna klien sendiri sebelum sistem dipakai sungguhan</td></tr>
+<tr><td>SOP</td><td>panduan langkah kerja tertulis</td></tr>
+<tr><td>go-live</td><td>hari pertama sistem dipakai sungguhan</td></tr>
+<tr><td>hypercare</td><td>masa pendampingan intensif setelah go-live</td></tr></table><!--/pemula-->
 <pre><code>1. Analisis kebutuhan (as-is → to-be, fit-gap)
 2. Desain & konfigurasi
 3. Migrasi data (master data → saldo awal)
