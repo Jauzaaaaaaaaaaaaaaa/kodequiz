@@ -62,27 +62,37 @@
     return "html";
   }
 
+  // Pencocokan ala VS Code: awalan dulu, lalu huruf berurutan (sto → strong). Huruf pertama harus sama.
+  function cocokkan(daftar, awalan, maks) {
+    const a = awalan.toLowerCase();
+    // skor = jumlah posisi huruf yang cocok; makin kecil makin rapat (sto: strong 0+1+3 lebih baik dari section 0+3+5)
+    const skor = x => { let i = 0, t = 0; [...x.toLowerCase()].forEach((c, j) => { if (c === a[i]) { t += j; i++; } }); return i === a.length ? t : -1; };
+    const lain = x => x.toLowerCase() !== a && (!a || x[0].toLowerCase() === a[0]);
+    const awal = daftar.filter(x => lain(x) && x.toLowerCase().startsWith(a));
+    const fuzzy = daftar.filter(x => lain(x) && !x.toLowerCase().startsWith(a) && skor(x) >= 0).sort((x, y) => skor(x) - skor(y));
+    return [...awal, ...fuzzy].slice(0, maks);
+  }
   function cariSaran(ta, mode) {
     const sebelum = ta.value.slice(0, ta.selectionStart), m = modeDi(ta, mode);
     if (m === "html") {
       const t = sebelum.match(/<([!a-zA-Z][\w-]*)?$/);
       if (!t) return null;
       const awalan = (t[1] || "").toLowerCase();
-      return { awal: sebelum.length - (t[1] || "").length, jenis: "tag", saran: TAG.filter(x => x.toLowerCase().startsWith(awalan) && x.toLowerCase() !== awalan).slice(0, 12) };
+      return { awal: sebelum.length - (t[1] || "").length, jenis: "tag", saran: cocokkan(TAG, awalan, 12) };
     }
     if (m === "css") {
       const prop = sebelum.match(/(?:^|[{;\s])([a-z-]+)$/);
       if (!prop) return null;
       const awalan = prop[1], diNilai = /:[^;{}]*$/.test(sebelum);
       const sumber = diNilai ? NILAI_CSS : CSS;
-      return { awal: sebelum.length - awalan.length, jenis: diNilai ? "nilai" : "prop", saran: sumber.filter(x => x.startsWith(awalan) && x !== awalan).slice(0, 10) };
+      return { awal: sebelum.length - awalan.length, jenis: diNilai ? "nilai" : "prop", saran: cocokkan(sumber, awalan, 10) };
     }
     const w = sebelum.match(/[A-Za-z_][\w]*$/);
     if (!w || w[0].length < 2) return null;
-    const awalan = w[0], kecil = awalan.toLowerCase();
+    const awalan = w[0];
     const dariKode = new Set((ta.value.match(/[A-Za-z_]\w{2,}/g) || []).filter(x => x !== awalan));
     const semua = [...new Set([...(KATA[m] || []), ...dariKode])];
-    return { awal: sebelum.length - awalan.length, jenis: "kata", saran: semua.filter(x => x.toLowerCase().startsWith(kecil) && x !== awalan).sort((a, b) => a.length - b.length).slice(0, 8) };
+    return { awal: sebelum.length - awalan.length, jenis: "kata", saran: cocokkan(semua.sort((a, b) => a.length - b.length), awalan, 8) };
   }
 
   function tampil(ta, mode) {
