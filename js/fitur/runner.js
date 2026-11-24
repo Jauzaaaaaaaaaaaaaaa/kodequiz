@@ -2,7 +2,8 @@
    editor + hasil, mirip OneCompiler:
    • HTML · CSS · JS  → pratinjau di iframe sandbox (tanpa allow-same-origin, jadi kode tidak bisa menyentuh
      data KodeQuiz) + console.log/error ditangkap ke panel Console.
-   • Python           → Pyodide di Web Worker (dimuat dari CDN saat pertama dipakai), input() dari kotak STDIN,
+   • Python           → Pyodide di Web Worker (dimuat dari CDN saat pertama dipakai), input() diketik langsung di Output
+     seperti terminal,
      paket seperti pandas/numpy dimuat otomatis dari import. Tombol Stop menghentikan loop tak berujung.
    • SQL (SQLite)     → sql.js dari vendor/sql-asm.js (offline), database baru setiap Run.
    Kode tersimpan di localStorage 'kq-runner'. Pintasan: Ctrl+Enter = Run, Ctrl+Shift+K = buka/tutup. */
@@ -13,9 +14,8 @@
     html: '<!DOCTYPE html>\n<html>\n  <head>\n    <title>Hello, World!</title>\n  </head>\n  <body>\n    <h1 class="title">Hello World!</h1>\n    <p id="currentTime"></p>\n  </body>\n</html>\n',
     css: ".title {\n  color: #5c6ac4;\n  font-family: Georgia, serif;\n}\n",
     js: 'document.getElementById("currentTime").textContent = new Date().toString();\nconsole.log("Halo dari script.js");\n',
-    py: 'nama = input()\nprint(f"Halo, {nama}!")\n\nfor i in range(1, 4):\n    print(i, i * i)\n',
+    py: 'nama = input("Siapa namamu? ")\nprint(f"Halo, {nama}!")\n\nfor i in range(1, 4):\n    print(i, i * i)\n',
     sql: "CREATE TABLE siswa (nama TEXT, nilai INTEGER);\nINSERT INTO siswa VALUES ('Rina', 90), ('Budi', 85), ('Sari', 78);\n\nSELECT nama, nilai FROM siswa WHERE nilai > 80 ORDER BY nilai DESC;\n",
-    stdin: "Jauza",
   };
   const FILE = {
     web: [["html", "index.html"], ["css", "styles.css"], ["js", "script.js"]],
@@ -53,8 +53,6 @@
     </div>
     <div class="rn-tab" role="tablist"></div>
     <textarea class="rn-editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Editor kode"></textarea>
-    <label class="rn-stdin-wrap">STDIN <small>(satu baris untuk tiap input())</small>
-      <textarea class="rn-stdin" spellcheck="false" rows="2"></textarea></label>
     <div class="rn-hasil">
       <div class="rn-hasil-label"><span class="rn-label-isi">Preview</span><span class="rn-status" aria-live="polite"></span></div>
       <iframe class="rn-frame" title="Hasil kode" sandbox="allow-scripts allow-modals allow-forms"></iframe>
@@ -63,7 +61,7 @@
   const q = s => dlg.querySelector(s);
   const ui = {
     bahasa: q(".rn-bahasa"), jalan: q(".rn-jalan"), tab: q(".rn-tab"), editor: q(".rn-editor"),
-    stdinWrap: q(".rn-stdin-wrap"), stdin: q(".rn-stdin"), frame: q(".rn-frame"), konsol: q(".rn-konsol"),
+    frame: q(".rn-frame"), konsol: q(".rn-konsol"),
     label: q(".rn-label-isi"), status: q(".rn-status"),
   };
 
@@ -83,8 +81,6 @@
     ui.tab.innerHTML = FILE[S.bahasa].map(([k, nama]) =>
       `<button type="button" role="tab" data-k="${k}" aria-selected="${k === S.tab}">${nama}</button>`).join("");
     ui.editor.value = S[S.tab];
-    ui.stdinWrap.hidden = S.bahasa !== "py";
-    ui.stdin.value = S.stdin;
     ui.frame.hidden = !web;
     dlg.classList.toggle("rn-web", web);
     ui.label.textContent = web ? "Preview · Console" : "Output";
@@ -108,22 +104,44 @@
   });
 
   /* ---------- Python (Pyodide di Worker) ---------- */
+  // input() belum punya jawaban → simpan teks pertanyaannya lalu hentikan program. Setelah pengguna mengetik,
+  // program dijalankan ulang dari awal dengan semua jawaban sejauh ini (worker tidak bisa menunggu secara sinkron).
+  // shortcut: program diulang dari awal tiap input, jadi random/waktu bisa berubah; ganti ke SharedArrayBuffer bila perlu.
+  const PY_INPUT = [
+    "import builtins, sys",
+    "class KqPerluInput(BaseException): pass",
+    "def kq_input(prompt=''):",
+    "    global __kq_tanya",
+    "    prompt = str(prompt)",
+    "    if not __kq_masuk:",
+    "        __kq_tanya = prompt",
+    "        raise KqPerluInput()",
+    "    v = __kq_masuk.pop(0)",
+    "    sys.stdout.write(prompt + v + '\\n')",
+    "    return v",
+    "builtins.input = kq_input",
+  ].join("\n");
   const KODE_WORKER = `
+    const PY_INPUT = ${JSON.stringify(PY_INPUT)};
     importScripts("${PYODIDE}pyodide.js");
     const siap = loadPyodide({ indexURL: "${PYODIDE}" });
     siap.then(() => postMessage({ t: "siap" }), e => postMessage({ t: "gagal", s: String(e) }));
     onmessage = async e => {
       const py = await siap;
-      const masuk = (e.data.stdin || "").split("\\n");
+      py.globals.set("__kq_masuk", py.toPy(e.data.masuk));
+      py.globals.set("__kq_tanya", null);
+      py.runPython(PY_INPUT);
       py.setStdout({ batched: s => postMessage({ t: "out", s }) });
       py.setStderr({ batched: s => postMessage({ t: "err", s }) });
-      py.setStdin({ stdin: () => masuk.length ? masuk.shift() : null });
+      py.setStdin({ stdin: () => null });
       const g = py.globals.get("dict")();
       g.set("__name__", "__main__");
       try {
         await py.loadPackagesFromImports(e.data.kode, { messageCallback: s => postMessage({ t: "info", s }) });
         await py.runPythonAsync(e.data.kode, { globals: g });
       } catch (err) {
+        const tanya = py.globals.get("__kq_tanya");
+        if (tanya != null) { g.destroy(); return postMessage({ t: "tanya", s: tanya }); }
         const m = String(err.message || err), i = m.indexOf('File "<exec>"');   // buang baris internal Pyodide
         postMessage({ t: "err", s: i < 0 ? m : "Traceback (most recent call last):\\n  " + m.slice(i) });
       }
@@ -147,6 +165,7 @@
         if (b && S.tab === "py" && window.tandaiBarisSalah) tandaiBarisSalah(ui.editor, [{ baris: +b[1], pesan: d.s }]);
       }
       else if (d.t === "info") tulis(d.s, "info");
+      else if (d.t === "tanya") tanyaInput(d.s);
       else if (d.t === "selesai") selesai();
     };
     worker.onerror = e => { tulis("Worker error: " + e.message, "galat"); hentikan(); };
@@ -155,7 +174,30 @@
     if (!worker) workerBaru();
     if (!workerSiap) ui.status.textContent = "Memuat Python (± 10 MB, sekali saja)…";
     if (window.tandaiBarisSalah) tandaiBarisSalah(ui.editor, []);
-    worker.postMessage({ kode: S.py, stdin: S.stdin });
+    worker.postMessage({ kode: S.py, masuk: masukan });
+  }
+  let masukan = [];
+  function tanyaInput(teks) {
+    ui.status.textContent = "Menunggu input… (ketik lalu Enter)";
+    const b = document.createElement("label");
+    b.className = "rn-baris rn-tanya";
+    b.textContent = teks;
+    const inp = document.createElement("input");
+    inp.className = "rn-masuk";
+    inp.setAttribute("aria-label", "Jawaban untuk input()");
+    inp.autocomplete = "off"; inp.spellcheck = false;
+    b.appendChild(inp);
+    ui.konsol.appendChild(b);
+    ui.konsol.scrollTop = ui.konsol.scrollHeight;
+    inp.focus();
+    inp.addEventListener("keydown", e => {
+      if (e.key !== "Enter" || e.ctrlKey || e.metaKey) return;
+      e.preventDefault();
+      masukan.push(inp.value);
+      ui.konsol.textContent = "";
+      ui.status.textContent = "Menjalankan…";
+      jalanPython();
+    });
   }
 
   /* ---------- SQL (sql.js) ---------- */
@@ -217,6 +259,7 @@
     berjalan = true;
     ui.jalan.textContent = "■ Stop";
     ui.jalan.classList.add("rn-stop");
+    masukan = [];
     if (S.bahasa === "py") jalanPython(); else jalanSql();
   }
 
@@ -249,11 +292,9 @@
     S.tab = b.dataset.k; render(); simpan(); ui.editor.focus();
   });
   ui.editor.addEventListener("input", () => { S[S.tab] = ui.editor.value; simpan(); });
-  ui.stdin.addEventListener("input", () => { S.stdin = ui.stdin.value; simpan(); });
   ui.jalan.addEventListener("click", jalankan);
   q(".rn-contoh").addEventListener("click", () => {
     FILE[S.bahasa].forEach(([k]) => { S[k] = CONTOH[k]; });
-    if (S.bahasa === "py") S.stdin = CONTOH.stdin;
     render(); simpan();
   });
   if (window.pasangEditorBantu) pasangEditorBantu(ui.editor, () => S.tab);

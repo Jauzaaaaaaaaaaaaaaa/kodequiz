@@ -24,13 +24,12 @@
 .rn-tab{display:flex;gap:2px;padding:6px 10px 0;border-bottom:1px solid var(--garis);overflow-x:auto}
 .rn-tab button{border:0;background:none;color:var(--redup);padding:7px 12px;font:600 .8rem var(--font-m);border-bottom:2px solid transparent;cursor:pointer}
 .rn-tab button[aria-selected="true"]{color:var(--teks);border-bottom-color:var(--teks)}
-.rn-editor,.rn-stdin{width:100%;border:0;resize:none;background:var(--permukaan);color:var(--teks);
+.rn-editor{width:100%;border:0;resize:none;background:var(--permukaan);color:var(--teks);
   font:500 .86rem/1.55 var(--font-m);padding:12px 14px;tab-size:2;white-space:pre;overflow:auto}
-.rn-editor:focus,.rn-stdin:focus{outline:2px solid color-mix(in srgb,var(--teks) 25%,transparent);outline-offset:-2px}
-.rn-stdin-wrap{display:block;border-top:1px solid var(--garis);padding:6px 12px 0;font:700 .72rem var(--font-m);color:var(--redup)}
-.rn-stdin-wrap small{font-weight:500}
-.rn-stdin{padding:6px 2px;background:transparent}
-.rn-stdin-wrap[hidden]{display:none}
+.rn-editor:focus{outline:2px solid color-mix(in srgb,var(--teks) 25%,transparent);outline-offset:-2px}
+/* input() Python diketik langsung di Output, seperti terminal */
+.rn-tanya{display:flex;align-items:baseline}
+.rn-masuk{flex:1;min-width:4ch;border:0;padding:0;background:transparent;color:var(--teks);font:inherit;outline:none;caret-color:#e0245e}
 .rn-hasil{display:flex;flex-direction:column;min-height:0;border-top:1px solid var(--garis);background:var(--permukaan-2)}
 .rn-hasil-label{display:flex;justify-content:space-between;gap:10px;padding:6px 12px;font:700 .72rem var(--font-m);color:var(--redup)}
 .rn-status{font-weight:500}
