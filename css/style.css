@@ -902,3 +902,13 @@ body[data-layar="pdf"] .topbar{position:relative}
 .eb-saran li{display:flex;gap:8px;align-items:center;padding:3px 8px;border-radius:5px;cursor:pointer;white-space:nowrap}
 .eb-saran li.aktif,.eb-saran li:hover{background:var(--utama);color:var(--btn-teks, #fff)}
 .eb-ikon{font-size:10px;opacity:.7;min-width:18px}
+
+/* ===== Kosakata kode sebelum soal Python (py-lab.js) ===== */
+.pl-kosakata{border:1.5px solid var(--utama);border-radius:12px;padding:10px 14px;margin:8px 0 12px;background:color-mix(in srgb,var(--utama-t) 50%,var(--permukaan))}
+.pl-kosakata>summary{cursor:pointer;font-weight:700;line-height:1.8}
+.pl-kosakata>summary code{font-weight:600;font-size:.82rem}
+.kosakata-item{border-top:1px solid var(--garis);padding:8px 0}
+.kosakata-item summary{cursor:pointer}
+.kosakata-item p{margin:6px 0}
+.chip-baru{display:inline-block;background:var(--emas, #d4a017);color:#1b1b1b;border-radius:99px;padding:1px 8px;font-size:.72rem;font-weight:800;vertical-align:middle}
+.kosakata-contoh{display:grid;gap:2px}

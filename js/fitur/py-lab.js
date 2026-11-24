@@ -516,6 +516,7 @@ function plRenderIsi(p, T, k, studi, sim) {
   el("pl-cerita").innerHTML = T.cerita || "";
   el("pl-cerita").classList.toggle("tersembunyi", !T.cerita);
   el("pl-soal").innerHTML = T.soal;
+  plRenderKosakata(T, p);
   const b = plBahasa(T);
   el("pl-contoh").innerHTML = b === "web" ? `<ul class="pl-daftar">${T.tes.map(([desk]) => `<li>${esc(desk)}</li>`).join("")}</ul>`
     : b === "sql" ? `<div id="pl-sql-harap"><p class="cek-kosong">Memuat hasil yang diharapkan…</p></div>`
@@ -538,6 +539,31 @@ function plRenderIsi(p, T, k, studi, sim) {
   el("pl-mesin").textContent = PL_MESIN[b] || (PL_SIAP ? "✓ Python siap" : "Python dimuat saat Jalankan pertama");
 }
 const plTampilEkspr = e => e;
+/* ---------- Kosakata kode: penjelasan setiap konsep Python yang dipakai soal, SEBELUM mengerjakan ---------- */
+const plKonsep = T => typeof KAMUS_PY === "undefined" || plBahasa(T) !== "py" ? []
+  : KAMUS_PY.filter(k => new RegExp(k.pola, "m").test(T.solusi.replace(/"""[\s\S]*?"""/g, '""')));
+function plRenderKosakata(T, p) {
+  const konsep = plKonsep(T), wadah = el("pl-kosakata");
+  if (!konsep.length) { wadah.innerHTML = ""; return; }
+  // konsep "baru" = belum dipakai soal sebelumnya di topik yang sama (urutan bab)
+  let lalu = [];
+  if (PL.jenis === "studi") {
+    const urut = STUDI_PY.filter(S => S.topik === PL.S.topik).flatMap(S => S.langkah);
+    lalu = urut.slice(0, urut.indexOf(T));
+  }
+  const dikenal = new Set(lalu.flatMap(L => plKonsep(L).map(k => k.k)));
+  const baru = konsep.filter(k => !dikenal.has(k.k));
+  const buka = baru.length > 0 && !p.lulus.includes(T.id);
+  wadah.innerHTML = `<details class="pl-kosakata" ${buka ? "open" : ""}>
+    <summary>📘 Kosakata kode untuk soal ini: ${konsep.map(k => `<code>${esc(k.label || k.judul.split(":")[0])}</code>`).join(" ")}${baru.length ? ` <span class="chip-baru">${baru.length} baru</span>` : ""}</summary>
+    <p class="kecil">Baca dulu sebelum mengerjakan. Konsep bertanda BARU belum pernah muncul di soal sebelumnya.</p>
+    ${konsep.map(k => `<details class="kosakata-item" ${buka && !dikenal.has(k.k) ? "open" : ""}>
+      <summary><b>${esc(k.judul)}</b>${dikenal.has(k.k) ? "" : ' <span class="chip-baru">BARU</span>'}</summary>
+      <p>${esc(k.arti)}</p>
+      <div class="kosakata-contoh"><pre class="pl-out"><code>${esc(k.contoh)}</code></pre><p class="kecil">Hasilnya:</p><pre class="pl-out">${esc(k.hasil)}</pre></div>
+    </details>`).join("")}
+  </details>`;
+}
 // Coding test besar: bagian B/C diawali kode LULUS milik pengguna dari bagian sebelumnya, lalu kerangka bagian baru.
 function plKodeAwal(T, k) {
   if (!T.awal_baru || !PL.S || !PL.S.ujian || k === 0) return T.awal;

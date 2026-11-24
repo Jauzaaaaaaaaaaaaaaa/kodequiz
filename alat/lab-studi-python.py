@@ -11,10 +11,17 @@ def L(id, judul, tingkat, fungsi, soal, solusi, tes, petunjuk, jelas, cek=None, 
 
 # ---------------------------------------------------------------- 1. dasar
 studi(id="py-dasar", topik="python", setelah="dasar", judul="Mencetak struk belanja",
-  contoh=dict(judul="Contoh: f-string untuk teks rapi",
-    penjelasan="<p>f-string menyisipkan nilai variabel ke dalam teks: <code>f\"Halo {nama}\"</code>. Di dalam kurung kurawal kamu juga bisa menulis format angka. <code>{angka:,}</code> memberi pemisah ribuan dengan koma, lalu koma itu bisa diganti titik untuk format Indonesia.</p>",
-    kode='harga = 15000\nqty = 3\ntotal = harga * qty\nteks = f"{total:,}"            # \'45,000\'\nprint(teks)\nprint("Rp " + teks.replace(",", "."))\nprint(f"{qty} x Kopi = Rp {total:,}".replace(",", "."))',
-    kunci="f\"{angka:,}\" memberi pemisah ribuan. Ganti koma dengan titik memakai .replace(\",\", \".\")."),
+  contoh=dict(judul="Contoh: fungsi pertamamu, lalu f-string",
+    penjelasan="""<p><b>Semua soal studi kasus berbentuk fungsi</b>, jadi pahami dulu 4 bagian ini:</p>
+<ol>
+<li><code>def</code> = \"aku membuat fungsi\". Setelahnya nama fungsi dan <b>parameter</b> di dalam kurung, diakhiri titik dua.</li>
+<li><b>Parameter</b> (misalnya <code>nama</code>) adalah kotak kosong yang diisi saat fungsi dipanggil. Penilai mengisinya dengan data tes yang berbeda-beda.</li>
+<li>Isi fungsi ditulis <b>menjorok 4 spasi</b>.</li>
+<li><code>return</code> = \"serahkan hasil ini\". Penilai membaca nilai yang di-return, <b>bukan</b> yang di-print. Kode awal berisi <code>pass</code> (\"belum ada isi\"), jadi hasilnya None dan pasti gagal sampai kamu menggantinya dengan return.</li>
+</ol>
+<p>Lalu dua alat teks: <b>f-string</b> (<code>f\"Halo {nama}\"</code>) menyisipkan nilai ke teks, dan <code>{angka:,}</code> memberi pemisah ribuan dengan koma yang bisa diganti titik memakai <code>.replace(\",\", \".\")</code>. Semua istilah lain dijelaskan di kotak <b>📘 Kosakata kode</b> di atas setiap soal.</p>""",
+    kode='# 1) membuat fungsi\ndef sapa(nama):                  # def + nama fungsi + (parameter) + titik dua\n    return "Halo, " + nama       # 4 spasi, lalu return hasilnya\n\n# 2) memanggil fungsi: parameter nama diisi "Jauza", lalu "Budi"\nprint(sapa("Jauza"))\nprint(sapa("Budi"))\n\n# 3) fungsi dengan beberapa parameter + f-string + pemisah ribuan\ndef total_rupiah(qty, harga):\n    total = qty * harga\n    return "Rp " + f"{total:,}".replace(",", ".")\n\nprint(total_rupiah(3, 15000))',
+    kunci="def nama(parameter): membuat fungsi; isinya menjorok 4 spasi; return menyerahkan hasil. Penilai memanggil fungsimu dan membaca nilai return-nya."),
   langkah=[
     L("py-dasar-1", "Format rupiah", 1, "format_rupiah",
       "Buat <code>format_rupiah(angka)</code> yang mengubah bilangan bulat menjadi teks seperti <code>\"Rp 1.250.000\"</code>.",
