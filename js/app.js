@@ -272,6 +272,7 @@ const ROUTE = {
   sqllab:  { layar: "layar-sqllab",  render: a => renderSqlLab(a.i), lebar: true },
   pylab:   { layar: "layar-pylab",   render: a => renderPyLab(a), lebar: true },
   praktik: { layar: "layar-pylab",   render: a => renderPraktik(a), lebar: true },
+  pustaka: { layar: "layar-pustaka", render: a => renderPustaka(a) },
   rencana: { layar: "layar-rencana", render: () => renderRencana() },
   buku:    { layar: "layar-buku",    render: () => renderBuku() },
   bukubab: { layar: "layar-bukubab", render: a => renderBukuBab(a.t, a.i) },
@@ -1123,6 +1124,7 @@ document.addEventListener("DOMContentLoaded", () => {
   pasangProyek();
   pasangSqlLab();
   pasangPyLab();
+  pasangPustaka();
   pasangBuku();
   pasangPdf();
 

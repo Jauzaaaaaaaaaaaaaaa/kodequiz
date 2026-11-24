@@ -30,6 +30,7 @@
 
 <header class="topbar">
   <div class="topbar-kiri">
+    <button class="nav-btn ikon" id="btn-menu" title="Menu & cari (Ctrl+K)" aria-label="Buka menu dan pencarian" aria-haspopup="dialog">☰</button>
     <button class="nav-btn tersembunyi" id="btn-nav-kembali" title="Kembali (Esc)">←<span class="nav-label"> Kembali</span></button>
     <button class="nav-btn tersembunyi" id="btn-nav-beranda" title="Ke beranda">🏠<span class="nav-label"> Beranda</span></button>
     <button class="logo" id="logo" title="Beranda"><i class="logo-tanda" aria-hidden="true"></i>Kode<span>Quiz</span></button>
@@ -506,6 +507,29 @@
   </div>
 </section>
 
+<!-- ============ PUSTAKA: ringkasan video + peta belajar (js/fitur/pustaka.js) ============ -->
+<section id="layar-pustaka" class="layar tersembunyi">
+  <p class="eyebrow">📚 Pustaka KodeQuiz</p>
+  <h2 class="set-h">Ringkasan video & peta belajar</h2>
+  <p class="set-sub" id="pus-ket"></p>
+  <div class="lab-tab" role="tablist">
+    <button class="pus-tab lab-tab-btn aktif" role="tab" data-tab="video">▶ Ringkasan video</button>
+    <button class="pus-tab lab-tab-btn" role="tab" data-tab="peta">🗺️ Peta belajar</button>
+  </div>
+  <div class="lab-filter" id="pus-filter" role="group" aria-label="Saring pustaka"></div>
+  <div id="pus-video"><div id="pus-daftar"></div></div>
+  <div id="pus-peta" class="tersembunyi"></div>
+</section>
+
+<dialog id="dlg-menu" class="dlg-menu" aria-label="Menu dan pencarian">
+  <div class="menu-kepala">
+    <input type="search" id="menu-cari" placeholder="Cari materi, studi kasus, video…" aria-label="Cari di KodeQuiz" autocomplete="off">
+    <button class="btn-mini" id="menu-tutup" aria-label="Tutup menu">✕</button>
+  </div>
+  <div id="menu-pintas" class="menu-pintas"></div>
+  <div id="menu-hasil" class="menu-hasil" aria-live="polite"></div>
+</dialog>
+
 <!-- ============ RENCANA 30 HARI ============ -->
 <section id="layar-rencana" class="layar tersembunyi">
   <p class="eyebrow">🗓️ Rencana Belajar · 4 minggu inti + 2 minggu lanjutan</p>
@@ -664,12 +688,15 @@
 <script src="js/data/kunci-gambar.js"></script>
 <script src="js/soal/soal-kasus-sql.js"></script>
 <script src="js/soal/lab-python.js"></script>
+<script src="js/data/pustaka.js"></script>
 <!-- Fitur -->
+<script src="js/fitur/editor-bantu.js"></script>
 <script src="js/fitur/proyek-blok.js"></script>
 <script src="js/fitur/proyek-data.js"></script>
 <script src="js/fitur/proyek.js"></script>
 <script src="js/fitur/sql-lab.js"></script>
 <script src="js/fitur/py-lab.js"></script>
+<script src="js/fitur/pustaka.js"></script>
 <script src="js/fitur/rayakan.js"></script>
 <script src="js/fitur/buku.js"></script>
 <script src="js/fitur/pdf-baca.js"></script>

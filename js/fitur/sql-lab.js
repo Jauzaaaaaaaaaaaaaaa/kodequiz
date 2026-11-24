@@ -315,6 +315,7 @@ function pasangSqlLab() {
   el("btn-lab-reset").onclick = () => { el("lab-query").value = ""; hitungKarakterLab(); el("lab-query").focus(); };
   document.querySelectorAll(".lab-tab-btn").forEach(b => b.onclick = () => tabLab(b.dataset.panel));
   el("lab-query").addEventListener("input", hitungKarakterLab);
+  pasangEditorBantu(el("lab-query"), () => "sql");
   el("lab-query").addEventListener("keydown", e => {
     if ((e.ctrlKey || e.metaKey) && e.key === "Enter") { e.preventDefault(); e.shiftKey ? kumpulkanLab() : jalankanLab(); }
     if (e.key === "Tab") { e.preventDefault(); const t = e.target, a = t.selectionStart; t.value = t.value.slice(0, a) + "  " + t.value.slice(t.selectionEnd); t.selectionStart = t.selectionEnd = a + 2; }

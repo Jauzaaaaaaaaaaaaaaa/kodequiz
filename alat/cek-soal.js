@@ -7,7 +7,7 @@ const fs = require("fs"), path = require("path"), vm = require("vm"), cp = requi
 const PYTHON = process.platform === "win32" ? "python" : "python3";
 const ROOT = process.argv[2] || path.join(__dirname, "..");
 const html = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
-const scripts = [...html.matchAll(/<script src="(js\/[^"]+)"/g)].map(m => m[1]).filter(s => !/fitur\/proyek|app\.js|fitur\/(rayakan|buku|pengaturan|runner|py-lab|pdf-baca)/.test(s));
+const scripts = [...html.matchAll(/<script src="(js\/[^"]+)"/g)].map(m => m[1]).filter(s => !/fitur\/proyek|app\.js|fitur\/(rayakan|buku|pengaturan|runner|py-lab|pdf-baca|pustaka|editor-bantu)/.test(s));
 const ctx = { console, module: undefined };
 vm.createContext(ctx);
 let src = scripts.map(s => fs.readFileSync(path.join(ROOT, s), "utf8")).join("\n;\n");

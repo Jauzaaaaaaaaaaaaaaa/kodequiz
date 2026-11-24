@@ -724,6 +724,7 @@ function pasangPyLab() {
     .then(ok => { if (!ok) return; const awal = plKodeAwal(plT(), PL.i); el("pl-kode").value = awal; dataPy().draf[plT().id] = awal; simpan(); el("pl-kode").focus(); });
   document.querySelectorAll(".pl-tab-btn").forEach(b => b.onclick = () => plTab(b.dataset.panel));
   const ed = el("pl-kode");
+  pasangEditorBantu(ed, () => (PL && PL.daftar ? { py: "py", js: "js", web: "html", sql: "sql" }[plBahasa(plT())] : "py"));
   let tunda = null;
   ed.addEventListener("input", () => { clearTimeout(tunda); tunda = setTimeout(() => { if (PL && PL.daftar) { dataPy().draf[plT().id] = ed.value; simpan(); } }, 600); });
   ed.addEventListener("keydown", e => {

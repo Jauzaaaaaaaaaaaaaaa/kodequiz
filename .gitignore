@@ -14,3 +14,4 @@ __pycache__/
 .netlify/
 .phpunit.cache/
 .phpunit.result.cache
+alat/video-cache/

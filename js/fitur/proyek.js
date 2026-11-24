@@ -397,6 +397,7 @@ function resetProyek() {
 function pasangProyek() {
   const ta = el("editor-teks");
   ta.addEventListener("input", saatKetik);
+  pasangEditorBantu(ta, () => dataProyek().tab);
   ta.addEventListener("keydown", tanganiTombolEditor);
   ta.addEventListener("scroll", () => el("editor-nomor").scrollTop = ta.scrollTop);
   document.querySelectorAll(".tab-file").forEach(t => t.onclick = () => {

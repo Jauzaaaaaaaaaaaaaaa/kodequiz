@@ -251,6 +251,7 @@
     if (S.bahasa === "py") S.stdin = CONTOH.stdin;
     render(); simpan();
   });
+  if (window.pasangEditorBantu) pasangEditorBantu(ui.editor, () => S.tab);
   ui.editor.addEventListener("keydown", e => {
     if (e.key !== "Tab" || e.ctrlKey || e.altKey || e.metaKey) return;
     e.preventDefault();   // Tab = 2 spasi
