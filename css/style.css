@@ -15,7 +15,7 @@
   --editor-bg:#fbfcf9; --editor-nomor:#a7b4ad;
   --c-excel:#3f8f5f; --c-sql:#5b7fb0; --c-karier:#b07d4f;
   --c-py:#4f7fae; --c-html:#c8724f; --c-css:#5a78c0; --c-js:#b08a25;
-  --c-bi:#7d6db0; --c-stat:#3f8fa0; --c-erp:#a8607a; --c-java:#a0673a; --c-php:#6e78b4; --c-git:#c0563b;
+  --c-bi:#7d6db0; --c-stat:#3f8fa0; --c-erp:#a8607a; --c-java:#a0673a; --c-php:#6e78b4; --c-git:#c0563b; --c-ct:#2f7d6b;
   --emas:#d9a441; --emas-t:#fbf1dc; --topbar-h:56px;
   --radius:16px; --radius-k:12px;
   --bayang:0 1px 2px rgba(44,58,52,.04),0 4px 14px rgba(44,58,52,.05);
@@ -158,7 +158,7 @@ li{margin:3px 0}
 .kartu-t:hover{transform:translateY(-4px);box-shadow:var(--bayang2);border-color:var(--aksen)}
 .t-excel{--aksen:var(--c-excel)} .t-sql{--aksen:var(--c-sql)} .t-karier{--aksen:var(--c-karier)}
 .t-py{--aksen:var(--c-py)} .t-html{--aksen:var(--c-html)} .t-css{--aksen:var(--c-css)} .t-js{--aksen:var(--c-js)}
-.t-bi{--aksen:var(--c-bi)} .t-stat{--aksen:var(--c-stat)} .t-erp{--aksen:var(--c-erp)} .t-java{--aksen:var(--c-java)} .t-php{--aksen:var(--c-php)} .t-git{--aksen:var(--c-git)}
+.t-bi{--aksen:var(--c-bi)} .t-stat{--aksen:var(--c-stat)} .t-erp{--aksen:var(--c-erp)} .t-java{--aksen:var(--c-java)} .t-php{--aksen:var(--c-php)} .t-git{--aksen:var(--c-git)} .t-ct{--aksen:var(--c-ct)}
 .kartu-atas{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .kartu-ikon{font-family:var(--font-m);font-weight:700;font-size:.88rem;background:color-mix(in srgb,var(--aksen,var(--utama)) 14%,var(--permukaan));
   color:var(--aksen,var(--utama));border-radius:12px;width:42px;height:42px;display:grid;place-items:center;flex-shrink:0}
@@ -844,3 +844,32 @@ body[data-layar="pdf"] .topbar{position:relative}
 .laci-sub button{border:1px solid var(--garis);background:var(--permukaan);border-radius:7px;font-size:.72rem;font-weight:700;padding:2px 8px;color:var(--redup)}
 .laci-sub button:hover{border-color:var(--utama);color:var(--utama)}
 .laci-unduh{display:block;margin-top:14px;padding:8px 6px;font-size:.86rem;font-weight:700;text-decoration:none}
+
+/* ===== Lab Coding Test Python & Studi Kasus Koding (js/fitur/py-lab.js) ===== */
+.pl-kode{height:320px;tab-size:4}
+.pl-goyang{animation:plGoyang .45s var(--ease)}
+@keyframes plGoyang{0%,100%{transform:none}15%{transform:translateX(-9px)}30%{transform:translateX(8px)}45%{transform:translateX(-6px)}60%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
+#pl-editor.pl-goyang{border-color:var(--merah)}
+.pl-out{background:var(--kode-bg);color:var(--kode-teks);border-radius:10px;padding:10px 12px;font-family:var(--font-m);font-size:.82rem;white-space:pre-wrap;word-break:break-word;margin:6px 0;max-height:260px;overflow:auto}
+.pl-tes{display:grid;gap:8px}
+.pl-tes-item{border:1.5px solid var(--garis);border-left-width:5px;border-radius:12px;padding:8px 12px;background:var(--permukaan)}
+.pl-tes-item.ok{border-left-color:var(--hijau)}
+.pl-tes-item.gagal{border-left-color:var(--merah);background:color-mix(in srgb,var(--merah-t) 55%,var(--permukaan))}
+.pl-tes-item p{margin:4px 0}
+.pl-tes-item code{word-break:break-word}
+.pl-tes-kepala{font-size:.9rem}
+.pl-contoh{margin-bottom:8px}
+.pl-contoh p{margin:2px 0 0;font-size:.88rem}
+.lab-no.terkunci{opacity:.55;cursor:not-allowed}
+.lab-no.terkunci:hover{transform:none;border-color:var(--garis)}
+.pl-sim{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border:1.5px solid var(--garis);border-radius:14px;padding:10px 14px;margin:0 0 12px;background:var(--permukaan)}
+.pl-sim-awal{max-width:720px}
+.pl-sim-riwayat{margin:4px 0 0;padding-left:18px;font-size:.9rem}
+.pl-jam{font:800 1.4rem/1 var(--font-m)}
+.pl-jam-mepet{color:var(--merah)}
+.bab-studi{border-style:dashed;background:color-mix(in srgb,var(--utama-t) 40%,var(--permukaan))}
+.bab-studi .bab-no{font-size:1.1rem}
+@media (prefers-reduced-motion:reduce){.pl-goyang{animation:none}}
+.bab-ujian{border-style:solid;border-width:2px;border-color:var(--utama);background:color-mix(in srgb,var(--emas-t) 45%,var(--permukaan))}
+#layar-pylab .editor-tab{padding-right:96px}
+.pl-daftar{margin:4px 0 2px;padding-left:20px;font-size:.88rem}.pl-daftar li{margin:3px 0}

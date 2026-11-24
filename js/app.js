@@ -14,7 +14,7 @@
 const BANK = {
   excel: SOAL_EXCEL, sql: SOAL_SQL, bi: SOAL_BI, stat: SOAL_STAT, erp: SOAL_ERP,
   karier: SOAL_KARIER,
-  python: SOAL_PYTHON, js: SOAL_JS, git: SOAL_GIT,
+  ct: SOAL_CT, python: SOAL_PYTHON, js: SOAL_JS, git: SOAL_GIT,
   html: SOAL_HTML, css: SOAL_CSS, java: SOAL_JAVA, php: SOAL_PHP,
   da: SOAL_DA, ds: SOAL_DS, cyber: SOAL_CYBER,
   siber: SOAL_SIBER,
@@ -22,7 +22,7 @@ const BANK = {
 const MATERI = {
   excel: MATERI_EXCEL, sql: MATERI_SQL, bi: MATERI_BI, stat: MATERI_STAT, erp: MATERI_ERP,
   karier: MATERI_KARIER,
-  python: MATERI_PYTHON, js: MATERI_JS, git: MATERI_GIT,
+  ct: MATERI_CT, python: MATERI_PYTHON, js: MATERI_JS, git: MATERI_GIT,
   html: MATERI_HTML, css: MATERI_CSS, java: MATERI_JAVA, php: MATERI_PHP,
   da: MATERI_DA, ds: MATERI_DS, cyber: MATERI_CYBER,
   siber: MATERI_SIBER,
@@ -40,6 +40,7 @@ const TOPIK_INFO = {
   stat:   { nama: "Statistik & Metrik", ikon: "%", kelas: "t-stat",   grup: "data",   ket: "Mean/median, metrik bisnis, A/B test, clustering skripsimu" },
   erp:    { nama: "ERP & Odoo",       ikon: "ERP", kelas: "t-erp",    grup: "data",   ket: "Fungsional sampai developer Odoo 17: CRM, Sales, Purchase, gudang, MRP, akuntansi, HR, POS, ORM, XML, OWL + Lab Hitung (pricelist, pajak, valuasi, reorder, MRP, penyusutan)" },
   karier: { nama: "Persiapan Karier", ikon: "CV",  kelas: "t-karier", grup: "karier", ket: "Portofolio, CV, lowongan, wawancara, LinkedIn" },
+  ct:     { nama: "Coding Test Odoo Developer", ikon: "CT", kelas: "t-ct", grup: "coding", ket: "Strategi tes, jebakan Python, pola algoritma, otomasi data, lalu Odoo 17: model, compute, ORM, inheritance, view XML, keamanan & tes. Setiap bab disusul studi kasus menulis kode" },
   python: { nama: "Python",           ikon: "Py",  kelas: "t-py",     grup: "coding", ket: "Dasar sampai OOP lanjut, comprehension, generator, pustaka standar, testing, pandas, Odoo, proyek mini",
             prioritas: 2, alasan: "Analisis data (pandas) dan Odoo dibangun dengan Python." },
   js:     { nama: "JavaScript",       ikon: "JS",  kelas: "t-js",     grup: "coding", ket: "Dasar, DOM & event, closure, class, error, Map/Set/regex, module & npm, async, TypeScript & React",
@@ -269,6 +270,8 @@ const ROUTE = {
   proyek:  { layar: "layar-proyek",  render: () => renderProyekDaftar(), lebar: false },
   langkah: { layar: "layar-langkah", render: a => renderLangkah(a.i), lebar: true },
   sqllab:  { layar: "layar-sqllab",  render: a => renderSqlLab(a.i), lebar: true },
+  pylab:   { layar: "layar-pylab",   render: a => renderPyLab(a), lebar: true },
+  praktik: { layar: "layar-pylab",   render: a => renderPraktik(a), lebar: true },
   rencana: { layar: "layar-rencana", render: () => renderRencana() },
   buku:    { layar: "layar-buku",    render: () => renderBuku() },
   bukubab: { layar: "layar-bukubab", render: a => renderBukuBab(a.t, a.i) },
@@ -644,7 +647,11 @@ async function selesaiSesi() {
   if (babBaru) ekstra.push(`<div class="hasil-banner banner-bab">🎓 Bab dikuasai: <b>${esc(babBaru.judul)}</b></div>`);
   if (psetBaru) ekstra.push(`<div class="hasil-banner banner-bab">Σ Problem Set Tahap ${psetBaru.tahap + 1} lulus (≥ 70%)</div>`);
   if (lencanaBaru.length) ekstra.push(`<div class="hasil-banner banner-lencana">Lencana baru: ${lencanaBaru.map(l => `<span title="${esc(l.ket)}">${l.ikon} ${esc(l.nama)}</span>`).join("")}</div>`);
+  // Bab ini punya Studi Kasus Koding / Coding Test Besar: tawarkan langsung sebagai langkah berikutnya
+  const studiBab = SESI.konteks && SESI.konteks.tipe === "bab" ? studiSetelah(SESI.konteks.topik, SESI.konteks.k) : [];
+  studiBab.forEach(S => ekstra.push(`<div class="hasil-banner banner-bab">${S.ujian ? "🏁 Saatnya <b>Coding Test Besar</b>" : "✍️ Lanjut ke <b>Studi Kasus Koding</b>"}: ${esc(S.judul)} <button class="btn btn-utama btn-kecil" data-studi="${S.id}">${statusStudi(S).selesai ? "Ulangi" : "Kerjakan"} →</button></div>`));
   el("hasil-ekstra").innerHTML = ekstra.join("");
+  el("hasil-ekstra").querySelectorAll("[data-studi]").forEach(b => b.onclick = () => go("praktik", { id: b.dataset.studi }));
   el("hasil-pesan").textContent = T.pesan;
   el("hasil-level").innerHTML = `<span>Level ${lvAkhir.lv} · ${esc(lvAkhir.nama)}</span>
     <div class="mini-bar"><div style="width:${lvAkhir.persen}%"></div></div><small>${lvAkhir.sisa} XP lagi ke Level ${lvAkhir.lv + 1}</small>`;
@@ -744,6 +751,9 @@ function renderLatihan() {
   const lab = (DATA.sqllab && DATA.sqllab.lulus.length) || 0;
   el("fitur-lab-ket").textContent = `${lab}/${TANTANGAN_SQL.length} tantangan`;
   el("fitur-lab-prog").style.width = (lab / TANTANGAN_SQL.length * 100) + "%";
+  const py = ((DATA.pylab && DATA.pylab.lulus) || []).filter(id => TANTANGAN_PY.some(T => T.id === id)).length;
+  el("fitur-pylab-ket").textContent = `${py}/${TANTANGAN_PY.length} tantangan · ${STUDI_PY.length} studi kasus`;
+  el("fitur-pylab-prog").style.width = (py / TANTANGAN_PY.length * 100) + "%";
   const r = progresRencana();
   el("fitur-rencana-ket").textContent = `${r.selesai}/${r.total} tugas`;
   el("fitur-rencana-prog").style.width = (r.selesai / r.total * 100) + "%";
@@ -831,6 +841,20 @@ function renderTopik(t) {
       <span class="bab-status">${prog && prog.persen >= 70 ? "✓" : "→"}</span>`;
     d.onclick = () => go("materi", { t, i });
     wadah.appendChild(d);
+    // Setelah bab pilihan ganda: bab Studi Kasus Koding (menulis kode sungguhan, js/fitur/py-lab.js)
+    studiSetelah(t, bab.k).forEach(S => {
+      const st = statusStudi(S), b = document.createElement("button");
+      b.className = "bab-item bab-studi muncul" + (S.ujian ? " bab-ujian" : "") + (st.selesai ? " bab-selesai" : "");
+      b.style.animationDelay = (i * 40 + 20) + "ms";
+      b.innerHTML = S.ujian
+        ? `<span class="bab-no">🏁</span>
+        <span class="bab-isi"><b>Coding Test Besar: ${esc(S.judul)}</b><small>${esc(S.cakupan)} · 3 bagian berurutan · ${st.lulus}/${S.langkah.length} lulus</small></span>`
+        : `<span class="bab-no">✍️</span>
+        <span class="bab-isi"><b>Studi Kasus Koding: ${esc(S.judul)}</b><small>Contoh terpandu + ${S.langkah.length} soal menulis kode · ${st.lulus}/${S.langkah.length} lulus</small></span>
+        <span class="bab-status">${st.selesai ? "✓" : "→"}</span>`;
+      b.onclick = () => go("praktik", { id: S.id });
+      wadah.appendChild(b);
+    });
   });
 }
 let BAB_AKTIF = null;
@@ -1091,12 +1115,14 @@ document.addEventListener("DOMContentLoaded", () => {
   el("btn-hasil-beranda").onclick = () => keBeranda();
   el("fitur-proyek").onclick = () => go("proyek");
   el("fitur-lab").onclick = () => go("sqllab", {});
+  el("fitur-pylab").onclick = () => go("pylab", {});
   el("fitur-rencana").onclick = () => go("rencana");
   el("fitur-buku").onclick = () => go("buku");
   el("btn-atur").onclick = bukaPengaturan;
 
   pasangProyek();
   pasangSqlLab();
+  pasangPyLab();
   pasangBuku();
   pasangPdf();
 

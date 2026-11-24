@@ -7,14 +7,14 @@ const fs = require("fs"), path = require("path"), vm = require("vm"), cp = requi
 const PYTHON = process.platform === "win32" ? "python" : "python3";
 const ROOT = process.argv[2] || path.join(__dirname, "..");
 const html = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
-const scripts = [...html.matchAll(/<script src="(js\/[^"]+)"/g)].map(m => m[1]).filter(s => !/fitur\/proyek|app\.js|fitur\/(rayakan|buku|pengaturan)/.test(s));
+const scripts = [...html.matchAll(/<script src="(js\/[^"]+)"/g)].map(m => m[1]).filter(s => !/fitur\/proyek|app\.js|fitur\/(rayakan|buku|pengaturan|runner|py-lab|pdf-baca)/.test(s));
 const ctx = { console, module: undefined };
 vm.createContext(ctx);
 let src = scripts.map(s => fs.readFileSync(path.join(ROOT, s), "utf8")).join("\n;\n");
 // ekspor konstanta ke context
 src += "\n;this.__J = {JALUR: typeof JALUR !== 'undefined' ? JALUR : null, KASUS: typeof KASUS !== 'undefined' ? KASUS : null, METODE: typeof METODE !== 'undefined' ? METODE : null};";
 src += "\n;this.__ = {DATASET, datasetSQL, TANTANGAN_SQL, BANK:{" +
-  Object.entries({excel:"EXCEL",sql:"SQL",karier:"KARIER",python:"PYTHON",html:"HTML",css:"CSS",js:"JS",git:"GIT",bi:"BI",stat:"STAT",erp:"ERP",java:"JAVA",php:"PHP",da:"DA",ds:"DS",cyber:"CYBER",siber:"SIBER"})
+  Object.entries({ct:"CT",excel:"EXCEL",sql:"SQL",karier:"KARIER",python:"PYTHON",html:"HTML",css:"CSS",js:"JS",git:"GIT",bi:"BI",stat:"STAT",erp:"ERP",java:"JAVA",php:"PHP",da:"DA",ds:"DS",cyber:"CYBER",siber:"SIBER"})
     .map(([k, v]) => `${k}: typeof SOAL_${v}!=="undefined"?[SOAL_${v},MATERI_${v}]:null`).join(",") + "}};";
 vm.runInContext(src, ctx, { filename: "soal.js" });
 const { DATASET, datasetSQL, TANTANGAN_SQL, BANK } = ctx.__;

@@ -24,7 +24,7 @@
   --editor-bg: #f8f8fd; --editor-nomor: #a2a6b8;
   --media-bg: #15171d;
   --c-excel: #2f8a5b; --c-sql: #1a2ffb; --c-karier: #b4723a; --c-py: #3d79b5; --c-html: #c9653f; --c-css: #5a6fd0;
-  --c-js: #a8841c; --c-bi: #6b55d6; --c-stat: #2e8ea0; --c-erp: #b55a7c; --c-java: #a8683a; --c-php: #6c74b8; --c-git: #b8502f;
+  --c-js: #a8841c; --c-bi: #6b55d6; --c-stat: #2e8ea0; --c-erp: #b55a7c; --c-java: #a8683a; --c-php: #6c74b8; --c-git: #b8502f; --c-ct: #2f7d6b;
   --bayang: 0 1px 2px rgba(43, 46, 58, .04), 0 12px 30px -22px rgba(43, 46, 58, .28);
   --bayang2: 0 24px 48px -28px rgba(43, 46, 58, .42);
   --btn-teks: #f7f8fc;
@@ -49,7 +49,7 @@
   --editor-bg: #13151b; --editor-nomor: #5c6276;
   --media-bg: #0a0b0f;
   --c-excel: #6cc394; --c-sql: #8d9bff; --c-karier: #e0a26b; --c-py: #7fb0e3; --c-html: #f09a77; --c-css: #96a5f0;
-  --c-js: #e3c25c; --c-bi: #ad98f2; --c-stat: #6cc5d6; --c-erp: #e391b0; --c-java: #d79f6e; --c-php: #a3aae6; --c-git: #eb9473;
+  --c-js: #e3c25c; --c-bi: #ad98f2; --c-stat: #6cc5d6; --c-erp: #e391b0; --c-java: #d79f6e; --c-php: #a3aae6; --c-git: #eb9473; --c-ct: #6cc7b0;
   --bayang: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 28px -16px rgba(0, 0, 0, .6);
   --bayang2: 0 22px 44px -22px rgba(0, 0, 0, .75);
   --btn-teks: #0f1015;
@@ -70,7 +70,7 @@
     --editor-bg: #13151b; --editor-nomor: #5c6276;
     --media-bg: #0a0b0f;
     --c-excel: #6cc394; --c-sql: #8d9bff; --c-karier: #e0a26b; --c-py: #7fb0e3; --c-html: #f09a77; --c-css: #96a5f0;
-    --c-js: #e3c25c; --c-bi: #ad98f2; --c-stat: #6cc5d6; --c-erp: #e391b0; --c-java: #d79f6e; --c-php: #a3aae6; --c-git: #eb9473;
+    --c-js: #e3c25c; --c-bi: #ad98f2; --c-stat: #6cc5d6; --c-erp: #e391b0; --c-java: #d79f6e; --c-php: #a3aae6; --c-git: #eb9473; --c-ct: #6cc7b0;
     --bayang: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 28px -16px rgba(0, 0, 0, .6);
     --bayang2: 0 22px 44px -22px rgba(0, 0, 0, .75);
     --btn-teks: #0f1015;

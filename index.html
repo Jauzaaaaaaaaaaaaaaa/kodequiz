@@ -136,6 +136,13 @@
       <div class="mini-bar"><div id="fitur-lab-prog"></div></div>
       <small id="fitur-lab-ket"></small>
     </button>
+    <button class="fitur fitur-utama" id="fitur-pylab">
+      <span class="fitur-label">Coding test Python &amp; Odoo</span>
+      <b class="fitur-judul">🐍 Lab Coding Test</b>
+      <p>Tulis fungsi Python sungguhan, dinilai otomatis dengan tes tersembunyi. Ada logika bisnis ala Odoo, otomasi data, dan <b>simulasi tes 60 menit</b>.</p>
+      <div class="mini-bar"><div id="fitur-pylab-prog"></div></div>
+      <small id="fitur-pylab-ket"></small>
+    </button>
     <button class="fitur fitur-utama fitur-buku" id="fitur-buku">
       <span class="fitur-label">Book</span>
       <b class="fitur-judul">📖 Belajar tanpa laptop</b>
@@ -444,6 +451,61 @@
   </div>
 </section>
 
+<!-- ============ LAB CODING TEST PYTHON & STUDI KASUS KODING (js/fitur/py-lab.js) ============ -->
+<section id="layar-pylab" class="layar tersembunyi">
+  <div class="lab-kepala">
+    <div>
+      <p class="eyebrow" id="pl-eyebrow">🐍 Lab Coding Test</p>
+      <h2 class="set-h" id="pl-h">Tantangan Python dunia kerja</h2>
+    </div>
+    <div class="lab-prog"><span id="pl-progres"></span><div class="mini-bar"><div id="pl-prog-isi"></div></div></div>
+  </div>
+  <div class="lab-filter" id="pl-filter" role="group" aria-label="Saring tantangan"></div>
+  <div id="pl-sim" class="pl-sim tersembunyi" role="status"></div>
+  <div class="lab-nav" id="pl-nav"></div>
+  <div class="lab-grid">
+    <div class="lab-kiri">
+      <div class="lab-tab" role="tablist" id="pl-tabs">
+        <button class="pl-tab-btn lab-tab-btn" role="tab" data-panel="contoh">Contoh terpandu</button>
+        <button class="pl-tab-btn lab-tab-btn aktif" role="tab" data-panel="tantangan">Tugas</button>
+        <button class="pl-tab-btn lab-tab-btn" role="tab" data-panel="solusi">Solusi</button>
+        <button class="pl-tab-btn lab-tab-btn" role="tab" data-panel="riwayat">Riwayat <span id="pl-riwayat-n" class="chip-kecil"></span></button>
+      </div>
+      <div class="lab-panel materi-kotak tersembunyi" id="pl-panel-contoh"></div>
+      <div class="lab-panel materi-kotak" id="pl-panel-tantangan">
+        <div class="lab-atas">
+          <span class="lab-posisi" id="pl-posisi"></span>
+          <span><button class="btn-mini" id="btn-pl-prev" aria-label="Sebelumnya">‹</button> <button class="btn-mini" id="btn-pl-next" aria-label="Berikutnya">›</button></span>
+        </div>
+        <h3 class="lab-judul" id="pl-judul"></h3>
+        <div class="lab-label" id="pl-label"></div>
+        <div class="lab-cerita" id="pl-cerita"></div>
+        <h4 class="lab-sub">Tugas</h4>
+        <p id="pl-soal"></p>
+        <h4 class="lab-sub">Contoh</h4>
+        <div id="pl-contoh"></div>
+        <p class="kecil" id="pl-tes-ket"></p>
+        <details class="lab-lipat" id="pl-bantuan"><summary>Bantuan · <span id="pl-bantuan-n"></span></summary><div id="pl-petunjuk-isi"></div></details>
+      </div>
+      <div class="lab-panel materi-kotak tersembunyi" id="pl-panel-solusi"></div>
+      <div class="lab-panel materi-kotak tersembunyi" id="pl-panel-riwayat"></div>
+    </div>
+    <div class="lab-kanan">
+      <div class="editor" id="pl-editor">
+        <div class="editor-tab"><span class="tab-file aktif">solusi.py</span><span class="editor-info"><button class="btn-mini" id="btn-pl-reset" title="Kembalikan kode awal">↺ Kode awal</button> <span id="pl-mesin">Python belum dimuat</span></span></div>
+        <textarea id="pl-kode" class="lab-query pl-kode" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Editor Python"></textarea>
+      </div>
+      <div class="aksi-langkah">
+        <button class="btn btn-garis" id="btn-pl-jalankan">▶ Jalankan</button>
+        <button class="btn btn-utama" id="btn-pl-kumpul">✓ Kumpulkan</button>
+        <span class="pintasan">Ctrl+Enter jalankan · Ctrl+Shift+Enter kumpulkan</span>
+      </div>
+      <div id="pl-status" class="lab-status tersembunyi" aria-live="polite"></div>
+      <div id="pl-hasil" class="lab-hasil"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ RENCANA 30 HARI ============ -->
 <section id="layar-rencana" class="layar tersembunyi">
   <p class="eyebrow">🗓️ Rencana Belajar · 4 minggu inti + 2 minggu lanjutan</p>
@@ -575,6 +637,7 @@
 <script src="js/soal/soal-karier.js"></script>
 <script src="js/soal/soal-karier-2.js"></script>
 <!-- Bank soal: Coding -->
+<script src="js/soal/soal-coding-test.js"></script>
 <script src="js/soal/soal-python.js"></script>
 <script src="js/soal/soal-python-2.js"></script>
 <script src="js/soal/soal-python-3.js"></script>
@@ -600,11 +663,13 @@
 <script src="js/soal/soal-siber.js"></script>
 <script src="js/data/kunci-gambar.js"></script>
 <script src="js/soal/soal-kasus-sql.js"></script>
+<script src="js/soal/lab-python.js"></script>
 <!-- Fitur -->
 <script src="js/fitur/proyek-blok.js"></script>
 <script src="js/fitur/proyek-data.js"></script>
 <script src="js/fitur/proyek.js"></script>
 <script src="js/fitur/sql-lab.js"></script>
+<script src="js/fitur/py-lab.js"></script>
 <script src="js/fitur/rayakan.js"></script>
 <script src="js/fitur/buku.js"></script>
 <script src="js/fitur/pdf-baca.js"></script>
