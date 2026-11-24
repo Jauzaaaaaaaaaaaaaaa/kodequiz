@@ -191,4 +191,50 @@
     ta.addEventListener("scroll", tutup);
     ta.addEventListener("click", tutup);
   };
+
+  /* ---------- Garis merah di baris yang error (ala VS Code) ----------
+     Lapisan transparan di atas textarea dengan teks yang sama; baris bermasalah diberi garis bergelombang.
+     tandaiBarisSalah(ta, [{ baris: 3, pesan: "NameError: ..." }]) — baris mulai 1. Hilang saat baris itu diubah. */
+  const SALIN = ["fontFamily", "fontSize", "fontWeight", "lineHeight", "letterSpacing", "tabSize", "paddingTop", "paddingRight", "paddingBottom", "paddingLeft", "borderTopWidth", "borderLeftWidth", "borderRightWidth", "borderBottomWidth", "boxSizing", "whiteSpace", "wordWrap", "overflowWrap"];
+  function lapisan(ta) {
+    if (ta._ebLapis) return ta._ebLapis;
+    const L = document.createElement("div");
+    L.className = "eb-lapis";
+    L.setAttribute("aria-hidden", "true");
+    const induk = ta.parentNode;
+    if (getComputedStyle(induk).position === "static") induk.style.position = "relative";
+    induk.insertBefore(L, ta.nextSibling);
+    ta.addEventListener("scroll", () => { L.scrollTop = ta.scrollTop; L.scrollLeft = ta.scrollLeft; });
+    ta.addEventListener("input", () => { if (ta._ebSalah) gambar(ta); });
+    new ResizeObserver(() => { if (ta._ebSalah) gambar(ta); }).observe(ta);
+    return (ta._ebLapis = L);
+  }
+  function gambar(ta) {
+    const L = lapisan(ta), g = getComputedStyle(ta);
+    // baris yang isinya sudah diubah tidak lagi ditandai
+    ta._ebSalah = ta._ebSalah.filter(s => ta.value.split("\n")[s.baris - 1] === s.teks);
+    if (!ta._ebSalah.length) { L.hidden = true; return; }
+    SALIN.forEach(p => L.style[p] = g[p]);
+    L.style.borderColor = "transparent";
+    L.style.left = ta.offsetLeft + "px"; L.style.top = ta.offsetTop + "px";
+    L.style.width = ta.offsetWidth + "px"; L.style.height = ta.offsetHeight + "px";
+    const peta = new Map(ta._ebSalah.map(s => [s.baris, s.pesan]));
+    const e = s => s.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+    L.innerHTML = ta.value.split("\n").map((b, i) => peta.has(i + 1)
+      ? `<span class="eb-baris-salah">${e(b) || "&nbsp;&nbsp;&nbsp;&nbsp;"}</span>` : e(b)).join("\n") + "\n";
+    L.hidden = false;
+    L.scrollTop = ta.scrollTop; L.scrollLeft = ta.scrollLeft;
+  }
+  window.tandaiBarisSalah = function (ta, daftar) {
+    if (!ta) return;
+    const baris = ta.value.split("\n");
+    ta._ebSalah = (daftar || []).filter(s => s.baris >= 1 && s.baris <= baris.length).map(s => ({ ...s, teks: baris[s.baris - 1] }));
+    if (!ta._ebSalah.length) { if (ta._ebLapis) ta._ebLapis.hidden = true; return; }
+    gambar(ta);
+  };
+  // Baris kemunculan TERAKHIR potongan teks (misalnya token dari pesan SQL: near "x": syntax error)
+  window.barisDariTeks = function (kode, potongan) {
+    const i = potongan ? kode.lastIndexOf(potongan) : -1;   // SQLite menyebut token terakhir yang dibacanya
+    return i < 0 ? null : kode.slice(0, i).split("\n").length;
+  };
 })();

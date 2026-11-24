@@ -665,6 +665,7 @@ async function plJalankan() {
   el("pl-hasil").innerHTML = `<p class="cek-kosong">⏳ Menjalankan…</p>`;
   const h = await plNilai(T, "jalan", kode), b = plBahasa(T);
   if (plPesanMesin(h.r)) return;
+  plTandai(h.r, kode, T);
   let html = `<div class="info-percobaan">ⓘ <b>Percobaan</b>, belum dinilai.</div>`;
   if (h.out) html += `<p class="hasil-label">Output ${b === "js" ? "console.log()" : "print()"}:</p><pre class="pl-out">${esc(h.out)}</pre>`;
   if (b === "sql" && h.r.tabel) html += `<p class="hasil-label">Hasil query-mu:</p>` + h.r.tabel;
@@ -675,6 +676,18 @@ async function plJalankan() {
   }
   el("pl-hasil").innerHTML = html;
   if (b === "web") el("pl-hasil").insertBefore(plPratinjau(kode), el("pl-hasil").children[1] || null);
+}
+// Garis merah di baris yang error (sintaks / error saat dijalankan / error SQL)
+function plTandai(r, kode, T) {
+  const daftar = [];
+  const tambah = g => { if (g && g.baris) daftar.push({ baris: g.baris, pesan: g.galat }); };
+  if (r.sintaks && plBahasa(T) === "sql") {
+    const m = /near "([^"]+)"/.exec(r.sintaks.galat || "");
+    daftar.push({ baris: (m && barisDariTeks(kode, m[1])) || 1, pesan: r.sintaks.galat });
+  } else tambah(r.sintaks);
+  tambah(r.galat_jalan);
+  (r.hasil || []).forEach(tambah);
+  tandaiBarisSalah(el("pl-kode"), daftar);
 }
 function plPesanMesin(r) {
   if (r.waktuHabis) {
@@ -690,6 +703,7 @@ async function plKumpulkan() {
   el("pl-hasil").innerHTML = `<p class="cek-kosong">⏳ Menguji dengan ${T.tes.length} tes…</p>`;
   const h = await plNilai(T, "nilai", kode);
   if (plPesanMesin(h.r)) return;
+  plTandai(h.r, kode, T);
   const hasil = h.r.hasil || [], lulusN = hasil.filter(r => r.ok).length, benar = !h.r.sintaks && lulusN === T.tes.length;
   (p.riwayat[T.id] = p.riwayat[T.id] || []).push({ t: Date.now(), ok: benar, lulus: lulusN, n: T.tes.length, q: kode.slice(0, 3000) });
   p.riwayat[T.id] = p.riwayat[T.id].slice(-12);

@@ -141,7 +141,11 @@
       if (d.t === "siap") { workerSiap = true; ui.status.textContent = "Python siap"; }
       else if (d.t === "gagal") { tulis("Gagal memuat Python (perlu internet saat pertama kali): " + d.s, "galat"); hentikan(); }
       else if (d.t === "out") tulis(d.s);
-      else if (d.t === "err") tulis(d.s, "galat");
+      else if (d.t === "err") {
+        tulis(d.s, "galat");
+        const b = [...d.s.matchAll(/line (\d+)/g)].pop();   // baris terakhir di traceback = letak error di kodemu
+        if (b && S.tab === "py" && window.tandaiBarisSalah) tandaiBarisSalah(ui.editor, [{ baris: +b[1], pesan: d.s }]);
+      }
       else if (d.t === "info") tulis(d.s, "info");
       else if (d.t === "selesai") selesai();
     };
@@ -150,6 +154,7 @@
   function jalanPython() {
     if (!worker) workerBaru();
     if (!workerSiap) ui.status.textContent = "Memuat Python (± 10 MB, sekali saja)…";
+    if (window.tandaiBarisSalah) tandaiBarisSalah(ui.editor, []);
     worker.postMessage({ kode: S.py, stdin: S.stdin });
   }
 

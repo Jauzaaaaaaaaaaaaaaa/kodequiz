@@ -241,8 +241,10 @@ function renderRiwayatLab() {
 function hitungKarakterLab() { el("lab-karakter").textContent = `${el("lab-query").value.length} karakter`; }
 
 function eksekusiLab(q) {
-  try { return { r: jalankanSQL(q) }; }
+  try { const r = jalankanSQL(q); tandaiBarisSalah(el("lab-query"), []); return { r }; }
   catch (e) {
+    const near = /near "([^"]+)"/.exec(e.message);
+    tandaiBarisSalah(el("lab-query"), [{ baris: (near && barisDariTeks(el("lab-query").value, near[1])) || 1, pesan: e.message }]);
     el("lab-hasil").innerHTML = `<div class="feedback fb-salah"><strong>Error dari database:</strong> <code>${esc(e.message)}</code>
       <p class="kecil">${saranError(e.message)}</p></div>`;
     return { err: e.message };

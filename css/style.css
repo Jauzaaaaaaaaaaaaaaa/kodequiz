@@ -912,3 +912,7 @@ body[data-layar="pdf"] .topbar{position:relative}
 .kosakata-item p{margin:6px 0}
 .chip-baru{display:inline-block;background:var(--emas, #d4a017);color:#1b1b1b;border-radius:99px;padding:1px 8px;font-size:.72rem;font-weight:800;vertical-align:middle}
 .kosakata-contoh{display:grid;gap:2px}
+
+/* ===== Garis merah di baris error (editor-bantu.js) ===== */
+.eb-lapis{position:absolute;pointer-events:none;overflow:hidden;color:transparent;background:transparent;margin:0;z-index:2;border-style:solid}
+.eb-baris-salah{text-decoration:underline wavy #e5484d;text-decoration-thickness:1.5px;text-underline-offset:3px;background:rgb(229 72 77 / .13);border-radius:2px}
