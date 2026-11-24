@@ -988,7 +988,8 @@ def studi(**kw): STUDI.append(kw)
 # Isi studi kasus ada di file terpisah supaya file ini tidak terlalu panjang.
 # Dibaca dengan exec karena python -I tidak menaruh folder skrip di sys.path.
 _DIR = os.path.dirname(os.path.abspath(__file__))
-for _f in ("lab-studi-python.py", "lab-studi-python-2.py", "lab-studi-ct.py", "lab-ujian.py"):
+for _f in ("lab-studi-python.py", "lab-studi-python-2.py", "lab-studi-ct.py", "lab-ujian.py",
+           "lab-studi-html.py", "lab-studi-css.py", "lab-studi-js.py", "lab-studi-sql.py"):
     _p = os.path.join(_DIR, _f)
     if os.path.exists(_p):
         exec(compile(open(_p, encoding="utf-8").read(), _p, "exec"), globals())
@@ -1054,6 +1055,8 @@ def olah(t, studi_id=None):
     nama = f"{studi_id + '/' if studi_id else ''}{t['id']}"
     if not studi_id:
         assert t["kategori"] in KATEGORI, nama
+    if t.get("bahasa", "py") != "py":
+        return olah_lain(t, nama)
     assert t["tingkat"] in (1, 2, 3), nama
     assert len(t["petunjuk"]) == 2 and t["jelas"] and len(t["tes"]) >= 3, nama
     pre = t.get("pre", "")
@@ -1095,7 +1098,64 @@ def olah(t, studi_id=None):
     }
 
 
-def jalankan_contoh(kode):
+def node_js(kode, tes, pre=""):
+    import subprocess
+    p = subprocess.run(["node", os.path.join(_DIR, "uji-js.js")], input=json.dumps({"kode": kode, "pre": pre, "tes": tes}),
+                       capture_output=True, text=True, encoding="utf-8", timeout=60)
+    if p.returncode:
+        raise RuntimeError(p.stderr[-400:])
+    return json.loads(p.stdout)
+
+
+def olah_lain(t, nama):
+    """JavaScript: jawaban diharapkan dihitung Node dari solusi acuan, kode awal harus gagal.
+    HTML/CSS (web) dan SQL: dinilai di browser; kebenarannya dicek plUjiSemua() di js/fitur/py-lab.js."""
+    b = t["bahasa"]
+    assert b in ("js", "web", "sql") and t["tingkat"] in (1, 2, 3) and len(t["petunjuk"]) == 2 and t["jelas"], nama
+    tes = t.get("tes", [])
+    if b == "js":
+        assert len(tes) >= 3, nama
+        r = node_js(t["solusi"], tes, t.get("pre", ""))
+        hasil_tes = []
+        for ekspr, h in zip(tes, r["hasil"]):
+            if "nilai" not in h:
+                salah(f"{nama}: solusi acuan gagal pada {ekspr!r}: {h}"); continue
+            if ekspr in t.get("cek", {}) and h["nilai"] != t["cek"][ekspr]:
+                salah(f"{nama}: {ekspr} → {h['nilai']!r}, seharusnya {t['cek'][ekspr]!r}")
+            hasil_tes.append([ekspr, json.dumps(h["nilai"], ensure_ascii=False)])
+        a = node_js(t["awal"], tes, t.get("pre", ""))["hasil"]
+        if all("nilai" in x and json.dumps(x["nilai"], ensure_ascii=False) == e[1] for x, e in zip(a, hasil_tes)):
+            salah(f"{nama}: kode awal sudah lulus semua tes")
+    elif b == "web":
+        assert len(tes) >= 3 and all(len(x) == 2 for x in tes), nama
+        hasil_tes = [list(x) for x in tes]
+    else:
+        assert t.get("tabel"), nama
+        hasil_tes = [["Hasil query", ""]]
+    return {
+        "id": t["id"], "judul": t["judul"], "kategori": "studi", "tingkat": t["tingkat"], "bahasa": b,
+        "fungsi": t.get("fungsi", ""), "cerita": t.get("cerita", ""), "soal": t["soal"], "awal": t["awal"],
+        "solusi": t["solusi"], "jelas": t["jelas"], "kompleksitas": "", "petunjuk": t["petunjuk"] + [t.get("petunjuk3") or "Kerangka solusinya:\n" + kerangka_lain(t["solusi"], b)],
+        "tes": hasil_tes, "contoh": t.get("contoh", 2 if b == "js" and len(hasil_tes) >= 4 else 1), "pre": t.get("pre", ""),
+        "urut": t.get("urut", False), "tabel": t.get("tabel", []), "awal_baru": t.get("awal_baru", ""),
+    }
+
+
+def kerangka_lain(kode, b):
+    """Petunjuk ke-3 untuk JS/HTML/CSS/SQL: struktur dipertahankan, isi dikosongkan."""
+    if b == "sql":
+        kata = set("SELECT FROM WHERE AND OR NOT IN IS NULL AS JOIN LEFT INNER ON GROUP BY HAVING ORDER ASC DESC LIMIT WITH CASE WHEN THEN ELSE END OVER PARTITION DISTINCT BETWEEN LIKE UNION ALL COUNT SUM AVG MIN MAX ROUND COALESCE".split())
+        return re.sub(r"'[^']*'", "'…'", re.sub(r"[A-Za-z_][A-Za-z0-9_]*", lambda m: m.group(0) if m.group(0).upper() in kata else "…", kode))
+    if b == "web":
+        return re.sub(r">[^<]+<", ">…<", re.sub(r":\s*[^;{}]+;", ": …;", kode))
+    return "\n".join(re.sub(r"(=|return|=>)\s*.+$", r"\1 …", baris) for baris in kode.rstrip().split("\n"))
+
+
+def jalankan_contoh(kode, bahasa="py"):
+    if bahasa == "js":
+        return node_js(kode, [])["out"]
+    if bahasa in ("web", "sql"):
+        return ""      # ditampilkan langsung di browser (pratinjau / tabel)
     import contextlib, io
     buf = io.StringIO()
     with contextlib.redirect_stdout(buf):
@@ -1132,7 +1192,8 @@ def main():
                 langkah.append(olah(L, S["id"]))
         C = dict(S["contoh"])
         try:
-            C["keluaran"] = jalankan_contoh(C["kode"])
+            C["bahasa"] = S.get("bahasa", "py")
+            C["keluaran"] = jalankan_contoh(C["kode"], C["bahasa"])
         except Exception as e:
             salah(f"studi {S['id']}: contoh error {type(e).__name__}: {e}"); C["keluaran"] = ""
         studi_out.append({"id": S["id"], "topik": S["topik"], "setelah": S["setelah"], "judul": S["judul"], "contoh": C, "langkah": langkah, "ujian": S.get("ujian", False), "cakupan": S.get("cakupan", "")})

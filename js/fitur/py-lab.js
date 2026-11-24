@@ -205,6 +205,129 @@ function plJalankanPy(data) {
   });
 }
 
+/* ---------- Penilai bahasa lain: JavaScript (Worker), HTML/CSS (iframe), SQL (sql.js dari Lab SQL) ---------- */
+const PL_JS_WORKER = `
+const AF = Object.getPrototypeOf(async function () {}).constructor;
+const tampil = x => { if (x === undefined) return "undefined"; try { return JSON.stringify(x); } catch (e) { return String(x); } };
+const jenis = x => x === null ? "null" : Array.isArray(x) ? "array" : typeof x;
+function sama(a, b) {
+  if (typeof a === "number" && typeof b === "number") return Math.abs(a - b) < 1e-6;
+  if (Array.isArray(a) || Array.isArray(b)) return Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every((x, i) => sama(x, b[i]));
+  if (a && b && typeof a === "object" && typeof b === "object") { const ka = Object.keys(a), kb = Object.keys(b); return ka.length === kb.length && ka.every(k => k in b && sama(a[k], b[k])); }
+  return a === b;
+}
+function diag(d, h) {
+  if (d === undefined) return "Hasilmu undefined. Biasanya karena lupa return, atau arrow function memakai kurung kurawal { } tanpa return.";
+  if (typeof h === "boolean") return "Hasilmu " + tampil(d) + ", seharusnya " + h + ". Cek syarat if, && dan ||.";
+  if (typeof h === "number" && typeof d === "number") return Math.abs(d - h) < 1 ? "Angkanya hampir sama. Cek pembulatan (Math.round, toFixed)." : "Angkanya berbeda. Cek rumus dan kasus tepi (kosong, nol, negatif).";
+  if (jenis(d) !== jenis(h)) return "Tipe hasilmu " + jenis(d) + ", seharusnya " + jenis(h) + (typeof d === "string" && typeof h === "number" ? " (angka masih berupa teks? pakai Number())" : "") + ".";
+  if (typeof h === "string") {
+    if (d.trim().toLowerCase() === h.trim().toLowerCase()) return "Hampir benar: bedanya hanya huruf besar/kecil atau spasi di tepi.";
+    for (let i = 0; i < Math.max(d.length, h.length); i++) if (d[i] !== h[i]) return "Teks mulai berbeda di karakter ke-" + (i + 1) + ": punyamu " + JSON.stringify(d.slice(i, i + 12)) + ", seharusnya " + JSON.stringify(h.slice(i, i + 12)) + ".";
+  }
+  if (Array.isArray(h)) {
+    if (d.some(x => x === null) && !h.some(x => x === null)) return "Ada item yang kosong (undefined) di hasilmu. Biasanya callback map/filter memakai { } tanpa return; untuk mengembalikan objek tulis p => ({ ... }).";
+    if (d.length !== h.length) return "Jumlah item hasilmu " + d.length + ", seharusnya " + h.length + ".";
+    const s = x => x.map(v => JSON.stringify(v)).sort().join("|");
+    if (s(d) === s(h)) return "Isinya sudah benar, tapi URUTANNYA berbeda. Cek sort() dan fungsi pembandingnya.";
+    const i = h.findIndex((v, j) => !sama(d[j], v));
+    return "Item indeks " + i + " berbeda: punyamu " + tampil(d[i]) + ", seharusnya " + tampil(h[i]) + ".";
+  }
+  if (h && typeof h === "object") {
+    const kurang = Object.keys(h).filter(k => !(k in d)), lebih = Object.keys(d).filter(k => !(k in h));
+    if (kurang.length) return "Properti yang belum ada: " + kurang.join(", ") + ".";
+    if (lebih.length) return "Ada properti yang tidak diharapkan: " + lebih.join(", ") + ".";
+    const k = Object.keys(h).find(k => !sama(d[k], h[k]));
+    return "Nilai properti " + k + " berbeda: punyamu " + tampil(d[k]) + ", seharusnya " + tampil(h[k]) + ".";
+  }
+  return "Hasilnya berbeda dari yang diharapkan.";
+}
+const SARAN = {
+  ReferenceError: "Ada nama yang belum dibuat atau salah ketik (JavaScript membedakan huruf besar/kecil). Jangan ganti nama fungsi dari kode awal.",
+  TypeError: "Operasi pada tipe yang salah, misalnya memanggil method pada undefined/null atau memanggil sesuatu yang bukan fungsi.",
+  RangeError: "Nilai di luar batas, misalnya rekursi tanpa henti.",
+  SyntaxError: "Cek kurung kurawal/kurung biasa yang belum ditutup, koma, dan tanda kutip.",
+};
+function galat(e, offset) {
+  const m = String(e && e.stack || "").match(/<anonymous>:(\\d+):\\d+/), baris = m ? +m[1] - offset : 0;
+  return { galat: e && e.name ? e.name + ": " + e.message : "Error: " + String(e), baris: baris > 0 ? baris : null, saran: SARAN[e && e.name] || "Baca pesan errornya; biasanya ia menunjuk bagian yang bermasalah." };
+}
+onmessage = async e => {
+  const { kode, pre, tes, mode } = e.data;
+  let out = "";
+  const tulis = (...a) => { out += a.map(x => typeof x === "string" ? x : tampil(x)).join(" ") + "\\n"; };
+  const konsol = { log: tulis, info: tulis, warn: tulis, error: tulis, table: tulis };
+  const diam = { log() {}, info() {}, warn() {}, error() {}, table() {} };
+  const kepala = pre ? pre + "\\n" : "", offset = 2 + (kepala.match(/\\n/g) || []).length;   // AsyncFunction menambah 2 baris
+  try { new AF("console", kepala + kode); }
+  catch (err) { postMessage({ t: "hasil", r: { sintaks: { galat: err.name + ": " + err.message, baris: null, saran: SARAN.SyntaxError } }, out }); return; }
+  const r = { hasil: [] };
+  if (mode !== "nilai") { try { await new AF("console", kepala + kode)(konsol); } catch (err) { r.galat_jalan = galat(err, offset); } }
+  if (mode !== "contoh") for (const [ekspr, harap] of tes) {
+    const h = JSON.parse(harap);
+    const badan = kepala + kode + "\\n;" + (ekspr.includes("\\n") || /^(const|let)\\s+hasil\\b/.test(ekspr) ? ekspr + "\\nreturn hasil;" : "return (" + ekspr + ");");
+    try {
+      let d = await new AF("console", badan)(diam);
+      if (d !== undefined) d = JSON.parse(JSON.stringify(d));
+      const ok = sama(d, h);
+      r.hasil.push(ok ? { ok, dapat: tampil(d) } : { ok, dapat: tampil(d), diag: diag(d, h) });
+    } catch (err) { r.hasil.push({ ok: false, ...galat(err, offset) }); }
+  }
+  postMessage({ t: "hasil", r, out });
+};`;
+function plJalankanJs(data) {   // worker baru tiap kali: murah, dan perulangan tanpa akhir cukup di-terminate
+  return new Promise(res => {
+    const url = URL.createObjectURL(new Blob([PL_JS_WORKER], { type: "text/javascript" }));
+    const w = new Worker(url);
+    URL.revokeObjectURL(url);
+    const batas = setTimeout(() => { w.terminate(); res({ r: { waktuHabis: true }, out: "" }); }, 8000);
+    w.onmessage = e => { clearTimeout(batas); w.terminate(); res(e.data); };
+    w.postMessage(data);
+  });
+}
+// HTML/CSS: dirender di iframe tersembunyi tanpa izin skrip; tiap tes = [deskripsi, ekspresi JS atas d/w/$/$$/gaya]
+function plNilaiWeb(kode, tes) {
+  return new Promise(res => {
+    let f = el("pl-web-uji");
+    if (!f) {
+      f = document.createElement("iframe");
+      f.id = "pl-web-uji"; f.title = "Penguji HTML"; f.setAttribute("sandbox", "allow-same-origin"); f.setAttribute("aria-hidden", "true");
+      f.style.cssText = "position:fixed;left:-10000px;top:0;width:1000px;height:700px;border:0;visibility:hidden";
+      document.body.appendChild(f);
+    }
+    f.onload = () => {
+      const d = f.contentDocument, w = f.contentWindow, $ = s => d.querySelector(s), $$ = s => [...d.querySelectorAll(s)];
+      const gaya = (s, p) => { const n = typeof s === "string" ? $(s) : s; return n ? w.getComputedStyle(n).getPropertyValue(p).trim() : null; };
+      const hasil = tes.map(([desk, ekspr]) => {
+        try { const ok = !!new Function("d", "w", "$", "$$", "gaya", "return (" + ekspr + ");")(d, w, $, $$, gaya); return ok ? { ok, dapat: "✓" } : { ok, diag: desk }; }
+        catch (e) { return { ok: false, diag: desk }; }   // elemen yang dicek belum ada
+      });
+      res({ r: { hasil }, out: "" });
+    };
+    f.srcdoc = kode + "\n<!-- " + Date.now() + " -->";   // komentar unik memaksa muat ulang
+  });
+}
+async function plNilaiSql(T, kode, mode) {
+  await muatSqlJs();
+  let dapat;
+  try { dapat = jalankanSQL(kode); }
+  catch (e) { return { r: { sintaks: { galat: e.message, baris: null, saran: saranError(e.message).replace(/^💡\s*/, "") } }, out: "" }; }
+  if (mode === "jalan") return { r: { hasil: [], tabel: tabelHasil(dapat) }, out: "" };
+  const harap = jalankanSQL(T.solusi), ok = samaHasil(dapat, harap, T.urut);
+  return { r: { hasil: [ok ? { ok, tabel: tabelHasil(dapat) } : { ok, tabel: tabelHasil(dapat), diag: bedaHasil(dapat, harap, T.urut) }] }, out: "" };
+}
+const plBahasa = T => T.bahasa || "py";
+// Satu pintu untuk semua bahasa. mode: "jalan" (contoh saja), "nilai" (semua tes), "contoh" (hanya jalankan)
+function plNilai(T, mode, kode) {
+  const b = plBahasa(T), tes = mode === "contoh" ? [] : mode === "jalan" && b !== "web" ? T.tes.slice(0, T.contoh) : T.tes;
+  if (b === "js") return plJalankanJs({ mode, kode, pre: T.pre || "", tes });
+  if (b === "web") return plNilaiWeb(kode, tes);
+  if (b === "sql") return plNilaiSql(T, kode, mode);
+  return plJalankanPy({ mode, kode, pre: T.pre || "", fungsi: T.fungsi, tes });
+}
+const PL_FILE = { py: "solusi.py", js: "script.js", web: "index.html", sql: "query.sql" };
+const PL_MESIN = { js: "JavaScript berjalan di browser", web: "Pratinjau HTML/CSS", sql: "SQLite di browser" };
+
 /* ---------- Data & status ---------- */
 function dataPy() {
   const p = DATA.pylab = DATA.pylab || {};
@@ -393,9 +516,15 @@ function plRenderIsi(p, T, k, studi, sim) {
   el("pl-cerita").innerHTML = T.cerita || "";
   el("pl-cerita").classList.toggle("tersembunyi", !T.cerita);
   el("pl-soal").innerHTML = T.soal;
-  el("pl-contoh").innerHTML = T.tes.slice(0, T.contoh).map(([e, h]) =>
-    `<div class="pl-contoh"><pre class="kode-soal kecil-kode"><code>${esc(plTampilEkspr(e))}</code></pre><p>→ <code>${esc(h)}</code></p></div>`).join("");
-  el("pl-tes-ket").textContent = `Saat dikumpulkan, kodemu diuji dengan ${T.tes.length} tes: ${T.contoh} contoh di atas + ${T.tes.length - T.contoh} tes tambahan (kasus tepi).`;
+  const b = plBahasa(T);
+  el("pl-contoh").innerHTML = b === "web" ? `<ul class="pl-daftar">${T.tes.map(([desk]) => `<li>${esc(desk)}</li>`).join("")}</ul>`
+    : b === "sql" ? `<div id="pl-sql-harap"><p class="cek-kosong">Memuat hasil yang diharapkan…</p></div>`
+    : T.tes.slice(0, T.contoh).map(([e, h]) => `<div class="pl-contoh"><pre class="kode-soal kecil-kode"><code>${esc(plTampilEkspr(e))}</code></pre><p>→ <code>${esc(h)}</code></p></div>`).join("");
+  if (b === "sql") muatSqlJs().then(() => { const x = el("pl-sql-harap"); if (x) x.innerHTML = `<p class="kecil">Hasil yang diharapkan (nama kolom boleh beda${T.urut ? ", urutan baris dicek" : ""}):</p>` + tabelHasil(jalankanSQL(T.solusi)) + `<p class="kecil">Tabel tersedia: ${esc((T.tabel || []).join(", "))}.</p>`; });
+  el("pl-tes-ket").textContent = b === "web" ? `Halamanmu diperiksa ${T.tes.length} hal di atas saat dikumpulkan.`
+    : b === "sql" ? "Saat dikumpulkan, hasil query-mu dibandingkan dengan hasil yang diharapkan."
+    : `Saat dikumpulkan, kodemu diuji dengan ${T.tes.length} tes: ${T.contoh} contoh di atas + ${T.tes.length - T.contoh} tes tambahan (kasus tepi).`;
+  document.querySelector("#pl-editor .tab-file").textContent = PL_FILE[b];
   el("pl-bantuan").classList.toggle("tersembunyi", sim && !p.sim.selesai);
   plRenderPetunjuk();
   el("pl-kode").value = p.draf[T.id] != null ? p.draf[T.id] : plKodeAwal(T, k);
@@ -406,7 +535,7 @@ function plRenderIsi(p, T, k, studi, sim) {
   if (studi) plRenderContoh();
   plTab("tantangan");
   plRenderSolusi(); plRenderRiwayat();
-  el("pl-mesin").textContent = PL_SIAP ? "✓ Python siap" : "Python dimuat saat Jalankan pertama";
+  el("pl-mesin").textContent = PL_MESIN[b] || (PL_SIAP ? "✓ Python siap" : "Python dimuat saat Jalankan pertama");
 }
 const plTampilEkspr = e => e;
 // Coding test besar: bagian B/C diawali kode LULUS milik pengguna dari bagian sebelumnya, lalu kerangka bagian baru.
@@ -425,13 +554,16 @@ function plRenderContoh() {
   el("pl-panel-contoh").innerHTML = `<h3 class="lab-judul">${esc(C.judul)}</h3>${C.penjelasan}
     <pre class="jawab-kode"><code>${esc(C.kode)}</code></pre>
     <p><button class="btn btn-garis btn-kecil" id="btn-pl-contoh-jalan">▶ Jalankan contoh ini</button></p>
-    <div id="pl-contoh-out"><p class="kecil">Output yang akan muncul:</p><pre class="pl-out">${esc(C.keluaran)}</pre></div>
+    <div id="pl-contoh-out">${C.keluaran ? `<p class="kecil">Output yang akan muncul:</p><pre class="pl-out">${esc(C.keluaran)}</pre>` : ""}</div>
     ${C.kunci ? `<div class="petunjuk-lab"><b>Yang perlu kamu ingat</b><p>${esc(C.kunci)}</p></div>` : ""}
     <button class="btn btn-utama" id="btn-pl-ke-tugas">Saya paham, kerjakan soalnya →</button>`;
   el("btn-pl-ke-tugas").onclick = () => plTab("tantangan");
   el("btn-pl-contoh-jalan").onclick = async () => {
     el("pl-contoh-out").innerHTML = `<p class="kecil">Menjalankan…</p>`;
-    const h = await plJalankanPy({ mode: "contoh", kode: C.kode, tes: [] });
+    const b = C.bahasa || "py";
+    if (b === "web") { el("pl-contoh-out").innerHTML = `<p class="kecil">Tampilan:</p>`; el("pl-contoh-out").appendChild(plPratinjau(C.kode)); return; }
+    if (b === "sql") { const h = await plNilaiSql({}, C.kode, "jalan"); el("pl-contoh-out").innerHTML = h.r.tabel || plKotakGalat(h.r.sintaks, "Error"); return; }
+    const h = await plNilai({ bahasa: b, tes: [] }, "contoh", C.kode);
     el("pl-contoh-out").innerHTML = `<p class="kecil">Output:</p><pre class="pl-out">${esc(h.out || "(tidak ada output)")}</pre>`;
   };
 }
@@ -477,12 +609,19 @@ function plGetar(node) {
   node.classList.remove("pl-goyang"); void node.offsetWidth; node.classList.add("pl-goyang");
   if (navigator.vibrate) navigator.vibrate([90, 50, 90]);
 }
+function plPratinjau(html) {   // tampilan halaman pengguna, tanpa izin menjalankan skrip
+  const f = document.createElement("iframe");
+  f.className = "pl-pratinjau"; f.title = "Pratinjau halaman"; f.setAttribute("sandbox", ""); f.srcdoc = html;
+  return f;
+}
 function plKotakGalat(g, judul) {
   return `<div class="feedback fb-salah"><strong>${esc(judul)}${g.baris ? ` (baris ${g.baris})` : ""}</strong><pre class="pl-out">${esc(g.galat)}</pre><p class="kecil">💡 ${esc(g.saran || "")}</p></div>`;
 }
 function plTabelTes(T, hasil, dariContoh) {
   return `<div class="pl-tes">${hasil.map((r, j) => {
-    const [e, h] = T.tes[j], label = j < T.contoh ? `Contoh ${j + 1}` : `Tes ${j + 1}`;
+    const [e, h] = T.tes[j], b = plBahasa(T), label = j < T.contoh ? `Contoh ${j + 1}` : `Tes ${j + 1}`;
+    if (b === "web") return `<div class="pl-tes-item ${r.ok ? "ok" : "gagal"}"><p class="pl-tes-kepala"><b>${r.ok ? "✓" : "✗"}</b> ${esc(e)}</p></div>`;
+    if (b === "sql") return `<div class="pl-tes-item ${r.ok ? "ok" : "gagal"}"><p class="pl-tes-kepala"><b>${r.ok ? "✓ Hasil sama dengan yang diharapkan" : "✗ Hasil belum sama"}</b></p>${r.ok ? "" : `<p class="kecil">💡 ${esc(r.diag)}</p>`}<p class="kecil">Hasil query-mu:</p>${r.tabel}</div>`;
     return `<div class="pl-tes-item ${r.ok ? "ok" : "gagal"}">
       <p class="pl-tes-kepala"><b>${r.ok ? "✓" : "✗"} ${label}</b></p>
       <pre class="kode-soal kecil-kode"><code>${esc(e)}</code></pre>
@@ -498,16 +637,18 @@ async function plJalankan() {
   p.draf[T.id] = kode; simpan();
   el("pl-status").className = "lab-status tersembunyi";
   el("pl-hasil").innerHTML = `<p class="cek-kosong">⏳ Menjalankan…</p>`;
-  const h = await plJalankanPy({ mode: "jalan", kode, pre: T.pre || "", fungsi: T.fungsi, tes: T.tes.slice(0, T.contoh) });
+  const h = await plNilai(T, "jalan", kode), b = plBahasa(T);
   if (plPesanMesin(h.r)) return;
   let html = `<div class="info-percobaan">ⓘ <b>Percobaan</b>, belum dinilai.</div>`;
-  if (h.out) html += `<p class="hasil-label">Output print():</p><pre class="pl-out">${esc(h.out)}</pre>`;
-  if (h.r.sintaks) html += plKotakGalat(h.r.sintaks, "Kode belum bisa dibaca Python");
+  if (h.out) html += `<p class="hasil-label">Output ${b === "js" ? "console.log()" : "print()"}:</p><pre class="pl-out">${esc(h.out)}</pre>`;
+  if (b === "sql" && h.r.tabel) html += `<p class="hasil-label">Hasil query-mu:</p>` + h.r.tabel;
+  if (h.r.sintaks) html += plKotakGalat(h.r.sintaks, b === "sql" ? "Error dari database" : "Kode belum bisa dibaca");
   else {
     if (h.r.galat_jalan) html += plKotakGalat(h.r.galat_jalan, "Error saat kode dijalankan");
-    html += plTabelTes(T, h.r.hasil, true);
+    if (h.r.hasil.length) html += plTabelTes(T, h.r.hasil, b !== "web");
   }
   el("pl-hasil").innerHTML = html;
+  if (b === "web") el("pl-hasil").insertBefore(plPratinjau(kode), el("pl-hasil").children[1] || null);
 }
 function plPesanMesin(r) {
   if (r.waktuHabis) {
@@ -521,7 +662,7 @@ async function plKumpulkan() {
   const p = dataPy(), T = plT(), kode = el("pl-kode").value, studi = PL.jenis === "studi", sim = PL.jenis === "sim";
   p.draf[T.id] = kode;
   el("pl-hasil").innerHTML = `<p class="cek-kosong">⏳ Menguji dengan ${T.tes.length} tes…</p>`;
-  const h = await plJalankanPy({ mode: "nilai", kode, pre: T.pre || "", fungsi: T.fungsi, tes: T.tes });
+  const h = await plNilai(T, "nilai", kode);
   if (plPesanMesin(h.r)) return;
   const hasil = h.r.hasil || [], lulusN = hasil.filter(r => r.ok).length, benar = !h.r.sintaks && lulusN === T.tes.length;
   (p.riwayat[T.id] = p.riwayat[T.id] || []).push({ t: Date.now(), ok: benar, lulus: lulusN, n: T.tes.length, q: kode.slice(0, 3000) });
@@ -530,7 +671,7 @@ async function plKumpulkan() {
   if (!benar) {
     p.gagal[T.id] = (p.gagal[T.id] || 0) + 1;
     simpan(); plRenderRiwayat(); plRenderPetunjuk(); plRenderSolusi();
-    el("pl-hasil").innerHTML = h.r.sintaks ? plKotakGalat(h.r.sintaks, "Kode belum bisa dibaca Python") : plTabelTes(T, hasil, false);
+    el("pl-hasil").innerHTML = h.r.sintaks ? plKotakGalat(h.r.sintaks, plBahasa(T) === "sql" ? "Error dari database" : "Kode belum bisa dibaca") : plTabelTes(T, hasil, false);
     st.className = "lab-status muncul fb-salah";
     st.innerHTML = h.r.sintaks
       ? `<strong>❌ Masih salah.</strong> Ada kesalahan penulisan${h.r.sintaks.baris ? ` di baris ${h.r.sintaks.baris}` : ""}, jadi belum ada tes yang bisa dijalankan.`
@@ -597,8 +738,22 @@ function pasangPyLab() {
     }
     if (e.key === "Enter" && !e.ctrlKey && !e.metaKey) {   // Enter menjaga indentasi, +4 setelah titik dua
       e.preventDefault();
-      const baris = v.slice(v.lastIndexOf("\n", a - 1) + 1, a), ind = baris.match(/^ */)[0] + (/:\s*$/.test(baris) ? "    " : "");
+      const baris = v.slice(v.lastIndexOf("\n", a - 1) + 1, a), ind = baris.match(/^ */)[0] + (/[:{]\s*$/.test(baris) ? "    " : "");
       ed.value = v.slice(0, a) + "\n" + ind + v.slice(z); ed.selectionStart = ed.selectionEnd = a + 1 + ind.length;
     }
   });
+}
+
+// Pemeriksa isi (dijalankan manual atau lewat Playwright, bukan oleh pengguna):
+// untuk soal JS/HTML/CSS/SQL, solusi acuan harus lulus semua tes dan kode awal harus gagal.
+async function plUjiSemua(bahasa = ["js", "web", "sql"]) {
+  const semua = [...TANTANGAN_PY, ...STUDI_PY.flatMap(S => S.langkah)].filter(T => bahasa.includes(plBahasa(T)));
+  const lulus = r => !r.sintaks && !r.waktuHabis && (r.hasil || []).length > 0 && r.hasil.every(x => x.ok);
+  const masalah = [];
+  for (const T of semua) {
+    const s = await plNilai(T, "nilai", T.solusi);
+    if (!lulus(s.r)) masalah.push(`${T.id}: solusi acuan gagal → ${JSON.stringify(s.r.sintaks || (s.r.hasil || []).filter(x => !x.ok).map(x => x.diag || x.galat)).slice(0, 400)}`);
+    if (lulus((await plNilai(T, "nilai", T.awal)).r)) masalah.push(`${T.id}: kode awal sudah lulus`);
+  }
+  return { diuji: semua.length, masalah };
 }

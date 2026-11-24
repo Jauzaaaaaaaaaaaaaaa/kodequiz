@@ -1925,6 +1925,7 @@ const STUDI_PY = [
 "penjelasan": "<p>f-string menyisipkan nilai variabel ke dalam teks: <code>f\"Halo {nama}\"</code>. Di dalam kurung kurawal kamu juga bisa menulis format angka. <code>{angka:,}</code> memberi pemisah ribuan dengan koma, lalu koma itu bisa diganti titik untuk format Indonesia.</p>",
 "kode": "harga = 15000\nqty = 3\ntotal = harga * qty\nteks = f\"{total:,}\"            # '45,000'\nprint(teks)\nprint(\"Rp \" + teks.replace(\",\", \".\"))\nprint(f\"{qty} x Kopi = Rp {total:,}\".replace(\",\", \".\"))",
 "kunci": "f\"{angka:,}\" memberi pemisah ribuan. Ganti koma dengan titik memakai .replace(\",\", \".\").",
+"bahasa": "py",
 "keluaran": "45,000\nRp 45.000\n3 x Kopi = Rp 45.000"
 },
 "langkah": [
@@ -2024,6 +2025,7 @@ const STUDI_PY = [
 "penjelasan": "<p><code>//</code> membagi lalu membuang sisa (pembulatan ke bawah), <code>%</code> memberi sisanya. Untuk pembulatan <b>ke atas</b> tanpa import, pakai trik <code>-(-a // b)</code>, atau <code>math.ceil(a / b)</code>.</p>",
 "kode": "berat = 2300            # gram\nprint(berat // 1000)    # 2 kg penuh\nprint(berat % 1000)     # sisa 300 gram\nprint(-(-berat // 1000))  # dibulatkan ke atas: 3 kg\nprint(2300 / 1000)      # 2.3 (pembagian biasa)",
 "kunci": "Ongkir dihitung per kg dibulatkan ke atas: -(-gram // 1000). Untuk 'habis dibagi' pakai % == 0.",
+"bahasa": "py",
 "keluaran": "2\n300\n3\n2.3"
 },
 "langkah": [
@@ -2131,6 +2133,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Teks bisa dipecah jadi list kata dengan <code>split()</code>, setiap kata diambil huruf pertamanya dengan <code>[0]</code>, lalu digabung lagi dengan <code>\"\".join(...)</code>.</p>",
 "kode": "nama = \"  jauza kenar indra fawaid \"\nkata = nama.split()\nprint(kata)\nprint([k[0] for k in kata])\nprint(\"\".join(k[0] for k in kata).upper())\nprint(nama.strip().title())",
 "kunci": "split() → ambil bagian → join(). [0] = karakter pertama, [-1] = karakter terakhir.",
+"bahasa": "py",
 "keluaran": "['jauza', 'kenar', 'indra', 'fawaid']\n['j', 'k', 'i', 'f']\nJKIF\nJauza Kenar Indra Fawaid"
 },
 "langkah": [
@@ -2226,6 +2229,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Python memeriksa <code>if</code> dan <code>elif</code> dari atas, lalu berhenti di syarat pertama yang benar. Jadi tulis syarat yang paling khusus lebih dulu.</p>",
 "kode": "def kategori_pelanggan(total_belanja):\n    if total_belanja >= 10_000_000:\n        return \"Platinum\"\n    elif total_belanja >= 5_000_000:\n        return \"Gold\"\n    elif total_belanja > 0:\n        return \"Reguler\"\n    return \"Belum belanja\"\n\nfor t in [12_000_000, 5_000_000, 100, 0]:\n    print(t, kategori_pelanggan(t))",
 "kunci": "Cek dari batas tertinggi. Garis bawah di 10_000_000 hanya pemisah agar mudah dibaca.",
+"bahasa": "py",
 "keluaran": "12000000 Platinum\n5000000 Gold\n100 Reguler\n0 Belum belanja"
 },
 "langkah": [
@@ -2329,6 +2333,7 @@ const STUDI_PY = [
 "penjelasan": "<p><code>for</code> dipakai bila banyaknya ulangan sudah diketahui. <code>while</code> dipakai bila kita mengulang <b>sampai</b> sebuah syarat tercapai. Contoh: berapa bulan menabung sampai target tercapai.</p>",
 "kode": "saldo, bulan = 1_000_000, 0\nwhile saldo < 3_000_000:\n    saldo += 500_000\n    bulan += 1\nprint(bulan, saldo)\n\nfor i in range(1, 4):\n    print(f\"5 x {i} = {5 * i}\")",
 "kunci": "while: ubah variabel yang dicek di setiap putaran supaya perulangan berhenti.",
+"bahasa": "py",
 "keluaran": "4 3000000\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15"
 },
 "langkah": [
@@ -2428,6 +2433,7 @@ const STUDI_PY = [
 "penjelasan": "<p><code>sorted(daftar)</code> mengembalikan list baru yang terurut abjad (A→Z), sedangkan <code>daftar.sort()</code> mengurutkan list aslinya. Tambahkan <code>reverse=True</code> untuk Z→A.</p><p>Parameter <code>key</code> menentukan <b>apa yang dibandingkan</b>: <code>key=len</code> = panjang kata, <code>key=str.lower</code> = abaikan huruf besar/kecil. Untuk data berpasangan, <code>key=lambda x: x[1]</code> artinya urutkan menurut elemen kedua.</p>",
 "kode": "buah = [\"mangga\", \"apel\", \"rambutan\"]\nprint(sorted(buah))                 # abjad\nprint(sorted(buah, reverse=True))   # kebalikannya\nprint(sorted(buah, key=len))        # dari kata terpendek\n\nharga = [(\"mangga\", 25000), (\"apel\", 30000), (\"rambutan\", 15000)]\nprint(sorted(harga, key=lambda x: x[1]))   # dari harga termurah\n\ncampur = [\"mangga\", \"Apel\", \"rambutan\"]\nprint(sorted(campur))                   # huruf besar didahulukan!\nprint(sorted(campur, key=str.lower))    # abaikan besar/kecil",
 "kunci": "sorted(data, key=..., reverse=...). key menentukan nilai yang dibandingkan. Huruf besar selalu didahulukan kecuali memakai key=str.lower.",
+"bahasa": "py",
 "keluaran": "['apel', 'mangga', 'rambutan']\n['rambutan', 'mangga', 'apel']\n['apel', 'mangga', 'rambutan']\n[('rambutan', 15000), ('mangga', 25000), ('apel', 30000)]\n['Apel', 'mangga', 'rambutan']\n['Apel', 'mangga', 'rambutan']"
 },
 "langkah": [
@@ -2562,6 +2568,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Dict cocok untuk data <i>kunci → nilai</i>. <code>d.get(k, 0)</code> memberi 0 bila kunci belum ada. Set cocok untuk pertanyaan 'ada di mana saja': <code>&amp;</code> irisan, <code>|</code> gabungan, <code>-</code> selisih.</p>",
 "kode": "gudang = {\"kursi\": 10, \"meja\": 4}\nmasuk = {\"meja\": 6, \"lemari\": 2}\nfor barang, qty in masuk.items():\n    gudang[barang] = gudang.get(barang, 0) + qty\nprint(gudang)\n\ntoko_a = {\"Ani\", \"Budi\", \"Cita\"}\ntoko_b = {\"Budi\", \"Dodi\", \"Cita\"}\nprint(sorted(toko_a & toko_b))   # belanja di kedua toko\nprint(sorted(toko_a - toko_b))   # hanya di toko A",
 "kunci": "dict.get(kunci, 0) + qty untuk menjumlah. Set: & irisan, | gabungan, - selisih.",
+"bahasa": "py",
 "keluaran": "{'kursi': 10, 'meja': 10, 'lemari': 2}\n['Budi', 'Cita']\n['Ani']"
 },
 "langkah": [
@@ -2653,6 +2660,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Fungsi bisa mengembalikan beberapa nilai sekaligus sebagai tuple. Parameter dengan nilai bawaan (<code>tarif=50000</code>) boleh tidak diisi saat memanggil, dan bisa diisi dengan nama (<i>keyword argument</i>).</p>",
 "kode": "def ringkas(angka):\n    if not angka:\n        return None\n    return min(angka), max(angka)\n\nprint(ringkas([4, 9, 1]))\nprint(ringkas([]))\n\ndef upah(jam, tarif=50000):\n    return jam * tarif\n\nprint(upah(3))\nprint(upah(3, tarif=60000))",
 "kunci": "return a, b menghasilkan tuple (a, b). Parameter bawaan ditulis paling belakang.",
+"bahasa": "py",
 "keluaran": "(1, 9)\nNone\n150000\n180000"
 },
 "langkah": [
@@ -2752,6 +2760,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Data dari file atau input pengguna sering kotor. Bungkus bagian yang bisa gagal dengan <code>try</code>, lalu tangkap jenis error yang spesifik dengan <code>except ValueError</code>. Jangan memakai <code>except:</code> kosong karena menyembunyikan semua bug.</p>",
 "kode": "data = [\"10\", \"5\", \"lima\", \"7.5\", \"\"]\nangka, gagal = [], []\nfor x in data:\n    try:\n        angka.append(int(x))\n    except ValueError:\n        gagal.append(x)\nprint(angka)\nprint(gagal)",
 "kunci": "try: bagian yang bisa gagal; except JenisError: penanganannya. int('7.5') juga gagal; float('7.5') berhasil.",
+"bahasa": "py",
 "keluaran": "[10, 5]\n['lima', '7.5', '']"
 },
 "langkah": [
@@ -2851,6 +2860,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Class adalah cetakan; objek adalah hasil cetakannya. <code>__init__</code> mengisi data awal ke <code>self</code>. Class anak <code>class B(A)</code> mewarisi semua method A dan bisa mengganti (override) sebagian, memanggil versi induk dengan <code>super()</code>.</p>",
 "kode": "class Produk:\n    def __init__(self, nama, harga):\n        self.nama = nama\n        self.harga = harga\n\n    def label(self):\n        return f\"{self.nama} - Rp {self.harga}\"\n\nclass ProdukBaru(Produk):\n    def label(self):\n        return \"[BARU] \" + super().label()\n\nprint(Produk(\"Kopi\", 15000).label())\nprint(ProdukBaru(\"Teh\", 8000).label())",
 "kunci": "self menyimpan data objek. super().method() memanggil versi induk, lalu kamu menambahkan perilaku baru.",
+"bahasa": "py",
 "keluaran": "Kopi - Rp 15000\n[BARU] Teh - Rp 8000"
 },
 "langkah": [
@@ -2950,6 +2960,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Python punya banyak modul bawaan. <code>math</code> untuk perhitungan (akar, pembulatan ke atas), <code>datetime</code> untuk tanggal. <code>date.weekday()</code> memberi 0 untuk Senin sampai 6 untuk Minggu.</p>",
 "kode": "import math\nfrom datetime import date\n\nprint(math.sqrt(16), math.ceil(2.1), math.floor(2.9))\nprint(math.hypot(3, 4))           # jarak (3,4) dari titik (0,0)\n\nd = date(2026, 11, 24)\nHARI = [\"Senin\", \"Selasa\", \"Rabu\", \"Kamis\", \"Jumat\", \"Sabtu\", \"Minggu\"]\nprint(d.weekday(), HARI[d.weekday()])",
 "kunci": "import modul lalu pakai modul.fungsi(). weekday(): Senin = 0.",
+"bahasa": "py",
 "keluaran": "4.0 3 2\n5.0\n1 Selasa"
 },
 "langkah": [
@@ -3045,6 +3056,7 @@ const STUDI_PY = [
 "penjelasan": "<p>DataFrame = tabel. Kolom baru dibuat dengan operasi per kolom (vektor), tanpa for. <code>groupby(\"kota\")[\"total\"].sum()</code> sama seperti pivot table: total per kota.</p><p class=\"kecil\">Catatan: saat pertama dijalankan, pandas diunduh sekali (± 10 MB).</p>",
 "kode": "import pandas as pd\n\ndf = pd.DataFrame({\n    \"kota\": [\"Batam\", \"Solo\", \"Batam\", \"Solo\"],\n    \"qty\": [2, 1, 3, 5],\n    \"harga\": [10000, 20000, 10000, 5000],\n})\ndf[\"total\"] = df[\"qty\"] * df[\"harga\"]\nprint(df)\nprint(df.groupby(\"kota\")[\"total\"].sum().to_dict())",
 "kunci": "Kolom baru: df[\"baru\"] = df[\"a\"] * df[\"b\"]. Ringkas: df.groupby(kolom)[nilai].sum().",
+"bahasa": "py",
 "keluaran": "    kota  qty  harga  total\n0  Batam    2  10000  20000\n1   Solo    1  20000  20000\n2  Batam    3  10000  30000\n3   Solo    5   5000  25000\n{'Batam': 50000, 'Solo': 45000}"
 },
 "langkah": [
@@ -3132,6 +3144,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Di Odoo, <code>self</code> adalah <b>recordset</b>: kumpulan record, bisa berisi 0, 1, atau banyak. Karena itu method compute selalu ditulis <code>for order in self:</code>. <code>mapped('field')</code> mengambil nilai field dari semua record, <code>filtered(lambda r: ...)</code> menyaring.</p><p>Di soal latihan dipakai recordset tiruan (<code>Recordset</code>, <code>Record</code>, <code>rs(...)</code>) yang perilakunya mirip Odoo, jadi kodenya bisa dijalankan di browser.</p>",
 "kode": "# Di Odoo sungguhan:\n# @api.depends(\"order_line.price_subtotal\")\n# def _compute_amount(self):\n#     for order in self:\n#         order.amount_total = sum(order.order_line.mapped(\"price_subtotal\"))\n\nclass Baris:\n    def __init__(self, subtotal):\n        self.price_subtotal = subtotal\n\nclass Order:\n    def __init__(self, nama, baris):\n        self.name = nama\n        self.order_line = baris\n        self.amount_total = 0\n\norders = [Order(\"S001\", [Baris(100), Baris(250)]), Order(\"S002\", [])]\nfor order in orders:                      # sama seperti: for order in self\n    order.amount_total = sum(b.price_subtotal for b in order.order_line)\n    print(order.name, order.amount_total)",
 "kunci": "for order in self: selalu, karena self bisa berisi banyak record. Isi field hasil compute untuk SETIAP record, termasuk yang nilainya 0.",
+"bahasa": "py",
 "keluaran": "S001 350\nS002 0"
 },
 "langkah": [
@@ -3223,6 +3236,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Di coding test kamu sering diberi kode yang <b>sudah ditulis tapi salah</b>. Cara kerjanya: jalankan dengan contoh, bandingkan hasilnya, temukan baris penyebabnya. Tiga bug paling sering: (1) <code>range</code> kurang satu, (2) <code>return</code> di dalam perulangan, (3) list sebagai nilai bawaan parameter.</p>",
 "kode": "# Bug 1: range kurang satu\nprint(list(range(1, 5)))        # tidak memuat 5!\n\n# Bug 2: return terlalu cepat\ndef jumlah_salah(data):\n    total = 0\n    for x in data:\n        total += x\n        return total            # keluar di putaran pertama\nprint(jumlah_salah([1, 2, 3]))\n\n# Bug 3: list bawaan dipakai bersama\ndef tambah(x, wadah=[]):\n    wadah.append(x)\n    return wadah\nprint(tambah(1), tambah(2))     # [1, 2] [1, 2], bukan [1] [2]",
 "kunci": "Bawaan yang bisa berubah (list/dict) dibuat SEKALI saat def. Pakai wadah=None lalu if wadah is None: wadah = [].",
+"bahasa": "py",
 "keluaran": "[1, 2, 3, 4]\n1\n[1, 2] [1, 2]"
 },
 "langkah": [
@@ -3318,6 +3332,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Bentuk umum: <code>[hasil for item in sumber if syarat]</code>. Dict comprehension memakai <code>{kunci: nilai for ...}</code>. Comprehension menggantikan pola for + append yang panjang.</p>",
 "kode": "harga = {\"kopi\": 15000, \"teh\": 8000, \"roti\": 12000}\nmurah = [p for p, h in harga.items() if h < 13000]\nprint(murah)\nnaik = {p: round(h * 1.1) for p, h in harga.items()}\nprint(naik)\nprint([x * x for x in range(6) if x % 2 == 0])",
 "kunci": "if di belakang = saringan. if-else di depan for = mengubah nilai.",
+"bahasa": "py",
 "keluaran": "['teh', 'roti']\n{'kopi': 16500, 'teh': 8800, 'roti': 13200}\n[0, 4, 16]"
 },
 "langkah": [
@@ -3413,6 +3428,7 @@ const STUDI_PY = [
 "penjelasan": "<p><code>*args</code> mengumpulkan argumen posisi menjadi tuple, <code>**kwargs</code> mengumpulkan argumen bernama menjadi dict. Decorator adalah fungsi yang menerima fungsi lalu mengembalikan fungsi baru yang membungkusnya, misalnya untuk mencatat log.</p>",
 "kode": "def total(*angka, diskon=0):\n    return sum(angka) * (1 - diskon / 100)\n\nprint(total(1, 2, 3), total(100, 100, diskon=10))\n\ndef log(fungsi):\n    def pembungkus(*args, **kwargs):\n        print(\"memanggil\", fungsi.__name__, args)\n        return fungsi(*args, **kwargs)\n    return pembungkus\n\n@log\ndef kali(a, b):\n    return a * b\n\nprint(kali(3, 4))",
 "kunci": "Decorator: def dekor(f): def bungkus(*args, **kwargs): ... return f(*args, **kwargs); return bungkus.",
+"bahasa": "py",
 "keluaran": "6.0 180.0\nmemanggil kali (3, 4)\n12"
 },
 "langkah": [
@@ -3504,6 +3520,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Fungsi dengan <code>yield</code> adalah generator: nilainya dibuat satu per satu saat diminta, jadi hemat memori untuk data besar (misalnya membaca jutaan baris log). Ambil semua dengan <code>list(...)</code> atau sebagian dengan <code>itertools.islice</code>.</p>",
 "kode": "def hitung_mundur(n):\n    while n > 0:\n        yield n\n        n -= 1\n\nprint(list(hitung_mundur(3)))\n\ndef per_kelompok(data, ukuran):\n    for i in range(0, len(data), ukuran):\n        yield data[i:i + ukuran]\n\nprint(list(per_kelompok([1, 2, 3, 4, 5], 2)))",
 "kunci": "yield menghentikan sementara fungsi dan melanjutkan di putaran berikutnya. range(0, n, langkah) melompat per langkah.",
+"bahasa": "py",
 "keluaran": "[3, 2, 1]\n[[1, 2], [3, 4], [5]]"
 },
 "langkah": [
@@ -3595,6 +3612,7 @@ const STUDI_PY = [
 "penjelasan": "<p><code>@dataclass</code> membuat <code>__init__</code>, <code>__repr__</code>, dan <code>__eq__</code> otomatis dari daftar atribut. <code>@property</code> membuat method bisa dibaca seperti atribut (tanpa kurung), cocok untuk nilai turunan seperti total.</p>",
 "kode": "from dataclasses import dataclass\n\n@dataclass\nclass Baris:\n    produk: str\n    qty: int\n    harga: float\n\n    @property\n    def subtotal(self):\n        return self.qty * self.harga\n\nb = Baris(\"Kopi\", 2, 15000)\nprint(b)\nprint(b.subtotal)\nprint(b == Baris(\"Kopi\", 2, 15000))",
 "kunci": "@property = field hitungan (mirip field compute di Odoo). dataclass menghemat boilerplate.",
+"bahasa": "py",
 "keluaran": "Baris(produk='Kopi', qty=2, harga=15000)\n30000\nTrue"
 },
 "langkah": [
@@ -3694,6 +3712,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Tiga pustaka yang paling sering muncul di pekerjaan: <code>datetime</code> untuk tanggal, <code>collections.Counter</code> untuk menghitung, dan <code>re</code> untuk mencari pola teks.</p>",
 "kode": "from datetime import date\nfrom collections import Counter\nimport re\n\nprint((date(2026, 12, 31) - date(2026, 11, 24)).days)\nemail = [\"a@gmail.com\", \"b@yahoo.com\", \"c@gmail.com\"]\nprint(Counter(e.split(\"@\")[1] for e in email).most_common(1))\nprint(re.findall(r\"\\d+\", \"INV/2026/0042\"))",
 "kunci": "(tanggal2 - tanggal1).days = selisih hari. Counter(...).most_common(n). re.findall(pola, teks).",
+"bahasa": "py",
 "keluaran": "37\n[('gmail.com', 2)]\n['2026', '0042']"
 },
 "langkah": [
@@ -3789,6 +3808,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Tes otomatis adalah fungsi yang memanggil kodemu dan memeriksa hasilnya dengan <code>assert</code>. pytest menjalankan semua fungsi yang namanya diawali <code>test_</code>. Tes yang baik juga memeriksa bahwa error yang benar dilempar.</p>",
 "kode": "def luas(p, l):\n    if p < 0 or l < 0:\n        raise ValueError(\"tidak boleh negatif\")\n    return p * l\n\ndef test_luas_normal():\n    assert luas(3, 4) == 12\n\ndef test_luas_negatif():\n    try:\n        luas(-1, 2)\n        assert False, \"seharusnya ValueError\"\n    except ValueError:\n        pass\n\ntest_luas_normal(); test_luas_negatif()\nprint(\"semua tes lulus\")",
 "kunci": "Tes yang baik: kasus normal, kasus tepi, dan kasus error. Dengan pytest, cek error ditulis: with pytest.raises(ValueError): ...",
+"bahasa": "py",
 "keluaran": "semua tes lulus"
 },
 "langkah": [
@@ -3880,6 +3900,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Proyek kecil biasanya menggabungkan semua dasar: perulangan, dict, sorting, dan format. Pecah menjadi langkah: kumpulkan → hitung → urutkan → format.</p>",
 "kode": "transaksi = [\n    {\"tgl\": \"2026-11-01\", \"produk\": \"Kopi\", \"qty\": 2, \"harga\": 15000},\n    {\"tgl\": \"2026-11-01\", \"produk\": \"Teh\", \"qty\": 1, \"harga\": 8000},\n    {\"tgl\": \"2026-11-02\", \"produk\": \"Kopi\", \"qty\": 1, \"harga\": 15000},\n]\nper_hari = {}\nfor t in transaksi:\n    per_hari[t[\"tgl\"]] = per_hari.get(t[\"tgl\"], 0) + t[\"qty\"] * t[\"harga\"]\nfor tgl, total in sorted(per_hari.items()):\n    print(tgl, total)",
 "kunci": "Kumpulkan dengan dict, urutkan dengan sorted(dict.items()), baru format.",
+"bahasa": "py",
 "keluaran": "2026-11-01 38000\n2026-11-02 15000"
 },
 "langkah": [
@@ -3971,7 +3992,8 @@ const STUDI_PY = [
 "penjelasan": "<p>Soal yang sama bisa diselesaikan dengan cara lambat dan cara cepat. Cara lambat membandingkan setiap pasangan (O(n²)); cara cepat mengingat yang sudah dilihat di <code>set</code> (O(n)). Untuk 100.000 data, perbedaannya detik melawan menit.</p>",
 "kode": "import time\n\ndef lambat(data):\n    for i in range(len(data)):\n        for j in range(i + 1, len(data)):\n            if data[i] == data[j]:\n                return True\n    return False\n\ndef cepat(data):\n    sudah = set()\n    for x in data:\n        if x in sudah:\n            return True\n        sudah.add(x)\n    return False\n\ndata = list(range(3000))\nfor f in (lambat, cepat):\n    t = time.perf_counter()\n    hasil = f(data)\n    print(f.__name__, hasil, f\"{(time.perf_counter() - t) * 1000:.1f} ms\")",
 "kunci": "Pertanyaan 'apakah sudah pernah muncul?' → pakai set. Pertanyaan 'di indeks berapa?' → pakai dict.",
-"keluaran": "lambat False 307.1 ms\ncepat False 0.3 ms"
+"bahasa": "py",
+"keluaran": "lambat False 311.7 ms\ncepat False 0.3 ms"
 },
 "langkah": [
 {
@@ -4074,6 +4096,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Dua bug yang sering ditanam di soal debugging: fungsi yang diam-diam <b>mengubah data masukan</b> (karena list diteruskan sebagai objek yang sama), dan perbandingan <b>float</b> dengan <code>==</code>.</p>",
 "kode": "def naikkan(harga):\n    for i in range(len(harga)):\n        harga[i] = harga[i] * 2\n    return harga\n\nasli = [10, 20]\nbaru = naikkan(asli)\nprint(asli, baru)           # asli ikut berubah!\n\ndef naikkan_aman(harga):\n    return [h * 2 for h in harga]   # list baru\n\nasli = [10, 20]\nprint(naikkan_aman(asli), asli)\nprint(0.1 + 0.2 == 0.3, round(0.1 + 0.2, 2) == 0.3)",
 "kunci": "Kembalikan list BARU (comprehension) bila data masukan tidak boleh berubah. Bandingkan float setelah round atau dengan toleransi.",
+"bahasa": "py",
 "keluaran": "[20, 40] [20, 40]\n[20, 40] [10, 20]\nFalse True"
 },
 "langkah": [
@@ -4173,6 +4196,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Stack adalah list yang hanya ditambah dan diambil dari ujung: <code>append</code> dan <code>pop</code>. Elemen terakhir masuk keluar pertama (LIFO), persis seperti tombol undo.</p>",
 "kode": "riwayat = []\nfor aksi in [\"ketik A\", \"ketik B\", \"hapus B\"]:\n    riwayat.append(aksi)\nprint(riwayat)\nprint(\"undo:\", riwayat.pop())\nprint(\"undo:\", riwayat.pop())\nprint(riwayat)\n\njadwal = [[9, 11], [8, 10], [13, 14]]\nprint(sorted(jadwal))     # urutkan berdasarkan jam mulai",
 "kunci": "Stack: append + pop. Banyak soal interval selesai dengan 'urutkan dulu, lalu bandingkan dengan elemen terakhir'.",
+"bahasa": "py",
 "keluaran": "['ketik A', 'ketik B', 'hapus B']\nundo: hapus B\nundo: ketik B\n['ketik A']\n[[8, 10], [9, 11], [13, 14]]"
 },
 "langkah": [
@@ -4284,6 +4308,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Pola kerja robot data: ambil teks mentah → ekstrak bagian penting dengan regex → hitung/ringkas → simpan. <code>re.sub</code> membersihkan, <code>re.findall</code> mengambil.</p>",
 "kode": "import re\nfrom collections import Counter\n\nlog = \"\"\"10:01 ERROR [E102] Timeout\n10:02 INFO [I001] OK\n10:03 ERROR [E102] Timeout\n10:05 ERROR [E201] Captcha\"\"\"\nkode = re.findall(r\"ERROR \\[(\\w+)\\]\", log)\nprint(kode)\nprint(Counter(kode).most_common(1))\nprint(re.sub(r\"\\D\", \"\", \"(0274) 512-345\"))",
 "kunci": "Satu grup tangkap (...) di pola membuat findall mengembalikan isi grup saja.",
+"bahasa": "py",
 "keluaran": "['E102', 'E102', 'E201']\n[('E102', 2)]\n0274512345"
 },
 "langkah": [
@@ -4387,6 +4412,7 @@ const STUDI_PY = [
 "penjelasan": "<p><code>create()</code> menerima dict <i>vals</i>. Untuk One2many (misalnya baris order), nilainya list perintah: <code>(0, 0, {...})</code> = buat baris baru (sama dengan <code>Command.create({...})</code>), <code>(6, 0, [ids])</code> = ganti semua relasi Many2many.</p>",
 "kode": "baris = [(\"Kopi\", 2, 15000), (\"Teh\", 1, 8000)]\nvals = {\n    \"partner_id\": 7,\n    \"order_line\": [\n        (0, 0, {\"product_id\": p, \"product_uom_qty\": q, \"price_unit\": h})\n        for p, q, h in baris\n    ],\n}\nprint(vals)\n# Di Odoo: self.env[\"sale.order\"].create(vals)",
 "kunci": "(0, 0, vals) membuat baris baru. Tulis vals dengan list comprehension supaya rapi.",
+"bahasa": "py",
 "keluaran": "{'partner_id': 7, 'order_line': [(0, 0, {'product_id': 'Kopi', 'product_uom_qty': 2, 'price_unit': 15000}), (0, 0, {'product_id': 'Teh', 'product_uom_qty': 1, 'price_unit': 8000})]}"
 },
 "langkah": [
@@ -4474,6 +4500,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Di Odoo, field Date bernilai objek <code>date</code>. Selisih dua tanggal adalah <code>timedelta</code>; <code>.days</code> memberi jumlah hari. Di latihan ini tanggal ditulis sebagai teks ISO lalu diubah dengan <code>date.fromisoformat</code>.</p>",
 "kode": "from datetime import date\n\njatuh_tempo = date.fromisoformat(\"2026-11-20\")\nkembali = date.fromisoformat(\"2026-11-24\")\nterlambat = (kembali - jatuh_tempo).days\nprint(terlambat, max(0, terlambat) * 2000)\nprint((date(2026, 11, 18) - jatuh_tempo).days)   # negatif = lebih awal",
 "kunci": "max(0, selisih) mencegah denda negatif. Field compute harus diisi untuk setiap record.",
+"bahasa": "py",
 "keluaran": "4 8000\n-2"
 },
 "langkah": [
@@ -4565,6 +4592,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Domain Odoo hanyalah list tuple. Memahami cara mengevaluasinya membuatmu paham apa yang dilakukan <code>search()</code>. Pada recordset, operasi biasanya dirangkai: saring, urutkan, ambil nilai.</p>",
 "kode": "orders = [\n    {\"name\": \"S1\", \"state\": \"sale\", \"amount\": 500},\n    {\"name\": \"S2\", \"state\": \"draft\", \"amount\": 900},\n    {\"name\": \"S3\", \"state\": \"sale\", \"amount\": 1200},\n]\ndomain = [(\"state\", \"=\", \"sale\"), (\"amount\", \">\", 600)]\ncocok = [o for o in orders\n         if all({\"=\": o[f] == v, \">\": o[f] > v}[op] for f, op, v in domain)]\nprint([o[\"name\"] for o in cocok])\n\n# Rantai ala recordset Odoo:\nbesar = sorted((o for o in orders if o[\"state\"] == \"sale\"), key=lambda o: -o[\"amount\"])\nprint([o[\"name\"] for o in besar])",
 "kunci": "search(domain) = saring dengan semua syarat (AND). filtered → sorted → mapped adalah rantai paling umum di kode Odoo.",
+"bahasa": "py",
 "keluaran": "['S3']\n['S3', 'S1']"
 },
 "langkah": [
@@ -4719,6 +4747,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Modul approval tidak menulis ulang konfirmasi Odoo. Ia hanya menambahkan pengecekan, lalu menyerahkan sisanya ke versi induk dengan <code>super()</code>. Dengan begitu langkah bawaan (dan modul lain yang juga meng-override) tetap berjalan.</p>",
 "kode": "class Induk:\n    def action_confirm(self):\n        print(\"induk: buat delivery & ubah state\")\n        return True\n\nclass Approval(Induk):\n    def action_confirm(self):\n        print(\"approval: cek limit dulu\")\n        return super().action_confirm()\n\nprint(Approval().action_confirm())",
 "kunci": "Override = cek tambahan, lalu return super().method(). Jangan lupa mengembalikan hasilnya.",
+"bahasa": "py",
 "keluaran": "approval: cek limit dulu\ninduk: buat delivery & ubah state\nTrue"
 },
 "langkah": [
@@ -4826,6 +4855,7 @@ const STUDI_PY = [
 "penjelasan": "<p>View adalah record <code>ir.ui.view</code>. Isinya: <code>name</code>, <code>model</code>, dan <code>arch</code> berisi XML tampilan. Di soal berikut kamu menulis XML-nya di dalam string Python <code>VIEW = \"\"\"...\"\"\"</code>, lalu pemeriksa menyebutkan bagian yang masih kurang satu per satu.</p><p class=\"kecil\">Ingat aturan Odoo 17: tidak ada <code>attrs</code>/<code>states</code>; kondisi ditulis langsung, misalnya <code>invisible=\"state != 'draft'\"</code>.</p>",
 "kode": "import xml.etree.ElementTree as ET\n\nVIEW = \"\"\"\n<record id=\"library_tag_view_tree\" model=\"ir.ui.view\">\n    <field name=\"name\">library.tag.tree</field>\n    <field name=\"model\">library.tag</field>\n    <field name=\"arch\" type=\"xml\">\n        <tree>\n            <field name=\"name\"/>\n            <field name=\"color\"/>\n        </tree>\n    </field>\n</record>\n\"\"\"\nr = ET.fromstring(VIEW.strip())\nprint(r.tag, r.get(\"model\"))\nprint([f.get(\"name\") for f in r.iter(\"field\")])",
 "kunci": "record → field name/model/arch → form → header (tombol + statusbar) + sheet (field-field).",
+"bahasa": "py",
 "keluaran": "record ir.ui.view\n['name', 'model', 'arch', 'name', 'color']"
 },
 "langkah": [
@@ -4913,6 +4943,7 @@ const STUDI_PY = [
 "penjelasan": "<p>File <code>ir.model.access.csv</code> adalah CSV biasa: satu baris per (model, grup). Empat kolom terakhir adalah izin baca, tulis, buat, hapus (1 = boleh, 0 = tidak).</p>",
 "kode": "import csv, io\n\nACL = \"\"\"id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink\naccess_library_tag_user,library.tag user,model_library_tag,base.group_user,1,0,0,0\"\"\"\nfor b in csv.DictReader(io.StringIO(ACL)):\n    izin = [k[5:] for k in (\"perm_read\", \"perm_write\", \"perm_create\", \"perm_unlink\") if b[k] == \"1\"]\n    print(b[\"model_id:id\"], b[\"group_id:id\"], izin)",
 "kunci": "model_id:id = model_ + nama model dengan titik diganti garis bawah. Grup Manager meng-imply grup User.",
+"bahasa": "py",
 "keluaran": "model_library_tag base.group_user ['read']"
 },
 "langkah": [
@@ -5000,6 +5031,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan fungsi baru di bawahnya.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
 "kode": "# Pola kerja: fungsi kecil yang saling memanggil\ndef bersihkan(teks):\n    return teks.strip().lower()\n\ndef hitung(daftar):\n    return {k: daftar.count(k) for k in set(daftar)}\n\ndef laporan(teks_mentah):\n    data = [bersihkan(t) for t in teks_mentah]   # memakai fungsi A\n    hasil = hitung(data)                          # memakai fungsi B\n    return sorted(hasil.items())\n\nprint(laporan([\" Kopi\", \"teh \", \"KOPI\"]))",
 "kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "py",
 "keluaran": "[('kopi', 2), ('teh', 1)]"
 },
 "langkah": [
@@ -5138,6 +5170,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan fungsi baru di bawahnya.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
 "kode": "# Pola kerja: fungsi kecil yang saling memanggil\ndef bersihkan(teks):\n    return teks.strip().lower()\n\ndef hitung(daftar):\n    return {k: daftar.count(k) for k in set(daftar)}\n\ndef laporan(teks_mentah):\n    data = [bersihkan(t) for t in teks_mentah]   # memakai fungsi A\n    hasil = hitung(data)                          # memakai fungsi B\n    return sorted(hasil.items())\n\nprint(laporan([\" Kopi\", \"teh \", \"KOPI\"]))",
 "kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "py",
 "keluaran": "[('kopi', 2), ('teh', 1)]"
 },
 "langkah": [
@@ -5264,6 +5297,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan fungsi baru di bawahnya.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
 "kode": "# Pola kerja: fungsi kecil yang saling memanggil\ndef bersihkan(teks):\n    return teks.strip().lower()\n\ndef hitung(daftar):\n    return {k: daftar.count(k) for k in set(daftar)}\n\ndef laporan(teks_mentah):\n    data = [bersihkan(t) for t in teks_mentah]   # memakai fungsi A\n    hasil = hitung(data)                          # memakai fungsi B\n    return sorted(hasil.items())\n\nprint(laporan([\" Kopi\", \"teh \", \"KOPI\"]))",
 "kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "py",
 "keluaran": "[('kopi', 2), ('teh', 1)]"
 },
 "langkah": [
@@ -5386,6 +5420,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan fungsi baru di bawahnya.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
 "kode": "# Pola kerja: fungsi kecil yang saling memanggil\ndef bersihkan(teks):\n    return teks.strip().lower()\n\ndef hitung(daftar):\n    return {k: daftar.count(k) for k in set(daftar)}\n\ndef laporan(teks_mentah):\n    data = [bersihkan(t) for t in teks_mentah]   # memakai fungsi A\n    hasil = hitung(data)                          # memakai fungsi B\n    return sorted(hasil.items())\n\nprint(laporan([\" Kopi\", \"teh \", \"KOPI\"]))",
 "kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "py",
 "keluaran": "[('kopi', 2), ('teh', 1)]"
 },
 "langkah": [
@@ -5508,6 +5543,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan fungsi baru di bawahnya.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
 "kode": "# Pola kerja: fungsi kecil yang saling memanggil\ndef bersihkan(teks):\n    return teks.strip().lower()\n\ndef hitung(daftar):\n    return {k: daftar.count(k) for k in set(daftar)}\n\ndef laporan(teks_mentah):\n    data = [bersihkan(t) for t in teks_mentah]   # memakai fungsi A\n    hasil = hitung(data)                          # memakai fungsi B\n    return sorted(hasil.items())\n\nprint(laporan([\" Kopi\", \"teh \", \"KOPI\"]))",
 "kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "py",
 "keluaran": "[('kopi', 2), ('teh', 1)]"
 },
 "langkah": [
@@ -5630,6 +5666,7 @@ const STUDI_PY = [
 "penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan fungsi baru di bawahnya.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
 "kode": "# Pola kerja: fungsi kecil yang saling memanggil\ndef bersihkan(teks):\n    return teks.strip().lower()\n\ndef hitung(daftar):\n    return {k: daftar.count(k) for k in set(daftar)}\n\ndef laporan(teks_mentah):\n    data = [bersihkan(t) for t in teks_mentah]   # memakai fungsi A\n    hasil = hitung(data)                          # memakai fungsi B\n    return sorted(hasil.items())\n\nprint(laporan([\" Kopi\", \"teh \", \"KOPI\"]))",
 "kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "py",
 "keluaran": "[('kopi', 2), ('teh', 1)]"
 },
 "langkah": [
@@ -5741,5 +5778,5626 @@ const STUDI_PY = [
 ],
 "ujian": true,
 "cakupan": "Bab 6–10: compute & constraint, ORM, inheritance & action, view, keamanan"
+},
+{
+"id": "html-struktur",
+"topik": "html",
+"setelah": "struktur",
+"judul": "Kerangka halaman pertamamu",
+"contoh": {
+"judul": "Contoh: kerangka HTML5 lengkap",
+"penjelasan": "<p>Setiap halaman diawali <code>&lt;!DOCTYPE html&gt;</code>, lalu <code>&lt;html lang=\"id\"&gt;</code> berisi <code>&lt;head&gt;</code> (informasi untuk browser: charset, judul tab) dan <code>&lt;body&gt;</code> (yang tampil di layar).</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Profil Jauza</title>\n</head>\n<body>\n  <h1>Halo, saya Jauza</h1>\n  <p>Saya belajar HTML.</p>\n</body>\n</html>\n",
+"kunci": "DOCTYPE → html lang → head (meta charset, title) → body. Hanya isi body yang tampil di halaman.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "html-struktur-1",
+"judul": "Halaman profil",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat halaman lengkap: <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html lang=\"id\"&gt;</code>, <code>&lt;meta charset=\"utf-8\"&gt;</code>, judul tab <b>Profil Saya</b>, dan sebuah <code>&lt;h1&gt;</code> berisi namamu di body.",
+"awal": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- tulis halamanmu di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Profil Saya</title>\n</head>\n<body>\n  <h1>Jauza Kenar Indra Fawaid</h1>\n</body>\n</html>\n",
+"jelas": "lang membantu pembaca layar dan Google; charset utf-8 membuat huruf seperti é atau emoji tampil benar.",
+"kompleksitas": "",
+"petunjuk": [
+"Lihat contoh terpandu: semua bagian kerangka ada di sana.",
+"Judul tab ditulis di <title> di dalam <head>, bukan di body.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<h1>…</h1>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada <!DOCTYPE html>",
+"d.doctype && d.doctype.name === 'html'"
+],
+[
+"Tag <html> memakai lang=\"id\"",
+"d.documentElement.lang === 'id'"
+],
+[
+"Ada <meta charset=\"utf-8\">",
+"!!$('meta[charset]') && $('meta[charset]').getAttribute('charset').toLowerCase() === 'utf-8'"
+],
+[
+"Judul tab persis \"Profil Saya\"",
+"d.title === 'Profil Saya'"
+],
+[
+"Ada <h1> berisi teks di dalam body",
+"!!$('body h1') && $('body h1').textContent.trim().length > 0"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "html-struktur-2",
+"judul": "Halaman dua bagian",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat halaman berjudul tab <b>Tentang Gleematic</b> berisi satu <code>&lt;h1&gt;</code>, lalu <b>dua</b> <code>&lt;h2&gt;</code> (misalnya Visi dan Layanan) yang masing-masing diikuti minimal satu paragraf <code>&lt;p&gt;</code>. Tambahkan juga satu komentar HTML.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title></title>\n</head>\n<body>\n  <!-- tulis di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Tentang Gleematic</title>\n</head>\n<body>\n  <h1>Tentang Gleematic</h1>\n  <!-- dua bagian utama -->\n  <h2>Visi</h2>\n  <p>Otomasi pekerjaan rutin dengan AI dan RPA.</p>\n  <h2>Layanan</h2>\n  <p>Robot perangkat lunak dan integrasi ERP.</p>\n</body>\n</html>\n",
+"jelas": "Satu h1 per halaman dan urutan heading yang rapi memudahkan pembaca layar dan mesin pencari memahami isi halaman.",
+"kompleksitas": "",
+"petunjuk": [
+"Struktur yang dicek: h1, lalu h2 + p, lalu h2 + p.",
+"Komentar ditulis <!-- seperti ini --> dan tidak tampil di halaman.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<h1>…</h1>…<!-- dua bagian utama -->…<h2>…</h2>…<p>…</p>…<h2>…</h2>…<p>…</p>…</body>…</html>\n"
+],
+"tes": [
+[
+"Judul tab \"Tentang Gleematic\"",
+"d.title === 'Tentang Gleematic'"
+],
+[
+"Tepat satu <h1>",
+"$$('h1').length === 1"
+],
+[
+"Ada dua <h2>",
+"$$('h2').length === 2"
+],
+[
+"Setiap <h2> langsung diikuti <p>",
+"$$('h2').every(h => h.nextElementSibling && h.nextElementSibling.tagName === 'P')"
+],
+[
+"Ada komentar HTML <!-- ... -->",
+"[...d.body.childNodes].some(n => n.nodeType === 8) || /<!--/.test(d.body.innerHTML)"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "html-teks",
+"topik": "html",
+"setelah": "teks",
+"judul": "Teks, heading, dan daftar",
+"contoh": {
+"judul": "Contoh: ul, ol, strong, em",
+"penjelasan": "<p><code>&lt;ul&gt;</code> = daftar berpoin (urutan tidak penting), <code>&lt;ol&gt;</code> = daftar bernomor (urutan penting). Setiap butir memakai <code>&lt;li&gt;</code>. <code>&lt;strong&gt;</code> menandai teks penting, <code>&lt;em&gt;</code> memberi penekanan.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <h2>Belanja</h2>\n  <ul>\n    <li>Kopi</li>\n    <li>Gula</li>\n  </ul>\n  <h2>Cara membuat</h2>\n  <ol>\n    <li>Rebus air</li>\n    <li>Seduh <strong>2 sendok</strong> kopi, <em>jangan</em> terlalu panas</li>\n  </ol>\n</body>\n</html>\n",
+"kunci": "ul untuk poin, ol untuk langkah berurutan. li hanya boleh menjadi anak langsung ul/ol.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "html-teks-1",
+"judul": "Daftar belanja",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <code>&lt;h2&gt;</code> \"Daftar Belanja\" lalu <code>&lt;ul&gt;</code> berisi minimal <b>3</b> <code>&lt;li&gt;</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <!-- tulis di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <h2>Daftar Belanja</h2>\n  <ul>\n    <li>Kopi</li>\n    <li>Gula</li>\n    <li>Susu</li>\n  </ul>\n</body>\n</html>\n",
+"jelas": "Daftar dengan ul/li dibaca pembaca layar sebagai 'daftar, 3 item', jauh lebih jelas daripada baris teks dengan tanda minus.",
+"kompleksitas": "",
+"petunjuk": [
+"Struktur: <ul> lalu beberapa <li> di dalamnya.",
+"Pastikan setiap <li> ditutup </li>.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<h2>…</h2>…<ul>…<li>…</li>…<li>…</li>…<li>…</li>…</ul>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada <h2> berisi \"Daftar Belanja\"",
+"!!$('h2') && $('h2').textContent.trim() === 'Daftar Belanja'"
+],
+[
+"Ada <ul> dengan minimal 3 <li>",
+"!!$('ul') && $('ul').querySelectorAll(':scope > li').length >= 3"
+],
+[
+"Semua <li> berisi teks",
+"$$('li').every(li => li.textContent.trim())"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "html-teks-2",
+"judul": "Halaman resep",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat resep: <code>&lt;h1&gt;</code> nama masakan, <code>&lt;h2&gt;</code> \"Bahan\" diikuti <code>&lt;ul&gt;</code> (≥ 3 item), <code>&lt;h2&gt;</code> \"Langkah\" diikuti <code>&lt;ol&gt;</code> (≥ 3 item). Di salah satu langkah gunakan <code>&lt;strong&gt;</code> dan di langkah lain <code>&lt;em&gt;</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <!-- tulis di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <h1>Nasi Goreng</h1>\n  <h2>Bahan</h2>\n  <ul>\n    <li>Nasi</li>\n    <li>Telur</li>\n    <li>Kecap</li>\n  </ul>\n  <h2>Langkah</h2>\n  <ol>\n    <li>Panaskan <strong>2 sendok</strong> minyak</li>\n    <li>Masukkan telur, <em>aduk cepat</em></li>\n    <li>Tambahkan nasi dan kecap</li>\n  </ol>\n</body>\n</html>\n",
+"jelas": "Memilih ul atau ol berdasarkan makna (berurutan atau tidak) adalah inti HTML semantik.",
+"kompleksitas": "",
+"petunjuk": [
+"Bahan tidak berurutan → ul. Langkah berurutan → ol.",
+"strong dan em ditaruh DI DALAM li, misalnya <li>Panaskan <strong>2 sendok</strong> minyak</li>.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<h1>…</h1>…<h2>…</h2>…<ul>…<li>…</li>…<li>…</li>…<li>…</li>…</ul>…<h2>…</h2>…<ol>…<li>…<strong>…</strong>…</li>…<li>…<em>…</em></li>…<li>…</li>…</ol>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada satu <h1>",
+"$$('h1').length === 1"
+],
+[
+"<h2> \"Bahan\" diikuti <ul> berisi ≥ 3 item",
+"$$('h2').some(h => h.textContent.trim() === 'Bahan' && h.nextElementSibling && h.nextElementSibling.tagName === 'UL' && h.nextElementSibling.children.length >= 3)"
+],
+[
+"<h2> \"Langkah\" diikuti <ol> berisi ≥ 3 item",
+"$$('h2').some(h => h.textContent.trim() === 'Langkah' && h.nextElementSibling && h.nextElementSibling.tagName === 'OL' && h.nextElementSibling.children.length >= 3)"
+],
+[
+"Ada <strong> di dalam langkah",
+"!!$('ol li strong')"
+],
+[
+"Ada <em> di dalam langkah",
+"!!$('ol li em')"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "html-media",
+"topik": "html",
+"setelah": "media",
+"judul": "Link, gambar, dan figure",
+"contoh": {
+"judul": "Contoh: a, img, figure",
+"penjelasan": "<p><code>&lt;a href&gt;</code> membuat link; <code>target=\"_blank\"</code> membuka tab baru dan sebaiknya disertai <code>rel=\"noopener\"</code>. <code>&lt;img&gt;</code> wajib punya <code>alt</code> (teks pengganti). Link ke bagian halaman memakai <code>href=\"#id\"</code>.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <a href=\"#kontak\">Ke kontak</a>\n  <figure>\n    <img src=\"https://picsum.photos/200/120\" alt=\"Pemandangan gunung\" width=\"200\">\n    <figcaption>Foto contoh</figcaption>\n  </figure>\n  <p><a href=\"https://www.odoo.com\" target=\"_blank\" rel=\"noopener\">Situs Odoo</a></p>\n  <h2 id=\"kontak\">Kontak</h2>\n</body>\n</html>\n",
+"kunci": "img selalu punya alt. Link tab baru: target=\"_blank\" rel=\"noopener\". Link internal: href=\"#id\".",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "html-media-1",
+"judul": "Link keluar dan gambar",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat link ke <code>https://www.odoo.com</code> yang terbuka di tab baru dengan aman (<code>rel</code> berisi <code>noopener</code>), dan sebuah <code>&lt;img&gt;</code> dengan <code>src</code> dan <code>alt</code> yang tidak kosong.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <!-- tulis di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <a href=\"https://www.odoo.com\" target=\"_blank\" rel=\"noopener\">Odoo</a>\n  <img src=\"logo.png\" alt=\"Logo perusahaan\">\n</body>\n</html>\n",
+"jelas": "Tanpa rel=\"noopener\", halaman yang dibuka bisa mengakses window.opener halamanmu (celah keamanan tabnabbing).",
+"kompleksitas": "",
+"petunjuk": [
+"Atribut a: href, target, rel.",
+"alt menjelaskan isi gambar, misalnya alt=\"Logo perusahaan\".",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<a href=\"https://www.odoo.com\" target=\"_blank\" rel=\"noopener\">…</a>…<img src=\"logo.png\" alt=\"Logo perusahaan\">…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada link ke https://www.odoo.com",
+"!!$('a[href^=\"https://www.odoo.com\"]')"
+],
+[
+"Link terbuka di tab baru (target=\"_blank\")",
+"!!$('a[target=\"_blank\"]')"
+],
+[
+"Link tab baru memakai rel=\"noopener\"",
+"$$('a[target=\"_blank\"]').length > 0 && $$('a[target=\"_blank\"]').every(a => /noopener/.test(a.rel))"
+],
+[
+"Ada <img> dengan src",
+"!!$('img[src]') && $('img').getAttribute('src').trim() !== ''"
+],
+[
+"Semua gambar punya alt yang tidak kosong",
+"$$('img').length > 0 && $$('img').every(i => (i.getAttribute('alt') || '').trim())"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "html-media-2",
+"judul": "Galeri dan navigasi halaman",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <b>dua</b> <code>&lt;figure&gt;</code>, masing-masing berisi <code>&lt;img&gt;</code> beralt dan <code>&lt;figcaption&gt;</code>. Di atasnya buat link <code>href=\"#kontak\"</code>, dan di bawah buat elemen dengan <code>id=\"kontak\"</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <!-- tulis di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <a href=\"#kontak\">Hubungi kami</a>\n  <figure><img src=\"a.jpg\" alt=\"Kantor Batam\"><figcaption>Kantor</figcaption></figure>\n  <figure><img src=\"b.jpg\" alt=\"Tim developer\"><figcaption>Tim</figcaption></figure>\n  <h2 id=\"kontak\">Kontak</h2>\n</body>\n</html>\n",
+"jelas": "figcaption memberi keterangan yang terhubung secara semantik ke gambar, berbeda dengan alt yang menggantikan gambar.",
+"kompleksitas": "",
+"petunjuk": [
+"figure membungkus img dan figcaption menjadi satu kesatuan.",
+"Link internal: <a href=\"#kontak\"> menuju elemen dengan id=\"kontak\".",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<a href=\"#kontak\">…</a>…<figure><img src=\"a.jpg\" alt=\"Kantor Batam\"><figcaption>…</figcaption></figure>…<figure><img src=\"b.jpg\" alt=\"Tim developer\"><figcaption>…</figcaption></figure>…<h2 id=\"kontak\">…</h2>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada 2 <figure>",
+"$$('figure').length === 2"
+],
+[
+"Setiap figure berisi img beralt dan figcaption",
+"$$('figure').every(f => f.querySelector('img') && (f.querySelector('img').getAttribute('alt') || '').trim() && f.querySelector('figcaption'))"
+],
+[
+"Ada link href=\"#kontak\"",
+"!!$('a[href=\"#kontak\"]')"
+],
+[
+"Ada elemen id=\"kontak\"",
+"!!d.getElementById('kontak')"
+],
+[
+"Link #kontak berada sebelum elemen kontak",
+"!!$('a[href=\"#kontak\"]') && !!d.getElementById('kontak') && !!($('a[href=\"#kontak\"]').compareDocumentPosition(d.getElementById('kontak')) & 4)"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "html-form",
+"topik": "html",
+"setelah": "form",
+"judul": "Membuat form yang benar",
+"contoh": {
+"judul": "Contoh: label, type, required",
+"penjelasan": "<p>Setiap input butuh <code>&lt;label&gt;</code>: dengan <code>for</code> yang sama dengan <code>id</code> input, atau dengan membungkus input. <code>type</code> yang tepat (email, password, number) memberi keyboard dan validasi yang sesuai. <code>required</code> mewajibkan isian.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <form>\n    <label for=\"email\">Email</label>\n    <input id=\"email\" name=\"email\" type=\"email\" required>\n    <label><input type=\"checkbox\" name=\"ingat\"> Ingat saya</label>\n    <button type=\"submit\">Masuk</button>\n  </form>\n</body>\n</html>\n",
+"kunci": "label for=\"x\" + input id=\"x\". Pakai type yang sesuai isi. name diperlukan agar nilai ikut terkirim.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "html-form-1",
+"judul": "Form login",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <code>&lt;form&gt;</code> berisi input email (<code>type=\"email\"</code>, <code>required</code>), input password (<code>type=\"password\"</code>, <code>minlength=\"8\"</code>), keduanya punya <code>name</code> dan label, serta tombol <code>type=\"submit\"</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <form>\n    <!-- tulis di sini -->\n  </form>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <form>\n    <label for=\"email\">Email</label>\n    <input id=\"email\" name=\"email\" type=\"email\" required>\n    <label for=\"sandi\">Password</label>\n    <input id=\"sandi\" name=\"sandi\" type=\"password\" minlength=\"8\" required>\n    <button type=\"submit\">Masuk</button>\n  </form>\n</body>\n</html>\n",
+"jelas": "Label membuat area klik lebih besar dan dibacakan pembaca layar. name adalah kunci data saat form dikirim.",
+"kompleksitas": "",
+"petunjuk": [
+"Pasangkan label dan input: <label for=\"email\"> dengan <input id=\"email\">.",
+"minlength=\"8\" ditulis sebagai atribut input password.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<form>…<label for=\"email\">…</label>…<input id=\"email\" name=\"email\" type=\"email\" required>…<label for=\"sandi\">…</label>…<input id=\"sandi\" name=\"sandi\" type=\"password\" minlength=\"8\" required>…<button type=\"submit\">…</button>…</form>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada input type=\"email\" yang required",
+"!!$('form input[type=email][required]')"
+],
+[
+"Ada input type=\"password\" dengan minlength=\"8\"",
+"!!$('form input[type=password]') && $('form input[type=password]').getAttribute('minlength') === '8'"
+],
+[
+"Kedua input punya name",
+"$$('form input').length >= 2 && $$('form input').every(i => i.name)"
+],
+[
+"Setiap input punya label",
+"$$('input:not([type=submit]):not([type=hidden]),select,textarea').every(x => x.closest('label') || (x.id && $('label[for=\"' + x.id + '\"]')))"
+],
+[
+"Ada tombol submit",
+"!!$('form button[type=submit], form input[type=submit]')"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "html-form-2",
+"judul": "Form pendaftaran lengkap",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Form pendaftaran berisi: <code>&lt;select&gt;</code> posisi dengan ≥ 3 <code>&lt;option&gt;</code>; 2 radio button \"Laki-laki\"/\"Perempuan\" dengan <code>name</code> yang <b>sama</b>; checkbox persetujuan yang <code>required</code>; <code>&lt;textarea&gt;</code> motivasi; semua kontrol punya label; dan tombol submit.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <form>\n    <!-- tulis di sini -->\n  </form>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <form>\n    <label for=\"posisi\">Posisi</label>\n    <select id=\"posisi\" name=\"posisi\">\n      <option>Odoo Developer</option>\n      <option>Data Analyst</option>\n      <option>QA Tester</option>\n    </select>\n    <fieldset>\n      <legend>Jenis kelamin</legend>\n      <label><input type=\"radio\" name=\"jk\" value=\"L\"> Laki-laki</label>\n      <label><input type=\"radio\" name=\"jk\" value=\"P\"> Perempuan</label>\n    </fieldset>\n    <label for=\"motivasi\">Motivasi</label>\n    <textarea id=\"motivasi\" name=\"motivasi\"></textarea>\n    <label><input type=\"checkbox\" name=\"setuju\" required> Saya setuju</label>\n    <button type=\"submit\">Daftar</button>\n  </form>\n</body>\n</html>\n",
+"jelas": "fieldset + legend memberi judul untuk sekelompok radio, sehingga pembaca layar menyebut 'Jenis kelamin, Laki-laki'.",
+"kompleksitas": "",
+"petunjuk": [
+"Radio dengan name sama menjadi satu grup: hanya satu yang bisa dipilih.",
+"Bungkus radio dan checkbox di dalam label: <label><input type=\"radio\" name=\"jk\"> Laki-laki</label>.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<form>…<label for=\"posisi\">…</label>…<select id=\"posisi\" name=\"posisi\">…<option>…</option>…<option>…</option>…<option>…</option>…</select>…<fieldset>…<legend>…</legend>…<label><input type=\"radio\" name=\"jk\" value=\"L\">…</label>…<label><input type=\"radio\" name=\"jk\" value=\"P\">…</label>…</fieldset>…<label for=\"motivasi\">…</label>…<textarea id=\"motivasi\" name=\"motivasi\"></textarea>…<label><input type=\"checkbox\" name=\"setuju\" required>…</label>…<button type=\"submit\">…</button>…</form>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada <select> dengan ≥ 3 option",
+"!!$('form select') && $('form select').options.length >= 3"
+],
+[
+"Ada 2 radio dengan name yang sama",
+"$$('input[type=radio]').length >= 2 && new Set($$('input[type=radio]').map(r => r.name)).size === 1 && !!$('input[type=radio]').name"
+],
+[
+"Ada checkbox yang required",
+"!!$('input[type=checkbox][required]')"
+],
+[
+"Ada <textarea>",
+"!!$('form textarea')"
+],
+[
+"Setiap kontrol punya label",
+"$$('input:not([type=submit]):not([type=hidden]),select,textarea').every(x => x.closest('label') || (x.id && $('label[for=\"' + x.id + '\"]')))"
+],
+[
+"Ada tombol submit",
+"!!$('form button[type=submit], form input[type=submit]')"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "html-semantik",
+"topik": "html",
+"setelah": "semantik",
+"judul": "Tata letak semantik",
+"contoh": {
+"judul": "Contoh: header, nav, main, article, footer",
+"penjelasan": "<p>Tag semantik menjelaskan <i>peran</i> bagian halaman: <code>header</code> (kepala), <code>nav</code> (navigasi utama), <code>main</code> (isi utama, satu per halaman), <code>article</code> (konten yang berdiri sendiri), <code>aside</code> (pelengkap), <code>footer</code> (kaki).</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <header>\n    <h1>Blog Odoo</h1>\n    <nav><ul><li><a href=\"#\">Beranda</a></li><li><a href=\"#\">Tutorial</a></li></ul></nav>\n  </header>\n  <main>\n    <article>\n      <h2>Membuat modul pertama</h2>\n      <p>Diterbitkan <time datetime=\"2026-11-24\">24 November 2026</time></p>\n    </article>\n    <aside>Artikel terkait</aside>\n  </main>\n  <footer>© 2026</footer>\n</body>\n</html>\n",
+"kunci": "Satu main per halaman. nav untuk navigasi utama. time datetime memakai format mesin YYYY-MM-DD.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "html-sem-1",
+"judul": "Kerangka situs perusahaan",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat struktur: <code>&lt;header&gt;</code> berisi <code>&lt;h1&gt;</code> dan <code>&lt;nav&gt;</code> (berisi <code>&lt;ul&gt;</code> dengan ≥ 3 link), lalu <b>satu</b> <code>&lt;main&gt;</code>, lalu <code>&lt;footer&gt;</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <!-- tulis di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <header>\n    <h1>Glee Trees</h1>\n    <nav>\n      <ul>\n        <li><a href=\"#layanan\">Layanan</a></li>\n        <li><a href=\"#karier\">Karier</a></li>\n        <li><a href=\"#kontak\">Kontak</a></li>\n      </ul>\n    </nav>\n  </header>\n  <main>\n    <p>Isi utama</p>\n  </main>\n  <footer>© 2026 Glee Trees</footer>\n</body>\n</html>\n",
+"jelas": "Pembaca layar bisa melompat langsung ke landmark seperti main dan nav; div tidak memberi informasi itu.",
+"kompleksitas": "",
+"petunjuk": [
+"Urutan: header (h1 + nav), main, footer.",
+"nav berisi ul > li > a.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<header>…<h1>…</h1>…<nav>…<ul>…<li><a href=\"#layanan\">…</a></li>…<li><a href=\"#karier\">…</a></li>…<li><a href=\"#kontak\">…</a></li>…</ul>…</nav>…</header>…<main>…<p>…</p>…</main>…<footer>…</footer>…</body>…</html>\n"
+],
+"tes": [
+[
+"<header> berisi <h1>",
+"!!$('header h1')"
+],
+[
+"<nav> di dalam header berisi <ul> dengan ≥ 3 link",
+"!!$('header nav ul') && $$('header nav ul li a').length >= 3"
+],
+[
+"Tepat satu <main>",
+"$$('main').length === 1"
+],
+[
+"Ada <footer> setelah main",
+"!!$('footer') && !!$('main') && !!($('main').compareDocumentPosition($('footer')) & 4)"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "html-sem-2",
+"judul": "Artikel blog",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Di dalam <code>&lt;main&gt;</code>, buat <code>&lt;article&gt;</code> berisi <code>&lt;h2&gt;</code>, elemen <code>&lt;time&gt;</code> dengan <code>datetime</code> berformat <code>YYYY-MM-DD</code>, dan minimal dua <code>&lt;section&gt;</code> yang masing-masing punya heading. Tambahkan <code>&lt;aside&gt;</code> di dalam main.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <main>\n    <!-- tulis di sini -->\n  </main>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <main>\n    <article>\n      <h2>Modul approval Odoo</h2>\n      <p>Ditulis <time datetime=\"2026-11-24\">24 November 2026</time></p>\n      <section><h3>Masalah</h3><p>Order besar perlu disetujui.</p></section>\n      <section><h3>Solusi</h3><p>Status Waiting Approval.</p></section>\n    </article>\n    <aside>Baca juga: modul purchase</aside>\n  </main>\n</body>\n</html>\n",
+"jelas": "Struktur ini membuat artikel mudah dipahami mesin pencari dan fitur 'reader mode' browser.",
+"kompleksitas": "",
+"petunjuk": [
+"article = konten mandiri; section = bagian bertema di dalamnya, masing-masing dengan heading.",
+"datetime ditulis untuk mesin, teks di dalam time untuk manusia: <time datetime=\"2026-11-24\">24 November 2026</time>.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<main>…<article>…<h2>…</h2>…<p>…<time datetime=\"2026-11-24\">…</time></p>…<section><h3>…</h3><p>…</p></section>…<section><h3>…</h3><p>…</p></section>…</article>…<aside>…</aside>…</main>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada <article> di dalam main dengan <h2>",
+"!!$('main article h2')"
+],
+[
+"Ada <time> dengan datetime YYYY-MM-DD",
+"!!$('article time[datetime]') && /^\\d{4}-\\d{2}-\\d{2}$/.test($('article time').getAttribute('datetime'))"
+],
+[
+"Ada ≥ 2 <section> di dalam article",
+"$$('article section').length >= 2"
+],
+[
+"Setiap section punya heading",
+"$$('article section').length > 0 && $$('article section').every(s => s.querySelector('h2,h3,h4'))"
+],
+[
+"Ada <aside> di dalam main",
+"!!$('main aside')"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "html-a11y",
+"topik": "html",
+"setelah": "a11y",
+"judul": "Memperbaiki aksesibilitas",
+"contoh": {
+"judul": "Contoh: dari div yang bisa diklik ke button",
+"penjelasan": "<p>Elemen interaktif harus elemen yang tepat: <code>&lt;button&gt;</code> untuk aksi, <code>&lt;a&gt;</code> untuk pindah halaman. <code>div</code> yang diberi onclick tidak bisa difokus keyboard dan tidak dikenali pembaca layar. Gambar butuh <code>alt</code>, input butuh label.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <!-- buruk -->\n  <div class=\"tombol\">Kirim</div>\n  <img src=\"grafik.png\">\n  <!-- baik -->\n  <button type=\"button\">Kirim</button>\n  <img src=\"grafik.png\" alt=\"Grafik penjualan naik 20% di November\">\n</body>\n</html>\n",
+"kunci": "Aksi → button. Pindah halaman → a href. Gambar informatif → alt yang menjelaskan isinya; gambar hiasan → alt=\"\".",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "html-a11y-1",
+"judul": "Perbaiki halaman yang tidak aksesibel",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Kode awal punya <b>4 masalah</b> aksesibilitas. Perbaiki: (1) \"tombol\" div harus menjadi <code>&lt;button&gt;</code>; (2) gambar tanpa alt; (3) input tanpa label; (4) halaman tanpa <code>lang</code>. Isi teks dan gambar tetap ada.",
+"awal": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <h1>Kontak</h1>\n  <img src=\"peta.png\">\n  <input id=\"nama\" name=\"nama\" placeholder=\"Nama\">\n  <div class=\"tombol\" onclick=\"kirim()\">Kirim</div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <h1>Kontak</h1>\n  <img src=\"peta.png\" alt=\"Peta lokasi kantor di Batam\">\n  <label for=\"nama\">Nama</label>\n  <input id=\"nama\" name=\"nama\">\n  <button type=\"button\">Kirim</button>\n</body>\n</html>\n",
+"jelas": "Keempat masalah ini adalah temuan paling umum di audit aksesibilitas (WCAG). Memperbaikinya juga membantu SEO.",
+"kompleksitas": "",
+"petunjuk": [
+"Placeholder BUKAN pengganti label: ia hilang saat pengguna mengetik.",
+"Ganti <div ... onclick> dengan <button type=\"button\">Kirim</button>.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<h1>…</h1>…<img src=\"peta.png\" alt=\"Peta lokasi kantor di Batam\">…<label for=\"nama\">…</label>…<input id=\"nama\" name=\"nama\">…<button type=\"button\">…</button>…</body>…</html>\n"
+],
+"tes": [
+[
+"Halaman punya lang",
+"!!d.documentElement.lang"
+],
+[
+"Gambar peta punya alt yang tidak kosong",
+"!!$('img') && ($('img').getAttribute('alt') || '').trim().length > 0"
+],
+[
+"Input nama punya label",
+"$$('input:not([type=submit]):not([type=hidden]),select,textarea').every(x => x.closest('label') || (x.id && $('label[for=\"' + x.id + '\"]')))"
+],
+[
+"Tombol Kirim memakai <button>",
+"$$('button').some(b => b.textContent.trim() === 'Kirim')"
+],
+[
+"Tidak ada lagi div dengan onclick",
+"!$('div[onclick]')"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "html-a11y-2",
+"judul": "Heading berurutan dan skip link",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat halaman dengan: link \"Lewati ke konten\" sebagai elemen pertama di body (<code>href=\"#konten\"</code>), <code>&lt;main id=\"konten\"&gt;</code>, tepat satu <code>&lt;h1&gt;</code>, dan heading yang <b>tidak melompat level</b> (h1 → h2 → h3, tidak boleh h1 → h3).",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <header><nav><a href=\"#\">Beranda</a></nav></header>\n  <main>\n    <h1>Layanan</h1>\n    <h3>RPA</h3>\n  </main>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <a href=\"#konten\">Lewati ke konten</a>\n  <header><nav><a href=\"#\">Beranda</a></nav></header>\n  <main id=\"konten\">\n    <h1>Layanan</h1>\n    <h2>RPA</h2>\n    <h3>Otomasi faktur</h3>\n    <h2>ERP</h2>\n  </main>\n</body>\n</html>\n",
+"jelas": "Heading adalah 'daftar isi' bagi pembaca layar. Level yang melompat membuat struktur halaman membingungkan.",
+"kompleksitas": "",
+"petunjuk": [
+"Skip link membantu pengguna keyboard melompati menu yang panjang.",
+"Kode awal melompat dari h1 ke h3; tambahkan h2 di antaranya.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<a href=\"#konten\">…</a>…<header><nav><a href=\"#\">…</a></nav></header>…<main id=\"konten\">…<h1>…</h1>…<h2>…</h2>…<h3>…</h3>…<h2>…</h2>…</main>…</body>…</html>\n"
+],
+"tes": [
+[
+"Elemen pertama di body adalah link ke #konten",
+"!!d.body.firstElementChild && d.body.firstElementChild.matches('a[href=\"#konten\"]')"
+],
+[
+"<main> punya id=\"konten\"",
+"!!$('main#konten')"
+],
+[
+"Tepat satu <h1>",
+"$$('h1').length === 1"
+],
+[
+"Level heading tidak melompat",
+"$$('h1,h2,h3,h4,h5,h6').every((h, i, a) => i === 0 || +h.tagName[1] - +a[i - 1].tagName[1] <= 1)"
+],
+[
+"Ada minimal satu <h2>",
+"$$('h2').length >= 1"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "html-tabel",
+"topik": "html",
+"setelah": "tabel",
+"judul": "Tabel data yang lengkap",
+"contoh": {
+"judul": "Contoh: caption, thead, th scope, tfoot",
+"penjelasan": "<p>Tabel untuk <b>data</b> (bukan tata letak). <code>&lt;caption&gt;</code> = judul tabel, <code>&lt;thead&gt;</code>/<code>&lt;tbody&gt;</code>/<code>&lt;tfoot&gt;</code> = kepala/isi/kaki, <code>&lt;th scope=\"col\"&gt;</code> = judul kolom. <code>colspan</code>/<code>rowspan</code> menggabungkan sel.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <table border=\"1\">\n    <caption>Penjualan November</caption>\n    <thead><tr><th scope=\"col\">Produk</th><th scope=\"col\">Qty</th></tr></thead>\n    <tbody><tr><td>Kopi</td><td>12</td></tr><tr><td>Teh</td><td>7</td></tr></tbody>\n    <tfoot><tr><th scope=\"row\">Total</th><td>19</td></tr></tfoot>\n  </table>\n</body>\n</html>\n",
+"kunci": "caption → thead (th scope=col) → tbody (td) → tfoot. colspan=\"2\" melebar ke 2 kolom.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "html-tabel-1",
+"judul": "Tabel nilai",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat tabel dengan <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code> berisi 3 <code>&lt;th scope=\"col\"&gt;</code> (Nama, Mata Kuliah, Nilai), dan <code>&lt;tbody&gt;</code> berisi 3 baris data.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <!-- tulis di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <table>\n    <caption>Nilai semester</caption>\n    <thead><tr><th scope=\"col\">Nama</th><th scope=\"col\">Mata Kuliah</th><th scope=\"col\">Nilai</th></tr></thead>\n    <tbody>\n      <tr><td>Ani</td><td>Basis Data</td><td>A</td></tr>\n      <tr><td>Budi</td><td>Web</td><td>B</td></tr>\n      <tr><td>Cita</td><td>ERP</td><td>A</td></tr>\n    </tbody>\n  </table>\n</body>\n</html>\n",
+"jelas": "scope membuat pembaca layar menyebut judul kolom setiap kali membaca sel, sehingga tabel bisa dipahami tanpa melihat.",
+"kompleksitas": "",
+"petunjuk": [
+"Mulai dari contoh terpandu, tambahkan satu kolom.",
+"scope=\"col\" memberi tahu bahwa th itu judul KOLOM.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<table>…<caption>…</caption>…<thead><tr><th scope=\"col\">…</th><th scope=\"col\">…</th><th scope=\"col\">…</th></tr></thead>…<tbody>…<tr><td>…</td><td>…</td><td>…</td></tr>…<tr><td>…</td><td>…</td><td>…</td></tr>…<tr><td>…</td><td>…</td><td>…</td></tr>…</tbody>…</table>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada <caption>",
+"!!$('table caption')"
+],
+[
+"thead berisi 3 th scope=\"col\"",
+"$$('thead th[scope=col]').length === 3"
+],
+[
+"tbody berisi 3 baris",
+"!!$('tbody') && $('tbody').rows.length === 3"
+],
+[
+"Setiap baris data punya 3 sel",
+"!!$('tbody') && [...$('tbody').rows].every(r => r.cells.length === 3)"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "html-tabel-2",
+"judul": "Laporan dengan sel gabungan",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat laporan penjualan per wilayah: baris kepala pertama berisi th \"Wilayah\" dengan <code>rowspan=\"2\"</code> dan th \"Penjualan\" dengan <code>colspan=\"2\"</code>; baris kepala kedua berisi th \"Q3\" dan \"Q4\"; tbody ≥ 2 wilayah; dan <code>&lt;tfoot&gt;</code> berisi baris Total.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <table>\n    <!-- tulis di sini -->\n  </table>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <table>\n    <caption>Penjualan per wilayah</caption>\n    <thead>\n      <tr><th rowspan=\"2\" scope=\"col\">Wilayah</th><th colspan=\"2\" scope=\"colgroup\">Penjualan</th></tr>\n      <tr><th scope=\"col\">Q3</th><th scope=\"col\">Q4</th></tr>\n    </thead>\n    <tbody>\n      <tr><th scope=\"row\">Batam</th><td>120</td><td>150</td></tr>\n      <tr><th scope=\"row\">Solo</th><td>90</td><td>110</td></tr>\n    </tbody>\n    <tfoot><tr><th scope=\"row\">Total</th><td>210</td><td>260</td></tr></tfoot>\n  </table>\n</body>\n</html>\n",
+"jelas": "rowspan dan colspan sering membingungkan karena sel yang 'tertutup' tidak ditulis ulang. Tabel laporan seperti ini sering muncul di template laporan QWeb Odoo.",
+"kompleksitas": "",
+"petunjuk": [
+"Gambar dulu di kertas: kolom Wilayah setinggi 2 baris kepala, kolom Penjualan selebar 2 kolom.",
+"Baris kepala kedua hanya berisi Q3 dan Q4 karena kolom Wilayah sudah 'turun' dari baris pertama.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<table>…<caption>…</caption>…<thead>…<tr><th rowspan=\"2\" scope=\"col\">…</th><th colspan=\"2\" scope=\"colgroup\">…</th></tr>…<tr><th scope=\"col\">…</th><th scope=\"col\">…</th></tr>…</thead>…<tbody>…<tr><th scope=\"row\">…</th><td>…</td><td>…</td></tr>…<tr><th scope=\"row\">…</th><td>…</td><td>…</td></tr>…</tbody>…<tfoot><tr><th scope=\"row\">…</th><td>…</td><td>…</td></tr></tfoot>…</table>…</body>…</html>\n"
+],
+"tes": [
+[
+"thead punya 2 baris",
+"!!$('thead') && $('thead').rows.length === 2"
+],
+[
+"th \"Wilayah\" memakai rowspan=\"2\"",
+"$$('thead th').some(t => t.textContent.trim() === 'Wilayah' && t.rowSpan === 2)"
+],
+[
+"th \"Penjualan\" memakai colspan=\"2\"",
+"$$('thead th').some(t => t.textContent.trim() === 'Penjualan' && t.colSpan === 2)"
+],
+[
+"Baris kepala kedua berisi Q3 dan Q4",
+"!!$('thead') && $('thead').rows.length === 2 && [...$('thead').rows[1].cells].map(c => c.textContent.trim()).join() === 'Q3,Q4'"
+],
+[
+"tbody berisi ≥ 2 wilayah",
+"!!$('tbody') && $('tbody').rows.length >= 2"
+],
+[
+"Ada tfoot berisi Total",
+"!!$('tfoot') && /Total/.test($('tfoot').textContent)"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "html-head",
+"topik": "html",
+"setelah": "head",
+"judul": "Isi <head>: SEO dan media sosial",
+"contoh": {
+"judul": "Contoh: meta yang paling penting",
+"penjelasan": "<p><code>viewport</code> membuat halaman pas di HP. <code>description</code> muncul di hasil Google. Meta Open Graph (<code>og:</code>) mengatur pratinjau saat link dibagikan ke WhatsApp/LinkedIn. Script sebaiknya dimuat dengan <code>defer</code>.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>KodeQuiz: latihan coding</title>\n  <meta name=\"description\" content=\"Latihan coding Python dan Odoo gratis.\">\n  <meta property=\"og:title\" content=\"KodeQuiz\">\n  <link rel=\"icon\" href=\"ikon.png\">\n  <script src=\"app.js\" defer></script>\n</head>\n<body><p>Lihat kode sumbernya, bukan tampilannya.</p></body>\n</html>\n",
+"kunci": "Meta tidak tampil di halaman, tapi menentukan tampilan di HP, Google, dan media sosial.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "html-head-1",
+"judul": "Meta dasar",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Lengkapi <code>&lt;head&gt;</code>: meta <code>viewport</code> (<code>width=device-width, initial-scale=1</code>), <code>&lt;title&gt;</code> maksimal 60 karakter, meta <code>description</code> 50–160 karakter, dan <code>&lt;link rel=\"icon\"&gt;</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <!-- lengkapi di sini -->\n</head>\n<body><h1>Portofolio</h1></body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Jauza Fawaid | Odoo Developer</title>\n  <meta name=\"description\" content=\"Portofolio Jauza Fawaid: modul Odoo 17, analisis data, dan proyek web.\">\n  <link rel=\"icon\" href=\"ikon.png\">\n</head>\n<body><h1>Portofolio</h1></body>\n</html>\n",
+"jelas": "Tanpa meta viewport, HP menampilkan halaman versi desktop yang diperkecil. Judul lebih dari ±60 karakter dipotong di hasil Google.",
+"kompleksitas": "",
+"petunjuk": [
+"Semua tag ini ditaruh di dalam <head>, bukan body.",
+"Hitung panjang description: cukup 1–2 kalimat yang menjelaskan halaman.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">…<title>…</title>…<meta name=\"description\" content=\"Portofolio Jauza Fawaid: modul Odoo 17, analisis data, dan proyek web.\">…<link rel=\"icon\" href=\"ikon.png\">…</head>…<body><h1>…</h1></body>…</html>\n"
+],
+"tes": [
+[
+"Ada meta viewport width=device-width",
+"!!$('meta[name=viewport]') && /width=device-width/.test($('meta[name=viewport]').content)"
+],
+[
+"Ada title 1–60 karakter",
+"d.title.trim().length > 0 && d.title.length <= 60"
+],
+[
+"Meta description 50–160 karakter",
+"!!$('meta[name=description]') && $('meta[name=description]').content.length >= 50 && $('meta[name=description]').content.length <= 160"
+],
+[
+"Ada link rel=\"icon\"",
+"!!$('link[rel~=icon]')"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "html-head-2",
+"judul": "Pratinjau saat dibagikan",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Tambahkan Open Graph: <code>og:title</code>, <code>og:description</code>, <code>og:image</code> (URL https), dan <code>og:type</code> bernilai <code>website</code>. Muat juga <code>style.css</code> dengan <code>&lt;link rel=\"stylesheet\"&gt;</code> dan <code>app.js</code> dengan <code>defer</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Portofolio Jauza</title>\n  <!-- tulis di sini -->\n</head>\n<body></body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Portofolio Jauza</title>\n  <meta property=\"og:title\" content=\"Portofolio Jauza\">\n  <meta property=\"og:description\" content=\"Modul Odoo 17 dan proyek data.\">\n  <meta property=\"og:image\" content=\"https://contoh.com/sampul.png\">\n  <meta property=\"og:type\" content=\"website\">\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <script src=\"app.js\" defer></script>\n</head>\n<body></body>\n</html>\n",
+"jelas": "Pratinjau link yang rapi di LinkedIn/WhatsApp membuat portofolio terlihat profesional saat dibagikan ke rekruter.",
+"kompleksitas": "",
+"petunjuk": [
+"Open Graph memakai atribut property, bukan name: <meta property=\"og:title\" content=\"...\">.",
+"defer membuat script dijalankan setelah HTML selesai dibaca, tanpa menahan tampilan.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<meta property=\"og:title\" content=\"Portofolio Jauza\">…<meta property=\"og:description\" content=\"Modul Odoo 17 dan proyek data.\">…<meta property=\"og:image\" content=\"https://contoh.com/sampul.png\">…<meta property=\"og:type\" content=\"website\">…<link rel=\"stylesheet\" href=\"style.css\">…<script src=\"app.js\" defer></script>…</head>…<body></body>…</html>\n"
+],
+"tes": [
+[
+"og:title dan og:description terisi",
+"['og:title', 'og:description'].every(p => $('meta[property=\"' + p + '\"]') && $('meta[property=\"' + p + '\"]').content.trim())"
+],
+[
+"og:image memakai URL https",
+"!!$('meta[property=\"og:image\"]') && /^https:\\/\\//.test($('meta[property=\"og:image\"]').content)"
+],
+[
+"og:type bernilai website",
+"!!$('meta[property=\"og:type\"]') && $('meta[property=\"og:type\"]').content === 'website'"
+],
+[
+"style.css dimuat dengan link rel=\"stylesheet\"",
+"!!$('link[rel=stylesheet][href=\"style.css\"]')"
+],
+[
+"app.js dimuat dengan defer",
+"!!$('script[src=\"app.js\"][defer]')"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "html-interaktif",
+"topik": "html",
+"setelah": "interaktif",
+"judul": "Elemen interaktif tanpa JavaScript",
+"contoh": {
+"judul": "Contoh: details, progress, data-*",
+"penjelasan": "<p><code>&lt;details&gt;</code> + <code>&lt;summary&gt;</code> membuat bagian yang bisa dibuka-tutup tanpa JavaScript. <code>&lt;progress&gt;</code> menampilkan kemajuan, <code>&lt;meter&gt;</code> menampilkan ukuran dalam rentang. Atribut <code>data-*</code> menyimpan data untuk JavaScript.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <details open>\n    <summary>Apa itu Odoo?</summary>\n    <p>ERP open source.</p>\n  </details>\n  <label>Progres belajar <progress value=\"7\" max=\"10\">70%</progress></label>\n  <p><button type=\"button\" data-produk=\"42\">Tambah</button></p>\n</body>\n</html>\n",
+"kunci": "details/summary = FAQ tanpa JS. data-nama-apa-saja=\"...\" dibaca di JS lewat element.dataset.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "html-int-1",
+"judul": "FAQ lamaran",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat FAQ berisi minimal <b>3</b> <code>&lt;details&gt;</code>, masing-masing dengan <code>&lt;summary&gt;</code> berisi pertanyaan dan paragraf jawaban. Pertanyaan pertama terbuka sejak awal (<code>open</code>).",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <h2>FAQ</h2>\n  <!-- tulis di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <h2>FAQ</h2>\n  <details open><summary>Apakah kerja onsite?</summary><p>Ya, di Batam.</p></details>\n  <details><summary>Ada coding test?</summary><p>Ada, setelah interview.</p></details>\n  <details><summary>Ada tunjangan tempat tinggal?</summary><p>Ada, untuk kandidat dari luar Batam.</p></details>\n</body>\n</html>\n",
+"jelas": "details/summary sudah aksesibel (bisa dibuka dengan keyboard) tanpa satu baris JavaScript pun.",
+"kompleksitas": "",
+"petunjuk": [
+"Struktur: <details><summary>Pertanyaan</summary><p>Jawaban</p></details>.",
+"Atribut open tanpa nilai cukup ditulis di details pertama.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<h2>…</h2>…<details open><summary>…</summary><p>…</p></details>…<details><summary>…</summary><p>…</p></details>…<details><summary>…</summary><p>…</p></details>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada ≥ 3 <details>",
+"$$('details').length >= 3"
+],
+[
+"Setiap details punya <summary> berisi teks",
+"$$('details').length > 0 && $$('details').every(x => x.querySelector('summary') && x.querySelector('summary').textContent.trim())"
+],
+[
+"Setiap details punya paragraf jawaban",
+"$$('details').length > 0 && $$('details').every(x => x.querySelector('p'))"
+],
+[
+"Hanya details pertama yang open",
+"$$('details').length > 0 && $$('details')[0].open && $$('details').slice(1).every(x => !x.open)"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "html-int-2",
+"judul": "Panel progres belajar",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat panel berisi: <code>&lt;progress&gt;</code> dengan <code>max=\"45\"</code> dan <code>value=\"12\"</code> yang punya label; <code>&lt;meter&gt;</code> skor dengan <code>min=\"0\" max=\"100\" value=\"75\"</code>; dan minimal 2 tombol yang punya atribut <code>data-bab</code> berisi angka.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <!-- tulis di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <label for=\"prog\">Tantangan selesai</label>\n  <progress id=\"prog\" max=\"45\" value=\"12\">12 dari 45</progress>\n  <label for=\"skor\">Skor rata-rata</label>\n  <meter id=\"skor\" min=\"0\" max=\"100\" value=\"75\">75</meter>\n  <button type=\"button\" data-bab=\"1\">Bab 1</button>\n  <button type=\"button\" data-bab=\"2\">Bab 2</button>\n</body>\n</html>\n",
+"jelas": "Atribut data-* adalah cara standar menyimpan informasi kecil di HTML untuk dipakai JavaScript, misalnya id produk di tombol 'Tambah'.",
+"kompleksitas": "",
+"petunjuk": [
+"progress untuk kemajuan tugas; meter untuk nilai dalam rentang (skor, kapasitas disk).",
+"data-bab=\"1\" dibaca di JavaScript sebagai tombol.dataset.bab.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<label for=\"prog\">…</label>…<progress id=\"prog\" max=\"45\" value=\"12\">…</progress>…<label for=\"skor\">…</label>…<meter id=\"skor\" min=\"0\" max=\"100\" value=\"75\">…</meter>…<button type=\"button\" data-bab=\"1\">…</button>…<button type=\"button\" data-bab=\"2\">…</button>…</body>…</html>\n"
+],
+"tes": [
+[
+"progress max 45 value 12",
+"!!$('progress') && $('progress').max === 45 && $('progress').value === 12"
+],
+[
+"progress punya label",
+"!!$('progress') && (!!$('progress').closest('label') || (!!$('progress').id && !!$('label[for=\"' + $('progress').id + '\"]')))"
+],
+[
+"meter min 0 max 100 value 75",
+"!!$('meter') && $('meter').min === 0 && $('meter').max === 100 && $('meter').value === 75"
+],
+[
+"≥ 2 tombol dengan data-bab berisi angka",
+"$$('button[data-bab]').length >= 2 && $$('button[data-bab]').every(b => /^\\d+$/.test(b.dataset.bab))"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "uji-html-1",
+"topik": "html",
+"setelah": "semantik",
+"judul": "Landing page toko kopi",
+"contoh": {
+"judul": "Cara mengerjakan coding test besar",
+"penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan bagian baru ke halaman yang sama.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan</title>\n</head>\n<body>\n  <h1>Bagian A</h1>\n  <!-- bagian B dan C menambah isi halaman yang sama -->\n</body>\n</html>\n",
+"kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "uji-html-1-a",
+"judul": "Bagian A: Kerangka & navigasi",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "Toko kopi lokal meminta landing page sederhana. Kamu membangunnya bertahap: kerangka dan navigasi, katalog produk, lalu form pesanan.",
+"soal": "Buat halaman lengkap (DOCTYPE, <code>lang=\"id\"</code>, charset, title) dengan <code>&lt;header&gt;</code> berisi <code>&lt;h1&gt;</code> dan <code>&lt;nav&gt;</code> berisi 3 link: <code>#produk</code>, <code>#tentang</code>, <code>#pesan</code>; lalu <code>&lt;main&gt;</code> dan <code>&lt;footer&gt;</code>.",
+"awal": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- tulis halamanmu di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Kopi Kenar</title>\n</head>\n<body>\n  <header>\n    <h1>Kopi Kenar</h1>\n    <nav>\n      <ul>\n        <li><a href=\"#produk\">Produk</a></li>\n        <li><a href=\"#tentang\">Tentang</a></li>\n        <li><a href=\"#pesan\">Pesan</a></li>\n      </ul>\n    </nav>\n  </header>\n  <main>\n  </main>\n  <footer>© 2026 Kopi Kenar</footer>\n</body>\n</html>\n",
+"jelas": "Kerangka semantik membuat bagian B dan C tinggal 'mengisi' main.",
+"kompleksitas": "",
+"petunjuk": [
+"Gabungkan bab Struktur (kerangka) dan Semantik (header/nav/main/footer).",
+"Link internal: href=\"#produk\" dan seterusnya; tujuannya dibuat di bagian B dan C.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<header>…<h1>…</h1>…<nav>…<ul>…<li><a href=\"#produk\">…</a></li>…<li><a href=\"#tentang\">…</a></li>…<li><a href=\"#pesan\">…</a></li>…</ul>…</nav>…</header>…<main>…</main>…<footer>…</footer>…</body>…</html>\n"
+],
+"tes": [
+[
+"Halaman lengkap: doctype, lang=\"id\", charset, title",
+"!!d.doctype && d.documentElement.lang === 'id' && !!$('meta[charset]') && d.title.trim().length > 0"
+],
+[
+"header berisi h1 dan nav",
+"!!$('header h1') && !!$('header nav')"
+],
+[
+"nav punya link ke #produk, #tentang, #pesan",
+"['#produk', '#tentang', '#pesan'].every(h => $('nav a[href=\"' + h + '\"]'))"
+],
+[
+"Ada satu main dan satu footer",
+"$$('main').length === 1 && $$('footer').length === 1"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "uji-html-1-b",
+"judul": "Bagian B: Katalog produk",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "Lanjutan bagian A: halamanmu yang sudah lulus otomatis dipakai sebagai kode awal.",
+"soal": "Di dalam main, tambahkan <code>&lt;section id=\"produk\"&gt;</code> dengan <code>&lt;h2&gt;</code> dan <b>3</b> <code>&lt;article&gt;</code> produk. Setiap article berisi <code>&lt;img&gt;</code> beralt, <code>&lt;h3&gt;</code> nama, dan <code>&lt;p class=\"harga\"&gt;</code> berisi \"Rp\". Tambahkan juga <code>&lt;section id=\"tentang\"&gt;</code> dengan <code>&lt;h2&gt;</code> dan daftar <code>&lt;ul&gt;</code> 3 keunggulan.",
+"awal": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- tulis halamanmu di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Kopi Kenar</title>\n</head>\n<body>\n  <header>\n    <h1>Kopi Kenar</h1>\n    <nav>\n      <ul>\n        <li><a href=\"#produk\">Produk</a></li>\n        <li><a href=\"#tentang\">Tentang</a></li>\n        <li><a href=\"#pesan\">Pesan</a></li>\n      </ul>\n    </nav>\n  </header>\n  <main>\n    <section id=\"produk\">\n      <h2>Produk</h2>\n      <article><img src=\"a.jpg\" alt=\"Kopi susu gula aren\"><h3>Kopi Susu</h3><p class=\"harga\">Rp 18.000</p></article>\n      <article><img src=\"b.jpg\" alt=\"Es teh manis\"><h3>Es Teh</h3><p class=\"harga\">Rp 6.000</p></article>\n      <article><img src=\"c.jpg\" alt=\"Roti bakar cokelat\"><h3>Roti Bakar</h3><p class=\"harga\">Rp 15.000</p></article>\n    </section>\n    <section id=\"tentang\">\n      <h2>Tentang kami</h2>\n      <ul><li>Biji kopi lokal</li><li>Harga mahasiswa</li><li>Buka sampai malam</li></ul>\n    </section>\n  </main>\n  <footer>© 2026 Kopi Kenar</footer>\n</body>\n</html>\n",
+"jelas": "id pada section membuat link navigasi bagian A bekerja. Setiap kartu memakai struktur yang sama, siap diberi gaya CSS nanti.",
+"kompleksitas": "",
+"petunjuk": [
+"Tambahkan isi di dalam <main> yang sudah ada, jangan membuat main kedua.",
+"Satu article = satu kartu produk: img, h3, p.harga.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<header>…<h1>…</h1>…<nav>…<ul>…<li><a href=\"#produk\">…</a></li>…<li><a href=\"#tentang\">…</a></li>…<li><a href=\"#pesan\">…</a></li>…</ul>…</nav>…</header>…<main>…<section id=\"produk\">…<h2>…</h2>…<article><img src=\"a.jpg\" alt=\"Kopi susu gula aren\"><h3>…</h3><p class=\"harga\">…</p></article>…<article><img src=\"b.jpg\" alt=\"Es teh manis\"><h3>…</h3><p class=\"harga\">…</p></article>…<article><img src=\"c.jpg\" alt=\"Roti bakar cokelat\"><h3>…</h3><p class=\"harga\">…</p></article>…</section>…<section id=\"tentang\">…<h2>…</h2>…<ul><li>…</li><li>…</li><li>…</li></ul>…</section>…</main>…<footer>…</footer>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada section#produk dengan h2",
+"!!$('main section#produk h2')"
+],
+[
+"section#produk berisi 3 article",
+"$$('#produk article').length === 3"
+],
+[
+"Setiap article punya img beralt, h3, dan p.harga berisi Rp",
+"$$('#produk article').length === 3 && $$('#produk article').every(a => a.querySelector('img') && (a.querySelector('img').getAttribute('alt') || '').trim() && a.querySelector('h3') && a.querySelector('p.harga') && /Rp/.test(a.querySelector('p.harga').textContent))"
+],
+[
+"Ada section#tentang dengan h2 dan ul 3 item",
+"!!$('section#tentang h2') && !!$('#tentang ul') && $('#tentang ul').children.length === 3"
+],
+[
+"Kerangka bagian A tetap utuh",
+"!!$('header nav') && $$('main').length === 1 && !!$('footer')"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "<!-- Bagian B: lanjutkan halaman di atas -->\n"
+},
+{
+"id": "uji-html-1-c",
+"judul": "Bagian C: Form pesanan",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "Lanjutan bagian B: halamanmu yang sudah lulus otomatis dipakai sebagai kode awal.",
+"soal": "Tambahkan <code>&lt;section id=\"pesan\"&gt;</code> berisi form: input nama (required), input email (<code>type=\"email\"</code>, required), <code>&lt;select&gt;</code> produk berisi 3 option sesuai produkmu, input jumlah <code>type=\"number\"</code> dengan <code>min=\"1\"</code>, textarea catatan, semuanya berlabel, dan tombol submit.",
+"awal": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n  <!-- tulis halamanmu di sini -->\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Kopi Kenar</title>\n</head>\n<body>\n  <header>\n    <h1>Kopi Kenar</h1>\n    <nav>\n      <ul>\n        <li><a href=\"#produk\">Produk</a></li>\n        <li><a href=\"#tentang\">Tentang</a></li>\n        <li><a href=\"#pesan\">Pesan</a></li>\n      </ul>\n    </nav>\n  </header>\n  <main>\n    <section id=\"produk\">\n      <h2>Produk</h2>\n      <article><img src=\"a.jpg\" alt=\"Kopi susu gula aren\"><h3>Kopi Susu</h3><p class=\"harga\">Rp 18.000</p></article>\n      <article><img src=\"b.jpg\" alt=\"Es teh manis\"><h3>Es Teh</h3><p class=\"harga\">Rp 6.000</p></article>\n      <article><img src=\"c.jpg\" alt=\"Roti bakar cokelat\"><h3>Roti Bakar</h3><p class=\"harga\">Rp 15.000</p></article>\n    </section>\n    <section id=\"tentang\">\n      <h2>Tentang kami</h2>\n      <ul><li>Biji kopi lokal</li><li>Harga mahasiswa</li><li>Buka sampai malam</li></ul>\n    </section>\n    <section id=\"pesan\">\n      <h2>Pesan sekarang</h2>\n      <form>\n        <label for=\"nama\">Nama</label>\n        <input id=\"nama\" name=\"nama\" required>\n        <label for=\"email\">Email</label>\n        <input id=\"email\" name=\"email\" type=\"email\" required>\n        <label for=\"produk-pilih\">Produk</label>\n        <select id=\"produk-pilih\" name=\"produk\"><option>Kopi Susu</option><option>Es Teh</option><option>Roti Bakar</option></select>\n        <label for=\"jumlah\">Jumlah</label>\n        <input id=\"jumlah\" name=\"jumlah\" type=\"number\" min=\"1\" value=\"1\">\n        <label for=\"catatan\">Catatan</label>\n        <textarea id=\"catatan\" name=\"catatan\"></textarea>\n        <button type=\"submit\">Pesan</button>\n      </form>\n    </section>\n  </main>\n  <footer>© 2026 Kopi Kenar</footer>\n</body>\n</html>\n",
+"jelas": "Halaman lengkap ini memakai semua bab 1–5. Di bab CSS, halaman serupa akan kamu beri tata letak dan gaya.",
+"kompleksitas": "",
+"petunjuk": [
+"Gabungkan bab Form: setiap input punya id dan label for yang sama.",
+"type=\"number\" min=\"1\" mencegah jumlah nol atau negatif.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…</head>…<body>…<header>…<h1>…</h1>…<nav>…<ul>…<li><a href=\"#produk\">…</a></li>…<li><a href=\"#tentang\">…</a></li>…<li><a href=\"#pesan\">…</a></li>…</ul>…</nav>…</header>…<main>…<section id=\"produk\">…<h2>…</h2>…<article><img src=\"a.jpg\" alt=\"Kopi susu gula aren\"><h3>…</h3><p class=\"harga\">…</p></article>…<article><img src=\"b.jpg\" alt=\"Es teh manis\"><h3>…</h3><p class=\"harga\">…</p></article>…<article><img src=\"c.jpg\" alt=\"Roti bakar cokelat\"><h3>…</h3><p class=\"harga\">…</p></article>…</section>…<section id=\"tentang\">…<h2>…</h2>…<ul><li>…</li><li>…</li><li>…</li></ul>…</section>…<section id=\"pesan\">…<h2>…</h2>…<form>…<label for=\"nama\">…</label>…<input id=\"nama\" name=\"nama\" required>…<label for=\"email\">…</label>…<input id=\"email\" name=\"email\" type=\"email\" required>…<label for=\"produk-pilih\">…</label>…<select id=\"produk-pilih\" name=\"produk\"><option>…</option><option>…</option><option>…</option></select>…<label for=\"jumlah\">…</label>…<input id=\"jumlah\" name=\"jumlah\" type=\"number\" min=\"1\" value=\"1\">…<label for=\"catatan\">…</label>…<textarea id=\"catatan\" name=\"catatan\"></textarea>…<button type=\"submit\">…</button>…</form>…</section>…</main>…<footer>…</footer>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada section#pesan berisi form",
+"!!$('section#pesan form')"
+],
+[
+"Input nama required dan email type=email required",
+"$$('#pesan input[required]').length >= 2 && !!$('#pesan input[type=email][required]')"
+],
+[
+"Select berisi 3 option",
+"!!$('#pesan select') && $('#pesan select').options.length === 3"
+],
+[
+"Input jumlah type=number min=1",
+"!!$('#pesan input[type=number][min=\"1\"]')"
+],
+[
+"Ada textarea",
+"!!$('#pesan textarea')"
+],
+[
+"Semua kontrol berlabel",
+"$$('input:not([type=submit]):not([type=hidden]),select,textarea').every(x => x.closest('label') || (x.id && $('label[for=\"' + x.id + '\"]')))"
+],
+[
+"Ada tombol submit",
+"!!$('#pesan button[type=submit], #pesan input[type=submit]')"
+],
+[
+"Bagian A dan B tetap utuh",
+"$$('#produk article').length === 3 && !!$('header nav')"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "<!-- Bagian C: lanjutkan halaman di atas -->\n"
+}
+],
+"ujian": true,
+"cakupan": "Bab 1–5: struktur, teks & daftar, link & gambar, form, semantik"
+},
+{
+"id": "css-dasar",
+"topik": "css",
+"setelah": "dasar",
+"judul": "Selector dan warna",
+"contoh": {
+"judul": "Contoh: tag, class, id",
+"penjelasan": "<p>Aturan CSS = <code>selector { properti: nilai; }</code>. Selector tag (<code>h1</code>) mengenai semua tag itu, class (<code>.harga</code>) mengenai elemen ber-class itu, id (<code>#judul</code>) mengenai satu elemen. Warna bisa ditulis hex <code>#0d1b2a</code>, <code>rgb()</code>, atau nama.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    body { background-color: #f4f1de; }\n    h1 { color: #0d1b2a; }\n    .harga { color: #b55a7c; font-weight: bold; }\n    #judul { text-decoration: underline; }\n  </style>\n</head>\n<body>\n  <h1 id=\"judul\">Kopi Kenar</h1>\n  <p>Menu hari ini:</p>\n  <p class=\"harga\">Rp 18.000</p>\n</body>\n</html>\n",
+"kunci": "tag → semua; .class → yang ber-class; #id → satu elemen. Hex #0d1b2a sama dengan rgb(13, 27, 42).",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-dasar-1",
+"judul": "Warna halaman",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Beri <code>body</code> latar <code>#f4f1de</code>, judul <code>h1</code> warna <code>#0d1b2a</code>, dan elemen ber-class <code>penting</code> warna <code>#c0392b</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <h1>Pengumuman</h1>\n  <p>Coding test dimulai pukul 09.00.</p>\n  <p class=\"penting\">Bawa laptop sendiri.</p>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    body { background-color: #f4f1de; }\n    h1 { color: #0d1b2a; }\n    .penting { color: #c0392b; }\n  </style>\n</head>\n<body>\n  <h1>Pengumuman</h1>\n  <p>Coding test dimulai pukul 09.00.</p>\n  <p class=\"penting\">Bawa laptop sendiri.</p>\n</body>\n</html>\n",
+"jelas": "Selector class lebih tepat sasaran daripada tag: hanya paragraf penting yang berubah.",
+"kompleksitas": "",
+"petunjuk": [
+"Tiga aturan: body, h1, .penting.",
+"Selector class diawali titik: .penting { color: #c0392b; }",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<h1>…</h1>…<p>…</p>…<p class=\"penting\">…</p>…</body>…</html>\n"
+],
+"tes": [
+[
+"body berlatar #f4f1de",
+"gaya('body', 'background-color') === 'rgb(244, 241, 222)'"
+],
+[
+"h1 berwarna #0d1b2a",
+"gaya('h1', 'color') === 'rgb(13, 27, 42)'"
+],
+[
+".penting berwarna #c0392b",
+"gaya('.penting', 'color') === 'rgb(192, 57, 43)'"
+],
+[
+"Paragraf biasa tidak ikut merah",
+"gaya('p:not(.penting)', 'color') !== 'rgb(192, 57, 43)'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-dasar-2",
+"judul": "Selector keturunan dan id",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Link di dalam <code>nav</code> berwarna <code>#415a77</code> tanpa garis bawah, link di <code>footer</code> tetap bawaan; harga di dalam kartu (<code>.kartu .harga</code>) tebal (700); dan elemen <code>#promo</code> berlatar <code>#fff3cd</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <nav><a href=\"#\">Beranda</a> <a href=\"#\">Menu</a></nav>\n  <div class=\"kartu\"><h2>Kopi</h2><p class=\"harga\">Rp 18.000</p></div>\n  <p class=\"harga\">Harga lama Rp 20.000</p>\n  <p id=\"promo\">Diskon 10% hari ini!</p>\n  <footer><a href=\"#\">Kontak</a></footer>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    nav a { color: #415a77; text-decoration: none; }\n    .kartu .harga { font-weight: 700; }\n    #promo { background-color: #fff3cd; }\n  </style>\n</head>\n<body>\n  <nav><a href=\"#\">Beranda</a> <a href=\"#\">Menu</a></nav>\n  <div class=\"kartu\"><h2>Kopi</h2><p class=\"harga\">Rp 18.000</p></div>\n  <p class=\"harga\">Harga lama Rp 20.000</p>\n  <p id=\"promo\">Diskon 10% hari ini!</p>\n  <footer><a href=\"#\">Kontak</a></footer>\n</body>\n</html>\n",
+"jelas": "Selector keturunan membatasi aturan ke wilayah tertentu, sehingga link footer dan harga di luar kartu tidak ikut berubah.",
+"kompleksitas": "",
+"petunjuk": [
+"Selector keturunan memakai spasi: nav a = semua a di DALAM nav.",
+"font-weight: 700 sama dengan bold.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<nav><a href=\"#\">…</a>…<a href=\"#\">…</a></nav>…<div class=\"kartu\"><h2>…</h2><p class=\"harga\">…</p></div>…<p class=\"harga\">…</p>…<p id=\"promo\">…</p>…<footer><a href=\"#\">…</a></footer>…</body>…</html>\n"
+],
+"tes": [
+[
+"Link nav berwarna #415a77",
+"gaya('nav a', 'color') === 'rgb(65, 90, 119)'"
+],
+[
+"Link nav tanpa garis bawah",
+"gaya('nav a', 'text-decoration-line') === 'none'"
+],
+[
+"Link footer tidak ikut berubah",
+"gaya('footer a', 'color') !== 'rgb(65, 90, 119)'"
+],
+[
+"Harga di dalam kartu tebal",
+"gaya('.kartu .harga', 'font-weight') === '700'"
+],
+[
+"Harga di luar kartu tidak tebal",
+"gaya('body > .harga', 'font-weight') === '400'"
+],
+[
+"#promo berlatar #fff3cd",
+"gaya('#promo', 'background-color') === 'rgb(255, 243, 205)'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-teks",
+"topik": "css",
+"setelah": "teks",
+"judul": "Tipografi yang enak dibaca",
+"contoh": {
+"judul": "Contoh: font, ukuran, jarak baris",
+"penjelasan": "<p><code>font-family</code> memilih huruf (selalu akhiri dengan cadangan umum seperti <code>sans-serif</code>), <code>font-size</code> ukuran, <code>line-height</code> jarak baris (1.5–1.7 nyaman dibaca), <code>text-align</code> perataan.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    body { font-family: Arial, sans-serif; }\n    h1 { text-align: center; letter-spacing: 1px; }\n    p { font-size: 18px; line-height: 1.6; max-width: 60ch; }\n  </style>\n</head>\n<body>\n  <h1>Judul Artikel</h1>\n  <p>Paragraf yang nyaman dibaca punya jarak baris longgar dan panjang baris tidak terlalu lebar.</p>\n</body>\n</html>\n",
+"kunci": "line-height tanpa satuan (1.6) dikalikan ukuran font: 18px × 1.6 = 28.8px.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-teks-1",
+"judul": "Artikel yang nyaman",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Atur: <code>body</code> memakai <code>font-family</code> yang diakhiri <code>sans-serif</code>; <code>p</code> berukuran <code>18px</code> dengan <code>line-height: 1.6</code>; <code>h1</code> rata tengah.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <h1>Belajar CSS</h1>\n  <p>CSS mengatur tampilan halaman.</p>\n  <p>Ukuran dan jarak baris memengaruhi kenyamanan membaca.</p>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    body { font-family: Arial, sans-serif; }\n    p { font-size: 18px; line-height: 1.6; }\n    h1 { text-align: center; }\n  </style>\n</head>\n<body>\n  <h1>Belajar CSS</h1>\n  <p>CSS mengatur tampilan halaman.</p>\n  <p>Ukuran dan jarak baris memengaruhi kenyamanan membaca.</p>\n</body>\n</html>\n",
+"jelas": "Nilai line-height tanpa satuan diwariskan sebagai rasio, sehingga tetap proporsional untuk ukuran huruf berbeda.",
+"kompleksitas": "",
+"petunjuk": [
+"Tiga selector: body, p, h1.",
+"line-height: 1.6 (tanpa px) berarti 1,6 kali ukuran huruf.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<h1>…</h1>…<p>…</p>…<p>…</p>…</body>…</html>\n"
+],
+"tes": [
+[
+"font-family diakhiri sans-serif",
+"/sans-serif\\s*$/.test(gaya('body', 'font-family'))"
+],
+[
+"p berukuran 18px",
+"gaya('p', 'font-size') === '18px'"
+],
+[
+"line-height p = 1.6 × 18px",
+"Math.abs(parseFloat(gaya('p', 'line-height')) - 28.8) < 0.2"
+],
+[
+"h1 rata tengah",
+"gaya('h1', 'text-align') === 'center'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-teks-2",
+"judul": "Judul bagian dan link",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <code>h2</code> huruf kapital semua (<code>text-transform</code>), jarak huruf <code>2px</code>, tebal 700; link (<code>a</code>) tanpa garis bawah dan berwarna <code>#0f766e</code>; dan <code>.catatan</code> miring (italic) berukuran <code>14px</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <h2>Layanan kami</h2>\n  <p>Lihat <a href=\"#\">daftar harga</a>.</p>\n  <p class=\"catatan\">Harga dapat berubah.</p>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    h2 { text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }\n    a { text-decoration: none; color: #0f766e; }\n    .catatan { font-style: italic; font-size: 14px; }\n  </style>\n</head>\n<body>\n  <h2>Layanan kami</h2>\n  <p>Lihat <a href=\"#\">daftar harga</a>.</p>\n  <p class=\"catatan\">Harga dapat berubah.</p>\n</body>\n</html>\n",
+"jelas": "Mengatur kapital lewat CSS (bukan mengetik huruf besar di HTML) membuat teks tetap mudah diubah dan dibaca pembaca layar dengan benar.",
+"kompleksitas": "",
+"petunjuk": [
+"text-transform: uppercase mengubah tampilan tanpa mengubah teks HTML-nya.",
+"font-style: italic untuk miring.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<h2>…</h2>…<p>…<a href=\"#\">…</a>…</p>…<p class=\"catatan\">…</p>…</body>…</html>\n"
+],
+"tes": [
+[
+"h2 huruf kapital",
+"gaya('h2', 'text-transform') === 'uppercase'"
+],
+[
+"h2 letter-spacing 2px",
+"gaya('h2', 'letter-spacing') === '2px'"
+],
+[
+"h2 tebal 700",
+"gaya('h2', 'font-weight') === '700'"
+],
+[
+"Link tanpa garis bawah, warna #0f766e",
+"gaya('a', 'text-decoration-line') === 'none' && gaya('a', 'color') === 'rgb(15, 118, 110)'"
+],
+[
+".catatan miring 14px",
+"gaya('.catatan', 'font-style') === 'italic' && gaya('.catatan', 'font-size') === '14px'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-box",
+"topik": "css",
+"setelah": "boxmodel",
+"judul": "Box model: kartu produk",
+"contoh": {
+"judul": "Contoh: content, padding, border, margin",
+"penjelasan": "<p>Setiap elemen adalah kotak: isi → <code>padding</code> (jarak dalam) → <code>border</code> → <code>margin</code> (jarak luar). Dengan <code>box-sizing: border-box</code>, <code>width</code> sudah termasuk padding dan border, jadi ukurannya mudah ditebak.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .kartu {\n      box-sizing: border-box;\n      width: 300px;\n      padding: 16px;\n      border: 2px solid #415a77;\n      border-radius: 8px;\n      margin: 24px auto;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"kartu\">Kotak 300px</div>\n</body>\n</html>\n",
+"kunci": "border-box: lebar total = width. margin: 0 auto memusatkan elemen block yang punya width.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-box-1",
+"judul": "Kartu produk",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Beri <code>.kartu</code> padding <code>16px</code>, border <code>1px solid #d4c4a8</code>, sudut membulat <code>8px</code>, dan jarak bawah antarkartu <code>24px</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <div class=\"kartu\">Kopi Susu</div>\n  <div class=\"kartu\">Es Teh</div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .kartu { padding: 16px; border: 1px solid #d4c4a8; border-radius: 8px; margin-bottom: 24px; }\n  </style>\n</head>\n<body>\n  <div class=\"kartu\">Kopi Susu</div>\n  <div class=\"kartu\">Es Teh</div>\n</body>\n</html>\n",
+"jelas": "padding memberi ruang napas di dalam kartu; margin memisahkan kartu satu dengan yang lain.",
+"kompleksitas": "",
+"petunjuk": [
+"Semua properti ditulis di satu aturan .kartu { ... }.",
+"Shorthand border: 1px solid #d4c4a8.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<div class=\"kartu\">…</div>…<div class=\"kartu\">…</div>…</body>…</html>\n"
+],
+"tes": [
+[
+"padding 16px",
+"gaya('.kartu', 'padding-top') === '16px' && gaya('.kartu', 'padding-left') === '16px'"
+],
+[
+"border 1px solid #d4c4a8",
+"gaya('.kartu', 'border-top-width') === '1px' && gaya('.kartu', 'border-top-style') === 'solid' && gaya('.kartu', 'border-top-color') === 'rgb(212, 196, 168)'"
+],
+[
+"Sudut 8px",
+"gaya('.kartu', 'border-top-left-radius') === '8px'"
+],
+[
+"Jarak bawah 24px",
+"gaya('.kartu', 'margin-bottom') === '24px'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-box-2",
+"judul": "Ukuran pasti dan terpusat",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <code>.kotak</code> dengan lebar total <b>tepat 320px</b> walau punya padding <code>20px</code> dan border <code>4px</code>, lalu letakkan di tengah halaman secara horizontal.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <div class=\"kotak\">Form login</div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .kotak { box-sizing: border-box; width: 320px; padding: 20px; border: 4px solid #0d1b2a; margin: 0 auto; }\n  </style>\n</head>\n<body>\n  <div class=\"kotak\">Form login</div>\n</body>\n</html>\n",
+"jelas": "Banyak proyek memasang * { box-sizing: border-box } di awal CSS karena perhitungan ukuran jadi jauh lebih mudah.",
+"kompleksitas": "",
+"petunjuk": [
+"Tanpa box-sizing: border-box, lebar total = 320 + 2×20 + 2×4 = 368px.",
+"margin-left dan margin-right auto (shorthand margin: 0 auto) memusatkan block yang lebarnya tetap.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<div class=\"kotak\">…</div>…</body>…</html>\n"
+],
+"tes": [
+[
+"Lebar total tepat 320px",
+"$('.kotak').offsetWidth === 320"
+],
+[
+"padding 20px",
+"gaya('.kotak', 'padding-left') === '20px'"
+],
+[
+"border 4px",
+"gaya('.kotak', 'border-left-width') === '4px'"
+],
+[
+"Terpusat horizontal",
+"Math.abs(($('.kotak').getBoundingClientRect().left - d.body.getBoundingClientRect().left) - (d.body.getBoundingClientRect().right - $('.kotak').getBoundingClientRect().right)) < 2"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-flex",
+"topik": "css",
+"setelah": "layout",
+"judul": "Flexbox: navbar dan baris kartu",
+"contoh": {
+"judul": "Contoh: display flex, gap, justify-content",
+"penjelasan": "<p><code>display: flex</code> menyusun anak-anak dalam satu baris. <code>gap</code> memberi jarak antar-anak, <code>justify-content</code> mengatur sumbu utama (horizontal), <code>align-items</code> sumbu silang (vertikal), <code>flex-wrap: wrap</code> membuat anak turun baris saat penuh.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .bar { display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #0d1b2a; color: white; }\n    .bar a { color: white; margin-left: 12px; }\n  </style>\n</head>\n<body>\n  <header class=\"bar\"><b>Logo</b><nav><a href=\"#\">Menu</a> <a href=\"#\">Kontak</a></nav></header>\n</body>\n</html>\n",
+"kunci": "space-between: anak pertama di kiri, terakhir di kanan. gap lebih rapi daripada margin satu per satu.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-flex-1",
+"judul": "Menu horizontal",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Ubah <code>nav ul</code> menjadi baris horizontal dengan flexbox, jarak antar-item <code>16px</code> (pakai <code>gap</code>), tanpa titik daftar (<code>list-style</code>), dan tanpa padding bawaan.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <nav>\n    <ul>\n      <li><a href=\"#\">Beranda</a></li>\n      <li><a href=\"#\">Produk</a></li>\n      <li><a href=\"#\">Kontak</a></li>\n    </ul>\n  </nav>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    nav ul { display: flex; gap: 16px; list-style: none; padding: 0; }\n  </style>\n</head>\n<body>\n  <nav>\n    <ul>\n      <li><a href=\"#\">Beranda</a></li>\n      <li><a href=\"#\">Produk</a></li>\n      <li><a href=\"#\">Kontak</a></li>\n    </ul>\n  </nav>\n</body>\n</html>\n",
+"jelas": "Flex diterapkan ke wadah; anak-anaknya otomatis menjadi flex item.",
+"kompleksitas": "",
+"petunjuk": [
+"display: flex dipasang pada INDUK (ul), bukan pada li.",
+"list-style: none; padding: 0; menghapus gaya bawaan daftar.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<nav>…<ul>…<li><a href=\"#\">…</a></li>…<li><a href=\"#\">…</a></li>…<li><a href=\"#\">…</a></li>…</ul>…</nav>…</body>…</html>\n"
+],
+"tes": [
+[
+"ul memakai display: flex",
+"gaya('nav ul', 'display') === 'flex'"
+],
+[
+"gap 16px",
+"gaya('nav ul', 'column-gap') === '16px'"
+],
+[
+"Tanpa titik daftar",
+"gaya('nav ul', 'list-style-type') === 'none'"
+],
+[
+"Item tersusun dalam satu baris",
+"new Set($$('nav li').map(li => Math.round(li.getBoundingClientRect().top))).size === 1"
+],
+[
+"padding-left ul 0",
+"gaya('nav ul', 'padding-left') === '0px'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-flex-2",
+"judul": "Header dan baris kartu",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <code>.bar</code> flex dengan logo di kiri dan menu di kanan (<code>space-between</code>) serta isi terpusat vertikal. Lalu <code>.daftar</code> flex yang membungkus (<code>wrap</code>) dengan gap <code>20px</code>, dan setiap <code>.kartu</code> lebar <code>280px</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <header class=\"bar\"><b>Kopi Kenar</b><nav><a href=\"#\">Menu</a></nav></header>\n  <div class=\"daftar\">\n    <div class=\"kartu\">Kopi</div><div class=\"kartu\">Teh</div><div class=\"kartu\">Roti</div><div class=\"kartu\">Donat</div>\n  </div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .bar { display: flex; justify-content: space-between; align-items: center; }\n    .daftar { display: flex; flex-wrap: wrap; gap: 20px; }\n    .kartu { width: 280px; }\n  </style>\n</head>\n<body>\n  <header class=\"bar\"><b>Kopi Kenar</b><nav><a href=\"#\">Menu</a></nav></header>\n  <div class=\"daftar\">\n    <div class=\"kartu\">Kopi</div><div class=\"kartu\">Teh</div><div class=\"kartu\">Roti</div><div class=\"kartu\">Donat</div>\n  </div>\n</body>\n</html>\n",
+"jelas": "Kombinasi flex-wrap + gap + lebar tetap adalah cara cepat membuat grid kartu yang responsif tanpa media query.",
+"kompleksitas": "",
+"petunjuk": [
+"Dua wadah flex terpisah: .bar dan .daftar.",
+"Dengan lebar 1000px, 4 kartu × 280px + gap tidak muat satu baris, jadi wrap membuatnya turun.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<header class=\"bar\"><b>…</b><nav><a href=\"#\">…</a></nav></header>…<div class=\"daftar\">…<div class=\"kartu\">…</div><div class=\"kartu\">…</div><div class=\"kartu\">…</div><div class=\"kartu\">…</div>…</div>…</body>…</html>\n"
+],
+"tes": [
+[
+".bar flex dengan space-between",
+"gaya('.bar', 'display') === 'flex' && gaya('.bar', 'justify-content') === 'space-between'"
+],
+[
+".bar align-items center",
+"gaya('.bar', 'align-items') === 'center'"
+],
+[
+"Menu berada di sisi kanan",
+"$('.bar nav').getBoundingClientRect().right >= $('.bar').getBoundingClientRect().right - 1"
+],
+[
+".daftar flex wrap gap 20px",
+"gaya('.daftar', 'display') === 'flex' && gaya('.daftar', 'flex-wrap') === 'wrap' && gaya('.daftar', 'column-gap') === '20px'"
+],
+[
+"Kartu lebar 280px",
+"$$('.kartu').every(k => Math.round(k.getBoundingClientRect().width) === 280)"
+],
+[
+"Kartu turun ke baris kedua saat penuh",
+"new Set($$('.kartu').map(k => Math.round(k.getBoundingClientRect().top))).size >= 2"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-grid",
+"topik": "css",
+"setelah": "posisi",
+"judul": "Grid dan position",
+"contoh": {
+"judul": "Contoh: grid 3 kolom dan lencana absolut",
+"penjelasan": "<p><code>display: grid</code> + <code>grid-template-columns: repeat(3, 1fr)</code> membuat 3 kolom sama lebar. <code>position: relative</code> pada induk + <code>position: absolute</code> pada anak menempatkan anak relatif ke induk. <code>position: sticky; top: 0</code> membuat header menempel saat digulir.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .galeri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }\n    .kartu { position: relative; padding: 30px; background: #e8e8e8; }\n    .lencana { position: absolute; top: 6px; right: 6px; background: #b55a7c; color: white; font-size: 12px; padding: 2px 6px; }\n  </style>\n</head>\n<body>\n  <div class=\"galeri\"><div class=\"kartu\">1<span class=\"lencana\">Baru</span></div><div class=\"kartu\">2</div><div class=\"kartu\">3</div></div>\n</body>\n</html>\n",
+"kunci": "1fr = satu bagian dari sisa ruang. absolute mengacu ke leluhur terdekat yang position-nya bukan static.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-grid-1",
+"judul": "Galeri 3 kolom",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Jadikan <code>.galeri</code> grid <b>3 kolom sama lebar</b> dengan jarak <code>16px</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <div class=\"galeri\">\n    <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>\n  </div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .galeri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }\n  </style>\n</head>\n<body>\n  <div class=\"galeri\">\n    <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>\n  </div>\n</body>\n</html>\n",
+"jelas": "Grid cocok untuk tata letak dua dimensi (baris DAN kolom); flex untuk satu arah.",
+"kompleksitas": "",
+"petunjuk": [
+"grid-template-columns: repeat(3, 1fr).",
+"gap mengatur jarak baris dan kolom sekaligus.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<div class=\"galeri\">…<div>…</div><div>…</div><div>…</div><div>…</div><div>…</div><div>…</div>…</div>…</body>…</html>\n"
+],
+"tes": [
+[
+".galeri display grid",
+"gaya('.galeri', 'display') === 'grid'"
+],
+[
+"Tepat 3 kolom",
+"gaya('.galeri', 'grid-template-columns').split(' ').length === 3"
+],
+[
+"Kolom sama lebar",
+"(c => Math.max(...c) - Math.min(...c) < 1)(gaya('.galeri', 'grid-template-columns').split(' ').map(parseFloat))"
+],
+[
+"gap 16px",
+"gaya('.galeri', 'column-gap') === '16px' && gaya('.galeri', 'row-gap') === '16px'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-grid-2",
+"judul": "Header lengket dan lencana",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <code>header</code> menempel di atas saat digulir (<code>sticky</code>, <code>top: 0</code>) dan berada di atas konten (<code>z-index</code> ≥ 10). Lalu letakkan <code>.lencana</code> di pojok kanan atas <code>.kartu</code> (<code>top: 8px; right: 8px</code>) memakai position.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <header>Kopi Kenar</header>\n  <div class=\"kartu\"><h3>Kopi Susu</h3><span class=\"lencana\">Terlaris</span></div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    header { position: sticky; top: 0; z-index: 10; background: white; }\n    .kartu { position: relative; padding: 24px; }\n    .lencana { position: absolute; top: 8px; right: 8px; }\n  </style>\n</head>\n<body>\n  <header>Kopi Kenar</header>\n  <div class=\"kartu\"><h3>Kopi Susu</h3><span class=\"lencana\">Terlaris</span></div>\n</body>\n</html>\n",
+"jelas": "Pola relative + absolute dipakai untuk lencana, ikon tutup, dan label diskon di hampir semua toko online.",
+"kompleksitas": "",
+"petunjuk": [
+"Tanpa position: relative di .kartu, lencana akan menempel ke pojok halaman.",
+"z-index hanya berlaku untuk elemen yang position-nya bukan static.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<header>…</header>…<div class=\"kartu\"><h3>…</h3><span class=\"lencana\">…</span></div>…</body>…</html>\n"
+],
+"tes": [
+[
+"header sticky top 0",
+"gaya('header', 'position') === 'sticky' && gaya('header', 'top') === '0px'"
+],
+[
+"header z-index ≥ 10",
+"parseInt(gaya('header', 'z-index')) >= 10"
+],
+[
+".kartu menjadi acuan posisi (relative)",
+"gaya('.kartu', 'position') === 'relative'"
+],
+[
+".lencana absolute di kanan atas kartu",
+"gaya('.lencana', 'position') === 'absolute' && Math.abs($('.lencana').getBoundingClientRect().right - ($('.kartu').getBoundingClientRect().right - 8)) < 1.5 && Math.abs($('.lencana').getBoundingClientRect().top - ($('.kartu').getBoundingClientRect().top + 8)) < 1.5"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-dekorasi",
+"topik": "css",
+"setelah": "dekorasi",
+"judul": "Bayangan, hover, dan responsif",
+"contoh": {
+"judul": "Contoh: box-shadow, :hover, @media",
+"penjelasan": "<p><code>box-shadow</code> memberi bayangan, <code>:hover</code> berlaku saat kursor di atas elemen, dan <code>@media (max-width: 600px) { ... }</code> berisi aturan yang hanya aktif di layar sempit.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    button { background: #415a77; color: white; border: 0; padding: 10px 16px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,.2); }\n    button:hover { background: #0d1b2a; }\n    .galeri { display: flex; gap: 8px; }\n    @media (max-width: 600px) { .galeri { flex-direction: column; } }\n  </style>\n</head>\n<body>\n  <div class=\"galeri\"><button>Beli</button><button>Simpan</button></div>\n</body>\n</html>\n",
+"kunci": "Mobile-first: gaya dasar untuk HP, lalu @media (min-width) untuk layar lebar. Atau sebaliknya dengan max-width.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-dek-1",
+"judul": "Tombol dengan bayangan dan hover",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Beri <code>.tombol</code> bayangan (<code>box-shadow</code> apa saja), sudut <code>6px</code>, latar <code>#415a77</code>, kursor <code>pointer</code>, dan aturan <code>.tombol:hover</code> yang mengganti latar.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <button class=\"tombol\">Kirim lamaran</button>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .tombol { box-shadow: 0 2px 6px rgba(0, 0, 0, .2); border-radius: 6px; background-color: #415a77; cursor: pointer; }\n    .tombol:hover { background-color: #0d1b2a; }\n  </style>\n</head>\n<body>\n  <button class=\"tombol\">Kirim lamaran</button>\n</body>\n</html>\n",
+"jelas": "cursor: pointer dan perubahan warna saat hover memberi tanda bahwa elemen bisa diklik.",
+"kompleksitas": "",
+"petunjuk": [
+"box-shadow: geser-x geser-y blur warna, misalnya 0 2px 6px rgba(0,0,0,.2).",
+"Aturan hover ditulis terpisah: .tombol:hover { background-color: ...; }",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<button class=\"tombol\">…</button>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada box-shadow",
+"gaya('.tombol', 'box-shadow') !== 'none'"
+],
+[
+"Sudut 6px dan latar #415a77",
+"gaya('.tombol', 'border-top-left-radius') === '6px' && gaya('.tombol', 'background-color') === 'rgb(65, 90, 119)'"
+],
+[
+"Kursor pointer",
+"gaya('.tombol', 'cursor') === 'pointer'"
+],
+[
+"Ada aturan .tombol:hover",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).some(r => r.selectorText && r.selectorText.replace(/\\s/g, '').includes('.tombol:hover'))"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-dek-2",
+"judul": "Galeri responsif",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "<code>.galeri</code> sudah grid 3 kolom. Tambahkan <code>@media (max-width: 600px)</code> yang membuatnya <b>1 kolom</b> (<code>grid-template-columns: 1fr</code>). Gambar di dalamnya tidak boleh lebih lebar dari wadah (<code>max-width: 100%</code>).",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <div class=\"galeri\"><img src=\"a.jpg\" alt=\"A\"><img src=\"b.jpg\" alt=\"B\"><img src=\"c.jpg\" alt=\"C\"></div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .galeri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }\n    .galeri img { max-width: 100%; }\n    @media (max-width: 600px) {\n      .galeri { grid-template-columns: 1fr; }\n    }\n  </style>\n</head>\n<body>\n  <div class=\"galeri\"><img src=\"a.jpg\" alt=\"A\"><img src=\"b.jpg\" alt=\"B\"><img src=\"c.jpg\" alt=\"C\"></div>\n</body>\n</html>\n",
+"jelas": "Media query mengubah tata letak sesuai lebar layar; ini dasar desain responsif.",
+"kompleksitas": "",
+"petunjuk": [
+"Struktur: @media (max-width: 600px) { .galeri { grid-template-columns: 1fr; } }",
+"max-width: 100% pada img mencegah gambar melebar keluar kartu di HP.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<div class=\"galeri\"><img src=\"a.jpg\" alt=\"A\"><img src=\"b.jpg\" alt=\"B\"><img src=\"c.jpg\" alt=\"C\"></div>…</body>…</html>\n"
+],
+"tes": [
+[
+"Di layar lebar tetap 3 kolom",
+"gaya('.galeri', 'grid-template-columns').split(' ').length === 3"
+],
+[
+"Ada @media dengan max-width: 600px",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).filter(r => r.type === 4).some(r => /max-width:\\s*600px/.test(r.conditionText || r.media.mediaText))"
+],
+[
+"Di dalam @media, .galeri menjadi 1fr",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).filter(r => r.type === 4).some(r => [...r.cssRules].some(x => x.selectorText === '.galeri' && x.style.gridTemplateColumns.replace(/\\s/g, '') === '1fr'))"
+],
+[
+"Gambar max-width 100%",
+"gaya('.galeri img', 'max-width') === '100%'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-lanjut",
+"topik": "css",
+"setelah": "lanjut",
+"judul": "Variabel CSS dan spesifisitas",
+"contoh": {
+"judul": "Contoh: --variabel dan var()",
+"penjelasan": "<p>Variabel CSS (<i>custom property</i>) ditulis <code>--nama: nilai</code> di <code>:root</code>, lalu dipakai <code>var(--nama)</code>. Spesifisitas menentukan aturan mana yang menang: id (1,0,0) &gt; class (0,1,0) &gt; tag (0,0,1). Hindari <code>!important</code>; naikkan spesifisitas dengan selector yang lebih tepat.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    :root { --utama: #415a77; --aksen: #b55a7c; }\n    #menu a { color: var(--utama); }\n    #menu a.aktif { color: var(--aksen); }   /* id + tag + class menang atas id + tag */\n  </style>\n</head>\n<body>\n  <nav id=\"menu\"><a href=\"#\">Beranda</a> <a href=\"#\" class=\"aktif\">Produk</a></nav>\n</body>\n</html>\n",
+"kunci": "Ubah warna di satu tempat (:root) dan seluruh situs ikut berubah. #menu a.aktif lebih spesifik daripada #menu a.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-lanjut-1",
+"judul": "Tema dengan variabel",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Definisikan di <code>:root</code> variabel <code>--utama: #415a77</code> dan <code>--latar: #f4f1de</code>. Gunakan <code>var()</code> untuk latar <code>body</code> dan latar <code>button</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <button>Simpan</button>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    :root { --utama: #415a77; --latar: #f4f1de; }\n    body { background-color: var(--latar); }\n    button { background-color: var(--utama); }\n  </style>\n</head>\n<body>\n  <button>Simpan</button>\n</body>\n</html>\n",
+"jelas": "Variabel CSS adalah dasar tema gelap/terang: cukup ganti nilainya, semua komponen ikut.",
+"kompleksitas": "",
+"petunjuk": [
+"Variabel ditulis di :root { --utama: #415a77; }.",
+"Dipakai dengan var(--utama).",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<button>…</button>…</body>…</html>\n"
+],
+"tes": [
+[
+"--utama didefinisikan #415a77",
+"gaya('html', '--utama').toLowerCase() === '#415a77'"
+],
+[
+"--latar didefinisikan #f4f1de",
+"gaya('html', '--latar').toLowerCase() === '#f4f1de'"
+],
+[
+"body memakai --latar",
+"gaya('body', 'background-color') === 'rgb(244, 241, 222)' && /var\\(--latar\\)/.test(d.querySelector('style').textContent)"
+],
+[
+"button memakai --utama",
+"gaya('button', 'background-color') === 'rgb(65, 90, 119)' && /var\\(--utama\\)/.test(d.querySelector('style').textContent)"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-lanjut-2",
+"judul": "Menang tanpa !important",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "CSS awal membuat semua link menu merah dengan <code>#menu a</code>. Tambahkan aturan agar link <code>.aktif</code> berwarna <code>#2563eb</code> dan tebal, <b>tanpa</b> <code>!important</code> dan tanpa mengubah aturan yang sudah ada.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    #menu a { color: #dc2626; }\n    /* tambahkan aturanmu di bawah */\n  </style>\n</head>\n<body>\n  <nav id=\"menu\"><a href=\"#\">Beranda</a> <a href=\"#\" class=\"aktif\">Produk</a> <a href=\"#\">Kontak</a></nav>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    #menu a { color: #dc2626; }\n    #menu a.aktif { color: #2563eb; font-weight: 700; }\n  </style>\n</head>\n<body>\n  <nav id=\"menu\"><a href=\"#\">Beranda</a> <a href=\"#\" class=\"aktif\">Produk</a> <a href=\"#\">Kontak</a></nav>\n</body>\n</html>\n",
+"jelas": "Memahami spesifisitas mencegah kebiasaan menempelkan !important, yang membuat CSS sulit dirawat. Di Odoo, menimpa gaya bawaan juga memakai selector yang lebih spesifik.",
+"kompleksitas": "",
+"petunjuk": [
+"Coba dulu .aktif { color: ... } dan lihat: ia kalah karena #menu a punya id.",
+"Selector #menu a.aktif punya spesifisitas lebih tinggi dari #menu a.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<nav id=\"menu\"><a href=\"#\">…</a>…<a href=\"#\" class=\"aktif\">…</a>…<a href=\"#\">…</a></nav>…</body>…</html>\n"
+],
+"tes": [
+[
+"Link .aktif berwarna #2563eb",
+"gaya('.aktif', 'color') === 'rgb(37, 99, 235)'"
+],
+[
+"Link .aktif tebal",
+"gaya('.aktif', 'font-weight') === '700'"
+],
+[
+"Link lain tetap merah",
+"gaya('#menu a:not(.aktif)', 'color') === 'rgb(220, 38, 38)'"
+],
+[
+"Tidak memakai !important",
+"!/!important/.test(d.querySelector('style').textContent)"
+],
+[
+"Aturan #menu a tetap ada",
+"/#menu\\s+a\\s*\\{[^}]*#dc2626/.test(d.querySelector('style').textContent)"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-selektor",
+"topik": "css",
+"setelah": "selektor",
+"judul": "Selector atribut dan pseudo",
+"contoh": {
+"judul": "Contoh: [atribut], :nth-child, ::before",
+"penjelasan": "<p><code>a[href^=\"https\"]</code> = link yang href-nya diawali https. <code>li:nth-child(odd)</code> = item ganjil. <code>::before</code> menyisipkan isi dekoratif lewat <code>content</code>.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    li:nth-child(odd) { background: #eef; }\n    a[href^=\"https\"] { color: green; }\n    .wajib::after { content: \" *\"; color: red; }\n  </style>\n</head>\n<body>\n  <ul><li>Satu</li><li>Dua</li><li>Tiga</li></ul>\n  <a href=\"https://odoo.com\">Odoo</a> <a href=\"/lokal\">Lokal</a>\n  <p class=\"wajib\">Nama</p>\n</body>\n</html>\n",
+"kunci": "[attr=nilai] persis, [attr^=awal], [attr$=akhir], [attr*=mengandung]. ::before/::after butuh content.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-sel-1",
+"judul": "Link luar dan input email",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Link yang href-nya diawali <code>https</code> berwarna <code>#15803d</code>, link lain tidak. Input <code>type=\"email\"</code> diberi border <code>2px solid #415a77</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <a href=\"https://www.odoo.com\">Odoo</a>\n  <a href=\"/tentang\">Tentang</a>\n  <input type=\"email\" placeholder=\"Email\">\n  <input type=\"text\" placeholder=\"Nama\">\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    a[href^=\"https\"] { color: #15803d; }\n    input[type=\"email\"] { border: 2px solid #415a77; }\n  </style>\n</head>\n<body>\n  <a href=\"https://www.odoo.com\">Odoo</a>\n  <a href=\"/tentang\">Tentang</a>\n  <input type=\"email\" placeholder=\"Email\">\n  <input type=\"text\" placeholder=\"Nama\">\n</body>\n</html>\n",
+"jelas": "Selector atribut menghindari menambah class satu per satu ke banyak elemen.",
+"kompleksitas": "",
+"petunjuk": [
+"Selector atribut: a[href^=\"https\"] (^= artinya 'diawali').",
+"input[type=\"email\"] hanya mengenai input email.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<a href=\"https://www.odoo.com\">…</a>…<a href=\"/tentang\">…</a>…<input type=\"email\" placeholder=\"Email\">…<input type=\"text\" placeholder=\"Nama\">…</body>…</html>\n"
+],
+"tes": [
+[
+"Link https hijau",
+"gaya('a[href^=\"https\"]', 'color') === 'rgb(21, 128, 61)'"
+],
+[
+"Link lokal tidak hijau",
+"gaya('a[href=\"/tentang\"]', 'color') !== 'rgb(21, 128, 61)'"
+],
+[
+"Input email border 2px #415a77",
+"gaya('input[type=email]', 'border-top-width') === '2px' && gaya('input[type=email]', 'border-top-color') === 'rgb(65, 90, 119)'"
+],
+[
+"Input teks tidak ikut",
+"gaya('input[type=text]', 'border-top-color') !== 'rgb(65, 90, 119)'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-sel-2",
+"judul": "Tabel belang dan tanda wajib",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Baris ganjil <code>tbody tr</code> berlatar <code>#f1f5f9</code> (baris genap tidak), baris pertama <code>tbody</code> tebal memakai <code>:first-child</code>, dan setiap <code>label.wajib</code> mendapat tanda <code>\" *\"</code> berwarna merah lewat <code>::after</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <table><tbody><tr><td>Ani</td></tr><tr><td>Budi</td></tr><tr><td>Cita</td></tr><tr><td>Dodi</td></tr></tbody></table>\n  <label class=\"wajib\">Nama</label> <label>Catatan</label>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    tbody tr:nth-child(odd) { background-color: #f1f5f9; }\n    tbody tr:first-child { font-weight: 700; }\n    label.wajib::after { content: \" *\"; color: red; }\n  </style>\n</head>\n<body>\n  <table><tbody><tr><td>Ani</td></tr><tr><td>Budi</td></tr><tr><td>Cita</td></tr><tr><td>Dodi</td></tr></tbody></table>\n  <label class=\"wajib\">Nama</label> <label>Catatan</label>\n</body>\n</html>\n",
+"jelas": "Tanda wajib lewat ::after menjaga HTML tetap bersih; Odoo memakai teknik serupa untuk menandai field required.",
+"kompleksitas": "",
+"petunjuk": [
+"nth-child(odd) = ganjil (1, 3, 5). first-child = anak pertama.",
+"::after { content: \" *\"; color: red; } — content wajib ada agar pseudo-element muncul.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<table><tbody><tr><td>…</td></tr><tr><td>…</td></tr><tr><td>…</td></tr><tr><td>…</td></tr></tbody></table>…<label class=\"wajib\">…</label>…<label>…</label>…</body>…</html>\n"
+],
+"tes": [
+[
+"Baris ganjil berlatar #f1f5f9",
+"gaya($$('tbody tr')[0], 'background-color') === 'rgb(241, 245, 249)' && gaya($$('tbody tr')[2], 'background-color') === 'rgb(241, 245, 249)'"
+],
+[
+"Baris genap tidak",
+"gaya($$('tbody tr')[1], 'background-color') !== 'rgb(241, 245, 249)'"
+],
+[
+"Baris pertama tebal",
+"gaya($$('tbody tr')[0], 'font-weight') === '700' && gaya($$('tbody tr')[1], 'font-weight') !== '700'"
+],
+[
+"label.wajib::after berisi \" *\" merah",
+"w.getComputedStyle($('label.wajib'), '::after').content === '\" *\"' && w.getComputedStyle($('label.wajib'), '::after').color === 'rgb(255, 0, 0)'"
+],
+[
+"label biasa tanpa tanda",
+"w.getComputedStyle($$('label')[1], '::after').content === 'none'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-satuan",
+"topik": "css",
+"setelah": "satuan",
+"judul": "Satuan relatif: rem, %, vw",
+"contoh": {
+"judul": "Contoh: rem dan persen",
+"penjelasan": "<p><code>rem</code> mengikuti ukuran huruf <code>html</code> (bawaan 16px), jadi 2rem = 32px. <code>%</code> mengikuti induk. <code>vw</code> = persen lebar layar. <code>clamp(min, ideal, max)</code> membatasi nilai yang fleksibel.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    html { font-size: 16px; }\n    h1 { font-size: 2rem; }\n    .wadah { width: 80%; max-width: 600px; margin: 0 auto; }\n    p { font-size: clamp(14px, 2vw, 20px); }\n  </style>\n</head>\n<body>\n  <div class=\"wadah\"><h1>Judul</h1><p>Isi</p></div>\n</body>\n</html>\n",
+"kunci": "rem untuk ukuran huruf dan jarak yang konsisten; % untuk lebar relatif; max-width agar tidak terlalu lebar.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-satuan-1",
+"judul": "Ukuran dengan rem",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Dengan <code>html</code> berukuran <code>16px</code>, buat <code>h1</code> <code>2.5rem</code>, <code>p</code> <code>1.125rem</code>, dan <code>.kartu</code> padding <code>1.5rem</code>. Gunakan satuan rem di CSS.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <h1>Judul</h1>\n  <div class=\"kartu\"><p>Isi kartu</p></div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    html { font-size: 16px; }\n    h1 { font-size: 2.5rem; }\n    p { font-size: 1.125rem; }\n    .kartu { padding: 1.5rem; }\n  </style>\n</head>\n<body>\n  <h1>Judul</h1>\n  <div class=\"kartu\"><p>Isi kartu</p></div>\n</body>\n</html>\n",
+"jelas": "Jika pengguna memperbesar ukuran huruf di browser, ukuran rem ikut membesar sedangkan px tidak: lebih ramah aksesibilitas.",
+"kompleksitas": "",
+"petunjuk": [
+"2.5 × 16 = 40px; 1.125 × 16 = 18px; 1.5 × 16 = 24px.",
+"Tulis angkanya dalam rem, browser yang menghitung px-nya.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<h1>…</h1>…<div class=\"kartu\"><p>…</p></div>…</body>…</html>\n"
+],
+"tes": [
+[
+"h1 = 40px",
+"gaya('h1', 'font-size') === '40px'"
+],
+[
+"p = 18px",
+"gaya('p', 'font-size') === '18px'"
+],
+[
+".kartu padding 24px",
+"gaya('.kartu', 'padding-top') === '24px'"
+],
+[
+"Ditulis dengan satuan rem",
+"(d.querySelector('style').textContent.match(/rem/g) || []).length >= 3"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-satuan-2",
+"judul": "Wadah fleksibel",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <code>.wadah</code> selebar <code>90%</code> dari induk tetapi maksimal <code>720px</code>, terpusat; <code>.sidebar</code> di dalamnya selebar <code>25%</code> dari wadah; dan <code>h1</code> memakai <code>clamp(24px, 5vw, 40px)</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <div class=\"wadah\"><aside class=\"sidebar\">Menu</aside><h1>Judul responsif</h1></div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    body { margin: 0; }\n    .wadah { width: 90%; max-width: 720px; margin: 0 auto; }\n    .sidebar { width: 25%; }\n    h1 { font-size: clamp(24px, 5vw, 40px); }\n  </style>\n</head>\n<body>\n  <div class=\"wadah\"><aside class=\"sidebar\">Menu</aside><h1>Judul responsif</h1></div>\n</body>\n</html>\n",
+"jelas": "Pasangan width % + max-width adalah pola paling umum untuk wadah konten yang nyaman dibaca di semua layar.",
+"kompleksitas": "",
+"petunjuk": [
+"width: 90% dengan max-width: 720px; di layar 1000px, 90% = 900px sehingga max-width yang menang.",
+"5vw di layar 1000px = 50px, lalu clamp membatasinya ke 40px.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<div class=\"wadah\"><aside class=\"sidebar\">…</aside><h1>…</h1></div>…</body>…</html>\n"
+],
+"tes": [
+[
+".wadah dibatasi 720px pada layar 1000px",
+"Math.round($('.wadah').getBoundingClientRect().width) === 720"
+],
+[
+".wadah terpusat",
+"Math.abs($('.wadah').getBoundingClientRect().left - (w.innerWidth - $('.wadah').getBoundingClientRect().right)) < 2"
+],
+[
+".sidebar 25% dari wadah",
+"Math.abs($('.sidebar').getBoundingClientRect().width - $('.wadah').getBoundingClientRect().width * 0.25) < 1"
+],
+[
+"h1 memakai clamp",
+"/clamp\\(\\s*24px\\s*,\\s*5vw\\s*,\\s*40px\\s*\\)/.test(d.querySelector('style').textContent)"
+],
+[
+"h1 di layar 1000px = 40px (dibatasi maksimum)",
+"gaya('h1', 'font-size') === '40px'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-animasi",
+"topik": "css",
+"setelah": "animasi",
+"judul": "Transition dan @keyframes",
+"contoh": {
+"judul": "Contoh: transisi hover dan animasi muncul",
+"penjelasan": "<p><code>transition</code> menghaluskan perubahan (misalnya saat hover). <code>transform: translateY(-4px)</code> menggeser tanpa mengubah tata letak. <code>@keyframes</code> mendefinisikan animasi yang dipakai lewat <code>animation</code>. Hormati pengguna yang memilih <code>prefers-reduced-motion</code>.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .kartu { padding: 24px; background: #e8e8e8; transition: transform .3s ease; animation: muncul .6s ease-out; }\n    .kartu:hover { transform: translateY(-4px); }\n    @keyframes muncul { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }\n    @media (prefers-reduced-motion: reduce) { .kartu { animation: none; transition: none; } }\n  </style>\n</head>\n<body>\n  <div class=\"kartu\">Arahkan kursor ke sini</div>\n</body>\n</html>\n",
+"kunci": "Animasikan transform dan opacity (ringan). Selalu sediakan prefers-reduced-motion.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-anim-1",
+"judul": "Kartu terangkat saat hover",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Beri <code>.kartu</code> <code>transition</code> pada <code>transform</code> selama <code>0.3s</code>, dan aturan <code>.kartu:hover</code> dengan <code>transform: translateY(-6px)</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <div class=\"kartu\">Produk</div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .kartu { transition: transform 0.3s ease; }\n    .kartu:hover { transform: translateY(-6px); }\n  </style>\n</head>\n<body>\n  <div class=\"kartu\">Produk</div>\n</body>\n</html>\n",
+"jelas": "transform tidak memicu perhitungan ulang tata letak, sehingga animasinya ringan bahkan di HP.",
+"kompleksitas": "",
+"petunjuk": [
+"transition ditulis di keadaan normal, bukan di :hover, supaya halus saat masuk dan keluar.",
+"transform: translateY(-6px) menggeser 6px ke atas.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<div class=\"kartu\">…</div>…</body>…</html>\n"
+],
+"tes": [
+[
+"transition-property memuat transform",
+"/transform|all/.test(gaya('.kartu', 'transition-property'))"
+],
+[
+"Durasi 0.3s",
+"gaya('.kartu', 'transition-duration') === '0.3s'"
+],
+[
+"Ada aturan .kartu:hover",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).some(r => r.selectorText && r.selectorText.replace(/\\s/g, '').includes('.kartu:hover'))"
+],
+[
+"Hover memakai translateY(-6px)",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).some(r => r.selectorText && r.selectorText.includes(':hover') && /translateY\\(-6px\\)/.test(r.style.transform))"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-anim-2",
+"judul": "Animasi notifikasi",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <code>@keyframes geser</code> dari <code>opacity: 0</code> ke <code>opacity: 1</code>. Pasang ke <code>.notif</code> dengan durasi <code>0.5s</code> dan <code>animation-fill-mode: both</code>. Tambahkan <code>@media (prefers-reduced-motion: reduce)</code> yang mematikan animasi <code>.notif</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <div class=\"notif\">Kode lulus semua tes!</div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    @keyframes geser { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: none; } }\n    .notif { animation: geser 0.5s ease both; }\n    @media (prefers-reduced-motion: reduce) { .notif { animation: none; } }\n  </style>\n</head>\n<body>\n  <div class=\"notif\">Kode lulus semua tes!</div>\n</body>\n</html>\n",
+"jelas": "Animasi kecil yang bisa dimatikan pengguna adalah praktik aksesibilitas yang diharapkan di proyek profesional.",
+"kompleksitas": "",
+"petunjuk": [
+"@keyframes geser { from { opacity: 0; } to { opacity: 1; } } lalu .notif { animation: geser 0.5s ease both; }",
+"fill-mode both membuat keadaan awal dan akhir animasi tetap berlaku.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<div class=\"notif\">…</div>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada @keyframes geser",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).some(r => r.type === 7 && r.name === 'geser')"
+],
+[
+"Keyframes dari opacity 0 ke 1",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).some(r => r.type === 7 && r.name === 'geser' && [...r.cssRules].some(k => /0%|from/.test(k.keyText) && k.style.opacity === '0') && [...r.cssRules].some(k => /100%|to/.test(k.keyText) && k.style.opacity === '1'))"
+],
+[
+".notif memakai animasi geser 0.5s",
+"gaya('.notif', 'animation-name') === 'geser' && gaya('.notif', 'animation-duration') === '0.5s'"
+],
+[
+"fill-mode both",
+"gaya('.notif', 'animation-fill-mode') === 'both'"
+],
+[
+"Ada prefers-reduced-motion yang mematikan animasi",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).filter(r => r.type === 4).some(r => /prefers-reduced-motion/.test(r.conditionText || r.media.mediaText) && [...r.cssRules].some(x => x.selectorText === '.notif' && /none/.test(x.style.animation || x.style.animationName)))"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-gridlanjut",
+"topik": "css",
+"setelah": "gridlanjut",
+"judul": "Grid areas dan auto-fit",
+"contoh": {
+"judul": "Contoh: grid-template-areas",
+"penjelasan": "<p><code>grid-template-areas</code> menggambar tata letak dengan nama: setiap string satu baris. Anak diberi <code>grid-area: nama</code>. <code>repeat(auto-fit, minmax(200px, 1fr))</code> membuat jumlah kolom menyesuaikan lebar layar tanpa media query.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .tata { display: grid; grid-template-columns: 200px 1fr; grid-template-areas: \"kepala kepala\" \"samping isi\" \"kaki kaki\"; gap: 8px; }\n    header { grid-area: kepala; } aside { grid-area: samping; } main { grid-area: isi; } footer { grid-area: kaki; }\n    .tata > * { background: #e8e8e8; padding: 12px; }\n  </style>\n</head>\n<body>\n  <div class=\"tata\"><header>Header</header><aside>Menu</aside><main>Isi</main><footer>Kaki</footer></div>\n</body>\n</html>\n",
+"kunci": "Nama area yang diulang di satu baris = elemen melebar ke beberapa kolom.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-gl-1",
+"judul": "Tata letak dashboard",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <code>.tata</code> grid 2 kolom (<code>220px 1fr</code>) dengan area: baris 1 <code>kepala kepala</code>, baris 2 <code>samping isi</code>, baris 3 <code>kaki kaki</code>. Hubungkan header, aside, main, footer ke area itu.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <div class=\"tata\"><header>Header</header><aside>Menu</aside><main>Dashboard</main><footer>Kaki</footer></div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .tata { display: grid; grid-template-columns: 220px 1fr; grid-template-areas: \"kepala kepala\" \"samping isi\" \"kaki kaki\"; }\n    header { grid-area: kepala; }\n    aside { grid-area: samping; }\n    main { grid-area: isi; }\n    footer { grid-area: kaki; }\n  </style>\n</head>\n<body>\n  <div class=\"tata\"><header>Header</header><aside>Menu</aside><main>Dashboard</main><footer>Kaki</footer></div>\n</body>\n</html>\n",
+"jelas": "Tata letak dashboard seperti ini (header, sidebar, isi, footer) adalah kerangka hampir semua aplikasi admin, termasuk Odoo.",
+"kompleksitas": "",
+"petunjuk": [
+"grid-template-areas ditulis sebagai beberapa string, satu per baris.",
+"Anak: header { grid-area: kepala; } dan seterusnya.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<div class=\"tata\"><header>…</header><aside>…</aside><main>…</main><footer>…</footer></div>…</body>…</html>\n"
+],
+"tes": [
+[
+"Kolom pertama 220px",
+"gaya('.tata', 'grid-template-columns').split(' ')[0] === '220px'"
+],
+[
+"Area sesuai gambar",
+"gaya('.tata', 'grid-template-areas').replace(/\\s+/g, ' ') === '\"kepala kepala\" \"samping isi\" \"kaki kaki\"'"
+],
+[
+"header melebar 2 kolom",
+"Math.abs($('header').getBoundingClientRect().width - $('.tata').getBoundingClientRect().width) < 1"
+],
+[
+"aside di kiri main pada baris yang sama",
+"Math.round($('aside').getBoundingClientRect().top) === Math.round($('main').getBoundingClientRect().top) && $('aside').getBoundingClientRect().left < $('main').getBoundingClientRect().left"
+],
+[
+"footer di bawah main",
+"$('footer').getBoundingClientRect().top >= $('main').getBoundingClientRect().bottom - 1"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-gl-2",
+"judul": "Grid kartu otomatis",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat <code>.produk</code> grid dengan <code>repeat(auto-fit, minmax(200px, 1fr))</code> dan gap <code>16px</code>. Pada iframe 1000px hasilnya harus ≥ 3 kolom, dan semua kartu sama lebar.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <div class=\"produk\"><div>A</div><div>B</div><div>C</div><div>D</div><div>E</div></div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .produk { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }\n  </style>\n</head>\n<body>\n  <div class=\"produk\"><div>A</div><div>B</div><div>C</div><div>D</div><div>E</div></div>\n</body>\n</html>\n",
+"jelas": "Satu baris CSS ini menggantikan beberapa media query untuk grid kartu produk.",
+"kompleksitas": "",
+"petunjuk": [
+"auto-fit membuat kolom sebanyak yang muat; minmax menjaga lebar minimal 200px.",
+"Tanpa media query pun, di HP grid otomatis menjadi 1 kolom.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<div class=\"produk\"><div>…</div><div>…</div><div>…</div><div>…</div><div>…</div></div>…</body>…</html>\n"
+],
+"tes": [
+[
+"Memakai auto-fit dan minmax(200px, 1fr)",
+"/repeat\\(\\s*auto-fit\\s*,\\s*minmax\\(\\s*200px\\s*,\\s*1fr\\s*\\)\\s*\\)/.test(d.querySelector('style').textContent)"
+],
+[
+"≥ 3 kolom pada lebar 1000px",
+"gaya('.produk', 'grid-template-columns').split(' ').length >= 3"
+],
+[
+"Setiap kolom ≥ 200px",
+"gaya('.produk', 'grid-template-columns').split(' ').every(x => parseFloat(x) >= 200)"
+],
+[
+"gap 16px",
+"gaya('.produk', 'column-gap') === '16px'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "css-arsitektur",
+"topik": "css",
+"setelah": "arsitektur",
+"judul": "Reset dan penamaan BEM",
+"contoh": {
+"judul": "Contoh: reset ringan dan BEM",
+"penjelasan": "<p>Reset ringan menyamakan perilaku browser: <code>box-sizing</code>, margin body, gambar responsif. BEM menamai class dengan pola <code>blok__elemen--modifier</code>: <code>.kartu</code>, <code>.kartu__judul</code>, <code>.kartu--unggulan</code>.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    *, *::before, *::after { box-sizing: border-box; }\n    body { margin: 0; }\n    img { max-width: 100%; display: block; }\n    .kartu { padding: 16px; border: 1px solid #ccc; }\n    .kartu__judul { margin: 0 0 8px; }\n    .kartu--unggulan { border-color: gold; }\n  </style>\n</head>\n<body>\n  <article class=\"kartu kartu--unggulan\">\n    <h3 class=\"kartu__judul\">Kopi</h3>\n    <p class=\"kartu__harga\">Rp 18.000</p>\n  </article>\n</body>\n</html>\n",
+"kunci": "BEM: __ untuk bagian dari blok, -- untuk variasi. Class datar (spesifisitas rendah) mudah ditimpa.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "css-ark-1",
+"judul": "Reset ringan",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "Tulis reset: semua elemen termasuk <code>::before</code>/<code>::after</code> memakai <code>box-sizing: border-box</code>; <code>body</code> tanpa margin; <code>img</code> <code>max-width: 100%</code> dan <code>display: block</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <div class=\"isi\"><img src=\"a.jpg\" alt=\"Contoh\"></div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    *, *::before, *::after { box-sizing: border-box; }\n    body { margin: 0; }\n    img { max-width: 100%; display: block; }\n  </style>\n</head>\n<body>\n  <div class=\"isi\"><img src=\"a.jpg\" alt=\"Contoh\"></div>\n</body>\n</html>\n",
+"jelas": "Reset ini dipakai hampir semua proyek modern (termasuk tema Bootstrap) agar tata letak konsisten di semua browser.",
+"kompleksitas": "",
+"petunjuk": [
+"Selector universal: *, *::before, *::after { ... }.",
+"Tiga aturan saja.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<div class=\"isi\"><img src=\"a.jpg\" alt=\"Contoh\"></div>…</body>…</html>\n"
+],
+"tes": [
+[
+"Semua elemen border-box",
+"gaya('.isi', 'box-sizing') === 'border-box' && gaya('body', 'box-sizing') === 'border-box'"
+],
+[
+"::before juga border-box",
+"w.getComputedStyle($('.isi'), '::before').boxSizing === 'border-box'"
+],
+[
+"body margin 0",
+"gaya('body', 'margin-top') === '0px' && gaya('body', 'margin-left') === '0px'"
+],
+[
+"img max-width 100% dan block",
+"gaya('img', 'max-width') === '100%' && gaya('img', 'display') === 'block'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "css-ark-2",
+"judul": "Komponen kartu BEM",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "",
+"soal": "HTML sudah memakai class BEM. Tulis CSS hanya dengan selector class tunggal (tanpa id, tanpa tag): <code>.kartu</code> padding 16px; <code>.kartu__judul</code> ukuran 20px; <code>.kartu__harga</code> warna <code>#15803d</code>; <code>.kartu--unggulan</code> border <code>2px solid #d4a017</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <article class=\"kartu\"><h3 class=\"kartu__judul\">Teh</h3><p class=\"kartu__harga\">Rp 6.000</p></article>\n  <article class=\"kartu kartu--unggulan\"><h3 class=\"kartu__judul\">Kopi</h3><p class=\"kartu__harga\">Rp 18.000</p></article>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    .kartu { padding: 16px; }\n    .kartu__judul { font-size: 20px; }\n    .kartu__harga { color: #15803d; }\n    .kartu--unggulan { border: 2px solid #d4a017; }\n  </style>\n</head>\n<body>\n  <article class=\"kartu\"><h3 class=\"kartu__judul\">Teh</h3><p class=\"kartu__harga\">Rp 6.000</p></article>\n  <article class=\"kartu kartu--unggulan\"><h3 class=\"kartu__judul\">Kopi</h3><p class=\"kartu__harga\">Rp 18.000</p></article>\n</body>\n</html>\n",
+"jelas": "Selector class tunggal membuat spesifisitas rata dan komponen mudah dipindah tanpa efek samping.",
+"kompleksitas": "",
+"petunjuk": [
+"Setiap aturan satu class: .kartu__judul { ... }, bukan .kartu h3 { ... }.",
+"Modifier ditulis sebagai class tambahan di HTML: class=\"kartu kartu--unggulan\".",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<article class=\"kartu\"><h3 class=\"kartu__judul\">…</h3><p class=\"kartu__harga\">…</p></article>…<article class=\"kartu kartu--unggulan\"><h3 class=\"kartu__judul\">…</h3><p class=\"kartu__harga\">…</p></article>…</body>…</html>\n"
+],
+"tes": [
+[
+".kartu padding 16px",
+"$$('.kartu').every(k => gaya(k, 'padding-top') === '16px')"
+],
+[
+".kartu__judul 20px",
+"$$('.kartu__judul').every(k => gaya(k, 'font-size') === '20px')"
+],
+[
+".kartu__harga hijau",
+"$$('.kartu__harga').every(k => gaya(k, 'color') === 'rgb(21, 128, 61)')"
+],
+[
+"Hanya kartu unggulan yang ber-border emas",
+"gaya('.kartu--unggulan', 'border-top-color') === 'rgb(212, 160, 23)' && gaya('.kartu:not(.kartu--unggulan)', 'border-top-style') === 'none'"
+],
+[
+"Selector hanya class tunggal (tanpa id/tag/keturunan)",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).filter(r => r.selectorText).every(r => /^\\.[\\w-]+$/.test(r.selectorText))"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "uji-css-1",
+"topik": "css",
+"setelah": "posisi",
+"judul": "Menata landing page toko",
+"contoh": {
+"judul": "Cara mengerjakan coding test besar",
+"penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan aturan CSS baru di dalam &lt;style&gt;.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* Bagian A, B, C menambah aturan di sini */\n  </style>\n</head>\n<body>\n  <header class=\"bar\">\n    <b class=\"logo\">Kopi Kenar</b>\n    <nav><ul class=\"menu\"><li><a href=\"#produk\">Produk</a></li><li><a href=\"#tentang\">Tentang</a></li><li><a href=\"#pesan\">Pesan</a></li></ul></nav>\n  </header>\n  <main>\n    <section id=\"produk\" class=\"galeri\">\n      <article class=\"kartu\"><h3>Kopi Susu</h3><p class=\"harga\">Rp 18.000</p></article>\n      <article class=\"kartu\"><h3>Es Teh</h3><p class=\"harga\">Rp 6.000</p></article>\n      <article class=\"kartu\"><h3>Roti Bakar</h3><p class=\"harga\">Rp 15.000</p></article>\n    </section>\n  </main>\n</body>\n</html>\n",
+"kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "uji-css-1-a",
+"judul": "Bagian A: Header & navigasi",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "Landing page Kopi Kenar dari Coding Test HTML sudah jadi, tapi masih polos. HTML-nya sudah tersedia; tugasmu hanya CSS.",
+"soal": "Atur <code>body</code> tanpa margin dengan huruf sans-serif. <code>.bar</code>: flex, logo kiri dan menu kanan (<code>space-between</code>), terpusat vertikal, latar <code>#0d1b2a</code>. <code>.menu</code>: flex dengan gap 16px tanpa titik daftar, link berwarna <code>#f4f1de</code> tanpa garis bawah.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <header class=\"bar\">\n    <b class=\"logo\">Kopi Kenar</b>\n    <nav><ul class=\"menu\"><li><a href=\"#produk\">Produk</a></li><li><a href=\"#tentang\">Tentang</a></li><li><a href=\"#pesan\">Pesan</a></li></ul></nav>\n  </header>\n  <main>\n    <section id=\"produk\" class=\"galeri\">\n      <article class=\"kartu\"><h3>Kopi Susu</h3><p class=\"harga\">Rp 18.000</p></article>\n      <article class=\"kartu\"><h3>Es Teh</h3><p class=\"harga\">Rp 6.000</p></article>\n      <article class=\"kartu\"><h3>Roti Bakar</h3><p class=\"harga\">Rp 15.000</p></article>\n    </section>\n  </main>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    body { margin: 0; font-family: Arial, sans-serif; color: #0d1b2a; }\n    .bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background-color: #0d1b2a; }\n    .logo { color: #f4f1de; }\n    .menu { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }\n    .menu a { color: #f4f1de; text-decoration: none; }\n  </style>\n</head>\n<body>\n  <header class=\"bar\">\n    <b class=\"logo\">Kopi Kenar</b>\n    <nav><ul class=\"menu\"><li><a href=\"#produk\">Produk</a></li><li><a href=\"#tentang\">Tentang</a></li><li><a href=\"#pesan\">Pesan</a></li></ul></nav>\n  </header>\n  <main>\n    <section id=\"produk\" class=\"galeri\">\n      <article class=\"kartu\"><h3>Kopi Susu</h3><p class=\"harga\">Rp 18.000</p></article>\n      <article class=\"kartu\"><h3>Es Teh</h3><p class=\"harga\">Rp 6.000</p></article>\n      <article class=\"kartu\"><h3>Roti Bakar</h3><p class=\"harga\">Rp 15.000</p></article>\n    </section>\n  </main>\n</body>\n</html>\n",
+"jelas": "Header gelap dengan menu flex adalah pola navbar paling umum.",
+"kompleksitas": "",
+"petunjuk": [
+"Gabungan bab 1 (warna), 2 (huruf), dan 4 (flexbox).",
+"Ada dua wadah flex: .bar (logo + nav) dan .menu (item menu).",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<header class=\"bar\">…<b class=\"logo\">…</b>…<nav><ul class=\"menu\"><li><a href=\"#produk\">…</a></li><li><a href=\"#tentang\">…</a></li><li><a href=\"#pesan\">…</a></li></ul></nav>…</header>…<main>…<section id=\"produk\" class=\"galeri\">…<article class=\"kartu\"><h3>…</h3><p class=\"harga\">…</p></article>…<article class=\"kartu\"><h3>…</h3><p class=\"harga\">…</p></article>…<article class=\"kartu\"><h3>…</h3><p class=\"harga\">…</p></article>…</section>…</main>…</body>…</html>\n"
+],
+"tes": [
+[
+"body margin 0 dan sans-serif",
+"gaya('body', 'margin-top') === '0px' && /sans-serif/.test(gaya('body', 'font-family'))"
+],
+[
+".bar flex, space-between, align center",
+"gaya('.bar', 'display') === 'flex' && gaya('.bar', 'justify-content') === 'space-between' && gaya('.bar', 'align-items') === 'center'"
+],
+[
+".bar latar #0d1b2a",
+"gaya('.bar', 'background-color') === 'rgb(13, 27, 42)'"
+],
+[
+".menu flex gap 16px tanpa titik",
+"gaya('.menu', 'display') === 'flex' && gaya('.menu', 'column-gap') === '16px' && gaya('.menu', 'list-style-type') === 'none'"
+],
+[
+"Link menu #f4f1de tanpa garis bawah",
+"gaya('.menu a', 'color') === 'rgb(244, 241, 222)' && gaya('.menu a', 'text-decoration-line') === 'none'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "uji-css-1-b",
+"judul": "Bagian B: Kartu produk dalam grid",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "Lanjutan bagian A: halaman dan CSS-mu yang sudah lulus otomatis dipakai.",
+"soal": "<code>.galeri</code>: grid 3 kolom sama lebar, gap 20px, padding 24px. <code>.kartu</code>: <code>border-box</code>, padding 16px, border <code>1px solid #d4c4a8</code>, sudut 8px. <code>.harga</code>: tebal dan berwarna <code>#b55a7c</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    body { margin: 0; font-family: Arial, sans-serif; color: #0d1b2a; }\n    .bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background-color: #0d1b2a; }\n    .logo { color: #f4f1de; }\n    .menu { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }\n    .menu a { color: #f4f1de; text-decoration: none; }\n    /* tulis CSS bagian B di sini */\n  </style>\n</head>\n<body>\n  <header class=\"bar\">\n    <b class=\"logo\">Kopi Kenar</b>\n    <nav><ul class=\"menu\"><li><a href=\"#produk\">Produk</a></li><li><a href=\"#tentang\">Tentang</a></li><li><a href=\"#pesan\">Pesan</a></li></ul></nav>\n  </header>\n  <main>\n    <section id=\"produk\" class=\"galeri\">\n      <article class=\"kartu\"><h3>Kopi Susu</h3><p class=\"harga\">Rp 18.000</p></article>\n      <article class=\"kartu\"><h3>Es Teh</h3><p class=\"harga\">Rp 6.000</p></article>\n      <article class=\"kartu\"><h3>Roti Bakar</h3><p class=\"harga\">Rp 15.000</p></article>\n    </section>\n  </main>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    body { margin: 0; font-family: Arial, sans-serif; color: #0d1b2a; }\n    .bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background-color: #0d1b2a; }\n    .logo { color: #f4f1de; }\n    .menu { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }\n    .menu a { color: #f4f1de; text-decoration: none; }\n    .galeri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 24px; }\n    .kartu { box-sizing: border-box; padding: 16px; border: 1px solid #d4c4a8; border-radius: 8px; }\n    .harga { font-weight: 700; color: #b55a7c; }\n  </style>\n</head>\n<body>\n  <header class=\"bar\">\n    <b class=\"logo\">Kopi Kenar</b>\n    <nav><ul class=\"menu\"><li><a href=\"#produk\">Produk</a></li><li><a href=\"#tentang\">Tentang</a></li><li><a href=\"#pesan\">Pesan</a></li></ul></nav>\n  </header>\n  <main>\n    <section id=\"produk\" class=\"galeri\">\n      <article class=\"kartu\"><h3>Kopi Susu</h3><p class=\"harga\">Rp 18.000</p></article>\n      <article class=\"kartu\"><h3>Es Teh</h3><p class=\"harga\">Rp 6.000</p></article>\n      <article class=\"kartu\"><h3>Roti Bakar</h3><p class=\"harga\">Rp 15.000</p></article>\n    </section>\n  </main>\n</body>\n</html>\n",
+"jelas": "Grid untuk galeri, box model untuk kartu: dua alat yang saling melengkapi.",
+"kompleksitas": "",
+"petunjuk": [
+"Gabungan bab 3 (box model) dan bab 5 (grid).",
+"repeat(3, 1fr) untuk tiga kolom sama lebar.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<header class=\"bar\">…<b class=\"logo\">…</b>…<nav><ul class=\"menu\"><li><a href=\"#produk\">…</a></li><li><a href=\"#tentang\">…</a></li><li><a href=\"#pesan\">…</a></li></ul></nav>…</header>…<main>…<section id=\"produk\" class=\"galeri\">…<article class=\"kartu\"><h3>…</h3><p class=\"harga\">…</p></article>…<article class=\"kartu\"><h3>…</h3><p class=\"harga\">…</p></article>…<article class=\"kartu\"><h3>…</h3><p class=\"harga\">…</p></article>…</section>…</main>…</body>…</html>\n"
+],
+"tes": [
+[
+".galeri grid 3 kolom sama lebar",
+"gaya('.galeri', 'display') === 'grid' && gaya('.galeri', 'grid-template-columns').split(' ').length === 3 && (c => Math.max(...c) - Math.min(...c) < 1)(gaya('.galeri', 'grid-template-columns').split(' ').map(parseFloat))"
+],
+[
+".galeri gap 20px, padding 24px",
+"gaya('.galeri', 'column-gap') === '20px' && gaya('.galeri', 'padding-top') === '24px'"
+],
+[
+".kartu border-box, padding 16px, sudut 8px",
+"gaya('.kartu', 'box-sizing') === 'border-box' && gaya('.kartu', 'padding-top') === '16px' && gaya('.kartu', 'border-top-left-radius') === '8px'"
+],
+[
+".kartu border 1px #d4c4a8",
+"gaya('.kartu', 'border-top-width') === '1px' && gaya('.kartu', 'border-top-color') === 'rgb(212, 196, 168)'"
+],
+[
+".harga tebal dan #b55a7c",
+"gaya('.harga', 'font-weight') === '700' && gaya('.harga', 'color') === 'rgb(181, 90, 124)'"
+],
+[
+"Header bagian A tetap flex",
+"gaya('.bar', 'display') === 'flex'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "<!-- Bagian B: tambahkan aturan di dalam <style> di atas -->\n"
+},
+{
+"id": "uji-css-1-c",
+"judul": "Bagian C: Header lengket & responsif",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "Lanjutan bagian B: halaman dan CSS-mu yang sudah lulus otomatis dipakai.",
+"soal": "Buat <code>.bar</code> menempel di atas (<code>sticky</code>, <code>top: 0</code>, z-index ≥ 10). Tambahkan <code>@media (max-width: 600px)</code>: galeri menjadi 1 kolom dan <code>.bar</code> menjadi kolom (<code>flex-direction: column</code>).",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    body { margin: 0; font-family: Arial, sans-serif; color: #0d1b2a; }\n    .bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background-color: #0d1b2a; }\n    .logo { color: #f4f1de; }\n    .menu { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }\n    .menu a { color: #f4f1de; text-decoration: none; }\n    .galeri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 24px; }\n    .kartu { box-sizing: border-box; padding: 16px; border: 1px solid #d4c4a8; border-radius: 8px; }\n    .harga { font-weight: 700; color: #b55a7c; }\n    /* tulis CSS bagian C di sini */\n  </style>\n</head>\n<body>\n  <header class=\"bar\">\n    <b class=\"logo\">Kopi Kenar</b>\n    <nav><ul class=\"menu\"><li><a href=\"#produk\">Produk</a></li><li><a href=\"#tentang\">Tentang</a></li><li><a href=\"#pesan\">Pesan</a></li></ul></nav>\n  </header>\n  <main>\n    <section id=\"produk\" class=\"galeri\">\n      <article class=\"kartu\"><h3>Kopi Susu</h3><p class=\"harga\">Rp 18.000</p></article>\n      <article class=\"kartu\"><h3>Es Teh</h3><p class=\"harga\">Rp 6.000</p></article>\n      <article class=\"kartu\"><h3>Roti Bakar</h3><p class=\"harga\">Rp 15.000</p></article>\n    </section>\n  </main>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    body { margin: 0; font-family: Arial, sans-serif; color: #0d1b2a; }\n    .bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background-color: #0d1b2a; }\n    .logo { color: #f4f1de; }\n    .menu { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }\n    .menu a { color: #f4f1de; text-decoration: none; }\n    .galeri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 24px; }\n    .kartu { box-sizing: border-box; padding: 16px; border: 1px solid #d4c4a8; border-radius: 8px; }\n    .harga { font-weight: 700; color: #b55a7c; }\n    .bar { position: sticky; top: 0; z-index: 10; }\n    @media (max-width: 600px) {\n      .galeri { grid-template-columns: 1fr; }\n      .bar { flex-direction: column; }\n    }\n  </style>\n</head>\n<body>\n  <header class=\"bar\">\n    <b class=\"logo\">Kopi Kenar</b>\n    <nav><ul class=\"menu\"><li><a href=\"#produk\">Produk</a></li><li><a href=\"#tentang\">Tentang</a></li><li><a href=\"#pesan\">Pesan</a></li></ul></nav>\n  </header>\n  <main>\n    <section id=\"produk\" class=\"galeri\">\n      <article class=\"kartu\"><h3>Kopi Susu</h3><p class=\"harga\">Rp 18.000</p></article>\n      <article class=\"kartu\"><h3>Es Teh</h3><p class=\"harga\">Rp 6.000</p></article>\n      <article class=\"kartu\"><h3>Roti Bakar</h3><p class=\"harga\">Rp 15.000</p></article>\n    </section>\n  </main>\n</body>\n</html>\n",
+"jelas": "Halaman yang sama kini rapi di laptop dan HP. Inilah alur kerja frontend sungguhan: HTML semantik dulu, lalu CSS bertahap.",
+"kompleksitas": "",
+"petunjuk": [
+"position: sticky; top: 0; z-index: 10; ditambahkan ke .bar.",
+"Isi @media berupa aturan biasa: .galeri { ... } dan .bar { ... }.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<header class=\"bar\">…<b class=\"logo\">…</b>…<nav><ul class=\"menu\"><li><a href=\"#produk\">…</a></li><li><a href=\"#tentang\">…</a></li><li><a href=\"#pesan\">…</a></li></ul></nav>…</header>…<main>…<section id=\"produk\" class=\"galeri\">…<article class=\"kartu\"><h3>…</h3><p class=\"harga\">…</p></article>…<article class=\"kartu\"><h3>…</h3><p class=\"harga\">…</p></article>…<article class=\"kartu\"><h3>…</h3><p class=\"harga\">…</p></article>…</section>…</main>…</body>…</html>\n"
+],
+"tes": [
+[
+".bar sticky top 0 z-index ≥ 10",
+"gaya('.bar', 'position') === 'sticky' && gaya('.bar', 'top') === '0px' && parseInt(gaya('.bar', 'z-index')) >= 10"
+],
+[
+"Ada @media max-width 600px",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).filter(r => r.type === 4).some(r => /max-width:\\s*600px/.test(r.conditionText || r.media.mediaText))"
+],
+[
+"Di HP .galeri 1 kolom",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).filter(r => r.type === 4).some(r => [...r.cssRules].some(x => x.selectorText === '.galeri' && x.style.gridTemplateColumns.replace(/\\s/g, '') === '1fr'))"
+],
+[
+"Di HP .bar menjadi kolom",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).filter(r => r.type === 4).some(r => [...r.cssRules].some(x => x.selectorText === '.bar' && x.style.flexDirection === 'column'))"
+],
+[
+"Di layar lebar tetap 3 kolom",
+"gaya('.galeri', 'grid-template-columns').split(' ').length === 3"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "<!-- Bagian C: tambahkan aturan di dalam <style> di atas -->\n"
+}
+],
+"ujian": true,
+"cakupan": "Bab 1–5: selector & warna, tipografi, box model, flexbox, grid & position"
+},
+{
+"id": "uji-css-2",
+"topik": "css",
+"setelah": "animasi",
+"judul": "Komponen UI interaktif",
+"contoh": {
+"judul": "Cara mengerjakan coding test besar",
+"penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan aturan CSS baru di dalam &lt;style&gt;.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
+"kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* Bagian A, B, C menambah aturan di sini */\n  </style>\n</head>\n<body>\n  <button class=\"tombol\">Beli sekarang</button>\n  <a href=\"https://www.odoo.com\" class=\"tautan\">Dokumentasi</a>\n  <ul class=\"daftar\"><li>Kopi</li><li>Teh</li><li>Roti</li><li>Donat</li></ul>\n  <div class=\"notif\">Pesanan tersimpan</div>\n</body>\n</html>\n",
+"kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "web",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "uji-css-2-a",
+"judul": "Bagian A: Tombol bertema",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "Tim produk meminta komponen UI kecil yang konsisten: tombol bertema, tautan keluar bertanda, daftar belang, dan notifikasi beranimasi.",
+"soal": "Definisikan di <code>:root</code>: <code>--utama: #415a77</code>, <code>--gelap: #0d1b2a</code>, <code>--radius: 0.5rem</code>. <code>.tombol</code> berlatar <code>var(--utama)</code>, sudut <code>var(--radius)</code>, padding dalam rem, kursor pointer, dan transisi. <code>.tombol:hover</code> berlatar <code>var(--gelap)</code> dan naik sedikit (<code>translateY</code>).",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n    /* tulis CSS-mu di sini */\n  </style>\n</head>\n<body>\n  <button class=\"tombol\">Beli sekarang</button>\n  <a href=\"https://www.odoo.com\" class=\"tautan\">Dokumentasi</a>\n  <ul class=\"daftar\"><li>Kopi</li><li>Teh</li><li>Roti</li><li>Donat</li></ul>\n  <div class=\"notif\">Pesanan tersimpan</div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n\n    :root { --utama: #415a77; --gelap: #0d1b2a; --radius: 0.5rem; }\n    .tombol { background-color: var(--utama); color: white; border: 0; padding: 0.75rem 1.25rem; border-radius: var(--radius); cursor: pointer; transition: background-color 0.2s ease, transform 0.2s ease; }\n    .tombol:hover { background-color: var(--gelap); transform: translateY(-2px); }\n  </style>\n</head>\n<body>\n  <button class=\"tombol\">Beli sekarang</button>\n  <a href=\"https://www.odoo.com\" class=\"tautan\">Dokumentasi</a>\n  <ul class=\"daftar\"><li>Kopi</li><li>Teh</li><li>Roti</li><li>Donat</li></ul>\n  <div class=\"notif\">Pesanan tersimpan</div>\n</body>\n</html>\n",
+"jelas": "Dengan variabel, mengganti warna merek cukup di satu tempat.",
+"kompleksitas": "",
+"petunjuk": [
+"Gabungan bab 6 (hover), 7 (variabel), 9 (rem), 10 (transition).",
+"var(--radius) = 0.5rem = 8px pada html 16px.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<button class=\"tombol\">…</button>…<a href=\"https://www.odoo.com\" class=\"tautan\">…</a>…<ul class=\"daftar\"><li>…</li><li>…</li><li>…</li><li>…</li></ul>…<div class=\"notif\">…</div>…</body>…</html>\n"
+],
+"tes": [
+[
+"Variabel --utama, --gelap, --radius ada",
+"gaya('html', '--utama') === '#415a77' && gaya('html', '--gelap') === '#0d1b2a' && gaya('html', '--radius') === '0.5rem'"
+],
+[
+".tombol latar dari --utama dan sudut 8px",
+"gaya('.tombol', 'background-color') === 'rgb(65, 90, 119)' && gaya('.tombol', 'border-top-left-radius') === '8px'"
+],
+[
+"Padding memakai rem",
+"/\\.tombol\\s*\\{[^}]*padding:[^;]*rem/.test(d.querySelector('style').textContent)"
+],
+[
+"Kursor pointer dan ada transisi",
+"gaya('.tombol', 'cursor') === 'pointer' && gaya('.tombol', 'transition-duration') !== '0s'"
+],
+[
+".tombol:hover memakai var(--gelap) dan translateY",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).some(r => r.selectorText === '.tombol:hover' && /var\\(--gelap\\)/.test(r.style.backgroundColor) && /translateY/.test(r.style.transform))"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "uji-css-2-b",
+"judul": "Bagian B: Tautan keluar & daftar belang",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "Lanjutan bagian A: halaman dan CSS-mu yang sudah lulus otomatis dipakai.",
+"soal": "Tambahkan panah <code>\" ↗\"</code> setelah setiap link yang href-nya diawali <code>https</code> (pakai selector atribut + <code>::after</code>). Baris <b>genap</b> <code>.daftar li</code> berlatar <code>#f1f5f9</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n\n    :root { --utama: #415a77; --gelap: #0d1b2a; --radius: 0.5rem; }\n    .tombol { background-color: var(--utama); color: white; border: 0; padding: 0.75rem 1.25rem; border-radius: var(--radius); cursor: pointer; transition: background-color 0.2s ease, transform 0.2s ease; }\n    .tombol:hover { background-color: var(--gelap); transform: translateY(-2px); }\n    /* tulis CSS bagian B di sini */\n  </style>\n</head>\n<body>\n  <button class=\"tombol\">Beli sekarang</button>\n  <a href=\"https://www.odoo.com\" class=\"tautan\">Dokumentasi</a>\n  <ul class=\"daftar\"><li>Kopi</li><li>Teh</li><li>Roti</li><li>Donat</li></ul>\n  <div class=\"notif\">Pesanan tersimpan</div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n\n    :root { --utama: #415a77; --gelap: #0d1b2a; --radius: 0.5rem; }\n    .tombol { background-color: var(--utama); color: white; border: 0; padding: 0.75rem 1.25rem; border-radius: var(--radius); cursor: pointer; transition: background-color 0.2s ease, transform 0.2s ease; }\n    .tombol:hover { background-color: var(--gelap); transform: translateY(-2px); }\n    a[href^=\"https\"]::after { content: \" ↗\"; }\n    .daftar li:nth-child(even) { background-color: #f1f5f9; }\n  </style>\n</head>\n<body>\n  <button class=\"tombol\">Beli sekarang</button>\n  <a href=\"https://www.odoo.com\" class=\"tautan\">Dokumentasi</a>\n  <ul class=\"daftar\"><li>Kopi</li><li>Teh</li><li>Roti</li><li>Donat</li></ul>\n  <div class=\"notif\">Pesanan tersimpan</div>\n</body>\n</html>\n",
+"jelas": "Selector atribut dan pseudo-element menambah petunjuk visual tanpa menyentuh HTML.",
+"kompleksitas": "",
+"petunjuk": [
+"a[href^=\"https\"]::after { content: \" ↗\"; }",
+"nth-child(even) = genap.",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<button class=\"tombol\">…</button>…<a href=\"https://www.odoo.com\" class=\"tautan\">…</a>…<ul class=\"daftar\"><li>…</li><li>…</li><li>…</li><li>…</li></ul>…<div class=\"notif\">…</div>…</body>…</html>\n"
+],
+"tes": [
+[
+"Link https diberi ::after \" ↗\"",
+"w.getComputedStyle($('a[href^=\"https\"]'), '::after').content === '\" ↗\"'"
+],
+[
+"Item genap berlatar #f1f5f9",
+"gaya($$('.daftar li')[1], 'background-color') === 'rgb(241, 245, 249)' && gaya($$('.daftar li')[3], 'background-color') === 'rgb(241, 245, 249)'"
+],
+[
+"Item ganjil tidak",
+"gaya($$('.daftar li')[0], 'background-color') !== 'rgb(241, 245, 249)'"
+],
+[
+"Tombol bagian A tetap bertema",
+"gaya('.tombol', 'background-color') === 'rgb(65, 90, 119)'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "<!-- Bagian B: tambahkan aturan di dalam <style> di atas -->\n"
+},
+{
+"id": "uji-css-2-c",
+"judul": "Bagian C: Notifikasi beranimasi",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "web",
+"fungsi": "",
+"cerita": "Lanjutan bagian B: halaman dan CSS-mu yang sudah lulus otomatis dipakai.",
+"soal": "Buat <code>@keyframes muncul</code> (opacity 0 → 1 dan sedikit geser), pasang ke <code>.notif</code> 0.4s dengan fill-mode <code>both</code>. Tambahkan <code>@media (prefers-reduced-motion: reduce)</code> yang mematikan transisi <code>.tombol</code> dan animasi <code>.notif</code>.",
+"awal": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n\n    :root { --utama: #415a77; --gelap: #0d1b2a; --radius: 0.5rem; }\n    .tombol { background-color: var(--utama); color: white; border: 0; padding: 0.75rem 1.25rem; border-radius: var(--radius); cursor: pointer; transition: background-color 0.2s ease, transform 0.2s ease; }\n    .tombol:hover { background-color: var(--gelap); transform: translateY(-2px); }\n    a[href^=\"https\"]::after { content: \" ↗\"; }\n    .daftar li:nth-child(even) { background-color: #f1f5f9; }\n    /* tulis CSS bagian C di sini */\n  </style>\n</head>\n<body>\n  <button class=\"tombol\">Beli sekarang</button>\n  <a href=\"https://www.odoo.com\" class=\"tautan\">Dokumentasi</a>\n  <ul class=\"daftar\"><li>Kopi</li><li>Teh</li><li>Roti</li><li>Donat</li></ul>\n  <div class=\"notif\">Pesanan tersimpan</div>\n</body>\n</html>\n",
+"solusi": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"utf-8\">\n  <title>Latihan CSS</title>\n  <style>\n\n    :root { --utama: #415a77; --gelap: #0d1b2a; --radius: 0.5rem; }\n    .tombol { background-color: var(--utama); color: white; border: 0; padding: 0.75rem 1.25rem; border-radius: var(--radius); cursor: pointer; transition: background-color 0.2s ease, transform 0.2s ease; }\n    .tombol:hover { background-color: var(--gelap); transform: translateY(-2px); }\n    a[href^=\"https\"]::after { content: \" ↗\"; }\n    .daftar li:nth-child(even) { background-color: #f1f5f9; }\n    @keyframes muncul { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }\n    .notif { animation: muncul 0.4s ease-out both; }\n    @media (prefers-reduced-motion: reduce) { .tombol, .notif { transition: none; animation: none; } }\n  </style>\n</head>\n<body>\n  <button class=\"tombol\">Beli sekarang</button>\n  <a href=\"https://www.odoo.com\" class=\"tautan\">Dokumentasi</a>\n  <ul class=\"daftar\"><li>Kopi</li><li>Teh</li><li>Roti</li><li>Donat</li></ul>\n  <div class=\"notif\">Pesanan tersimpan</div>\n</body>\n</html>\n",
+"jelas": "Komponen ini siap dipakai ulang dan tetap nyaman bagi pengguna yang sensitif terhadap gerakan.",
+"kompleksitas": "",
+"petunjuk": [
+"@keyframes muncul { from { opacity: 0; ... } to { opacity: 1; ... } }",
+"Di dalam @media prefers-reduced-motion: .tombol, .notif { transition: none; animation: none; }",
+"Kerangka solusinya:\n<!DOCTYPE html>…<html lang=\"id\">…<head>…<meta charset=\"utf-8\">…<title>…</title>…<style>…</style>…</head>…<body>…<button class=\"tombol\">…</button>…<a href=\"https://www.odoo.com\" class=\"tautan\">…</a>…<ul class=\"daftar\"><li>…</li><li>…</li><li>…</li><li>…</li></ul>…<div class=\"notif\">…</div>…</body>…</html>\n"
+],
+"tes": [
+[
+"Ada @keyframes muncul dari opacity 0 ke 1",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).some(r => r.type === 7 && r.name === 'muncul' && [...r.cssRules].some(k => k.style.opacity === '0') && [...r.cssRules].some(k => k.style.opacity === '1'))"
+],
+[
+".notif animasi muncul 0.4s both",
+"gaya('.notif', 'animation-name') === 'muncul' && gaya('.notif', 'animation-duration') === '0.4s' && gaya('.notif', 'animation-fill-mode') === 'both'"
+],
+[
+"prefers-reduced-motion mematikan transisi tombol dan animasi notif",
+"[...d.styleSheets].flatMap(s => [...s.cssRules]).filter(r => r.type === 4).some(r => /prefers-reduced-motion/.test(r.conditionText || r.media.mediaText) && [...r.cssRules].some(x => /\\.tombol/.test(x.selectorText) && /none/.test(x.style.transition || x.style.transitionProperty)) && [...r.cssRules].some(x => /\\.notif/.test(x.selectorText) && /none/.test(x.style.animation || x.style.animationName)))"
+],
+[
+"Bagian A dan B tetap berlaku",
+"gaya('.tombol', 'cursor') === 'pointer' && gaya($$('.daftar li')[1], 'background-color') === 'rgb(241, 245, 249)'"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "<!-- Bagian C: tambahkan aturan di dalam <style> di atas -->\n"
+}
+],
+"ujian": true,
+"cakupan": "Bab 6–10: dekorasi & hover, variabel & spesifisitas, selector lanjut, satuan, animasi"
+},
+{
+"id": "js-dasar",
+"topik": "js",
+"setelah": "dasar",
+"judul": "Variabel, tipe, dan template literal",
+"contoh": {
+"judul": "Contoh: const, let, template literal",
+"penjelasan": "<p><code>const</code> untuk nilai yang tidak diganti, <code>let</code> untuk yang berubah. Template literal (diapit backtick) menyisipkan nilai dengan <code>${...}</code>. <code>typeof</code> memberi tahu tipe data.</p>",
+"kode": "const nama = \"Jauza\";\nlet umur = 22;\numur = umur + 1;\nconsole.log(`Halo, ${nama}! Umur ${umur} tahun.`);\nconsole.log(typeof nama, typeof umur, typeof true);\nconsole.log((19.99 * 3).toFixed(2));",
+"kunci": "Pakai const secara bawaan, let hanya bila nilainya memang berubah. Jangan pakai var.",
+"bahasa": "js",
+"keluaran": "Halo, Jauza! Umur 23 tahun.\nstring number boolean\n59.97"
+},
+"langkah": [
+{
+"id": "js-dasar-1",
+"judul": "Luas dan keliling",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "persegiPanjang",
+"cerita": "",
+"soal": "Buat <code>persegiPanjang(p, l)</code> yang mengembalikan objek <code>{ luas, keliling }</code>.",
+"awal": "function persegiPanjang() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function persegiPanjang(p, l) {\n  const luas = p * l;\n  const keliling = 2 * (p + l);\n  return { luas, keliling };\n}\n",
+"jelas": "Mengembalikan objek memudahkan pemanggil mengambil beberapa hasil sekaligus.",
+"kompleksitas": "",
+"petunjuk": [
+"Hitung dua nilai dengan const, lalu return objek.",
+"Singkatan properti: { luas, keliling } sama dengan { luas: luas, keliling: keliling }.",
+"Kerangka solusinya:\nfunction persegiPanjang(p, l) {\n  const luas = …\n  const keliling = …\n  return …\n}"
+],
+"tes": [
+[
+"persegiPanjang(4, 3)",
+"{\"luas\": 12, \"keliling\": 14}"
+],
+[
+"persegiPanjang(0, 5)",
+"{\"luas\": 0, \"keliling\": 10}"
+],
+[
+"persegiPanjang(2.5, 2)",
+"{\"luas\": 5, \"keliling\": 9}"
+],
+[
+"persegiPanjang(10, 10)",
+"{\"luas\": 100, \"keliling\": 40}"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-dasar-2",
+"judul": "Kartu nama",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "kartuNama",
+"cerita": "",
+"soal": "Buat <code>kartuNama(nama, posisi, kota)</code> yang mengembalikan teks <code>\"Jauza | Odoo Developer | Batam\"</code>. Nama dirapikan (<code>trim</code>) dan posisi ditulis huruf besar semua bila <code>posisi</code> berupa singkatan 2–3 huruf (misalnya \"qa\" → \"QA\").",
+"awal": "function kartuNama() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function kartuNama(nama, posisi, kota) {\n  const pos = posisi.length <= 3 ? posisi.toUpperCase() : posisi;\n  return `${nama.trim()} | ${pos} | ${kota}`;\n}\n",
+"jelas": "Ekspresi kondisi ? a : b (ternary) cocok untuk memilih nilai dalam satu baris.",
+"kompleksitas": "",
+"petunjuk": [
+"Template literal: `${a} | ${b} | ${c}`.",
+"Syarat singkatan: posisi.length <= 3, lalu toUpperCase().",
+"Kerangka solusinya:\nfunction kartuNama(nama, posisi, kota) {\n  const pos = …\n  return …\n}"
+],
+"tes": [
+[
+"kartuNama(\"Jauza\", \"Odoo Developer\", \"Batam\")",
+"\"Jauza | Odoo Developer | Batam\""
+],
+[
+"kartuNama(\"  Ani \", \"qa\", \"Solo\")",
+"\"Ani | QA | Solo\""
+],
+[
+"kartuNama(\"Budi\", \"UX\", \"Jakarta\")",
+"\"Budi | UX | Jakarta\""
+],
+[
+"kartuNama(\"Cita\", \"data\", \"Medan\")",
+"\"Cita | data | Medan\""
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-operator",
+"topik": "js",
+"setelah": "operator",
+"judul": "=== , ternary, dan ??",
+"contoh": {
+"judul": "Contoh: perbandingan ketat dan nilai bawaan",
+"penjelasan": "<p>Selalu pakai <code>===</code>: <code>\"5\" == 5</code> bernilai true karena tipe diubah diam-diam, sedangkan <code>\"5\" === 5</code> false. <code>??</code> memberi nilai bawaan hanya bila nilainya <code>null</code>/<code>undefined</code>, berbeda dengan <code>||</code> yang juga mengganti 0 dan string kosong.</p>",
+"kode": "console.log(\"5\" == 5, \"5\" === 5);\nconst stok = 0;\nconsole.log(stok || 10, stok ?? 10);\nconst member = true;\nconsole.log(member ? \"Diskon 10%\" : \"Harga normal\");\nconsole.log(7 % 2 === 1 ? \"ganjil\" : \"genap\");",
+"kunci": "=== selalu. ?? untuk nilai bawaan yang menghormati 0. Ternary untuk pilihan dua nilai.",
+"bahasa": "js",
+"keluaran": "true false\n10 0\nDiskon 10%\nganjil"
+},
+"langkah": [
+{
+"id": "js-op-1",
+"judul": "Ganjil atau genap",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "jenisAngka",
+"cerita": "",
+"soal": "Buat <code>jenisAngka(n)</code> yang mengembalikan <code>\"genap\"</code> atau <code>\"ganjil\"</code>. Bila <code>n</code> bukan bilangan bulat (misalnya 2.5 atau \"4\"), kembalikan <code>\"bukan bilangan bulat\"</code>.",
+"awal": "function jenisAngka() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function jenisAngka(n) {\n  if (!Number.isInteger(n)) return \"bukan bilangan bulat\";\n  return n % 2 === 0 ? \"genap\" : \"ganjil\";\n}\n",
+"jelas": "Di JavaScript, sisa bagi bilangan negatif ikut negatif. Mengecek === 0 untuk genap menghindari jebakan itu.",
+"kompleksitas": "",
+"petunjuk": [
+"Number.isInteger(\"4\") bernilai false karena tipenya string.",
+"-3 % 2 bernilai -1, jadi cek genap dengan === 0, bukan ganjil dengan === 1.",
+"Kerangka solusinya:\nfunction jenisAngka(n) {\n  if (!Number.isInteger(n)) return …\n  return …\n}"
+],
+"tes": [
+[
+"jenisAngka(4)",
+"\"genap\""
+],
+[
+"jenisAngka(7)",
+"\"ganjil\""
+],
+[
+"jenisAngka(-3)",
+"\"ganjil\""
+],
+[
+"jenisAngka(0)",
+"\"genap\""
+],
+[
+"jenisAngka(\"4\")",
+"\"bukan bilangan bulat\""
+],
+[
+"jenisAngka(2.5)",
+"\"bukan bilangan bulat\""
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-op-2",
+"judul": "Harga dengan nilai bawaan",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "hargaAkhir",
+"cerita": "",
+"soal": "Buat <code>hargaAkhir(produk)</code>. <code>produk</code> punya <code>harga</code> dan mungkin <code>diskon</code> (persen) serta <code>pajak</code> (persen). Diskon bawaan 0, pajak bawaan 11, tetapi <b>pajak 0 harus tetap 0</b>. Kembalikan harga setelah diskon lalu pajak, dibulatkan dengan <code>Math.round</code>.",
+"awal": "function hargaAkhir() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function hargaAkhir(produk) {\n  const diskon = produk.diskon ?? 0;\n  const pajak = produk.pajak ?? 11;\n  return Math.round(produk.harga * (1 - diskon / 100) * (1 + pajak / 100));\n}\n",
+"jelas": "?? hanya mengganti null/undefined. Bug '0 dianggap kosong' sering terjadi pada diskon, stok, atau qty.",
+"kompleksitas": "",
+"petunjuk": [
+"Gunakan ?? untuk nilai bawaan.",
+"Dengan ||, pajak: 0 akan berubah menjadi 11; itulah jebakannya.",
+"Kerangka solusinya:\nfunction hargaAkhir(produk) {\n  const diskon = …\n  const pajak = …\n  return …\n}"
+],
+"tes": [
+[
+"hargaAkhir({ harga: 100000 })",
+"111000"
+],
+[
+"hargaAkhir({ harga: 100000, diskon: 10 })",
+"99900"
+],
+[
+"hargaAkhir({ harga: 100000, pajak: 0 })",
+"100000"
+],
+[
+"hargaAkhir({ harga: 50000, diskon: 0, pajak: 0 })",
+"50000"
+],
+[
+"hargaAkhir({ harga: 19999, diskon: 15 })",
+"18869"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-loop",
+"topik": "js",
+"setelah": "kondisiloop",
+"judul": "if, for, dan for...of",
+"contoh": {
+"judul": "Contoh: for klasik, for...of, break",
+"penjelasan": "<p><code>for (let i = 0; i &lt; n; i++)</code> bila butuh indeks, <code>for (const x of array)</code> untuk menelusuri isi, <code>break</code> untuk berhenti lebih awal.</p>",
+"kode": "const nilai = [70, 85, 40, 92];\nfor (const n of nilai) {\n  if (n < 50) {\n    console.log(\"Ada yang tidak lulus:\", n);\n    break;\n  }\n}\nlet total = 0;\nfor (let i = 1; i <= 5; i++) total += i;\nconsole.log(total);",
+"kunci": "for...of untuk isi array, for...in untuk kunci objek (jarang dipakai untuk array).",
+"bahasa": "js",
+"keluaran": "Ada yang tidak lulus: 40\n15"
+},
+"langkah": [
+{
+"id": "js-loop-1",
+"judul": "FizzBuzz JavaScript",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "fizzbuzz",
+"cerita": "",
+"soal": "Buat <code>fizzbuzz(n)</code> yang mengembalikan array untuk 1..n: kelipatan 3 → \"Fizz\", 5 → \"Buzz\", keduanya → \"FizzBuzz\", lainnya angka sebagai <b>number</b>.",
+"awal": "function fizzbuzz() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function fizzbuzz(n) {\n  const hasil = [];\n  for (let i = 1; i <= n; i++) {\n    if (i % 15 === 0) hasil.push(\"FizzBuzz\");\n    else if (i % 3 === 0) hasil.push(\"Fizz\");\n    else if (i % 5 === 0) hasil.push(\"Buzz\");\n    else hasil.push(i);\n  }\n  return hasil;\n}\n",
+"jelas": "Soal yang sama seperti Python, tetapi perhatikan tipe: di sini angka tetap number.",
+"kompleksitas": "",
+"petunjuk": [
+"Cek kelipatan 15 lebih dulu.",
+"push(i) memasukkan angka (number), bukan string.",
+"Kerangka solusinya:\nfunction fizzbuzz(n) {\n  const hasil = …\n  for (let i = …\n    if (i % 15 = …\n    else if (i % 3 = …\n    else if (i % 5 = …\n    else hasil.push(i);\n  }\n  return …\n}"
+],
+"tes": [
+[
+"fizzbuzz(5)",
+"[1, 2, \"Fizz\", 4, \"Buzz\"]"
+],
+[
+"fizzbuzz(15)",
+"[1, 2, \"Fizz\", 4, \"Buzz\", \"Fizz\", 7, 8, \"Fizz\", \"Buzz\", 11, \"Fizz\", 13, 14, \"FizzBuzz\"]"
+],
+[
+"fizzbuzz(0)",
+"[]"
+],
+[
+"fizzbuzz(1)",
+"[1]"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-loop-2",
+"judul": "Stok pertama yang habis",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "pertamaHabis",
+"cerita": "",
+"soal": "Buat <code>pertamaHabis(stok, keluar)</code>: <code>stok</code> angka awal, <code>keluar</code> array jumlah barang keluar per hari. Kembalikan nomor hari (mulai 1) saat stok pertama kali ≤ 0, atau <code>-1</code> bila tidak pernah habis. Berhenti memeriksa setelah stok habis.",
+"awal": "function pertamaHabis() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function pertamaHabis(stok, keluar) {\n  for (let i = 0; i < keluar.length; i++) {\n    stok -= keluar[i];\n    if (stok <= 0) return i + 1;\n  }\n  return -1;\n}\n",
+"jelas": "return di dalam for langsung menghentikan fungsi, sama seperti break lalu return.",
+"kompleksitas": "",
+"petunjuk": [
+"Kurangi stok setiap hari, lalu cek.",
+"Indeks array mulai 0, nomor hari mulai 1: return i + 1.",
+"Kerangka solusinya:\nfunction pertamaHabis(stok, keluar) {\n  for (let i = …\n    stok -= …\n    if (stok <= …\n  }\n  return …\n}"
+],
+"tes": [
+[
+"pertamaHabis(10, [3, 4, 5, 1])",
+"3"
+],
+[
+"pertamaHabis(10, [1, 1])",
+"-1"
+],
+[
+"pertamaHabis(5, [5])",
+"1"
+],
+[
+"pertamaHabis(0, [])",
+"-1"
+],
+[
+"pertamaHabis(3, [0, 0, 4])",
+"3"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-fungsi",
+"topik": "js",
+"setelah": "fungsi",
+"judul": "Arrow function dan fungsi tingkat tinggi",
+"contoh": {
+"judul": "Contoh: parameter bawaan dan fungsi yang mengembalikan fungsi",
+"penjelasan": "<p>Arrow function <code>(a, b) =&gt; a * b</code> ringkas untuk fungsi kecil. Parameter bawaan <code>(harga, pajak = 11)</code>. Fungsi bisa menerima atau mengembalikan fungsi lain (<i>higher-order function</i>).</p>",
+"kode": "const kali = (a, b) => a * b;\nconst denganPajak = (harga, pajak = 11) => harga * (1 + pajak / 100);\nconst pengali = n => x => x * n;\nconst gandakan = pengali(2);\nconsole.log(kali(3, 4), denganPajak(100), gandakan(21));",
+"kunci": "Arrow dengan satu ekspresi otomatis return. Bila memakai { }, return wajib ditulis.",
+"bahasa": "js",
+"keluaran": "12 111.00000000000001 42"
+},
+"langkah": [
+{
+"id": "js-fun-1",
+"judul": "Konversi suhu",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "keFahrenheit",
+"cerita": "",
+"soal": "Buat arrow function <code>keFahrenheit</code> dengan parameter <code>c</code> dan <code>desimal = 1</code> yang mengembalikan F = C × 9/5 + 32 dibulatkan ke <code>desimal</code> angka di belakang koma (hasil berupa number).",
+"awal": "const keFahrenheit = () => {\n  // tulis kodemu di sini\n};\n",
+"solusi": "const keFahrenheit = (c, desimal = 1) => Number((c * 9 / 5 + 32).toFixed(desimal));\n",
+"jelas": "toFixed mengembalikan string, sumber bug klasik saat hasilnya dijumlahkan lagi.",
+"kompleksitas": "",
+"petunjuk": [
+"toFixed menghasilkan string; bungkus dengan Number().",
+"Parameter bawaan: (c, desimal = 1) =>.",
+"Kerangka solusinya:\nconst keFahrenheit = …"
+],
+"tes": [
+[
+"keFahrenheit(100)",
+"212"
+],
+[
+"keFahrenheit(36.6)",
+"97.9"
+],
+[
+"keFahrenheit(-40)",
+"-40"
+],
+[
+"keFahrenheit(21.123, 2)",
+"70.02"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-fun-2",
+"judul": "Pembuat diskon",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "buatDiskon",
+"cerita": "",
+"soal": "Buat <code>buatDiskon(persen)</code> yang <b>mengembalikan fungsi</b>. Fungsi itu menerima harga dan mengembalikan harga setelah diskon (Math.round). Persen di luar 0–100 dibatasi ke rentang itu.",
+"awal": "function buatDiskon() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function buatDiskon(persen) {\n  const p = Math.min(100, Math.max(0, persen));\n  return harga => Math.round(harga * (1 - p / 100));\n}\n",
+"jelas": "Fungsi yang mengingat variabel dari luar disebut closure. Tes terakhir memakai fungsi hasil buatDiskon sebagai callback map.",
+"kompleksitas": "",
+"petunjuk": [
+"return harga => ... mengembalikan fungsi baru yang 'mengingat' persen.",
+"Batasi dengan Math.min(100, Math.max(0, persen)).",
+"Kerangka solusinya:\nfunction buatDiskon(persen) {\n  const p = …\n  return …\n}"
+],
+"tes": [
+[
+"buatDiskon(10)(50000)",
+"45000"
+],
+[
+"buatDiskon(0)(1999)",
+"1999"
+],
+[
+"buatDiskon(150)(1000)",
+"0"
+],
+[
+"buatDiskon(-5)(1000)",
+"1000"
+],
+[
+"[1000, 2500].map(buatDiskon(20))",
+"[800, 2000]"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-array",
+"topik": "js",
+"setelah": "array",
+"judul": "map, filter, reduce, sort",
+"contoh": {
+"judul": "Contoh: rantai method array",
+"penjelasan": "<p><code>filter</code> menyaring, <code>map</code> mengubah setiap item, <code>reduce</code> meringkas menjadi satu nilai, <code>sort((a, b) =&gt; a - b)</code> mengurutkan angka. Semua kecuali sort tidak mengubah array asli.</p>",
+"kode": "const produk = [\n  { nama: \"Kopi\", harga: 18000, stok: 5 },\n  { nama: \"Teh\", harga: 6000, stok: 0 },\n  { nama: \"Roti\", harga: 15000, stok: 2 },\n];\nconst tersedia = produk.filter(p => p.stok > 0).map(p => p.nama);\nconst totalNilai = produk.reduce((t, p) => t + p.harga * p.stok, 0);\nconst termurah = [...produk].sort((a, b) => a.harga - b.harga).map(p => p.nama);\nconsole.log(tersedia, totalNilai, termurah);",
+"kunci": "sort mengubah array asli; salin dulu dengan [...arr]. sort tanpa fungsi mengurutkan sebagai teks.",
+"bahasa": "js",
+"keluaran": "[\"Kopi\",\"Roti\"] 120000 [\"Teh\",\"Roti\",\"Kopi\"]"
+},
+"langkah": [
+{
+"id": "js-arr-1",
+"judul": "Daftar harga setelah diskon",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "daftarDiskon",
+"cerita": "",
+"soal": "Buat <code>daftarDiskon(produk, persen)</code>: ambil produk dengan <code>stok &gt; 0</code>, lalu kembalikan array <code>{ nama, harga }</code> dengan harga setelah diskon (Math.round).",
+"awal": "function daftarDiskon() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function daftarDiskon(produk, persen) {\n  return produk\n    .filter(p => p.stok > 0)\n    .map(p => ({ nama: p.nama, harga: Math.round(p.harga * (1 - persen / 100)) }));\n}\n",
+"jelas": "Tanpa kurung, p => { nama: ... } dianggap blok kode, bukan objek, sehingga hasilnya undefined.",
+"kompleksitas": "",
+"petunjuk": [
+"filter dulu, baru map.",
+"Mengembalikan objek dari arrow function perlu kurung: p => ({ ... }).",
+"Kerangka solusinya:\nfunction daftarDiskon(produk, persen) {\n  return …\n    .filter(p = …\n    .map(p = …\n}"
+],
+"tes": [
+[
+"daftarDiskon([{ nama: \"Kopi\", harga: 18000, stok: 5 }, { nama: \"Teh\", harga: 6000, stok: 0 }], 10)",
+"[{\"nama\": \"Kopi\", \"harga\": 16200}]"
+],
+[
+"daftarDiskon([], 50)",
+"[]"
+],
+[
+"daftarDiskon([{ nama: \"A\", harga: 999, stok: 1 }], 33)",
+"[{\"nama\": \"A\", \"harga\": 669}]"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-arr-2",
+"judul": "Ringkasan per kategori",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "ringkasKategori",
+"cerita": "",
+"soal": "Buat <code>ringkasKategori(produk)</code> yang memakai <code>reduce</code> untuk menghasilkan objek <code>{ kategori: totalNilaiStok }</code> (harga × stok), lalu kembalikan array <code>[kategori, total]</code> diurutkan dari total terbesar; seri diurutkan nama kategori. Array asli tidak boleh berubah.",
+"awal": "function ringkasKategori() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function ringkasKategori(produk) {\n  const total = produk.reduce((acc, p) => {\n    acc[p.kategori] = (acc[p.kategori] || 0) + p.harga * p.stok;\n    return acc;\n  }, {});\n  return Object.entries(total).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));\n}\n",
+"jelas": "|| di fungsi sort menjadi pemecah seri: bila selisih total 0, bandingkan nama.",
+"kompleksitas": "",
+"petunjuk": [
+"reduce dengan akumulator objek {}: acc[k] = (acc[k] || 0) + nilai; return acc.",
+"Object.entries(obj) → array [kunci, nilai]; urutkan dengan b[1] - a[1] || a[0].localeCompare(b[0]).",
+"Kerangka solusinya:\nfunction ringkasKategori(produk) {\n  const total = …\n    acc[p.kategori] = …\n    return …\n  }, {});\n  return …\n}"
+],
+"tes": [
+[
+"ringkasKategori([{ kategori: \"Minuman\", harga: 18000, stok: 5 }, { kategori: \"Makanan\", harga: 15000, stok: 2 }, { kategori: \"Minuman\", harga: 6000, stok: 10 }])",
+"[[\"Minuman\", 150000], [\"Makanan\", 30000]]"
+],
+[
+"ringkasKategori([])",
+"[]"
+],
+[
+"ringkasKategori([{ kategori: \"B\", harga: 1, stok: 1 }, { kategori: \"A\", harga: 1, stok: 1 }])",
+"[[\"A\", 1], [\"B\", 1]]"
+],
+[
+"const data = [{ kategori: \"X\", harga: 2, stok: 1 }, { kategori: \"Y\", harga: 5, stok: 1 }];\nringkasKategori(data);\nconst hasil = data.map(p => p.kategori);",
+"[\"X\", \"Y\"]"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-strobj",
+"topik": "js",
+"setelah": "strobj",
+"judul": "Destructuring dan spread",
+"contoh": {
+"judul": "Contoh: membongkar dan menyalin objek",
+"penjelasan": "<p>Destructuring mengambil properti ke variabel: <code>const { nama, alamat: { kota } } = user</code>. Spread <code>{ ...lama, ...baru }</code> menyalin dan menimpa tanpa mengubah objek asli.</p>",
+"kode": "const user = { nama: \"Ani\", email: \"ani@x.id\", alamat: { kota: \"Batam\" } };\nconst { nama, alamat: { kota } } = user;\nconsole.log(nama, kota);\nconst baru = { ...user, email: \"ani@baru.id\" };\nconsole.log(user.email, baru.email);\nconsole.log(Object.keys(user), \"  odoo  \".trim().toUpperCase());",
+"kunci": "Spread menyalin satu tingkat (dangkal). Objek di dalamnya masih dipakai bersama.",
+"bahasa": "js",
+"keluaran": "Ani Batam\nani@x.id ani@baru.id\n[\"nama\",\"email\",\"alamat\"] ODOO"
+},
+"langkah": [
+{
+"id": "js-so-1",
+"judul": "Ringkas profil",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "ringkasProfil",
+"cerita": "",
+"soal": "Buat <code>ringkasProfil(user)</code> memakai destructuring di parameter: kembalikan <code>\"Ani (ani@x.id) - Batam\"</code>. Bila <code>alamat</code> tidak ada, tulis kota <code>\"-\"</code>.",
+"awal": "function ringkasProfil() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function ringkasProfil({ nama, email, alamat = {} }) {\n  const { kota = \"-\" } = alamat;\n  return `${nama} (${email}) - ${kota}`;\n}\n",
+"jelas": "Nilai bawaan di destructuring mencegah error 'Cannot read properties of undefined'.",
+"kompleksitas": "",
+"petunjuk": [
+"Destructuring di parameter: function f({ nama, email, alamat = {} }).",
+"Nilai bawaan saat destructuring: const { kota = \"-\" } = alamat.",
+"Kerangka solusinya:\nfunction ringkasProfil({ nama, email, alamat = …\n  const { kota = …\n  return …\n}"
+],
+"tes": [
+[
+"ringkasProfil({ nama: \"Ani\", email: \"ani@x.id\", alamat: { kota: \"Batam\" } })",
+"\"Ani (ani@x.id) - Batam\""
+],
+[
+"ringkasProfil({ nama: \"Budi\", email: \"b@y.id\" })",
+"\"Budi (b@y.id) - -\""
+],
+[
+"ringkasProfil({ nama: \"Cita\", email: \"c@z.id\", alamat: {} })",
+"\"Cita (c@z.id) - -\""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-so-2",
+"judul": "Perbarui tanpa merusak",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "perbarui",
+"cerita": "",
+"soal": "Buat <code>perbarui(profil, perubahan)</code> yang mengembalikan profil <b>baru</b>: properti dari <code>perubahan</code> menimpa yang lama, kecuali properti bernilai <code>undefined</code> diabaikan, dan <code>email</code> selalu disimpan huruf kecil tanpa spasi tepi. Profil asli tidak boleh berubah.",
+"awal": "function perbarui() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function perbarui(profil, perubahan) {\n  const bersih = Object.fromEntries(Object.entries(perubahan).filter(([, v]) => v !== undefined));\n  const hasil = { ...profil, ...bersih };\n  if (hasil.email) hasil.email = hasil.email.trim().toLowerCase();\n  return hasil;\n}\n",
+"jelas": "Pola 'buat salinan baru, jangan ubah aslinya' (immutable update) adalah dasar state di React dan reducer.",
+"kompleksitas": "",
+"petunjuk": [
+"Buang dulu nilai undefined: Object.entries(...).filter(([, v]) => v !== undefined), lalu Object.fromEntries.",
+"Gabungkan dengan spread { ...profil, ...bersih }, lalu rapikan email.",
+"Kerangka solusinya:\nfunction perbarui(profil, perubahan) {\n  const bersih = …\n  const hasil = …\n  if (hasil.email) hasil.email = …\n  return …\n}"
+],
+"tes": [
+[
+"perbarui({ nama: \"Ani\", email: \"a@x.id\" }, { email: \" ANI@Baru.ID \" })",
+"{\"nama\": \"Ani\", \"email\": \"ani@baru.id\"}"
+],
+[
+"perbarui({ nama: \"Ani\", kota: \"Solo\" }, { kota: undefined, umur: 22 })",
+"{\"nama\": \"Ani\", \"kota\": \"Solo\", \"umur\": 22}"
+],
+[
+"const lama = { nama: \"Budi\", email: \"b@x.id\" };\nperbarui(lama, { nama: \"Budi S\" });\nconst hasil = lama;",
+"{\"nama\": \"Budi\", \"email\": \"b@x.id\"}"
+],
+[
+"perbarui({}, {})",
+"{}"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-dom",
+"topik": "js",
+"setelah": "dom",
+"judul": "Membangun HTML dengan aman",
+"contoh": {
+"judul": "Contoh: data → HTML, dengan escape",
+"penjelasan": "<p>Sebelum menyisipkan teks dari pengguna ke <code>innerHTML</code>, karakter <code>&amp; &lt; &gt; \"</code> harus di-<i>escape</i>; tanpa itu, nama seperti <code>&lt;img onerror=...&gt;</code> bisa menjalankan skrip (XSS). Di DOM sungguhan, <code>textContent</code> otomatis aman.</p>",
+"kode": "const esc = s => String(s).replace(/&/g, \"&amp;\").replace(/</g, \"&lt;\").replace(/>/g, \"&gt;\").replace(/\"/g, \"&quot;\");\nconst produk = [\"Kopi\", \"<b>Teh</b>\"];\nconst html = \"<ul>\" + produk.map(p => `<li>${esc(p)}</li>`).join(\"\") + \"</ul>\";\nconsole.log(html);\n// di halaman: document.querySelector(\"#daftar\").innerHTML = html;",
+"kunci": "Data pengguna → escape → baru masuk innerHTML. Atau pakai textContent.",
+"bahasa": "js",
+"keluaran": "<ul><li>Kopi</li><li>&lt;b&gt;Teh&lt;/b&gt;</li></ul>"
+},
+"langkah": [
+{
+"id": "js-dom-1",
+"judul": "Daftar HTML yang aman",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "daftarHTML",
+"cerita": "",
+"soal": "Buat <code>daftarHTML(items)</code> yang mengembalikan string <code>&lt;ul&gt;&lt;li&gt;…&lt;/li&gt;…&lt;/ul&gt;</code>. Setiap item di-escape: <code>&amp;</code> → <code>&amp;amp;</code>, <code>&lt;</code> → <code>&amp;lt;</code>, <code>&gt;</code> → <code>&amp;gt;</code>. Array kosong → <code>&lt;ul&gt;&lt;/ul&gt;</code>.",
+"awal": "function daftarHTML() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "const esc = s => String(s).replace(/&/g, \"&amp;\").replace(/</g, \"&lt;\").replace(/>/g, \"&gt;\");\n\nfunction daftarHTML(items) {\n  return \"<ul>\" + items.map(i => `<li>${esc(i)}</li>`).join(\"\") + \"</ul>\";\n}\n",
+"jelas": "Urutan replace penting: & harus diganti pertama. Ini cara kerja fungsi esc() yang dipakai KodeQuiz sendiri.",
+"kompleksitas": "",
+"petunjuk": [
+"map tiap item menjadi `<li>…</li>`, lalu join(\"\").",
+"Ganti & PALING DULU, supaya &lt; hasil penggantian tidak ikut berubah menjadi &amp;lt;.",
+"Kerangka solusinya:\nconst esc = …\n\nfunction daftarHTML(items) {\n  return …\n}"
+],
+"tes": [
+[
+"daftarHTML([\"Kopi\", \"Teh\"])",
+"\"<ul><li>Kopi</li><li>Teh</li></ul>\""
+],
+[
+"daftarHTML([])",
+"\"<ul></ul>\""
+],
+[
+"daftarHTML([\"<script>alert(1)</script>\"])",
+"\"<ul><li>&lt;script&gt;alert(1)&lt;/script&gt;</li></ul>\""
+],
+[
+"daftarHTML([\"A & B\", 42])",
+"\"<ul><li>A &amp; B</li><li>42</li></ul>\""
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-dom-2",
+"judul": "Tabel dari data",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "tabelHTML",
+"cerita": "",
+"soal": "Buat <code>tabelHTML(baris)</code>: <code>baris</code> array objek dengan kunci yang sama. Kembalikan <code>&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;kunci…&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;nilai…&lt;/td&gt;&lt;/tr&gt;…&lt;/tbody&gt;&lt;/table&gt;</code> (semua nilai di-escape seperti soal 1). Array kosong → string kosong.",
+"awal": "function tabelHTML() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "const esc = s => String(s).replace(/&/g, \"&amp;\").replace(/</g, \"&lt;\").replace(/>/g, \"&gt;\");\n\nfunction tabelHTML(baris) {\n  if (!baris.length) return \"\";\n  const kunci = Object.keys(baris[0]);\n  const kepala = \"<tr>\" + kunci.map(k => `<th>${esc(k)}</th>`).join(\"\") + \"</tr>\";\n  const isi = baris.map(b => \"<tr>\" + kunci.map(k => `<td>${esc(b[k])}</td>`).join(\"\") + \"</tr>\").join(\"\");\n  return `<table><thead>${kepala}</thead><tbody>${isi}</tbody></table>`;\n}\n",
+"jelas": "Pola 'data → HTML' inilah yang dikerjakan framework (React, OWL di Odoo) secara otomatis dan aman.",
+"kompleksitas": "",
+"petunjuk": [
+"Ambil judul kolom dari Object.keys(baris[0]).",
+"Bangun string kepala dan isi terpisah dengan map + join, lalu gabungkan.",
+"Kerangka solusinya:\nconst esc = …\n\nfunction tabelHTML(baris) {\n  if (!baris.length) return …\n  const kunci = …\n  const kepala = …\n  const isi = …\n  return …\n}"
+],
+"tes": [
+[
+"tabelHTML([{ produk: \"Kopi\", qty: 2 }, { produk: \"Teh\", qty: 1 }])",
+"\"<table><thead><tr><th>produk</th><th>qty</th></tr></thead><tbody><tr><td>Kopi</td><td>2</td></tr><tr><td>Teh</td><td>1</td></tr></tbody></table>\""
+],
+[
+"tabelHTML([])",
+"\"\""
+],
+[
+"tabelHTML([{ nama: \"<b>x</b>\" }])",
+"\"<table><thead><tr><th>nama</th></tr></thead><tbody><tr><td>&lt;b&gt;x&lt;/b&gt;</td></tr></tbody></table>\""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-async",
+"topik": "js",
+"setelah": "async",
+"judul": "async/await dan Promise.all",
+"contoh": {
+"judul": "Contoh: menunggu data",
+"penjelasan": "<p><code>await</code> menunggu Promise selesai di dalam fungsi <code>async</code>. <code>Promise.all</code> menjalankan beberapa permintaan bersamaan. Bungkus dengan <code>try/catch</code> untuk menangani kegagalan jaringan.</p>",
+"kode": "const tunda = (ms, nilai) => new Promise(r => setTimeout(() => r(nilai), ms));\nasync function utama() {\n  const a = await tunda(50, \"data A\");\n  const [b, c] = await Promise.all([tunda(50, \"B\"), tunda(50, \"C\")]);\n  console.log(a, b, c);\n  try { await Promise.reject(new Error(\"jaringan putus\")); }\n  catch (e) { console.log(\"Ditangani:\", e.message); }\n}\nawait utama();",
+"kunci": "Permintaan yang tidak saling bergantung → Promise.all (lebih cepat daripada await satu per satu).",
+"bahasa": "js",
+"keluaran": "data A B C\nDitangani: jaringan putus"
+},
+"langkah": [
+{
+"id": "js-async-1",
+"judul": "Total dari API",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "totalPesanan",
+"cerita": "",
+"soal": "Buat <code>async function totalPesanan(ambil)</code>. <code>ambil()</code> mengembalikan Promise berisi array pesanan <code>{ total }</code>. Kembalikan jumlah semua total.",
+"awal": "async function totalPesanan(ambil) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "async function totalPesanan(ambil) {\n  const pesanan = await ambil();\n  return pesanan.reduce((t, p) => t + p.total, 0);\n}\n",
+"jelas": "Tanpa await, pesanan berisi Promise, bukan array, dan reduce akan error.",
+"kompleksitas": "",
+"petunjuk": [
+"const pesanan = await ambil();",
+"Lalu reduce seperti biasa.",
+"Kerangka solusinya:\nasync function totalPesanan(ambil) {\n  const pesanan = …\n  return …\n}"
+],
+"tes": [
+[
+"await totalPesanan(async () => [{ total: 100 }, { total: 250 }])",
+"350"
+],
+[
+"await totalPesanan(async () => [])",
+"0"
+],
+[
+"await totalPesanan(() => new Promise(r => setTimeout(() => r([{ total: 5 }]), 30)))",
+"5"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-async-2",
+"judul": "Dashboard dengan cadangan",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "muatDashboard",
+"cerita": "",
+"soal": "Buat <code>async function muatDashboard(ambilPenjualan, ambilStok)</code> yang menjalankan keduanya <b>bersamaan</b> dengan <code>Promise.all</code> dan mengembalikan <code>{ penjualan, stok, galat: null }</code>. Bila salah satu gagal, kembalikan <code>{ penjualan: [], stok: [], galat: pesanError }</code>.",
+"awal": "async function muatDashboard(ambilPenjualan, ambilStok) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "async function muatDashboard(ambilPenjualan, ambilStok) {\n  try {\n    const [penjualan, stok] = await Promise.all([ambilPenjualan(), ambilStok()]);\n    return { penjualan, stok, galat: null };\n  } catch (e) {\n    return { penjualan: [], stok: [], galat: e.message };\n  }\n}\n",
+"jelas": "Tes terakhir mengukur waktu: dua permintaan 200 ms harus selesai sekitar 200 ms (bersamaan), bukan 400 ms.",
+"kompleksitas": "",
+"petunjuk": [
+"const [a, b] = await Promise.all([f(), g()]);",
+"Bungkus dengan try/catch; e.message berisi pesan error.",
+"Kerangka solusinya:\nasync function muatDashboard(ambilPenjualan, ambilStok) {\n  try {\n    const [penjualan, stok] = …\n    return …\n  } catch (e) {\n    return …\n  }\n}"
+],
+"tes": [
+[
+"await muatDashboard(async () => [1, 2], async () => [3])",
+"{\"penjualan\": [1, 2], \"stok\": [3], \"galat\": null}"
+],
+[
+"await muatDashboard(async () => [1], async () => { throw new Error(\"server stok mati\"); })",
+"{\"penjualan\": [], \"stok\": [], \"galat\": \"server stok mati\"}"
+],
+[
+"const mulai = Date.now();\nawait muatDashboard(() => new Promise(r => setTimeout(() => r([1]), 200)), () => new Promise(r => setTimeout(() => r([2]), 200)));\nconst hasil = Date.now() - mulai < 350;",
+"true"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-modern",
+"topik": "js",
+"setelah": "modern",
+"judul": "Optional chaining dan pengelompokan",
+"contoh": {
+"judul": "Contoh: ?. dan ??",
+"penjelasan": "<p><code>a?.b?.c</code> berhenti dengan <code>undefined</code> bila ada bagian yang kosong, tanpa error. Digabung dengan <code>??</code> untuk nilai bawaan. Method modern lain: <code>Object.entries</code>, <code>Array.from</code>, <code>includes</code>, <code>at(-1)</code>.</p>",
+"kode": "const user = { nama: \"Ani\", alamat: null };\nconsole.log(user.alamat?.kota ?? \"Kota belum diisi\");\nconsole.log([3, 5, 9].at(-1), [\"a\", \"b\"].includes(\"b\"));\nconst kelompok = [\"apel\", \"anggur\", \"mangga\"].reduce((o, b) => ((o[b[0]] ??= []).push(b), o), {});\nconsole.log(kelompok);",
+"kunci": "?. untuk data API yang mungkin tidak lengkap. ??= mengisi hanya bila masih null/undefined.",
+"bahasa": "js",
+"keluaran": "Kota belum diisi\n9 true\n{\"a\":[\"apel\",\"anggur\"],\"m\":[\"mangga\"]}"
+},
+"langkah": [
+{
+"id": "js-mod-1",
+"judul": "Kota pelanggan",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "kotaPelanggan",
+"cerita": "",
+"soal": "Buat <code>kotaPelanggan(order)</code> yang mengembalikan <code>order.partner.alamat.kota</code>, atau <code>\"Tidak diketahui\"</code> bila bagian mana pun kosong. Jangan sampai error.",
+"awal": "const kotaPelanggan = order => {\n  // tulis kodemu di sini\n};\n",
+"solusi": "const kotaPelanggan = order => order?.partner?.alamat?.kota ?? \"Tidak diketahui\";\n",
+"jelas": "Data dari API Odoo (misalnya partner_id bernilai false) sering tidak lengkap; ?. mencegah aplikasi berhenti karena error.",
+"kompleksitas": "",
+"petunjuk": [
+"Rangkai ?. di setiap titik.",
+"Kota berupa string kosong tetap dikembalikan apa adanya (?? tidak mengganti \"\").",
+"Kerangka solusinya:\nconst kotaPelanggan = …"
+],
+"tes": [
+[
+"kotaPelanggan({ partner: { alamat: { kota: \"Batam\" } } })",
+"\"Batam\""
+],
+[
+"kotaPelanggan({ partner: null })",
+"\"Tidak diketahui\""
+],
+[
+"kotaPelanggan({})",
+"\"Tidak diketahui\""
+],
+[
+"kotaPelanggan(undefined)",
+"\"Tidak diketahui\""
+],
+[
+"kotaPelanggan({ partner: { alamat: { kota: \"\" } } })",
+"\"\""
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-mod-2",
+"judul": "Kelompokkan berdasarkan kunci",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "kelompokkan",
+"cerita": "",
+"soal": "Buat <code>kelompokkan(data, kunci)</code> yang mengembalikan objek <code>{ nilaiKunci: [item, ...] }</code>. Item yang kuncinya kosong (null/undefined) masuk kelompok <code>\"(kosong)\"</code>.",
+"awal": "function kelompokkan() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function kelompokkan(data, kunci) {\n  const hasil = {};\n  for (const item of data) {\n    const k = item[kunci] ?? \"(kosong)\";\n    (hasil[k] ??= []).push(item);\n  }\n  return hasil;\n}\n",
+"jelas": "Mengelompokkan data adalah langkah pertama hampir semua laporan; di Odoo ini setara group by di list view.",
+"kompleksitas": "",
+"petunjuk": [
+"Untuk setiap item, tentukan k = item[kunci] ?? \"(kosong)\".",
+"(hasil[k] ??= []).push(item) membuat array baru bila belum ada.",
+"Kerangka solusinya:\nfunction kelompokkan(data, kunci) {\n  const hasil = …\n  for (const item of data) {\n    const k = …\n    (hasil[k] ??= …\n  }\n  return …\n}"
+],
+"tes": [
+[
+"kelompokkan([{ tim: \"A\", n: 1 }, { tim: \"B\", n: 2 }, { tim: \"A\", n: 3 }], \"tim\")",
+"{\"A\": [{\"tim\": \"A\", \"n\": 1}, {\"tim\": \"A\", \"n\": 3}], \"B\": [{\"tim\": \"B\", \"n\": 2}]}"
+],
+[
+"kelompokkan([{ tim: null }, { x: 1 }], \"tim\")",
+"{\"(kosong)\": [{\"tim\": null}, {\"x\": 1}]}"
+],
+[
+"kelompokkan([], \"tim\")",
+"{}"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-kasus",
+"topik": "js",
+"setelah": "kasus",
+"judul": "Debugging jebakan JavaScript",
+"contoh": {
+"judul": "Contoh: sort angka dan 0.1 + 0.2",
+"penjelasan": "<p>Dua jebakan terkenal: <code>sort()</code> tanpa pembanding mengurutkan angka sebagai teks (<code>[10, 9, 1]</code> → <code>[1, 10, 9]</code>), dan penjumlahan desimal tidak persis. Satu lagi: <code>==</code> mengubah tipe diam-diam.</p>",
+"kode": "console.log([10, 9, 1].sort());\nconsole.log([10, 9, 1].sort((a, b) => a - b));\nconsole.log(0.1 + 0.2, Math.round((0.1 + 0.2) * 100) / 100);\nconsole.log(\"\" == 0, \"\" === 0);",
+"kunci": "Angka: sort((a, b) => a - b). Uang: bulatkan, atau hitung dalam satuan terkecil (sen) sebagai bilangan bulat.",
+"bahasa": "js",
+"keluaran": "[1,10,9]\n[1,9,10]\n0.30000000000000004 0.3\ntrue false"
+},
+"langkah": [
+{
+"id": "js-kasus-1",
+"judul": "Perbaiki peringkat nilai",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "peringkat",
+"cerita": "",
+"soal": "Kode awal punya <b>dua bug</b>. <code>peringkat(nilai)</code> seharusnya mengembalikan 3 nilai tertinggi dari besar ke kecil, tanpa mengubah array asli.",
+"awal": "function peringkat(nilai) {\n  return nilai.sort().reverse().slice(0, 3);\n}\n",
+"solusi": "function peringkat(nilai) {\n  return [...nilai].sort((a, b) => b - a).slice(0, 3);\n}\n",
+"jelas": "Dua bug ini sering lolos uji karena data contoh kebetulan berdigit sama.",
+"kompleksitas": "",
+"petunjuk": [
+"Bug 1: sort tanpa pembanding mengurutkan sebagai teks ('100' < '70').",
+"Bug 2: sort mengubah array asli; salin dulu dengan [...nilai].",
+"Kerangka solusinya:\nfunction peringkat(nilai) {\n  return …\n}"
+],
+"tes": [
+[
+"peringkat([70, 100, 85, 9, 90])",
+"[100, 90, 85]"
+],
+[
+"peringkat([5])",
+"[5]"
+],
+[
+"const n = [3, 1, 2];\nperingkat(n);\nconst hasil = n;",
+"[3, 1, 2]"
+],
+[
+"peringkat([1000, 200, 30])",
+"[1000, 200, 30]"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-kasus-2",
+"judul": "Perbaiki total keranjang",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "totalKeranjang",
+"cerita": "",
+"soal": "Kode awal punya <b>tiga bug</b>. <code>totalKeranjang(items)</code> menerima item <code>{ harga, qty }</code> di mana <code>qty</code> bisa berupa string dari input form (\"2\"). Kembalikan total dibulatkan 2 desimal (number). Item dengan qty kosong/tidak valid dilewati.",
+"awal": "function totalKeranjang(items) {\n  var total = 0;\n  for (var i in items) {\n    total = total + items[i].harga * items[i].qty;\n  }\n  return total;\n}\n",
+"solusi": "function totalKeranjang(items) {\n  let total = 0;\n  for (const item of items) {\n    const qty = Number(item.qty);\n    if (!Number.isFinite(qty) || item.qty === \"\") continue;\n    total += item.harga * qty;\n  }\n  return Math.round(total * 100) / 100;\n}\n",
+"jelas": "Input form selalu string. Lupa mengubahnya ke angka membuat 15000 * \"2\" kebetulan benar tetapi \"2\" + 1 menjadi \"21\".",
+"kompleksitas": "",
+"petunjuk": [
+"Bug 1: var + for...in di array. Bug 2: qty string dijumlahkan. Bug 3: 0.1 + 0.2.",
+"Number(\"abc\") = NaN; cek dengan Number.isFinite. Number(\"\") = 0, jadi string kosong perlu dicek terpisah.",
+"Kerangka solusinya:\nfunction totalKeranjang(items) {\n  let total = …\n  for (const item of items) {\n    const qty = …\n    if (!Number.isFinite(qty) || item.qty = …\n    total += …\n  }\n  return …\n}"
+],
+"tes": [
+[
+"totalKeranjang([{ harga: 0.1, qty: \"1\" }, { harga: 0.2, qty: 1 }])",
+"0.3"
+],
+[
+"totalKeranjang([{ harga: 15000, qty: \"2\" }, { harga: 6000, qty: \"abc\" }])",
+"30000"
+],
+[
+"totalKeranjang([])",
+"0"
+],
+[
+"totalKeranjang([{ harga: 10, qty: \"\" }, { harga: 5, qty: 3 }])",
+"15"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-scope",
+"topik": "js",
+"setelah": "scope",
+"judul": "Closure: fungsi yang mengingat",
+"contoh": {
+"judul": "Contoh: penghitung privat",
+"penjelasan": "<p>Closure terjadi ketika fungsi dalam tetap bisa memakai variabel fungsi luar walau fungsi luar sudah selesai. Ini cara membuat data 'privat' tanpa class.</p>",
+"kode": "function buatPenghitung() {\n  let n = 0;\n  return { tambah: () => ++n, nilai: () => n };\n}\nconst a = buatPenghitung(), b = buatPenghitung();\na.tambah(); a.tambah(); b.tambah();\nconsole.log(a.nilai(), b.nilai());",
+"kunci": "Setiap pemanggilan buatPenghitung() membuat variabel n sendiri.",
+"bahasa": "js",
+"keluaran": "2 1"
+},
+"langkah": [
+{
+"id": "js-scope-1",
+"judul": "Nomor antrean",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "buatAntrean",
+"cerita": "",
+"soal": "Buat <code>buatAntrean(awalan)</code> yang mengembalikan fungsi. Setiap dipanggil, fungsi itu mengembalikan nomor berikutnya: <code>\"A001\"</code>, <code>\"A002\"</code>, … (3 digit). Setiap antrean punya penghitung sendiri.",
+"awal": "function buatAntrean() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function buatAntrean(awalan) {\n  let n = 0;\n  return () => awalan + String(++n).padStart(3, \"0\");\n}\n",
+"jelas": "Closure menjaga n tetap ada di antara pemanggilan tanpa variabel global.",
+"kompleksitas": "",
+"petunjuk": [
+"Simpan let n = 0 di fungsi luar, kembalikan fungsi yang menaikkan n.",
+"padStart(3, \"0\") menambah nol di depan.",
+"Kerangka solusinya:\nfunction buatAntrean(awalan) {\n  let n = …\n  return …\n}"
+],
+"tes": [
+[
+"const a = buatAntrean(\"A\");\na();\nconst hasil = a();",
+"\"A002\""
+],
+[
+"const a = buatAntrean(\"A\"), b = buatAntrean(\"B\");\na(); a();\nconst hasil = [a(), b()];",
+"[\"A003\", \"B001\"]"
+],
+[
+"buatAntrean(\"CS-\")()",
+"\"CS-001\""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-scope-2",
+"judul": "Fungsi sekali jalan dan memo",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "memo",
+"cerita": "",
+"soal": "Buat <code>memo(fn)</code> yang mengembalikan fungsi baru: hasil untuk argumen yang sama disimpan, sehingga <code>fn</code> hanya dipanggil sekali per argumen. Fungsi hasil juga punya properti <code>panggilan</code> yang mencatat berapa kali <code>fn</code> benar-benar dipanggil.",
+"awal": "function memo() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function memo(fn) {\n  const cache = new Map();\n  const bungkus = x => {\n    if (!cache.has(x)) {\n      cache.set(x, fn(x));\n      bungkus.panggilan++;\n    }\n    return cache.get(x);\n  };\n  bungkus.panggilan = 0;\n  return bungkus;\n}\n",
+"jelas": "Memoization mempercepat perhitungan mahal yang sering diulang dengan argumen sama.",
+"kompleksitas": "",
+"petunjuk": [
+"Simpan hasil di Map di dalam closure.",
+"Properti fungsi bisa ditambahkan langsung: bungkus.panggilan = 0.",
+"Kerangka solusinya:\nfunction memo(fn) {\n  const cache = …\n  const bungkus = …\n    if (!cache.has(x)) {\n      cache.set(x, fn(x));\n      bungkus.panggilan++;\n    }\n    return …\n  };\n  bungkus.panggilan = …\n  return …\n}"
+],
+"tes": [
+[
+"const kuadrat = memo(x => x * x);\nkuadrat(4); kuadrat(4); kuadrat(5);\nconst hasil = [kuadrat(5), kuadrat.panggilan];",
+"[25, 2]"
+],
+[
+"const f = memo(x => x + 1);\nconst hasil = f.panggilan;",
+"0"
+],
+[
+"const g = memo(s => s.toUpperCase());\nconst hasil = [g(\"a\"), g(\"a\"), g(\"b\"), g.panggilan];",
+"[\"A\", \"A\", \"B\", 2]"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-event",
+"topik": "js",
+"setelah": "event",
+"judul": "Validasi form dan debounce",
+"contoh": {
+"judul": "Contoh: logika validasi terpisah dari DOM",
+"penjelasan": "<p>Logika validasi sebaiknya fungsi murni (data masuk → pesan error keluar) yang dipanggil dari event <code>submit</code>. Debounce menunda pemanggilan sampai pengguna berhenti mengetik, cocok untuk kotak pencarian.</p>",
+"kode": "function validasi({ email }) {\n  return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email) ? {} : { email: \"Format email salah\" };\n}\nconsole.log(validasi({ email: \"ani@x.id\" }), validasi({ email: \"ani\" }));\n// form.addEventListener(\"submit\", e => { const err = validasi(data); if (Object.keys(err).length) e.preventDefault(); });",
+"kunci": "Pisahkan logika (mudah dites) dari kode DOM (addEventListener).",
+"bahasa": "js",
+"keluaran": "{} {\"email\":\"Format email salah\"}"
+},
+"langkah": [
+{
+"id": "js-ev-1",
+"judul": "Validasi form lamaran",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "validasiLamaran",
+"cerita": "",
+"soal": "Buat <code>validasiLamaran(data)</code> yang mengembalikan objek error (kosong bila valid): <code>nama</code> wajib minimal 3 huruf setelah trim → <code>\"Nama minimal 3 huruf\"</code>; <code>email</code> harus mengandung <code>@</code> dan titik setelahnya → <code>\"Email tidak valid\"</code>; <code>umur</code> harus angka 17–60 → <code>\"Umur 17-60\"</code>.",
+"awal": "function validasiLamaran() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function validasiLamaran(data) {\n  const err = {};\n  if ((data.nama ?? \"\").trim().length < 3) err.nama = \"Nama minimal 3 huruf\";\n  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(data.email ?? \"\")) err.email = \"Email tidak valid\";\n  const umur = Number(data.umur);\n  if (!(umur >= 17 && umur <= 60)) err.umur = \"Umur 17-60\";\n  return err;\n}\n",
+"jelas": "Mengembalikan objek per field memudahkan menampilkan pesan di bawah input yang tepat.",
+"kompleksitas": "",
+"petunjuk": [
+"Mulai dengan const err = {} lalu isi kunci yang salah.",
+"Pola email sederhana: /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/. Number(\"abc\") adalah NaN, dan perbandingan dengan NaN selalu false.",
+"Kerangka solusinya:\nfunction validasiLamaran(data) {\n  const err = …\n  if ((data.nama ?? \"\").trim().length < 3) err.nama = …\n  if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(data.email ?? \"\")) err.email = …\n  const umur = …\n  if (!(umur >= …\n  return …\n}"
+],
+"tes": [
+[
+"validasiLamaran({ nama: \"Jauza\", email: \"j@mail.com\", umur: \"22\" })",
+"{}"
+],
+[
+"validasiLamaran({ nama: \" Al \", email: \"j@mail\", umur: 15 })",
+"{\"nama\": \"Nama minimal 3 huruf\", \"email\": \"Email tidak valid\", \"umur\": \"Umur 17-60\"}"
+],
+[
+"validasiLamaran({})",
+"{\"nama\": \"Nama minimal 3 huruf\", \"email\": \"Email tidak valid\", \"umur\": \"Umur 17-60\"}"
+],
+[
+"validasiLamaran({ nama: \"Budi\", email: \"b@x.id\", umur: \"abc\" })",
+"{\"umur\": \"Umur 17-60\"}"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-ev-2",
+"judul": "Debounce pencarian",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "js",
+"fungsi": "debounce",
+"cerita": "",
+"soal": "Buat <code>debounce(fn, ms)</code>: fungsi hasil menunda pemanggilan <code>fn</code> sampai tidak ada panggilan baru selama <code>ms</code> milidetik, lalu memanggil <code>fn</code> dengan argumen <b>terakhir</b>.",
+"awal": "function debounce() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function debounce(fn, ms) {\n  let timer;\n  return (...args) => {\n    clearTimeout(timer);\n    timer = setTimeout(() => fn(...args), ms);\n  };\n}\n",
+"jelas": "Tanpa debounce, mengetik 'odoo' mengirim 4 permintaan pencarian; dengan debounce hanya 1.",
+"kompleksitas": "",
+"petunjuk": [
+"Simpan id timer di closure; setiap panggilan clearTimeout lalu setTimeout lagi.",
+"Rest/spread: (...args) => fn(...args) meneruskan semua argumen.",
+"Kerangka solusinya:\nfunction debounce(fn, ms) {\n  let timer;\n  return …\n    clearTimeout(timer);\n    timer = …\n  };\n}"
+],
+"tes": [
+[
+"const log = [];\nconst cari = debounce(q => log.push(q), 50);\ncari(\"o\"); cari(\"od\"); cari(\"odoo\");\nawait new Promise(r => setTimeout(r, 120));\nconst hasil = log;",
+"[\"odoo\"]"
+],
+[
+"const log = [];\nconst f = debounce(x => log.push(x), 30);\nf(1);\nawait new Promise(r => setTimeout(r, 80));\nf(2);\nawait new Promise(r => setTimeout(r, 80));\nconst hasil = log;",
+"[1, 2]"
+],
+[
+"const log = [];\nconst f = debounce(x => log.push(x), 50);\nf(1);\nconst hasil = log.length;",
+"0"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-kelas",
+"topik": "js",
+"setelah": "kelas",
+"judul": "Class, field privat, dan extends",
+"contoh": {
+"judul": "Contoh: #privat, getter, extends",
+"penjelasan": "<p><code>#saldo</code> adalah field privat: tidak bisa dibaca dari luar class. <code>get saldo()</code> membuat properti baca-saja. <code>class B extends A</code> mewarisi; panggil <code>super(...)</code> di constructor.</p>",
+"kode": "class Akun {\n  #saldo = 0;\n  constructor(nama) { this.nama = nama; }\n  setor(n) { this.#saldo += n; return this; }\n  get saldo() { return this.#saldo; }\n}\nclass AkunPremium extends Akun {\n  constructor(nama) { super(nama); this.level = \"premium\"; }\n}\nconst a = new AkunPremium(\"Ani\").setor(100).setor(50);\nconsole.log(a.nama, a.level, a.saldo, a.saldoX);",
+"kunci": "return this memungkinkan pemanggilan berantai: a.setor(1).setor(2).",
+"bahasa": "js",
+"keluaran": "Ani premium 150 undefined"
+},
+"langkah": [
+{
+"id": "js-kelas-1",
+"judul": "Class Keranjang",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "Keranjang",
+"cerita": "",
+"soal": "Buat class <code>Keranjang</code> dengan field privat <code>#isi</code> (Map). Method <code>tambah(nama, harga, qty = 1)</code> (nama sama menambah qty, mengembalikan <code>this</code>), <code>hapus(nama)</code>, getter <code>total</code>, dan getter <code>jumlahBarang</code> (total qty).",
+"awal": "class Keranjang {\n  // tulis kodemu di sini\n}\n",
+"solusi": "class Keranjang {\n  #isi = new Map();\n  tambah(nama, harga, qty = 1) {\n    const lama = this.#isi.get(nama);\n    this.#isi.set(nama, { harga, qty: (lama?.qty ?? 0) + qty });\n    return this;\n  }\n  hapus(nama) {\n    this.#isi.delete(nama);\n    return this;\n  }\n  get total() {\n    let t = 0;\n    for (const { harga, qty } of this.#isi.values()) t += harga * qty;\n    return t;\n  }\n  get jumlahBarang() {\n    let n = 0;\n    for (const { qty } of this.#isi.values()) n += qty;\n    return n;\n  }\n}\n",
+"jelas": "Tes terakhir memastikan isi keranjang tidak bisa diakses langsung dari luar (k.isi bernilai undefined).",
+"kompleksitas": "",
+"petunjuk": [
+"#isi = new Map() sebagai field privat; get/set/delete untuk mengubahnya.",
+"Getter ditulis get total() { ... } dan dipakai tanpa kurung: k.total.",
+"Kerangka solusinya:\nclass Keranjang {\n  #isi = …\n  tambah(nama, harga, qty = …\n    const lama = …\n    this.#isi.set(nama, { harga, qty: (lama?.qty ?? 0) + qty });\n    return …\n  }\n  hapus(nama) {\n    this.#isi.delete(nama);\n    return …\n  }\n  get total() {\n    let t = …\n    for (const { harga, qty } of this.#isi.values()) t += …\n    return …\n  }\n  get jumlahBarang() {\n    let n = …\n    for (const { qty } of this.#isi.values()) n += …\n    return …\n  }\n}"
+],
+"tes": [
+[
+"const k = new Keranjang().tambah(\"Kopi\", 18000, 2).tambah(\"Roti\", 15000);\nconst hasil = [k.total, k.jumlahBarang];",
+"[51000, 3]"
+],
+[
+"const k = new Keranjang().tambah(\"Kopi\", 18000).tambah(\"Kopi\", 18000, 2);\nconst hasil = k.jumlahBarang;",
+"3"
+],
+[
+"const k = new Keranjang().tambah(\"A\", 10).hapus(\"A\").hapus(\"B\");\nconst hasil = [k.total, k.jumlahBarang];",
+"[0, 0]"
+],
+[
+"const k = new Keranjang();\nconst hasil = [k.isi === undefined, Object.keys(k).length];",
+"[true, 0]"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-kelas-2",
+"judul": "Pewarisan: Karyawan dan Manajer",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "Manajer",
+"cerita": "",
+"soal": "Class <code>Karyawan</code> sudah ada. Buat <code>Manajer extends Karyawan</code> dengan tambahan <code>tim</code> (array nama). Override <code>gaji()</code>: gaji induk + 500.000 per anggota tim, dan <code>toString()</code>: teks induk + <code>\" (tim: N)\"</code>.",
+"awal": "class Karyawan {\n  constructor(nama, pokok) { this.nama = nama; this.pokok = pokok; }\n  gaji() { return this.pokok; }\n  toString() { return `${this.nama}: ${this.gaji()}`; }\n}\n\nclass Manajer extends Karyawan {\n  // tulis kodemu di sini\n}\n",
+"solusi": "class Karyawan {\n  constructor(nama, pokok) { this.nama = nama; this.pokok = pokok; }\n  gaji() { return this.pokok; }\n  toString() { return `${this.nama}: ${this.gaji()}`; }\n}\n\nclass Manajer extends Karyawan {\n  constructor(nama, pokok, tim = []) {\n    super(nama, pokok);\n    this.tim = tim;\n  }\n  gaji() { return super.gaji() + 500000 * this.tim.length; }\n  toString() { return `${super.toString()} (tim: ${this.tim.length})`; }\n}\n",
+"jelas": "Polanya sama dengan _inherit + super() di Odoo, hanya sintaksnya JavaScript.",
+"kompleksitas": "",
+"petunjuk": [
+"constructor anak wajib memanggil super(nama, pokok) sebelum memakai this.",
+"super.gaji() dan super.toString() memanggil versi induk.",
+"Kerangka solusinya:\nclass Karyawan {\n  constructor(nama, pokok) { this.nama = …\n  gaji() { return …\n  toString() { return …\n}\n\nclass Manajer extends Karyawan {\n  constructor(nama, pokok, tim = …\n    super(nama, pokok);\n    this.tim = …\n  }\n  gaji() { return …\n  toString() { return …\n}"
+],
+"tes": [
+[
+"new Manajer(\"Rina\", 8000000, [\"Ani\", \"Budi\"]).gaji()",
+"9000000"
+],
+[
+"String(new Manajer(\"Rina\", 8000000, [\"Ani\", \"Budi\"]))",
+"\"Rina: 9000000 (tim: 2)\""
+],
+[
+"String(new Manajer(\"Sari\", 7000000))",
+"\"Sari: 7000000 (tim: 0)\""
+],
+[
+"new Manajer(\"X\", 1) instanceof Karyawan",
+"true"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-error",
+"topik": "js",
+"setelah": "error",
+"judul": "throw, try/catch, dan error buatan sendiri",
+"contoh": {
+"judul": "Contoh: class error sendiri",
+"penjelasan": "<p>Lempar error dengan <code>throw new Error(\"pesan\")</code>. Class turunan <code>Error</code> membuat jenis error bisa dibedakan di <code>catch</code> dengan <code>instanceof</code>. <code>finally</code> selalu dijalankan.</p>",
+"kode": "class ValidasiError extends Error {\n  constructor(field, pesan) { super(pesan); this.name = \"ValidasiError\"; this.field = field; }\n}\ntry {\n  throw new ValidasiError(\"email\", \"Email wajib diisi\");\n} catch (e) {\n  console.log(e instanceof ValidasiError, e.name, e.field, e.message);\n} finally {\n  console.log(\"selesai\");\n}",
+"kunci": "Set this.name di class error agar nama jenisnya tampil benar di log.",
+"bahasa": "js",
+"keluaran": "true ValidasiError email Email wajib diisi\nselesai"
+},
+"langkah": [
+{
+"id": "js-err-1",
+"judul": "Parse angka dengan error yang jelas",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "parseQty",
+"cerita": "",
+"soal": "Buat class <code>ValidasiError extends Error</code> (name <code>\"ValidasiError\"</code>) dan fungsi <code>parseQty(teks)</code> yang mengembalikan bilangan bulat positif dari teks. Lempar <code>ValidasiError</code> dengan pesan <code>\"qty harus bilangan bulat positif\"</code> bila tidak valid.",
+"awal": "class ValidasiError extends Error {\n  // lengkapi\n}\n\nfunction parseQty(teks) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "class ValidasiError extends Error {\n  constructor(pesan) {\n    super(pesan);\n    this.name = \"ValidasiError\";\n  }\n}\n\nfunction parseQty(teks) {\n  const n = Number(String(teks).trim());\n  if (!Number.isInteger(n) || n <= 0) throw new ValidasiError(\"qty harus bilangan bulat positif\");\n  return n;\n}\n",
+"jelas": "Error dengan jenis sendiri membuat penanganan lebih tepat: error validasi ditampilkan ke pengguna, error lain dicatat ke log.",
+"kompleksitas": "",
+"petunjuk": [
+"class ValidasiError extends Error { constructor(pesan) { super(pesan); this.name = \"ValidasiError\"; } }",
+"Number.isInteger memeriksa bilangan bulat; tambahkan syarat > 0.",
+"Kerangka solusinya:\nclass ValidasiError extends Error {\n  constructor(pesan) {\n    super(pesan);\n    this.name = …\n  }\n}\n\nfunction parseQty(teks) {\n  const n = …\n  if (!Number.isInteger(n) || n <= …\n  return …\n}"
+],
+"tes": [
+[
+"parseQty(\" 12 \")",
+"12"
+],
+[
+"let hasil;\ntry { parseQty(\"2.5\"); hasil = \"tidak error\"; } catch (e) { hasil = [e.name, e.message, e instanceof ValidasiError, e instanceof Error]; }",
+"[\"ValidasiError\", \"qty harus bilangan bulat positif\", true, true]"
+],
+[
+"let hasil;\ntry { parseQty(\"0\"); } catch (e) { hasil = e.name; }",
+"\"ValidasiError\""
+],
+[
+"let hasil;\ntry { parseQty(\"abc\"); } catch (e) { hasil = e.name; }",
+"\"ValidasiError\""
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-err-2",
+"judul": "Jalankan dengan aman",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "coba",
+"cerita": "",
+"soal": "Buat <code>async function coba(fn, cadangan)</code> yang mengembalikan <code>{ ok: true, nilai }</code> bila <code>fn()</code> (boleh async) berhasil, atau <code>{ ok: false, nilai: cadangan, galat: pesan }</code> bila gagal. Fungsi <code>coba</code> juga mencatat <code>coba.jumlah</code>: berapa kali ia dipanggil (bertambah di blok <code>finally</code>).",
+"awal": "async function coba(fn, cadangan) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "async function coba(fn, cadangan) {\n  try {\n    return { ok: true, nilai: await fn() };\n  } catch (e) {\n    return { ok: false, nilai: cadangan, galat: e.message };\n  } finally {\n    coba.jumlah = (coba.jumlah ?? 0) + 1;\n  }\n}\n",
+"jelas": "Pembungkus seperti ini dipakai robot RPA agar satu langkah yang gagal tidak menghentikan seluruh proses.",
+"kompleksitas": "",
+"petunjuk": [
+"await fn() bekerja untuk fungsi biasa maupun async.",
+"finally dijalankan baik setelah return di try maupun di catch.",
+"Kerangka solusinya:\nasync function coba(fn, cadangan) {\n  try {\n    return …\n  } catch (e) {\n    return …\n  } finally {\n    coba.jumlah = …\n  }\n}"
+],
+"tes": [
+[
+"await coba(() => 42, 0)",
+"{\"ok\": true, \"nilai\": 42}"
+],
+[
+"await coba(async () => { throw new Error(\"timeout\"); }, [])",
+"{\"ok\": false, \"nilai\": [], \"galat\": \"timeout\"}"
+],
+[
+"await coba(() => 1);\nawait coba(() => { throw new Error(\"x\"); });\nconst hasil = coba.jumlah;",
+"2"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-koleksi",
+"topik": "js",
+"setelah": "koleksi",
+"judul": "Map, Set, Date, dan regex",
+"contoh": {
+"judul": "Contoh: Set untuk unik, Map untuk hitung",
+"penjelasan": "<p><code>new Set(arr)</code> membuang duplikat. <code>Map</code> menyimpan pasangan kunci-nilai dengan kunci tipe apa pun dan urutan terjaga. <code>Object.fromEntries(map)</code> mengubah Map menjadi objek biasa.</p>",
+"kode": "const kata = \"odoo itu odoo\".split(\" \");\nconsole.log([...new Set(kata)]);\nconst hitung = new Map();\nfor (const k of kata) hitung.set(k, (hitung.get(k) ?? 0) + 1);\nconsole.log(Object.fromEntries(hitung));\nconsole.log(\"INV/2026/0042\".match(/\\d+/g));\nconsole.log(new Date(\"2026-11-24T00:00:00Z\").getUTCDay());",
+"kunci": "Set → unik. Map → hitung/kelompok. Regex dengan flag g → semua kecocokan.",
+"bahasa": "js",
+"keluaran": "[\"odoo\",\"itu\"]\n{\"odoo\":2,\"itu\":1}\n[\"2026\",\"0042\"]\n2"
+},
+"langkah": [
+{
+"id": "js-kol-1",
+"judul": "Kata terbanyak",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "kataTerbanyak",
+"cerita": "",
+"soal": "Buat <code>kataTerbanyak(teks, n)</code>: ubah ke huruf kecil, ambil kata (huruf/angka saja, pakai regex), hitung dengan <code>Map</code>, lalu kembalikan <code>n</code> pasangan <code>[kata, jumlah]</code> terbanyak; seri diurutkan abjad.",
+"awal": "function kataTerbanyak() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function kataTerbanyak(teks, n) {\n  const hitung = new Map();\n  for (const k of teks.toLowerCase().match(/[a-z0-9]+/g) ?? []) hitung.set(k, (hitung.get(k) ?? 0) + 1);\n  return [...hitung].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, n);\n}\n",
+"jelas": "match dengan flag g mengembalikan null bila tidak ada yang cocok, bukan array kosong. Itu sebabnya ?? [] diperlukan.",
+"kompleksitas": "",
+"petunjuk": [
+"teks.toLowerCase().match(/[a-z0-9]+/g) memberi array kata, atau null bila tidak ada (pakai ?? []).",
+"[...map] mengubah Map menjadi array pasangan, siap diurutkan.",
+"Kerangka solusinya:\nfunction kataTerbanyak(teks, n) {\n  const hitung = …\n  for (const k of teks.toLowerCase().match(/[a-z0-9]+/g) ?? []) hitung.set(k, (hitung.get(k) ?? 0) + 1);\n  return …\n}"
+],
+"tes": [
+[
+"kataTerbanyak(\"Odoo itu mudah. Odoo itu seru, seru!\", 2)",
+"[[\"itu\", 2], [\"odoo\", 2]]"
+],
+[
+"kataTerbanyak(\"\", 3)",
+"[]"
+],
+[
+"kataTerbanyak(\"b a b a c\", 5)",
+"[[\"a\", 2], [\"b\", 2], [\"c\", 1]]"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-kol-2",
+"judul": "Format tanggal dan jatuh tempo",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "jatuhTempo",
+"cerita": "",
+"soal": "Buat <code>jatuhTempo(tanggalISO, hari)</code> yang menambah <code>hari</code> ke tanggal <code>\"YYYY-MM-DD\"</code> dan mengembalikan format Indonesia <code>\"DD/MM/YYYY\"</code>. Hitung dalam UTC agar tidak terpengaruh zona waktu.",
+"awal": "function jatuhTempo() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function jatuhTempo(tanggalISO, hari) {\n  const d = new Date(tanggalISO + \"T00:00:00Z\");\n  d.setUTCDate(d.getUTCDate() + hari);\n  const dua = n => String(n).padStart(2, \"0\");\n  return `${dua(d.getUTCDate())}/${dua(d.getUTCMonth() + 1)}/${d.getUTCFullYear()}`;\n}\n",
+"jelas": "Bulan di objek Date dimulai dari 0 (Januari = 0): sumber bug klasik. Memakai UTC mencegah tanggal bergeser sehari karena zona waktu.",
+"kompleksitas": "",
+"petunjuk": [
+"new Date(\"2026-11-24T00:00:00Z\") membuat tanggal UTC; setUTCDate menambah hari dengan benar melewati akhir bulan.",
+"getUTCMonth() mulai dari 0, jadi tambah 1.",
+"Kerangka solusinya:\nfunction jatuhTempo(tanggalISO, hari) {\n  const d = …\n  d.setUTCDate(d.getUTCDate() + hari);\n  const dua = …\n  return …\n}"
+],
+"tes": [
+[
+"jatuhTempo(\"2026-11-24\", 30)",
+"\"24/12/2026\""
+],
+[
+"jatuhTempo(\"2028-02-28\", 1)",
+"\"29/02/2028\""
+],
+[
+"jatuhTempo(\"2026-12-31\", 1)",
+"\"01/01/2027\""
+],
+[
+"jatuhTempo(\"2026-01-31\", 0)",
+"\"31/01/2026\""
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-modul",
+"topik": "js",
+"setelah": "modul",
+"judul": "JSON dan konfigurasi",
+"contoh": {
+"judul": "Contoh: JSON.parse dengan nilai bawaan",
+"penjelasan": "<p><code>JSON.parse</code> mengubah teks JSON menjadi objek; teks rusak melempar <code>SyntaxError</code>. <code>JSON.stringify(obj, null, 2)</code> menulis JSON rapi. File <code>package.json</code> di proyek Node juga JSON biasa.</p>",
+"kode": "const bawaan = { tema: \"terang\", bahasa: \"id\" };\nfunction bacaKonfig(teks) {\n  try { return { ...bawaan, ...JSON.parse(teks) }; }\n  catch { return bawaan; }\n}\nconsole.log(bacaKonfig('{\"tema\":\"gelap\"}'), bacaKonfig(\"rusak\"));\nconsole.log(JSON.stringify({ a: 1, b: [2, 3] }, null, 2));",
+"kunci": "Selalu bungkus JSON.parse dengan try/catch bila teksnya datang dari luar.",
+"bahasa": "js",
+"keluaran": "{\"tema\":\"gelap\",\"bahasa\":\"id\"} {\"tema\":\"terang\",\"bahasa\":\"id\"}\n{\n  \"a\": 1,\n  \"b\": [\n    2,\n    3\n  ]\n}"
+},
+"langkah": [
+{
+"id": "js-modul-1",
+"judul": "Baca konfigurasi",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "js",
+"fungsi": "bacaKonfig",
+"cerita": "",
+"soal": "Buat <code>bacaKonfig(teks)</code> yang menggabungkan nilai bawaan <code>{ tema: \"terang\", bahasa: \"id\", ukuran: 16 }</code> dengan isi JSON. Bila JSON rusak atau bukan objek (misalnya array atau angka), kembalikan bawaan saja.",
+"awal": "function bacaKonfig() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "const BAWAAN = { tema: \"terang\", bahasa: \"id\", ukuran: 16 };\n\nfunction bacaKonfig(teks) {\n  try {\n    const isi = JSON.parse(teks);\n    if (!isi || typeof isi !== \"object\" || Array.isArray(isi)) return { ...BAWAAN };\n    return { ...BAWAAN, ...isi };\n  } catch {\n    return { ...BAWAAN };\n  }\n}\n",
+"jelas": "JSON yang valid belum tentu berbentuk sesuai harapan. Memeriksa bentuk data adalah validasi di batas sistem.",
+"kompleksitas": "",
+"petunjuk": [
+"try { JSON.parse(...) } catch { ... }",
+"Cek bentuknya: objek biasa, bukan array, bukan null.",
+"Kerangka solusinya:\nconst BAWAAN = …\n\nfunction bacaKonfig(teks) {\n  try {\n    const isi = …\n    if (!isi || typeof isi != …\n    return …\n  } catch {\n    return …\n  }\n}"
+],
+"tes": [
+[
+"bacaKonfig('{\"tema\": \"gelap\"}')",
+"{\"tema\": \"gelap\", \"bahasa\": \"id\", \"ukuran\": 16}"
+],
+[
+"bacaKonfig(\"{rusak\")",
+"{\"tema\": \"terang\", \"bahasa\": \"id\", \"ukuran\": 16}"
+],
+[
+"bacaKonfig(\"[1, 2]\")",
+"{\"tema\": \"terang\", \"bahasa\": \"id\", \"ukuran\": 16}"
+],
+[
+"bacaKonfig(\"42\")",
+"{\"tema\": \"terang\", \"bahasa\": \"id\", \"ukuran\": 16}"
+],
+[
+"bacaKonfig('{\"ukuran\": 18, \"baru\": true}')",
+"{\"tema\": \"terang\", \"bahasa\": \"id\", \"ukuran\": 18, \"baru\": true}"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-modul-2",
+"judul": "Ringkas package.json",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "ringkasPackage",
+"cerita": "",
+"soal": "Buat <code>ringkasPackage(teks)</code> yang membaca isi <code>package.json</code> dan mengembalikan <code>{ nama, versi, jumlahDependensi, scripts }</code>: jumlah dependencies + devDependencies, dan <code>scripts</code> berupa array nama script terurut. Kunci yang tidak ada dianggap kosong.",
+"awal": "function ringkasPackage() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function ringkasPackage(teks) {\n  const p = JSON.parse(teks);\n  return {\n    nama: p.name ?? \"\",\n    versi: p.version ?? \"0.0.0\",\n    jumlahDependensi: Object.keys(p.dependencies ?? {}).length + Object.keys(p.devDependencies ?? {}).length,\n    scripts: Object.keys(p.scripts ?? {}).sort(),\n  };\n}\n",
+"jelas": "Membaca file konfigurasi seperti ini adalah tugas umum di alat otomasi dan skrip build.",
+"kompleksitas": "",
+"petunjuk": [
+"Object.keys(obj ?? {}).length menghitung kunci dengan aman.",
+"Pakai ?? untuk nilai bawaan nama dan versi.",
+"Kerangka solusinya:\nfunction ringkasPackage(teks) {\n  const p = …\n  return …\n    nama: p.name ?? \"\",\n    versi: p.version ?? \"0.0.0\",\n    jumlahDependensi: Object.keys(p.dependencies ?? {}).length + Object.keys(p.devDependencies ?? {}).length,\n    scripts: Object.keys(p.scripts ?? {}).sort(),\n  };\n}"
+],
+"tes": [
+[
+"ringkasPackage('{\"name\": \"kodequiz\", \"version\": \"5.0.0\", \"dependencies\": {\"pyodide\": \"0.26.4\"}, \"devDependencies\": {\"eslint\": \"9\", \"playwright\": \"1\"}, \"scripts\": {\"test\": \"x\", \"build\": \"y\"}}')",
+"{\"nama\": \"kodequiz\", \"versi\": \"5.0.0\", \"jumlahDependensi\": 3, \"scripts\": [\"build\", \"test\"]}"
+],
+[
+"ringkasPackage(\"{}\")",
+"{\"nama\": \"\", \"versi\": \"0.0.0\", \"jumlahDependensi\": 0, \"scripts\": []}"
+],
+[
+"ringkasPackage('{\"name\": \"a\", \"scripts\": {}}')",
+"{\"nama\": \"a\", \"versi\": \"0.0.0\", \"jumlahDependensi\": 0, \"scripts\": []}"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "js-frontend",
+"topik": "js",
+"setelah": "frontend",
+"judul": "Reducer gaya React",
+"contoh": {
+"judul": "Contoh: state baru, bukan state yang diubah",
+"penjelasan": "<p>Di React (dan OWL di Odoo), tampilan dihitung dari <i>state</i>. State tidak diubah langsung; reducer menerima state lama + aksi, lalu mengembalikan state <b>baru</b>.</p>",
+"kode": "function reducer(state, aksi) {\n  switch (aksi.type) {\n    case \"tambah\": return { ...state, angka: state.angka + 1 };\n    case \"reset\": return { ...state, angka: 0 };\n    default: return state;\n  }\n}\nlet s = { angka: 0 };\ns = reducer(s, { type: \"tambah\" });\ns = reducer(s, { type: \"tambah\" });\nconsole.log(s, reducer(s, { type: \"lain\" }) === s);",
+"kunci": "Aksi yang tidak dikenal mengembalikan state yang sama persis.",
+"bahasa": "js",
+"keluaran": "{\"angka\":2} true"
+},
+"langkah": [
+{
+"id": "js-fe-1",
+"judul": "Reducer todo",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "todoReducer",
+"cerita": "",
+"soal": "Buat <code>todoReducer(state, aksi)</code>. State: array <code>{ id, teks, selesai }</code>. Aksi: <code>{ type: \"tambah\", id, teks }</code> (menambah di akhir, teks di-trim, abaikan bila teks kosong), <code>{ type: \"toggle\", id }</code>, <code>{ type: \"hapus\", id }</code>. Selalu kembalikan array baru; aksi lain mengembalikan state yang sama.",
+"awal": "function todoReducer() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function todoReducer(state, aksi) {\n  switch (aksi.type) {\n    case \"tambah\": {\n      const teks = aksi.teks.trim();\n      return teks ? [...state, { id: aksi.id, teks, selesai: false }] : state;\n    }\n    case \"toggle\":\n      return state.map(t => t.id === aksi.id ? { ...t, selesai: !t.selesai } : t);\n    case \"hapus\":\n      return state.filter(t => t.id !== aksi.id);\n    default:\n      return state;\n  }\n}\n",
+"jelas": "Tes 3 memastikan state lama tidak berubah: dasar dari fitur undo dan deteksi perubahan di React.",
+"kompleksitas": "",
+"petunjuk": [
+"switch (aksi.type) dengan case untuk setiap aksi.",
+"toggle: map + spread { ...t, selesai: !t.selesai }; hapus: filter.",
+"Kerangka solusinya:\nfunction todoReducer(state, aksi) {\n  switch (aksi.type) {\n    case \"tambah\": {\n      const teks = …\n      return …\n    }\n    case \"toggle\":\n      return …\n    case \"hapus\":\n      return …\n    default:\n      return …\n  }\n}"
+],
+"tes": [
+[
+"todoReducer([], { type: \"tambah\", id: 1, teks: \" Belajar Odoo \" })",
+"[{\"id\": 1, \"teks\": \"Belajar Odoo\", \"selesai\": false}]"
+],
+[
+"todoReducer([{ id: 1, teks: \"a\", selesai: false }], { type: \"toggle\", id: 1 })",
+"[{\"id\": 1, \"teks\": \"a\", \"selesai\": true}]"
+],
+[
+"const s = [{ id: 1, teks: \"a\", selesai: false }];\ntodoReducer(s, { type: \"toggle\", id: 1 });\nconst hasil = s[0].selesai;",
+"false"
+],
+[
+"todoReducer([{ id: 1, teks: \"a\", selesai: true }, { id: 2, teks: \"b\", selesai: false }], { type: \"hapus\", id: 1 })",
+"[{\"id\": 2, \"teks\": \"b\", \"selesai\": false}]"
+],
+[
+"const s = [];\nconst hasil = [todoReducer(s, { type: \"x\" }) === s, todoReducer(s, { type: \"tambah\", id: 9, teks: \"  \" }).length];",
+"[true, 0]"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "js-fe-2",
+"judul": "Data turunan untuk tampilan",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "tampilanTodo",
+"cerita": "",
+"soal": "Buat <code>tampilanTodo(todos, filter)</code> dengan filter <code>\"semua\"</code>, <code>\"aktif\"</code>, atau <code>\"selesai\"</code>. Kembalikan <code>{ daftar: [teks...], sisa: jumlahBelumSelesai, persen: persenSelesai (bulat) }</code>. Todo kosong → persen 0.",
+"awal": "function tampilanTodo() {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function tampilanTodo(todos, filter) {\n  const cocok = { semua: () => true, aktif: t => !t.selesai, selesai: t => t.selesai }[filter] ?? (() => true);\n  const selesai = todos.filter(t => t.selesai).length;\n  return {\n    daftar: todos.filter(cocok).map(t => t.teks),\n    sisa: todos.length - selesai,\n    persen: todos.length ? Math.round(selesai / todos.length * 100) : 0,\n  };\n}\n",
+"jelas": "Data turunan dihitung dari state, tidak disimpan terpisah, sehingga tidak pernah tidak sinkron.",
+"kompleksitas": "",
+"petunjuk": [
+"Petakan nama filter ke fungsi saring dengan objek.",
+"Hitung jumlah selesai sekali, lalu pakai untuk sisa dan persen.",
+"Kerangka solusinya:\nfunction tampilanTodo(todos, filter) {\n  const cocok = …\n  const selesai = …\n  return …\n    daftar: todos.filter(cocok).map(t = …\n    sisa: todos.length - selesai,\n    persen: todos.length ? Math.round(selesai / todos.length * 100) : 0,\n  };\n}"
+],
+"tes": [
+[
+"tampilanTodo([{ teks: \"a\", selesai: true }, { teks: \"b\", selesai: false }, { teks: \"c\", selesai: false }], \"aktif\")",
+"{\"daftar\": [\"b\", \"c\"], \"sisa\": 2, \"persen\": 33}"
+],
+[
+"tampilanTodo([{ teks: \"a\", selesai: true }], \"selesai\")",
+"{\"daftar\": [\"a\"], \"sisa\": 0, \"persen\": 100}"
+],
+[
+"tampilanTodo([], \"semua\")",
+"{\"daftar\": [], \"sisa\": 0, \"persen\": 0}"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "uji-js-1",
+"topik": "js",
+"setelah": "array",
+"judul": "Keranjang toko online",
+"contoh": {
+"judul": "Cara mengerjakan coding test besar",
+"penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan fungsi baru di bawahnya.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
+"kode": "const bersihkan = t => t.trim().toLowerCase();\nconst hitung = daftar => daftar.reduce((o, k) => ({ ...o, [k]: (o[k] || 0) + 1 }), {});\nconst laporan = mentah => Object.entries(hitung(mentah.map(bersihkan))).sort();\nconsole.log(laporan([\" Kopi\", \"teh \", \"KOPI\"]));",
+"kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "js",
+"keluaran": "[[\"kopi\",2],[\"teh\",1]]"
+},
+"langkah": [
+{
+"id": "uji-js-1-a",
+"judul": "Bagian A: Tambah ke keranjang",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "tambahKeKeranjang",
+"cerita": "Kamu membuat logika keranjang belanja toko online. Data produk: <code>{ id, nama, harga, stok }</code>.",
+"soal": "Buat <code>tambahKeKeranjang(keranjang, produk, qty)</code> yang mengembalikan keranjang <b>baru</b> (array <code>{ id, nama, harga, qty }</code>). Produk yang sudah ada ditambah qty-nya. qty total tidak boleh melebihi <code>produk.stok</code> (dibatasi ke stok). qty ≤ 0 tidak mengubah apa pun.",
+"awal": "function tambahKeKeranjang(keranjang, produk, qty) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function tambahKeKeranjang(keranjang, produk, qty) {\n  if (qty <= 0) return keranjang;\n  const ada = keranjang.find(i => i.id === produk.id);\n  const baru = Math.min(produk.stok, (ada ? ada.qty : 0) + qty);\n  if (ada) return keranjang.map(i => i.id === produk.id ? { ...i, qty: baru } : i);\n  return [...keranjang, { id: produk.id, nama: produk.nama, harga: produk.harga, qty: baru }];\n}\n",
+"jelas": "Keranjang yang immutable aman dipakai sebagai state aplikasi.",
+"kompleksitas": "",
+"petunjuk": [
+"find mencari item yang sama; Math.min membatasi ke stok.",
+"Jangan ubah array lama: pakai map + spread atau [...keranjang, itemBaru].",
+"Kerangka solusinya:\nfunction tambahKeKeranjang(keranjang, produk, qty) {\n  if (qty <= …\n  const ada = …\n  const baru = …\n  if (ada) return …\n  return …\n}"
+],
+"tes": [
+[
+"tambahKeKeranjang([], { id: 1, nama: \"Kopi\", harga: 18000, stok: 5 }, 2)",
+"[{\"id\": 1, \"nama\": \"Kopi\", \"harga\": 18000, \"qty\": 2}]"
+],
+[
+"tambahKeKeranjang([{ id: 1, nama: \"Kopi\", harga: 18000, qty: 2 }], { id: 1, nama: \"Kopi\", harga: 18000, stok: 5 }, 9)",
+"[{\"id\": 1, \"nama\": \"Kopi\", \"harga\": 18000, \"qty\": 5}]"
+],
+[
+"const k = [{ id: 1, nama: \"Kopi\", harga: 18000, qty: 1 }];\ntambahKeKeranjang(k, { id: 1, nama: \"Kopi\", harga: 18000, stok: 5 }, 1);\nconst hasil = k[0].qty;",
+"1"
+],
+[
+"tambahKeKeranjang([], { id: 2, nama: \"Teh\", harga: 6000, stok: 3 }, 0)",
+"[]"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "uji-js-1-b",
+"judul": "Bagian B: Hitung total",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "js",
+"fungsi": "hitungTotal",
+"cerita": "Lanjutan bagian A. Kodemu yang sudah lulus ada di editor; tambahkan fungsi baru di bawahnya.",
+"soal": "Buat <code>hitungTotal(keranjang, kodeVoucher)</code> yang mengembalikan <code>{ subtotal, diskon, ongkir, total }</code>. Voucher <code>\"HEMAT10\"</code> = diskon 10% (maks 50.000), <code>\"GRATISONGKIR\"</code> = ongkir 0, lainnya tidak berlaku. Ongkir 15.000, tetapi gratis bila subtotal ≥ 200.000. Keranjang kosong: semua 0. Semua dibulatkan Math.round.",
+"awal": "function tambahKeKeranjang(keranjang, produk, qty) {\n  if (qty <= 0) return keranjang;\n  const ada = keranjang.find(i => i.id === produk.id);\n  const baru = Math.min(produk.stok, (ada ? ada.qty : 0) + qty);\n  if (ada) return keranjang.map(i => i.id === produk.id ? { ...i, qty: baru } : i);\n  return [...keranjang, { id: produk.id, nama: produk.nama, harga: produk.harga, qty: baru }];\n}\n\nfunction hitungTotal(keranjang, kodeVoucher) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function tambahKeKeranjang(keranjang, produk, qty) {\n  if (qty <= 0) return keranjang;\n  const ada = keranjang.find(i => i.id === produk.id);\n  const baru = Math.min(produk.stok, (ada ? ada.qty : 0) + qty);\n  if (ada) return keranjang.map(i => i.id === produk.id ? { ...i, qty: baru } : i);\n  return [...keranjang, { id: produk.id, nama: produk.nama, harga: produk.harga, qty: baru }];\n}\n\nfunction hitungTotal(keranjang, kodeVoucher) {\n  const subtotal = keranjang.reduce((t, i) => t + i.harga * i.qty, 0);\n  if (subtotal === 0) return { subtotal: 0, diskon: 0, ongkir: 0, total: 0 };\n  const diskon = kodeVoucher === \"HEMAT10\" ? Math.min(50000, Math.round(subtotal * 0.1)) : 0;\n  const ongkir = kodeVoucher === \"GRATISONGKIR\" || subtotal >= 200000 ? 0 : 15000;\n  return { subtotal, diskon, ongkir, total: subtotal - diskon + ongkir };\n}\n",
+"jelas": "Aturan bisnis seperti batas diskon dan ambang gratis ongkir paling sering salah di batasnya: uji tepat 200.000.",
+"kompleksitas": "",
+"petunjuk": [
+"Subtotal dengan reduce. Tangani keranjang kosong lebih dulu.",
+"Diskon: Math.min(50000, ...). Ongkir: ternary dengan dua syarat (||).",
+"Kerangka solusinya:\nfunction tambahKeKeranjang(keranjang, produk, qty) {\n  if (qty <= …\n  const ada = …\n  const baru = …\n  if (ada) return …\n  return …\n}\n\nfunction hitungTotal(keranjang, kodeVoucher) {\n  const subtotal = …\n  if (subtotal = …\n  const diskon = …\n  const ongkir = …\n  return …\n}"
+],
+"tes": [
+[
+"hitungTotal([{ harga: 18000, qty: 2 }], \"\")",
+"{\"subtotal\": 36000, \"diskon\": 0, \"ongkir\": 15000, \"total\": 51000}"
+],
+[
+"hitungTotal([{ harga: 18000, qty: 2 }], \"HEMAT10\")",
+"{\"subtotal\": 36000, \"diskon\": 3600, \"ongkir\": 15000, \"total\": 47400}"
+],
+[
+"hitungTotal([{ harga: 1000000, qty: 1 }], \"HEMAT10\")",
+"{\"subtotal\": 1000000, \"diskon\": 50000, \"ongkir\": 0, \"total\": 950000}"
+],
+[
+"hitungTotal([{ harga: 50000, qty: 2 }], \"GRATISONGKIR\")",
+"{\"subtotal\": 100000, \"diskon\": 0, \"ongkir\": 0, \"total\": 100000}"
+],
+[
+"hitungTotal([], \"HEMAT10\")",
+"{\"subtotal\": 0, \"diskon\": 0, \"ongkir\": 0, \"total\": 0}"
+],
+[
+"hitungTotal([{ harga: 100000, qty: 2 }], \"SALAH\")",
+"{\"subtotal\": 200000, \"diskon\": 0, \"ongkir\": 0, \"total\": 200000}"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "function hitungTotal(keranjang, kodeVoucher) {\n  // tulis kodemu di sini\n}\n"
+},
+{
+"id": "uji-js-1-c",
+"judul": "Bagian C: Ringkasan pesanan",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "js",
+"fungsi": "ringkasanPesanan",
+"cerita": "Lanjutan bagian B. Kodemu yang sudah lulus ada di editor; tambahkan fungsi baru di bawahnya.",
+"soal": "Buat <code>ringkasanPesanan(keranjang, kodeVoucher)</code> yang memakai fungsi bagian B dan mengembalikan array baris teks: satu baris per item <code>\"2x Kopi - 36000\"</code> (urut nama), lalu <code>\"Diskon: 3600\"</code> (hanya bila &gt; 0), <code>\"Ongkir: 15000\"</code> atau <code>\"Ongkir: GRATIS\"</code>, dan <code>\"Total: 47400\"</code>. Keranjang kosong → <code>[\"Keranjang kosong\"]</code>.",
+"awal": "function tambahKeKeranjang(keranjang, produk, qty) {\n  if (qty <= 0) return keranjang;\n  const ada = keranjang.find(i => i.id === produk.id);\n  const baru = Math.min(produk.stok, (ada ? ada.qty : 0) + qty);\n  if (ada) return keranjang.map(i => i.id === produk.id ? { ...i, qty: baru } : i);\n  return [...keranjang, { id: produk.id, nama: produk.nama, harga: produk.harga, qty: baru }];\n}\n\nfunction hitungTotal(keranjang, kodeVoucher) {\n  const subtotal = keranjang.reduce((t, i) => t + i.harga * i.qty, 0);\n  if (subtotal === 0) return { subtotal: 0, diskon: 0, ongkir: 0, total: 0 };\n  const diskon = kodeVoucher === \"HEMAT10\" ? Math.min(50000, Math.round(subtotal * 0.1)) : 0;\n  const ongkir = kodeVoucher === \"GRATISONGKIR\" || subtotal >= 200000 ? 0 : 15000;\n  return { subtotal, diskon, ongkir, total: subtotal - diskon + ongkir };\n}\n\nfunction ringkasanPesanan(keranjang, kodeVoucher) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function tambahKeKeranjang(keranjang, produk, qty) {\n  if (qty <= 0) return keranjang;\n  const ada = keranjang.find(i => i.id === produk.id);\n  const baru = Math.min(produk.stok, (ada ? ada.qty : 0) + qty);\n  if (ada) return keranjang.map(i => i.id === produk.id ? { ...i, qty: baru } : i);\n  return [...keranjang, { id: produk.id, nama: produk.nama, harga: produk.harga, qty: baru }];\n}\n\nfunction hitungTotal(keranjang, kodeVoucher) {\n  const subtotal = keranjang.reduce((t, i) => t + i.harga * i.qty, 0);\n  if (subtotal === 0) return { subtotal: 0, diskon: 0, ongkir: 0, total: 0 };\n  const diskon = kodeVoucher === \"HEMAT10\" ? Math.min(50000, Math.round(subtotal * 0.1)) : 0;\n  const ongkir = kodeVoucher === \"GRATISONGKIR\" || subtotal >= 200000 ? 0 : 15000;\n  return { subtotal, diskon, ongkir, total: subtotal - diskon + ongkir };\n}\n\nfunction ringkasanPesanan(keranjang, kodeVoucher) {\n  if (!keranjang.length) return [\"Keranjang kosong\"];\n  const t = hitungTotal(keranjang, kodeVoucher);\n  const baris = [...keranjang].sort((a, b) => a.nama.localeCompare(b.nama)).map(i => `${i.qty}x ${i.nama} - ${i.harga * i.qty}`);\n  if (t.diskon > 0) baris.push(`Diskon: ${t.diskon}`);\n  baris.push(`Ongkir: ${t.ongkir ? t.ongkir : \"GRATIS\"}`);\n  baris.push(`Total: ${t.total}`);\n  return baris;\n}\n",
+"jelas": "Fungsi kecil yang sudah teruji (A, B) membuat fungsi akhir pendek dan mudah dibaca.",
+"kompleksitas": "",
+"petunjuk": [
+"Panggil hitungTotal; jangan hitung ulang.",
+"Urutkan salinan keranjang berdasarkan nama dengan localeCompare.",
+"Kerangka solusinya:\nfunction tambahKeKeranjang(keranjang, produk, qty) {\n  if (qty <= …\n  const ada = …\n  const baru = …\n  if (ada) return …\n  return …\n}\n\nfunction hitungTotal(keranjang, kodeVoucher) {\n  const subtotal = …\n  if (subtotal = …\n  const diskon = …\n  const ongkir = …\n  return …\n}\n\nfunction ringkasanPesanan(keranjang, kodeVoucher) {\n  if (!keranjang.length) return …\n  const t = …\n  const baris = …\n  if (t.diskon > 0) baris.push(`Diskon: ${t.diskon}`);\n  baris.push(`Ongkir: ${t.ongkir ? t.ongkir : \"GRATIS\"}`);\n  baris.push(`Total: ${t.total}`);\n  return …\n}"
+],
+"tes": [
+[
+"ringkasanPesanan([{ nama: \"Kopi\", harga: 18000, qty: 2 }], \"HEMAT10\")",
+"[\"2x Kopi - 36000\", \"Diskon: 3600\", \"Ongkir: 15000\", \"Total: 47400\"]"
+],
+[
+"ringkasanPesanan([{ nama: \"Teh\", harga: 6000, qty: 1 }, { nama: \"Roti\", harga: 200000, qty: 1 }], \"\")",
+"[\"1x Roti - 200000\", \"1x Teh - 6000\", \"Ongkir: GRATIS\", \"Total: 206000\"]"
+],
+[
+"ringkasanPesanan([], \"\")",
+"[\"Keranjang kosong\"]"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "function ringkasanPesanan(keranjang, kodeVoucher) {\n  // tulis kodemu di sini\n}\n"
+}
+],
+"ujian": true,
+"cakupan": "Bab 1–5: variabel, operator, kondisi & perulangan, fungsi, array"
+},
+{
+"id": "uji-js-2",
+"topik": "js",
+"setelah": "kasus",
+"judul": "Data karyawan dari CSV",
+"contoh": {
+"judul": "Cara mengerjakan coding test besar",
+"penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan fungsi baru di bawahnya.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
+"kode": "const bersihkan = t => t.trim().toLowerCase();\nconst hitung = daftar => daftar.reduce((o, k) => ({ ...o, [k]: (o[k] || 0) + 1 }), {});\nconst laporan = mentah => Object.entries(hitung(mentah.map(bersihkan))).sort();\nconsole.log(laporan([\" Kopi\", \"teh \", \"KOPI\"]));",
+"kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "js",
+"keluaran": "[[\"kopi\",2],[\"teh\",1]]"
+},
+"langkah": [
+{
+"id": "uji-js-2-a",
+"judul": "Bagian A: Parse CSV",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "parseKaryawan",
+"cerita": "HR mengirim data karyawan sebagai teks CSV. Kamu membangun pengolah datanya.",
+"soal": "Buat <code>parseKaryawan(teks)</code>. Baris pertama header <code>nama,divisi,gaji,mulai</code>. Kembalikan array objek dengan <code>gaji</code> sebagai number dan <code>nama</code>/<code>divisi</code> di-trim. Baris kosong dilewati; baris yang gajinya bukan angka juga dilewati.",
+"awal": "function parseKaryawan(teks) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function parseKaryawan(teks) {\n  const [kepala, ...baris] = teks.trim().split(\"\\n\");\n  const kunci = kepala.split(\",\").map(k => k.trim());\n  return baris\n    .filter(b => b.trim())\n    .map(b => Object.fromEntries(b.split(\",\").map((v, i) => [kunci[i], v.trim()])))\n    .map(o => ({ ...o, gaji: Number(o.gaji) }))\n    .filter(o => Number.isFinite(o.gaji) && o.gaji > 0);\n}\n",
+"jelas": "Data dari file harus dibersihkan dan divalidasi sebelum diolah; baris rusak dilewati, bukan membuat program berhenti.",
+"kompleksitas": "",
+"petunjuk": [
+"Destructuring: const [kepala, ...baris] = teks.trim().split(\"\\n\").",
+"Object.fromEntries(nilai.map((v, i) => [kunci[i], v.trim()])) membangun objek per baris.",
+"Kerangka solusinya:\nfunction parseKaryawan(teks) {\n  const [kepala, ...baris] = …\n  const kunci = …\n  return …\n    .filter(b = …\n    .map(b = …\n    .map(o = …\n    .filter(o = …\n}"
+],
+"tes": [
+[
+"parseKaryawan(\"nama,divisi,gaji,mulai\\n Ani ,IT,8000000,2024-03-01\\nBudi,HR,abc,2023-01-10\\n\\nCita,IT,9500000,2022-07-15\")",
+"[{\"nama\": \"Ani\", \"divisi\": \"IT\", \"gaji\": 8000000, \"mulai\": \"2024-03-01\"}, {\"nama\": \"Cita\", \"divisi\": \"IT\", \"gaji\": 9500000, \"mulai\": \"2022-07-15\"}]"
+],
+[
+"parseKaryawan(\"nama,divisi,gaji,mulai\")",
+"[]"
+],
+[
+"parseKaryawan(\"nama,divisi,gaji,mulai\\nDodi, Sales ,6000000,2025-01-02\")",
+"[{\"nama\": \"Dodi\", \"divisi\": \"Sales\", \"gaji\": 6000000, \"mulai\": \"2025-01-02\"}]"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "uji-js-2-b",
+"judul": "Bagian B: Statistik per divisi",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "js",
+"fungsi": "statistikDivisi",
+"cerita": "Lanjutan bagian A. Kodemu yang sudah lulus ada di editor; tambahkan fungsi baru di bawahnya.",
+"soal": "Buat <code>statistikDivisi(teks)</code> yang memakai bagian A dan mengembalikan objek <code>{ divisi: { jumlah, rataGaji, tertinggi } }</code>: rata-rata dibulatkan Math.round, <code>tertinggi</code> = nama karyawan bergaji tertinggi di divisi itu.",
+"awal": "function parseKaryawan(teks) {\n  const [kepala, ...baris] = teks.trim().split(\"\\n\");\n  const kunci = kepala.split(\",\").map(k => k.trim());\n  return baris\n    .filter(b => b.trim())\n    .map(b => Object.fromEntries(b.split(\",\").map((v, i) => [kunci[i], v.trim()])))\n    .map(o => ({ ...o, gaji: Number(o.gaji) }))\n    .filter(o => Number.isFinite(o.gaji) && o.gaji > 0);\n}\n\nfunction statistikDivisi(teks) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function parseKaryawan(teks) {\n  const [kepala, ...baris] = teks.trim().split(\"\\n\");\n  const kunci = kepala.split(\",\").map(k => k.trim());\n  return baris\n    .filter(b => b.trim())\n    .map(b => Object.fromEntries(b.split(\",\").map((v, i) => [kunci[i], v.trim()])))\n    .map(o => ({ ...o, gaji: Number(o.gaji) }))\n    .filter(o => Number.isFinite(o.gaji) && o.gaji > 0);\n}\n\nfunction statistikDivisi(teks) {\n  const hasil = {};\n  for (const k of parseKaryawan(teks)) {\n    const d = (hasil[k.divisi] ??= { jumlah: 0, total: 0, tertinggi: k.nama, max: -1 });\n    d.jumlah++;\n    d.total += k.gaji;\n    if (k.gaji > d.max) { d.max = k.gaji; d.tertinggi = k.nama; }\n  }\n  return Object.fromEntries(Object.entries(hasil).map(([div, d]) => [div, { jumlah: d.jumlah, rataGaji: Math.round(d.total / d.jumlah), tertinggi: d.tertinggi }]));\n}\n",
+"jelas": "Dua tahap (kumpulkan, lalu bentuk hasil) membuat kode agregasi mudah dibaca.",
+"kompleksitas": "",
+"petunjuk": [
+"Kumpulkan dulu jumlah, total, dan gaji maksimum per divisi dengan ??=.",
+"Ubah ke bentuk akhir dengan Object.entries → map → Object.fromEntries.",
+"Kerangka solusinya:\nfunction parseKaryawan(teks) {\n  const [kepala, ...baris] = …\n  const kunci = …\n  return …\n    .filter(b = …\n    .map(b = …\n    .map(o = …\n    .filter(o = …\n}\n\nfunction statistikDivisi(teks) {\n  const hasil = …\n  for (const k of parseKaryawan(teks)) {\n    const d = …\n    d.jumlah++;\n    d.total += …\n    if (k.gaji > d.max) { d.max = …\n  }\n  return …\n}"
+],
+"tes": [
+[
+"statistikDivisi(\"nama,divisi,gaji,mulai\\nAni,IT,8000000,2024-03-01\\nBudi,HR,7000000,2023-01-10\\nCita,IT,9500000,2022-07-15\\nDodi,IT,7000001,2025-01-02\")",
+"{\"IT\": {\"jumlah\": 3, \"rataGaji\": 8166667, \"tertinggi\": \"Cita\"}, \"HR\": {\"jumlah\": 1, \"rataGaji\": 7000000, \"tertinggi\": \"Budi\"}}"
+],
+[
+"statistikDivisi(\"nama,divisi,gaji,mulai\")",
+"{}"
+],
+[
+"statistikDivisi(\"nama,divisi,gaji,mulai\\nEka,QA,5000000,2026-01-05\")",
+"{\"QA\": {\"jumlah\": 1, \"rataGaji\": 5000000, \"tertinggi\": \"Eka\"}}"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "function statistikDivisi(teks) {\n  // tulis kodemu di sini\n}\n"
+},
+{
+"id": "uji-js-2-c",
+"judul": "Bagian C: Laporan masa kerja",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "js",
+"fungsi": "laporanMasaKerja",
+"cerita": "Lanjutan bagian B. Kodemu yang sudah lulus ada di editor; tambahkan fungsi baru di bawahnya.",
+"soal": "Buat <code>async function laporanMasaKerja(ambilTeks, hariIni)</code>: ambil teks CSV dengan <code>await ambilTeks()</code>, parse dengan bagian A, lalu kembalikan array <code>{ nama, tahun }</code> (tahun masa kerja penuh sampai <code>hariIni</code> \"YYYY-MM-DD\") diurutkan dari terlama; seri diurutkan nama. Bila <code>ambilTeks</code> gagal, kembalikan <code>[]</code>.",
+"awal": "function parseKaryawan(teks) {\n  const [kepala, ...baris] = teks.trim().split(\"\\n\");\n  const kunci = kepala.split(\",\").map(k => k.trim());\n  return baris\n    .filter(b => b.trim())\n    .map(b => Object.fromEntries(b.split(\",\").map((v, i) => [kunci[i], v.trim()])))\n    .map(o => ({ ...o, gaji: Number(o.gaji) }))\n    .filter(o => Number.isFinite(o.gaji) && o.gaji > 0);\n}\n\nfunction statistikDivisi(teks) {\n  const hasil = {};\n  for (const k of parseKaryawan(teks)) {\n    const d = (hasil[k.divisi] ??= { jumlah: 0, total: 0, tertinggi: k.nama, max: -1 });\n    d.jumlah++;\n    d.total += k.gaji;\n    if (k.gaji > d.max) { d.max = k.gaji; d.tertinggi = k.nama; }\n  }\n  return Object.fromEntries(Object.entries(hasil).map(([div, d]) => [div, { jumlah: d.jumlah, rataGaji: Math.round(d.total / d.jumlah), tertinggi: d.tertinggi }]));\n}\n\nasync function laporanMasaKerja(ambilTeks, hariIni) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "function parseKaryawan(teks) {\n  const [kepala, ...baris] = teks.trim().split(\"\\n\");\n  const kunci = kepala.split(\",\").map(k => k.trim());\n  return baris\n    .filter(b => b.trim())\n    .map(b => Object.fromEntries(b.split(\",\").map((v, i) => [kunci[i], v.trim()])))\n    .map(o => ({ ...o, gaji: Number(o.gaji) }))\n    .filter(o => Number.isFinite(o.gaji) && o.gaji > 0);\n}\n\nfunction statistikDivisi(teks) {\n  const hasil = {};\n  for (const k of parseKaryawan(teks)) {\n    const d = (hasil[k.divisi] ??= { jumlah: 0, total: 0, tertinggi: k.nama, max: -1 });\n    d.jumlah++;\n    d.total += k.gaji;\n    if (k.gaji > d.max) { d.max = k.gaji; d.tertinggi = k.nama; }\n  }\n  return Object.fromEntries(Object.entries(hasil).map(([div, d]) => [div, { jumlah: d.jumlah, rataGaji: Math.round(d.total / d.jumlah), tertinggi: d.tertinggi }]));\n}\n\nasync function laporanMasaKerja(ambilTeks, hariIni) {\n  let teks;\n  try { teks = await ambilTeks(); } catch { return []; }\n  const [th, bl, hr] = hariIni.split(\"-\").map(Number);\n  return parseKaryawan(teks)\n    .map(k => {\n      const [y, m, d] = k.mulai.split(\"-\").map(Number);\n      const tahun = th - y - ((bl < m || (bl === m && hr < d)) ? 1 : 0);\n      return { nama: k.nama, tahun };\n    })\n    .sort((a, b) => b.tahun - a.tahun || a.nama.localeCompare(b.nama));\n}\n",
+"jelas": "Cita yang mulai 25 November belum genap 4 tahun pada 24 November: batas tanggal seperti ini selalu diuji di soal HR.",
+"kompleksitas": "",
+"petunjuk": [
+"Bungkus await ambilTeks() dengan try/catch.",
+"Tahun penuh: selisih tahun, dikurangi 1 bila (bulan, hari) ini belum mencapai (bulan, hari) mulai.",
+"Kerangka solusinya:\nfunction parseKaryawan(teks) {\n  const [kepala, ...baris] = …\n  const kunci = …\n  return …\n    .filter(b = …\n    .map(b = …\n    .map(o = …\n    .filter(o = …\n}\n\nfunction statistikDivisi(teks) {\n  const hasil = …\n  for (const k of parseKaryawan(teks)) {\n    const d = …\n    d.jumlah++;\n    d.total += …\n    if (k.gaji > d.max) { d.max = …\n  }\n  return …\n}\n\nasync function laporanMasaKerja(ambilTeks, hariIni) {\n  let teks;\n  try { teks = …\n  const [th, bl, hr] = …\n  return …\n    .map(k = …\n      const [y, m, d] = …\n      const tahun = …\n      return …\n    })\n    .sort((a, b) = …\n}"
+],
+"tes": [
+[
+"await laporanMasaKerja(async () => \"nama,divisi,gaji,mulai\\nAni,IT,8000000,2024-03-01\\nCita,IT,9500000,2022-11-25\\nBudi,HR,7000000,2022-11-24\", \"2026-11-24\")",
+"[{\"nama\": \"Budi\", \"tahun\": 4}, {\"nama\": \"Cita\", \"tahun\": 3}, {\"nama\": \"Ani\", \"tahun\": 2}]"
+],
+[
+"await laporanMasaKerja(async () => { throw new Error(\"file tidak ada\"); }, \"2026-11-24\")",
+"[]"
+],
+[
+"await laporanMasaKerja(async () => \"nama,divisi,gaji,mulai\", \"2026-01-01\")",
+"[]"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "async function laporanMasaKerja(ambilTeks, hariIni) {\n  // tulis kodemu di sini\n}\n"
+}
+],
+"ujian": true,
+"cakupan": "Bab 6–10: string & objek, logika data tanpa DOM, async, JS modern, debugging"
+},
+{
+"id": "uji-js-3",
+"topik": "js",
+"setelah": "koleksi",
+"judul": "Aplikasi catatan",
+"contoh": {
+"judul": "Cara mengerjakan coding test besar",
+"penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Kode bagian sebelumnya otomatis ikut di editor, jadi kamu tinggal menambahkan fungsi baru di bawahnya.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
+"kode": "const bersihkan = t => t.trim().toLowerCase();\nconst hitung = daftar => daftar.reduce((o, k) => ({ ...o, [k]: (o[k] || 0) + 1 }), {});\nconst laporan = mentah => Object.entries(hitung(mentah.map(bersihkan))).sort();\nconsole.log(laporan([\" Kopi\", \"teh \", \"KOPI\"]));",
+"kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "js",
+"keluaran": "[[\"kopi\",2],[\"teh\",1]]"
+},
+"langkah": [
+{
+"id": "uji-js-3-a",
+"judul": "Bagian A: Class BukuCatatan",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "js",
+"fungsi": "BukuCatatan",
+"cerita": "Kamu membuat inti aplikasi catatan: menyimpan catatan, mencari dengan tag, dan mengekspor.",
+"soal": "Buat class <code>BukuCatatan</code> dengan field privat <code>#data</code> (Map id → catatan) dan penghitung id mulai 1. Method <code>tambah(judul, isi)</code> mengembalikan id baru; judul kosong setelah trim melempar <code>Error(\"Judul wajib diisi\")</code>. Tag diambil otomatis dari isi: kata yang diawali <code>#</code> (huruf kecil, unik, urut abjad). Method <code>ambil(id)</code> mengembalikan salinan <code>{ id, judul, isi, tag }</code> atau <code>null</code>, dan getter <code>jumlah</code>.",
+"awal": "class BukuCatatan {\n  // tulis kodemu di sini\n  // tambahkan juga method semua() yang mengembalikan salinan semua catatan (dipakai bagian B)\n}\n",
+"solusi": "class BukuCatatan {\n  #data = new Map();\n  #idBerikut = 1;\n  tambah(judul, isi) {\n    if (!judul.trim()) throw new Error(\"Judul wajib diisi\");\n    const tag = [...new Set((isi.match(/#\\w+/g) ?? []).map(t => t.slice(1).toLowerCase()))].sort();\n    const id = this.#idBerikut++;\n    this.#data.set(id, { id, judul: judul.trim(), isi, tag });\n    return id;\n  }\n  ambil(id) {\n    const c = this.#data.get(id);\n    return c ? { ...c, tag: [...c.tag] } : null;\n  }\n  get jumlah() { return this.#data.size; }\n  semua() { return [...this.#data.values()].map(c => ({ ...c, tag: [...c.tag] })); }\n}\n",
+"jelas": "Tes terakhir memastikan enkapsulasi: mengubah hasil ambil() tidak mengubah data asli.",
+"kompleksitas": "",
+"petunjuk": [
+"isi.match(/#\\w+/g) memberi semua tag (atau null). Buang tanda # dengan slice(1), unikkan dengan Set, lalu sort.",
+"ambil() mengembalikan SALINAN (spread + salin array tag) agar data di dalam tidak bisa dirusak dari luar.",
+"Kerangka solusinya:\nclass BukuCatatan {\n  #data = …\n  #idBerikut = …\n  tambah(judul, isi) {\n    if (!judul.trim()) throw new Error(\"Judul wajib diisi\");\n    const tag = …\n    const id = …\n    this.#data.set(id, { id, judul: judul.trim(), isi, tag });\n    return …\n  }\n  ambil(id) {\n    const c = …\n    return …\n  }\n  get jumlah() { return …\n  semua() { return …\n}"
+],
+"tes": [
+[
+"const b = new BukuCatatan();\nconst id = b.tambah(\" Rapat \", \"Bahas #Odoo dan #rpa lalu #odoo lagi\");\nconst hasil = [id, b.ambil(id), b.jumlah];",
+"[1, {\"id\": 1, \"judul\": \"Rapat\", \"isi\": \"Bahas #Odoo dan #rpa lalu #odoo lagi\", \"tag\": [\"odoo\", \"rpa\"]}, 1]"
+],
+[
+"const b = new BukuCatatan();\nb.tambah(\"a\", \"\");\nconst hasil = [b.tambah(\"b\", \"x\"), b.ambil(99)];",
+"[2, null]"
+],
+[
+"const b = new BukuCatatan();\nlet hasil;\ntry { b.tambah(\"   \", \"isi\"); } catch (e) { hasil = [e.message, b.jumlah]; }",
+"[\"Judul wajib diisi\", 0]"
+],
+[
+"const b = new BukuCatatan();\nconst id = b.tambah(\"a\", \"#x\");\nb.ambil(id).tag.push(\"rusak\");\nconst hasil = b.ambil(id).tag;",
+"[\"x\"]"
+]
+],
+"contoh": 2,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": ""
+},
+{
+"id": "uji-js-3-b",
+"judul": "Bagian B: Cari catatan",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "js",
+"fungsi": "cari",
+"cerita": "Lanjutan bagian A. Kodemu yang sudah lulus ada di editor; tambahkan fungsi baru di bawahnya.",
+"soal": "Buat fungsi <code>cari(buku, kueri)</code>. Kueri berisi kata biasa dan/atau tag (<code>#odoo</code>). Catatan cocok bila mengandung <b>semua</b> tag di kueri dan <b>semua</b> kata biasa ada di judul atau isi (tanpa peduli huruf besar). Kembalikan array id terurut. Kueri kosong → semua id.",
+"awal": "class BukuCatatan {\n  #data = new Map();\n  #idBerikut = 1;\n  tambah(judul, isi) {\n    if (!judul.trim()) throw new Error(\"Judul wajib diisi\");\n    const tag = [...new Set((isi.match(/#\\w+/g) ?? []).map(t => t.slice(1).toLowerCase()))].sort();\n    const id = this.#idBerikut++;\n    this.#data.set(id, { id, judul: judul.trim(), isi, tag });\n    return id;\n  }\n  ambil(id) {\n    const c = this.#data.get(id);\n    return c ? { ...c, tag: [...c.tag] } : null;\n  }\n  get jumlah() { return this.#data.size; }\n  semua() { return [...this.#data.values()].map(c => ({ ...c, tag: [...c.tag] })); }\n}\n\nfunction cari(buku, kueri) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "class BukuCatatan {\n  #data = new Map();\n  #idBerikut = 1;\n  tambah(judul, isi) {\n    if (!judul.trim()) throw new Error(\"Judul wajib diisi\");\n    const tag = [...new Set((isi.match(/#\\w+/g) ?? []).map(t => t.slice(1).toLowerCase()))].sort();\n    const id = this.#idBerikut++;\n    this.#data.set(id, { id, judul: judul.trim(), isi, tag });\n    return id;\n  }\n  ambil(id) {\n    const c = this.#data.get(id);\n    return c ? { ...c, tag: [...c.tag] } : null;\n  }\n  get jumlah() { return this.#data.size; }\n  semua() { return [...this.#data.values()].map(c => ({ ...c, tag: [...c.tag] })); }\n}\n\nfunction cari(buku, kueri) {\n  const bagian = kueri.toLowerCase().split(/\\s+/).filter(Boolean);\n  const tag = bagian.filter(b => b.startsWith(\"#\")).map(b => b.slice(1));\n  const kata = bagian.filter(b => !b.startsWith(\"#\"));\n  return buku.semua()\n    .filter(c => tag.every(t => c.tag.includes(t)))\n    .filter(c => kata.every(k => (c.judul + \" \" + c.isi).toLowerCase().includes(k)))\n    .map(c => c.id)\n    .sort((a, b) => a - b);\n}\n",
+"jelas": "Pencarian dengan beberapa syarat AND adalah pola filter di hampir semua aplikasi, termasuk search view Odoo.",
+"kompleksitas": "",
+"petunjuk": [
+"Pisahkan kueri menjadi tag (diawali #) dan kata biasa.",
+"every untuk syarat 'semua cocok'; includes untuk mengecek isi.",
+"Kerangka solusinya:\nclass BukuCatatan {\n  #data = …\n  #idBerikut = …\n  tambah(judul, isi) {\n    if (!judul.trim()) throw new Error(\"Judul wajib diisi\");\n    const tag = …\n    const id = …\n    this.#data.set(id, { id, judul: judul.trim(), isi, tag });\n    return …\n  }\n  ambil(id) {\n    const c = …\n    return …\n  }\n  get jumlah() { return …\n  semua() { return …\n}\n\nfunction cari(buku, kueri) {\n  const bagian = …\n  const tag = …\n  const kata = …\n  return …\n    .filter(c = …\n    .filter(c = …\n    .map(c = …\n    .sort((a, b) = …\n}"
+],
+"tes": [
+[
+"const b = new BukuCatatan();\nb.tambah(\"Rapat Odoo\", \"modul #odoo #sales\");\nb.tambah(\"Belanja\", \"kopi gula\");\nb.tambah(\"Bug\", \"error di #odoo purchase\");\nconst hasil = [cari(b, \"#odoo\"), cari(b, \"#odoo purchase\"), cari(b, \"KOPI\"), cari(b, \"\"), cari(b, \"#rpa\")];",
+"[[1, 3], [3], [2], [1, 2, 3], []]"
+],
+[
+"const hasil = cari(new BukuCatatan(), \"apa saja\");",
+"[]"
+],
+[
+"const b = new BukuCatatan();\nb.tambah(\"Ide\", \"Otomasi faktur #RPA\");\nconst hasil = [cari(b, \"#rpa\"), cari(b, \"faktur #rpa\"), cari(b, \"faktur #odoo\")];",
+"[[1], [1], []]"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "function cari(buku, kueri) {\n  // tulis kodemu di sini\n}\n"
+},
+{
+"id": "uji-js-3-c",
+"judul": "Bagian C: Statistik tag",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "js",
+"fungsi": "statistikTag",
+"cerita": "Lanjutan bagian B. Kodemu yang sudah lulus ada di editor; tambahkan fungsi baru di bawahnya.",
+"soal": "Buat <code>statistikTag(buku)</code> yang mengembalikan array <code>[tag, jumlahCatatan]</code> memakai <code>Map</code>, diurutkan dari terbanyak; seri diurutkan abjad.",
+"awal": "class BukuCatatan {\n  #data = new Map();\n  #idBerikut = 1;\n  tambah(judul, isi) {\n    if (!judul.trim()) throw new Error(\"Judul wajib diisi\");\n    const tag = [...new Set((isi.match(/#\\w+/g) ?? []).map(t => t.slice(1).toLowerCase()))].sort();\n    const id = this.#idBerikut++;\n    this.#data.set(id, { id, judul: judul.trim(), isi, tag });\n    return id;\n  }\n  ambil(id) {\n    const c = this.#data.get(id);\n    return c ? { ...c, tag: [...c.tag] } : null;\n  }\n  get jumlah() { return this.#data.size; }\n  semua() { return [...this.#data.values()].map(c => ({ ...c, tag: [...c.tag] })); }\n}\n\nfunction cari(buku, kueri) {\n  const bagian = kueri.toLowerCase().split(/\\s+/).filter(Boolean);\n  const tag = bagian.filter(b => b.startsWith(\"#\")).map(b => b.slice(1));\n  const kata = bagian.filter(b => !b.startsWith(\"#\"));\n  return buku.semua()\n    .filter(c => tag.every(t => c.tag.includes(t)))\n    .filter(c => kata.every(k => (c.judul + \" \" + c.isi).toLowerCase().includes(k)))\n    .map(c => c.id)\n    .sort((a, b) => a - b);\n}\n\nfunction statistikTag(buku) {\n  // tulis kodemu di sini\n}\n",
+"solusi": "class BukuCatatan {\n  #data = new Map();\n  #idBerikut = 1;\n  tambah(judul, isi) {\n    if (!judul.trim()) throw new Error(\"Judul wajib diisi\");\n    const tag = [...new Set((isi.match(/#\\w+/g) ?? []).map(t => t.slice(1).toLowerCase()))].sort();\n    const id = this.#idBerikut++;\n    this.#data.set(id, { id, judul: judul.trim(), isi, tag });\n    return id;\n  }\n  ambil(id) {\n    const c = this.#data.get(id);\n    return c ? { ...c, tag: [...c.tag] } : null;\n  }\n  get jumlah() { return this.#data.size; }\n  semua() { return [...this.#data.values()].map(c => ({ ...c, tag: [...c.tag] })); }\n}\n\nfunction cari(buku, kueri) {\n  const bagian = kueri.toLowerCase().split(/\\s+/).filter(Boolean);\n  const tag = bagian.filter(b => b.startsWith(\"#\")).map(b => b.slice(1));\n  const kata = bagian.filter(b => !b.startsWith(\"#\"));\n  return buku.semua()\n    .filter(c => tag.every(t => c.tag.includes(t)))\n    .filter(c => kata.every(k => (c.judul + \" \" + c.isi).toLowerCase().includes(k)))\n    .map(c => c.id)\n    .sort((a, b) => a - b);\n}\n\nfunction statistikTag(buku) {\n  const hitung = new Map();\n  for (const c of buku.semua()) for (const t of c.tag) hitung.set(t, (hitung.get(t) ?? 0) + 1);\n  return [...hitung].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));\n}\n",
+"jelas": "Tag di catatan sudah unik (bagian A), jadi #odoo yang ditulis dua kali di satu catatan tetap dihitung sekali.",
+"kompleksitas": "",
+"petunjuk": [
+"Untuk setiap catatan dan setiap tagnya: hitung.set(t, (hitung.get(t) ?? 0) + 1).",
+"[...map] lalu sort dengan pemecah seri localeCompare.",
+"Kerangka solusinya:\nclass BukuCatatan {\n  #data = …\n  #idBerikut = …\n  tambah(judul, isi) {\n    if (!judul.trim()) throw new Error(\"Judul wajib diisi\");\n    const tag = …\n    const id = …\n    this.#data.set(id, { id, judul: judul.trim(), isi, tag });\n    return …\n  }\n  ambil(id) {\n    const c = …\n    return …\n  }\n  get jumlah() { return …\n  semua() { return …\n}\n\nfunction cari(buku, kueri) {\n  const bagian = …\n  const tag = …\n  const kata = …\n  return …\n    .filter(c = …\n    .filter(c = …\n    .map(c = …\n    .sort((a, b) = …\n}\n\nfunction statistikTag(buku) {\n  const hitung = …\n  for (const c of buku.semua()) for (const t of c.tag) hitung.set(t, (hitung.get(t) ?? 0) + 1);\n  return …\n}"
+],
+"tes": [
+[
+"const b = new BukuCatatan();\nb.tambah(\"1\", \"#odoo #sales\");\nb.tambah(\"2\", \"#rpa\");\nb.tambah(\"3\", \"#odoo #rpa #odoo\");\nconst hasil = statistikTag(b);",
+"[[\"odoo\", 2], [\"rpa\", 2], [\"sales\", 1]]"
+],
+[
+"const hasil = statistikTag(new BukuCatatan());",
+"[]"
+],
+[
+"const b = new BukuCatatan();\nb.tambah(\"x\", \"#z #a\");\nb.tambah(\"y\", \"#a\");\nconst hasil = statistikTag(b);",
+"[[\"a\", 2], [\"z\", 1]]"
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": false,
+"tabel": [],
+"awal_baru": "function statistikTag(buku) {\n  // tulis kodemu di sini\n}\n"
+}
+],
+"ujian": true,
+"cakupan": "Bab 11–15: closure, validasi & debounce, class, error, Map/Set/Date/regex"
+},
+{
+"id": "sql-select",
+"topik": "sql",
+"setelah": "select",
+"judul": "Menyaring dan mengurutkan transaksi",
+"contoh": {
+"judul": "Contoh: WHERE dengan AND, ORDER BY, LIMIT",
+"penjelasan": "<p>Pilih kolom yang perlu saja, saring baris dengan <code>WHERE</code> (gabungkan syarat dengan <code>AND</code>/<code>OR</code>, teks pakai kutip tunggal), urutkan dengan <code>ORDER BY ... DESC</code>, lalu batasi dengan <code>LIMIT</code>.</p>",
+"kode": "SELECT id, kategori, nilai\nFROM transaksi\nWHERE status = 'selesai' AND kanal = 'web'\nORDER BY nilai DESC\nLIMIT 3;",
+"kunci": "Urutan klausa: SELECT → FROM → WHERE → ORDER BY → LIMIT.",
+"bahasa": "sql",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "sql-sel-1",
+"judul": "Transaksi Fashion yang selesai",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Tampilkan <b>id</b>, <b>tanggal</b>, dan <b>nilai</b> transaksi berkategori <code>Fashion</code> yang statusnya <code>selesai</code>, diurutkan dari tanggal <b>terbaru</b>.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT id, tanggal, nilai\nFROM transaksi\nWHERE kategori = 'Fashion' AND status = 'selesai'\nORDER BY tanggal DESC;",
+"jelas": "Format tanggal ISO membuat ORDER BY pada teks tetap benar secara kronologis.",
+"kompleksitas": "",
+"petunjuk": [
+"Dua syarat di WHERE digabung AND; teks memakai kutip tunggal.",
+"Tanggal berformat YYYY-MM-DD bisa diurutkan seperti teks: DESC = terbaru dulu.",
+"Kerangka solusinya:\nSELECT …, …, …\nFROM …\nWHERE … = '…' AND … = '…'\nORDER BY … DESC;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+},
+{
+"id": "sql-sel-2",
+"judul": "Lima transaksi terbesar via app",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Tampilkan <b>id</b>, <b>kategori</b>, dan <b>nilai</b> dari 5 transaksi bernilai <b>terbesar</b> yang dilakukan lewat kanal <code>app</code>, tidak berstatus <code>batal</code>, dan tidak memakai voucher (<code>voucher = 0</code>).",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT id, kategori, nilai\nFROM transaksi\nWHERE kanal = 'app' AND status <> 'batal' AND voucher = 0\nORDER BY nilai DESC\nLIMIT 5;",
+"jelas": "LIMIT tanpa ORDER BY memberi baris acak; selalu urutkan dulu sebelum mengambil 'teratas'.",
+"kompleksitas": "",
+"petunjuk": [
+"Tiga syarat: kanal, status (pakai <> atau !=), dan voucher.",
+"ORDER BY nilai DESC lalu LIMIT 5.",
+"Kerangka solusinya:\nSELECT …, …, …\nFROM …\nWHERE … = '…' AND … <> '…' AND … = 0\nORDER BY … DESC\nLIMIT 5;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "sql-groupby",
+"topik": "sql",
+"setelah": "groupby",
+"judul": "Meringkas dengan GROUP BY",
+"contoh": {
+"judul": "Contoh: COUNT, SUM, AVG per kelompok",
+"penjelasan": "<p><code>GROUP BY</code> mengelompokkan baris yang nilainya sama, lalu fungsi agregat (<code>COUNT</code>, <code>SUM</code>, <code>AVG</code>) dihitung per kelompok. Syarat untuk hasil agregat memakai <code>HAVING</code>, bukan WHERE.</p>",
+"kode": "SELECT kanal, COUNT(*) AS jumlah, SUM(nilai) AS omzet\nFROM transaksi\nWHERE status = 'selesai'\nGROUP BY kanal\nORDER BY omzet DESC;",
+"kunci": "WHERE menyaring baris SEBELUM dikelompokkan; HAVING menyaring kelompok SESUDAHNYA.",
+"bahasa": "sql",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "sql-gb-1",
+"judul": "Omzet per kategori",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Untuk transaksi berstatus <code>selesai</code>, tampilkan <b>kategori</b>, <b>jumlah transaksi</b>, dan <b>total nilai</b> per kategori, diurutkan dari total terbesar.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT kategori, COUNT(*) AS jumlah, SUM(nilai) AS total\nFROM transaksi\nWHERE status = 'selesai'\nGROUP BY kategori\nORDER BY total DESC;",
+"jelas": "Ini query 'omzet per kategori' yang menjadi dasar hampir semua dashboard penjualan.",
+"kompleksitas": "",
+"petunjuk": [
+"Saring status di WHERE, lalu GROUP BY kategori.",
+"Beri alias pada SUM(nilai) agar bisa dipakai di ORDER BY.",
+"Kerangka solusinya:\nSELECT …, COUNT(*) AS …, SUM(…) AS …\nFROM …\nWHERE … = '…'\nGROUP BY …\nORDER BY … DESC;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+},
+{
+"id": "sql-gb-2",
+"judul": "Kota dengan banyak pengguna",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Dari tabel <code>pengguna</code>, tampilkan <b>kota</b> dan <b>jumlah pengguna</b> hanya untuk kota yang punya <b>minimal 2</b> pengguna dari sumber selain <code>iklan</code>, urutkan jumlah terbanyak lalu nama kota.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT kota, COUNT(*) AS jumlah\nFROM pengguna\nWHERE sumber <> 'iklan'\nGROUP BY kota\nHAVING COUNT(*) >= 2\nORDER BY jumlah DESC, kota;",
+"jelas": "Menaruh syarat agregat di WHERE akan error; menaruh syarat baris di HAVING bisa jalan tetapi lebih lambat dan membingungkan.",
+"kompleksitas": "",
+"petunjuk": [
+"Sumber disaring di WHERE (per baris), jumlah disaring di HAVING (per kelompok).",
+"ORDER BY dua kolom: jumlah DESC, kota.",
+"Kerangka solusinya:\nSELECT …, COUNT(*) AS …\nFROM …\nWHERE … <> '…'\nGROUP BY …\nHAVING COUNT(*) >= 2\nORDER BY … DESC, …;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"pengguna"
+],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "sql-join",
+"topik": "sql",
+"setelah": "join",
+"judul": "Menggabungkan tabel dengan JOIN",
+"contoh": {
+"judul": "Contoh: INNER JOIN dan LEFT JOIN",
+"penjelasan": "<p><code>JOIN ... ON</code> menyambungkan baris dua tabel lewat kolom kunci. <code>INNER JOIN</code> hanya baris yang punya pasangan; <code>LEFT JOIN</code> mempertahankan semua baris tabel kiri (pasangan kosong menjadi NULL).</p>",
+"kode": "SELECT p.nama, COUNT(o.id) AS jumlah_pesanan\nFROM pelanggan p\nLEFT JOIN pesanan o ON o.pelanggan_id = p.id\nGROUP BY p.id, p.nama\nORDER BY jumlah_pesanan DESC;",
+"kunci": "COUNT(o.id) (bukan COUNT(*)) agar pelanggan tanpa pesanan dihitung 0 pada LEFT JOIN.",
+"bahasa": "sql",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "sql-join-1",
+"judul": "Detail pesanan",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Tampilkan <b>id pesanan</b>, <b>nama pelanggan</b>, <b>nama produk</b>, dan <b>subtotal</b> (qty × harga) untuk setiap pesanan, diurutkan berdasarkan id pesanan.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT o.id, p.nama, pr.nama, o.qty * pr.harga AS subtotal\nFROM pesanan o\nJOIN pelanggan p ON p.id = o.pelanggan_id\nJOIN produk pr ON pr.id = o.produk_id\nORDER BY o.id;",
+"jelas": "Alias tabel wajib ketika nama kolom sama di beberapa tabel, misalnya id dan nama.",
+"kompleksitas": "",
+"petunjuk": [
+"JOIN dua kali: ke pelanggan dan ke produk.",
+"Kedua tabel punya kolom nama; beri alias tabel (p.nama, pr.nama).",
+"Kerangka solusinya:\nSELECT ….…, ….…, ….…, ….… * ….… AS …\nFROM … …\nJOIN … … ON ….… = ….…\nJOIN … … ON ….… = ….…\nORDER BY ….…;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"pesanan",
+"pelanggan",
+"produk"
+],
+"awal_baru": ""
+},
+{
+"id": "sql-join-2",
+"judul": "Penjualan per kategori, termasuk yang nol",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Tampilkan setiap <b>kategori produk</b> dan <b>total qty terjual</b>; kategori tanpa penjualan tetap tampil dengan 0. Urutkan dari qty terbanyak.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT pr.kategori, COALESCE(SUM(o.qty), 0) AS qty\nFROM produk pr\nLEFT JOIN pesanan o ON o.produk_id = pr.id\nGROUP BY pr.kategori\nORDER BY qty DESC;",
+"jelas": "Pada data ini semua kategori punya penjualan, tetapi pola LEFT JOIN + COALESCE melindungi laporan ketika ada produk baru yang belum laku.",
+"kompleksitas": "",
+"petunjuk": [
+"Mulai FROM produk lalu LEFT JOIN pesanan agar semua produk ikut.",
+"SUM dari baris NULL menghasilkan NULL; bungkus dengan COALESCE(..., 0).",
+"Kerangka solusinya:\nSELECT ….…, COALESCE(SUM(….…), 0) AS …\nFROM … …\nLEFT JOIN … … ON ….… = ….…\nGROUP BY ….…\nORDER BY … DESC;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"produk",
+"pesanan"
+],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "sql-subquery",
+"topik": "sql",
+"setelah": "subquery",
+"judul": "Subquery: query di dalam query",
+"contoh": {
+"judul": "Contoh: membandingkan dengan rata-rata",
+"penjelasan": "<p>Subquery dihitung lebih dulu, lalu hasilnya dipakai query luar. Bisa mengembalikan satu nilai (dibandingkan dengan <code>&gt;</code>) atau daftar (dipakai dengan <code>IN</code>).</p>",
+"kode": "SELECT id, nilai\nFROM transaksi\nWHERE nilai > (SELECT AVG(nilai) FROM transaksi)\nORDER BY nilai DESC;",
+"kunci": "Satu nilai → = < >. Daftar → IN / NOT IN.",
+"bahasa": "sql",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "sql-sub-1",
+"judul": "Di atas rata-rata kategorinya sendiri",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Tampilkan <b>id</b>, <b>kategori</b>, dan <b>nilai</b> transaksi yang nilainya <b>lebih besar dari rata-rata kategori yang sama</b>. Urutkan berdasarkan kategori lalu nilai terbesar.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT t.id, t.kategori, t.nilai\nFROM transaksi t\nWHERE t.nilai > (SELECT AVG(x.nilai) FROM transaksi x WHERE x.kategori = t.kategori)\nORDER BY t.kategori, t.nilai DESC;",
+"jelas": "Subquery berkorelasi dijalankan per baris; untuk data besar sering diganti window function (bab 8).",
+"kompleksitas": "",
+"petunjuk": [
+"Ini subquery berkorelasi: subquery merujuk baris luar (t.kategori).",
+"Beri alias berbeda untuk tabel luar (t) dan dalam (x).",
+"Kerangka solusinya:\nSELECT ….…, ….…, ….…\nFROM … …\nWHERE ….… > (SELECT AVG(….…) FROM … … WHERE ….… = ….…)\nORDER BY ….…, ….… DESC;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+},
+{
+"id": "sql-sub-2",
+"judul": "Pengguna yang belum pernah bertransaksi selesai",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Tampilkan <b>nama</b> dan <b>kota</b> pengguna yang <b>tidak punya</b> satu pun transaksi berstatus <code>selesai</code>, urut nama.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT nama, kota\nFROM pengguna\nWHERE id NOT IN (SELECT pengguna_id FROM transaksi WHERE status = 'selesai')\nORDER BY nama;",
+"jelas": "Pengguna seperti ini adalah target kampanye aktivasi. Hati-hati: NOT IN dengan subquery yang berisi NULL menghasilkan kosong; di sini pengguna_id tidak pernah NULL.",
+"kompleksitas": "",
+"petunjuk": [
+"Subquery mengembalikan daftar pengguna_id yang punya transaksi selesai.",
+"Query luar memakai NOT IN.",
+"Kerangka solusinya:\nSELECT …, …\nFROM …\nWHERE … NOT IN (SELECT … FROM … WHERE … = '…')\nORDER BY …;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"pengguna",
+"transaksi"
+],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "sql-case",
+"topik": "sql",
+"setelah": "case",
+"judul": "CASE WHEN untuk segmentasi",
+"contoh": {
+"judul": "Contoh: label dan hitung bersyarat",
+"penjelasan": "<p><code>CASE WHEN ... THEN ... ELSE ... END</code> adalah IF di dalam SQL. Dipakai untuk memberi label, atau di dalam <code>SUM</code> untuk menghitung bersyarat.</p>",
+"kode": "SELECT id, nilai,\n  CASE WHEN nilai >= 1000000 THEN 'besar'\n       WHEN nilai >= 300000 THEN 'sedang'\n       ELSE 'kecil' END AS ukuran\nFROM transaksi\nORDER BY nilai DESC\nLIMIT 5;",
+"kunci": "SUM(CASE WHEN syarat THEN 1 ELSE 0 END) = hitung baris yang memenuhi syarat.",
+"bahasa": "sql",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "sql-case-1",
+"judul": "Label ukuran transaksi",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Untuk setiap label ukuran (<code>besar</code> ≥ 1.000.000; <code>sedang</code> ≥ 300.000; selain itu <code>kecil</code>), tampilkan <b>label</b> dan <b>jumlah transaksi</b>. Urutkan berdasarkan label.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT CASE WHEN nilai >= 1000000 THEN 'besar'\n            WHEN nilai >= 300000 THEN 'sedang'\n            ELSE 'kecil' END AS ukuran,\n       COUNT(*) AS jumlah\nFROM transaksi\nGROUP BY ukuran\nORDER BY ukuran;",
+"jelas": "Mengelompokkan berdasarkan hasil CASE adalah cara cepat membuat segmen pelanggan atau ukuran transaksi.",
+"kompleksitas": "",
+"petunjuk": [
+"Urutan WHEN penting: cek ambang terbesar dulu.",
+"GROUP BY alias kolom CASE (SQLite mengizinkan GROUP BY ukuran).",
+"Kerangka solusinya:\nSELECT CASE WHEN … >= 1000000 THEN '…'\n            WHEN … >= 300000 THEN '…'\n            ELSE '…' END AS …,\n       COUNT(*) AS …\nFROM …\nGROUP BY …\nORDER BY …;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+},
+{
+"id": "sql-case-2",
+"judul": "Rasio retur per kategori",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Per <b>kategori</b>, tampilkan <b>jumlah transaksi</b>, <b>jumlah retur</b>, dan <b>persen retur</b> (dibulatkan 1 desimal). Urutkan dari persen retur tertinggi, lalu kategori.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT kategori,\n       COUNT(*) AS jumlah,\n       SUM(CASE WHEN status = 'retur' THEN 1 ELSE 0 END) AS retur,\n       ROUND(100.0 * SUM(CASE WHEN status = 'retur' THEN 1 ELSE 0 END) / COUNT(*), 1) AS persen_retur\nFROM transaksi\nGROUP BY kategori\nORDER BY persen_retur DESC, kategori;",
+"jelas": "Di SQLite, 3 / 8 = 0 (bilangan bulat). 100.0 * ... memaksa hasil desimal: jebakan klasik soal rasio.",
+"kompleksitas": "",
+"petunjuk": [
+"Hitung retur dengan SUM(CASE WHEN status = 'retur' THEN 1 ELSE 0 END).",
+"Kalikan 100.0 (desimal) sebelum membagi, supaya bukan pembagian bilangan bulat.",
+"Kerangka solusinya:\nSELECT …,\n       COUNT(*) AS …,\n       SUM(CASE WHEN … = '…' THEN 1 ELSE 0 END) AS …,\n       ROUND(100.0 * SUM(CASE WHEN … = '…' THEN 1 ELSE 0 END) / COUNT(*), 1) AS …\nFROM …\nGROUP BY …\nORDER BY … DESC, …;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "sql-null",
+"topik": "sql",
+"setelah": "nullfungsi",
+"judul": "NULL dan fungsi bawaan",
+"contoh": {
+"judul": "Contoh: fungsi teks, tanggal, dan COALESCE",
+"penjelasan": "<p><code>substr(teks, mulai, panjang)</code> memotong teks, <code>strftime('%Y-%m', tanggal)</code> mengambil bulan, <code>UPPER</code>/<code>LOWER</code> mengubah huruf, <code>COALESCE(a, b)</code> memberi nilai pengganti NULL. Bandingkan NULL dengan <code>IS NULL</code>, bukan <code>= NULL</code>.</p>",
+"kode": "SELECT strftime('%Y-%m', tanggal) AS bulan, COUNT(*) AS jumlah\nFROM transaksi\nGROUP BY bulan\nORDER BY bulan;",
+"kunci": "strftime('%Y-%m', kolom_tanggal) untuk ringkasan bulanan. NULL tidak pernah = apa pun.",
+"bahasa": "sql",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "sql-null-1",
+"judul": "Omzet bulanan",
+"kategori": "studi",
+"tingkat": 1,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Tampilkan <b>bulan</b> (format <code>YYYY-MM</code>) dan <b>total nilai</b> transaksi berstatus <code>selesai</code> per bulan, urut bulan.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT strftime('%Y-%m', tanggal) AS bulan, SUM(nilai) AS total\nFROM transaksi\nWHERE status = 'selesai'\nGROUP BY bulan\nORDER BY bulan;",
+"jelas": "Ringkasan bulanan adalah grafik pertama di hampir semua dashboard.",
+"kompleksitas": "",
+"petunjuk": [
+"strftime('%Y-%m', tanggal) atau substr(tanggal, 1, 7).",
+"GROUP BY bulan lalu ORDER BY bulan.",
+"Kerangka solusinya:\nSELECT …('…', …) AS …, SUM(…) AS …\nFROM …\nWHERE … = '…'\nGROUP BY …\nORDER BY …;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+},
+{
+"id": "sql-null-2",
+"judul": "Login gagal per jam",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Dari <code>log_login</code>, tampilkan <b>tanggal</b>, <b>jam</b> (2 digit, dari kolom waktu), dan <b>jumlah login gagal</b> untuk jam yang punya <b>minimal 3</b> login gagal. Urutkan dari jumlah terbanyak, lalu tanggal dan jam.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT date(waktu) AS tanggal, strftime('%H', waktu) AS jam, COUNT(*) AS gagal\nFROM log_login\nWHERE status = 'gagal'\nGROUP BY tanggal, jam\nHAVING COUNT(*) >= 3\nORDER BY gagal DESC, tanggal, jam;",
+"jelas": "Lonjakan login gagal di jam tertentu adalah tanda serangan tebak password (brute force).",
+"kompleksitas": "",
+"petunjuk": [
+"date(waktu) mengambil bagian tanggal; strftime('%H', waktu) mengambil jam.",
+"GROUP BY dua kolom, lalu HAVING untuk ambang 3.",
+"Kerangka solusinya:\nSELECT …(…) AS …, …('…', …) AS …, COUNT(*) AS …\nFROM …\nWHERE … = '…'\nGROUP BY …, …\nHAVING COUNT(*) >= 3\nORDER BY … DESC, …, …;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"log_login"
+],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "sql-cte",
+"topik": "sql",
+"setelah": "cte",
+"judul": "CTE: query bertahap",
+"contoh": {
+"judul": "Contoh: WITH untuk langkah perantara",
+"penjelasan": "<p><code>WITH nama AS (SELECT ...)</code> membuat tabel sementara bernama yang bisa dipakai query berikutnya. Query panjang menjadi langkah-langkah yang mudah dibaca. <code>UNION ALL</code> menumpuk hasil dua query.</p>",
+"kode": "WITH per_pengguna AS (\n  SELECT pengguna_id, SUM(nilai) AS belanja\n  FROM transaksi\n  WHERE status = 'selesai'\n  GROUP BY pengguna_id\n)\nSELECT COUNT(*) AS jumlah_pembeli, AVG(belanja) AS rata_belanja\nFROM per_pengguna;",
+"kunci": "Satu CTE = satu langkah berpikir. Beberapa CTE dipisah koma.",
+"bahasa": "sql",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "sql-cte-1",
+"judul": "Pembeli di atas rata-rata",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Pakai CTE untuk menghitung total belanja (transaksi <code>selesai</code>) per pengguna, lalu tampilkan <b>nama pengguna</b> dan <b>total belanja</b> yang lebih besar dari rata-rata total belanja semua pembeli. Urutkan dari terbesar.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "WITH belanja AS (\n  SELECT pengguna_id, SUM(nilai) AS total\n  FROM transaksi\n  WHERE status = 'selesai'\n  GROUP BY pengguna_id\n)\nSELECT p.nama, b.total\nFROM belanja b\nJOIN pengguna p ON p.id = b.pengguna_id\nWHERE b.total > (SELECT AVG(total) FROM belanja)\nORDER BY b.total DESC;",
+"jelas": "CTE dipakai dua kali (di FROM dan di subquery) tanpa menulis ulang logikanya.",
+"kompleksitas": "",
+"petunjuk": [
+"CTE belanja: SUM per pengguna_id dengan WHERE status = 'selesai'.",
+"Query akhir: JOIN ke pengguna untuk nama, dan bandingkan dengan (SELECT AVG(total) FROM belanja).",
+"Kerangka solusinya:\nWITH … AS (\n  SELECT …, SUM(…) AS …\n  FROM …\n  WHERE … = '…'\n  GROUP BY …\n)\nSELECT ….…, ….…\nFROM … …\nJOIN … … ON ….… = ….…\nWHERE ….… > (SELECT AVG(…) FROM …)\nORDER BY ….… DESC;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi",
+"pengguna"
+],
+"awal_baru": ""
+},
+{
+"id": "sql-cte-2",
+"judul": "Laporan keamanan gabungan",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Buat satu tabel berisi dua jenis kejadian: <b>login gagal</b> dari <code>log_login</code> (status <code>gagal</code>) dan <b>error server</b> dari <code>log_web</code> (status ≥ 400). Tampilkan kolom <b>jenis</b> (<code>'login_gagal'</code> atau <code>'http_error'</code>), <b>ip</b>, dan <b>jumlah</b> kejadian per jenis dan ip, hanya yang jumlahnya ≥ 2, urutkan dari jumlah terbanyak lalu jenis dan ip.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "WITH kejadian AS (\n  SELECT 'login_gagal' AS jenis, ip FROM log_login WHERE status = 'gagal'\n  UNION ALL\n  SELECT 'http_error', ip FROM log_web WHERE status >= 400\n)\nSELECT jenis, ip, COUNT(*) AS jumlah\nFROM kejadian\nGROUP BY jenis, ip\nHAVING COUNT(*) >= 2\nORDER BY jumlah DESC, jenis, ip;",
+"jelas": "Menggabungkan beberapa sumber log ke satu tabel adalah pekerjaan inti analis SOC dan juga tim data.",
+"kompleksitas": "",
+"petunjuk": [
+"UNION ALL menumpuk dua SELECT yang jumlah dan urutan kolomnya sama.",
+"Taruh gabungan di CTE, lalu GROUP BY jenis, ip dengan HAVING.",
+"Kerangka solusinya:\nWITH … AS (\n  SELECT '…' AS …, … FROM … WHERE … = '…'\n  UNION ALL\n  SELECT '…', … FROM … WHERE … >= 400\n)\nSELECT …, …, COUNT(*) AS …\nFROM …\nGROUP BY …, …\nHAVING COUNT(*) >= 2\nORDER BY … DESC, …, …;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"log_login",
+"log_web"
+],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "sql-window",
+"topik": "sql",
+"setelah": "window",
+"judul": "Window function: peringkat dan total berjalan",
+"contoh": {
+"judul": "Contoh: RANK dan SUM OVER",
+"penjelasan": "<p>Window function menghitung nilai per baris <b>tanpa</b> meringkas baris. <code>RANK() OVER (PARTITION BY kategori ORDER BY nilai DESC)</code> memberi peringkat di dalam setiap kategori; <code>SUM(nilai) OVER (ORDER BY tanggal)</code> membuat total berjalan.</p>",
+"kode": "SELECT id, kategori, nilai,\n       RANK() OVER (PARTITION BY kategori ORDER BY nilai DESC) AS peringkat\nFROM transaksi\nWHERE kategori = 'Elektronik';",
+"kunci": "PARTITION BY = 'per kelompok', ORDER BY di dalam OVER = urutan perhitungan.",
+"bahasa": "sql",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "sql-win-1",
+"judul": "Transaksi terbesar per kategori",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Tampilkan <b>kategori</b>, <b>id</b>, dan <b>nilai</b> dari transaksi dengan nilai <b>terbesar di setiap kategori</b> (bila seri, tampilkan semua yang seri). Urut kategori.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "WITH r AS (\n  SELECT kategori, id, nilai,\n         RANK() OVER (PARTITION BY kategori ORDER BY nilai DESC) AS rk\n  FROM transaksi\n)\nSELECT kategori, id, nilai\nFROM r\nWHERE rk = 1\nORDER BY kategori, id;",
+"jelas": "Pola 'top-N per kelompok' (CTE + RANK) adalah soal window function paling sering di tes data analyst.",
+"kompleksitas": "",
+"petunjuk": [
+"Window function tidak bisa langsung dipakai di WHERE; hitung di CTE dulu.",
+"RANK() OVER (PARTITION BY kategori ORDER BY nilai DESC), lalu saring rk = 1.",
+"Kerangka solusinya:\nWITH … AS (\n  SELECT …, …, …,\n         …() OVER (PARTITION BY … ORDER BY … DESC) AS …\n  FROM …\n)\nSELECT …, …, …\nFROM …\nWHERE … = 1\nORDER BY …, …;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+},
+{
+"id": "sql-win-2",
+"judul": "Total berjalan dan selisih harian",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "",
+"soal": "Untuk transaksi <code>selesai</code> di kanal <code>web</code>, tampilkan <b>tanggal</b>, <b>nilai</b>, <b>total berjalan</b> (urut tanggal lalu id), dan <b>selisih</b> nilai dengan transaksi sebelumnya (transaksi pertama selisihnya NULL). Urut tanggal lalu id.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT tanggal, nilai,\n       SUM(nilai) OVER (ORDER BY tanggal, id) AS total_berjalan,\n       nilai - LAG(nilai) OVER (ORDER BY tanggal, id) AS selisih\nFROM transaksi\nWHERE status = 'selesai' AND kanal = 'web'\nORDER BY tanggal, id;",
+"jelas": "Total berjalan dan LAG dipakai untuk grafik pertumbuhan kumulatif dan deteksi lonjakan.",
+"kompleksitas": "",
+"petunjuk": [
+"SUM(nilai) OVER (ORDER BY tanggal, id) = total berjalan.",
+"LAG(nilai) mengambil nilai baris sebelumnya; baris pertama mendapat NULL.",
+"Kerangka solusinya:\nSELECT …, …,\n       SUM(…) OVER (ORDER BY …, …) AS …,\n       … - …(…) OVER (ORDER BY …, …) AS …\nFROM …\nWHERE … = '…' AND … = '…'\nORDER BY …, …;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+}
+],
+"ujian": false,
+"cakupan": ""
+},
+{
+"id": "uji-sql-1",
+"topik": "sql",
+"setelah": "case",
+"judul": "Laporan e-commerce untuk manajer",
+"contoh": {
+"judul": "Cara mengerjakan coding test besar",
+"penjelasan": "<p>Coding test besar terdiri dari <b>3 bagian</b> dalam satu cerita. Bagian B memakai hasil bagian A, dan bagian C memakai A dan B, sama seperti tugas kerja sungguhan. Setiap bagian adalah query baru dari data yang sama; pakai ulang pola query bagian sebelumnya.</p><ol><li>Baca ketiga bagian dulu supaya tahu arah akhirnya.</li><li>Kerjakan bagian A sampai lulus, lalu lanjut.</li><li>Pecah masalah menjadi fungsi kecil, uji dengan ▶ Jalankan dan <code>print()</code>.</li><li>Sisakan waktu untuk kasus tepi: data kosong, nol, nilai sama.</li></ol><p class=\"kecil\">Target waktu: ±45–60 menit untuk ketiga bagian.</p>",
+"kode": "-- Bagian A: pahami datanya dulu\nSELECT * FROM transaksi LIMIT 5;",
+"kunci": "Bagian C hampir selalu memakai fungsi bagian A dan B. Jangan menulis ulang, panggil saja.",
+"bahasa": "sql",
+"keluaran": ""
+},
+"langkah": [
+{
+"id": "uji-sql-1-a",
+"judul": "Bagian A: Kinerja kanal",
+"kategori": "studi",
+"tingkat": 2,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "Manajer e-commerce meminta tiga angka untuk rapat besok dari tabel <code>transaksi</code> dan <code>pengguna</code>.",
+"soal": "Per <b>kanal</b>, tampilkan <b>jumlah transaksi</b>, <b>omzet</b> (total nilai transaksi <code>selesai</code> saja), dan <b>persen batal</b> (status <code>batal</code> dibagi semua transaksi kanal itu, ×100, 1 desimal). Urut omzet terbesar.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT kanal,\n       COUNT(*) AS jumlah,\n       SUM(CASE WHEN status = 'selesai' THEN nilai ELSE 0 END) AS omzet,\n       ROUND(100.0 * SUM(CASE WHEN status = 'batal' THEN 1 ELSE 0 END) / COUNT(*), 1) AS persen_batal\nFROM transaksi\nGROUP BY kanal\nORDER BY omzet DESC;",
+"jelas": "Hitung bersyarat dengan CASE di dalam SUM memungkinkan beberapa metrik berbeda dalam satu GROUP BY.",
+"kompleksitas": "",
+"petunjuk": [
+"Jangan saring status di WHERE: jumlah transaksi harus menghitung semua status.",
+"SUM(CASE WHEN status = 'selesai' THEN nilai ELSE 0 END) untuk omzet bersyarat.",
+"Kerangka solusinya:\nSELECT …,\n       COUNT(*) AS …,\n       SUM(CASE WHEN … = '…' THEN … ELSE 0 END) AS …,\n       ROUND(100.0 * SUM(CASE WHEN … = '…' THEN 1 ELSE 0 END) / COUNT(*), 1) AS …\nFROM …\nGROUP BY …\nORDER BY … DESC;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+},
+{
+"id": "uji-sql-1-b",
+"judul": "Bagian B: Kota terbaik",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "Lanjutan bagian A: pertanyaan manajer berikutnya dari data yang sama.",
+"soal": "Tampilkan <b>kota</b> pengguna, <b>jumlah pembeli</b> (pengguna berbeda yang punya transaksi <code>selesai</code>), dan <b>omzet</b> transaksi selesai, hanya kota dengan omzet ≥ 1.000.000. Urut omzet terbesar.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT p.kota, COUNT(DISTINCT t.pengguna_id) AS pembeli, SUM(t.nilai) AS omzet\nFROM transaksi t\nJOIN pengguna p ON p.id = t.pengguna_id\nWHERE t.status = 'selesai'\nGROUP BY p.kota\nHAVING SUM(t.nilai) >= 1000000\nORDER BY omzet DESC;",
+"jelas": "COUNT(DISTINCT ...) membedakan 'jumlah transaksi' dan 'jumlah pembeli', dua angka yang sering tertukar dalam laporan.",
+"kompleksitas": "",
+"petunjuk": [
+"JOIN transaksi ke pengguna untuk mendapat kota.",
+"COUNT(DISTINCT t.pengguna_id) menghitung pembeli unik; ambang omzet di HAVING.",
+"Kerangka solusinya:\nSELECT ….…, COUNT(DISTINCT ….…) AS …, SUM(….…) AS …\nFROM … …\nJOIN … … ON ….… = ….…\nWHERE ….… = '…'\nGROUP BY ….…\nHAVING SUM(….…) >= 1000000\nORDER BY … DESC;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi",
+"pengguna"
+],
+"awal_baru": ""
+},
+{
+"id": "uji-sql-1-c",
+"judul": "Bagian C: Segmen pembeli",
+"kategori": "studi",
+"tingkat": 3,
+"bahasa": "sql",
+"fungsi": "",
+"cerita": "Lanjutan bagian B: pertanyaan manajer berikutnya dari data yang sama.",
+"soal": "Beri setiap pengguna yang punya transaksi <code>selesai</code> segmen berdasarkan total belanjanya: <code>VIP</code> (≥ 2.000.000), <code>Reguler</code> (≥ 500.000), selain itu <code>Baru</code>. Tampilkan <b>segmen</b>, <b>jumlah pengguna</b>, dan <b>rata-rata belanja</b> (dibulatkan ke bilangan bulat). Urut rata-rata terbesar.",
+"awal": "-- tulis query-mu di sini\n",
+"solusi": "SELECT segmen, COUNT(*) AS jumlah, ROUND(AVG(total)) AS rata_belanja\nFROM (\n  SELECT pengguna_id, SUM(nilai) AS total,\n         CASE WHEN SUM(nilai) >= 2000000 THEN 'VIP'\n              WHEN SUM(nilai) >= 500000 THEN 'Reguler'\n              ELSE 'Baru' END AS segmen\n  FROM transaksi\n  WHERE status = 'selesai'\n  GROUP BY pengguna_id\n) s\nGROUP BY segmen\nORDER BY rata_belanja DESC;",
+"jelas": "Agregasi dua tingkat (per pengguna, lalu per segmen) adalah dasar segmentasi pelanggan, seperti di skripsimu dengan K-Means, tapi memakai aturan bisnis.",
+"kompleksitas": "",
+"petunjuk": [
+"Langkah 1 (subquery di FROM): total belanja dan segmen per pengguna.",
+"Langkah 2: GROUP BY segmen dari hasil langkah 1.",
+"Kerangka solusinya:\nSELECT …, COUNT(*) AS …, ROUND(AVG(…)) AS …\nFROM (\n  SELECT …, SUM(…) AS …,\n         CASE WHEN SUM(…) >= 2000000 THEN '…'\n              WHEN SUM(…) >= 500000 THEN '…'\n              ELSE '…' END AS …\n  FROM …\n  WHERE … = '…'\n  GROUP BY …\n) …\nGROUP BY …\nORDER BY … DESC;"
+],
+"tes": [
+[
+"Hasil query",
+""
+]
+],
+"contoh": 1,
+"pre": "",
+"urut": true,
+"tabel": [
+"transaksi"
+],
+"awal_baru": ""
+}
+],
+"ujian": true,
+"cakupan": "Bab 1–5: SELECT, GROUP BY, JOIN, subquery, CASE"
 }
 ];
