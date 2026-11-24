@@ -38,7 +38,7 @@ const TOPIK_INFO = {
             prioritas: 1, alasan: "Dipakai di hampir semua lowongan data, dan Odoo menyimpan datanya di PostgreSQL." },
   bi:     { nama: "Dashboard & BI",   ikon: "BI",  kelas: "t-bi",     grup: "data",   ket: "KPI, memilih grafik, star schema, Power BI (DAX) & Looker Studio" },
   stat:   { nama: "Statistik & Metrik", ikon: "%", kelas: "t-stat",   grup: "data",   ket: "Mean/median, metrik bisnis, A/B test, clustering skripsimu" },
-  erp:    { nama: "ERP & Odoo",       ikon: "ERP", kelas: "t-erp",    grup: "data",   ket: "Sales, Inventory, akuntansi dasar, metodologi implementasi" },
+  erp:    { nama: "ERP & Odoo",       ikon: "ERP", kelas: "t-erp",    grup: "data",   ket: "Fungsional sampai developer Odoo 17: CRM, Sales, Purchase, gudang, MRP, akuntansi, HR, POS, ORM, XML, OWL + Lab Hitung (pricelist, pajak, valuasi, reorder, MRP, penyusutan)" },
   karier: { nama: "Persiapan Karier", ikon: "CV",  kelas: "t-karier", grup: "karier", ket: "Portofolio, CV, lowongan, wawancara, LinkedIn" },
   python: { nama: "Python",           ikon: "Py",  kelas: "t-py",     grup: "coding", ket: "Dasar sampai OOP lanjut, comprehension, generator, pustaka standar, testing, pandas, Odoo, proyek mini",
             prioritas: 2, alasan: "Analisis data (pandas) dan Odoo dibangun dengan Python." },
