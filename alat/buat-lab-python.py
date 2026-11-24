@@ -988,7 +988,7 @@ def studi(**kw): STUDI.append(kw)
 # Isi studi kasus ada di file terpisah supaya file ini tidak terlalu panjang.
 # Dibaca dengan exec karena python -I tidak menaruh folder skrip di sys.path.
 _DIR = os.path.dirname(os.path.abspath(__file__))
-for _f in ("lab-studi-python.py", "lab-studi-python-2.py", "lab-studi-ct.py", "lab-ujian.py",
+for _f in ("lab-mudah.py", "lab-studi-python.py", "lab-studi-python-2.py", "lab-studi-ct.py", "lab-ujian.py",
            "lab-studi-html.py", "lab-studi-css.py", "lab-studi-js.py", "lab-studi-sql.py"):
     _p = os.path.join(_DIR, _f)
     if os.path.exists(_p):
@@ -1095,6 +1095,7 @@ def olah(t, studi_id=None):
         "solusi": t["solusi"], "jelas": t["jelas"], "kompleksitas": t.get("kompleksitas", ""),
         "petunjuk": t["petunjuk"] + ["Kerangka solusinya:\n" + kerangka(t["solusi"])],
         "tes": hasil_tes, "contoh": t.get("contoh", 2 if len(hasil_tes) >= 4 else 1), "pre": pre, "awal_baru": t.get("awal_baru", ""),
+        "mudah": MUDAH.get(t["id"], []),
     }
 
 
@@ -1137,7 +1138,7 @@ def olah_lain(t, nama):
         "fungsi": t.get("fungsi", ""), "cerita": t.get("cerita", ""), "soal": t["soal"], "awal": t["awal"],
         "solusi": t["solusi"], "jelas": t["jelas"], "kompleksitas": "", "petunjuk": t["petunjuk"] + [t.get("petunjuk3") or "Kerangka solusinya:\n" + kerangka_lain(t["solusi"], b)],
         "tes": hasil_tes, "contoh": t.get("contoh", 2 if b == "js" and len(hasil_tes) >= 4 else 1), "pre": t.get("pre", ""),
-        "urut": t.get("urut", False), "tabel": t.get("tabel", []), "awal_baru": t.get("awal_baru", ""),
+        "urut": t.get("urut", False), "tabel": t.get("tabel", []), "awal_baru": t.get("awal_baru", ""), "mudah": MUDAH.get(t["id"], []),
     }
 
 
@@ -1196,6 +1197,10 @@ def main():
             C["keluaran"] = jalankan_contoh(C["kode"], C["bahasa"])
         except Exception as e:
             salah(f"studi {S['id']}: contoh error {type(e).__name__}: {e}"); C["keluaran"] = ""
+        if S["topik"] == "python":   # setiap soal studi kasus Python wajib punya penjelasan sederhana
+            for L in langkah:
+                if not L.get("mudah"):
+                    salah(f"studi {S['id']}: soal {L['id']} belum punya penjelasan sederhana di alat/lab-mudah.py")
         studi_out.append({"id": S["id"], "topik": S["topik"], "setelah": S["setelah"], "judul": S["judul"], "contoh": C, "langkah": langkah, "ujian": S.get("ujian", False), "cakupan": S.get("cakupan", "")})
         print(f"  ✓ studi {S['topik']}/{S['setelah']}: {S['judul']} ({len(langkah)} soal)")
     if MASALAH[0]:

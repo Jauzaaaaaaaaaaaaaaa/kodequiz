@@ -916,3 +916,10 @@ body[data-layar="pdf"] .topbar{position:relative}
 /* ===== Garis merah di baris error (editor-bantu.js) ===== */
 .eb-lapis{position:absolute;pointer-events:none;overflow:hidden;color:transparent;background:transparent;margin:0;z-index:2;border-style:solid}
 .eb-baris-salah{text-decoration:underline wavy #e5484d;text-decoration-thickness:1.5px;text-underline-offset:3px;background:rgb(229 72 77 / .13);border-radius:2px}
+
+/* ===== Penjelasan tugas dengan bahasa sederhana (py-lab.js) ===== */
+.pl-mudah{border-left:4px solid var(--hijau);background:color-mix(in srgb,var(--hijau-t) 55%,var(--permukaan));border-radius:0 12px 12px 0;padding:10px 14px;margin:10px 0}
+.pl-mudah-judul{font-weight:800;margin:0 0 4px}
+.pl-mudah ul{margin:0;padding-left:20px}
+.pl-mudah li{margin:4px 0;line-height:1.55}
+.pl-mudah-ringkas{margin:8px 0 0;font-size:.92rem}

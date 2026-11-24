@@ -517,6 +517,7 @@ function plRenderIsi(p, T, k, studi, sim) {
   el("pl-cerita").classList.toggle("tersembunyi", !T.cerita);
   el("pl-soal").innerHTML = T.soal;
   plRenderKosakata(T, p);
+  plRenderMudah(T);
   const b = plBahasa(T);
   el("pl-contoh").innerHTML = b === "web" ? `<ul class="pl-daftar">${T.tes.map(([desk]) => `<li>${esc(desk)}</li>`).join("")}</ul>`
     : b === "sql" ? `<div id="pl-sql-harap"><p class="cek-kosong">Memuat hasil yang diharapkan…</p></div>`
@@ -542,6 +543,28 @@ const plTampilEkspr = e => e;
 /* ---------- Kosakata kode: penjelasan setiap konsep Python yang dipakai soal, SEBELUM mengerjakan ---------- */
 const plKonsep = T => typeof KAMUS_PY === "undefined" || plBahasa(T) !== "py" ? []
   : KAMUS_PY.filter(k => new RegExp(k.pola, "m").test(T.solusi.replace(/"""[\s\S]*?"""/g, '""')));
+// "Dengan bahasa sederhana": langkah kecil + ringkasan otomatis (apa yang ditulis, hasilnya berjenis apa)
+function plJenisHasil(rep) {
+  if (/^(True|False|true|false)$/.test(rep)) return "True atau False";
+  if (/^None$|^null$/.test(rep)) return "None (kosong)";
+  if (/^['"]/.test(rep)) return "teks (string)";
+  if (/^-?\d/.test(rep)) return "angka";
+  if (/^\[/.test(rep)) return "list [ ]";
+  if (/^\{/.test(rep)) return "dict { }";
+  if (/^\(/.test(rep)) return "tuple ( ) berisi beberapa nilai";
+  return "";
+}
+function plRenderMudah(T) {
+  const b = plBahasa(T), wadah = el("pl-mudah");
+  let ringkas = "";
+  if (b === "py" || b === "js") {
+    const tanda = (T.awal.match(/^(?:def|class|function|async function|const)\s+[^\n:{=]+/m) || [""])[0].replace(/^(def|function|async function|const)\s+/, "").trim();
+    const jenis = T.tes.length ? plJenisHasil(T.tes[0][1]) : "";
+    if (tanda) ringkas = `<p class="pl-mudah-ringkas">✍️ Yang kamu tulis: <code>${esc(tanda)}</code>${jenis ? ` → hasil yang dikembalikan berupa <b>${esc(jenis)}</b>` : ""}.</p>`;
+  }
+  const langkah = T.mudah || [];
+  wadah.innerHTML = ringkas || langkah.length ? `<div class="pl-mudah">${langkah.length ? `<p class="pl-mudah-judul">🧩 Dengan bahasa sederhana</p><ul>${langkah.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}${ringkas}</div>` : "";
+}
 function plRenderKosakata(T, p) {
   const konsep = plKonsep(T), wadah = el("pl-kosakata");
   if (!konsep.length) { wadah.innerHTML = ""; return; }

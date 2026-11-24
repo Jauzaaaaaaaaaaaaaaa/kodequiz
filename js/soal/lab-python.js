@@ -39,7 +39,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "balik-kata",
@@ -78,7 +79,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "palindrom",
@@ -125,7 +127,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "hitung-vokal",
@@ -164,7 +167,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "faktorial",
@@ -207,7 +211,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "prima",
@@ -262,7 +267,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "maks-manual",
@@ -305,7 +311,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "unik-urut",
@@ -344,7 +351,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "jumlah-digit",
@@ -383,7 +391,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "nilai-huruf",
@@ -434,7 +443,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "two-sum",
@@ -477,7 +487,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "anagram",
@@ -524,7 +535,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "frekuensi-kata",
@@ -563,7 +575,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "kurung",
@@ -614,7 +627,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "gabung-interval",
@@ -657,7 +671,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "rotasi",
@@ -700,7 +715,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "unik-pertama",
@@ -743,7 +759,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "cari-biner",
@@ -790,7 +807,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "kompres",
@@ -833,7 +851,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "ratakan",
@@ -876,7 +895,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "fibonacci",
@@ -919,7 +939,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "kelompok-anagram",
@@ -958,7 +979,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "kadane",
@@ -1001,7 +1023,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "angka-hilang",
@@ -1044,7 +1067,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "top-k",
@@ -1083,7 +1107,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-subtotal",
@@ -1122,7 +1147,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-approval",
@@ -1165,7 +1191,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-domain",
@@ -1212,7 +1239,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-domain-polish",
@@ -1267,7 +1295,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-read-group",
@@ -1302,7 +1331,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-sequence",
@@ -1345,7 +1375,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-stok",
@@ -1384,7 +1415,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-jatuh-tempo",
@@ -1431,7 +1463,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-pricelist",
@@ -1474,7 +1507,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-top-customer",
@@ -1513,7 +1547,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-onchange-diskon",
@@ -1552,7 +1587,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "rpa-email",
@@ -1587,7 +1623,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "rpa-csv",
@@ -1622,7 +1659,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "rpa-tanggal",
@@ -1665,7 +1703,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "rpa-telepon",
@@ -1712,7 +1751,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "rpa-log",
@@ -1751,7 +1791,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "rpa-json",
@@ -1786,7 +1827,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "oop-rekening",
@@ -1829,7 +1871,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "oop-keranjang",
@@ -1868,7 +1911,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "oop-warisan",
@@ -1911,7 +1955,8 @@ const TANTANGAN_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ];
 const STUDI_PY = [
@@ -1970,7 +2015,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima sebuah angka, misalnya 1250000.",
+"Ubah menjadi teks yang punya titik setiap 3 angka dari belakang: 1.250.000.",
+"Tempelkan \"Rp \" (dengan satu spasi) di depannya, lalu kembalikan: \"Rp 1.250.000\".",
+"Contoh lain: 500 → \"Rp 500\", 0 → \"Rp 0\"."
+]
 },
 {
 "id": "py-dasar-2",
@@ -2009,7 +2060,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima 3 hal: nama barang, jumlah (qty), dan harga satuan.",
+"Rapikan nama: buang spasi di awal/akhir, lalu besarkan huruf awal tiap kata (\"  roti  \" → \"Roti\").",
+"Hitung total = qty × harga, lalu tulis dengan titik ribuan (36000 → 36.000).",
+"Susun jadi satu kalimat: \"2 x Kopi Susu = Rp 36.000\" dan kembalikan."
+]
 }
 ],
 "ujian": false,
@@ -2070,7 +2127,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima berat paket dalam gram, misalnya 2300.",
+"Ubah ke kg dan bulatkan KE ATAS: 2300 gram = 2,3 kg → dihitung 3 kg. Tepat 1000 gram = 1 kg.",
+"Paket seringan apa pun (bahkan 0 gram) tetap dihitung minimal 1 kg.",
+"Biaya = jumlah kg × 9000. Jadi 2300 gram → 3 × 9000 = 27000."
+]
 },
 {
 "id": "py-op-2",
@@ -2117,7 +2180,15 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Tahun kabisat = tahun yang bulan Februarinya 29 hari. Kamu cukup mengembalikan True (kabisat) atau False (bukan).",
+"Periksa dengan 3 pertanyaan, berurutan:",
+"1) Habis dibagi 400? → kabisat. Contoh 2000 dan 2400.",
+"2) Kalau tidak, habis dibagi 100? → BUKAN kabisat. Contoh 1900 dan 2100.",
+"3) Kalau tidak, habis dibagi 4? → kabisat. Contoh 2028. Selain itu bukan kabisat (contoh 2026).",
+"\"Habis dibagi 4\" di Python ditulis tahun % 4 == 0 (sisa baginya nol). Ketiga pertanyaan bisa digabung dengan and / or."
+]
 }
 ],
 "ujian": false,
@@ -2174,7 +2245,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima nama lengkap, misalnya \"jauza kenar indra fawaid\".",
+"Pecah menjadi kata-kata, ambil huruf PERTAMA setiap kata: j, k, i, f.",
+"Gabungkan tanpa spasi dan jadikan huruf besar: \"JKIF\".",
+"Spasi berlebih (\"  budi   santoso \") tidak boleh menghasilkan huruf kosong: hasilnya \"BS\"."
+]
 },
 {
 "id": "py-str-2",
@@ -2213,7 +2290,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima email, misalnya \"jauza@gmail.com\". Potong menjadi 2 bagian di tanda @: \"jauza\" dan \"gmail.com\".",
+"Bagian depan diganti: huruf pertama + *** + huruf terakhir → \"j***a\".",
+"Kalau bagian depan cuma 1–2 huruf (\"ab\"), cukup huruf pertama + *** → \"a***\".",
+"Tempel kembali dengan @ dan domain aslinya: \"j***a@gmail.com\"."
+]
 }
 ],
 "ujian": false,
@@ -2274,7 +2357,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima jumlah stok (qty) dan batas minimum.",
+"Kalau qty 0 atau kurang → kembalikan \"Habis\".",
+"Kalau masih ada tapi kurang dari minimum (3 dari minimum 5) → \"Menipis\".",
+"Selain itu (5 dari minimum 5, atau lebih) → \"Aman\". Cek dari kondisi paling parah dulu."
+]
 },
 {
 "id": "py-kon-2",
@@ -2317,7 +2406,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima total belanja, apakah member (True/False), dan nama kota.",
+"Langkah 1: kalau total 500.000 atau lebih → ongkir 0, selesai (Batam pun gratis).",
+"Langkah 2: kalau tidak, ongkir dasar 10.000 untuk member atau 20.000 untuk bukan member.",
+"Langkah 3: kalau kotanya \"Batam\", tambah 5.000. Contoh: member di Batam, belanja 100.000 → 10.000 + 5.000 = 15.000."
+]
 }
 ],
 "ujian": false,
@@ -2374,7 +2469,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima angka n (misalnya 5) dan sampai (misalnya 3).",
+"Buat baris untuk i = 1, 2, 3: \"5 x 1 = 5\", \"5 x 2 = 10\", \"5 x 3 = 15\".",
+"Kumpulkan semua baris itu ke dalam satu list dan kembalikan list-nya.",
+"Kalau sampai = 0, hasilnya list kosong []."
+]
 },
 {
 "id": "py-loop-2",
@@ -2417,7 +2518,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Bayangkan utang 1.000.000 dengan bunga 0% dan cicilan 250.000 per bulan: setelah 4 bulan lunas → jawabannya 4.",
+"Kalau ada bunga, setiap bulan: sisa utang ditambah bunganya dulu, LALU dikurangi cicilan. Ulangi sampai sisa ≤ 0 sambil menghitung bulan.",
+"Contoh bunga 10%: utang 1.000.000 → bunga bulan pertama 100.000.",
+"Kalau cicilan tidak lebih besar dari bunga bulan pertama (cicilan 100.000 untuk bunga 100.000), utang tidak pernah turun → kembalikan -1."
+]
 }
 ],
 "ujian": false,
@@ -2474,7 +2581,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima list nama buah yang huruf besarnya campur aduk: [\"Rambutan\", \"apel\", \"Mangga\"].",
+"Urutkan berdasarkan abjad seolah semuanya huruf kecil: apel, mangga, rambutan.",
+"Tapi tulisan aslinya JANGAN diubah. Hasil: [\"apel\", \"Mangga\", \"Rambutan\"]."
+]
 },
 {
 "id": "py-list-2",
@@ -2513,7 +2625,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima list pasangan (nama, harga), misalnya (\"mangga\", 25000).",
+"Urutkan dari harga paling murah ke paling mahal.",
+"Kalau dua barang harganya sama, yang namanya duluan menurut abjad ditaruh di depan.",
+"Kembalikan nama-namanya saja: [\"rambutan\", \"mangga\", \"apel\"]."
+]
 },
 {
 "id": "py-list-3",
@@ -2552,7 +2670,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima list pasangan (nama, nilai), misalnya (\"Budi\", 95).",
+"Urutkan dari nilai TERTINGGI; kalau nilainya sama, nama diurutkan abjad.",
+"Ambil 3 teratas saja dan kembalikan namanya: [\"Budi\", \"Cita\", \"Ani\"].",
+"Kalau siswanya kurang dari 3, kembalikan semuanya."
+]
 }
 ],
 "ujian": false,
@@ -2609,7 +2733,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima stok dua gudang, misalnya A = {\"kursi\": 10, \"meja\": 4} dan B = {\"meja\": 6, \"lemari\": 2}.",
+"Jumlahkan per barang: kursi 10, meja 4 + 6 = 10, lemari 2.",
+"Buat dict BARU untuk hasilnya; dict A dan B tidak boleh ikut berubah."
+]
 },
 {
 "id": "py-kol-2",
@@ -2644,7 +2773,13 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima daftar pelanggan toko A dan toko B (nama bisa tertulis dua kali).",
+"Cari: siapa yang belanja di kedua toko, yang hanya di A, yang hanya di B, dan berapa orang berbeda totalnya.",
+"Contoh A = Ani, Budi, Cita; B = Budi, Dodi, Cita → keduanya [Budi, Cita], hanya A [Ani], hanya B [Dodi], total 4 orang.",
+"Kembalikan dalam satu dict, setiap list diurutkan abjad."
+]
 }
 ],
 "ujian": false,
@@ -2701,7 +2836,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima list angka, misalnya [4, 9, 1].",
+"Cari yang terkecil (1), terbesar (9), dan rata-ratanya (14 ÷ 3 = 4,666… → dibulatkan 4.67).",
+"Kembalikan ketiganya sekaligus: (1, 9, 4.67).",
+"Kalau list-nya kosong, kembalikan None."
+]
 },
 {
 "id": "py-fun-2",
@@ -2744,7 +2885,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Gaji kotor = gaji pokok + (jam lembur × tarif lembur).",
+"Lalu potong sebesar potongan_persen. Contoh pokok 6.000.000, lembur 4 jam × 50.000 = 200.000, potongan 2% → 6.200.000 × 0,98 = 6.076.000.",
+"Jam lembur, tarif, dan potongan boleh tidak diisi: nilai bawaannya 0, 50.000, dan 0.",
+"Bulatkan hasil akhirnya menjadi bilangan bulat."
+]
 }
 ],
 "ujian": false,
@@ -2801,7 +2948,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima list teks seperti [\"10\", \"7,5\", \"abc\", \"\"].",
+"Ubah setiap teks menjadi angka desimal. Koma dianggap titik: \"7,5\" → 7.5.",
+"Teks yang tidak bisa jadi angka (\"abc\", \"\") dilewati, tapi dihitung sebagai gagal.",
+"Kembalikan dua hal: list angkanya dan jumlah yang gagal → ([10.0, 7.5], 2)."
+]
 },
 {
 "id": "py-err-2",
@@ -2844,7 +2997,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Hitung a ÷ b dan bulatkan 2 angka di belakang koma: 10 ÷ 4 = 2.5.",
+"Kalau b nol, jangan sampai programnya error: kembalikan teks \"Error: pembagian dengan nol\".",
+"Kalau a atau b bukan angka (misalnya teks \"10\"), kembalikan \"Error: input harus angka\"."
+]
 }
 ],
 "ujian": false,
@@ -2901,7 +3059,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Buat cetakan Produk yang menyimpan nama, harga, dan diskon (persen, bawaan 0).",
+"Method harga_akhir() menghitung harga setelah diskon: 20.000 diskon 10% → 18.000.",
+"Hasilnya dibulatkan menjadi bilangan bulat."
+]
 },
 {
 "id": "py-oop-2",
@@ -2944,7 +3107,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"ProdukGrosir adalah Produk yang punya satu data tambahan: min_grosir (jumlah minimal untuk harga grosir).",
+"total(qty) = harga_akhir × qty. Kalau qty sudah mencapai min_grosir, total dipotong lagi 5%.",
+"Contoh: gula 15.000, beli 10 dengan min_grosir 10 → 150.000 dipotong 5% = 142.500.",
+"Harga akhir per barang tidak boleh di bawah 1.000 (permen 1.500 diskon 50% tetap 1.000)."
+]
 }
 ],
 "ujian": false,
@@ -3001,7 +3170,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima tanggal berbentuk teks \"2026-11-24\" (tahun-bulan-tanggal).",
+"Ubah teks itu menjadi tanggal sungguhan, lalu cari harinya.",
+"Kembalikan nama harinya dalam bahasa Indonesia: \"Selasa\"."
+]
 },
 {
 "id": "py-mod-2",
@@ -3040,7 +3214,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kurir ada di titik asal, misalnya (0, 0). Ada beberapa lokasi dengan koordinat, misalnya Gudang B di (1, 1).",
+"Hitung jarak garis lurus dari kurir ke setiap lokasi (rumus Pythagoras: √(Δx² + Δy²)). Gudang B: √2 ≈ 1.41.",
+"Pilih lokasi yang jaraknya paling kecil. Kalau ada yang sama dekat, pilih nama yang abjadnya duluan.",
+"Kembalikan (nama, jarak dibulatkan 2 desimal). Kalau tidak ada lokasi sama sekali, kembalikan None."
+]
 }
 ],
 "ujian": false,
@@ -3093,7 +3273,13 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima tabel penjualan dengan kolom kota, qty, harga.",
+"Hitung total tiap baris = qty × harga, lalu jumlahkan per kota.",
+"Contoh: Batam (2 × 10.000) + (3 × 10.000) = 50.000.",
+"Kembalikan dict {kota: total} dengan angka bulat biasa."
+]
 },
 {
 "id": "py-pd-2",
@@ -3128,7 +3314,13 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima tabel kategori, produk, qty. Satu produk bisa muncul di beberapa baris.",
+"Jumlahkan dulu qty per produk di setiap kategori (Teh 3 + 4 = 7).",
+"Untuk setiap kategori, pilih produk dengan total qty terbesar (seri: nama abjad terkecil).",
+"Kembalikan dict {kategori: produk}."
+]
 }
 ],
 "ujian": false,
@@ -3181,7 +3373,12 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"self berisi beberapa order. Setiap order punya beberapa baris, dan setiap baris punya subtotal.",
+"Untuk SETIAP order: jumlahkan subtotal semua barisnya dan simpan ke order.amount_total.",
+"Contoh: baris 100 dan 250 → amount_total 350. Order tanpa baris → 0."
+]
 },
 {
 "id": "py-odoo-2",
@@ -3220,7 +3417,13 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"self berisi beberapa order yang mau dikonfirmasi (tombol Confirm di Odoo).",
+"Langkah 1: periksa SEMUA order dulu. Order yang statusnya bukan \"draft\", atau yang tidak punya baris, membuat proses gagal (raise UserError).",
+"Langkah 2: kalau semua lolos, ubah status setiap order menjadi \"sale\" dan kembalikan True.",
+"Kenapa diperiksa dulu? Supaya tidak ada order yang sudah terlanjur berubah saat order lain gagal."
+]
 }
 ],
 "ujian": false,
@@ -3277,7 +3480,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kodenya sudah ada di editor tapi hasilnya salah. Tugasmu mencari 2 kesalahannya dan memperbaiki.",
+"Seharusnya: rata-rata [80, 90, 70] = 80.0. Jalankan kode awal dan lihat hasilnya ternyata berapa.",
+"Petunjuk: perhatikan posisi baris return (masuk ke dalam for atau tidak), lalu coba list kosong."
+]
 },
 {
 "id": "py-bug-2",
@@ -3316,7 +3524,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kodenya sudah ada tapi punya 3 kesalahan.",
+"Yang benar: catat_order(\"S001\", [\"S003\", \"S001\"]) → [\"S001\", \"S003\"] (tidak dobel, terurut).",
+"Setiap panggilan TANPA daftar harus mulai dari list kosong yang baru (panggilan sebelumnya tidak boleh terbawa).",
+"Ingat: .sort() tidak mengembalikan list."
+]
 }
 ],
 "ujian": false,
@@ -3373,7 +3587,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima n, misalnya 6.",
+"Ambil bilangan genap dari 0 sampai 6: 0, 2, 4, 6. Kuadratkan masing-masing: 0, 4, 16, 36.",
+"Kembalikan sebagai list, ditulis dalam satu baris."
+]
 },
 {
 "id": "py-comp-2",
@@ -3412,7 +3631,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima sebuah kalimat dan daftar kata yang diabaikan (stopwords).",
+"Pecah kalimat menjadi kata, buang tanda baca .,!? di ujung kata, jadikan huruf kecil.",
+"Simpan hanya kata yang panjangnya lebih dari 3 dan bukan stopword.",
+"Kembalikan dict {kata: panjang hurufnya}, misalnya {\"odoo\": 4}."
+]
 }
 ],
 "ujian": false,
@@ -3469,7 +3694,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Fungsi ini boleh menerima bagian sebanyak apa pun: gabung(\"SO\", 2026, \"0001\").",
+"Ubah semua bagian menjadi teks lalu sambung dengan pemisah (bawaan spasi): \"SO 2026 0001\".",
+"Kalau pemisah=\"/\" → \"SO/2026/0001\". Kalau besar=True → hasilnya huruf besar semua."
+]
 },
 {
 "id": "py-fl-2",
@@ -3504,7 +3734,12 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Decorator adalah 'pembungkus' fungsi. Fungsi yang dibungkus tetap bekerja seperti biasa.",
+"Bedanya: setiap kali dipanggil, penghitung jumlah bertambah 1. Setelah dipanggil 3 kali, fungsi.jumlah = 3.",
+"Sebelum dipanggil sama sekali, jumlah = 0. Nama fungsinya juga harus tetap sama."
+]
 }
 ],
 "ujian": false,
@@ -3561,7 +3796,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima list dan angka n, misalnya [1, 2, 3, 4, 5] dan 2.",
+"Hasilkan potongan berisi n item satu per satu: [1, 2], lalu [3, 4], lalu sisanya [5].",
+"Pakai yield (bukan return list) supaya potongan dibuat satu per satu."
+]
 },
 {
 "id": "py-it-2",
@@ -3596,7 +3836,12 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Buat penghasil nomor dokumen yang tidak pernah habis: SO/2026/0001, SO/2026/0002, dan seterusnya.",
+"Nomor dimulai dari 'mulai' (bawaan 1) dan diberi nol di depan sampai sepanjang 'padding' (bawaan 4 digit).",
+"Pakai yield di dalam perulangan tanpa akhir; tes akan mengambil beberapa nomor pertama saja."
+]
 }
 ],
 "ujian": false,
@@ -3653,7 +3898,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Baris adalah data satu baris belanja: produk, qty, harga, dan diskon (bawaan 0).",
+"subtotal = qty × harga, lalu dipotong diskon persen. Contoh 2 × 15.000 diskon 10% = 27.000.",
+"subtotal dibaca tanpa kurung (Baris(...).subtotal), jadi dibuat dengan @property. Bulatkan 2 desimal."
+]
 },
 {
 "id": "py-oop2-2",
@@ -3696,7 +3946,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Uang menyimpan satu angka rupiah.",
+"Uang + Uang menghasilkan Uang baru (1.000 + 2.500 = 3.500). Uang × angka juga Uang baru, dibulatkan.",
+"Dua Uang dianggap sama kalau jumlahnya sama. Dibandingkan dengan angka biasa (Uang(5) == 5) hasilnya False.",
+"Saat diubah ke teks: \"Rp 1.500.000\"."
+]
 }
 ],
 "ujian": false,
@@ -3753,7 +4009,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima tanggal lahir dan tanggal hari ini (\"YYYY-MM-DD\").",
+"Umur = tahun ini − tahun lahir. Contoh 2026 − 2003 = 23.",
+"Tapi kalau ulang tahun tahun ini BELUM lewat, kurangi 1. Lahir 1 Desember 2003, hari ini 24 November 2026 → 22."
+]
 },
 {
 "id": "py-std-2",
@@ -3792,7 +4053,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima teks catatan gudang. Di dalamnya ada kode produk berbentuk 3 HURUF BESAR + tanda minus + 4 angka, misalnya KRS-0012.",
+"Ambil semua kode yang bentuknya persis seperti itu (krs-0012 huruf kecil atau KRSS-0012 tidak dihitung).",
+"Hitung berapa kali tiap kode muncul, lalu urutkan dari yang paling sering (seri: kode abjad).",
+"Kembalikan list pasangan (kode, jumlah): [(\"KRS-0012\", 2), (\"MJA-0003\", 1)]."
+]
 }
 ],
 "ujian": false,
@@ -3849,7 +4116,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Hitung rata-rata list angka, bulatkan 2 desimal: [1.5, 2.5, 3] → 2.33.",
+"Kalau list kosong, jangan kembalikan apa pun: lempar error ValueError.",
+"Tulis juga 'label tipe' (type hint): nilai adalah list[float] dan hasilnya float."
+]
 },
 {
 "id": "py-kerja-2",
@@ -3884,7 +4156,13 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\ndef _diskon_benar(harga, persen):\n    if not 0 <= persen <= 100:\n        raise ValueError(\"persen di luar 0-100\")\n    return round(harga * (1 - persen / 100))\n\ndef _diskon_bug1(harga, persen):          # lupa validasi\n    return round(harga * (1 - persen / 100))\n\ndef _diskon_bug2(harga, persen):          # rumus salah\n    if not 0 <= persen <= 100:\n        raise ValueError(\"persen di luar 0-100\")\n    return round(harga * persen / 100)\n\ndef _diskon_bug3(harga, persen):          # tidak dibulatkan\n    if not 0 <= persen <= 100:\n        raise ValueError(\"persen di luar 0-100\")\n    return harga * (1 - persen / 100)\n\ndiskon = _diskon_benar\n\ndef nilai_tes(ns):\n    \"\"\"Jalankan semua fungsi test_ milikmu terhadap versi benar dan 3 versi bug.\"\"\"\n    tes = [f for n, f in sorted(ns.items()) if n.startswith(\"test_\") and callable(f)]\n    if not tes:\n        return \"belum ada fungsi test_\"\n    def lulus(versi):\n        ns[\"diskon\"] = versi\n        try:\n            for f in tes:\n                f()\n            return True\n        except Exception:\n            return False\n    return {\"benar_lulus\": lulus(_diskon_benar), \"bug_tertangkap\": [not lulus(v) for v in (_diskon_bug1, _diskon_bug2, _diskon_bug3)]}\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kali ini kamu yang menjadi penguji. Fungsi diskon(harga, persen) sudah ada.",
+"Tulis beberapa fungsi bernama test_... yang memeriksa diskon dengan assert, misalnya assert diskon(10000, 10) == 9000.",
+"Penilai menjalankan tesmu terhadap versi yang benar (harus lulus) dan 3 versi yang rusak (harus gagal).",
+"Jadi buat tes untuk 3 hal: hasil normal, hasil yang harus dibulatkan, dan persen tidak valid (misalnya 150)."
+]
 }
 ],
 "ujian": false,
@@ -3937,7 +4215,13 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima daftar transaksi (produk, qty, harga).",
+"Hitung per produk: total qty dan omzet (qty × harga). Lalu jumlahkan semua omzet menjadi 'total'.",
+"Daftar produk diurutkan dari omzet terbesar. 'terlaris' adalah produk dengan QTY terbanyak (bisa beda dengan omzet terbesar!).",
+"Kalau tidak ada transaksi: total 0, produk [], terlaris None."
+]
 },
 {
 "id": "py-proj-2",
@@ -3976,7 +4260,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima log absensi, satu kejadian per baris: \"2026-11-24 08:00 Ani MASUK\".",
+"Untuk tiap orang, pasangkan MASUK dengan PULANG berikutnya dan hitung selisihnya dalam menit (08:00 → 16:30 = 510 menit).",
+"Kalau seseorang masuk-pulang dua kali dalam sehari, jumlahkan. MASUK tanpa PULANG diabaikan.",
+"Shift lewat tengah malam (22:00 → 06:00 besok) tetap dihitung benar: 480 menit."
+]
 }
 ],
 "ujian": false,
@@ -3993,7 +4283,7 @@ const STUDI_PY = [
 "kode": "import time\n\ndef lambat(data):\n    for i in range(len(data)):\n        for j in range(i + 1, len(data)):\n            if data[i] == data[j]:\n                return True\n    return False\n\ndef cepat(data):\n    sudah = set()\n    for x in data:\n        if x in sudah:\n            return True\n        sudah.add(x)\n    return False\n\ndata = list(range(3000))\nfor f in (lambat, cepat):\n    t = time.perf_counter()\n    hasil = f(data)\n    print(f.__name__, hasil, f\"{(time.perf_counter() - t) * 1000:.1f} ms\")",
 "kunci": "Pertanyaan 'apakah sudah pernah muncul?' → pakai set. Pertanyaan 'di indeks berapa?' → pakai dict.",
 "bahasa": "py",
-"keluaran": "lambat False 186.7 ms\ncepat False 0.2 ms"
+"keluaran": "lambat False 191.9 ms\ncepat False 0.2 ms"
 },
 "langkah": [
 {
@@ -4037,7 +4327,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "two-sum",
@@ -4080,7 +4371,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -4137,7 +4429,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "ct-bug-lunas",
@@ -4180,7 +4473,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -4249,7 +4543,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "gabung-interval",
@@ -4292,7 +4587,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -4357,7 +4653,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "rpa-log",
@@ -4396,7 +4693,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -4449,7 +4747,8 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "ct-display",
@@ -4484,7 +4783,8 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -4537,7 +4837,8 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n\nHARI_INI = \"2026-11-24\"\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "ct-constrains",
@@ -4576,7 +4877,8 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -4641,7 +4943,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "ct-rantai",
@@ -4676,7 +4979,8 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "odoo-domain-polish",
@@ -4731,7 +5035,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -4796,7 +5101,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n\nclass SaleOrderBase:\n    \"\"\"Tiruan sale.order bawaan Odoo (jangan diubah).\"\"\"\n    def __init__(self, name, amount_total, state=\"draft\"):\n        self.name = name\n        self.amount_total = amount_total\n        self.state = state\n        self.log = []\n\n    def action_confirm(self):\n        if self.state not in (\"draft\", \"sent\"):\n            raise UserError(\"Hanya quotation yang bisa dikonfirmasi.\")\n        self.state = \"sale\"\n        self.log.append(\"confirmed\")\n        return True\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "oop-warisan",
@@ -4839,7 +5145,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -4892,7 +5199,8 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\nimport csv, io, re\nimport xml.etree.ElementTree as ET\n\ndef _rapat(s):\n    return re.sub(r\"\\s+\", \"\", s or \"\").replace('\"', \"'\")\n\ndef _parse(xml):\n    try:\n        return ET.fromstring(xml.strip()), None\n    except ET.ParseError as e:\n        return None, \"XML tidak valid (\" + str(e) + \"). Cek tag yang belum ditutup, tanda kutip, dan < yang harus ditulis &lt;.\"\n\ndef _record(r, model, m):\n    if r.tag != \"record\":\n        m.append(\"Elemen terluar harus <record>, bukan <\" + r.tag + \">.\")\n    if r.get(\"model\") != model:\n        m.append(\"Atribut model pada <record> harus '\" + model + \"'.\")\n    if not r.get(\"id\"):\n        m.append(\"<record> butuh atribut id (ID XML yang unik).\")\n    return {f.get(\"name\"): f for f in r.findall(\"field\")}\n\ndef cek_form(xml):\n    \"\"\"Pemeriksa studi kasus: form view library.book.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.ui.view\", m)\n    if \"model\" not in f or (f[\"model\"].text or \"\").strip() != \"library.book\":\n        m.append('Tambahkan <field name=\"model\">library.book</field>.')\n    if re.search(r\"\\battrs\\s*=|\\bstates\\s*=\", xml):\n        m.append(\"attrs dan states sudah dihapus di Odoo 17. Tulis kondisinya langsung, misalnya invisible=\\\"state != 'draft'\\\".\")\n    arch = f.get(\"arch\")\n    if arch is None or arch.get(\"type\") != \"xml\":\n        m.append('Tambahkan <field name=\"arch\" type=\"xml\"> yang berisi <form>.')\n        return m\n    form = arch.find(\"form\")\n    if form is None:\n        m.append(\"Di dalam arch harus ada <form>.\")\n        return m\n    header = form.find(\"header\")\n    if header is None:\n        m.append(\"Tombol dan statusbar ditaruh di dalam <header> (anak langsung <form>).\")\n    else:\n        tombol = [b for b in header.findall(\"button\") if b.get(\"name\") == \"action_make_available\"]\n        if not tombol:\n            m.append('Di <header> belum ada <button name=\"action_make_available\" .../>.')\n        else:\n            b = tombol[0]\n            if b.get(\"type\") != \"object\":\n                m.append('Tombol yang memanggil method Python butuh type=\"object\".')\n            if _rapat(b.get(\"invisible\")) != \"state!='draft'\":\n                m.append(\"Tombol harus tersembunyi kecuali status draft: invisible=\\\"state != 'draft'\\\".\")\n            if not b.get(\"string\"):\n                m.append('Beri tombol label lewat atribut string, misalnya string=\"Tersedia\".')\n        st = [x for x in header.findall(\"field\") if x.get(\"name\") == \"state\"]\n        if not st or st[0].get(\"widget\") != \"statusbar\":\n            m.append('Tambahkan <field name=\"state\" widget=\"statusbar\"/> di dalam <header>.')\n    sheet = form.find(\"sheet\")\n    if sheet is None:\n        m.append(\"Isi form dibungkus <sheet> (anak langsung <form>).\")\n    else:\n        ada = {x.get(\"name\") for x in sheet.iter(\"field\")}\n        for wajib in (\"name\", \"author_id\", \"isbn\"):\n            if wajib not in ada:\n                m.append(\"Field \" + wajib + \" belum ada di dalam <sheet>.\")\n    return m\n\ndef cek_inherit(xml):\n    \"\"\"Pemeriksa studi kasus: mewarisi form sale.order.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.ui.view\", m)\n    if \"model\" not in f or (f[\"model\"].text or \"\").strip() != \"sale.order\":\n        m.append('Tambahkan <field name=\"model\">sale.order</field>.')\n    if \"inherit_id\" not in f or f[\"inherit_id\"].get(\"ref\") != \"sale.view_order_form\":\n        m.append('View turunan butuh <field name=\"inherit_id\" ref=\"sale.view_order_form\"/>.')\n    arch = f.get(\"arch\")\n    if arch is None or arch.get(\"type\") != \"xml\":\n        m.append('Tambahkan <field name=\"arch\" type=\"xml\">.')\n        return m\n    xp = arch.findall(\"xpath\")\n    if not xp:\n        m.append(\"Di dalam arch belum ada <xpath>.\")\n        return m\n    sasaran = [x for x in xp if _rapat(x.get(\"expr\")) == \"//field[@name='partner_id']\"]\n    if not sasaran:\n        m.append(\"expr xpath harus menunjuk field partner_id: expr=\\\"//field[@name='partner_id']\\\".\")\n        return m\n    x = sasaran[0]\n    if x.get(\"position\") != \"after\":\n        m.append('Field baru harus muncul SETELAH partner_id: position=\"after\".')\n    if not any(c.tag == \"field\" and c.get(\"name\") == \"x_approval_note\" for c in x):\n        m.append('Di dalam xpath belum ada <field name=\"x_approval_note\"/>.')\n    tombol = [x for x in xp if _rapat(x.get(\"expr\")) in (\"//header\", \"/form/header\", \"//form/header\")]\n    if not tombol or tombol[0].get(\"position\") != \"inside\":\n        m.append('Tambahkan xpath kedua: expr=\"//header\" position=\"inside\" untuk tombol approve.')\n    else:\n        b = [c for c in tombol[0] if c.tag == \"button\" and c.get(\"name\") == \"action_amount_approve\"]\n        if not b:\n            m.append('Di xpath header belum ada <button name=\"action_amount_approve\" .../>.')\n        else:\n            if b[0].get(\"type\") != \"object\":\n                m.append('Tombol approve butuh type=\"object\".')\n            if _rapat(b[0].get(\"invisible\")) != \"state!='to_approve'\":\n                m.append(\"Tombol approve hanya tampil di status to_approve: invisible=\\\"state != 'to_approve'\\\".\")\n            if b[0].get(\"groups\") != \"sale_amount_approval.group_so_amount_approver\":\n                m.append('Batasi tombol untuk grup approver: groups=\"sale_amount_approval.group_so_amount_approver\".')\n    return m\n\ndef cek_acl(teks):\n    \"\"\"Pemeriksa studi kasus: ir.model.access.csv untuk library.book.\"\"\"\n    baris = [b for b in csv.reader(io.StringIO(teks.strip())) if b]\n    if not baris:\n        return [\"File masih kosong.\"]\n    m = []\n    kepala = [\"id\", \"name\", \"model_id:id\", \"group_id:id\", \"perm_read\", \"perm_write\", \"perm_create\", \"perm_unlink\"]\n    if [k.strip() for k in baris[0]] != kepala:\n        m.append(\"Baris pertama (header) harus persis: \" + \",\".join(kepala))\n        return m\n    data = {}\n    for i, b in enumerate(baris[1:], 2):\n        if len(b) != 8:\n            m.append(\"Baris \" + str(i) + \" harus punya 8 kolom, sekarang \" + str(len(b)) + \".\")\n            continue\n        b = [x.strip() for x in b]\n        if b[2] != \"model_library_book\":\n            m.append(\"Baris \" + str(i) + \": model_id:id untuk library.book adalah model_library_book.\")\n        grup = b[3].split(\".\")[-1]\n        data[grup] = b[4:]\n    if \"group_library_user\" not in data:\n        m.append(\"Belum ada baris untuk grup group_library_user.\")\n    elif data[\"group_library_user\"] != [\"1\", \"0\", \"0\", \"0\"]:\n        m.append(\"Library User hanya boleh membaca: perm 1,0,0,0.\")\n    if \"group_library_manager\" not in data:\n        m.append(\"Belum ada baris untuk grup group_library_manager.\")\n    elif data[\"group_library_manager\"] != [\"1\", \"1\", \"1\", \"1\"]:\n        m.append(\"Library Manager boleh semuanya: perm 1,1,1,1.\")\n    ids = [b[0] for b in baris[1:] if b]\n    if len(set(ids)) != len(ids):\n        m.append(\"Kolom id setiap baris harus unik.\")\n    return m\n\ndef cek_rule(xml):\n    \"\"\"Pemeriksa studi kasus: record rule peminjaman milik sendiri.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.rule\", m)\n    if \"name\" not in f or not (f[\"name\"].text or \"\").strip():\n        m.append('Beri nama aturan: <field name=\"name\">...</field>.')\n    if \"model_id\" not in f or f[\"model_id\"].get(\"ref\") != \"model_library_loan\":\n        m.append('Model aturan: <field name=\"model_id\" ref=\"model_library_loan\"/>.')\n    if \"domain_force\" not in f or _rapat(f[\"domain_force\"].text) != \"[('user_id','=',user.id)]\":\n        m.append(\"domain_force harus membatasi ke milik sendiri: [('user_id', '=', user.id)].\")\n    g = f.get(\"groups\")\n    if g is None or \"ref('group_library_user')\" not in _rapat(g.get(\"eval\")):\n        m.append(\"Berlakukan untuk grup user: <field name=\\\"groups\\\" eval=\\\"[(4, ref('group_library_user'))]\\\"/>.\")\n    return m\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "ct-view-inherit",
@@ -4927,7 +5235,8 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\nimport csv, io, re\nimport xml.etree.ElementTree as ET\n\ndef _rapat(s):\n    return re.sub(r\"\\s+\", \"\", s or \"\").replace('\"', \"'\")\n\ndef _parse(xml):\n    try:\n        return ET.fromstring(xml.strip()), None\n    except ET.ParseError as e:\n        return None, \"XML tidak valid (\" + str(e) + \"). Cek tag yang belum ditutup, tanda kutip, dan < yang harus ditulis &lt;.\"\n\ndef _record(r, model, m):\n    if r.tag != \"record\":\n        m.append(\"Elemen terluar harus <record>, bukan <\" + r.tag + \">.\")\n    if r.get(\"model\") != model:\n        m.append(\"Atribut model pada <record> harus '\" + model + \"'.\")\n    if not r.get(\"id\"):\n        m.append(\"<record> butuh atribut id (ID XML yang unik).\")\n    return {f.get(\"name\"): f for f in r.findall(\"field\")}\n\ndef cek_form(xml):\n    \"\"\"Pemeriksa studi kasus: form view library.book.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.ui.view\", m)\n    if \"model\" not in f or (f[\"model\"].text or \"\").strip() != \"library.book\":\n        m.append('Tambahkan <field name=\"model\">library.book</field>.')\n    if re.search(r\"\\battrs\\s*=|\\bstates\\s*=\", xml):\n        m.append(\"attrs dan states sudah dihapus di Odoo 17. Tulis kondisinya langsung, misalnya invisible=\\\"state != 'draft'\\\".\")\n    arch = f.get(\"arch\")\n    if arch is None or arch.get(\"type\") != \"xml\":\n        m.append('Tambahkan <field name=\"arch\" type=\"xml\"> yang berisi <form>.')\n        return m\n    form = arch.find(\"form\")\n    if form is None:\n        m.append(\"Di dalam arch harus ada <form>.\")\n        return m\n    header = form.find(\"header\")\n    if header is None:\n        m.append(\"Tombol dan statusbar ditaruh di dalam <header> (anak langsung <form>).\")\n    else:\n        tombol = [b for b in header.findall(\"button\") if b.get(\"name\") == \"action_make_available\"]\n        if not tombol:\n            m.append('Di <header> belum ada <button name=\"action_make_available\" .../>.')\n        else:\n            b = tombol[0]\n            if b.get(\"type\") != \"object\":\n                m.append('Tombol yang memanggil method Python butuh type=\"object\".')\n            if _rapat(b.get(\"invisible\")) != \"state!='draft'\":\n                m.append(\"Tombol harus tersembunyi kecuali status draft: invisible=\\\"state != 'draft'\\\".\")\n            if not b.get(\"string\"):\n                m.append('Beri tombol label lewat atribut string, misalnya string=\"Tersedia\".')\n        st = [x for x in header.findall(\"field\") if x.get(\"name\") == \"state\"]\n        if not st or st[0].get(\"widget\") != \"statusbar\":\n            m.append('Tambahkan <field name=\"state\" widget=\"statusbar\"/> di dalam <header>.')\n    sheet = form.find(\"sheet\")\n    if sheet is None:\n        m.append(\"Isi form dibungkus <sheet> (anak langsung <form>).\")\n    else:\n        ada = {x.get(\"name\") for x in sheet.iter(\"field\")}\n        for wajib in (\"name\", \"author_id\", \"isbn\"):\n            if wajib not in ada:\n                m.append(\"Field \" + wajib + \" belum ada di dalam <sheet>.\")\n    return m\n\ndef cek_inherit(xml):\n    \"\"\"Pemeriksa studi kasus: mewarisi form sale.order.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.ui.view\", m)\n    if \"model\" not in f or (f[\"model\"].text or \"\").strip() != \"sale.order\":\n        m.append('Tambahkan <field name=\"model\">sale.order</field>.')\n    if \"inherit_id\" not in f or f[\"inherit_id\"].get(\"ref\") != \"sale.view_order_form\":\n        m.append('View turunan butuh <field name=\"inherit_id\" ref=\"sale.view_order_form\"/>.')\n    arch = f.get(\"arch\")\n    if arch is None or arch.get(\"type\") != \"xml\":\n        m.append('Tambahkan <field name=\"arch\" type=\"xml\">.')\n        return m\n    xp = arch.findall(\"xpath\")\n    if not xp:\n        m.append(\"Di dalam arch belum ada <xpath>.\")\n        return m\n    sasaran = [x for x in xp if _rapat(x.get(\"expr\")) == \"//field[@name='partner_id']\"]\n    if not sasaran:\n        m.append(\"expr xpath harus menunjuk field partner_id: expr=\\\"//field[@name='partner_id']\\\".\")\n        return m\n    x = sasaran[0]\n    if x.get(\"position\") != \"after\":\n        m.append('Field baru harus muncul SETELAH partner_id: position=\"after\".')\n    if not any(c.tag == \"field\" and c.get(\"name\") == \"x_approval_note\" for c in x):\n        m.append('Di dalam xpath belum ada <field name=\"x_approval_note\"/>.')\n    tombol = [x for x in xp if _rapat(x.get(\"expr\")) in (\"//header\", \"/form/header\", \"//form/header\")]\n    if not tombol or tombol[0].get(\"position\") != \"inside\":\n        m.append('Tambahkan xpath kedua: expr=\"//header\" position=\"inside\" untuk tombol approve.')\n    else:\n        b = [c for c in tombol[0] if c.tag == \"button\" and c.get(\"name\") == \"action_amount_approve\"]\n        if not b:\n            m.append('Di xpath header belum ada <button name=\"action_amount_approve\" .../>.')\n        else:\n            if b[0].get(\"type\") != \"object\":\n                m.append('Tombol approve butuh type=\"object\".')\n            if _rapat(b[0].get(\"invisible\")) != \"state!='to_approve'\":\n                m.append(\"Tombol approve hanya tampil di status to_approve: invisible=\\\"state != 'to_approve'\\\".\")\n            if b[0].get(\"groups\") != \"sale_amount_approval.group_so_amount_approver\":\n                m.append('Batasi tombol untuk grup approver: groups=\"sale_amount_approval.group_so_amount_approver\".')\n    return m\n\ndef cek_acl(teks):\n    \"\"\"Pemeriksa studi kasus: ir.model.access.csv untuk library.book.\"\"\"\n    baris = [b for b in csv.reader(io.StringIO(teks.strip())) if b]\n    if not baris:\n        return [\"File masih kosong.\"]\n    m = []\n    kepala = [\"id\", \"name\", \"model_id:id\", \"group_id:id\", \"perm_read\", \"perm_write\", \"perm_create\", \"perm_unlink\"]\n    if [k.strip() for k in baris[0]] != kepala:\n        m.append(\"Baris pertama (header) harus persis: \" + \",\".join(kepala))\n        return m\n    data = {}\n    for i, b in enumerate(baris[1:], 2):\n        if len(b) != 8:\n            m.append(\"Baris \" + str(i) + \" harus punya 8 kolom, sekarang \" + str(len(b)) + \".\")\n            continue\n        b = [x.strip() for x in b]\n        if b[2] != \"model_library_book\":\n            m.append(\"Baris \" + str(i) + \": model_id:id untuk library.book adalah model_library_book.\")\n        grup = b[3].split(\".\")[-1]\n        data[grup] = b[4:]\n    if \"group_library_user\" not in data:\n        m.append(\"Belum ada baris untuk grup group_library_user.\")\n    elif data[\"group_library_user\"] != [\"1\", \"0\", \"0\", \"0\"]:\n        m.append(\"Library User hanya boleh membaca: perm 1,0,0,0.\")\n    if \"group_library_manager\" not in data:\n        m.append(\"Belum ada baris untuk grup group_library_manager.\")\n    elif data[\"group_library_manager\"] != [\"1\", \"1\", \"1\", \"1\"]:\n        m.append(\"Library Manager boleh semuanya: perm 1,1,1,1.\")\n    ids = [b[0] for b in baris[1:] if b]\n    if len(set(ids)) != len(ids):\n        m.append(\"Kolom id setiap baris harus unik.\")\n    return m\n\ndef cek_rule(xml):\n    \"\"\"Pemeriksa studi kasus: record rule peminjaman milik sendiri.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.rule\", m)\n    if \"name\" not in f or not (f[\"name\"].text or \"\").strip():\n        m.append('Beri nama aturan: <field name=\"name\">...</field>.')\n    if \"model_id\" not in f or f[\"model_id\"].get(\"ref\") != \"model_library_loan\":\n        m.append('Model aturan: <field name=\"model_id\" ref=\"model_library_loan\"/>.')\n    if \"domain_force\" not in f or _rapat(f[\"domain_force\"].text) != \"[('user_id','=',user.id)]\":\n        m.append(\"domain_force harus membatasi ke milik sendiri: [('user_id', '=', user.id)].\")\n    g = f.get(\"groups\")\n    if g is None or \"ref('group_library_user')\" not in _rapat(g.get(\"eval\")):\n        m.append(\"Berlakukan untuk grup user: <field name=\\\"groups\\\" eval=\\\"[(4, ref('group_library_user'))]\\\"/>.\")\n    return m\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -4980,7 +5289,8 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\nimport csv, io, re\nimport xml.etree.ElementTree as ET\n\ndef _rapat(s):\n    return re.sub(r\"\\s+\", \"\", s or \"\").replace('\"', \"'\")\n\ndef _parse(xml):\n    try:\n        return ET.fromstring(xml.strip()), None\n    except ET.ParseError as e:\n        return None, \"XML tidak valid (\" + str(e) + \"). Cek tag yang belum ditutup, tanda kutip, dan < yang harus ditulis &lt;.\"\n\ndef _record(r, model, m):\n    if r.tag != \"record\":\n        m.append(\"Elemen terluar harus <record>, bukan <\" + r.tag + \">.\")\n    if r.get(\"model\") != model:\n        m.append(\"Atribut model pada <record> harus '\" + model + \"'.\")\n    if not r.get(\"id\"):\n        m.append(\"<record> butuh atribut id (ID XML yang unik).\")\n    return {f.get(\"name\"): f for f in r.findall(\"field\")}\n\ndef cek_form(xml):\n    \"\"\"Pemeriksa studi kasus: form view library.book.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.ui.view\", m)\n    if \"model\" not in f or (f[\"model\"].text or \"\").strip() != \"library.book\":\n        m.append('Tambahkan <field name=\"model\">library.book</field>.')\n    if re.search(r\"\\battrs\\s*=|\\bstates\\s*=\", xml):\n        m.append(\"attrs dan states sudah dihapus di Odoo 17. Tulis kondisinya langsung, misalnya invisible=\\\"state != 'draft'\\\".\")\n    arch = f.get(\"arch\")\n    if arch is None or arch.get(\"type\") != \"xml\":\n        m.append('Tambahkan <field name=\"arch\" type=\"xml\"> yang berisi <form>.')\n        return m\n    form = arch.find(\"form\")\n    if form is None:\n        m.append(\"Di dalam arch harus ada <form>.\")\n        return m\n    header = form.find(\"header\")\n    if header is None:\n        m.append(\"Tombol dan statusbar ditaruh di dalam <header> (anak langsung <form>).\")\n    else:\n        tombol = [b for b in header.findall(\"button\") if b.get(\"name\") == \"action_make_available\"]\n        if not tombol:\n            m.append('Di <header> belum ada <button name=\"action_make_available\" .../>.')\n        else:\n            b = tombol[0]\n            if b.get(\"type\") != \"object\":\n                m.append('Tombol yang memanggil method Python butuh type=\"object\".')\n            if _rapat(b.get(\"invisible\")) != \"state!='draft'\":\n                m.append(\"Tombol harus tersembunyi kecuali status draft: invisible=\\\"state != 'draft'\\\".\")\n            if not b.get(\"string\"):\n                m.append('Beri tombol label lewat atribut string, misalnya string=\"Tersedia\".')\n        st = [x for x in header.findall(\"field\") if x.get(\"name\") == \"state\"]\n        if not st or st[0].get(\"widget\") != \"statusbar\":\n            m.append('Tambahkan <field name=\"state\" widget=\"statusbar\"/> di dalam <header>.')\n    sheet = form.find(\"sheet\")\n    if sheet is None:\n        m.append(\"Isi form dibungkus <sheet> (anak langsung <form>).\")\n    else:\n        ada = {x.get(\"name\") for x in sheet.iter(\"field\")}\n        for wajib in (\"name\", \"author_id\", \"isbn\"):\n            if wajib not in ada:\n                m.append(\"Field \" + wajib + \" belum ada di dalam <sheet>.\")\n    return m\n\ndef cek_inherit(xml):\n    \"\"\"Pemeriksa studi kasus: mewarisi form sale.order.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.ui.view\", m)\n    if \"model\" not in f or (f[\"model\"].text or \"\").strip() != \"sale.order\":\n        m.append('Tambahkan <field name=\"model\">sale.order</field>.')\n    if \"inherit_id\" not in f or f[\"inherit_id\"].get(\"ref\") != \"sale.view_order_form\":\n        m.append('View turunan butuh <field name=\"inherit_id\" ref=\"sale.view_order_form\"/>.')\n    arch = f.get(\"arch\")\n    if arch is None or arch.get(\"type\") != \"xml\":\n        m.append('Tambahkan <field name=\"arch\" type=\"xml\">.')\n        return m\n    xp = arch.findall(\"xpath\")\n    if not xp:\n        m.append(\"Di dalam arch belum ada <xpath>.\")\n        return m\n    sasaran = [x for x in xp if _rapat(x.get(\"expr\")) == \"//field[@name='partner_id']\"]\n    if not sasaran:\n        m.append(\"expr xpath harus menunjuk field partner_id: expr=\\\"//field[@name='partner_id']\\\".\")\n        return m\n    x = sasaran[0]\n    if x.get(\"position\") != \"after\":\n        m.append('Field baru harus muncul SETELAH partner_id: position=\"after\".')\n    if not any(c.tag == \"field\" and c.get(\"name\") == \"x_approval_note\" for c in x):\n        m.append('Di dalam xpath belum ada <field name=\"x_approval_note\"/>.')\n    tombol = [x for x in xp if _rapat(x.get(\"expr\")) in (\"//header\", \"/form/header\", \"//form/header\")]\n    if not tombol or tombol[0].get(\"position\") != \"inside\":\n        m.append('Tambahkan xpath kedua: expr=\"//header\" position=\"inside\" untuk tombol approve.')\n    else:\n        b = [c for c in tombol[0] if c.tag == \"button\" and c.get(\"name\") == \"action_amount_approve\"]\n        if not b:\n            m.append('Di xpath header belum ada <button name=\"action_amount_approve\" .../>.')\n        else:\n            if b[0].get(\"type\") != \"object\":\n                m.append('Tombol approve butuh type=\"object\".')\n            if _rapat(b[0].get(\"invisible\")) != \"state!='to_approve'\":\n                m.append(\"Tombol approve hanya tampil di status to_approve: invisible=\\\"state != 'to_approve'\\\".\")\n            if b[0].get(\"groups\") != \"sale_amount_approval.group_so_amount_approver\":\n                m.append('Batasi tombol untuk grup approver: groups=\"sale_amount_approval.group_so_amount_approver\".')\n    return m\n\ndef cek_acl(teks):\n    \"\"\"Pemeriksa studi kasus: ir.model.access.csv untuk library.book.\"\"\"\n    baris = [b for b in csv.reader(io.StringIO(teks.strip())) if b]\n    if not baris:\n        return [\"File masih kosong.\"]\n    m = []\n    kepala = [\"id\", \"name\", \"model_id:id\", \"group_id:id\", \"perm_read\", \"perm_write\", \"perm_create\", \"perm_unlink\"]\n    if [k.strip() for k in baris[0]] != kepala:\n        m.append(\"Baris pertama (header) harus persis: \" + \",\".join(kepala))\n        return m\n    data = {}\n    for i, b in enumerate(baris[1:], 2):\n        if len(b) != 8:\n            m.append(\"Baris \" + str(i) + \" harus punya 8 kolom, sekarang \" + str(len(b)) + \".\")\n            continue\n        b = [x.strip() for x in b]\n        if b[2] != \"model_library_book\":\n            m.append(\"Baris \" + str(i) + \": model_id:id untuk library.book adalah model_library_book.\")\n        grup = b[3].split(\".\")[-1]\n        data[grup] = b[4:]\n    if \"group_library_user\" not in data:\n        m.append(\"Belum ada baris untuk grup group_library_user.\")\n    elif data[\"group_library_user\"] != [\"1\", \"0\", \"0\", \"0\"]:\n        m.append(\"Library User hanya boleh membaca: perm 1,0,0,0.\")\n    if \"group_library_manager\" not in data:\n        m.append(\"Belum ada baris untuk grup group_library_manager.\")\n    elif data[\"group_library_manager\"] != [\"1\", \"1\", \"1\", \"1\"]:\n        m.append(\"Library Manager boleh semuanya: perm 1,1,1,1.\")\n    ids = [b[0] for b in baris[1:] if b]\n    if len(set(ids)) != len(ids):\n        m.append(\"Kolom id setiap baris harus unik.\")\n    return m\n\ndef cek_rule(xml):\n    \"\"\"Pemeriksa studi kasus: record rule peminjaman milik sendiri.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.rule\", m)\n    if \"name\" not in f or not (f[\"name\"].text or \"\").strip():\n        m.append('Beri nama aturan: <field name=\"name\">...</field>.')\n    if \"model_id\" not in f or f[\"model_id\"].get(\"ref\") != \"model_library_loan\":\n        m.append('Model aturan: <field name=\"model_id\" ref=\"model_library_loan\"/>.')\n    if \"domain_force\" not in f or _rapat(f[\"domain_force\"].text) != \"[('user_id','=',user.id)]\":\n        m.append(\"domain_force harus membatasi ke milik sendiri: [('user_id', '=', user.id)].\")\n    g = f.get(\"groups\")\n    if g is None or \"ref('group_library_user')\" not in _rapat(g.get(\"eval\")):\n        m.append(\"Berlakukan untuk grup user: <field name=\\\"groups\\\" eval=\\\"[(4, ref('group_library_user'))]\\\"/>.\")\n    return m\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "ct-rule",
@@ -5015,7 +5325,8 @@ const STUDI_PY = [
 ],
 "contoh": 1,
 "pre": "\nimport csv, io, re\nimport xml.etree.ElementTree as ET\n\ndef _rapat(s):\n    return re.sub(r\"\\s+\", \"\", s or \"\").replace('\"', \"'\")\n\ndef _parse(xml):\n    try:\n        return ET.fromstring(xml.strip()), None\n    except ET.ParseError as e:\n        return None, \"XML tidak valid (\" + str(e) + \"). Cek tag yang belum ditutup, tanda kutip, dan < yang harus ditulis &lt;.\"\n\ndef _record(r, model, m):\n    if r.tag != \"record\":\n        m.append(\"Elemen terluar harus <record>, bukan <\" + r.tag + \">.\")\n    if r.get(\"model\") != model:\n        m.append(\"Atribut model pada <record> harus '\" + model + \"'.\")\n    if not r.get(\"id\"):\n        m.append(\"<record> butuh atribut id (ID XML yang unik).\")\n    return {f.get(\"name\"): f for f in r.findall(\"field\")}\n\ndef cek_form(xml):\n    \"\"\"Pemeriksa studi kasus: form view library.book.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.ui.view\", m)\n    if \"model\" not in f or (f[\"model\"].text or \"\").strip() != \"library.book\":\n        m.append('Tambahkan <field name=\"model\">library.book</field>.')\n    if re.search(r\"\\battrs\\s*=|\\bstates\\s*=\", xml):\n        m.append(\"attrs dan states sudah dihapus di Odoo 17. Tulis kondisinya langsung, misalnya invisible=\\\"state != 'draft'\\\".\")\n    arch = f.get(\"arch\")\n    if arch is None or arch.get(\"type\") != \"xml\":\n        m.append('Tambahkan <field name=\"arch\" type=\"xml\"> yang berisi <form>.')\n        return m\n    form = arch.find(\"form\")\n    if form is None:\n        m.append(\"Di dalam arch harus ada <form>.\")\n        return m\n    header = form.find(\"header\")\n    if header is None:\n        m.append(\"Tombol dan statusbar ditaruh di dalam <header> (anak langsung <form>).\")\n    else:\n        tombol = [b for b in header.findall(\"button\") if b.get(\"name\") == \"action_make_available\"]\n        if not tombol:\n            m.append('Di <header> belum ada <button name=\"action_make_available\" .../>.')\n        else:\n            b = tombol[0]\n            if b.get(\"type\") != \"object\":\n                m.append('Tombol yang memanggil method Python butuh type=\"object\".')\n            if _rapat(b.get(\"invisible\")) != \"state!='draft'\":\n                m.append(\"Tombol harus tersembunyi kecuali status draft: invisible=\\\"state != 'draft'\\\".\")\n            if not b.get(\"string\"):\n                m.append('Beri tombol label lewat atribut string, misalnya string=\"Tersedia\".')\n        st = [x for x in header.findall(\"field\") if x.get(\"name\") == \"state\"]\n        if not st or st[0].get(\"widget\") != \"statusbar\":\n            m.append('Tambahkan <field name=\"state\" widget=\"statusbar\"/> di dalam <header>.')\n    sheet = form.find(\"sheet\")\n    if sheet is None:\n        m.append(\"Isi form dibungkus <sheet> (anak langsung <form>).\")\n    else:\n        ada = {x.get(\"name\") for x in sheet.iter(\"field\")}\n        for wajib in (\"name\", \"author_id\", \"isbn\"):\n            if wajib not in ada:\n                m.append(\"Field \" + wajib + \" belum ada di dalam <sheet>.\")\n    return m\n\ndef cek_inherit(xml):\n    \"\"\"Pemeriksa studi kasus: mewarisi form sale.order.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.ui.view\", m)\n    if \"model\" not in f or (f[\"model\"].text or \"\").strip() != \"sale.order\":\n        m.append('Tambahkan <field name=\"model\">sale.order</field>.')\n    if \"inherit_id\" not in f or f[\"inherit_id\"].get(\"ref\") != \"sale.view_order_form\":\n        m.append('View turunan butuh <field name=\"inherit_id\" ref=\"sale.view_order_form\"/>.')\n    arch = f.get(\"arch\")\n    if arch is None or arch.get(\"type\") != \"xml\":\n        m.append('Tambahkan <field name=\"arch\" type=\"xml\">.')\n        return m\n    xp = arch.findall(\"xpath\")\n    if not xp:\n        m.append(\"Di dalam arch belum ada <xpath>.\")\n        return m\n    sasaran = [x for x in xp if _rapat(x.get(\"expr\")) == \"//field[@name='partner_id']\"]\n    if not sasaran:\n        m.append(\"expr xpath harus menunjuk field partner_id: expr=\\\"//field[@name='partner_id']\\\".\")\n        return m\n    x = sasaran[0]\n    if x.get(\"position\") != \"after\":\n        m.append('Field baru harus muncul SETELAH partner_id: position=\"after\".')\n    if not any(c.tag == \"field\" and c.get(\"name\") == \"x_approval_note\" for c in x):\n        m.append('Di dalam xpath belum ada <field name=\"x_approval_note\"/>.')\n    tombol = [x for x in xp if _rapat(x.get(\"expr\")) in (\"//header\", \"/form/header\", \"//form/header\")]\n    if not tombol or tombol[0].get(\"position\") != \"inside\":\n        m.append('Tambahkan xpath kedua: expr=\"//header\" position=\"inside\" untuk tombol approve.')\n    else:\n        b = [c for c in tombol[0] if c.tag == \"button\" and c.get(\"name\") == \"action_amount_approve\"]\n        if not b:\n            m.append('Di xpath header belum ada <button name=\"action_amount_approve\" .../>.')\n        else:\n            if b[0].get(\"type\") != \"object\":\n                m.append('Tombol approve butuh type=\"object\".')\n            if _rapat(b[0].get(\"invisible\")) != \"state!='to_approve'\":\n                m.append(\"Tombol approve hanya tampil di status to_approve: invisible=\\\"state != 'to_approve'\\\".\")\n            if b[0].get(\"groups\") != \"sale_amount_approval.group_so_amount_approver\":\n                m.append('Batasi tombol untuk grup approver: groups=\"sale_amount_approval.group_so_amount_approver\".')\n    return m\n\ndef cek_acl(teks):\n    \"\"\"Pemeriksa studi kasus: ir.model.access.csv untuk library.book.\"\"\"\n    baris = [b for b in csv.reader(io.StringIO(teks.strip())) if b]\n    if not baris:\n        return [\"File masih kosong.\"]\n    m = []\n    kepala = [\"id\", \"name\", \"model_id:id\", \"group_id:id\", \"perm_read\", \"perm_write\", \"perm_create\", \"perm_unlink\"]\n    if [k.strip() for k in baris[0]] != kepala:\n        m.append(\"Baris pertama (header) harus persis: \" + \",\".join(kepala))\n        return m\n    data = {}\n    for i, b in enumerate(baris[1:], 2):\n        if len(b) != 8:\n            m.append(\"Baris \" + str(i) + \" harus punya 8 kolom, sekarang \" + str(len(b)) + \".\")\n            continue\n        b = [x.strip() for x in b]\n        if b[2] != \"model_library_book\":\n            m.append(\"Baris \" + str(i) + \": model_id:id untuk library.book adalah model_library_book.\")\n        grup = b[3].split(\".\")[-1]\n        data[grup] = b[4:]\n    if \"group_library_user\" not in data:\n        m.append(\"Belum ada baris untuk grup group_library_user.\")\n    elif data[\"group_library_user\"] != [\"1\", \"0\", \"0\", \"0\"]:\n        m.append(\"Library User hanya boleh membaca: perm 1,0,0,0.\")\n    if \"group_library_manager\" not in data:\n        m.append(\"Belum ada baris untuk grup group_library_manager.\")\n    elif data[\"group_library_manager\"] != [\"1\", \"1\", \"1\", \"1\"]:\n        m.append(\"Library Manager boleh semuanya: perm 1,1,1,1.\")\n    ids = [b[0] for b in baris[1:] if b]\n    if len(set(ids)) != len(ids):\n        m.append(\"Kolom id setiap baris harus unik.\")\n    return m\n\ndef cek_rule(xml):\n    \"\"\"Pemeriksa studi kasus: record rule peminjaman milik sendiri.\"\"\"\n    r, err = _parse(xml)\n    if err:\n        return [err]\n    m = []\n    f = _record(r, \"ir.rule\", m)\n    if \"name\" not in f or not (f[\"name\"].text or \"\").strip():\n        m.append('Beri nama aturan: <field name=\"name\">...</field>.')\n    if \"model_id\" not in f or f[\"model_id\"].get(\"ref\") != \"model_library_loan\":\n        m.append('Model aturan: <field name=\"model_id\" ref=\"model_library_loan\"/>.')\n    if \"domain_force\" not in f or _rapat(f[\"domain_force\"].text) != \"[('user_id','=',user.id)]\":\n        m.append(\"domain_force harus membatasi ke milik sendiri: [('user_id', '=', user.id)].\")\n    g = f.get(\"groups\")\n    if g is None or \"ref('group_library_user')\" not in _rapat(g.get(\"eval\")):\n        m.append(\"Berlakukan untuk grup user: <field name=\\\"groups\\\" eval=\\\"[(4, ref('group_library_user'))]\\\"/>.\")\n    return m\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -5072,7 +5383,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Kamu menerima catatan belanja, satu barang per baris: \"Kopi Susu x2 @18000\".",
+"Dari setiap baris ambil: nama (\"Kopi Susu\"), jumlah setelah x (2), dan harga setelah @ (18000).",
+"Ubah jumlah dan harga menjadi angka. Baris kosong atau yang tidak punya x dan @ dilewati.",
+"Kembalikan list pasangan (nama, jumlah, harga)."
+]
 },
 {
 "id": "uji-py-1-b",
@@ -5115,7 +5432,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": "def hitung_struk(items, member):\n    pass\n"
+"awal_baru": "def hitung_struk(items, member):\n    pass\n",
+"mudah": [
+"Subtotal = jumlah semua (jumlah × harga). Contoh 5 × 18.000 + 2 × 12.500 = 115.000.",
+"Diskon 10% hanya untuk member DAN subtotal minimal 100.000 → 11.500.",
+"Pajak 11% dihitung dari (subtotal − diskon) → 103.500 × 11% = 11.385.",
+"Total = subtotal − diskon + pajak. Kembalikan keempatnya dalam satu dict."
+]
 },
 {
 "id": "uji-py-1-c",
@@ -5154,7 +5477,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": "def cetak_struk(teks, member):\n    pass\n"
+"awal_baru": "def cetak_struk(teks, member):\n    pass\n",
+"mudah": [
+"Gabungkan bagian A dan B: baca catatan, lalu hitung struknya.",
+"Buat baris per barang: \"Kopi Susu 2 x 18.000 = 36.000\", lalu baris Subtotal, Diskon, Pajak, Total.",
+"Semua angka memakai titik ribuan. Kalau tidak ada barang, kembalikan [\"Belanja kosong\"]."
+]
 }
 ],
 "ujian": true,
@@ -5211,7 +5539,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Gudang mencatat stok per produk. masuk menambah, keluar mengurangi, stok membaca jumlahnya (0 kalau belum pernah ada).",
+"Jumlah 0 atau negatif ditolak dengan error \"qty harus lebih dari 0\".",
+"Mengeluarkan lebih dari stok ditolak dengan error \"stok kursi tidak cukup\", dan stoknya tidak berubah."
+]
 },
 {
 "id": "uji-py-2-b",
@@ -5246,7 +5579,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": "def laporan(gudang):\n    pass\n"
+"awal_baru": "def laporan(gudang):\n    pass\n",
+"mudah": [
+"Buat daftar laporan: pasangan (produk, stok) untuk produk yang stoknya masih ada.",
+"Urutkan dari stok terbanyak; kalau sama, nama abjad.",
+"Produk yang stoknya sudah 0 tidak ditampilkan."
+]
 },
 {
 "id": "uji-py-2-c",
@@ -5281,7 +5619,13 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": "def proses(gudang, teks):\n    pass\n"
+"awal_baru": "def proses(gudang, teks):\n    pass\n",
+"mudah": [
+"Kamu menerima teks perintah, satu per baris: \"MASUK kursi 5\" atau \"KELUAR kursi 2\".",
+"Jalankan semua baris. Kalau satu baris gagal, catat pesannya lalu LANJUT ke baris berikutnya.",
+"Pesan ditulis \"baris 3: stok kursi tidak cukup\". Perintah selain MASUK/KELUAR → \"perintah tidak dikenal\"; jumlah bukan angka atau bagian kurang → \"format salah\".",
+"Kembalikan daftar semua pesan kesalahan."
+]
 }
 ],
 "ujian": true,
@@ -5334,7 +5678,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Untuk setiap order: hitung subtotal tiap baris = qty × harga × (1 − diskon/100), lalu jumlahkan → amount_untaxed.",
+"Pajak = 11% dari amount_untaxed. Total = untaxed + pajak. Semua dibulatkan 2 desimal.",
+"Contoh: 2 × 100.000 diskon 10% + 1 × 50.000 = 230.000; pajak 25.300; total 255.300."
+]
 },
 {
 "id": "uji-py-3-b",
@@ -5369,7 +5718,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n",
-"awal_baru": "def omzet_bulanan(orders):\n    pass\n"
+"awal_baru": "def omzet_bulanan(orders):\n    pass\n",
+"mudah": [
+"Hitung dulu total setiap order (pakai fungsi bagian A).",
+"Ambil hanya order yang statusnya \"sale\" atau \"done\" (quotation \"draft\" belum dihitung).",
+"Kelompokkan per bulan dari tanggalnya (\"2026-10-05\" → \"2026-10\") dan jumlahkan totalnya."
+]
 },
 {
 "id": "uji-py-3-c",
@@ -5404,7 +5758,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n",
-"awal_baru": "def pelanggan_vip(orders, minimal):\n    pass\n"
+"awal_baru": "def pelanggan_vip(orders, minimal):\n    pass\n",
+"mudah": [
+"Hitung total belanja setiap pelanggan dari order sale/done saja.",
+"Ambil pelanggan yang totalnya mencapai batas minimal.",
+"Urutkan dari total terbesar (seri: nama abjad) dan kembalikan namanya."
+]
 }
 ],
 "ujian": true,
@@ -5457,7 +5816,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": [
+"Tiket menyimpan id, judul, prioritas (tinggi/sedang/rendah), dan waktu dibuat \"2026-11-24 08:00\".",
+"umur_jam(sekarang) = berapa jam sejak tiket dibuat. 08:00 → 13:30 = 5.5 jam.",
+"sla = batas waktu sesuai prioritas: tinggi 4 jam, sedang 24 jam, rendah 72 jam."
+]
 },
 {
 "id": "uji-py-4-b",
@@ -5492,7 +5856,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": "def antrean(tiket):\n    pass\n"
+"awal_baru": "def antrean(tiket):\n    pass\n",
+"mudah": [
+"Keluarkan tiket satu per satu dengan urutan: prioritas tinggi dulu, lalu sedang, lalu rendah.",
+"Kalau prioritasnya sama, tiket yang dibuat lebih awal dulu; kalau waktunya juga sama, id lebih kecil dulu.",
+"Pakai yield supaya menjadi generator."
+]
 },
 {
 "id": "uji-py-4-c",
@@ -5527,7 +5896,12 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": "def ringkas_sla(tiket, sekarang):\n    pass\n"
+"awal_baru": "def ringkas_sla(tiket, sekarang):\n    pass\n",
+"mudah": [
+"Cari tiket yang SLA-nya terlewat: umurnya LEBIH DARI batas jam (tepat 4 jam untuk prioritas tinggi belum terlewat).",
+"Daftar id-nya ditulis sesuai urutan antrean bagian B.",
+"Hitung juga jumlah tiket terlewat per prioritas. Kembalikan keduanya dalam satu dict."
+]
 }
 ],
 "ujian": true,
@@ -5580,7 +5954,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "uji-ct-1-b",
@@ -5615,7 +5990,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": "def kembar_email(pelanggan):\n    pass\n"
+"awal_baru": "def kembar_email(pelanggan):\n    pass\n",
+"mudah": []
 },
 {
 "id": "uji-ct-1-c",
@@ -5650,7 +6026,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "",
-"awal_baru": "def vals_partner(teks_csv, tag_id):\n    pass\n"
+"awal_baru": "def vals_partner(teks_csv, tag_id):\n    pass\n",
+"mudah": []
 }
 ],
 "ujian": true,
@@ -5703,7 +6080,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n\nHARI_INI = \"2026-11-24\"\n",
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "uji-ct-2-b",
@@ -5738,7 +6116,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n\nHARI_INI = \"2026-11-24\"\n",
-"awal_baru": "def action_return(self):\n    pass\n"
+"awal_baru": "def action_return(self):\n    pass\n",
+"mudah": []
 },
 {
 "id": "uji-ct-2-c",
@@ -5773,7 +6152,8 @@ const STUDI_PY = [
 ],
 "contoh": 2,
 "pre": "\nclass ValidationError(Exception):\n    pass\n\nclass UserError(Exception):\n    pass\n\nclass Recordset:\n    \"\"\"Tiruan recordset Odoo: bisa di-for, len(), filtered, mapped, sorted, ensure_one.\"\"\"\n    def __init__(self, records=()):\n        self._r = list(records)\n    def __iter__(self):\n        return iter(self._r)\n    def __len__(self):\n        return len(self._r)\n    def __bool__(self):\n        return bool(self._r)\n    def __getitem__(self, i):\n        return self._r[i]\n    def __repr__(self):\n        return \"Recordset(%d record)\" % len(self._r)\n    def filtered(self, fungsi):\n        if isinstance(fungsi, str):\n            return Recordset(r for r in self._r if getattr(r, fungsi))\n        return Recordset(r for r in self._r if fungsi(r))\n    def mapped(self, fungsi):\n        if isinstance(fungsi, str):\n            hasil = []\n            for r in self._r:\n                v = r\n                for bagian in fungsi.split(\".\"):\n                    v = getattr(v, bagian)\n                if isinstance(v, Recordset):\n                    hasil.extend(x for x in v if x not in hasil)\n                else:\n                    hasil.append(v)\n            return hasil\n        return [fungsi(r) for r in self._r]\n    def sorted(self, key=None, reverse=False):\n        k = (lambda r: getattr(r, key)) if isinstance(key, str) else key\n        return Recordset(sorted(self._r, key=k, reverse=reverse))\n    def ensure_one(self):\n        if len(self._r) != 1:\n            raise ValueError(\"Expected singleton: %d record\" % len(self._r))\n        return self\n    def __getattr__(self, nama):\n        # seperti Odoo: atribut recordset berisi satu record = atribut record itu\n        if nama.startswith(\"_\"):\n            raise AttributeError(nama)\n        self.ensure_one()\n        return getattr(self._r[0], nama)\n    def write(self, vals):\n        for r in self._r:\n            r.__dict__.update(vals)\n        return True\n\nclass Record:\n    def __init__(self, **nilai):\n        self.__dict__.update(nilai)\n    def __repr__(self):\n        return \"Record(%s)\" % \", \".join(\"%s=%r\" % kv for kv in self.__dict__.items() if not isinstance(kv[1], Recordset))\n\ndef rs(*records):\n    return Recordset(records)\n\nHARI_INI = \"2026-11-24\"\n",
-"awal_baru": "def rekap_anggota(loans):\n    pass\n"
+"awal_baru": "def rekap_anggota(loans):\n    pass\n",
+"mudah": []
 }
 ],
 "ujian": true,
@@ -5837,7 +6217,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "html-struktur-2",
@@ -5883,7 +6264,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -5939,7 +6321,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "html-teks-2",
@@ -5985,7 +6368,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -6049,7 +6433,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "html-media-2",
@@ -6095,7 +6480,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -6159,7 +6545,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "html-form-2",
@@ -6209,7 +6596,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -6269,7 +6657,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "html-sem-2",
@@ -6315,7 +6704,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -6379,7 +6769,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "html-a11y-2",
@@ -6425,7 +6816,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -6485,7 +6877,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "html-tabel-2",
@@ -6535,7 +6928,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -6595,7 +6989,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "html-head-2",
@@ -6641,7 +7036,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -6701,7 +7097,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "html-int-2",
@@ -6743,7 +7140,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -6803,7 +7201,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "uji-html-1-b",
@@ -6849,7 +7248,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "<!-- Bagian B: lanjutkan halaman di atas -->\n"
+"awal_baru": "<!-- Bagian B: lanjutkan halaman di atas -->\n",
+"mudah": []
 },
 {
 "id": "uji-html-1-c",
@@ -6907,7 +7307,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "<!-- Bagian C: lanjutkan halaman di atas -->\n"
+"awal_baru": "<!-- Bagian C: lanjutkan halaman di atas -->\n",
+"mudah": []
 }
 ],
 "ujian": true,
@@ -6967,7 +7368,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-dasar-2",
@@ -7017,7 +7419,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -7077,7 +7480,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-teks-2",
@@ -7123,7 +7527,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -7183,7 +7588,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-box-2",
@@ -7225,7 +7631,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -7289,7 +7696,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-flex-2",
@@ -7339,7 +7747,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -7399,7 +7808,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-grid-2",
@@ -7441,7 +7851,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -7501,7 +7912,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-dek-2",
@@ -7543,7 +7955,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -7603,7 +8016,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-lanjut-2",
@@ -7649,7 +8063,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -7709,7 +8124,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-sel-2",
@@ -7755,7 +8171,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -7815,7 +8232,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-satuan-2",
@@ -7861,7 +8279,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -7921,7 +8340,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-anim-2",
@@ -7967,7 +8387,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -8031,7 +8452,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-gl-2",
@@ -8073,7 +8495,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -8133,7 +8556,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "css-ark-2",
@@ -8179,7 +8603,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -8243,7 +8668,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "uji-css-1-b",
@@ -8293,7 +8719,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "<!-- Bagian B: tambahkan aturan di dalam <style> di atas -->\n"
+"awal_baru": "<!-- Bagian B: tambahkan aturan di dalam <style> di atas -->\n",
+"mudah": []
 },
 {
 "id": "uji-css-1-c",
@@ -8339,7 +8766,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "<!-- Bagian C: tambahkan aturan di dalam <style> di atas -->\n"
+"awal_baru": "<!-- Bagian C: tambahkan aturan di dalam <style> di atas -->\n",
+"mudah": []
 }
 ],
 "ujian": true,
@@ -8403,7 +8831,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "uji-css-2-b",
@@ -8445,7 +8874,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "<!-- Bagian B: tambahkan aturan di dalam <style> di atas -->\n"
+"awal_baru": "<!-- Bagian B: tambahkan aturan di dalam <style> di atas -->\n",
+"mudah": []
 },
 {
 "id": "uji-css-2-c",
@@ -8487,7 +8917,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "<!-- Bagian C: tambahkan aturan di dalam <style> di atas -->\n"
+"awal_baru": "<!-- Bagian C: tambahkan aturan di dalam <style> di atas -->\n",
+"mudah": []
 }
 ],
 "ujian": true,
@@ -8547,7 +8978,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-dasar-2",
@@ -8589,7 +9021,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -8657,7 +9090,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-op-2",
@@ -8703,7 +9137,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -8763,7 +9198,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-loop-2",
@@ -8809,7 +9245,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -8869,7 +9306,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-fun-2",
@@ -8915,7 +9353,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -8971,7 +9410,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-arr-2",
@@ -9013,7 +9453,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -9069,7 +9510,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-so-2",
@@ -9111,7 +9553,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -9171,7 +9614,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-dom-2",
@@ -9209,7 +9653,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -9265,7 +9710,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-async-2",
@@ -9303,7 +9749,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -9367,7 +9814,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-mod-2",
@@ -9405,7 +9853,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -9465,7 +9914,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-kasus-2",
@@ -9507,7 +9957,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -9563,7 +10014,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-scope-2",
@@ -9601,7 +10053,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -9661,7 +10114,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-ev-2",
@@ -9699,7 +10153,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -9759,7 +10214,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-kelas-2",
@@ -9801,7 +10257,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -9861,7 +10318,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-err-2",
@@ -9899,7 +10357,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -9955,7 +10414,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-kol-2",
@@ -9997,7 +10457,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -10061,7 +10522,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-modul-2",
@@ -10099,7 +10561,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -10163,7 +10626,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "js-fe-2",
@@ -10201,7 +10665,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -10261,7 +10726,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "uji-js-1-b",
@@ -10311,7 +10777,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "function hitungTotal(keranjang, kodeVoucher) {\n  // tulis kodemu di sini\n}\n"
+"awal_baru": "function hitungTotal(keranjang, kodeVoucher) {\n  // tulis kodemu di sini\n}\n",
+"mudah": []
 },
 {
 "id": "uji-js-1-c",
@@ -10349,7 +10816,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "function ringkasanPesanan(keranjang, kodeVoucher) {\n  // tulis kodemu di sini\n}\n"
+"awal_baru": "function ringkasanPesanan(keranjang, kodeVoucher) {\n  // tulis kodemu di sini\n}\n",
+"mudah": []
 }
 ],
 "ujian": true,
@@ -10405,7 +10873,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "uji-js-2-b",
@@ -10443,7 +10912,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "function statistikDivisi(teks) {\n  // tulis kodemu di sini\n}\n"
+"awal_baru": "function statistikDivisi(teks) {\n  // tulis kodemu di sini\n}\n",
+"mudah": []
 },
 {
 "id": "uji-js-2-c",
@@ -10481,7 +10951,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "async function laporanMasaKerja(ambilTeks, hariIni) {\n  // tulis kodemu di sini\n}\n"
+"awal_baru": "async function laporanMasaKerja(ambilTeks, hariIni) {\n  // tulis kodemu di sini\n}\n",
+"mudah": []
 }
 ],
 "ujian": true,
@@ -10541,7 +11012,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "uji-js-3-b",
@@ -10579,7 +11051,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "function cari(buku, kueri) {\n  // tulis kodemu di sini\n}\n"
+"awal_baru": "function cari(buku, kueri) {\n  // tulis kodemu di sini\n}\n",
+"mudah": []
 },
 {
 "id": "uji-js-3-c",
@@ -10617,7 +11090,8 @@ const STUDI_PY = [
 "pre": "",
 "urut": false,
 "tabel": [],
-"awal_baru": "function statistikTag(buku) {\n  // tulis kodemu di sini\n}\n"
+"awal_baru": "function statistikTag(buku) {\n  // tulis kodemu di sini\n}\n",
+"mudah": []
 }
 ],
 "ujian": true,
@@ -10667,7 +11141,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "sql-sel-2",
@@ -10699,7 +11174,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -10749,7 +11225,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "sql-gb-2",
@@ -10781,7 +11258,8 @@ const STUDI_PY = [
 "tabel": [
 "pengguna"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -10833,7 +11311,8 @@ const STUDI_PY = [
 "pelanggan",
 "produk"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "sql-join-2",
@@ -10866,7 +11345,8 @@ const STUDI_PY = [
 "produk",
 "pesanan"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -10916,7 +11396,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "sql-sub-2",
@@ -10949,7 +11430,8 @@ const STUDI_PY = [
 "pengguna",
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -10999,7 +11481,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "sql-case-2",
@@ -11031,7 +11514,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -11081,7 +11565,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "sql-null-2",
@@ -11113,7 +11598,8 @@ const STUDI_PY = [
 "tabel": [
 "log_login"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -11164,7 +11650,8 @@ const STUDI_PY = [
 "transaksi",
 "pengguna"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "sql-cte-2",
@@ -11197,7 +11684,8 @@ const STUDI_PY = [
 "log_login",
 "log_web"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -11247,7 +11735,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "sql-win-2",
@@ -11279,7 +11768,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": false,
@@ -11329,7 +11819,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "uji-sql-1-b",
@@ -11362,7 +11853,8 @@ const STUDI_PY = [
 "transaksi",
 "pengguna"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 },
 {
 "id": "uji-sql-1-c",
@@ -11394,7 +11886,8 @@ const STUDI_PY = [
 "tabel": [
 "transaksi"
 ],
-"awal_baru": ""
+"awal_baru": "",
+"mudah": []
 }
 ],
 "ujian": true,
