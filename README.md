@@ -114,6 +114,7 @@ kodequiz/
 │   │   ├── soal-python.js … soal-python-7.js  soal-js.js … soal-js-6.js   # file -3/-4… = tambahan 2x lipat + Pendalaman materi (dimuat setelah file lama agar ID soal tetap)
 │   │   ├── soal-html.js  soal-css.js  soal-web-2.js  soal-java.js  soal-php.js
 │   │   └── soal-da.js  soal-ds.js  soal-kasus-sql.js   # jalur DA/DS + tantangan Lab kasus kerja
+│   │   └── materi-2x-1.js … materi-2x-9.js   # materi 2x lipat semua topik: contoh terpandu, kesalahan umum, latihan + kunci, studi kasus, kamus bab, cek ulang (dimuat paling akhir)
 │   └── fitur/
 │       ├── rayakan.js          # konfeti, suara, tirai, level, lencana
 │       ├── buku.js             # Book: daftar isi, mode baca interaktif, cetak/PDF
