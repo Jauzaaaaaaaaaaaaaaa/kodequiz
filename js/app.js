@@ -273,6 +273,7 @@ const ROUTE = {
   pylab:   { layar: "layar-pylab",   render: a => renderPyLab(a), lebar: true },
   praktik: { layar: "layar-pylab",   render: a => renderPraktik(a), lebar: true },
   pustaka: { layar: "layar-pustaka", render: a => renderPustaka(a) },
+  kamus:   { layar: "layar-kamus",   render: a => renderKamus(a) },
   rencana: { layar: "layar-rencana", render: () => renderRencana() },
   buku:    { layar: "layar-buku",    render: () => renderBuku() },
   bukubab: { layar: "layar-bukubab", render: a => renderBukuBab(a.t, a.i) },

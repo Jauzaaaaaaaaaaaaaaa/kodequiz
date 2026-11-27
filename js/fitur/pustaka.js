@@ -17,6 +17,7 @@ function indeksCari() {
     S.langkah.map(L => L.judul + " " + polos(L.soal)).join(" "), () => go("praktik", { id: S.id })));
   TANTANGAN_PY.forEach(T => tambah("Lab Coding Test", T.judul, KATEGORI_PY[T.kategori], polos(T.soal), () => go("pylab", { f: "semua", id: T.id })));
   TANTANGAN_SQL.forEach((T, i) => tambah("Lab SQL", T.judul, "SQL", polos(T.soal), () => go("sqllab", { i })));
+  if (typeof KAMUS_KODING !== "undefined") KAMUS_KODING.forEach(K => tambah("Kamus", K.kata, KAMUS_GRUP[K.g], K.arti, () => go("kamus", { q: K.kata })));
   if (typeof PUSTAKA !== "undefined") PUSTAKA.forEach(V => tambah("Video", V.judul, `${V.kanal} · ${V.bahasa === "id" ? "Indonesia" : "Inggris"}`,
     [V.ringkasan, ...V.poin, ...V.langkah, ...V.istilah, V.kenapa].join(" "), () => go("pustaka", { tab: "video", id: V.id })));
   if (typeof PETA_BELAJAR !== "undefined") PETA_BELAJAR.forEach(P => tambah("Peta Belajar", P.judul, `${P.langkah.length} langkah`,
@@ -38,6 +39,7 @@ const MENU_PINTAS = [
   ["🏠", "Beranda", () => keBeranda()],
   ["📚", "Pustaka: ringkasan video", () => go("pustaka", { tab: "video" })],
   ["🗺️", "Peta belajar per bahasa", () => go("pustaka", { tab: "peta" })],
+  ["🔤", "Kamus kata koding", () => go("kamus", {})],
   ["🐍", "Lab Coding Test", () => go("pylab", {})],
   ["🧪", "Lab SQL", () => go("sqllab", {})],
   ["🧩", "Latihan & semua topik", () => go("latihan")],
@@ -68,6 +70,26 @@ function renderHasilCari() {
 /* ---------- Pustaka ---------- */
 const durasiTeks = s => s >= 3600 ? `${Math.floor(s / 3600)} j ${Math.round(s % 3600 / 60)} m` : `${Math.max(1, Math.round(s / 60))} menit`;
 const namaTopik = t => (TOPIK_INFO[t] || {}).nama || t;
+/* ---------- Kamus kata koding ---------- */
+const KAMUS_GRUP = { ui: "Tampilan (UI)", web: "HTML · CSS · JS", dasar: "Konsep pemrograman", data: "Data & database", alat: "Alat kerja & Git", net: "Internet & server" };
+function renderKamus(a) {
+  const g = a.g || "semua", input = el("kamus-cari");
+  if (a.q !== undefined) input.value = a.q;
+  el("kamus-ket").textContent = `${KAMUS_KODING.length} istilah yang sering muncul saat belajar dan bekerja. Ketik untuk mencari.`;
+  el("kamus-filter").innerHTML = [["semua", "Semua"], ...Object.entries(KAMUS_GRUP)].map(([k, nama]) =>
+    `<button class="lingkup ${k === g ? "aktif" : ""}" data-g="${k}">${esc(nama)} <small>${k === "semua" ? KAMUS_KODING.length : KAMUS_KODING.filter(K => K.g === k).length}</small></button>`).join("");
+  el("kamus-filter").querySelectorAll("[data-g]").forEach(b => b.onclick = () => go("kamus", { g: b.dataset.g, q: input.value }, { replace: true }));
+  const isi = () => {
+    const q = normCari(input.value.trim());
+    const daftar = KAMUS_KODING.filter(K => (g === "semua" || K.g === g) && (!q || normCari(K.kata + " " + K.arti).includes(q)))
+      .sort((x, y) => normCari(x.kata).startsWith(q) === normCari(y.kata).startsWith(q) ? x.kata.localeCompare(y.kata) : normCari(x.kata).startsWith(q) ? -1 : 1);
+    el("kamus-daftar").innerHTML = daftar.length
+      ? daftar.map(K => `<div class="kamus-item"><dt>${esc(K.kata)} <small>${esc(KAMUS_GRUP[K.g])}</small></dt><dd>${esc(K.arti)}</dd></div>`).join("")
+      : `<p class="cek-kosong">Istilah itu belum ada di kamus. Coba kata lain, atau cari di menu ☰.</p>`;
+  };
+  input.oninput = isi;
+  isi();
+}
 function renderPustaka(a) {
   const tab = a.tab || "video";
   document.querySelectorAll(".pus-tab").forEach(b => { const on = b.dataset.tab === tab; b.classList.toggle("aktif", on); b.setAttribute("aria-selected", on); });

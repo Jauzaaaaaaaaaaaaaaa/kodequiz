@@ -137,8 +137,31 @@
       if ((e.key === "Enter" || e.key === "Tab") && !e.ctrlKey && !e.metaKey && !e.shiftKey) { e.preventDefault(); e.stopImmediatePropagation(); return terapkan(); }
       if (e.key === "Escape") { e.preventDefault(); e.stopImmediatePropagation(); return tutup(); }
     }
-    if (e.ctrlKey || e.metaKey || e.altKey || ta.selectionStart !== ta.selectionEnd) return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
     const mode = modeDi(ta, ambilMode()), i = ta.selectionStart, v = ta.value, depan = v[i] || "", belakang = v[i - 1] || "";
+    const satuan = mode === "py" ? 4 : 2;   // satu Tab = 4 spasi di Python, 2 spasi di bahasa lain
+    const awalBaris = v.lastIndexOf("\n", i - 1) + 1, kiri = v.slice(awalBaris, i);
+    // Tab = maju ke kelipatan satuan berikutnya; Shift+Tab (atau Tab pada beberapa baris terpilih) = geser blok
+    if (e.key === "Tab") {
+      e.preventDefault(); e.stopImmediatePropagation(); tutup();
+      const z = ta.selectionEnd;
+      if (!e.shiftKey && !v.slice(i, z).includes("\n")) return sisip(ta, " ".repeat(satuan - (kiri.length % satuan)));
+      const akhir = v.indexOf("\n", z - (z > i && v[z - 1] === "\n" ? 1 : 0)), ujung = akhir < 0 ? v.length : akhir;
+      const baris = v.slice(awalBaris, ujung).split("\n").map(b => e.shiftKey ? b.replace(new RegExp("^ {1," + satuan + "}"), "") : " ".repeat(satuan) + b);
+      ta.setSelectionRange(awalBaris, ujung);
+      sisip(ta, baris.join("\n"));
+      const baru = baris.join("\n").length;
+      if (i === z) { const c = Math.max(awalBaris, i - (ujung - awalBaris - baru)); ta.setSelectionRange(c, c); }   // tanpa seleksi: kursor tetap
+      else ta.setSelectionRange(awalBaris, awalBaris + baru);
+      return;
+    }
+    if (ta.selectionStart !== ta.selectionEnd) return;
+    // Backspace di indentasi: hapus satu Tab penuh (mundur ke kelipatan satuan), bukan satu spasi
+    if (e.key === "Backspace" && kiri.length && /^ +$/.test(kiri)) {
+      e.preventDefault(); e.stopImmediatePropagation();
+      ta.setSelectionRange(i - (kiri.length % satuan || satuan), i);
+      return sisip(ta, "");
+    }
     // Enter di antara { } ( ) [ ] atau <tag></tag>: buka blok, penutup turun ke baris sendiri
     if (e.key === "Enter" && !e.shiftKey && (PASANGAN[belakang] === depan && "([{".includes(belakang) || (belakang === ">" && v.slice(i, i + 2) === "</"))) {
       e.preventDefault(); e.stopImmediatePropagation();
@@ -187,10 +210,70 @@
       if (e.inputType && !/^insert/.test(e.inputType)) return tutup();   // menghapus tidak memunculkan saran
       tampil(ta, ambilMode());
     });
+    // cek indentasi Python langsung saat mengetik (bahasa lain tidak peduli indentasi)
+    let tunda = null;
+    const cek = () => { clearTimeout(tunda); tunda = setTimeout(() => lintIndentasi(ta, modeDi(ta, ambilMode())), 350); };
+    ta.addEventListener("input", cek);
+    ta.addEventListener("focus", cek);
     ta.addEventListener("blur", () => setTimeout(() => { if (aktif && aktif.ta === ta && document.activeElement !== ta) tutup(); }, 120));
     ta.addEventListener("scroll", tutup);
     ta.addEventListener("click", tutup);
   };
+
+  /* ---------- Pemeriksa indentasi Python (seperti "Expected an indented block" di VS Code) ----------
+     Mengembalikan [{ baris, pesan }]. Baris di dalam kurung terbuka, teks tiga-kutip, atau setelah \ dilewati. */
+  // Per baris: lanjutan = baris ini sambungan statement di atasnya; titikDua = statement selesai dengan ":"
+  function pindaiPy(kode) {
+    let kurung = 0, tiga = null, sambung = false;
+    return kode.split("\n").map(b => {
+      const lanjutan = kurung > 0 || !!tiga || sambung;
+      let akhir = "", kutip = null;
+      for (let j = 0; j < b.length; j++) {
+        const c = b[j];
+        if (tiga) { if (b.startsWith(tiga, j)) { tiga = null; j += 2; } continue; }
+        if (kutip) { if (c === "\\") j++; else if (c === kutip) kutip = null; continue; }
+        if (c === "#") break;
+        if (b.startsWith('"""', j) || b.startsWith("'''", j)) { tiga = b.substr(j, 3); j += 2; akhir = "s"; continue; }
+        if (c === '"' || c === "'") { kutip = c; akhir = "s"; continue; }
+        if ("([{".includes(c)) kurung++;
+        else if (")]}".includes(c)) kurung = Math.max(0, kurung - 1);
+        if (!/\s/.test(c)) akhir = c;
+      }
+      sambung = akhir === "\\";
+      return { lanjutan, titikDua: akhir === ":" && !kurung && !tiga };
+    });
+  }
+  function cekIndenPy(kode) {
+    const masalah = [], tumpuk = [0], info = pindaiPy(kode);
+    let perluMasuk = 0;
+    kode.split("\n").forEach((b, n) => {
+      const isi = b.trim();
+      if (!info[n].lanjutan && isi && !isi.startsWith("#")) {
+        const ind = b.match(/^[ \t]*/)[0].replace(/\t/g, "    ").length, atas = tumpuk[tumpuk.length - 1];
+        if (perluMasuk) {
+          if (ind <= atas) masalah.push({ baris: n + 1, pesan: `Baris ${n + 1} harus menjorok ke dalam (tekan Tab sekali), karena baris ${perluMasuk} diakhiri titik dua ":".` });
+          else tumpuk.push(ind);
+        } else if (ind > atas) masalah.push({ baris: n + 1, pesan: `Baris ${n + 1} menjorok padahal baris di atasnya tidak diakhiri ":". Hapus spasi di depannya (Backspace).` });
+        else if (ind < atas) {
+          while (tumpuk.length > 1 && tumpuk[tumpuk.length - 1] > ind) tumpuk.pop();
+          if (tumpuk[tumpuk.length - 1] !== ind) masalah.push({ baris: n + 1, pesan: `Lebar jorok baris ${n + 1} tidak sama dengan blok mana pun di atasnya. Samakan dengan baris yang sejajar.` });
+        }
+        perluMasuk = 0;
+      }
+      if (info[n].titikDua && isi) perluMasuk = n + 1;
+    });
+    return masalah;
+  }
+  window.pindaiPy = pindaiPy;
+  // Tanda dari pemeriksa diberi lint:true supaya tidak menghapus tanda error dari Run.
+  function lintIndentasi(ta, mode) {
+    const baris = ta.value.split("\n");
+    const lain = (ta._ebSalah || []).filter(s => !s.lint && baris[s.baris - 1] === s.teks);
+    const baru = mode === "py" ? cekIndenPy(ta.value).map(s => ({ ...s, lint: true })) : [];
+    if (!baru.length && !(ta._ebSalah || []).some(s => s.lint)) return;
+    window.tandaiBarisSalah(ta, [...lain, ...baru]);
+  }
+  window.cekIndenPy = cekIndenPy;
 
   /* ---------- Garis merah di baris yang error (ala VS Code) ----------
      Lapisan transparan di atas textarea dengan teks yang sama; baris bermasalah diberi garis bergelombang.
@@ -204,6 +287,18 @@
     const induk = ta.parentNode;
     if (getComputedStyle(induk).position === "static") induk.style.position = "relative";
     induk.insertBefore(L, ta.nextSibling);
+    // tombol merah berisi pesan masalah pertama; diklik = kursor lompat ke baris itu
+    const P = document.createElement("button");
+    P.type = "button"; P.className = "eb-masalah"; P.hidden = true;
+    P.addEventListener("mousedown", e => e.preventDefault());
+    P.addEventListener("click", () => {
+      const s = ta._ebSalah && ta._ebSalah[0];
+      if (!s) return;
+      const i = ta.value.split("\n").slice(0, s.baris - 1).join("\n").length + (s.baris > 1 ? 1 : 0);
+      ta.focus(); ta.setSelectionRange(i, i);
+    });
+    induk.insertBefore(P, L.nextSibling);
+    ta._ebPil = P;
     ta.addEventListener("scroll", () => { L.scrollTop = ta.scrollTop; L.scrollLeft = ta.scrollLeft; });
     ta.addEventListener("input", () => { if (ta._ebSalah) gambar(ta); });
     new ResizeObserver(() => { if (ta._ebSalah) gambar(ta); }).observe(ta);
@@ -213,7 +308,16 @@
     const L = lapisan(ta), g = getComputedStyle(ta);
     // baris yang isinya sudah diubah tidak lagi ditandai
     ta._ebSalah = ta._ebSalah.filter(s => ta.value.split("\n")[s.baris - 1] === s.teks);
-    if (!ta._ebSalah.length) { L.hidden = true; return; }
+    const P = ta._ebPil;
+    if (!ta._ebSalah.length) { L.hidden = true; P.hidden = true; return; }
+    const pertama = ta._ebSalah[0], n = ta._ebSalah.length;
+    const ringkas = String(pertama.pesan || "").trim().split("\n").filter(Boolean).pop() || "";   // traceback: baris terakhir saja
+    P.textContent = `● ${n} masalah · baris ${pertama.baris}: ${ringkas}`;
+    P.title = ta._ebSalah.map(s => `Baris ${s.baris}: ${String(s.pesan).trim().split("\n").pop()}`).join("\n");
+    P.style.left = ta.offsetLeft + 8 + "px";
+    P.style.top = ta.offsetTop + ta.offsetHeight - 8 + "px";
+    P.style.maxWidth = Math.max(160, ta.offsetWidth - 16) + "px";
+    P.hidden = false;
     SALIN.forEach(p => L.style[p] = g[p]);
     L.style.borderColor = "transparent";
     L.style.left = ta.offsetLeft + "px"; L.style.top = ta.offsetTop + "px";
@@ -229,7 +333,7 @@
     if (!ta) return;
     const baris = ta.value.split("\n");
     ta._ebSalah = (daftar || []).filter(s => s.baris >= 1 && s.baris <= baris.length).map(s => ({ ...s, teks: baris[s.baris - 1] }));
-    if (!ta._ebSalah.length) { if (ta._ebLapis) ta._ebLapis.hidden = true; return; }
+    if (!ta._ebSalah.length) { if (ta._ebLapis) { ta._ebLapis.hidden = true; ta._ebPil.hidden = true; } return; }
     gambar(ta);
   };
   // Baris kemunculan TERAKHIR potongan teks (misalnya token dari pesan SQL: near "x": syntax error)

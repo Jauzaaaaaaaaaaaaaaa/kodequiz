@@ -616,8 +616,91 @@ function plRenderContoh() {
     el("pl-contoh-out").innerHTML = `<p class="kecil">Output:</p><pre class="pl-out">${esc(h.out || "(tidak ada output)")}</pre>`;
   };
 }
+/* ---------- Petunjuk kode per langkah (soal Python) ----------
+   Setelah petunjuk teks, solusi acuan dibuka sedikit demi sedikit (maks. 6 langkah). Setiap baris diberi komentar
+   bahasa sehari-hari, dan konsep KAMUS_PY yang baru muncul di langkah itu dijelaskan di bawah kode. */
+function plKomentarPy(baris) {
+  const s = baris.trim().replace(/\s+#[^"']*$/, ""), p = x => (x.length > 40 ? x.slice(0, 38) + "…" : x);
+  const OP = { "%": (a, b) => `ganti ${a} dengan sisa bagi ${a} oleh ${b}`, "+": (a, b) => `tambahkan ${b} ke ${a}`, "-": (a, b) => `kurangi ${a} sebanyak ${b}`, "*": (a, b) => `kalikan ${a} dengan ${b}`, "/": (a, b) => `bagi ${a} dengan ${b}`, "//": (a, b) => `bagi ${a} dengan ${b}, buang desimalnya` };
+  let m;
+  if ((m = s.match(/^(?:async )?def (\w+)\((.*)\)(?:\s*->.*)?:$/))) return m[2].trim() ? `buat fungsi ${m[1]} yang menerima bahan: ${m[2]}` : `buat fungsi ${m[1]} tanpa bahan masukan`;
+  if ((m = s.match(/^class (\w+)(?:\((.*)\))?:$/))) return `buat cetakan (class) bernama ${m[1]}` + (m[2] ? `, turunan dari ${m[2]}` : "");
+  if ((m = s.match(/^return\b\s*(.*)$/))) return m[1] ? `serahkan ${p(m[1])} sebagai hasil; fungsi berhenti di sini` : "keluar dari fungsi tanpa hasil";
+  if ((m = s.match(/^for (.+?) in (.+):$/))) return `ulangi untuk setiap ${m[1]} di dalam ${p(m[2])}`;
+  if ((m = s.match(/^while (.+):$/))) return `ulangi terus selama ${p(m[1])} masih benar`;
+  if ((m = s.match(/^if not (.+):$/))) return `jika ${p(m[1])} kosong atau bernilai False, jalankan baris yang menjorok di bawahnya`;
+  if ((m = s.match(/^if (.+):$/))) return `jika ${p(m[1])} benar, jalankan baris yang menjorok di bawahnya`;
+  if ((m = s.match(/^elif (.+):$/))) return `kalau syarat di atasnya salah, cek apakah ${p(m[1])}`;
+  if (s === "else:") return "kalau semua syarat di atas salah, jalankan bagian ini";
+  if (s === "try:") return "coba jalankan baris di bawah; kalau terjadi error, lompat ke except";
+  if ((m = s.match(/^except\s*(.*?)(?:\s+as\s+\w+)?:$/))) return m[1] ? `kalau terjadi error ${m[1]}, jalankan bagian ini` : "kalau terjadi error apa pun, jalankan bagian ini";
+  if (s === "finally:") return "bagian ini selalu dijalankan, ada error atau tidak";
+  if ((m = s.match(/^with (.+?) as (\w+):$/))) return `pakai ${p(m[1])} dengan nama ${m[2]}; otomatis dirapikan setelah blok selesai`;
+  if (s.startsWith("@")) return `pasang decorator ${s.slice(1)} pada fungsi di bawahnya`;
+  if ((m = s.match(/^import (.+)$/))) return `ambil modul ${m[1]} supaya alatnya bisa dipakai`;
+  if ((m = s.match(/^from (\S+) import (.+)$/))) return `ambil ${m[2]} dari modul ${m[1]}`;
+  if (s === "break") return "hentikan perulangan sekarang juga";
+  if (s === "continue") return "lewati sisa putaran ini, langsung ke putaran berikutnya";
+  if (s === "pass") return "tidak melakukan apa-apa (penanda blok kosong)";
+  if ((m = s.match(/^raise (\w+)/))) return `munculkan error ${m[1]} dengan sengaja`;
+  if ((m = s.match(/^yield (.+)$/))) return `serahkan ${p(m[1])} satu per satu (generator), lalu lanjut dari sini`;
+  if ((m = s.match(/^([\w.]+)\.append\((.+)\)$/))) return `tambahkan ${p(m[2])} ke akhir list ${m[1]}`;
+  if (s.startsWith("print(")) return "tampilkan ke layar";
+  if ((m = s.match(/^assert (.+?)(?:,.*)?$/))) return `pastikan ${p(m[1])} benar; kalau salah, program berhenti (AssertionError)`;
+  if ((m = s.match(/^super\(\)\.(\w+)\((.*)\)$/))) return `jalankan ${m[1]} milik class induk (super)` + (m[2] ? ` dengan bahan ${p(m[2])}` : "");
+  if ((m = s.match(/^([\w.]+)\.extend\((.+)\)$/))) return `tambahkan semua isi ${p(m[2])} ke akhir list ${m[1]}`;
+  if ((m = s.match(/^(\w+): ([\w\[\], .|]+)$/))) return `kolom ${m[1]} bertipe ${m[2]}`;
+  if ((m = s.match(/^([\w.\[\]"']+) (\/\/|[+\-*/%])= (.+)$/))) return OP[m[2]](m[1], p(m[3]));
+  if ((m = s.match(/^self\.(\w+) = (.+)$/))) return `simpan ${p(m[2])} sebagai data milik objek (self.${m[1]})`;
+  if ((m = s.match(/^([\w.]+)\[(.+?)\] = (.+)$/))) return `isi ${m[1]} di kunci/posisi ${p(m[2])} dengan ${p(m[3])}`;
+  if ((m = s.match(/^([\w, ]+?)(?::\s*[\w\[\], ]+)? = (.+)$/))) {
+    const [, nama, nilai] = m;
+    if (nama.includes(",")) return `isi ${nama} sekaligus dari ${p(nilai)}`;
+    if (nilai === "[]") return `siapkan list kosong bernama ${nama}`;
+    if (nilai === "{}") return `siapkan dict kosong bernama ${nama}`;
+    if (nilai === "set()") return `siapkan set kosong bernama ${nama}`;
+    if (nilai === '""' || nilai === "''") return `siapkan teks kosong bernama ${nama}`;
+    if (/^-?\d+(\.\d+)?$/.test(nilai)) return `mulai ${nama} dari angka ${nilai}`;
+    if (/^[[{].* for .* in /.test(nilai)) return `buat ${nilai[0] === "[" ? "list" : "dict/set"} baru dengan comprehension (perulangan satu baris), simpan di ${nama}`;
+    if (nilai[0] === "{") return `buat dict berisi pasangan kunci: nilai, simpan di ${nama}`;
+    if (nilai[0] === "[") return `buat list berisi ${p(nilai)}, simpan di ${nama}`;
+    return `hitung ${p(nilai)}, simpan hasilnya di ${nama}`;
+  }
+  if ((m = s.match(/^([\w]+(?:\.\w+)+) = (.+)$/))) return `ubah ${m[1]} menjadi ${p(m[2])}`;
+  if ((m = s.match(/^([\w.]+)\.(\w+)\((.*)\)$/))) return `jalankan .${m[2]}() pada ${m[1]}` + (m[3] ? ` dengan bahan ${p(m[3])}` : "");
+  if ((m = s.match(/^(\w+)\((.*)\)$/))) return `panggil fungsi ${m[1]}` + (m[2] ? ` dengan bahan ${p(m[2])}` : "");
+  return "jalankan perintah ini";
+}
+function plPetunjuk(T) {
+  if (T._petunjuk) return T._petunjuk;
+  const teks = T.petunjuk.slice();
+  if (plBahasa(T) !== "py" || typeof KAMUS_PY === "undefined") return (T._petunjuk = teks);
+  const baris = T.solusi.replace(/\s+$/, "").split("\n"), sudah = new Set(T.awal.split("\n").map(b => b.trim()).filter(Boolean));
+  // baris yang harus ditulis sendiri (bukan baris kode awal, bukan komentar)
+  const info = pindaiPy(T.solusi.replace(/\s+$/, "")), perlu = i => baris[i].trim() && !baris[i].trim().startsWith("#") && !info[i].lanjutan;
+  const tulis = baris.map((b, i) => i).filter(i => perlu(i) && !sudah.has(baris[i].trim()));
+  // statement yang dipecah beberapa baris (dict, list, kurung) dianggap satu: langkah tidak berhenti di tengahnya
+  const ujungStmt = i => { while (i + 1 < baris.length && info[i + 1].lanjutan) i++; return i; };
+  const k = Math.min(tulis.length, 6), akhir = Array.from({ length: k }, (_, j) => ujungStmt(tulis[Math.ceil((j + 1) * tulis.length / k) - 1]));
+  const dikenal = new Set();
+  akhir.forEach((ujung, j) => {
+    const mulai = j ? akhir[j - 1] + 1 : 0, kode = [];
+    baris.slice(0, ujung + 1).forEach((b, i) => {
+      const ind = b.match(/^\s*/)[0], utuh = baris.slice(i, ujungStmt(i) + 1).map(x => x.trim()).join(" ");
+      if (perlu(i)) kode.push(`${ind}# ${i >= mulai && !sudah.has(b.trim()) ? "👉 " : ""}${plKomentarPy(utuh)}`);
+      kode.push(b);
+    });
+    const lanjut = baris.slice(ujung + 1).find(b => b.trim());
+    if (lanjut) kode.push(lanjut.match(/^\s*/)[0] + "# … lanjut di langkah berikutnya");
+    const potongan = baris.slice(mulai, ujung + 1).join("\n");
+    const kata = KAMUS_PY.filter(K => !dikenal.has(K.k) && new RegExp(K.pola).test(potongan));
+    kata.forEach(K => dikenal.add(K.k));
+    teks.push({ ke: j + 1, dari: k, kode: kode.join("\n"), kata });
+  });
+  return (T._petunjuk = teks);
+}
 function plRenderPetunjuk() {
-  const p = dataPy(), T = plT(), n = p.petunjuk[T.id] || 0, total = T.petunjuk.length, studi = PL.jenis === "studi";
+  const p = dataPy(), T = plT(), n = p.petunjuk[T.id] || 0, total = plPetunjuk(T).length, studi = PL.jenis === "studi";
   const gagal = p.gagal[T.id] || 0, syarat = [1, 2, 4];   // studi: petunjuk terbuka setelah mencoba
   el("pl-bantuan-n").textContent = `${total} petunjuk${n ? ` (${n} dibuka)` : ""}`;
   let tombol = "";
@@ -625,7 +708,11 @@ function plRenderPetunjuk() {
     if (studi && !p.lulus.includes(T.id) && gagal < syarat[n]) tombol = `<p class="kecil">🔒 Petunjuk ${n + 1} terbuka setelah kamu mengumpulkan ${syarat[n]} kali dan masih salah (sekarang ${gagal}). Coba dulu sendiri!</p>`;
     else tombol = `<button class="btn btn-garis btn-kecil" id="btn-pl-petunjuk">💡 Buka petunjuk ${n + 1} dari ${total}</button>${studi ? "" : ` <span class="kecil">XP berkurang 5 per petunjuk.</span>`}`;
   }
-  el("pl-petunjuk-isi").innerHTML = T.petunjuk.slice(0, n).map((h, j) => `<div class="petunjuk-lab"><b>Petunjuk ${j + 1}</b><p>${esc(h)}</p></div>`).join("") + tombol;
+  el("pl-petunjuk-isi").innerHTML = plPetunjuk(T).slice(0, n).map((h, j) => typeof h === "string"
+    ? `<div class="petunjuk-lab"><b>Petunjuk ${j + 1}</b><p>${esc(h)}</p></div>`
+    : `<div class="petunjuk-lab"><b>Petunjuk ${j + 1} · Kode langkah ${h.ke} dari ${h.dari}</b>
+        <pre class="jawab-kode"><code>${esc(h.kode)}</code></pre>
+        ${h.kata.length ? `<p class="kecil"><b>📘 Kata baru di langkah ini:</b></p><ul class="pl-daftar">${h.kata.map(k => `<li><b>${esc(k.judul)}</b>: ${esc(k.arti)}</li>`).join("")}</ul>` : ""}</div>`).join("") + tombol;
   const b = el("btn-pl-petunjuk");
   if (b) b.onclick = () => { p.petunjuk[T.id] = n + 1; simpan(); plRenderPetunjuk(); el("pl-bantuan").open = true; };
 }
@@ -793,13 +880,7 @@ function pasangPyLab() {
   ed.addEventListener("keydown", e => {
     if ((e.ctrlKey || e.metaKey) && e.key === "Enter") { e.preventDefault(); e.shiftKey ? plKumpulkan() : plJalankan(); return; }
     const a = ed.selectionStart, z = ed.selectionEnd, v = ed.value;
-    if (e.key === "Tab") {   // Tab = 4 spasi, Shift+Tab = kurangi indentasi baris
-      e.preventDefault();
-      if (e.shiftKey) {
-        const awal = v.lastIndexOf("\n", a - 1) + 1, hapus = (v.slice(awal).match(/^ {1,4}/) || [""])[0].length;
-        ed.value = v.slice(0, awal) + v.slice(awal + hapus); ed.selectionStart = ed.selectionEnd = Math.max(awal, a - hapus);
-      } else { ed.value = v.slice(0, a) + "    " + v.slice(z); ed.selectionStart = ed.selectionEnd = a + 4; }
-    }
+    // Tab, Shift+Tab, dan Backspace di indentasi ditangani editor-bantu.js
     if (e.key === "Enter" && !e.ctrlKey && !e.metaKey) {   // Enter menjaga indentasi, +4 setelah titik dua
       e.preventDefault();
       const baris = v.slice(v.lastIndexOf("\n", a - 1) + 1, a), ind = baris.match(/^ */)[0] + (/[:{]\s*$/.test(baris) ? "    " : "");

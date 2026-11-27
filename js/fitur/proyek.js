@@ -214,13 +214,7 @@ function saatKetik() {
 }
 function tanganiTombolEditor(e) {
   const ta = e.target;
-  if (e.key === "Tab") {                        // Tab = 2 spasi, bukan pindah fokus
-    e.preventDefault();
-    const a = ta.selectionStart, b = ta.selectionEnd;
-    ta.value = ta.value.slice(0, a) + "  " + ta.value.slice(b);
-    ta.selectionStart = ta.selectionEnd = a + 2;
-    saatKetik();
-  } else if (e.key === "Enter") {               // pertahankan indentasi baris sebelumnya
+  if (e.key === "Enter") {                      // Tab/Backspace indentasi: editor-bantu.js               // pertahankan indentasi baris sebelumnya
     const a = ta.selectionStart;
     const awalBaris = ta.value.lastIndexOf("\n", a - 1) + 1;
     const indent = (ta.value.slice(awalBaris, a).match(/^\s*/) || [""])[0];

@@ -1,6 +1,6 @@
 # KodeQuiz
 
-PWA belajar data & keamanan siber: jalur Data Analyst, Data Scientist & Cyber Security, 3.288 soal, 43 tantangan Lab SQL, Lab Coding Test (45 tantangan Python) + 90 Studi Kasus Koding (Python, HTML, CSS, JavaScript, SQL, Odoo), 16 studi kasus, buku PDF.
+PWA belajar data & keamanan siber: jalur Data Analyst, Data Scientist & Cyber Security, 3.607 soal, 43 tantangan Lab SQL, Lab Coding Test (45 tantangan Python) + 90 Studi Kasus Koding (Python, HTML, CSS, JavaScript, SQL, Odoo), 16 studi kasus, buku PDF.
 
 **Demo:** https://portofolio-jauza-fawaid.netlify.app/KUIS-KODING/
 
@@ -8,7 +8,7 @@ PWA belajar data & keamanan siber: jalur Data Analyst, Data Scientist & Cyber Se
 
 Website belajar mandiri untuk lulusan Teknik Informatika yang sedang menyiapkan diri untuk lowongan **Data Analyst dan Data Scientist** (juga BI Analyst dan ERP/Odoo Consultant), plus fondasi coding.
 
-**3.169 soal**, masing-masing dengan penjelasan *kenapa* jawabannya benar. Semuanya berjalan di browser: **tanpa server, tanpa instalasi**, dan **bisa offline**. Progres tersimpan otomatis.
+**3.607 soal**, masing-masing dengan penjelasan *kenapa* jawabannya benar. Semuanya berjalan di browser: **tanpa server, tanpa instalasi**, dan **bisa offline**. Progres tersimpan otomatis.
 
 ## Fitur
 
@@ -35,6 +35,10 @@ Website belajar mandiri untuk lulusan Teknik Informatika yang sedang menyiapkan 
 | 🧪 **Lab SQL** | 36 tantangan (18 dasar + 18 kasus kerja DA/DS) dalam format tes interview: cerita, skema, hasil yang diharapkan, 3 petunjuk bertahap, **Jalankan** (percobaan) vs **Kumpulkan** (dinilai), tab Solusi dan Riwayat. Dicek otomatis dengan SQLite di browser |
 | 🚀 **Belajar dari Awal** | Proyek **SalesKu** (dashboard penjualan) dalam 16 langkah dengan editor, pratinjau, dan pengecekan otomatis |
 | 🗓️ **Rencana Belajar** | 4 minggu inti + 2 minggu lanjutan. Sebagian besar tercentang otomatis |
+| 🧭 **Petunjuk kode per langkah** | Di Lab dan Studi Kasus Python, setelah petunjuk teks, solusi dibuka sedikit demi sedikit (maks. 6 langkah). Setiap baris diberi komentar bahasa sehari-hari, dan kata baru di langkah itu dijelaskan dari kamus konsep Python |
+| 🔤 **Kamus kata koding** | 184 istilah (navbar, dropdown, API, commit, ORM, dll.) dijelaskan singkat dengan bahasa sehari-hari, bisa dicari dan disaring per kelompok; ikut pencarian menu ☰ |
+| ⌨️ **Editor ala VS Code** | Tab = satu jorok (4 spasi di Python, 2 di bahasa lain), Backspace di indentasi menghapus satu jorok penuh, Shift+Tab mengurangi jorok. Python dicek langsung saat mengetik: baris yang lupa menjorok setelah `:` diberi garis merah dan tombol merah berisi penjelasannya |
+| 🫧 **Bubble Code Runner** | Tombol Run berbentuk bubble yang bisa diseret ke mana saja, panelnya bisa ditarik untuk diubah ukurannya, dan kembali menjadi bubble saat mengklik di luar. Foto bubble bisa diganti dengan foto dari laptop sendiri (disimpan di browser saja, tidak diunggah) |
 | 💡 **Petunjuk & 🏳️ Menyerah** | Di setiap soal. Untuk soal Data/Karier/coding baru juga ada *kenapa pilihan lain salah* |
 | 🧠 **Ulangan Pintar** | Spaced repetition: soal yang salah kembali lebih sering (termasuk jawaban dari Book) |
 | 📱 **PWA & pindah progres** | Bisa di-install ke layar utama HP dan dipakai offline. Progres bisa dipindah laptop ↔ HP lewat ⚙️ Pengaturan |
@@ -46,13 +50,13 @@ Website belajar mandiri untuk lulusan Teknik Informatika yang sedang menyiapkan 
 
 | Topik | Soal | Topik | Soal |
 |---|---:|---|---:|
-| Excel | 117 | Python ★ | 319 |
-| Coding Test Odoo Developer | 119 | | |
-| SQL ★ | 84 | JavaScript ★ | 130 |
-| Dashboard & BI | 47 | HTML | 61 |
-| Statistik & Metrik | 47 | CSS | 111 |
-| ERP & Odoo | 685 | Java | 40 |
-| Persiapan Karier | 43 | PHP | 38 |
+| Excel | 117 | Python ★ | 638 |
+| Coding Test Odoo Developer | 119 | Git & GitHub | 54 |
+| SQL ★ | 84 | JavaScript ★ | 259 |
+| Dashboard & BI | 47 | HTML | 136 |
+| Statistik & Metrik | 47 | CSS | 190 |
+| ERP & Odoo | 685 | Java | 69 |
+| Persiapan Karier | 43 | PHP | 68 |
 | Jalur Data Analyst | 70 | Jalur Data Scientist | 78 |
 | Jalur Cyber Security | 215 | Lab Hitung Siber | 688 |
 
@@ -106,7 +110,7 @@ kodequiz/
 │   │   ├── soal-excel.js  soal-excel-2.js  soal-sql.js  soal-sql-2.js
 │   │   ├── soal-bi.js  soal-statistik.js  soal-erp.js
 │   │   ├── soal-karier.js  soal-karier-2.js
-│   │   ├── soal-python.js  soal-python-2.js  soal-js.js  soal-js-2.js
+│   │   ├── soal-python.js … soal-python-7.js  soal-js.js  soal-js-2.js   # python-4..7 = tambahan 2x lipat + Pendalaman materi
 │   │   ├── soal-html.js  soal-css.js  soal-web-2.js  soal-java.js  soal-php.js
 │   │   └── soal-da.js  soal-ds.js  soal-kasus-sql.js   # jalur DA/DS + tantangan Lab kasus kerja
 │   └── fitur/

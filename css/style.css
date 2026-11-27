@@ -916,6 +916,8 @@ body[data-layar="pdf"] .topbar{position:relative}
 /* ===== Garis merah di baris error (editor-bantu.js) ===== */
 .eb-lapis{position:absolute;pointer-events:none;overflow:hidden;color:transparent;background:transparent;margin:0;z-index:2;border-style:solid}
 .eb-baris-salah{text-decoration:underline wavy #e5484d;text-decoration-thickness:1.5px;text-underline-offset:3px;background:rgb(229 72 77 / .13);border-radius:2px}
+.eb-masalah{position:absolute;z-index:3;transform:translateY(-100%);display:block;padding:4px 10px;border:0;border-radius:99px;background:#d93025;color:#fff;font:600 12px/1.4 var(--font-m);text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;box-shadow:0 2px 8px rgb(0 0 0 / .25)}
+.eb-masalah[hidden]{display:none}
 
 /* ===== Penjelasan tugas dengan bahasa sederhana (py-lab.js) ===== */
 .pl-mudah{border-left:4px solid var(--hijau);background:color-mix(in srgb,var(--hijau-t) 55%,var(--permukaan));border-radius:0 12px 12px 0;padding:10px 14px;margin:10px 0}
@@ -923,3 +925,10 @@ body[data-layar="pdf"] .topbar{position:relative}
 .pl-mudah ul{margin:0;padding-left:20px}
 .pl-mudah li{margin:4px 0;line-height:1.55}
 .pl-mudah-ringkas{margin:8px 0 0;font-size:.92rem}
+/* Kamus kata koding (js/fitur/pustaka.js) */
+.kamus-cari{width:100%;max-width:520px;margin:4px 0 12px;padding:10px 14px;border:1px solid var(--garis);border-radius:10px;background:var(--permukaan);color:var(--teks);font:500 1rem var(--font-b)}
+.kamus-daftar{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin:12px 0 0}
+.kamus-item{padding:12px 14px;border:1px solid var(--garis);border-radius:12px;background:var(--permukaan)}
+.kamus-item dt{font-weight:700;margin-bottom:4px}
+.kamus-item dt small{font-weight:500;color:var(--redup);margin-left:6px;font-size:.75rem}
+.kamus-item dd{margin:0;line-height:1.55}

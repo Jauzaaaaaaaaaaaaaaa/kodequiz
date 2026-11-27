@@ -32,9 +32,9 @@
   const tombol = document.createElement("button");
   tombol.className = "rn-buka";
   tombol.type = "button";
-  tombol.title = "Code Runner: jalankan kode dan lihat hasilnya (Ctrl+Shift+K)";
+  tombol.title = "Code Runner (Ctrl+Shift+K). Seret untuk memindahkan.";
   tombol.setAttribute("aria-label", "Buka Code Runner");
-  tombol.innerHTML = '<span aria-hidden="true">&lt;/&gt;</span> Run';
+  tombol.innerHTML = '<span aria-hidden="true">&lt;/&gt;<small>Run</small></span>';
 
   const dlg = document.createElement("dialog");
   dlg.className = "rn";
@@ -49,6 +49,8 @@
       </select>
       <button type="button" class="rn-jalan" title="Jalankan (Ctrl+Enter)">Run ▶</button>
       <button type="button" class="rn-kecil rn-contoh" title="Kembalikan kode contoh">Contoh</button>
+      <button type="button" class="rn-kecil rn-foto-btn" title="Pakai foto dari laptopmu sebagai bubble (hanya tersimpan di browser ini)">🙂 Foto bubble</button>
+      <input type="file" accept="image/*" class="rn-foto-file" hidden>
       <button type="button" class="rn-kecil rn-tutup" aria-label="Tutup Code Runner" title="Tutup (Esc)">✕</button>
     </div>
     <div class="rn-tab" role="tablist"></div>
@@ -81,6 +83,7 @@
     ui.tab.innerHTML = FILE[S.bahasa].map(([k, nama]) =>
       `<button type="button" role="tab" data-k="${k}" aria-selected="${k === S.tab}">${nama}</button>`).join("");
     ui.editor.value = S[S.tab];
+    if (window.tandaiBarisSalah) tandaiBarisSalah(ui.editor, []);   // tanda merah milik file sebelumnya
     ui.frame.hidden = !web;
     dlg.classList.toggle("rn-web", web);
     ui.label.textContent = web ? "Preview · Console" : "Output";
@@ -267,16 +270,99 @@
   // Dialog materi memakai showModal(), yang membuat sisa halaman tidak bisa diklik. Saat itu tombol ikut masuk ke
   // dialog tersebut, dan laci dibuka sebagai modal supaya berada di atasnya.
   const modalLain = () => [...document.querySelectorAll("dialog[open]")].find(d => d !== dlg && d.matches(":modal"));
+  const batas = (v, min, max) => Math.max(min, Math.min(v, max));
+  // Panel muncul di dekat bubble: di bawahnya bila muat, kalau tidak di atasnya; selalu di dalam layar.
+  function letakPanel() {
+    if (S.ukuran) { dlg.style.width = S.ukuran.w + "px"; dlg.style.height = S.ukuran.h + "px"; }
+    const b = tombol.getBoundingClientRect(), w = dlg.offsetWidth, h = dlg.offsetHeight;
+    let x = b.right - w, y = b.bottom + 8;                                  // di bawah bubble
+    if (y + h > innerHeight) y = b.top - 8 - h;                             // di atas bubble
+    if (y < 8) {                                                            // tidak muat: di samping bubble
+      y = b.top;
+      x = b.left - 8 - w >= 8 ? b.left - 8 - w : b.right + 8;
+    }
+    dlg.style.left = batas(x, 8, innerWidth - w - 8) + "px";
+    dlg.style.top = batas(y, 8, innerHeight - h - 8) + "px";
+  }
   function buka() {
     render();
     if (modalLain()) dlg.showModal(); else dlg.show();
+    letakPanel();
     tombol.setAttribute("aria-expanded", "true");
     ui.editor.focus();
   }
   function tutup() { dlg.close(); }
   dlg.addEventListener("close", () => { tombol.setAttribute("aria-expanded", "false"); tombol.focus({ preventScroll: true }); });
-  tombol.addEventListener("click", () => (dlg.open ? tutup() : buka()));
   q(".rn-tutup").addEventListener("click", tutup);
+  // ukuran panel yang ditarik pengguna diingat untuk pembukaan berikutnya
+  new ResizeObserver(() => { if (dlg.open && innerWidth > 640) { S.ukuran = { w: dlg.offsetWidth, h: dlg.offsetHeight }; simpan(); } }).observe(dlg);
+  // klik di luar panel (bukan di bubble) = panel kembali menjadi bubble
+  document.addEventListener("pointerdown", e => {
+    if (!dlg.open || tombol.contains(e.target)) return;
+    const r = dlg.getBoundingClientRect(), diLuar = e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+    if (!dlg.contains(e.target) || (e.target === dlg && diLuar)) tutup();   // e.target === dlg: klik di backdrop modal
+  }, true);
+
+  /* ---------- Foto bubble pilihan pengguna ----------
+     Foto dibaca dari laptop pengguna, dipotong persegi di sekitar wajah, lalu disimpan di localStorage saja:
+     tidak pernah diunggah ke server atau ikut ke situs publik. */
+  const KUNCI_FOTO = "kq-runner-foto";
+  function pasangFoto() {
+    let f = null;
+    try { f = localStorage.getItem(KUNCI_FOTO); } catch (e) { /* mode privat */ }
+    tombol.classList.toggle("rn-berfoto", !!f);
+    tombol.style.backgroundImage = f ? `url("${f}")` : "";
+    q(".rn-foto-btn").textContent = f ? "✕ Hapus foto bubble" : "🙂 Foto bubble";
+  }
+  q(".rn-foto-btn").addEventListener("click", () => {
+    if (tombol.classList.contains("rn-berfoto")) { try { localStorage.removeItem(KUNCI_FOTO); } catch (e) { /* abaikan */ } return pasangFoto(); }
+    q(".rn-foto-file").click();
+  });
+  q(".rn-foto-file").addEventListener("change", async e => {
+    const file = e.target.files[0];
+    e.target.value = "";
+    if (!file) return;
+    try {
+      const img = await createImageBitmap(file), c = document.createElement("canvas");
+      // shortcut: potongan tetap di tengah-atas (wajah foto potret biasanya di sana); tambah geser/zoom bila meleset
+      const sisi = Math.min(img.width, img.height) * (img.height > img.width ? 0.5 : 0.6);
+      const x = (img.width - sisi) / 2, y = Math.max(0, Math.min(img.height * 0.28 - sisi / 2, img.height - sisi));
+      c.width = c.height = 160;
+      c.getContext("2d").drawImage(img, x, y, sisi, sisi, 0, 0, 160, 160);
+      localStorage.setItem(KUNCI_FOTO, c.toDataURL("image/jpeg", 0.85));
+      pasangFoto();
+    } catch (err) { tulis("Foto gagal dipakai: " + err.message, "galat"); }
+  });
+
+  /* ---------- Bubble bisa diseret ---------- */
+  function letakBubble(x, y) {
+    S.pos = { x: batas(x, 4, innerWidth - tombol.offsetWidth - 4), y: batas(y, 4, innerHeight - tombol.offsetHeight - 4) };
+    tombol.style.left = S.pos.x + "px"; tombol.style.top = S.pos.y + "px"; tombol.style.right = "auto";
+  }
+  let seret = null;
+  tombol.addEventListener("pointerdown", e => {
+    if (e.button) return;
+    const b = tombol.getBoundingClientRect();
+    seret = { dx: e.clientX - b.left, dy: e.clientY - b.top, x0: e.clientX, y0: e.clientY, pindah: false };
+    tombol.setPointerCapture(e.pointerId);
+  });
+  tombol.addEventListener("pointermove", e => {
+    if (!seret) return;
+    if (!seret.pindah && Math.hypot(e.clientX - seret.x0, e.clientY - seret.y0) < 5) return;   // geser kecil tetap dianggap klik
+    seret.pindah = true;
+    tombol.classList.add("rn-geser");
+    letakBubble(e.clientX - seret.dx, e.clientY - seret.dy);
+    if (dlg.open) letakPanel();
+  });
+  tombol.addEventListener("pointerup", () => {
+    if (!seret) return;
+    const pindah = seret.pindah;
+    seret = null;
+    tombol.classList.remove("rn-geser");
+    if (pindah) simpan(); else dlg.open ? tutup() : buka();
+  });
+  tombol.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); dlg.open ? tutup() : buka(); } });
+  addEventListener("resize", () => { if (S.pos) letakBubble(S.pos.x, S.pos.y); if (dlg.open) letakPanel(); });
 
   function pindahTombol() {
     const m = modalLain();
@@ -285,7 +371,7 @@
   }
 
   /* ---------- Peristiwa editor ---------- */
-  ui.bahasa.addEventListener("change", () => { S.bahasa = ui.bahasa.value; hentikan(); ui.konsol.textContent = ""; ui.status.textContent = ""; render(); simpan(); });
+  ui.bahasa.addEventListener("change", () => { S.bahasa = ui.bahasa.value; hentikan(); ui.konsol.textContent = ""; ui.status.textContent = ""; render(); simpan(); ui.editor.focus(); });
   ui.tab.addEventListener("click", e => {
     const b = e.target.closest("button[data-k]");
     if (!b) return;
@@ -298,12 +384,6 @@
     render(); simpan();
   });
   if (window.pasangEditorBantu) pasangEditorBantu(ui.editor, () => S.tab);
-  ui.editor.addEventListener("keydown", e => {
-    if (e.key !== "Tab" || e.ctrlKey || e.altKey || e.metaKey) return;
-    e.preventDefault();   // Tab = 2 spasi
-    document.execCommand("insertText", false, "  ") || ui.editor.setRangeText("  ", ui.editor.selectionStart, ui.editor.selectionEnd, "end");
-    S[S.tab] = ui.editor.value; simpan();
-  });
   dlg.addEventListener("keydown", e => {
     if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); jalankan(); }
     if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); tutup(); }
@@ -315,6 +395,8 @@
   function pasang() {
     document.body.appendChild(dlg);
     document.body.appendChild(tombol);
+    if (S.pos) letakBubble(S.pos.x, S.pos.y);
+    pasangFoto();
     tombol.setAttribute("aria-expanded", "false");
     document.querySelectorAll("dialog").forEach(d => {
       if (d !== dlg) new MutationObserver(pindahTombol).observe(d, { attributes: true, attributeFilter: ["open"] });
