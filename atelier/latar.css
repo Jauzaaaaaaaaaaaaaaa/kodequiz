@@ -1,0 +1,91 @@
+/* Latar pilihan sendiri (atelier/latar.js). Semua pola digambar dengan CSS, memakai warna tema (--teks, --utama)
+   dengan keburaman rendah supaya teks di kartu tetap nyaman dibaca. Tanpa background-attachment: fixed (aturan ringan). */
+:root { --pola: color-mix(in srgb, var(--teks) 9%, transparent); --pola-kuat: color-mix(in srgb, var(--teks) 16%, transparent); }
+html[data-pola] body, html[data-pola] body.at { background-color: var(--bg); }
+html[data-pola="kotak"] body, html[data-pola="kotak"] body.at,
+.lp-pola[data-pola="kotak"] i {
+  background-image: linear-gradient(var(--pola) 1px, transparent 1px), linear-gradient(90deg, var(--pola) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+html[data-pola="garis"] body, html[data-pola="garis"] body.at,
+.lp-pola[data-pola="garis"] i {
+  background-image: linear-gradient(transparent 31px, color-mix(in srgb, var(--utama) 22%, transparent) 31px, transparent 32px);
+  background-size: 100% 32px;
+}
+html[data-pola="titik"] body, html[data-pola="titik"] body.at,
+.lp-pola[data-pola="titik"] i {
+  background-image: radial-gradient(var(--pola-kuat) 1.2px, transparent 1.6px);
+  background-size: 12px 12px;
+}
+html[data-pola="kotakkotak"] body, html[data-pola="kotakkotak"] body.at,
+.lp-pola[data-pola="kotakkotak"] i {
+  background-image:
+    linear-gradient(90deg, color-mix(in srgb, var(--utama) 10%, transparent) 50%, transparent 50%),
+    linear-gradient(color-mix(in srgb, var(--utama) 10%, transparent) 50%, transparent 50%);
+  background-size: 44px 44px;
+}
+html[data-pola="diagonal"] body, html[data-pola="diagonal"] body.at,
+.lp-pola[data-pola="diagonal"] i {
+  background-image: repeating-linear-gradient(45deg, var(--pola) 0 1px, transparent 1px 14px);
+}
+html[data-pola="cetakbiru"] body, html[data-pola="cetakbiru"] body.at,
+.lp-pola[data-pola="cetakbiru"] i {
+  background-image:
+    linear-gradient(var(--pola-kuat) 1px, transparent 1px), linear-gradient(90deg, var(--pola-kuat) 1px, transparent 1px),
+    linear-gradient(var(--pola) 1px, transparent 1px), linear-gradient(90deg, var(--pola) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+html[data-pola="kontur"] body, html[data-pola="kontur"] body.at,
+.lp-pola[data-pola="kontur"] i {
+  background-image:
+    repeating-radial-gradient(ellipse at 18% 22%, transparent 0 22px, var(--pola) 22px 23px),
+    repeating-radial-gradient(ellipse at 82% 70%, transparent 0 30px, var(--pola) 30px 31px);
+  background-size: 520px 520px;
+}
+html[data-pola="sinar"] body, html[data-pola="sinar"] body.at,
+.lp-pola[data-pola="sinar"] i {
+  background-image: repeating-conic-gradient(from 0deg at 50% 0%, var(--pola) 0 4deg, transparent 4deg 10deg);
+  background-size: 100% 900px; background-repeat: no-repeat;
+}
+html[data-pola="gradasi"] body, html[data-pola="gradasi"] body.at,
+.lp-pola[data-pola="gradasi"] i {
+  background-image:
+    radial-gradient(60% 45% at 12% 8%, color-mix(in srgb, var(--utama) 22%, transparent), transparent 70%),
+    radial-gradient(50% 40% at 90% 20%, color-mix(in srgb, var(--hijau) 20%, transparent), transparent 70%),
+    radial-gradient(70% 50% at 60% 95%, color-mix(in srgb, var(--kuning) 14%, transparent), transparent 70%);
+  background-size: 100% 1200px; background-repeat: no-repeat;
+}
+/* butiran kertas: derau SVG kecil yang diulang */
+html[data-pola="kertas"] body, html[data-pola="kertas"] body.at,
+.lp-pola[data-pola="kertas"] i {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Pengaturan: pemilih warna ---------- */
+.lp { display: grid; gap: 10px; margin-top: 8px; }
+.lp-atas { display: grid; grid-template-columns: 30% 1fr; height: 150px; border-radius: 10px; overflow: hidden; border: 1px solid var(--garis); }
+.lp-contoh { background: var(--bg); }
+.lp-sv { position: relative; cursor: crosshair; touch-action: none;
+  background: linear-gradient(to top, #000, transparent), linear-gradient(to right, #fff, var(--rona, red)); }
+.lp-sv:focus-visible { outline: 3px solid var(--utama); outline-offset: -3px; }
+.lp-titik { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px rgba(0, 0, 0, .45); pointer-events: none; }
+.lp-hue { -webkit-appearance: none; appearance: none; width: 100%; height: 12px; border-radius: 99px; margin: 6px 0;
+  background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00); }
+.lp-hue::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; border: 3px solid #fff; background: transparent; box-shadow: 0 0 0 1px rgba(0, 0, 0, .45); cursor: pointer; }
+.lp-hue::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; border: 3px solid #fff; background: transparent; box-shadow: 0 0 0 1px rgba(0, 0, 0, .45); cursor: pointer; }
+.lp-kotak { display: flex; flex-direction: column; gap: 2px; padding: 6px 10px; border: 1px solid var(--garis); border-radius: 8px; font: 600 .72rem/1.3 var(--font-m); color: var(--redup); }
+.lp-kotak b { color: var(--teks); font-weight: 600; }
+.lp-hex { text-align: center; }
+.lp-hex input { border: 0; background: none; color: var(--teks); font: 600 .9rem var(--font-m); text-align: center; width: 100%; outline: none; }
+.lp-nilai { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.lp-aksi { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+
+/* ---------- Pengaturan: pilihan desain latar ---------- */
+.lp-pola-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; margin-top: 8px; }
+.lp-pola { display: grid; gap: 4px; padding: 4px; border: 2px solid var(--garis); border-radius: 10px; background: none; color: var(--teks); font: 600 .72rem var(--font-b); cursor: pointer; }
+.lp-pola i { display: block; height: 56px; border-radius: 6px; background-color: var(--bg); }
+.lp-pola[data-pola="polos"] i { background-image: linear-gradient(180deg, var(--bg-atas), var(--bg)); }
+.lp-pola.aktif { border-color: var(--utama); box-shadow: 0 0 0 2px color-mix(in srgb, var(--utama) 30%, transparent); }
+.lp-pola:focus-visible { outline: 3px solid var(--utama); outline-offset: 2px; }
+.atur-blok { padding: 12px 0; border-bottom: 1px solid var(--garis); }
+.atur-blok > span { display: flex; flex-direction: column; gap: 2px; }

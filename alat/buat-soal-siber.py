@@ -5,10 +5,10 @@
 # jadi menjalankan ulang menghasilkan soal dan ID yang sama.
 #
 # Pakai:  python alat/buat-soal-siber.py      (dari folder KUIS-KODING)
-import base64, codecs, hashlib, http, ipaddress, json, math, os, random, stat, urllib.parse
+import base64, codecs, hashlib, http, ipaddress, json, math, os, random, stat, subprocess, sys, urllib.parse
 from datetime import datetime, timedelta, timezone
 
-R = random.Random(20261120)
+R = random.Random(int(os.environ.get("SIBER_SEED", 20261120)))   # benih lain dipakai putaran tambahan (lihat bawah)
 SOAL, LIHAT = [], set()
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
@@ -592,6 +592,22 @@ assert {m[0] for m in MATERI} == {s["k"] for s in SOAL}
 with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "materi-pemula-siber.json"), encoding="utf-8") as f:
     PEMULA = json.load(f)
 MATERI = [(k, j, f"<!--pemula-->{PEMULA[k]}<!--/pemula-->\n" + m if k in PEMULA else m) for k, j, m in MATERI]
+
+# Putaran tambahan (2026-11-27, soal 2x lipat): 688 soal pertama TIDAK berubah (ID soal = urutan), lalu generator
+# dijalankan ulang dengan benih lain dan hanya soal yang belum ada yang ditambahkan di belakang.
+if os.environ.get("SIBER_SUB"):
+    print(json.dumps(SOAL, ensure_ascii=False)); raise SystemExit
+TARGET = 2 * 688
+kunci = lambda s: s["q"] + chr(10) + (s.get("kode") or "") if s["t"] == "mc" else s["q"]
+ada = {kunci(s) for s in SOAL}
+for benih in range(20261127, 20261127 + 12):
+    if len(SOAL) >= TARGET: break
+    env = {**os.environ, "SIBER_SUB": "1", "SIBER_SEED": str(benih), "PYTHONIOENCODING": "utf-8"}
+    hasil = json.loads(subprocess.run([sys.executable, os.path.abspath(__file__)], env=env, capture_output=True, check=True).stdout.decode("utf-8"))
+    for x in hasil:
+        if len(SOAL) >= TARGET: break
+        if kunci(x) not in ada:
+            ada.add(kunci(x)); SOAL.append(x)
 
 def js(o): return json.dumps(o, ensure_ascii=False)
 baris = ["// ============ LAB HITUNG SIBER (dibuat program: alat/buat-soal-siber.py) ============",

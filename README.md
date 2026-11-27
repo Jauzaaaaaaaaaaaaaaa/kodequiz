@@ -1,6 +1,6 @@
 # KodeQuiz
 
-PWA belajar data & keamanan siber: jalur Data Analyst, Data Scientist & Cyber Security, 3.607 soal, 43 tantangan Lab SQL, Lab Coding Test (45 tantangan Python) + 90 Studi Kasus Koding (Python, HTML, CSS, JavaScript, SQL, Odoo), 16 studi kasus, buku PDF.
+PWA belajar data & keamanan siber: jalur Data Analyst, Data Scientist & Cyber Security, 6.577 soal, 43 tantangan Lab SQL, Lab Coding Test (45 tantangan Python) + 90 Studi Kasus Koding (Python, HTML, CSS, JavaScript, SQL, Odoo), 16 studi kasus, buku PDF.
 
 **Demo:** https://portofolio-jauza-fawaid.netlify.app/KUIS-KODING/
 
@@ -8,7 +8,7 @@ PWA belajar data & keamanan siber: jalur Data Analyst, Data Scientist & Cyber Se
 
 Website belajar mandiri untuk lulusan Teknik Informatika yang sedang menyiapkan diri untuk lowongan **Data Analyst dan Data Scientist** (juga BI Analyst dan ERP/Odoo Consultant), plus fondasi coding.
 
-**3.607 soal**, masing-masing dengan penjelasan *kenapa* jawabannya benar. Semuanya berjalan di browser: **tanpa server, tanpa instalasi**, dan **bisa offline**. Progres tersimpan otomatis.
+**6.577 soal**, masing-masing dengan penjelasan *kenapa* jawabannya benar. Semuanya berjalan di browser: **tanpa server, tanpa instalasi**, dan **bisa offline**. Progres tersimpan otomatis.
 
 ## Fitur
 
@@ -17,8 +17,8 @@ Website belajar mandiri untuk lulusan Teknik Informatika yang sedang menyiapkan 
 | 🎓 **Jalur Data Analyst** (`#data-analyst`) | 6 tahap, 12 modul (pertanyaan bisnis, metrik, kualitas data, SQL analitik, kohort, membandingkan dengan adil, A/B test, visualisasi, memo, RFM, musiman, dunia kerja), 5 studi kasus, capstone dengan dataset 1.264 transaksi |
 | 🔬 **Jalur Data Scientist** (`#data-scientist`) | 5 tahap, 14 modul (CRISP-DM, Bayes, inferensi, pandas, fitur & kebocoran, regresi, klasifikasi, validasi, metrik & ambang, clustering, kausal, MLOps, etika & UU PDP, wawancara), 5 studi kasus, capstone model churn 3.000 pelanggan |
 | 🛡️ **Jalur Cyber Security** (`#cyber-security`) | Hacker etis, 7 tahap, 20 modul (etika & hukum, model ancaman, jaringan, Linux, akun & MFA, rekayasa sosial, kriptografi, PKI/TLS, model keamanan web, injeksi, kontrol akses, keamanan sistem, jaringan & Wi-Fi, metodologi pentest, malware, SOC & SIEM, respons insiden & forensik, cloud & DevSecOps, privasi & GRC, karier), 215 soal dengan pembahasan bertingkat (poin penting, cara menjawab, *Ingat*), 6 studi kasus (termasuk Equifax 2017 dan Uber 2016), 7 tantangan Lab SQL analisis log SOC, capstone investigasi insiden 1.160 baris log, dan lembar kunci jawaban PNG HD. Urutan materi dari silabus publik MIT 6.5660 & 6.1600, Harvard CS50 Cybersecurity, Oxford Computer Security & MSc Software and Systems Security |
-| 🧮 **Lab Hitung Odoo** (topik ERP & Odoo) | 458 soal angka dari `alat/buat-soal-odoo.py`: pricelist & margin, pajak (PPN 12% DPP 11/12, PPh 23, included/division), satuan UoM, reordering rule & lead time, valuasi FIFO/AVCO, landed cost, durasi & biaya MRP, jurnal & selisih kurs, payment term & cash rounding, penyusutan, pipeline CRM, KPI. Rumus disalin dari kode sumber Odoo 17; pembulatan dicocokkan dengan `float_round` asli Odoo |
-| 01 **Lab Hitung Siber** | 688 soal hitung yang dibuat program (`alat/buat-soal-siber.py`): biner & heksa, subnetting, port, kode HTTP, encoding (Base64, URL, ROT13), mengenali hash, chmod, sandi Caesar & XOR, entropi password, zona waktu & Unix timestamp di log. Kunci dihitung manual lalu dicocokkan dengan pustaka Python |
+| 🧮 **Lab Hitung Odoo** (topik ERP & Odoo) | 916 soal angka dari `alat/buat-soal-odoo.py`: pricelist & margin, pajak (PPN 12% DPP 11/12, PPh 23, included/division), satuan UoM, reordering rule & lead time, valuasi FIFO/AVCO, landed cost, durasi & biaya MRP, jurnal & selisih kurs, payment term & cash rounding, penyusutan, pipeline CRM, KPI. Rumus disalin dari kode sumber Odoo 17; pembulatan dicocokkan dengan `float_round` asli Odoo |
+| 01 **Lab Hitung Siber** | 1.376 soal hitung yang dibuat program (`alat/buat-soal-siber.py`): biner & heksa, subnetting, port, kode HTTP, encoding (Base64, URL, ROT13), mengenali hash, chmod, sandi Caesar & XOR, entropi password, zona waktu & Unix timestamp di log. Kunci dihitung manual lalu dicocokkan dengan pustaka Python |
 | Σ **Problem Set (MIT)** | Penutup tiap tahap: 10 soal campuran tahap ini + tahap sebelumnya, lulus ≥ 70% |
 | ✎ **Tutorial (Oxford)** | Tulis jawaban → jawab pertanyaan tutor satu per satu → bandingkan dengan jawaban model → nilai diri dengan rubrik |
 | ◆ **Studi kasus (Harvard)** | Situasi kerja Indonesia (perusahaan fiktif, konteks nyata) dan global (Walmart, Zillow, Amazon): exhibit, persiapan, cold call 90 detik, kunci keputusan + alasan, baru diskusi dan catatan pengajar terbuka |
@@ -39,6 +39,7 @@ Website belajar mandiri untuk lulusan Teknik Informatika yang sedang menyiapkan 
 | 🔤 **Kamus kata koding** | 184 istilah (navbar, dropdown, API, commit, ORM, dll.) dijelaskan singkat dengan bahasa sehari-hari, bisa dicari dan disaring per kelompok; ikut pencarian menu ☰ |
 | ⌨️ **Editor ala VS Code** | Tab = satu jorok (4 spasi di Python, 2 di bahasa lain), Backspace di indentasi menghapus satu jorok penuh, Shift+Tab mengurangi jorok. Python dicek langsung saat mengetik: baris yang lupa menjorok setelah `:` diberi garis merah dan tombol merah berisi penjelasannya |
 | 🫧 **Bubble Code Runner** | Tombol Run berbentuk bubble yang bisa diseret ke mana saja, panelnya bisa ditarik untuk diubah ukurannya, dan kembali menjadi bubble saat mengklik di luar. Foto bubble bisa diganti dengan foto dari laptop sendiri (disimpan di browser saja, tidak diunggah) |
+| 🎨 **Warna & desain latar** | ⚙️ Pengaturan: pemilih warna latar sendiri (kotak gradasi, slider rona, HEX/RGB/HSL) dengan warna teks dan kartu yang dihitung otomatis agar kontras ≥ 7:1, plus 11 desain latar (kertas kotak, buku tulis, halftone, kotak-kotak, cetak biru, kontur, sinar, gradasi, kertas bertekstur, dll.) yang digambar dengan CSS |
 | 💡 **Petunjuk & 🏳️ Menyerah** | Di setiap soal. Untuk soal Data/Karier/coding baru juga ada *kenapa pilihan lain salah* |
 | 🧠 **Ulangan Pintar** | Spaced repetition: soal yang salah kembali lebih sering (termasuk jawaban dari Book) |
 | 📱 **PWA & pindah progres** | Bisa di-install ke layar utama HP dan dipakai offline. Progres bisa dipindah laptop ↔ HP lewat ⚙️ Pengaturan |
@@ -50,15 +51,15 @@ Website belajar mandiri untuk lulusan Teknik Informatika yang sedang menyiapkan 
 
 | Topik | Soal | Topik | Soal |
 |---|---:|---|---:|
-| Excel | 117 | Python ★ | 638 |
-| Coding Test Odoo Developer | 119 | Git & GitHub | 54 |
-| SQL ★ | 84 | JavaScript ★ | 259 |
-| Dashboard & BI | 47 | HTML | 136 |
-| Statistik & Metrik | 47 | CSS | 190 |
-| ERP & Odoo | 685 | Java | 69 |
-| Persiapan Karier | 43 | PHP | 68 |
-| Jalur Data Analyst | 70 | Jalur Data Scientist | 78 |
-| Jalur Cyber Security | 215 | Lab Hitung Siber | 688 |
+| Excel | 234 | Python ★ | 638 |
+| Coding Test Odoo Developer | 238 | Git & GitHub | 108 |
+| SQL ★ | 169 | JavaScript ★ | 518 |
+| Dashboard & BI | 94 | HTML | 272 |
+| Statistik & Metrik | 94 | CSS | 380 |
+| ERP & Odoo | 1.370 | Java | 138 |
+| Persiapan Karier | 86 | PHP | 136 |
+| Jalur Data Analyst | 140 | Jalur Data Scientist | 156 |
+| Jalur Cyber Security | 430 | Lab Hitung Siber | 1.376 |
 
 ★ = bahasa prioritas. Semua output kode di soal Python, JavaScript, Java, PHP, dan SQL sudah dijalankan sungguhan untuk memastikan kuncinya benar (`node alat/cek-soal.js`).
 
@@ -110,7 +111,7 @@ kodequiz/
 │   │   ├── soal-excel.js  soal-excel-2.js  soal-sql.js  soal-sql-2.js
 │   │   ├── soal-bi.js  soal-statistik.js  soal-erp.js
 │   │   ├── soal-karier.js  soal-karier-2.js
-│   │   ├── soal-python.js … soal-python-7.js  soal-js.js  soal-js-2.js   # python-4..7 = tambahan 2x lipat + Pendalaman materi
+│   │   ├── soal-python.js … soal-python-7.js  soal-js.js … soal-js-6.js   # file -3/-4… = tambahan 2x lipat + Pendalaman materi (dimuat setelah file lama agar ID soal tetap)
 │   │   ├── soal-html.js  soal-css.js  soal-web-2.js  soal-java.js  soal-php.js
 │   │   └── soal-da.js  soal-ds.js  soal-kasus-sql.js   # jalur DA/DS + tantangan Lab kasus kerja
 │   └── fitur/

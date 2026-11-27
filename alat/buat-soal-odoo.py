@@ -1080,8 +1080,18 @@ Margin proyek       = jam × (tarif jual − biaya per jam)</code></pre>
 ]
 
 
-for fn in [bab_harga, bab_pajak, bab_satuan, bab_reorder, bab_valuasi, bab_landed, bab_produksi, bab_jurnal, bab_termin, bab_penyusutan, bab_pipeline, bab_kpi]:
+BAB = [bab_harga, bab_pajak, bab_satuan, bab_reorder, bab_valuasi, bab_landed, bab_produksi, bab_jurnal, bab_termin, bab_penyusutan, bab_pipeline, bab_kpi]
+for fn in BAB:
     fn()
+# Putaran tambahan (2026-11-27, soal 2x lipat): soal putaran pertama TIDAK berubah (ID soal = urutan), lalu setiap bab
+# dijalankan lagi dengan benih lain; soal kembar dibuang oleh LIHAT, soal baru ditambahkan di belakang.
+TARGET = 2 * len(SOAL)
+for benih in range(20261127, 20261127 + 12):
+    if len(SOAL) >= TARGET: break
+    R.seed(benih)
+    for fn in BAB:
+        fn()
+SOAL[:] = SOAL[:TARGET]
 
 assert {m[0] for m in MATERI} == {s["k"] for s in SOAL}, ({m[0] for m in MATERI} ^ {s["k"] for s in SOAL})
 for s in SOAL:

@@ -1003,6 +1003,11 @@ function bukaPengaturan() {
     html: `<div class="atur">
       <div class="atur-baris"><span><b>Tema</b><small>Ikuti sistem, terang, atau gelap</small></span>
         <div class="segmen" id="atur-tema">${[["auto", "Otomatis"], ["light", "Terang"], ["dark", "Gelap"]].map(([v, n]) => `<button data-v="${v}" class="${tema === v ? "aktif" : ""}">${n}</button>`).join("")}</div></div>
+      ${window.KQLatar ? `<div class="atur-blok"><span><b>Warna latar</b><small>Pilih warnamu sendiri. Teks dan kartu menyesuaikan otomatis supaya tetap mudah dibaca; warna gelap memakai tema Gelap.</small></span>
+        <div id="atur-warna"></div>
+        <div class="lp-aksi"><button class="btn btn-garis btn-kecil" id="atur-warna-reset">↺ Kembali ke warna bawaan</button></div></div>
+      <div class="atur-blok"><span><b>Desain latar</b><small>Pola di belakang kartu, mengikuti warna tema</small></span>
+        <div class="lp-pola-grid" id="atur-pola">${KQLatar.POLA.map(([v, n]) => `<button class="lp-pola ${KQLatar.pola() === v ? "aktif" : ""}" data-pola="${v}" aria-pressed="${KQLatar.pola() === v}"><i aria-hidden="true"></i>${n}</button>`).join("")}</div></div>` : ""}
       <div class="atur-baris"><span><b>Suara</b><small>Bunyi lembut saat benar, combo, dan naik level</small></span>
         <label class="saklar"><input type="checkbox" id="atur-suara" ${DATA.pref.suara !== false ? "checked" : ""}><span></span></label></div>
       <div class="atur-baris"><span><b>Efek perayaan</b><small>Konfeti, transisi antarlayar, dan animasi skor</small></span>
@@ -1028,6 +1033,21 @@ function bukaPengaturan() {
     DATA.pref.tema = b.dataset.v; simpan(); terapkanTema();
     document.querySelectorAll("#atur-tema button").forEach(x => x.classList.toggle("aktif", x === b));
   });
+  if (window.KQLatar) {
+    // warna pilihan menentukan tema: latar gelap → tema Gelap, latar terang → tema Terang
+    const ikutWarna = t => {
+      if (!t) return;
+      DATA.pref.tema = t; simpan(); terapkanTema();
+      document.querySelectorAll("#atur-tema button").forEach(x => x.classList.toggle("aktif", x.dataset.v === t));
+    };
+    const pasangWarna = () => KQLatar.pasangPicker(el("atur-warna"), hex => ikutWarna(KQLatar.aturWarna(hex)));
+    pasangWarna();
+    el("atur-warna-reset").onclick = () => { KQLatar.aturWarna(null); pasangWarna(); };
+    document.querySelectorAll("#atur-pola .lp-pola").forEach(b => b.onclick = () => {
+      KQLatar.aturPola(b.dataset.pola);
+      document.querySelectorAll("#atur-pola .lp-pola").forEach(x => { x.classList.toggle("aktif", x === b); x.setAttribute("aria-pressed", x === b); });
+    });
+  }
   el("atur-suara").onchange = e => { DATA.pref.suara = e.target.checked; simpan(); if (e.target.checked) RAYA.nada("benar"); };
   el("atur-efek").onchange = e => { DATA.pref.efek = e.target.checked; simpan(); if (e.target.checked) RAYA.konfeti(1, e.target); };
   el("atur-yakin").onchange = e => { DATA.pref.yakin = e.target.checked; simpan(); };
