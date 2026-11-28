@@ -63,17 +63,17 @@ html[data-pola="kertas"] body, html[data-pola="kertas"] body.at,
 
 /* ---------- Pengaturan: pemilih warna ---------- */
 .lp { display: grid; gap: 10px; margin-top: 8px; }
-.lp-atas { display: grid; grid-template-columns: 30% 1fr; height: 150px; border-radius: 10px; overflow: hidden; border: 1px solid var(--garis); }
+.lp-atas { display: grid; grid-template-columns: 30% 1fr; height: 150px; border-radius: 4px; overflow: hidden; border: 1px solid var(--garis); }
 .lp-contoh { background: var(--bg); }
 .lp-sv { position: relative; cursor: crosshair; touch-action: none;
   background: linear-gradient(to top, #000, transparent), linear-gradient(to right, #fff, var(--rona, red)); }
 .lp-sv:focus-visible { outline: 3px solid var(--utama); outline-offset: -3px; }
 .lp-titik { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border: 2px solid #fff; border-radius: 50%; box-shadow: 0 0 0 1px rgba(0, 0, 0, .45); pointer-events: none; }
-.lp-hue { -webkit-appearance: none; appearance: none; width: 100%; height: 12px; border-radius: 99px; margin: 6px 0;
+.lp-hue { -webkit-appearance: none; appearance: none; width: 100%; height: 12px; border-radius: 4px; margin: 6px 0;
   background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00); }
 .lp-hue::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; border: 3px solid #fff; background: transparent; box-shadow: 0 0 0 1px rgba(0, 0, 0, .45); cursor: pointer; }
 .lp-hue::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; border: 3px solid #fff; background: transparent; box-shadow: 0 0 0 1px rgba(0, 0, 0, .45); cursor: pointer; }
-.lp-kotak { display: flex; flex-direction: column; gap: 2px; padding: 6px 10px; border: 1px solid var(--garis); border-radius: 8px; font: 600 .72rem/1.3 var(--font-m); color: var(--redup); }
+.lp-kotak { display: flex; flex-direction: column; gap: 2px; padding: 6px 10px; border: 1px solid var(--garis); border-radius: 3px; font: 600 .72rem/1.3 var(--font-m); color: var(--redup); }
 .lp-kotak b { color: var(--teks); font-weight: 600; }
 .lp-hex { text-align: center; }
 .lp-hex input { border: 0; background: none; color: var(--teks); font: 600 .9rem var(--font-m); text-align: center; width: 100%; outline: none; }
@@ -82,8 +82,8 @@ html[data-pola="kertas"] body, html[data-pola="kertas"] body.at,
 
 /* ---------- Pengaturan: pilihan desain latar ---------- */
 .lp-pola-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; margin-top: 8px; }
-.lp-pola { display: grid; gap: 4px; padding: 4px; border: 2px solid var(--garis); border-radius: 10px; background: none; color: var(--teks); font: 600 .72rem var(--font-b); cursor: pointer; }
-.lp-pola i { display: block; height: 56px; border-radius: 6px; background-color: var(--bg); }
+.lp-pola { display: grid; gap: 4px; padding: 4px; border: 2px solid var(--garis); border-radius: 4px; background: none; color: var(--teks); font: 600 .72rem var(--font-b); cursor: pointer; }
+.lp-pola i { display: block; height: 56px; border-radius: 3px; background-color: var(--bg); }
 .lp-pola[data-pola="polos"] i { background-image: linear-gradient(180deg, var(--bg-atas), var(--bg)); }
 .lp-pola.aktif { border-color: var(--utama); box-shadow: 0 0 0 2px color-mix(in srgb, var(--utama) 30%, transparent); }
 .lp-pola:focus-visible { outline: 3px solid var(--utama); outline-offset: 2px; }

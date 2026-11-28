@@ -1,0 +1,105 @@
+/* KODEQUIZ — palet "Es" (28 November 2026, permintaan pengguna: lebih tajam dan dingin).
+   Menggantikan holst.css (krem/pasir) dengan biru-baja, abu es, dan aksen biru es.
+   Lapisan terakhir: hanya mengganti warna; sudut tajam ditulis langsung di file CSS masing-masing.
+   Terang = latar abu es dengan tinta hampir hitam kebiruan; gelap = latar biru malam dengan teks es.
+   Untuk kembali ke palet Holst: ganti <link> dingin.css menjadi holst.css di index.html. */
+
+:root {
+  --bg: #EDF1F5; --bg-atas: #DFE6EE; --permukaan: #F8FAFC; --permukaan-2: #E1E7EE; --garis: #C5D0DC;
+  --teks: #0B1420; --redup: #44556A; --tinta: #0B1420; --tinta-teks: #EDF1F5;
+  --utama: #0B5C8A; --utama-gelap: #08405F; --utama-t: #D6E6F1;
+  --biru: #0B5C8A; --biru-t: #D6E6F1;
+  --hijau: #0E6B66; --hijau-t: #D5EBEA; --hijau-teks: #0A4F4B;
+  --merah: #B0293E; --merah-t: #F5DDE1; --merah-teks: #861D2E;
+  --kuning: #7E6410; --kuning-t: #EEE7CF; --kuning-teks: #5E4A0B;
+  --emas: #7E6410; --emas-t: #EEE7CF;
+  --kode-bg: #070C13; --kode-teks: #DCE6F0; --kode-redup: #7F90A6;
+  --editor-bg: #F8FAFC; --editor-nomor: #8D9BAD;
+  --media-bg: #070C13;
+  --c-sql: #0B5C8A;
+  --bayang: 0 1px 0 rgba(11, 20, 32, .06), 0 10px 24px -20px rgba(11, 20, 32, .35);
+  --bayang2: 0 20px 40px -26px rgba(11, 20, 32, .5);
+  --btn-teks: #EDF1F5;
+  --at-accent: #0B5C8A; --at-on-accent: #EDF1F5; --at-accent-text: #08405F;
+  --at-deep: #070C13; --at-on-deep: #DCE6F0;
+  --c-da: #0B5C8A; --c-da-t: #D6E6F1; --c-ds: #0B1420; --c-ds-t: #DCE3EA;
+  --es: linear-gradient(90deg, #070C13 0 16.66%, #12202F 0 33.33%, #1D3A55 0 50%, #0B5C8A 0 66.66%, #7CC4EA 0 83.33%, #DCE6F0 0);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #080D14; --bg-atas: #0E1622; --permukaan: #0F1823; --permukaan-2: #16222F; --garis: #22344A;
+  --teks: #DCE6F0; --redup: #93A4B8; --tinta: #EAF2F9; --tinta-teks: #080D14;
+  --utama: #7CC4EA; --utama-gelap: #A9DAF3; --utama-t: #12304A;
+  --biru: #7CC4EA; --biru-t: #12273B;
+  --hijau: #6FD1C6; --hijau-t: #0F2B2B; --hijau-teks: #A3E3DB;
+  --merah: #F08A9A; --merah-t: #35161D; --merah-teks: #F6B6C0;
+  --kuning: #DCC173; --kuning-t: #2D2814; --kuning-teks: #ECDAA4;
+  --emas: #DCC173; --emas-t: #2D2814;
+  --kode-bg: #04080D; --kode-teks: #DCE6F0; --kode-redup: #74869C;
+  --editor-bg: #0C141E; --editor-nomor: #55677D;
+  --media-bg: #04080D;
+  --c-sql: #7CC4EA;
+  --bayang: 0 1px 0 rgba(0, 0, 0, .35), 0 12px 26px -16px rgba(0, 0, 0, .7);
+  --bayang2: 0 22px 44px -22px rgba(0, 0, 0, .8);
+  --btn-teks: #080D14;
+  --at-accent: #7CC4EA; --at-on-accent: #080D14; --at-accent-text: #A9DAF3;
+  --at-deep: #04080D; --at-on-deep: #DCE6F0;
+  --c-da: #7CC4EA; --c-da-t: #12273B; --c-ds: #DCE6F0; --c-ds-t: #1A2636;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #080D14; --bg-atas: #0E1622; --permukaan: #0F1823; --permukaan-2: #16222F; --garis: #22344A;
+    --teks: #DCE6F0; --redup: #93A4B8; --tinta: #EAF2F9; --tinta-teks: #080D14;
+    --utama: #7CC4EA; --utama-gelap: #A9DAF3; --utama-t: #12304A;
+    --biru: #7CC4EA; --biru-t: #12273B;
+    --hijau: #6FD1C6; --hijau-t: #0F2B2B; --hijau-teks: #A3E3DB;
+    --merah: #F08A9A; --merah-t: #35161D; --merah-teks: #F6B6C0;
+    --kuning: #DCC173; --kuning-t: #2D2814; --kuning-teks: #ECDAA4;
+    --emas: #DCC173; --emas-t: #2D2814;
+    --kode-bg: #04080D; --kode-teks: #DCE6F0; --kode-redup: #74869C;
+    --editor-bg: #0C141E; --editor-nomor: #55677D;
+    --media-bg: #04080D;
+    --c-sql: #7CC4EA;
+    --bayang: 0 1px 0 rgba(0, 0, 0, .35), 0 12px 26px -16px rgba(0, 0, 0, .7);
+    --bayang2: 0 22px 44px -22px rgba(0, 0, 0, .8);
+    --btn-teks: #080D14;
+    --at-accent: #7CC4EA; --at-on-accent: #080D14; --at-accent-text: #A9DAF3;
+    --at-deep: #04080D; --at-on-deep: #DCE6F0;
+    --c-da: #7CC4EA; --c-da-t: #12273B; --c-ds: #DCE6F0; --c-ds-t: #1A2636;
+    color-scheme: dark;
+  }
+}
+
+/* Latar: abu es di atas memudar ke latar (terang) atau biru malam ke hitam kebiruan (gelap). */
+body, body.at { background: linear-gradient(180deg, var(--bg-atas) 0, var(--bg) 560px) var(--bg); }
+.topbar { background: color-mix(in srgb, var(--bg-atas) 96%, transparent); border-bottom: 1px solid var(--garis); }
+
+/* Warna yang ditulis langsung di theme.css / jalur.css (tema Studio) */
+::selection { background: var(--utama); color: var(--btn-teks); }
+.nav-utama button[data-tab].aktif { color: var(--tinta-teks); }
+.btn-utama:hover:not(:disabled), .btn-hijau, .jh-aksi .btn-utama:hover:not(:disabled), .kq-musik-nyala:hover { color: var(--btn-teks); }
+.kq-istirahat .btn-utama { background: #EDF1F5; color: #0B1420; }
+.hero-chip span { background: rgba(237, 241, 245, .92); color: #0B1420; }
+.jk-media .jk-utama { background: var(--permukaan); color: var(--teks); }
+.jk-persen { background: #12202F; color: #EDF1F5; }
+.grid-topik .prio-ya { background: #7CC4EA; color: #070C13; }
+.grup-jalur .kartu-t::after { background: #1D3A55; color: #EDF1F5; }
+.at-curtain__b { background: #070C13; }
+.at-curtain__a { background: #0B5C8A; }
+.at-curtain__cap { color: #DCE6F0; }
+.kq-piksel i.on { background: #DCE6F0; }
+
+/* Blok pernyataan beranda: gradasi biru baja → hitam kebiruan, dengan strip enam warna es */
+.pernyataan { position: relative; overflow: hidden; background: linear-gradient(165deg, #1D3A55 0%, #12202F 55%, #070C13 100%); color: #EDF1F5; }
+.pernyataan::before { content: ""; display: block; width: min(240px, 60%); height: 6px; margin: 0 auto 26px;
+  background: var(--es); box-shadow: inset 0 0 0 1px rgba(220, 230, 240, .25); }
+.pernyataan p { color: #DCE6F0; }
+.pernyataan .pernyataan-aksen { color: #7CC4EA; }
+.btn-terang { background: #EDF1F5; color: #070C13; }
+.btn-terang:hover:not(:disabled) { background: rgba(237, 241, 245, .12); color: #EDF1F5; box-shadow: inset 0 0 0 1px #EDF1F5; }
+
+/* Tajam: garis tipis yang jelas menggantikan bayangan lembut pada kartu utama */
+.fitur, .kartu-t, .bab-item, .materi-kotak, .kartu-soal, .level-kartu, .cara-item { border: 1px solid var(--garis); }
+.btn-garis { box-shadow: inset 0 0 0 1px var(--garis); }
+.fitur:hover, .kartu-t:hover { box-shadow: inset 0 0 0 1px var(--utama); }

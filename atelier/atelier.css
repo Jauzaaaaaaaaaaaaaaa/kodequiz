@@ -22,7 +22,7 @@
   --at-mono: ui-monospace, Consolas, monospace;
   --at-ease: cubic-bezier(.76, 0, .24, 1);
   --at-out: cubic-bezier(.16, 1, .3, 1);
-  --at-r: 18px;
+  --at-r: 4px;
   --at-gutter: clamp(16px, 4vw, 56px);
 }
 
@@ -100,8 +100,8 @@ body.at *, body.at *::before, body.at *::after { box-sizing: border-box; }
 .at-prose h2 { margin: 2.4em 0 .6em; font-stretch: 108%; font-size: clamp(1.5rem, 3vw, 2.3rem); line-height: 1.08; letter-spacing: -.025em; }
 .at-prose h3 { margin: 1.8em 0 .4em; font-size: 1.2rem; }
 .at-prose p, .at-prose li { color: var(--at-ink); }
-.at-prose code, .at-code-inline { font-family: var(--at-mono); font-size: .86em; padding: .12em .4em; border-radius: 6px; background: var(--at-line); }
-.at-prose blockquote { margin: 1.6em 0; padding: 1.1em 1.3em; border-left: 3px solid var(--at-accent); background: var(--at-surface); border-radius: 0 12px 12px 0; }
+.at-prose code, .at-code-inline { font-family: var(--at-mono); font-size: .86em; padding: .12em .4em; border-radius: 3px; background: var(--at-line); }
+.at-prose blockquote { margin: 1.6em 0; padding: 1.1em 1.3em; border-left: 3px solid var(--at-accent); background: var(--at-surface); border-radius: 0 4px 4px 0; }
 
 /* ---------- Header ---------- */
 .at-top {
@@ -117,7 +117,7 @@ body.at *, body.at *::before, body.at *::after { box-sizing: border-box; }
 .at-brand b { font-stretch: 118%; font-weight: 800; font-size: 1.28rem; letter-spacing: -.03em; text-transform: uppercase; }
 .at-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 4px; }
 .at-nav a {
-  position: relative; padding: 8px 13px; border-radius: 10px; text-decoration: none;
+  position: relative; padding: 8px 13px; border-radius: 4px; text-decoration: none;
   font-size: .78rem; font-weight: 700; font-stretch: 108%; letter-spacing: .03em; text-transform: uppercase;
   transition: background-color .25s, color .25s;
 }
@@ -135,7 +135,7 @@ body.at *, body.at *::before, body.at *::after { box-sizing: border-box; }
   --bg: var(--at-accent); --fg: var(--at-on-accent);
   position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 46px; padding: 12px 20px; overflow: hidden; cursor: pointer;
-  border: 0; border-radius: 12px; background: var(--bg); color: var(--fg) !important;
+  border: 0; border-radius: 4px; background: var(--bg); color: var(--fg) !important;
   font-family: var(--at-sans); font-stretch: 108%; font-weight: 800; font-size: .8rem;
   letter-spacing: .05em; text-transform: uppercase; text-decoration: none; line-height: 1.1;
   transition: transform .5s var(--at-out), box-shadow .3s;
@@ -152,7 +152,7 @@ body.at *, body.at *::before, body.at *::after { box-sizing: border-box; }
 .at-btn:hover span { color: var(--at-bg); }
 .at-btn--ghost { --bg: transparent; --fg: var(--at-ink); box-shadow: inset 0 0 0 1.5px var(--at-ink); }
 .at-btn--danger { --bg: var(--at-danger); --fg: #fff; }
-.at-btn--sm { min-height: 36px; padding: 8px 13px; font-size: .7rem; border-radius: 9px; }
+.at-btn--sm { min-height: 36px; padding: 8px 13px; font-size: .7rem; border-radius: 3px; }
 .at-deep .at-btn--ghost { --fg: var(--at-on-deep); box-shadow: inset 0 0 0 1.5px var(--at-on-deep); }
 .at-deep .at-btn::before { background: var(--at-on-deep); }
 .at-deep .at-btn:hover span { color: var(--at-deep); }
@@ -183,8 +183,8 @@ body.at *, body.at *::before, body.at *::after { box-sizing: border-box; }
   text-decoration: none; transition: transform .6s var(--at-out), box-shadow .4s;
 }
 a.at-card:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1.5px var(--at-ink), 0 24px 50px -30px rgba(0,0,0,.5); }
-.at-card__img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; margin-bottom: 14px; }
-.at-tag { display: inline-block; padding: 3px 9px; border-radius: 7px; font-family: var(--at-mono); font-size: .72rem; background: var(--at-line); }
+.at-card__img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; margin-bottom: 14px; }
+.at-tag { display: inline-block; padding: 3px 9px; border-radius: 3px; font-family: var(--at-mono); font-size: .72rem; background: var(--at-line); }
 .at-tag--accent { background: var(--at-accent); color: var(--at-on-accent); }
 .at-num { font-stretch: 112%; font-weight: 800; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1; letter-spacing: -.04em; }
 .at-rule { border: 0; border-top: 1px solid var(--at-line); margin: 0; }
@@ -204,12 +204,12 @@ a.at-card:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1.5px var
 .at-field > label, .at-label { font-family: var(--at-mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--at-mute); }
 .at-input {
   width: 100%; min-height: 50px; padding: 12px 14px; font: inherit; color: var(--at-ink);
-  background: var(--at-surface); border: 0; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--at-line);
+  background: var(--at-surface); border: 0; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--at-line);
   transition: box-shadow .25s;
 }
 .at-input:focus { outline: 0; box-shadow: inset 0 0 0 2px var(--at-ink); }
 textarea.at-input { min-height: 130px; resize: vertical; }
-.at-alert { padding: 13px 16px; border-radius: 12px; font-size: .95rem; background: color-mix(in srgb, var(--at-danger) 12%, var(--at-surface)); color: var(--at-danger); }
+.at-alert { padding: 13px 16px; border-radius: 4px; font-size: .95rem; background: color-mix(in srgb, var(--at-danger) 12%, var(--at-surface)); color: var(--at-danger); }
 .at-alert--ok { background: color-mix(in srgb, var(--at-ok) 14%, var(--at-surface)); color: var(--at-ok); }
 
 /* Halaman masuk: dua kolom */
@@ -227,7 +227,7 @@ textarea.at-input { min-height: 130px; resize: vertical; }
   padding: calc(var(--notch) + clamp(44px, 8vh, 90px)) clamp(18px, 4vw, 56px) 22px;
   background: var(--at-deep); color: var(--at-on-deep);
   clip-path: polygon(0 var(--notch), calc(50% - 190px) var(--notch), calc(50% - 160px) 0, calc(50% + 160px) 0, calc(50% + 190px) var(--notch), 100% var(--notch), 100% 100%, 0 100%);
-  border-radius: 0 0 22px 22px;
+  border-radius: 0 0 6px 6px;
 }
 .at-foot__big { margin: 0 0 clamp(30px, 6vh, 60px); text-align: center; font-stretch: 110%; font-weight: 800; font-size: clamp(1.9rem, 6vw, 5rem); line-height: .96; letter-spacing: -.03em; text-transform: uppercase; }
 .at-foot__big em { font-family: var(--at-serif); font-weight: 400; text-transform: none; color: var(--at-accent); }

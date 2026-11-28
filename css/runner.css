@@ -14,7 +14,7 @@
 /* panel melayang di dekat bubble; sudut kanan bawah bisa ditarik untuk mengubah ukuran */
 .rn{position:fixed;inset:auto;z-index:65;margin:0;width:min(760px,calc(100vw - 16px));height:min(640px,calc(100vh - 100px));
   min-width:300px;min-height:300px;max-width:calc(100vw - 16px);max-height:calc(100vh - 16px);resize:both;overflow:hidden;
-  padding:0;border:1px solid var(--garis);border-radius:14px;background:var(--permukaan);color:var(--teks);
+  padding:0;border:1px solid var(--garis);border-radius:4px;background:var(--permukaan);color:var(--teks);
   box-shadow:0 18px 50px rgba(0,0,0,.25);font-family:var(--font-b)}
 .rn[open]{display:flex;flex-direction:column}
 .rn-editor{flex:1;min-height:110px}
@@ -23,8 +23,8 @@
 .rn-atas{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--garis)}
 .rn-judul{font-family:var(--font-m);font-size:.9rem;margin-right:auto;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .rn-bahasa,.rn-jalan,.rn-kecil{flex-shrink:0}
-.rn-bahasa{padding:6px 8px;border-radius:8px;border:1px solid var(--garis);background:var(--permukaan-2);color:var(--teks);font:600 .82rem var(--font-b)}
-.rn-jalan,.rn-kecil{border-radius:8px;padding:7px 14px;font:700 .82rem var(--font-b);cursor:pointer;border:1px solid var(--garis)}
+.rn-bahasa{padding:6px 8px;border-radius:3px;border:1px solid var(--garis);background:var(--permukaan-2);color:var(--teks);font:600 .82rem var(--font-b)}
+.rn-jalan,.rn-kecil{border-radius:3px;padding:7px 14px;font:700 .82rem var(--font-b);cursor:pointer;border:1px solid var(--garis)}
 .rn-jalan{background:#e0245e;border-color:#e0245e;color:#fff}
 .rn-jalan.rn-stop{background:var(--teks);border-color:var(--teks);color:var(--bg)}
 .rn-kecil{background:var(--permukaan-2);color:var(--teks)}
