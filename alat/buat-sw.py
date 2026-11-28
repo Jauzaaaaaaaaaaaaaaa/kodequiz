@@ -6,7 +6,7 @@ aset = ["./", "index.html", "manifest.webmanifest"]
 for d in ["css", "js", "vendor", "ikon", "atelier", "jalur"]:
     for dp, _, fs in os.walk(os.path.join(ROOT, d)):
         for f in sorted(fs):
-            if f.endswith((".css", ".js", ".png", ".svg", ".webp")) and not f.endswith("-2000.webp"):   # gambar besar tidak ikut dicache offline
+            if f.endswith((".css", ".js", ".png", ".svg", ".webp")) and not f.endswith(("-2000.webp", "-1920.webp")):   # foto besar tidak ikut dipra-unduh (dimuat saat dibuka)
                 aset.append(os.path.relpath(os.path.join(dp, f), ROOT).replace(os.sep, "/"))
 versi = "kodequiz-v6-" + datetime.datetime.now().strftime("%Y%m%d%H%M")
 sw = f'''/* Service worker KodeQuiz — membuat aplikasi bisa dibuka OFFLINE setelah

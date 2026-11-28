@@ -4,7 +4,6 @@
   const S = document.getElementById("heliks");
   if (!S || typeof TOPIK_INFO === "undefined") return;
   const DATAR = () => matchMedia("(max-width: 760px), (max-height: 560px), (prefers-reduced-motion: reduce)").matches;
-  const adegan = window.KQ_ADEGAN || {};
   const T = Object.keys(TOPIK_INFO).filter(t => typeof BANK !== "undefined" && BANK[t]);
   const n = T.length, GRUP = Math.ceil(n / 4);
   const buka = t => TOPIK_INFO[t].grup === "jalur" ? go("jalur", { j: t }) : go("topik", { t });
@@ -25,7 +24,7 @@
   const cincin = S.querySelector(".hx-cincin"), hitung = S.querySelector(".hx-hitung b"), grupEl = S.querySelector(".hx-grup"), titik = [...S.querySelectorAll(".hx-titik i")];
   cincin.innerHTML = T.map((t, i) => {
     const I = TOPIK_INFO[t];
-    const bg = adegan[t] ? `<img src="${adegan[t]}" alt="" loading="lazy" decoding="async">` : "";
+    const bg = `<img src="atelier/foto/${t}-800.webp" alt="" loading="lazy" decoding="async">`;   // foto Unsplash (atelier/foto/SUMBER.md); gradasi --hx-bg tetap jadi cadangan
     return `<button class="hx-k" type="button" role="listitem" data-i="${i}" style="--i:${i};--hx-bg:var(--kg${i % 6 + 1})">
       ${bg}<span class="hx-isi"><span class="hx-kode">${String(i + 1).padStart(2, "0")} · KELOMPOK ${Math.floor(i / 4) + 1}</span>
       <span class="hx-ikon" aria-hidden="true">${esc(I.ikon || "")}</span>

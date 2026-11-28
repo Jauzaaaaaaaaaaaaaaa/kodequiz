@@ -1,7 +1,7 @@
 /* Service worker KodeQuiz — membuat aplikasi bisa dibuka OFFLINE setelah
    dikunjungi sekali lewat http(s) (Netlify / GitHub Pages).
    Dibuat otomatis; ganti VERSI setiap rilis agar cache diperbarui. */
-const VERSI = "kodequiz-v6-202611281011";
+const VERSI = "kodequiz-v6-202611281121";
 const BUKU = "kodequiz-buku";   // cache PDF terpisah: tidak terhapus saat aplikasi diperbarui
 const ASET = [
   "./",
@@ -117,6 +117,24 @@ const ASET = [
   "atelier/panggung.js",
   "atelier/theme.css",
   "atelier/theme.js",
+  "atelier/foto/bi-800.webp",
+  "atelier/foto/css-800.webp",
+  "atelier/foto/ct-800.webp",
+  "atelier/foto/cyber-800.webp",
+  "atelier/foto/da-800.webp",
+  "atelier/foto/ds-800.webp",
+  "atelier/foto/erp-800.webp",
+  "atelier/foto/excel-800.webp",
+  "atelier/foto/git-800.webp",
+  "atelier/foto/html-800.webp",
+  "atelier/foto/java-800.webp",
+  "atelier/foto/js-800.webp",
+  "atelier/foto/karier-800.webp",
+  "atelier/foto/php-800.webp",
+  "atelier/foto/python-800.webp",
+  "atelier/foto/siber-800.webp",
+  "atelier/foto/sql-800.webp",
+  "atelier/foto/stat-800.webp",
   "jalur/jalur.css",
   "jalur/jalur.js"
 ];

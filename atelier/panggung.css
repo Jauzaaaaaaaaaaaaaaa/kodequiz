@@ -17,9 +17,14 @@ body { overflow-x: clip; }
 .nav-utama button:hover { color: var(--utama); }
 
 /* ---------- panggung ---------- */
+/* batas bawah memudar ke warna latar halaman (Belula/Luluba): tidak ada garis warna yang bertabrakan saat digulir.
+   Kendali, kartu, dan teks diangkat setinggi --pg-pudar agar tetap di atas foto, bukan di area pudar. */
+:root { --pg-pudar: 110px; }
+.panggung::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: calc(var(--pg-pudar) + 60px); z-index: 2; pointer-events: none;
+  background: linear-gradient(180deg, transparent 0, color-mix(in srgb, var(--bg) 55%, transparent) 45%, var(--bg) 100%); }
 .panggung {
   position: relative; overflow: hidden; isolation: isolate; color: #F2F6FA;
-  margin: -22px calc(50% - 50vw) 0; height: clamp(560px, calc(100svh - 72px - var(--nav-bawah-h, 0px)), 820px); background: #070C13;
+  margin: -22px calc(50% - 50vw) 0; height: clamp(620px, calc(100svh - 72px - var(--nav-bawah-h, 0px) + var(--pg-pudar)), 900px); background: #070C13;
   outline: none;
 }
 .pg-latar, .pg-buka, .pg-redup { position: absolute; inset: 0; }
@@ -32,7 +37,7 @@ body { overflow-x: clip; }
   background: linear-gradient(90deg, rgba(4, 8, 13, .78) 0, rgba(4, 8, 13, .45) 38%, rgba(4, 8, 13, .05) 70%),
               linear-gradient(0deg, rgba(4, 8, 13, .7) 0, rgba(4, 8, 13, 0) 40%); }
 
-.pg-teks { position: absolute; z-index: 3; left: clamp(20px, 5vw, 80px); bottom: clamp(110px, 20%, 190px); width: min(46%, 560px); }
+.pg-teks { position: absolute; z-index: 3; left: clamp(20px, 5vw, 80px); bottom: calc(clamp(110px, 20%, 190px) + var(--pg-pudar)); width: min(46%, 560px); }
 .pg-meta { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; font-size: .86rem; letter-spacing: .02em; color: #D5DEE8; }
 .pg-meta i { width: 26px; height: 2px; background: #F2F6FA; flex: none; }
 .pg-judul { margin: 0; font: 500 clamp(3rem, 7.4vw, 7.2rem)/.92 var(--font-x); text-transform: uppercase; letter-spacing: .005em; color: #F7FAFC; }
@@ -50,7 +55,7 @@ body { overflow-x: clip; }
 .panggung :focus-visible { outline: 2px solid var(--pg-aksen); outline-offset: 3px; }
 
 /* kartu potret di kanan, keluar dari tepi seperti referensi */
-.pg-kartu { position: absolute; z-index: 3; left: 52%; bottom: clamp(110px, 20%, 190px); display: flex; gap: 18px; }
+.pg-kartu { position: absolute; z-index: 3; left: 52%; bottom: calc(clamp(110px, 20%, 190px) + var(--pg-pudar)); display: flex; gap: 18px; }
 .pg-k { position: relative; flex: none; width: clamp(140px, 11.5vw, 196px); aspect-ratio: 3 / 4.2; padding: 0; border: 0; border-radius: 6px; overflow: hidden; cursor: pointer;
   background: #0F1823; color: #F7FAFC; text-align: left; box-shadow: 0 18px 30px -18px rgba(0, 0, 0, .7); transition: transform .3s cubic-bezier(.2, .8, .2, 1); }
 .pg-k img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
@@ -63,7 +68,7 @@ body { overflow-x: clip; }
 @keyframes pg-k-masuk { from { opacity: 0; transform: translateX(48px); } }
 
 /* kendali bawah: dua tombol bulat bergaris, garis progres, nomor besar */
-.pg-kendali { position: absolute; z-index: 3; left: 52%; right: clamp(20px, 5vw, 80px); bottom: clamp(28px, 6%, 56px); display: flex; align-items: center; gap: 14px; }
+.pg-kendali { position: absolute; z-index: 3; left: 52%; right: clamp(20px, 5vw, 80px); bottom: calc(clamp(20px, 4%, 40px) + var(--pg-pudar)); display: flex; align-items: center; gap: 14px; }
 .pg-panah { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(242, 246, 250, .55); background: transparent; color: #F2F6FA; display: grid; place-items: center; cursor: pointer; transition: background .2s, color .2s; }
 .pg-panah:hover { background: #F2F6FA; color: #0B1420; }
 .pg-garis { flex: 1; height: 2px; margin: 0 10px; background: rgba(242, 246, 250, .3); overflow: hidden; }
@@ -110,7 +115,8 @@ body { overflow-x: clip; }
   .pg-kartu { position: relative; left: auto; bottom: auto; padding: 0 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
   .pg-kartu::-webkit-scrollbar { display: none; }
   .pg-k { width: 132px; scroll-snap-align: start; }
-  .pg-kendali { left: 20px; right: 20px; bottom: 24px; }
+  .pg-kendali { left: 20px; right: 20px; bottom: calc(16px + var(--pg-pudar)); }
+  .panggung { padding-bottom: calc(96px + var(--pg-pudar)); }
   .pg-redup { background: linear-gradient(0deg, rgba(4, 8, 13, .85) 0, rgba(4, 8, 13, .35) 55%, rgba(4, 8, 13, .15) 100%); }
 }
 @media (prefers-reduced-motion: reduce) {

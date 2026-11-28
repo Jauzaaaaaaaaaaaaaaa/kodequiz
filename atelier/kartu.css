@@ -53,6 +53,29 @@
 .mini-bar { background: rgba(244, 243, 250, .14); }
 :is(.kartu-t, .fitur, .sesi-item) .btn-garis { background: transparent; color: #F4F3FA; box-shadow: inset 0 0 0 1px rgba(244, 243, 250, .45); }
 
+/* ---------- foto pada kartu topik (Unsplash, atelier/foto/SUMBER.md) dengan lapisan gelap agar teks ≥ 4,5:1 ---------- */
+.kartu-t.t-da { --foto: url(foto/da-800.webp); }
+.kartu-t.t-ds { --foto: url(foto/ds-800.webp); }
+.kartu-t.t-cyber { --foto: url(foto/cyber-800.webp); }
+.kartu-t.t-siber { --foto: url(foto/siber-800.webp); }
+.kartu-t.t-excel { --foto: url(foto/excel-800.webp); }
+.kartu-t.t-sql { --foto: url(foto/sql-800.webp); }
+.kartu-t.t-bi { --foto: url(foto/bi-800.webp); }
+.kartu-t.t-stat { --foto: url(foto/stat-800.webp); }
+.kartu-t.t-erp { --foto: url(foto/erp-800.webp); }
+.kartu-t.t-karier { --foto: url(foto/karier-800.webp); }
+.kartu-t.t-ct { --foto: url(foto/ct-800.webp); }
+.kartu-t.t-py { --foto: url(foto/python-800.webp); }
+.kartu-t.t-js { --foto: url(foto/js-800.webp); }
+.kartu-t.t-git { --foto: url(foto/git-800.webp); }
+.kartu-t.t-html { --foto: url(foto/html-800.webp); }
+.kartu-t.t-css { --foto: url(foto/css-800.webp); }
+.kartu-t.t-java { --foto: url(foto/java-800.webp); }
+.kartu-t.t-php { --foto: url(foto/php-800.webp); }
+.kartu-t[class*=" t-"]:not(#kq) {
+  background: linear-gradient(180deg, rgba(18, 15, 34, .62) 0%, rgba(18, 15, 34, .86) 55%, rgba(18, 15, 34, .94) 100%), var(--foto, none) center / cover, var(--kg, var(--kg1));
+}
+
 /* ---------- 2. meja kartu: tergeletak miring, tegak + zoom saat disorot ---------- */
 :is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > * {
   transform: rotate(var(--miring, 0deg));
