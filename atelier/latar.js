@@ -2,7 +2,9 @@
    • Warna: pemilih warna (kotak gradasi + slider rona + HEX/RGB/HSL). Warna teks dan kartu dihitung otomatis
      supaya kontras teks tetap ≥ 7:1. Warna gelap/terang otomatis memilih tema Gelap/Terang (diatur app.js).
    • Desain: pola latar buatan sendiri dengan CSS (atelier/latar.css), memakai warna tema sehingga cocok di semua tema.
-   Disimpan di localStorage 'kq-latar' = { warna: "#rrggbb" | null, pola: "polos" | ... }.
+   • Warna latar 2 (28 Nov 2026): warna gradasi abstrak di belakang halaman (gumpalan --g1/--g2 di belula.css, tampil pada Desain = Bawaan).
+     Kekuatannya (alfa) diturunkan otomatis sampai teks redup tetap ≥ 4,5:1 di puncak gradasi, untuk tema terang, gelap, dan warna latar 1.
+   Disimpan di localStorage 'kq-latar' = { warna: "#rrggbb" | null, warna2: "#rrggbb" | null, pola: "polos" | ... }.
    Dimuat di <head> (tanpa defer) supaya latar sudah benar sebelum halaman tampil. */
 (function () {
   "use strict";
@@ -12,7 +14,7 @@
     ["kotakkotak", "Kotak-kotak"], ["diagonal", "Garis miring"], ["cetakbiru", "Cetak biru"], ["kontur", "Garis kontur"],
     ["sinar", "Sinar"], ["gradasi", "Gradasi lembut"], ["kertas", "Kertas bertekstur"],
   ];
-  let S = { warna: null, pola: "polos" };
+  let S = { warna: null, warna2: null, pola: "polos" };
   try { S = Object.assign(S, JSON.parse(localStorage.getItem(KUNCI)) || {}); } catch (e) { /* mode privat */ }
   const simpan = () => { try { localStorage.setItem(KUNCI, JSON.stringify(S)); } catch (e) { /* abaikan */ } };
 
@@ -65,20 +67,32 @@
   /* ---------- Menerapkan ---------- */
   const gaya = document.createElement("style");
   gaya.id = "kq-latar-gaya";
+  // alfa terbesar (≤ .55) agar teks redup tetap ≥ 4,5:1 di atas latar yang tercampur warna latar 2
+  function alfa2(hex2) {
+    const c2 = hexKeRgb(hex2), pasangan = [["#f2f4f8", "#48445c"], ["#120f22", "#b3accc"]];   // latar & teks redup bawaan Belula, Luluba
+    if (S.warna) { const v = turunan(S.warna).v; pasangan.push([v["--bg"], v["--redup"]]); }
+    let a = .55;
+    while (a > .05 && pasangan.some(([bg, redup]) => kontras(hexKeRgb(redup), campur(hexKeRgb(bg), c2, a)) < 4.5)) a -= .05;
+    return +a.toFixed(2);
+  }
   function terapkan() {
     document.documentElement.dataset.pola = S.pola || "polos";
-    if (!S.warna) { gaya.textContent = ""; return null; }
-    const d = turunan(S.warna), tema = d.gelap ? "dark" : "light";
-    // hanya berlaku pada tema yang cocok: tombol ☀️/🌙 tetap bisa kembali ke palet bawaan
-    gaya.textContent = `:root[data-theme="${tema}"]{${Object.entries(d.v).map(([k, v]) => `${k}:${v}`).join(";")};color-scheme:${tema}}`;
+    let css = "", tema = null;
+    if (S.warna) {
+      const d = turunan(S.warna); tema = d.gelap ? "dark" : "light";
+      // hanya berlaku pada tema yang cocok: tombol ☀️/🌙 tetap bisa kembali ke palet bawaan
+      css = `:root[data-theme="${tema}"]{${Object.entries(d.v).map(([k, v]) => `${k}:${v}`).join(";")};color-scheme:${tema}}`;
+    }
+    if (S.warna2) { const a = alfa2(S.warna2); css += `:root:root:root{--g1:${S.warna2};--g2:${S.warna2};--a1:${a};--a2:${(a * .7).toFixed(2)}}`; }
+    gaya.textContent = css;
     return tema;
   }
   (document.head || document.documentElement).appendChild(gaya);
   terapkan();
 
   /* ---------- Pemilih warna (seperti color picker Google) ---------- */
-  function pasangPicker(wadah, saatUbah) {
-    let [h, s, v] = rgbKeHsv(hexKeRgb(S.warna || "#f4f1de"));
+  function pasangPicker(wadah, saatUbah, awal) {
+    let [h, s, v] = rgbKeHsv(hexKeRgb(awal || S.warna || "#f2f4f8"));
     wadah.innerHTML = `<div class="lp">
       <div class="lp-atas">
         <div class="lp-contoh" aria-hidden="true"></div>
@@ -135,6 +149,9 @@
     warna: () => S.warna,
     aturPola(p) { S.pola = p; simpan(); terapkan(); },
     aturWarna(hex) { S.warna = hex; simpan(); return terapkan(); },   // → "dark" | "light" | null
+    warna2: () => S.warna2,
+    aturWarna2(hex) { S.warna2 = hex; simpan(); terapkan(); },
+    alfa2,     // dipakai alat/uji-latar.js
     pasangPicker,
     turunan,   // dipakai alat/uji-latar.js
   };

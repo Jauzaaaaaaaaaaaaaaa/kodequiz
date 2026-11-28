@@ -995,6 +995,12 @@ function pakaiProgres(o) {
     setTimeout(() => location.reload(), 700);
   }), 260);
 }
+// tombol sesaat menampilkan "✓ Selesai" lalu kembali (hanya untuk aksi yang punya hasil nyata)
+function sukses(b) {
+  if (!b || b.dataset.asli) return;
+  b.dataset.asli = b.innerHTML; b.classList.add("btn-sukses"); b.innerHTML = '<span aria-hidden="true">✓</span> Selesai';
+  setTimeout(() => { b.innerHTML = b.dataset.asli; delete b.dataset.asli; b.classList.remove("btn-sukses"); }, 1400);
+}
 function bukaPengaturan() {
   const tema = DATA.pref.tema || "auto";
   tanya({
@@ -1003,9 +1009,12 @@ function bukaPengaturan() {
     html: `<div class="atur">
       <div class="atur-baris"><span><b>Tema</b><small>Ikuti sistem, terang, atau gelap</small></span>
         <div class="segmen" id="atur-tema">${[["auto", "Otomatis"], ["light", "Terang"], ["dark", "Gelap"]].map(([v, n]) => `<button data-v="${v}" class="${tema === v ? "aktif" : ""}">${n}</button>`).join("")}</div></div>
-      ${window.KQLatar ? `<div class="atur-blok"><span><b>Warna latar</b><small>Pilih warnamu sendiri. Teks dan kartu menyesuaikan otomatis supaya tetap mudah dibaca; warna gelap memakai tema Gelap.</small></span>
+      ${window.KQLatar ? `<div class="atur-blok"><span><b>Warna latar 1 · dasar</b><small>Warna dasar halaman. Teks dan kartu menyesuaikan otomatis supaya tetap mudah dibaca; warna gelap memakai tema Gelap.</small></span>
         <div id="atur-warna"></div>
         <div class="lp-aksi"><button class="btn btn-garis btn-kecil" id="atur-warna-reset">↺ Kembali ke warna bawaan</button></div></div>
+      <div class="atur-blok"><span><b>Warna latar 2 · gradasi</b><small>Warna gradasi abstrak di belakang kartu (Desain latar: Bawaan). Kekuatannya diatur otomatis agar teks tetap terbaca.</small></span>
+        <div id="atur-warna2"></div>
+        <div class="lp-aksi"><button class="btn btn-garis btn-kecil" id="atur-warna2-reset">↺ Kembali ke gradasi bawaan</button></div></div>
       <div class="atur-blok"><span><b>Desain latar</b><small>Pola di belakang kartu, mengikuti warna tema</small></span>
         <div class="lp-pola-grid" id="atur-pola">${KQLatar.POLA.map(([v, n]) => `<button class="lp-pola ${KQLatar.pola() === v ? "aktif" : ""}" data-pola="${v}" aria-pressed="${KQLatar.pola() === v}"><i aria-hidden="true"></i>${n}</button>`).join("")}</div></div>` : ""}
       <div class="atur-baris"><span><b>Suara</b><small>Bunyi lembut saat benar, combo, dan naik level</small></span>
@@ -1042,7 +1051,10 @@ function bukaPengaturan() {
     };
     const pasangWarna = () => KQLatar.pasangPicker(el("atur-warna"), hex => ikutWarna(KQLatar.aturWarna(hex)));
     pasangWarna();
-    el("atur-warna-reset").onclick = () => { KQLatar.aturWarna(null); pasangWarna(); };
+    el("atur-warna-reset").onclick = e => { KQLatar.aturWarna(null); pasangWarna(); sukses(e.currentTarget); };
+    const pasangWarna2 = () => KQLatar.pasangPicker(el("atur-warna2"), hex => KQLatar.aturWarna2(hex), KQLatar.warna2() || "#b9a8f0");
+    pasangWarna2();
+    el("atur-warna2-reset").onclick = e => { KQLatar.aturWarna2(null); pasangWarna2(); sukses(e.currentTarget); };
     document.querySelectorAll("#atur-pola .lp-pola").forEach(b => b.onclick = () => {
       KQLatar.aturPola(b.dataset.pola);
       document.querySelectorAll("#atur-pola .lp-pola").forEach(x => { x.classList.toggle("aktif", x === b); x.setAttribute("aria-pressed", x === b); });

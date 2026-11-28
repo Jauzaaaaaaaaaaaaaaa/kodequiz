@@ -84,3 +84,18 @@
   :is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > * { transition: none; }
   :is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > :hover:not(#kq) { transform: rotate(0deg); }
 }
+
+/* ---------- 3. tombol berbentuk pil (referensi pengguna "Buttons interactions"): kartu tetap tajam, kontrol bulat ----------
+   Tombol aksi, ikon topbar, segmen tema, chip, dan pil statistik. Kolom isian (HEX, kode) tetap bersudut kecil. */
+:is(.btn, .btn-besar, .nav-btn, .pil, .lingkup, .segmen, .segmen button, .hero-chip span, .label-grup, .chip-kecil, .lab-tab-btn, .pg-mulai, .hx-lewati):not(#kq) { border-radius: 999px; }
+.segmen { padding: 4px; gap: 2px; }
+.segmen button { transition: background-color .25s ease, color .25s ease, transform .18s cubic-bezier(.2, .8, .2, 1); }
+.segmen button:active { transform: scale(.95); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+/* tanda selesai: ✓ hijau seperti tombol "Success" di referensi */
+.btn-sukses { animation: tb-sukses .45s cubic-bezier(.2, .8, .2, 1); }
+.btn-sukses span { color: var(--hijau); font-weight: 700; }
+@keyframes tb-sukses { 0% { transform: scale(.92); } 60% { transform: scale(1.04); } }
+@media (prefers-reduced-motion: reduce) { .btn-sukses { animation: none; } }
+/* saklar (Suara, Efek, dll.) kembali bulat: sakelar memang lazim berbentuk pil */
+.saklar span, .saklar span::before, .saklar span::after { border-radius: 999px; }
