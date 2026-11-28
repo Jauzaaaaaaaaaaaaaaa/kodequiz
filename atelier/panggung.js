@@ -47,14 +47,14 @@
   const jalur = (t, judul, adegan) => ({ t, judul, adegan, meta: `Jalur karier · ${J[t] ? J[t].tahap.length : ""} tahap · ${soal(t)} soal`, ket: J[t] ? J[t].slogan : "", buka: () => go("jalur", { j: t }) });
   const topik = (t, judul, meta, ket, adegan) => ({ t, judul, adegan, meta: `${meta} · ${bab(t)} bab · ${soal(t)} soal`, ket, buka: () => go("topik", { t }) });
   const SLIDE = [
-    jalur("da", ["Data", "Analyst"], { benih: 11, langit: ["#8FB4D3", "#E4EEF6"], cakram: [1180, 250, 70, "#F6E7C8"], lapis: [["gunung", 520, 220, "#9DB7CD"], ["gunung", 620, 260, "#6E8FAD"], ["batang", 760, 240, "#3D5F7E"], ["batang", 900, 190, "#15283B"]] }),
-    jalur("ds", ["Data", "Scientist"], { benih: 23, langit: ["#1F2A48", "#8C9EC6"], cakram: [420, 230, 46, "#E8EEF9"], bintang: 90, titik: "#CFE0F5", lapis: [["lonceng", 640, 260, "#5A6C95"], ["lonceng", 760, 240, "#38486D"], ["lonceng", 900, 210, "#141C33"]] }),
-    jalur("cyber", ["Cyber", "Security"], { benih: 37, langit: ["#02060B", "#0F2236"], cakram: [1260, 210, 34, "#7CC4EA"], bintang: 140, kisi: "#7CC4EA", lapis: [["gigi", 560, 200, "#0F2133"], ["gigi", 640, 160, "#0A1828"]] }),
-    topik("python", ["Python"], "Bahasa prioritas", "Dari dasar sampai OOP, pandas, dan otomasi data. Setiap bab punya Lab menulis kode dengan petunjuk per langkah.", { benih: 41, langit: ["#A9D6D3", "#EDF6F5"], cakram: [1240, 260, 64, "#F4F1E4"], lapis: [["gelombang", 600, 200, "#8DBCB9"], ["gelombang", 720, 210, "#5B9592"], ["gelombang", 840, 190, "#2E6466"], ["gelombang", 920, 120, "#123A3E"]] }),
-    topik("sql", ["SQL"], "Bahasa prioritas", "JOIN, GROUP BY, CTE, dan window function, langsung dicoba di Lab SQL tanpa memasang apa pun.", { benih: 53, langit: ["#4E6D8D", "#C8D7E5"], cakram: [360, 280, 58, "#E7EEF5"], lapis: [["teras", 620, 260, "#8AA2BA"], ["teras", 740, 250, "#5A7695"], ["teras", 880, 220, "#2B4560"], ["teras", 920, 110, "#111F2E"]] }),
-    topik("excel", ["Excel"], "Data & bisnis", "SUMIFS, XLOOKUP, pivot, dan dynamic array untuk laporan yang rapi dan cepat.", { benih: 67, langit: ["#C6E3D5", "#F0F7F3"], cakram: [1120, 240, 60, "#FBF6E6"], lapis: [["teras", 600, 180, "#9CC6B2"], ["teras", 720, 200, "#6AA08A"], ["teras", 850, 190, "#3B715E"], ["teras", 920, 120, "#163B31"]] }),
-    topik("erp", ["ERP &", "Odoo"], "Data & bisnis", "Proses bisnis sampai developer Odoo 17, ditambah Lab Hitung pricelist, pajak, valuasi, dan penyusutan.", { benih: 79, langit: ["#162A42", "#6F8DAE"], cakram: [1300, 300, 40, "#F2B33D"], jendela: "#F2B33D", lapis: [["gunung", 620, 220, "#4A6584"], ["batang", 780, 230, "#263C57"], ["batang", 900, 160, "#0C1828"]] }),
-    topik("js", ["Java", "Script"], "Bahasa prioritas", "DOM, event, async, sampai React, dengan tombol Run untuk mencoba kode di tempat.", { benih: 97, langit: ["#3A5675", "#E9C48E"], cakram: [800, 520, 90, "#FBE2B4"], lapis: [["gigi", 640, 240, "#6C7F98"], ["gigi", 760, 230, "#3F5571"], ["gigi", 900, 170, "#16243A"]] }),
+    jalur("da", ["Data", "Analyst"], { benih: 11, langit: ["#849AAD", "#DCE5EB"], cakram: [1180, 250, 70, "#F1E9DE"], lapis: [["gunung", 520, 220, "#A9BCC9"], ["gunung", 620, 260, "#849AAD"], ["batang", 760, 240, "#605246"], ["batang", 900, 190, "#2B231E"]] }),
+    jalur("ds", ["Data", "Scientist"], { benih: 23, langit: ["#2E2427", "#A1947F"], cakram: [420, 230, 46, "#E9EEF1"], bintang: 90, titik: "#DCE5EB", lapis: [["lonceng", 640, 260, "#7D705F"], ["lonceng", 760, 240, "#605246"], ["lonceng", 900, 210, "#2B231E"]] }),
+    jalur("cyber", ["Cyber", "Security"], { benih: 37, langit: ["#0E0C0B", "#2E3A45"], cakram: [1260, 210, 34, "#B1C7D4"], bintang: 140, kisi: "#B1C7D4", lapis: [["gigi", 560, 200, "#2A3038"], ["gigi", 640, 160, "#1A1D21"]] }),
+    topik("python", ["Python"], "Bahasa prioritas", "Dari dasar sampai OOP, pandas, dan otomasi data. Setiap bab punya Lab menulis kode dengan petunjuk per langkah.", { benih: 41, langit: ["#B1C7D4", "#EEF2F4"], cakram: [1240, 260, 64, "#F4EEE6"], lapis: [["gelombang", 600, 200, "#9DB1BF"], ["gelombang", 720, 210, "#849AAD"], ["gelombang", 840, 190, "#5D7183"], ["gelombang", 920, 120, "#3B4A57"]] }),
+    topik("sql", ["SQL"], "Bahasa prioritas", "JOIN, GROUP BY, CTE, dan window function, langsung dicoba di Lab SQL tanpa memasang apa pun.", { benih: 53, langit: ["#605246", "#CDBFA9"], cakram: [360, 280, 58, "#EFE7DC"], lapis: [["teras", 620, 260, "#A1947F"], ["teras", 740, 250, "#7D705F"], ["teras", 880, 220, "#534538"], ["teras", 920, 110, "#2B231E"]] }),
+    topik("excel", ["Excel"], "Data & bisnis", "SUMIFS, XLOOKUP, pivot, dan dynamic array untuk laporan yang rapi dan cepat.", { benih: 67, langit: ["#C5D3DC", "#EEF2F4"], cakram: [1120, 240, 60, "#F7F1E8"], lapis: [["teras", 600, 180, "#A9B9C4"], ["teras", 720, 200, "#849AAD"], ["teras", 850, 190, "#A1947F"], ["teras", 920, 120, "#605246"]] }),
+    topik("erp", ["ERP &", "Odoo"], "Data & bisnis", "Proses bisnis sampai developer Odoo 17, ditambah Lab Hitung pricelist, pajak, valuasi, dan penyusutan.", { benih: 79, langit: ["#2B1A1D", "#7A5D5A"], cakram: [1300, 300, 40, "#E6D3BC"], jendela: "#E6D3BC", lapis: [["gunung", 620, 220, "#605246"], ["batang", 780, 230, "#3E2E2B"], ["batang", 900, 160, "#1C1412"]] }),
+    topik("js", ["Java", "Script"], "Bahasa prioritas", "DOM, event, async, sampai React, dengan tombol Run untuk mencoba kode di tempat.", { benih: 97, langit: ["#5E1C23", "#D9C3B5"], cakram: [800, 520, 90, "#F1E4D6"], lapis: [["gigi", 640, 240, "#A1947F"], ["gigi", 760, 230, "#605246"], ["gigi", 900, 170, "#2B1B1E"]] }),
   ];
   const URL_ = SLIDE.map(s => pemandangan(s.adegan));
 
@@ -90,7 +90,8 @@
     $(".pg-meta span").textContent = s.meta;
     $(".pg-judul").innerHTML = judulHTML(s);
     $(".pg-ket").textContent = s.ket;
-    $(".pg-no").textContent = String(urut[0] + 1).padStart(2, "0");
+    const no = $(".pg-no"); no.textContent = String(urut[0] + 1).padStart(2, "0");
+    if (animasi && !KURANG_GERAK) { no.classList.remove("pg-gulir"); void no.offsetWidth; no.classList.add("pg-gulir"); }
     S.style.setProperty("--pg-judul-n", s.judul.length);
     if (animasi && !KURANG_GERAK) { S.classList.remove("pg-masuk"); void S.offsetWidth; S.classList.add("pg-masuk"); }
   }
@@ -101,11 +102,12 @@
         <img src="${URL_[i]}" alt="" loading="lazy" decoding="async"><span class="pg-k-meta">${esc(s.meta.split(" · ")[0])}</span><b>${s.judul.map(esc).join("<br>")}</b></button>`;
     }).join("");
   }
+  function zoom() { if (KURANG_GERAK) return; latar.classList.remove("pg-zoom"); void latar.offsetWidth; latar.classList.add("pg-zoom"); }
   function mulaiProgres() {
     if (KURANG_GERAK) return;
     garis.classList.remove("jalan"); void garis.offsetWidth; garis.classList.add("jalan");
   }
-  function selesai() { latar.src = URL_[urut[0]]; buka.classList.remove("tampil"); buka.style.clipPath = ""; isiKartu(true); sibuk = false; mulaiProgres(); }
+  function selesai() { latar.src = URL_[urut[0]]; zoom(); buka.classList.remove("tampil"); buka.style.clipPath = ""; isiKartu(true); sibuk = false; mulaiProgres(); }
 
   // kartu ke-p dibuka: lapisan atas dipotong seukuran kartu lalu dibuka sampai penuh
   function bukaKartu(p) {
@@ -142,6 +144,23 @@
     setTimeout(() => { buka.classList.remove("pudar"); selesai(); }, KURANG_GERAK ? 0 : 520);
   }
 
+  if (!KURANG_GERAK && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    let kTilt = null, ev = null, antre = false;
+    deret.addEventListener("pointermove", e => {
+      ev = e; kTilt = e.target.closest(".pg-k");
+      if (antre || !kTilt) return;
+      antre = true;
+      requestAnimationFrame(() => {
+        antre = false; if (!kTilt) return;
+        const r = kTilt.getBoundingClientRect(), x = (ev.clientX - r.left) / r.width, y = (ev.clientY - r.top) / r.height;
+        kTilt.style.setProperty("--ry", ((x - .5) * 14).toFixed(2) + "deg");
+        kTilt.style.setProperty("--rx", ((.5 - y) * 12).toFixed(2) + "deg");
+        kTilt.style.setProperty("--mx", (x * 100).toFixed(1) + "%");
+        kTilt.style.setProperty("--my", (y * 100).toFixed(1) + "%");
+      });
+    });
+    deret.addEventListener("pointerout", e => { const k = e.target.closest(".pg-k"); if (k && !k.contains(e.relatedTarget)) { k.style.removeProperty("--rx"); k.style.removeProperty("--ry"); } });
+  }
   deret.addEventListener("click", e => { const k = e.target.closest(".pg-k"); if (k) bukaKartu(+k.dataset.p); });
   S.querySelectorAll(".pg-panah").forEach(b => b.onclick = () => (+b.dataset.arah > 0 ? bukaKartu(1) : mundur()));
   $(".pg-mulai").onclick = () => SLIDE[urut[0]].buka();
@@ -159,7 +178,7 @@
   document.addEventListener("visibilitychange", () => atur("tab", document.hidden));
   if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => atur("layar", !e.isIntersecting), { threshold: .35 }).observe(S);
 
-  latar.src = URL_[0];
+  latar.src = URL_[0]; zoom();
   isiTeks(true); isiKartu(true); mulaiProgres();
   S.tabIndex = -1;
 })();

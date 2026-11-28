@@ -1,0 +1,42 @@
+/* KodeQuiz — animasi dan transisi tambahan (28 November 2026). Hanya transform dan opacity; semuanya mati di prefers-reduced-motion. */
+:root { --gr-ease: cubic-bezier(.2, .8, .2, 1); }
+
+/* muncul saat menggulir (atelier/gerak.js) */
+html.gr-siap .gr { transition: opacity .8s var(--gr-ease), transform .9s var(--gr-ease); transition-delay: calc(var(--gr-i, 0) * 80ms); }
+html.gr-siap .gr:not(.gr-in) { opacity: 0; transform: translateY(30px); }
+html.gr-siap .sec-judul.gr:not(.gr-in) { transform: translateY(40px) skewY(3deg); transform-origin: left; }
+html.gr-siap .materi-kotak > .gr:not(.gr-in) { transform: translateY(18px); }
+
+/* angkat halus saat disorot */
+.sesi-item, .metode-item, .cara-item, .jalur-kartu, .kartu-t, .fitur, .bab-item, .kasus-kartu {
+  transition: transform .35s var(--gr-ease), box-shadow .35s var(--gr-ease), border-color .25s ease;
+}
+@media (hover: hover) {
+  .sesi-item:hover, .metode-item:hover, .cara-item:hover, .jalur-kartu:hover, .kasus-kartu:hover { transform: translateY(-5px); box-shadow: var(--bayang2); }
+  .bab-item:hover { transform: translateX(6px); border-color: var(--utama); }
+}
+
+/* tombol: tekan mengecil, sapuan cahaya saat disorot */
+.btn { position: relative; transition: transform .18s var(--gr-ease), background-color .25s ease, color .25s ease, box-shadow .25s ease; }
+.btn:active:not(:disabled) { transform: scale(.96); }
+.btn-utama::before, .btn-hijau::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;   /* tanpa overflow:hidden agar lencana tombol tidak terpotong */
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, .28) 50%, transparent 65%) 130% 0 / 300% 100% no-repeat; }
+@media (hover: hover) { .btn-utama:hover:not(:disabled)::before, .btn-hijau:hover:not(:disabled)::before { background-position: -30% 0; transition: background-position .7s var(--gr-ease); } }
+
+/* pilihan jawaban muncul berurutan, batang kemajuan tumbuh dari kiri */
+.opsi.muncul:nth-child(2) { animation-delay: .05s; }
+.opsi.muncul:nth-child(3) { animation-delay: .1s; }
+.opsi.muncul:nth-child(4) { animation-delay: .15s; }
+.opsi.muncul:nth-child(5) { animation-delay: .2s; }
+.mini-bar div, .mini-bar span { transform-origin: left; animation: gr-batang 1.1s var(--gr-ease) both .15s; }
+@keyframes gr-batang { from { transform: scaleX(0); } }
+
+/* judul materi dan sapaan: garis aksen tumbuh */
+.eyebrow::before { transform-origin: left; animation: gr-batang .9s var(--gr-ease) both .2s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html.gr-siap .gr:not(.gr-in) { opacity: 1; transform: none; }
+  .btn-utama::before, .btn-hijau::before { display: none; }
+  .mini-bar div, .mini-bar span, .eyebrow::before, .opsi.muncul { animation: none; }
+  .sesi-item:hover, .metode-item:hover, .cara-item:hover, .jalur-kartu:hover, .kasus-kartu:hover, .bab-item:hover { transform: none; }
+}

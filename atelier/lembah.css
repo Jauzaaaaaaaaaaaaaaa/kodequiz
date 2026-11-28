@@ -1,0 +1,132 @@
+/* KODEQUIZ — palet "Lembah" (28 November 2026, kombo 5 warna pilihan pengguna):
+   Cloudy Valley #B1C7D4 · Tsunami #849AAD · Weather Board #A1947F · Volcanic Island #605246 · Red Oxide #5E1C23.
+   Menggantikan dingin.css (palet Es). Terang = langit Cloudy Valley pucat, tinta cokelat Volcanic gelap, aksen Red Oxide;
+   gelap = cokelat vulkanik pekat, teks Cloudy Valley, aksen Cloudy Valley. Kontras teks utama ≥ 12:1.
+   Latar gradasi abstrak: satu lapisan tetap berisi gumpalan radial 5 warna yang bergeser pelan (hanya transform,
+   tanpa blur), tampil saat Desain latar = Bawaan. Untuk kembali ke palet Es: ganti <link> lembah.css menjadi dingin.css. */
+
+:root {
+  --cv: #B1C7D4; --ts: #849AAD; --wb: #A1947F; --vi: #605246; --ro: #5E1C23;
+  --bg: #E9EEF1; --bg-atas: #DCE5EB; --permukaan: #F7F8F8; --permukaan-2: #E3E8EA; --garis: #C8D1D6;
+  --teks: #231C17; --redup: #4E433B; --tinta: #231C17; --tinta-teks: #F2F4F5;
+  --utama: #5E1C23; --utama-gelap: #44121A; --utama-t: #EFDCDE;
+  --biru: #4C6274; --biru-t: #DCE5EB;
+  --hijau: #3F6B55; --hijau-t: #DDE8E0; --hijau-teks: #2E5140;
+  --merah: #8E2A33; --merah-t: #F3DDDF; --merah-teks: #6E1F27;
+  --kuning: #765E2C; --kuning-t: #EEE6D2; --kuning-teks: #574521;
+  --emas: #765E2C; --emas-t: #EEE6D2;
+  --kode-bg: #1F1A16; --kode-teks: #E8E3DC; --kode-redup: #A1947F;
+  --editor-bg: #F7F8F8; --editor-nomor: #9A9087;
+  --media-bg: #231C17;
+  --c-sql: #4C6274;
+  --bayang: 0 1px 0 rgba(35, 28, 23, .06), 0 12px 28px -20px rgba(35, 28, 23, .4);
+  --bayang2: 0 22px 44px -26px rgba(35, 28, 23, .55);
+  --btn-teks: #F2F4F5;
+  --at-accent: #5E1C23; --at-on-accent: #F2F4F5; --at-accent-text: #44121A;
+  --at-deep: #1F1A16; --at-on-deep: #E8E3DC;
+  --c-da: #4C6274; --c-da-t: #DCE5EB; --c-ds: #605246; --c-ds-t: #E9E3DC;
+  --sorot: #5E1C23; --sorot-teks: #F2F4F5;      /* garis aktif menu, penanda kecil */
+  --g-cv: .8; --g-ts: .6; --g-wb: .5; --g-vi: .2; --g-ro: .16;   /* kekuatan gumpalan latar; teks redup tetap ≥ 4,9:1 di puncak gumpalan */
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #14110F; --bg-atas: #1B1714; --permukaan: #1E1A17; --permukaan-2: #29231F; --garis: #3A322C;
+  --teks: #E4E9EC; --redup: #AEB8BF; --tinta: #E9EEF1; --tinta-teks: #14110F;
+  --utama: #B1C7D4; --utama-gelap: #D0DEE7; --utama-t: #28323A;
+  --biru: #B1C7D4; --biru-t: #232E37;
+  --hijau: #9CC3A8; --hijau-t: #1D2A22; --hijau-teks: #BFD9C6;
+  --merah: #E3989F; --merah-t: #3A1D21; --merah-teks: #F0BCC1;
+  --kuning: #D9C38C; --kuning-t: #2E271A; --kuning-teks: #EADBB2;
+  --emas: #D9C38C; --emas-t: #2E271A;
+  --kode-bg: #0E0C0A; --kode-teks: #E4E9EC; --kode-redup: #8F8676;
+  --editor-bg: #191512; --editor-nomor: #6E655C;
+  --media-bg: #0E0C0A;
+  --c-sql: #B1C7D4;
+  --bayang: 0 1px 0 rgba(0, 0, 0, .35), 0 12px 26px -16px rgba(0, 0, 0, .7);
+  --bayang2: 0 22px 44px -22px rgba(0, 0, 0, .8);
+  --btn-teks: #14110F;
+  --at-accent: #B1C7D4; --at-on-accent: #14110F; --at-accent-text: #D0DEE7;
+  --at-deep: #0E0C0A; --at-on-deep: #E4E9EC;
+  --c-da: #B1C7D4; --c-da-t: #232E37; --c-ds: #CDBFA9; --c-ds-t: #2B2520;
+  --sorot: #B1C7D4; --sorot-teks: #14110F;
+  --g-cv: .24; --g-ts: .3; --g-wb: .22; --g-vi: .55; --g-ro: .5;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14110F; --bg-atas: #1B1714; --permukaan: #1E1A17; --permukaan-2: #29231F; --garis: #3A322C;
+    --teks: #E4E9EC; --redup: #AEB8BF; --tinta: #E9EEF1; --tinta-teks: #14110F;
+    --utama: #B1C7D4; --utama-gelap: #D0DEE7; --utama-t: #28323A;
+    --biru: #B1C7D4; --biru-t: #232E37;
+    --hijau: #9CC3A8; --hijau-t: #1D2A22; --hijau-teks: #BFD9C6;
+    --merah: #E3989F; --merah-t: #3A1D21; --merah-teks: #F0BCC1;
+    --kuning: #D9C38C; --kuning-t: #2E271A; --kuning-teks: #EADBB2;
+    --emas: #D9C38C; --emas-t: #2E271A;
+    --kode-bg: #0E0C0A; --kode-teks: #E4E9EC; --kode-redup: #8F8676;
+    --editor-bg: #191512; --editor-nomor: #6E655C;
+    --media-bg: #0E0C0A;
+    --c-sql: #B1C7D4;
+    --bayang: 0 1px 0 rgba(0, 0, 0, .35), 0 12px 26px -16px rgba(0, 0, 0, .7);
+    --bayang2: 0 22px 44px -22px rgba(0, 0, 0, .8);
+    --btn-teks: #14110F;
+    --at-accent: #B1C7D4; --at-on-accent: #14110F; --at-accent-text: #D0DEE7;
+    --at-deep: #0E0C0A; --at-on-deep: #E4E9EC;
+    --c-da: #B1C7D4; --c-da-t: #232E37; --c-ds: #CDBFA9; --c-ds-t: #2B2520;
+    --sorot: #B1C7D4; --sorot-teks: #14110F;
+    --g-cv: .24; --g-ts: .3; --g-wb: .22; --g-vi: .55; --g-ro: .5;
+    color-scheme: dark;
+  }
+}
+
+/* ---------- latar gradasi abstrak (hanya Desain latar = Bawaan) ---------- */
+html { background: var(--bg); }
+body, body.at { background: var(--bg); }
+:root[data-pola="polos"] body, :root[data-pola="polos"] body.at { background: transparent; }   /* :root menang atas latar.css */
+html[data-pola="polos"] body::before {
+  content: ""; position: fixed; z-index: -1; pointer-events: none;
+  inset: -25vh -25vw; will-change: transform;
+  background:
+    radial-gradient(30vmax 24vmax at 30% 30%, color-mix(in srgb, var(--cv) calc(var(--g-cv) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(28vmax 22vmax at 72% 27%, color-mix(in srgb, var(--ts) calc(var(--g-ts) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(32vmax 24vmax at 68% 72%, color-mix(in srgb, var(--wb) calc(var(--g-wb) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(24vmax 20vmax at 30% 72%, color-mix(in srgb, var(--vi) calc(var(--g-vi) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(18vmax 16vmax at 52% 50%, color-mix(in srgb, var(--ro) calc(var(--g-ro) * 100%), transparent) 0 18%, transparent 66%),
+    var(--bg);
+  animation: lb-arus 46s ease-in-out infinite alternate;
+}
+@keyframes lb-arus {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50%  { transform: translate3d(-6vw, 4vh, 0) rotate(8deg) scale(1.08); }
+  100% { transform: translate3d(5vw, -5vh, 0) rotate(-6deg) scale(1.04); }
+}
+.topbar { background: color-mix(in srgb, var(--bg) 88%, transparent); border-bottom: 1px solid var(--garis); }
+
+/* Warna yang ditulis langsung di theme.css / jalur.css */
+::selection { background: var(--utama); color: var(--btn-teks); }
+.nav-utama button[data-tab].aktif { color: var(--teks); }
+.btn-utama:hover:not(:disabled), .btn-hijau, .jh-aksi .btn-utama:hover:not(:disabled), .kq-musik-nyala:hover { color: var(--btn-teks); }
+.kq-istirahat .btn-utama { background: #E9EEF1; color: #231C17; }
+.hero-chip span { background: rgba(233, 238, 241, .92); color: #231C17; }
+.jk-media .jk-utama { background: var(--permukaan); color: var(--teks); }
+.jk-persen { background: #231C17; color: #E9EEF1; }
+.grid-topik .prio-ya { background: #B1C7D4; color: #231C17; }
+.grup-jalur .kartu-t::after { background: #605246; color: #F2F4F5; }
+.at-curtain__b { background: #1F1A16; }
+.at-curtain__a { background: #5E1C23; }
+.at-curtain__cap { color: #E8E3DC; }
+.kq-piksel i.on { background: #E8E3DC; }
+
+/* Blok pernyataan beranda: gradasi Red Oxide → Volcanic → hampir hitam, strip lima warna */
+.pernyataan { position: relative; overflow: hidden; background: linear-gradient(160deg, #5E1C23 0%, #3E2A26 50%, #1F1A16 100%); color: #F2F4F5; }
+.pernyataan::before { content: ""; display: block; width: min(260px, 62%); height: 6px; margin: 0 auto 26px;
+  background: linear-gradient(90deg, #B1C7D4 0 20%, #849AAD 0 40%, #A1947F 0 60%, #605246 0 80%, #5E1C23 0); box-shadow: inset 0 0 0 1px rgba(242, 244, 245, .3); }
+.pernyataan p { color: #E8E3DC; }
+.pernyataan .pernyataan-aksen { color: #B1C7D4; }
+.btn-terang { background: #F2F4F5; color: #231C17; }
+.btn-terang:hover:not(:disabled) { background: rgba(242, 244, 245, .12); color: #F2F4F5; box-shadow: inset 0 0 0 1px #F2F4F5; }
+
+/* garis tipis tegas pada kartu utama (dari palet Es) */
+.fitur, .kartu-t, .bab-item, .materi-kotak, .kartu-soal, .level-kartu, .cara-item { border: 1px solid var(--garis); }
+.btn-garis { box-shadow: inset 0 0 0 1px var(--garis); }
+
+@media (prefers-reduced-motion: reduce) { html[data-pola="polos"] body::before { animation: none; } }
