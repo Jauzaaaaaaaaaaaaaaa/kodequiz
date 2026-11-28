@@ -1015,6 +1015,9 @@ function bukaPengaturan() {
       <div class="atur-blok"><span><b>Warna latar 2 · gradasi</b><small>Warna gradasi abstrak di belakang kartu (Desain latar: Bawaan). Kekuatannya diatur otomatis agar teks tetap terbaca.</small></span>
         <div id="atur-warna2"></div>
         <div class="lp-aksi"><button class="btn btn-garis btn-kecil" id="atur-warna2-reset">↺ Kembali ke gradasi bawaan</button></div></div>
+      <div class="atur-blok"><span><b>Warna kartu</b><small>Warna semua kartu (Latihan, jalur, sesi, heliks). Warna terang digelapkan otomatis supaya teks di kartu tetap mudah dibaca.</small></span>
+        <div id="atur-kartu"></div>
+        <div class="lp-aksi"><button class="btn btn-garis btn-kecil" id="atur-kartu-reset">↺ Kembali ke kartu bawaan</button></div></div>
       <div class="atur-blok"><span><b>Desain latar</b><small>Pola di belakang kartu, mengikuti warna tema</small></span>
         <div class="lp-pola-grid" id="atur-pola">${KQLatar.POLA.map(([v, n]) => `<button class="lp-pola ${KQLatar.pola() === v ? "aktif" : ""}" data-pola="${v}" aria-pressed="${KQLatar.pola() === v}"><i aria-hidden="true"></i>${n}</button>`).join("")}</div></div>` : ""}
       <div class="atur-baris"><span><b>Suara</b><small>Bunyi lembut saat benar, combo, dan naik level</small></span>
@@ -1055,6 +1058,9 @@ function bukaPengaturan() {
     const pasangWarna2 = () => KQLatar.pasangPicker(el("atur-warna2"), hex => KQLatar.aturWarna2(hex), KQLatar.warna2() || "#b9a8f0");
     pasangWarna2();
     el("atur-warna2-reset").onclick = e => { KQLatar.aturWarna2(null); pasangWarna2(); sukses(e.currentTarget); };
+    const pasangKartu = () => KQLatar.pasangPicker(el("atur-kartu"), hex => KQLatar.aturKartu(hex), KQLatar.kartu() || "#2e2650");
+    pasangKartu();
+    el("atur-kartu-reset").onclick = e => { KQLatar.aturKartu(null); pasangKartu(); sukses(e.currentTarget); };
     document.querySelectorAll("#atur-pola .lp-pola").forEach(b => b.onclick = () => {
       KQLatar.aturPola(b.dataset.pola);
       document.querySelectorAll("#atur-pola .lp-pola").forEach(x => { x.classList.toggle("aktif", x === b); x.setAttribute("aria-pressed", x === b); });

@@ -4,7 +4,8 @@
    • Desain: pola latar buatan sendiri dengan CSS (atelier/latar.css), memakai warna tema sehingga cocok di semua tema.
    • Warna latar 2 (28 Nov 2026): warna gradasi abstrak di belakang halaman (gumpalan --g1/--g2 di belula.css, tampil pada Desain = Bawaan).
      Kekuatannya (alfa) diturunkan otomatis sampai teks redup tetap ≥ 4,5:1 di puncak gradasi, untuk tema terang, gelap, dan warna latar 1.
-   Disimpan di localStorage 'kq-latar' = { warna: "#rrggbb" | null, warna2: "#rrggbb" | null, pola: "polos" | ... }.
+   • Warna kartu: gradasi semua kartu (--kg1) dan lapisan foto (--kartu-tinta). Warna terang digelapkan sampai teks kartu ≥ 7:1.
+   Disimpan di localStorage 'kq-latar' = { warna, warna2, kartu: "#rrggbb" | null, pola: "polos" | ... }.
    Dimuat di <head> (tanpa defer) supaya latar sudah benar sebelum halaman tampil. */
 (function () {
   "use strict";
@@ -14,7 +15,7 @@
     ["kotakkotak", "Kotak-kotak"], ["diagonal", "Garis miring"], ["cetakbiru", "Cetak biru"], ["kontur", "Garis kontur"],
     ["sinar", "Sinar"], ["gradasi", "Gradasi lembut"], ["kertas", "Kertas bertekstur"],
   ];
-  let S = { warna: null, warna2: null, pola: "polos" };
+  let S = { warna: null, warna2: null, kartu: null, pola: "polos" };
   try { S = Object.assign(S, JSON.parse(localStorage.getItem(KUNCI)) || {}); } catch (e) { /* mode privat */ }
   const simpan = () => { try { localStorage.setItem(KUNCI, JSON.stringify(S)); } catch (e) { /* abaikan */ } };
 
@@ -75,6 +76,13 @@
     while (a > .05 && pasangan.some(([bg, redup]) => kontras(hexKeRgb(redup), campur(hexKeRgb(bg), c2, a)) < 4.5)) a -= .05;
     return +a.toFixed(2);
   }
+  // warna kartu: gelapkan sampai teks terang kartu (#f4f3fa) ≥ 7:1, ujung gradasi lebih gelap lagi
+  function kartuDari(hex) {
+    const c = hexKeRgb(hex), HITAM = [0, 0, 0], TEKS = [244, 243, 250];
+    let t = 0, awal = c;
+    while (kontras(TEKS, awal) < 7 && t < 1) { t = Math.min(1, t + .04); awal = hexKeRgb(rgbKeHex(campur(c, HITAM, t))); }
+    return { awal: rgbKeHex(awal), akhir: rgbKeHex(campur(awal, HITAM, .55)) };
+  }
   function terapkan() {
     document.documentElement.dataset.pola = S.pola || "polos";
     let css = "", tema = null;
@@ -84,6 +92,7 @@
       css = `:root[data-theme="${tema}"]{${Object.entries(d.v).map(([k, v]) => `${k}:${v}`).join(";")};color-scheme:${tema}}`;
     }
     if (S.warna2) { const a = alfa2(S.warna2); css += `:root:root:root{--g1:${S.warna2};--g2:${S.warna2};--a1:${a};--a2:${(a * .7).toFixed(2)}}`; }
+    if (S.kartu) { const k = kartuDari(S.kartu); css += `:root:root:root{--kg1:linear-gradient(140deg,${k.awal} 0%,${k.akhir} 100%);--kartu-tinta:${k.akhir}}`; }
     gaya.textContent = css;
     return tema;
   }
@@ -152,6 +161,9 @@
     warna2: () => S.warna2,
     aturWarna2(hex) { S.warna2 = hex; simpan(); terapkan(); },
     alfa2,     // dipakai alat/uji-latar.js
+    kartu: () => S.kartu,
+    aturKartu(hex) { S.kartu = hex; simpan(); terapkan(); },
+    kartuDari, // dipakai alat/uji-latar.js
     pasangPicker,
     turunan,   // dipakai alat/uji-latar.js
   };

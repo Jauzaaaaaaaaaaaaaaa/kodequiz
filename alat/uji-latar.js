@@ -26,4 +26,11 @@ for (let i = 0; i < 4096; i += 7) {
     assert(a <= .05 || kontras(redup, hex(campur(rgb(bg), rgb(h2), a))) >= 4.5, `${h2}: alfa ${a} terlalu kuat di ${bg}`);
   m++;
 }
-console.log(`✓ ${n} warna: kontras teks aman; ✓ ${m} warna latar 2: gradasi tidak mengganggu teks`);
+// warna kartu: teks kartu ≥ 7:1 dan teks redup kartu ≥ 4,5:1 pada titik paling terang gradasi
+let k = 0;
+for (let i = 0; i < 4096; i += 7) {
+  const hk = "#" + [i * 91 % 256, i * 53 % 256, i * 37 % 256].map(v => v.toString(16).padStart(2, "0")).join(""), { awal, akhir } = KQLatar.kartuDari(hk);
+  assert(kontras("#f4f3fa", awal) >= 7 && kontras("#cec8e2", awal) >= 4.5 && kontras("#f4f3fa", akhir) >= 7, `${hk}: kartu ${awal} kurang kontras`);
+  k++;
+}
+console.log(`✓ ${n} warna: kontras teks aman; ✓ ${m} warna latar 2: gradasi tidak mengganggu teks; ✓ ${k} warna kartu: teks kartu ≥ 7:1`);

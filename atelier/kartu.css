@@ -6,7 +6,8 @@
    3) Kartu dilempar ke meja saat muncul: animasi di gerak.css/gerak.js, berkelompok per 4.
    Teks terang di semua gradasi ≥ 5:1 (diperiksa pada titik paling terang). */
 :root {
-  --kg1: linear-gradient(140deg, #2E2650 0%, #15122A 100%);   /* satu gradasi nila Luluba untuk SEMUA kartu (warna seragam = profesional) */
+  --kg1: linear-gradient(140deg, #2E2650 0%, #15122A 100%);
+  --kartu-tinta: #15122A;   /* warna lapisan gelap di atas foto kartu; diganti latar.js bila pengguna memilih Warna kartu */   /* satu gradasi nila Luluba untuk SEMUA kartu (warna seragam = profesional) */
 }
 
 /* ---------- 1. kulit kartu ---------- */
@@ -62,7 +63,7 @@
 .kartu-t.t-java { --foto: url(foto/java-800.webp); }
 .kartu-t.t-php { --foto: url(foto/php-800.webp); }
 .kartu-t[class*=" t-"]:not(#kq) {
-  background: linear-gradient(180deg, rgba(18, 15, 34, .62) 0%, rgba(18, 15, 34, .86) 55%, rgba(18, 15, 34, .94) 100%), var(--foto, none) center / cover, var(--kg, var(--kg1));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--kartu-tinta) 66%, transparent) 0%, color-mix(in srgb, var(--kartu-tinta) 88%, transparent) 55%, color-mix(in srgb, var(--kartu-tinta) 95%, transparent) 100%), var(--foto, none) center / cover, var(--kg, var(--kg1));
 }
 
 /* ---------- 2. meja kartu: tergeletak miring, tegak + zoom saat disorot ---------- */
