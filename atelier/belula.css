@@ -4,14 +4,15 @@
                Semu Belula #F0C9CF (merah muda pipi), Pasir Belula #E8DCC6, Beri Belula #A3304E (aksen; turunan Red Oxide).
    • Luluba  — bunyinya dekat "lullaby" (lagu nina bobo): malam tenang, beludru. Langit Luluba #120F22, Nila Luluba #3B2F7A,
                Plum Luluba #5C2E5E, Lavender Luluba #B9A8F0 (aksen), Bulan Luluba #F3D98B (emas redup), Teal Luluba #2D5C66.
-   Menggantikan lembah.css (lembah/dingin/holst tetap ada untuk kembali). Kontras teks ≥ 4,5:1 diperiksa, termasuk di puncak gumpalan latar. */
+   Rapikan 28 Nov 2026: satu keluarga aksen (nila #3B2F7A terang, lavender #B9A8F0 gelap), gumpalan latar 2 warna,
+   foto duotone tinta→mutiara lavender. Menggantikan lembah.css (lembah/dingin/holst tetap ada untuk kembali). Kontras teks ≥ 4,5:1 diperiksa, termasuk di puncak gumpalan latar. */
 
 :root {
-  --g1: #9FB6CC; --g2: #F0C9CF; --g3: #E8DCC6; --g4: #B1C7D4; --g5: #A3304E;          /* gumpalan latar */
-  --a1: .7; --a2: .75; --a3: .7; --a4: .55; --a5: .14;
+  --g1: #9FB6CC; --g2: #B9A8F0; --g3: #9FB6CC; --g4: #B9A8F0; --g5: #B9A8F0;          /* gumpalan latar: 2 warna saja (biru beluga + lavender) */
+  --a1: .5; --a2: .38; --a3: 0; --a4: 0; --a5: 0;
   --bg: #F2F4F8; --bg-atas: #E7ECF3; --permukaan: #FBFCFE; --permukaan-2: #E8ECF2; --garis: #CDD5E0;
   --teks: #1A1628; --redup: #48445C; --tinta: #1A1628; --tinta-teks: #F2F4F8;
-  --utama: #A3304E; --utama-gelap: #7E2139; --utama-t: #F6DDE4;
+  --utama: #3B2F7A; --utama-gelap: #2A2158; --utama-t: #E4E0F5;
   --biru: #3F5C7A; --biru-t: #DEE7F1;
   --hijau: #2F6B57; --hijau-t: #DCEDE5; --hijau-teks: #22513F;
   --merah: #A8303B; --merah-t: #F7DEE1; --merah-teks: #7E2129;
@@ -24,15 +25,15 @@
   --bayang: 0 1px 0 rgba(26, 22, 40, .06), 0 12px 28px -20px rgba(26, 22, 40, .4);
   --bayang2: 0 26px 50px -26px rgba(26, 22, 40, .55);
   --btn-teks: #FBFCFE;
-  --at-accent: #A3304E; --at-on-accent: #FBFCFE; --at-accent-text: #7E2139;
+  --at-accent: #3B2F7A; --at-on-accent: #FBFCFE; --at-accent-text: #2A2158;
   --at-deep: #1A1628; --at-on-deep: #ECE8F7;
   --c-da: #3F5C7A; --c-da-t: #DEE7F1; --c-ds: #5C2E5E; --c-ds-t: #EFE3EF;
-  --sorot: #A3304E; --sorot-teks: #FBFCFE;
+  --sorot: #3B2F7A; --sorot-teks: #FBFCFE;
   color-scheme: light;
 }
 :root[data-theme="dark"] {
-  --g1: #3B2F7A; --g2: #5C2E5E; --g3: #5E1C23; --g4: #2D5C66; --g5: #F3D98B;
-  --a1: .55; --a2: .45; --a3: .4; --a4: .35; --a5: .08;
+  --g1: #3B2F7A; --g2: #2A3A66; --g3: #3B2F7A; --g4: #2A3A66; --g5: #3B2F7A;
+  --a1: .5; --a2: .38; --a3: 0; --a4: 0; --a5: 0;
   --bg: #120F22; --bg-atas: #191530; --permukaan: #1C1834; --permukaan-2: #262044; --garis: #352E5A;
   --teks: #ECE8F7; --redup: #B3ACCC; --tinta: #F2EEFB; --tinta-teks: #120F22;
   --utama: #B9A8F0; --utama-gelap: #D3C8F7; --utama-t: #2A2350;
@@ -51,13 +52,13 @@
   --at-accent: #B9A8F0; --at-on-accent: #120F22; --at-accent-text: #D3C8F7;
   --at-deep: #0B0916; --at-on-deep: #ECE8F7;
   --c-da: #A9C2E8; --c-da-t: #1E2440; --c-ds: #E3B9E0; --c-ds-t: #2C1C33;
-  --sorot: #F3D98B; --sorot-teks: #120F22;
+  --sorot: #B9A8F0; --sorot-teks: #120F22;
   color-scheme: dark;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --g1: #3B2F7A; --g2: #5C2E5E; --g3: #5E1C23; --g4: #2D5C66; --g5: #F3D98B;
-    --a1: .55; --a2: .45; --a3: .4; --a4: .35; --a5: .08;
+    --g1: #3B2F7A; --g2: #2A3A66; --g3: #3B2F7A; --g4: #2A3A66; --g5: #3B2F7A;
+    --a1: .5; --a2: .38; --a3: 0; --a4: 0; --a5: 0;
     --bg: #120F22; --bg-atas: #191530; --permukaan: #1C1834; --permukaan-2: #262044; --garis: #352E5A;
     --teks: #ECE8F7; --redup: #B3ACCC; --tinta: #F2EEFB; --tinta-teks: #120F22;
     --utama: #B9A8F0; --utama-gelap: #D3C8F7; --utama-t: #2A2350;
@@ -76,7 +77,7 @@
     --at-accent: #B9A8F0; --at-on-accent: #120F22; --at-accent-text: #D3C8F7;
     --at-deep: #0B0916; --at-on-deep: #ECE8F7;
     --c-da: #A9C2E8; --c-da-t: #1E2440; --c-ds: #E3B9E0; --c-ds-t: #2C1C33;
-    --sorot: #F3D98B; --sorot-teks: #120F22;
+    --sorot: #B9A8F0; --sorot-teks: #120F22;
     color-scheme: dark;
   }
 }
@@ -112,19 +113,19 @@ html[data-pola="polos"] body::before {
 .hero-chip span { background: rgba(242, 244, 248, .92); color: #1A1628; }
 .jk-media .jk-utama { background: var(--permukaan); color: var(--teks); }
 .jk-persen { background: #1A1628; color: #F2F4F8; }
-.grid-topik .prio-ya { background: #F3D98B; color: #1A1628; }
+.grid-topik .prio-ya { background: #C9BCF5; color: #1A1628; }
 .grup-jalur .kartu-t::after { background: #B9A8F0; color: #120F22; }
 .at-curtain__b { background: #120F22; }
-.at-curtain__a { background: #A3304E; }
+.at-curtain__a { background: #3B2F7A; }
 .at-curtain__cap { color: #ECE8F7; }
 .kq-piksel i.on { background: #ECE8F7; }
 
 /* Blok pernyataan beranda: beri Belula → nila → langit Luluba, strip warna Belula + Luluba */
-.pernyataan { position: relative; overflow: hidden; background: linear-gradient(160deg, #A3304E 0%, #3B2F7A 55%, #120F22 100%); color: #F4F3FA; }
+.pernyataan { position: relative; overflow: hidden; background: linear-gradient(160deg, #3B2F7A 0%, #1F1A3C 55%, #120F22 100%); color: #F4F3FA; }
 .pernyataan::before { content: ""; display: block; width: min(260px, 62%); height: 6px; margin: 0 auto 26px;
-  background: linear-gradient(90deg, #F2F4F8 0 16.6%, #9FB6CC 0 33.3%, #F0C9CF 0 50%, #B9A8F0 0 66.6%, #3B2F7A 0 83.3%, #F3D98B 0); box-shadow: inset 0 0 0 1px rgba(244, 243, 250, .3); }
+  background: linear-gradient(90deg, #F2F4F8 0 33.3%, #B9A8F0 0 66.6%, #3B2F7A 0); box-shadow: inset 0 0 0 1px rgba(244, 243, 250, .3); }
 .pernyataan p { color: #E6E1F3; }
-.pernyataan .pernyataan-aksen { color: #F3D98B; }
+.pernyataan .pernyataan-aksen { color: #C9BCF5; }
 .btn-terang { background: #F4F3FA; color: #1A1628; }
 .btn-terang:hover:not(:disabled) { background: rgba(244, 243, 250, .12); color: #F4F3FA; box-shadow: inset 0 0 0 1px #F4F3FA; }
 
@@ -132,3 +133,12 @@ html[data-pola="polos"] body::before {
 .btn-garis { box-shadow: inset 0 0 0 1px var(--garis); }
 
 @media (prefers-reduced-motion: reduce) { html[data-pola="polos"] body::before { animation: none; } }
+
+/* Satu aksen untuk semua topik: warna khas per topik dari tema lama (--c-*) membuat tampilan acak.
+   :root:root:root mengalahkan aturan tema gelap/terang di atas; var(--utama) mengikuti tema yang aktif. */
+:root:root:root {
+  --c-excel: var(--utama); --c-sql: var(--utama); --c-karier: var(--utama); --c-py: var(--utama); --c-html: var(--utama); --c-css: var(--utama);
+  --c-js: var(--utama); --c-bi: var(--utama); --c-stat: var(--utama); --c-erp: var(--utama); --c-java: var(--utama); --c-php: var(--utama);
+  --c-git: var(--utama); --c-ct: var(--utama); --c-da: var(--utama); --c-ds: var(--utama); --c-da-t: var(--utama-t); --c-ds-t: var(--utama-t);
+  --c-cyber: var(--utama); --c-siber: var(--utama); --c-cyber-t: var(--utama-t); --c-siber-t: var(--utama-t);
+}

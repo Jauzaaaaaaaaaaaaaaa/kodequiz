@@ -25,7 +25,7 @@
   cincin.innerHTML = T.map((t, i) => {
     const I = TOPIK_INFO[t];
     const bg = `<img src="atelier/foto/${t}-800.webp" alt="" loading="lazy" decoding="async">`;   // foto Unsplash (atelier/foto/SUMBER.md); gradasi --hx-bg tetap jadi cadangan
-    return `<button class="hx-k" type="button" role="listitem" data-i="${i}" style="--i:${i};--hx-bg:var(--kg${i % 6 + 1})">
+    return `<button class="hx-k" type="button" role="listitem" data-i="${i}" style="--i:${i};--hx-bg:var(--kg1)">
       ${bg}<span class="hx-isi"><span class="hx-kode">${String(i + 1).padStart(2, "0")} · KELOMPOK ${Math.floor(i / 4) + 1}</span>
       <span class="hx-ikon" aria-hidden="true">${esc(I.ikon || "")}</span>
       <b class="hx-nama" data-nama="${esc(I.nama)}">${esc(I.nama)}</b>

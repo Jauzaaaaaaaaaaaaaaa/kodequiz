@@ -6,32 +6,21 @@
    3) Kartu dilempar ke meja saat muncul: animasi di gerak.css/gerak.js, berkelompok per 4.
    Teks terang di semua gradasi ≥ 5:1 (diperiksa pada titik paling terang). */
 :root {
-  --kg1: linear-gradient(140deg, #3E3566 0%, #1C1830 100%);   /* nila Luluba */
-  --kg2: linear-gradient(140deg, #7A2944 0%, #2A1420 100%);   /* beri Belula */
-  --kg3: linear-gradient(140deg, #3B4F6B 0%, #1A2232 100%);   /* biru beluga dalam */
-  --kg4: linear-gradient(140deg, #5C2E5E 0%, #241428 100%);   /* plum Luluba */
-  --kg5: linear-gradient(140deg, #2E5C66 0%, #142429 100%);   /* teal Luluba */
-  --kg6: linear-gradient(140deg, #605246 0%, #241D18 100%);   /* pasir senja */
+  --kg1: linear-gradient(140deg, #2E2650 0%, #15122A 100%);   /* satu gradasi nila Luluba untuk SEMUA kartu (warna seragam = profesional) */
 }
 
 /* ---------- 1. kulit kartu ---------- */
 :is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item) {
   --teks: #F4F3FA; --redup: #CEC8E2; --garis: rgba(244, 243, 250, .2);
   --permukaan: rgba(244, 243, 250, .08); --permukaan-2: rgba(244, 243, 250, .14);
-  --tinta: #F4F3FA; --tinta-teks: #1A1628; --utama: #F3D98B; --utama-gelap: #F6E4B3; --btn-teks: #1A1628; --aksen: #F3D98B;
-  --kuning: #F3D98B; --hijau: #9FE0C6; --merah: #F7A9B4; --biru: #BCD0EE;
+  --tinta: #F4F3FA; --tinta-teks: #1A1628; --utama: #C9BCF5; --utama-gelap: #DDD4FA; --btn-teks: #1A1628; --aksen: #C9BCF5;
+  --kuning: #E9DDB0; --hijau: #9FE0C6; --merah: #F7A9B4; --biru: #C9BCF5;
   position: relative; color: var(--teks); border-radius: 6px;
 }
 :is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):not(#kq) {
   background: var(--kg, var(--kg1)); border: 1px solid rgba(244, 243, 250, .16);
   box-shadow: 0 18px 34px -24px rgba(10, 8, 20, .75);
 }
-:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+1) { --kg: var(--kg1); }
-:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+2) { --kg: var(--kg2); }
-:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+3) { --kg: var(--kg3); }
-:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+4) { --kg: var(--kg4); }
-:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+5) { --kg: var(--kg5); }
-:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+6) { --kg: var(--kg6); }
 /* sorotan cahaya halus di pojok atas, seperti kartu heliks */
 :is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item)::before {
   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
