@@ -84,20 +84,20 @@ body, body.at { background: var(--bg); }
 :root[data-pola="polos"] body, :root[data-pola="polos"] body.at { background: transparent; }   /* :root menang atas latar.css */
 html[data-pola="polos"] body::before {
   content: ""; position: fixed; z-index: -1; pointer-events: none;
-  inset: -25vh -25vw; will-change: transform;
+  inset: -8vh -8vw; will-change: transform;   /* lapisan kecil + hanya digeser: cukup dirasterisasi sekali (putar/skala memicu gambar ulang per tile → kotak bertepi tajam di laptop lambat) */
   background:
-    radial-gradient(30vmax 24vmax at 30% 30%, color-mix(in srgb, var(--cv) calc(var(--g-cv) * 100%), transparent) 0 22%, transparent 68%),
-    radial-gradient(28vmax 22vmax at 72% 27%, color-mix(in srgb, var(--ts) calc(var(--g-ts) * 100%), transparent) 0 22%, transparent 68%),
-    radial-gradient(32vmax 24vmax at 68% 72%, color-mix(in srgb, var(--wb) calc(var(--g-wb) * 100%), transparent) 0 22%, transparent 68%),
-    radial-gradient(24vmax 20vmax at 30% 72%, color-mix(in srgb, var(--vi) calc(var(--g-vi) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(30vmax 24vmax at 24% 26%, color-mix(in srgb, var(--cv) calc(var(--g-cv) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(28vmax 22vmax at 78% 22%, color-mix(in srgb, var(--ts) calc(var(--g-ts) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(32vmax 24vmax at 74% 78%, color-mix(in srgb, var(--wb) calc(var(--g-wb) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(24vmax 20vmax at 22% 76%, color-mix(in srgb, var(--vi) calc(var(--g-vi) * 100%), transparent) 0 22%, transparent 68%),
     radial-gradient(18vmax 16vmax at 52% 50%, color-mix(in srgb, var(--ro) calc(var(--g-ro) * 100%), transparent) 0 18%, transparent 66%),
     var(--bg);
   animation: lb-arus 46s ease-in-out infinite alternate;
 }
 @keyframes lb-arus {
-  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
-  50%  { transform: translate3d(-6vw, 4vh, 0) rotate(8deg) scale(1.08); }
-  100% { transform: translate3d(5vw, -5vh, 0) rotate(-6deg) scale(1.04); }
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(-5vw, 4vh, 0); }
+  100% { transform: translate3d(5vw, -4vh, 0); }
 }
 .topbar { background: color-mix(in srgb, var(--bg) 88%, transparent); border-bottom: 1px solid var(--garis); }
 
