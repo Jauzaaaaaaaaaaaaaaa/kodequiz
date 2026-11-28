@@ -13,13 +13,14 @@
 <link rel="icon" href="ikon/ikon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Oswald:wght@400..600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="atelier/atelier.css">
 <link rel="stylesheet" href="atelier/theme.css">
 <link rel="stylesheet" href="jalur/jalur.css">
 <link rel="stylesheet" href="atelier/belajar.css">
 <link rel="stylesheet" href="atelier/dingin.css">
+<link rel="stylesheet" href="atelier/panggung.css">
 <link rel="stylesheet" href="atelier/latar.css">
 <link rel="stylesheet" href="css/runner.css">
 <script src="atelier/theme.js"></script>
@@ -57,14 +58,16 @@
 
 <!-- ============ BERANDA ============ -->
 <section id="layar-beranda" class="layar">
-  <div class="hero">
-    <p class="eyebrow" id="sapaan">Halo</p>
-    <h1>Belajar data &amp; keamanan siber seperti di kampus terbaik, <em>sedikit setiap hari.</em></h1>
+  <section class="panggung" id="panggung" aria-label="Jalur karier dan topik inti"></section>
+  <div class="hero hero-ringkas">
     <div class="hero-baris">
-      <p class="hero-sub">Tiga jalur karier, <b>Data Analyst</b>, <b>Data Scientist</b>, dan <b>Cyber Security</b>, disusun dengan cara belajar MIT (problem set), Oxford (tutorial), dan Harvard (studi kasus), memakai situasi kerja nyata di Indonesia dan luar negeri. Total <b id="stat-total">0</b> soal berpembahasan.</p>
+      <div>
+        <p class="eyebrow" id="sapaan">Halo</p>
+        <p class="hero-sub">Tiga jalur karier, <b>Data Analyst</b>, <b>Data Scientist</b>, dan <b>Cyber Security</b>, disusun dengan cara belajar MIT (problem set), Oxford (tutorial), dan Harvard (studi kasus), memakai situasi kerja nyata di Indonesia dan luar negeri. Total <b id="stat-total">0</b> soal berpembahasan.</p>
+        <div class="statistik" id="hero-chip" aria-label="Isi KodeQuiz"></div>
+      </div>
       <div class="level-kartu" id="level-kartu"></div>
     </div>
-    <div class="statistik" id="hero-chip" aria-label="Isi KodeQuiz"></div>
   </div>
 
   <section class="blok" aria-labelledby="sesi-judul">
@@ -747,5 +750,6 @@
 <script src="js/app.js"></script>
 <!-- Jalur karier, studi kasus, tutorial, kemajuan (di luar js/ karena memakai DOM) -->
 <script src="jalur/jalur.js"></script>
+<script src="atelier/panggung.js"></script>
 </body>
 </html>
