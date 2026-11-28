@@ -19,8 +19,10 @@
       el.style.setProperty("--gr-i", el.classList.contains("gr-kartu") ? iK++ % 4 : Math.min(i++, 4));
       el.classList.add("gr-in");
       const lepas = () => { el.classList.remove("gr", "gr-in", "gr-kartu"); el.style.removeProperty("--gr-i"); };
-      const akhir = ev => { if (ev.target === el && ev.propertyName === "transform") { el.removeEventListener("transitionend", akhir); lepas(); } };   // tunggu transform, bukan opacity yang lebih cepat selesai
-      el.addEventListener("transitionend", akhir);
+      // kartu: tunggu animasi lempar selesai; elemen lain: tunggu transisi transform (opacity lebih cepat selesai)
+      const jenis = el.classList.contains("gr-kartu") ? "animationend" : "transitionend";
+      const akhir = ev => { if (ev.target === el && (jenis === "animationend" || ev.propertyName === "transform")) { el.removeEventListener(jenis, akhir); lepas(); } };
+      el.addEventListener(jenis, akhir);
       setTimeout(lepas, 2200);   // pengaman bila transitionend tidak datang
     });
   }, { threshold: .06, rootMargin: "0px 0px -4% 0px" });

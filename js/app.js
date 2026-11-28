@@ -248,7 +248,7 @@ function terapkanTema() {
   else document.documentElement.setAttribute("data-theme", t);
   const gelap = t === "dark" || (t === "auto" && matchMedia("(prefers-color-scheme: dark)").matches);
   el("btn-tema").textContent = gelap ? "☀️" : "🌙";
-  el("btn-tema").title = gelap ? "Ganti ke mode terang" : "Ganti ke mode gelap";
+  el("btn-tema").title = gelap ? "Ganti ke Cerah Belula (terang)" : "Ganti ke Malam Luluba (gelap)";
 }
 function gantiTema() {
   const gelap = document.documentElement.getAttribute("data-theme") === "dark" ||

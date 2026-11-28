@@ -2,7 +2,7 @@
    judul kapital ramping (Oswald), tautan menu kecil berhuruf kapital dengan garis aksen kuning, kartu potret,
    tombol bulat bergaris, nomor slide besar. Aksen kuning hanya untuk sorotan kecil; warna dasar tetap palet Es.
    Animasi: clip-path satu lapisan, transform, opacity. */
-:root { --font-x: "Oswald", "Arial Narrow", "Instrument Sans", sans-serif; --pg-aksen: #B1C7D4; --pg-tombol: #5E1C23; --pg-tombol-teks: #F2F4F5; }   /* --sorot dari palet (lembah.css) */
+:root { --font-x: "Oswald", "Arial Narrow", "Instrument Sans", sans-serif; --pg-aksen: #B1C7D4; --pg-tombol: #A3304E; --pg-tombol-teks: #F2F4F5; }   /* --sorot dari palet (lembah.css) */
 
 /* ---------- gaya umum ala referensi ---------- */
 body { overflow-x: clip; }

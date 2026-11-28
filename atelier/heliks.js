@@ -4,7 +4,6 @@
   const S = document.getElementById("heliks");
   if (!S || typeof TOPIK_INFO === "undefined") return;
   const DATAR = () => matchMedia("(max-width: 760px), (max-height: 560px), (prefers-reduced-motion: reduce)").matches;
-  const WARNA = [["#849AAD", "#2E3A45"], ["#A1947F", "#3E2E2B"], ["#5E1C23", "#1F1A16"], ["#B1C7D4", "#4C6274"], ["#605246", "#1C1412"]];
   const adegan = window.KQ_ADEGAN || {};
   const T = Object.keys(TOPIK_INFO).filter(t => typeof BANK !== "undefined" && BANK[t]);
   const n = T.length, GRUP = Math.ceil(n / 4);
@@ -25,9 +24,9 @@
     </div>`;
   const cincin = S.querySelector(".hx-cincin"), hitung = S.querySelector(".hx-hitung b"), grupEl = S.querySelector(".hx-grup"), titik = [...S.querySelectorAll(".hx-titik i")];
   cincin.innerHTML = T.map((t, i) => {
-    const I = TOPIK_INFO[t], [a, b] = WARNA[i % WARNA.length];
+    const I = TOPIK_INFO[t];
     const bg = adegan[t] ? `<img src="${adegan[t]}" alt="" loading="lazy" decoding="async">` : "";
-    return `<button class="hx-k" type="button" role="listitem" data-i="${i}" style="--i:${i};--hx-bg:linear-gradient(135deg, ${a}, ${b})">
+    return `<button class="hx-k" type="button" role="listitem" data-i="${i}" style="--i:${i};--hx-bg:var(--kg${i % 6 + 1})">
       ${bg}<span class="hx-isi"><span class="hx-kode">${String(i + 1).padStart(2, "0")} · KELOMPOK ${Math.floor(i / 4) + 1}</span>
       <span class="hx-ikon" aria-hidden="true">${esc(I.ikon || "")}</span>
       <b class="hx-nama" data-nama="${esc(I.nama)}">${esc(I.nama)}</b>
@@ -58,27 +57,27 @@
     kartu.forEach((k, i) => { const d = Math.abs(i - a); k.classList.toggle("dekat", d <= 4); k.classList.toggle("aktif", d === 0); k.tabIndex = d === 0 ? 0 : -1; });
     hitung.textContent = String(a + 1).padStart(2, "0");
     const g = Math.floor(a / 4);
-    grupEl.textContent = `Kelompok ${g + 1} dari ${GRUP} · ${esc(TOPIK_INFO[T[a]].nama)}`;
+    grupEl.textContent = `Kelompok ${g + 1} dari ${GRUP} · ${TOPIK_INFO[T[a]].nama}`;   // textContent sudah aman, tanpa esc
     titik.forEach((x, i) => x.classList.toggle("on", i === g));
     uraikan(kartu[a].querySelector(".hx-nama"));
   }
 
   // gulir → p (0..n-1), dihaluskan dengan lerp; loop berhenti sendiri saat sudah sampai
-  let atas = 0, panjang = 1, target = 0, p = 0, jalan = false, datar = false, ukW = 380, ukH = 243;
+  let atas = 0, panjang = 1, target = 0, p = 0, jalan = false, datar = false, ukW = 440, ukH = 282;
   function ukur() {
     datar = DATAR();
     S.classList.toggle("datar", datar);
     if (datar) { cincin.style.transform = ""; kartu.forEach(k => { k.classList.add("dekat", "aktif"); k.tabIndex = 0; }); aktif = -1; return; }
     const r = S.getBoundingClientRect();
     atas = r.top + scrollY - 72; panjang = Math.max(1, S.offsetHeight - (innerHeight - 72));
-    ukW = kartu[0].offsetWidth || 380; ukH = kartu[0].offsetHeight || 243;
+    ukW = kartu[0].offsetWidth || 440; ukH = kartu[0].offsetHeight || 282;
     baca(); p = target; aktif = -1; putar();
   }
   function baca() { target = Math.min(n - 1, Math.max(0, (scrollY - atas) / panjang * (n - 1))); }
   function putar() {
     p += (target - p) * .16;
     if (Math.abs(target - p) < .002) { p = target; jalan = false; }
-    cincin.style.transform = `translate3d(0, ${(p * ukH * .36).toFixed(1)}px, ${(-ukW * .85).toFixed(1)}px) rotateY(${(-p * 50).toFixed(2)}deg)`;
+    cincin.style.transform = `translate3d(0, ${(p * ukH * .36).toFixed(1)}px, ${(-ukW * 1.25).toFixed(1)}px) rotateY(${(-p * 50).toFixed(2)}deg)`;
     setAktif(Math.round(p));
     if (jalan) requestAnimationFrame(putar);
   }

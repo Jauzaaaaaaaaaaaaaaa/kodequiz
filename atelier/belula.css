@@ -1,0 +1,134 @@
+/* KODEQUIZ — palet "Cerah Belula" (terang) & "Malam Luluba" (gelap), 28 November 2026.
+   Dua kata karangan pengguna, diterjemahkan menjadi warna:
+   • Belula  — bunyinya dekat "beluga" + "bulan" + "lula": cerah, bulat, lembut. Mutiara Belula #F2F4F8, Biru Beluga #9FB6CC,
+               Semu Belula #F0C9CF (merah muda pipi), Pasir Belula #E8DCC6, Beri Belula #A3304E (aksen; turunan Red Oxide).
+   • Luluba  — bunyinya dekat "lullaby" (lagu nina bobo): malam tenang, beludru. Langit Luluba #120F22, Nila Luluba #3B2F7A,
+               Plum Luluba #5C2E5E, Lavender Luluba #B9A8F0 (aksen), Bulan Luluba #F3D98B (emas redup), Teal Luluba #2D5C66.
+   Menggantikan lembah.css (lembah/dingin/holst tetap ada untuk kembali). Kontras teks ≥ 4,5:1 diperiksa, termasuk di puncak gumpalan latar. */
+
+:root {
+  --g1: #9FB6CC; --g2: #F0C9CF; --g3: #E8DCC6; --g4: #B1C7D4; --g5: #A3304E;          /* gumpalan latar */
+  --a1: .7; --a2: .75; --a3: .7; --a4: .55; --a5: .14;
+  --bg: #F2F4F8; --bg-atas: #E7ECF3; --permukaan: #FBFCFE; --permukaan-2: #E8ECF2; --garis: #CDD5E0;
+  --teks: #1A1628; --redup: #48445C; --tinta: #1A1628; --tinta-teks: #F2F4F8;
+  --utama: #A3304E; --utama-gelap: #7E2139; --utama-t: #F6DDE4;
+  --biru: #3F5C7A; --biru-t: #DEE7F1;
+  --hijau: #2F6B57; --hijau-t: #DCEDE5; --hijau-teks: #22513F;
+  --merah: #A8303B; --merah-t: #F7DEE1; --merah-teks: #7E2129;
+  --kuning: #7A5B12; --kuning-t: #F3E8CE; --kuning-teks: #5A430C;
+  --emas: #7A5B12; --emas-t: #F3E8CE;
+  --kode-bg: #1A1628; --kode-teks: #ECE8F7; --kode-redup: #9C95B8;
+  --editor-bg: #FBFCFE; --editor-nomor: #9A97AB;
+  --media-bg: #1A1628;
+  --c-sql: #3F5C7A;
+  --bayang: 0 1px 0 rgba(26, 22, 40, .06), 0 12px 28px -20px rgba(26, 22, 40, .4);
+  --bayang2: 0 26px 50px -26px rgba(26, 22, 40, .55);
+  --btn-teks: #FBFCFE;
+  --at-accent: #A3304E; --at-on-accent: #FBFCFE; --at-accent-text: #7E2139;
+  --at-deep: #1A1628; --at-on-deep: #ECE8F7;
+  --c-da: #3F5C7A; --c-da-t: #DEE7F1; --c-ds: #5C2E5E; --c-ds-t: #EFE3EF;
+  --sorot: #A3304E; --sorot-teks: #FBFCFE;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --g1: #3B2F7A; --g2: #5C2E5E; --g3: #5E1C23; --g4: #2D5C66; --g5: #F3D98B;
+  --a1: .55; --a2: .45; --a3: .4; --a4: .35; --a5: .08;
+  --bg: #120F22; --bg-atas: #191530; --permukaan: #1C1834; --permukaan-2: #262044; --garis: #352E5A;
+  --teks: #ECE8F7; --redup: #B3ACCC; --tinta: #F2EEFB; --tinta-teks: #120F22;
+  --utama: #B9A8F0; --utama-gelap: #D3C8F7; --utama-t: #2A2350;
+  --biru: #A9C2E8; --biru-t: #1E2440;
+  --hijau: #86D3B8; --hijau-t: #16302A; --hijau-teks: #B2E5D2;
+  --merah: #F19AA6; --merah-t: #3B1A24; --merah-teks: #F7C0C8;
+  --kuning: #F0D58A; --kuning-t: #2F2817; --kuning-teks: #F6E4B3;
+  --emas: #F0D58A; --emas-t: #2F2817;
+  --kode-bg: #0B0916; --kode-teks: #ECE8F7; --kode-redup: #8C85A8;
+  --editor-bg: #17132B; --editor-nomor: #6A6388;
+  --media-bg: #0B0916;
+  --c-sql: #A9C2E8;
+  --bayang: 0 1px 0 rgba(0, 0, 0, .35), 0 12px 26px -16px rgba(0, 0, 0, .7);
+  --bayang2: 0 24px 48px -22px rgba(0, 0, 0, .8);
+  --btn-teks: #120F22;
+  --at-accent: #B9A8F0; --at-on-accent: #120F22; --at-accent-text: #D3C8F7;
+  --at-deep: #0B0916; --at-on-deep: #ECE8F7;
+  --c-da: #A9C2E8; --c-da-t: #1E2440; --c-ds: #E3B9E0; --c-ds-t: #2C1C33;
+  --sorot: #F3D98B; --sorot-teks: #120F22;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --g1: #3B2F7A; --g2: #5C2E5E; --g3: #5E1C23; --g4: #2D5C66; --g5: #F3D98B;
+    --a1: .55; --a2: .45; --a3: .4; --a4: .35; --a5: .08;
+    --bg: #120F22; --bg-atas: #191530; --permukaan: #1C1834; --permukaan-2: #262044; --garis: #352E5A;
+    --teks: #ECE8F7; --redup: #B3ACCC; --tinta: #F2EEFB; --tinta-teks: #120F22;
+    --utama: #B9A8F0; --utama-gelap: #D3C8F7; --utama-t: #2A2350;
+    --biru: #A9C2E8; --biru-t: #1E2440;
+    --hijau: #86D3B8; --hijau-t: #16302A; --hijau-teks: #B2E5D2;
+    --merah: #F19AA6; --merah-t: #3B1A24; --merah-teks: #F7C0C8;
+    --kuning: #F0D58A; --kuning-t: #2F2817; --kuning-teks: #F6E4B3;
+    --emas: #F0D58A; --emas-t: #2F2817;
+    --kode-bg: #0B0916; --kode-teks: #ECE8F7; --kode-redup: #8C85A8;
+    --editor-bg: #17132B; --editor-nomor: #6A6388;
+    --media-bg: #0B0916;
+    --c-sql: #A9C2E8;
+    --bayang: 0 1px 0 rgba(0, 0, 0, .35), 0 12px 26px -16px rgba(0, 0, 0, .7);
+    --bayang2: 0 24px 48px -22px rgba(0, 0, 0, .8);
+    --btn-teks: #120F22;
+    --at-accent: #B9A8F0; --at-on-accent: #120F22; --at-accent-text: #D3C8F7;
+    --at-deep: #0B0916; --at-on-deep: #ECE8F7;
+    --c-da: #A9C2E8; --c-da-t: #1E2440; --c-ds: #E3B9E0; --c-ds-t: #2C1C33;
+    --sorot: #F3D98B; --sorot-teks: #120F22;
+    color-scheme: dark;
+  }
+}
+
+/* ---------- latar gradasi abstrak (hanya Desain latar = Bawaan); hanya digeser agar ringan ---------- */
+html { background: var(--bg); }
+body, body.at { background: var(--bg); }
+:root[data-pola="polos"] body, :root[data-pola="polos"] body.at { background: transparent; }   /* :root menang atas latar.css */
+html[data-pola="polos"] body::before {
+  content: ""; position: fixed; z-index: -1; pointer-events: none;
+  inset: -8vh -8vw; will-change: transform;   /* jangan scale/rotate: memicu gambar ulang per tile di laptop lambat */
+  background:
+    radial-gradient(30vmax 24vmax at 24% 26%, color-mix(in srgb, var(--g1) calc(var(--a1) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(28vmax 22vmax at 78% 22%, color-mix(in srgb, var(--g2) calc(var(--a2) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(32vmax 24vmax at 74% 78%, color-mix(in srgb, var(--g3) calc(var(--a3) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(24vmax 20vmax at 22% 76%, color-mix(in srgb, var(--g4) calc(var(--a4) * 100%), transparent) 0 22%, transparent 68%),
+    radial-gradient(18vmax 16vmax at 52% 50%, color-mix(in srgb, var(--g5) calc(var(--a5) * 100%), transparent) 0 18%, transparent 66%),
+    var(--bg);
+  animation: bl-arus 46s ease-in-out infinite alternate;
+}
+@keyframes bl-arus {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(-5vw, 4vh, 0); }
+  100% { transform: translate3d(5vw, -4vh, 0); }
+}
+.topbar { background: color-mix(in srgb, var(--bg) 88%, transparent); border-bottom: 1px solid var(--garis); }
+
+/* Warna yang ditulis langsung di theme.css / jalur.css */
+::selection { background: var(--utama); color: var(--btn-teks); }
+.nav-utama button[data-tab].aktif { color: var(--teks); }
+.btn-utama:hover:not(:disabled), .btn-hijau, .jh-aksi .btn-utama:hover:not(:disabled), .kq-musik-nyala:hover { color: var(--btn-teks); }
+.kq-istirahat .btn-utama { background: #F2F4F8; color: #1A1628; }
+.hero-chip span { background: rgba(242, 244, 248, .92); color: #1A1628; }
+.jk-media .jk-utama { background: var(--permukaan); color: var(--teks); }
+.jk-persen { background: #1A1628; color: #F2F4F8; }
+.grid-topik .prio-ya { background: #F3D98B; color: #1A1628; }
+.grup-jalur .kartu-t::after { background: #B9A8F0; color: #120F22; }
+.at-curtain__b { background: #120F22; }
+.at-curtain__a { background: #A3304E; }
+.at-curtain__cap { color: #ECE8F7; }
+.kq-piksel i.on { background: #ECE8F7; }
+
+/* Blok pernyataan beranda: beri Belula → nila → langit Luluba, strip warna Belula + Luluba */
+.pernyataan { position: relative; overflow: hidden; background: linear-gradient(160deg, #A3304E 0%, #3B2F7A 55%, #120F22 100%); color: #F4F3FA; }
+.pernyataan::before { content: ""; display: block; width: min(260px, 62%); height: 6px; margin: 0 auto 26px;
+  background: linear-gradient(90deg, #F2F4F8 0 16.6%, #9FB6CC 0 33.3%, #F0C9CF 0 50%, #B9A8F0 0 66.6%, #3B2F7A 0 83.3%, #F3D98B 0); box-shadow: inset 0 0 0 1px rgba(244, 243, 250, .3); }
+.pernyataan p { color: #E6E1F3; }
+.pernyataan .pernyataan-aksen { color: #F3D98B; }
+.btn-terang { background: #F4F3FA; color: #1A1628; }
+.btn-terang:hover:not(:disabled) { background: rgba(244, 243, 250, .12); color: #F4F3FA; box-shadow: inset 0 0 0 1px #F4F3FA; }
+
+.materi-kotak, .kartu-soal, .level-kartu { border: 1px solid var(--garis); }
+.btn-garis { box-shadow: inset 0 0 0 1px var(--garis); }
+
+@media (prefers-reduced-motion: reduce) { html[data-pola="polos"] body::before { animation: none; } }

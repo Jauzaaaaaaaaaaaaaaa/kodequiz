@@ -1,0 +1,74 @@
+/* KodeQuiz — gaya kartu heliks untuk semua halaman + "meja kartu" (28 November 2026, permintaan pengguna).
+   1) Kulit kartu: gradasi gelap Belula/Luluba, teks terang, judul Oswald kapital, ikon besar samar di pojok, garis tipis.
+      Caranya mengganti variabel warna DI DALAM kartu (--teks, --redup, --tinta, --utama, ...), sehingga isi kartu,
+      tombol, chip, dan batang kemajuan ikut menyesuaikan tanpa menulis ulang setiap komponen.
+   2) Meja: di kisi kartu, setiap kartu tergeletak sedikit miring; saat disorot kursor kartu tegak dan membesar (zoom).
+   3) Kartu dilempar ke meja saat muncul: animasi di gerak.css/gerak.js, berkelompok per 4.
+   Teks terang di semua gradasi ≥ 5:1 (diperiksa pada titik paling terang). */
+:root {
+  --kg1: linear-gradient(140deg, #3E3566 0%, #1C1830 100%);   /* nila Luluba */
+  --kg2: linear-gradient(140deg, #7A2944 0%, #2A1420 100%);   /* beri Belula */
+  --kg3: linear-gradient(140deg, #3B4F6B 0%, #1A2232 100%);   /* biru beluga dalam */
+  --kg4: linear-gradient(140deg, #5C2E5E 0%, #241428 100%);   /* plum Luluba */
+  --kg5: linear-gradient(140deg, #2E5C66 0%, #142429 100%);   /* teal Luluba */
+  --kg6: linear-gradient(140deg, #605246 0%, #241D18 100%);   /* pasir senja */
+}
+
+/* ---------- 1. kulit kartu ---------- */
+:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item) {
+  --teks: #F4F3FA; --redup: #CEC8E2; --garis: rgba(244, 243, 250, .2);
+  --permukaan: rgba(244, 243, 250, .08); --permukaan-2: rgba(244, 243, 250, .14);
+  --tinta: #F4F3FA; --tinta-teks: #1A1628; --utama: #F3D98B; --utama-gelap: #F6E4B3; --btn-teks: #1A1628; --aksen: #F3D98B;
+  --kuning: #F3D98B; --hijau: #9FE0C6; --merah: #F7A9B4; --biru: #BCD0EE;
+  position: relative; color: var(--teks); border-radius: 6px;
+}
+:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):not(#kq) {
+  background: var(--kg, var(--kg1)); border: 1px solid rgba(244, 243, 250, .16);
+  box-shadow: 0 18px 34px -24px rgba(10, 8, 20, .75);
+}
+:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+1) { --kg: var(--kg1); }
+:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+2) { --kg: var(--kg2); }
+:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+3) { --kg: var(--kg3); }
+:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+4) { --kg: var(--kg4); }
+:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+5) { --kg: var(--kg5); }
+:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item, .bab-item):nth-child(6n+6) { --kg: var(--kg6); }
+/* sorotan cahaya halus di pojok atas, seperti kartu heliks */
+:is(.kartu-t, .fitur, .kasus-kartu, .metode-item, .cara-item, .sesi-item)::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(120% 70% at 100% 0%, rgba(244, 243, 250, .12), transparent 55%);
+}
+
+/* judul kapital ramping */
+:is(.kartu-nama, .fitur-judul, .sesi-teks > b, .cara-item > b, .metode-item b, .kasus-kartu > b, .bab-isi > b) {
+  font-family: var(--font-x); font-weight: 500; text-transform: uppercase; letter-spacing: .02em; line-height: 1.08; color: #F4F3FA;
+}
+.kartu-nama { font-size: 1.35rem; }
+.fitur-judul { font-size: 1.45rem; }
+:is(.kartu-sub, .kartu-ket, .fitur-label, .kk-industri, .kk-cta, .bab-isi small, .sesi-no) { letter-spacing: .08em; text-transform: uppercase; font-size: .7rem; }
+:is(.kartu-desk, .kartu-alasan, .sesi-teks small, .cara-item p, .kasus-kartu small) { color: var(--redup); }
+/* ikon jadi huruf besar samar di pojok kanan atas */
+.kartu-t .kartu-ikon { position: absolute; right: 12px; top: 6px; background: none; border: 0; box-shadow: none; width: auto; height: auto;
+  font: 500 2.7rem/1 var(--font-x); color: rgba(244, 243, 250, .17); }
+.kartu-t .kartu-atas { padding-right: 64px; }
+.mini-bar { background: rgba(244, 243, 250, .14); }
+:is(.kartu-t, .fitur, .sesi-item) .btn-garis { background: transparent; color: #F4F3FA; box-shadow: inset 0 0 0 1px rgba(244, 243, 250, .45); }
+
+/* ---------- 2. meja kartu: tergeletak miring, tegak + zoom saat disorot ---------- */
+:is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > * {
+  transform: rotate(var(--miring, 0deg));
+  transition: transform .45s cubic-bezier(.2, .8, .2, 1), box-shadow .45s ease;
+}
+:is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > :nth-child(4n+1) { --miring: -1.6deg; --dari-x: -70px; }
+:is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > :nth-child(4n+2) { --miring: 1.1deg; --dari-x: -25px; }
+:is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > :nth-child(4n+3) { --miring: -.7deg; --dari-x: 30px; }
+:is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > :nth-child(4n+4) { --miring: 1.8deg; --dari-x: 75px; }
+@media (hover: hover) and (pointer: fine) {
+  :is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > :hover:not(#kq) {
+    transform: translateY(-8px) rotate(0deg) scale(1.08); z-index: 4;
+    box-shadow: 0 34px 60px -28px rgba(10, 8, 20, .85), 0 0 0 1px rgba(244, 243, 250, .3);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > * { transition: none; }
+  :is(.grid-topik, .fitur-grid, .metode-grid, .cara-grid, .sesi-grid, .kasus-grid) > :hover:not(#kq) { transform: rotate(0deg); }
+}

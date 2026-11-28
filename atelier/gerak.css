@@ -6,9 +6,16 @@ html.gr-siap .gr { transition: opacity .8s var(--gr-ease), transform .9s var(--g
 html.gr-siap .gr:not(.gr-in) { opacity: 0; transform: translateY(30px); }
 html.gr-siap .sec-judul.gr:not(.gr-in) { transform: translateY(40px) skewY(3deg); transform-origin: left; }
 html.gr-siap .materi-kotak > .gr:not(.gr-in) { transform: translateY(18px); }
-/* kartu masuk berkelompok per 4: miring 3D dari bawah lalu tegak */
-html.gr-siap .gr-kartu { transition-duration: .7s, .85s; transition-delay: calc(var(--gr-i, 0) * 110ms); }
-html.gr-siap .gr-kartu:not(.gr-in) { transform: perspective(900px) translateY(46px) rotateX(18deg) scale(.96); transform-origin: 50% 100%; }
+/* kartu "dilempar" ke meja berkelompok per 4: jatuh dari atas sambil berputar, memantul kecil, lalu diam miring (--miring dari kartu.css) */
+html.gr-siap .gr-kartu { transition: none; }
+html.gr-siap .gr-kartu:not(.gr-in) { opacity: 0; transform: translateY(-40px); }
+html.gr-siap .gr-kartu.gr-in { animation: kt-lempar .95s cubic-bezier(.2, .85, .3, 1) both; animation-delay: calc(var(--gr-i, 0) * 120ms); }
+@keyframes kt-lempar {
+  0%   { opacity: 0; transform: translate(var(--dari-x, -30px), -170px) rotate(calc(var(--miring, 1deg) * -9)) scale(1.16); }
+  55%  { opacity: 1; transform: translate(0, 10px) rotate(calc(var(--miring, 0deg) * 1.6)) scale(.97); }
+  78%  { transform: translate(0, -4px) rotate(calc(var(--miring, 0deg) * .8)) scale(1.01); }
+  100% { opacity: 1; transform: rotate(var(--miring, 0deg)); }
+}
 
 /* angkat halus saat disorot */
 .sesi-item, .metode-item, .cara-item, .jalur-kartu, .kartu-t, .fitur, .bab-item, .kasus-kartu {
@@ -39,6 +46,7 @@ html.gr-siap .gr-kartu:not(.gr-in) { transform: perspective(900px) translateY(46
 
 @media (prefers-reduced-motion: reduce) {
   html.gr-siap .gr:not(.gr-in) { opacity: 1; transform: none; }
+  html.gr-siap .gr-kartu.gr-in { animation: none; }
   .btn-utama::before, .btn-hijau::before { display: none; }
   .mini-bar div, .mini-bar span, .eyebrow::before, .opsi.muncul { animation: none; }
   .sesi-item:hover, .metode-item:hover, .cara-item:hover, .jalur-kartu:hover, .kasus-kartu:hover, .bab-item:hover { transform: none; }
