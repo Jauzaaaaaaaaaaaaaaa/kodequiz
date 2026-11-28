@@ -1,7 +1,7 @@
 /* Service worker KodeQuiz — membuat aplikasi bisa dibuka OFFLINE setelah
    dikunjungi sekali lewat http(s) (Netlify / GitHub Pages).
    Dibuat otomatis; ganti VERSI setiap rilis agar cache diperbarui. */
-const VERSI = "kodequiz-v6-202611280953";
+const VERSI = "kodequiz-v6-202611281000";
 const BUKU = "kodequiz-buku";   // cache PDF terpisah: tidak terhapus saat aplikasi diperbarui
 const ASET = [
   "./",
@@ -103,6 +103,8 @@ const ASET = [
   "atelier/dingin.css",
   "atelier/gerak.css",
   "atelier/gerak.js",
+  "atelier/heliks.css",
+  "atelier/heliks.js",
   "atelier/holst.css",
   "atelier/latar.css",
   "atelier/latar.js",

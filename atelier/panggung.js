@@ -57,6 +57,7 @@
     topik("js", ["Java", "Script"], "Bahasa prioritas", "DOM, event, async, sampai React, dengan tombol Run untuk mencoba kode di tempat.", { benih: 97, langit: ["#5E1C23", "#D9C3B5"], cakram: [800, 520, 90, "#F1E4D6"], lapis: [["gigi", 640, 240, "#A1947F"], ["gigi", 760, 230, "#605246"], ["gigi", 900, 170, "#2B1B1E"]] }),
   ];
   const URL_ = SLIDE.map(s => pemandangan(s.adegan));
+  window.KQ_ADEGAN = Object.fromEntries(SLIDE.map((s, i) => [s.t, URL_[i]]));   // dipakai ulang kartu heliks
 
   /* ---------- kerangka ---------- */
   const ikon = d => `<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="${d}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;

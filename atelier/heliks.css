@@ -1,0 +1,53 @@
+/* KodeQuiz — "Heliks topik" (28 November 2026): kartu topik tersusun spiral, 4 kartu per putaran.
+   Ide dari rekaman referensi pengguna (galeri kartu 3D mengelilingi tiang spiral), tidak disalin: kartu berisi topik KodeQuiz,
+   warna palet Lembah, judul "terurai" dari huruf acak saat kartu tiba di depan.
+   Sudut 50° per kartu agar tetangga terlihat; pengelompokan 4 kartu ditandai kode, titik, dan label kelompok.
+   Ringan untuk laptop Ryzen 3 + grafis bawaan: per frame hanya SATU transform (cincin), kelas kartu berubah hanya saat kartu aktif berganti,
+   kartu jauh disembunyikan (visibility), tanpa filter/blur. Di HP dan prefers-reduced-motion menjadi kisi biasa. */
+.hx { position: relative; height: calc(100vh + (var(--hx-n, 18) - 1) * 38vh); margin: clamp(30px, 6vw, 70px) 0; }
+.hx-lekat { position: sticky; top: 72px; height: calc(100vh - 72px - var(--nav-bawah-h, 0px)); display: grid; grid-template-columns: minmax(220px, 30%) 1fr; align-items: center; gap: 20px; overflow: hidden; }
+.hx-info { position: relative; z-index: 2; }
+.hx-info .sec-judul { margin-bottom: 10px; }
+.hx-hitung { display: flex; align-items: baseline; gap: 10px; margin: 18px 0 6px; font-family: var(--font-x); }
+.hx-hitung b { font-size: clamp(3.2rem, 6vw, 5rem); line-height: .9; font-weight: 500; letter-spacing: .01em; color: var(--teks); }
+.hx-hitung span { font-size: 1.2rem; color: var(--redup); }
+.hx-grup { font: 500 .72rem/1.3 var(--font-b); letter-spacing: .14em; text-transform: uppercase; color: var(--redup); margin: 0 0 12px; }
+.hx-titik { display: flex; gap: 6px; margin-bottom: 18px; }
+.hx-titik i { width: 26px; height: 3px; background: var(--garis); transition: background .3s ease, transform .3s ease; transform-origin: left; }
+.hx-titik i.on { background: var(--utama); transform: scaleX(1.35); }
+.hx-petunjuk { font-size: .86rem; color: var(--redup); margin: 0 0 14px; }
+.hx-lewati { background: none; border: 1px solid var(--garis); color: var(--teks); min-height: 40px; padding: 0 18px; border-radius: 999px; font: 500 .7rem/1 var(--font-b); letter-spacing: .14em; text-transform: uppercase; cursor: pointer; }
+.hx-lewati:hover { border-color: var(--utama); color: var(--utama); }
+
+/* panggung 3D */
+.hx-ruang { position: relative; height: 100%; perspective: 1300px; perspective-origin: 50% 45%; }
+.hx-tiang { position: absolute; left: 50%; top: -10%; bottom: -10%; width: 2px; margin-left: -1px; pointer-events: none;
+  background: repeating-linear-gradient(180deg, color-mix(in srgb, var(--utama) 55%, transparent) 0 14px, transparent 14px 26px); opacity: .5; }
+.hx-cincin { position: absolute; left: 50%; top: 50%; width: 0; height: 0; transform-style: preserve-3d; will-change: transform; }
+.hx-k {
+  --w: min(380px, 52vw); --h: calc(var(--w) * .64);
+  position: absolute; left: calc(var(--w) / -2); top: calc(var(--h) / -2); width: var(--w); height: var(--h);
+  transform: rotateY(calc(var(--i) * 50deg)) translateZ(calc(var(--w) * .85)) translateY(calc(var(--i) * var(--h) * -.36));   /* 50°: kartu tetangga tampak miring, bukan tegak lurus */
+  backface-visibility: hidden; border-radius: 6px; overflow: hidden; padding: 0; border: 1px solid color-mix(in srgb, var(--cv) 40%, transparent);
+  background: var(--hx-bg); color: #F2F4F5; text-align: left; cursor: pointer;
+  opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility 0s .45s, box-shadow .3s ease;
+}
+.hx-k.dekat { visibility: visible; opacity: .38; transition: opacity .45s ease, box-shadow .3s ease; }
+.hx-k.aktif { opacity: 1; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .75), 0 0 0 1px rgba(242, 244, 245, .25); }
+.hx-k img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hx-k::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20, 17, 15, .86) 0, rgba(20, 17, 15, .25) 60%, rgba(20, 17, 15, .1)); }
+.hx-isi { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; padding: clamp(14px, 2vw, 22px); }
+.hx-kode { font: 500 .66rem/1 var(--font-m); letter-spacing: .12em; color: #DCE5EB; opacity: .85; }
+.hx-ikon { position: absolute; right: 14px; top: 6px; font: 500 clamp(3rem, 6vw, 4.6rem)/1 var(--font-x); color: rgba(242, 244, 245, .16); }
+.hx-nama { margin-top: auto; font: 500 clamp(1.5rem, 2.6vw, 2.2rem)/1 var(--font-x); text-transform: uppercase; letter-spacing: .02em; min-height: 1em; }
+.hx-ket { margin: 8px 0 10px; font-size: .78rem; line-height: 1.45; color: #DCE5EB; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.hx-bawah { display: flex; justify-content: space-between; align-items: center; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: #C9D4DB; }
+.hx-bawah b { color: #F2F4F5; font-weight: 600; }
+
+/* HP, layar pendek, atau kurangi gerak: kisi biasa, tetap muncul per kartu (gerak.js) */
+.hx.datar { height: auto; }
+.hx.datar .hx-lekat { position: static; height: auto; display: block; overflow: visible; }
+.hx.datar .hx-ruang { height: auto; perspective: none; margin-top: 18px; }
+.hx.datar .hx-tiang, .hx.datar .hx-hitung, .hx.datar .hx-titik, .hx.datar .hx-petunjuk, .hx.datar .hx-lewati { display: none; }
+.hx.datar .hx-cincin { position: static; width: auto; height: auto; transform: none !important; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+.hx.datar .hx-k { --w: auto; position: relative; left: auto; top: auto; width: auto; height: 190px; transform: none; opacity: 1; visibility: visible; }
